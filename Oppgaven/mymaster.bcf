@@ -1998,6 +1998,8 @@
     <bcf:citekey order="38">Adams</bcf:citekey>
     <bcf:citekey order="39">SMR:SMR1599</bcf:citekey>
     <bcf:citekey order="40">SI</bcf:citekey>
+    <bcf:citekey order="41">jd</bcf:citekey>
+    <bcf:citekey order="42">Quarter</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" type="entry" label="nyt">
   <bcf:sorting>

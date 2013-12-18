@@ -170,6 +170,34 @@ Software Innovation is a Scandinavian software company. SI develops and delivers
 Software Innovation has approximately 300 employees, and has offices in Oslo, Copenhagen and Stockholm and a development center in Bangalore \parencite{SI}.
 
 \part{The project}                    %% ... or ??
+\chapter{Research Questions}
+In this thesis the overall research question in this thesis is to study the effects of WIP limits in particular for SI. Some of the goals are:
+\begin{itemize} \item See if the exist an optimal WIP-limit for a given context.\item How to best find the optimal WIP-limit\item Which various parameters taking in to account in order to optimize WIP. 
+\end{itemize}
+\chapter{Research Methods}
+%%Skrive om weekends
+In this section information about how my program will measure WIP, Items in backlog and throughput per date, per month, per quarter and per year will be explained. First off, there will be describe how the program do the measure in words, then the algorithm will be explained using algorithm in Pseudocode \parencite{jd}
+The set from SI only contains dates when tasks was created, added to backlog, pulled from backlog or finished.  In order to measure average per month, quarter and year the program needs to know WIP and items in backlog for each day. In order to do so, the program will generate the remaining days.
+Table \ref {dataset} show an excerpt from the dataset, as the reader may notice, the date 2008-10-09 is not in the set, so in this case, the program has to create 2008-10-09 and add it to the set
+
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+    Created Date\\ \hline
+    2008-10-07\\ \hline
+    2008-10-07 \\ \hline
+    2008-10-07 \\ \hline
+    2008-10-08\\ \hline
+    2008-10-08\\ \hline
+   2008-10-10\\ \hline
+    \end{tabular}
+\caption{Excerpt from the dataset}
+\label{dataset} %% throughput table
+\end{center}
+\end{table}
+
+The Date standard is specified as yyyy-mm-dd. \\When I write iterate it means looping through the data with a for each-loop. \\Quarter of a year is defined as January, February and March (Q1); April, May and June (Q2); July, August and September.\\ (Q3); and October, November and December (Q4) according to Investopedia \parencite{Quarter}
 
 \chapter{Planning the project}        %% ... or ??
 
