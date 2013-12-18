@@ -1,8 +1,12 @@
 \documentclass[UKenglish]{ifimaster}  %% ... or USenglish or norsk or nynorsk
-\usepackage[latin1]{inputenc}         %% ... or utf8 or applemac
+%%\usepackage[latin1]{inputenc} 
+\usepackage[latin1]{inputenc}        %% ... or utf8 or applemac
 \usepackage[T1]{fontenc,url}
+\usepackage{listings}
 \urlstyle{sf}
 \usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx}
+\usepackage[section]{placeins}
+\usepackage{amsmath}
 \setlength{\parskip}{\baselineskip}%
 \setlength{\parindent}{0pt}%
 \title{Do Work in Progress (WIP) - Limit in Agile Software Development Matter?}        %% ... or whatever
@@ -61,15 +65,104 @@ Toyota production system was introduced Kanban during late 1940s and early 1950s
 
 When the small pieces are in order, the problems are put up on the Kanban-board to visualize the problems and see potential bottlenecks. When people started to understand Kanban, they easily discovered where the bottlenecks where, and started to help where the bottlenecks where \parencite{Shinkle}.
 
-One of the most important people in Kanban software developmen, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online}, author of Kanban: Successful Evolutionary Change for Your Technology Business once stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
+One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online}, author of Kanban: Successful Evolutionary Change for Your Technology Business once stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
 
 More and more software projects adapt to Kanban, and this is one of the reasons why this thesis will focuses on Kanban and WIP.
 Kanban is one of the agile method in the wind these days, and is used with Lean Software development which is one of the fastest growing approaches in software development \parencite{DavidAnderson}
 
-One of the main difference between Scrum and Kanban is estimation, in simulation of software maintenance process, with and without a work-in-process limit \parencite{SMR:SMR1599} estimation was defined to be the main source of waste. In their research, they find out, if they let the developers work with small tasks at time and not be interrupted, they will be more effective. The developers in this case was interrupted when they was assigned to estimate tasks. The research groups decided to implement Lean-Kanban, which includes minimalizing waste, which meant estimation for this case. After implementing Lean-Kanban the team?s increased the ability to perform work, lower the lead time and meet the production dates.
+One of the main difference between Scrum and Kanban is estimation, in simulation of software maintenance process, with and without a work-in-process limit \parencite{SMR:SMR1599} estimation was defined to be the main source of waste. In their research, they find out, if they let the developers work with small tasks at time and not be interrupted, they will be more effective. The developers in this case was interrupted when they was assigned to estimate tasks. The research groups decided to implement Lean-Kanban, which includes minimizing waste, which meant estimation for this case. After implementing Lean-Kanban the teams increased the ability to perform work, lower the lead time and meet the production dates.
 
 \section {Scrum}
-Scrum \parencite{Scrum}
+Scrum has three main roles, the Product Owner, the Scrum Master and the members of the development team. The Product owner in collaboration with the Scrum Master decides which work to be prioritized in the backlog. The Scrum Master acts like a team leader and helps the team and organization to take best advantages of Scrum. The development team works on tasks specific for the iteration there in  \parencite{Scrum}.
+
+Iteration is a time-boxed interval over a given time, usually from one to four weeks. Before each sprint, a sprint planning meeting is conducted, with all the team members attending  \parencite{Scrum}.
+
+In each sprint a minimal backlog is created so the developer knows which tasks to work on. The Product Owner and the team members discuss and decide which tasks from the backlog to be added to the minimal backlog  \parencite{Scrum}.
+
+After the minimal backlog is full, the Product Owner and the team members discuss each task from in order to get a better understanding and a shared understanding of what is required in order to complete the task  \parencite{Scrum}.
+
+Scrum requires that a new feature is ready for release after a sprint. The feature should be a visible part of the product in order to get feedback from end-users  \parencite{Scrum}
+
+\section {Lean-Kanban}
+The Lean approach was introduced between 1948 and 1975 in manufacturing work in Japan. It was designed to find and eliminate waste, so the manufacturing could deliver value to the costumer more efficiently. In 2003 Mary and Tom Poppendieck first introduced Lean thinking to software development, they published ?Principles of Lean Thinking? \parencite{Lean:2003}. An important tool to manage work flow is the concept of pull-systems, which means tasks are put in production only when a costumer asks for it \parencite{Lean:2009}.
+In the last years, Kanban has been introduced more and more to software development, and is becoming one of the keys to Lean practice in the field \parencite{DavidAnderson}. 
+
+\section{WIP}
+''There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased'' \parencite{Joyce}
+
+Work in progress (WIP) is a tool in Kanban to reduce overhead by limit task-switching for each developer and visualize bottlenecks. Each column in a Kanban board usually has a specific WIP as illustrated in figure \ref{kanban_board}.  
+
+WIP can be explained using cars and roads as analogy. All roads have it maximum capacity width number of cars. When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams, a software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks decreases and lead time increases.
+ 
+But in order to get the best throughput and lead time, a software team needs to experiment with WIP. 
+When first implementing Kanban, Shinkle explains that the users don't care about the WIP, but rather the visibility of Kanban. When the user gets more experience with Kanban, they start to attempt limit WIP \parencite{Shinkle}
+Shinkle defined novice and more experience kanban-users with a descriptive analogy \parencite{Shinkle}:
+''Think about a typical person wanting to bake a cake. They go to the store, purchase a boxed cake mix, and follow the directions as described on the back of the box. They have little to no knowledge about how to alter the recipe nor do they have a desire to do so. Their goal is simply to bake a cake.''
+''An advanced beginner understands how to apply some context to the instructions or rules on the back of the box. They can make minor adjustments for things like altitude, pan size, oven conditions, etc. They are still following the basic recipe, but can make minor adjustments likely based on previous experiences.''
+In the paper Applying the Dreyfus Model of Skill Acquisition to the Adoption of Kanban Systems at Software Engineering (SEP) \parencite{Shinkle}, Shinkle interview some developers and one developer said:
+?WIP limits seem to be the worst understood part of the Kanban system. When used properly, it exposes bottlenecks and reduces lead time for individual work items. Used improperly, it can starve developers for work or result in too many people working on the same work items.'' \parencite{Shinkle}
+ 
+Setting a limit on WIP has a number of benefits according to Hopp, Spearman and Suri. They stated that it reduces flow times, reduces variation and improves quality. However Srinivasan, Ebbing and Swearing said that setting the WIP is not easy. They suggest that WIP are just set, and then observe throughput, and adjust after that \parencite{Mandyam}.
+Several people have their opinion on how to best measure the WIP, but most of them agree upon that's there is no clear rule of how to measure WIP in software development. Lukasz proposes to use The Effectiveness as an indicator measured at the end of each cycle. The effectiveness is a formula that takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers ,etc.)(ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
+
+\begin{equation} \label{WIPEQ}
+Ei=\frac{ai-ei}{ai}*100\%
+\end{equation}
+
+On the other hand, Kanban says you should limit WIP. So what should the limit be? - Kanban; Don't know, experiment \parencite{Kniberg}.
+
+Lean Software Management suggest that WIP should be minimized, to keep high quality \parencite{Ikonen} and to create continuous flow and bring problems to the surface \parencite{Joyce}. In Lean Software Management: BBC Worldwide Case Study when the team realized the where bottlenecks and to high WIP the team started to determine WIP by their constraints. The team quickly realized that they had fewer quality assurance/testing staff and business analysts than software developers. This reflected the bottlenecks, so the team adjusted WIP to how much work they could handle; this gave the team more experience in dealing with WIP \parencite{Joyce}.
+
+In the authors of Lean thinking in software development: Impacts of kanban on projects suggest that task should be prioritized from high to low, in order to keep the best WIP. Lean thinking in software development: Impacts of Kanban on projects stated in the conclusion that high WIP will keep people task switching and not be able to fully concentrate on each work in progress \parencite{Ikonen}.
+As notice, there?s no clear rule on how to deal with WIP and how to determine WIP, although WIP is a crucial tool in order to Kanban sufficient
+
+\section {Kanban Board}
+''The Kanban board makes it clear to all the team members the exact status of progress, blockages, bottlenecks and they also signal possible future issues to prepare for''\parencite{Joyce}.
+
+The Kanban board is one of the most important tools in Kanban. It?s used to minimize WIP, increase the information flow, with visualization  and spot bottlenecks \parencite{SMR:SMR1599}.
+The Kanban board uses named columns to illustrate where each item is in the workflow.  Every column has a WIP, to specify how many works in progress there are allowed in the column \parencite{Joyce}.
+A Kanban board is illustrated in figure \ref{kanban_board}, where each column has a name respectively Backlog, In progress and done.
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{Picture/kanban_board.jpg}
+\caption{Example of a Kanban board}
+\label{kanban_board}
+\end{figure}
+
+\section {Lead time}
+''Lead time is the total elapsed time from when a customer requests software to when the finished software is released to the custome'' \parencite{Joyce}.
+The citation by Joyce above is the close to definition of what lead time is. This definition could be useful for consultancy companies, but for SI, who is a big in-house development company with few releases each year this definition is unsuitable. Quantifying the effect of Using Kanban versus Scrum stated to definition of why the definition is unsuitable: 
+
+''First, the amount of time a work item remains in the backlog queue before it's put on the board is a function of priority, not whether the company uses Scrum, Kanban, or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it's finished'' .
+\parencite{Dag}
+As long as SI has defined what Lead time is in their case, lead time could be used as an essential ingredient when you look for the optimal WIP for their project, because with lead-time, they can control the timer interval for each task. Often in project, lead time is split into pieces, so every task has its own lead-time; this gives the development teams the advantages to experiment with different WIP's in order to see the different lead-times and then measure which WIP that suits this project the best. 
+
+\section{Throughput}
+''The average output of a production process (machine, workstation, line plant) per unit time (e.g., parts per hour) is defined as the systems throughput or sometimes throughput rate'' \parencite{Adams}
+The concept of throughput in order to measure how productive teams, people or companies is similar in both software development and manufacturing. But, in software development each tasks is abstract, tasks can have different solutions depending on how the team or developer approach and the tasks is usually only done once.
+In manufacturing, each task usually has one solution and when the solutions are found the physical item is mass produced.  Adams said "Throughput in plant, line or workstation, is defined as the average quantity of good  parts produced per unit time" \parencite{Adams}, which gives a good example of the relationship between tasks in manufacturing and software development. In manufacturing the part either fits its purpose (good) or not (defective), in software development a tasks can fit a purpose, but the purpose may be wrong. As long as the software development task is bug free, it's delivered as non-defective but it may not fit the defined purpose by the end users. 
+Throughput is measured in number of finished delivered tasks per day, week, month, quarter or year. In order to make throughput measurement successful, each tasks has to require almost the same amount of work.  
+For instance; team x had a throughput of ten after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter and they used Scrum the first two quarters and Kanban the last two as illustrated in table \ref{tt}It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, the Kanban approach would fit them better than Scrum. In order to find that out, the team x needs to standardize how much work each tasks should require.
+
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+    Quarter & Throughput &  Framework\\ \hline
+    1 & 10 & Scrum\\ \hline
+    2 & 20 & Scrum \\ \hline
+    3 & 15 & Kanban\\ \hline
+    4 & 12 & Kanban\\ \hline
+    \end{tabular}
+\caption{Throughput}
+\label{tt} %% throughput table
+\end{center}
+\end{table}
+
+\section{Chrun}
+
+\section {Limit WIP vs. Unlimited WIP}
+
 \part{The project}                    %% ... or ??
 
 \chapter{Planning the project}        %% ... or ??
