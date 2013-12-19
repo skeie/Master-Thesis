@@ -2,10 +2,10 @@
 \usepackage[latin1]{inputenc}        %% ... or utf8 or applemac
 \usepackage[T1]{fontenc,url}
 \urlstyle{sf}
-\usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx}
+\usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx,caption}
 \usepackage[section]{placeins}
 \usepackage{amsmath}
-
+\setcounter{secnumdepth}{3}
 
 \usepackage{listings}
 \usepackage{color}
@@ -40,6 +40,8 @@
   tabsize=2,                       % sets default tabsize to 2 spaces
   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
+
+
 
 
 
@@ -276,7 +278,7 @@ The set from SI contains almost thirty columns of different data. I will not exa
  Hashmap &\parbox[t]{7cm}{Hash table algorithm works by associating keys and their values in one-to-one mapping and storing them in a hashmap \parencite{Hashmap}} & \\ \hline
 \end{tabular}
 \caption{Description of variable and which columns from the SI set that is used to measure the variable}
-\label{IC} %% information colum    
+\label{des} %% Description   
 \end{center}
 \end{table}
 
@@ -297,17 +299,73 @@ The set from SI contains almost thirty columns of different data. I will not exa
 In order to describe the algorithm of measuring WIP limit per day, I will do it stepwise.  A detailed example on how the algorithm works is listed in the \ref{sec:Example}.
 
 \subsection{Step 1: Gather all dates into a Hashmap}
+\label{sub:stepOne}
 First step of WIP measurement is adding every date in the date from column into a hashmap. Hashmaps contains key-value pairs, which will be respectively Date and Integer in this algorithm.  The date will contain the 'date from' column and the counter is number of occurrence of the date also known as WIP for that date. 
+
+Pseudocode step 1:
  \begin{lstlisting}
 FOR date IN date_from_column:WIP = nr_of_date_ occurrence(date)Hashmap.put(date, WIP)nr_of_date_ occurrence(Date date) FOR d IN date_from_column DO	IF d EQUAL date DO		nr_of_date_ occurrence++RETURN nr_of_date_ occurrence \end{lstlisting}
 \subsection{Step 2: Gather the remaining days}
+ \label{sub:stepTwo}
+Since the 'date from' column do not contain all dates, the algorithm will create the remaining dates.  In order to create the remaining dates, the program takes the first date and the last date from the hashmap created in previous (\ref{sub:stepOne}). Then the program checks if all the dates between the first date and the last date are in the hashmap. If the dates are not in the hashmap, the program will put the date into the hashmap.
+
+Pseudocode step 2
+ \begin{lstlisting}
+First_date //points to the first date in the hashmap Last_date //points to the last date in the the hashmap Next_date //points to the next dateNext_date = First_date // Next_date assigned before iterationWhile Next_date NOT EQUAL Last_Date DO	New_date = Next_Date + 1 //Finds the date the next date	AddToHashMap(New_date)	Next_date = New_dateaddToHashMap(Date d)	IF d NOT CONTAINS IN Hashmap THEN		Hashmap.put(date, 0) 
+ \end{lstlisting}
 
 \subsection{Step 3 Measure WIP}
+Now that all the dates are in the Hashmap, WIP per day will be measured. Iteration through the Hashmap is necessary. Through the iteration each date and WIP is extracted from the Hashmap and the new WIP is measured based on how many tasks that has been finished, illustrated by the pseudo code.
+
+Pseudocode step 3
+The hashmap used in this pseudo code is the hashmap generated in section \ref{sub:stepTwo}.
+\begin{lstlisting}lastWIP =  0CurrentWIP = 0FOR date AND WIP IN Hashmap	CurrentWIP = WIP 	Nr_of_finishedDates = Occurrence_of_date(date)  WIP_measured = CurrentWIP ? Nr_of_finishedDates + lastWIPnewHashMap.put(date, WIP_measured)currentWIP = WIP_measured Occurrence_of_date(Date date)	FOR d in The Date To column		IF date AFTER d DO			Nr_of_dates_to_decrement ++Return Nr_of_dates_to_decrement 
+ \end{lstlisting}
 
 \subsection{Example}
 \label{sec:Example}
+Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis. The green line indicates the duration of the task. This table indicates how many tasks in progress (WIP). On 2008-10-12, tasks 3, 5 and 6 are in progress, which means WIP is three for 2008-10-12.  
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=150mm]{Picture/wip_example.jpg}
+\caption{Illustrating a WIP timeline}
+\label{wip_timeline}
+\end{figure}
 
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{| l | l | p{5cm} |}
+    \hline
+   Task ID &   Date From  & Date To\\ \hline
+     1 & 2008-10-07 & 2008-10-08   \\ \hline     2 & 2008-10-07 & 2008-10-07   \\ \hline     3 & 2008-10-09 & 2008-10-16   \\ \hline     4 & 2008-10-09 & 2008-10-10   \\ \hline     5 & 2008-10-09 & 2008-11-04   \\ \hline     6 & 2008-10-10 & 2008-10-05   \\ \hline     7 & 2008-10-10 & 2008-10-10   \\ \hline     8 & 2008-10-13 & 2008-10-15   \\ \hline     9 & 2008-10-13 & 2008-10-15   \\ \hline
+    \end{tabular}
+\caption{Showing Task ID, Date From and Date to}
+\label{wt:2} %%  wip table 2
+\end{center}
+\end{table}
 
+\begin{center}
+    \begin{tabular}{| l | l | p{5cm} |}
+    \hline
+   Task ID &   Date From  & Date To\\ \hline
+     10 & 2008-10-07 & 10\\ \hline     11 & 2008-10-07 &    43\\ \hline     12 & 2008-10-09 & 65   \\ \hline     13 & 2008-10-09 & 30   \\ \hline     14 & 2008-10-09 & 25   \\ \hline     15 & 2008-10-10 & 85   \\ \hline     16 & 2008-10-10 & 57   \\ \hline     17 & 2008-10-13 & 24   \\ \hline     18 & 2008-10-13 & ?  \\ \hline
+    \end{tabular}
+    \captionof{table}{Showing Task ID, Date From and Date to}
+
+\label{wt:3} %%  wip table 3
+\end{center}
+
+In the example dates from figure \ref{wip_timeline} and from table \ref{wt:2} (skal gel ha med table tre her go) will be used to illustrate how the algorithm measure WIP
+
+\subsubsection{First step}
+\label{subsubsec:ft}
+First the algorithm will do a look-up on the date 2008-10-07 referred with task ID one and two in WIP Table 2 and measure the current WIP counter, which is two, because its two tasks in progress on this date. Then, the program will put the date and the current WIP into a hashmap. Next, the algorithm will see if any task was done in the last period, since task one and two is the two first tasks to be measured in this example, there's no task finished in the period and there?s no WIP from other tasks, so the current WIP at 2008-10-07 is two illustrated by figure \ref{wip_timeline}. 
+\subsubsection{Second step}
+The program will do a look-up on the date 2008-10-09 referred with task ID three, four and five in table \ref{wt:2}  and measure the current WIP for this date, which is three. Then, the program will put the date and the current WIP into a hashmap.Next, the program will see that two tasks were done in the period of 2008-10-07 to 2008-10-09. So the program will measure that three new tasks were started at 2008-10-09, two where finished and the WIP from last date measure where two, so the calculation of WIP at 2008-10-09 is 3-2+2, which gives a WIP of three on 2008-10-09 illustrated by figure \ref{wip_timeline}. 
+
+\subsubsection{Third step}The program will do a look-up on the date 2008-10-10 referred with task ID six and seven in table \ref{wt:2}  and measure the current WIP for this date, which is two. Then, the program will put the date and the current WIP into a hashmap.Next, the program will see that no task where done in the period 2008-10-09 to 2008-10-10 and the currently WIP is three, so this gives a new WIP of 5 illustrated by figure \ref{wip_timeline}. 
+
+\subsubsection{Fourth step}The program will do a look-up on the date 2008-10-13 referred with task ID eight and nine in table \ref{wt:2}  and measure the current WIP for this date, which is two. Then, the program will put the date and the current WIP into a hashmap. Next, the program will look at the period between 2008-10-10 and 2008-10-13, and see that task four and seven was done in this period. The WIP at 2008-10-13 will be $2-2+5 = 5$ as illustrated by figure \ref{wip_timeline}. As illustrated by the example, WIPs are not decrement until the finished date is passed, even though the task is done on the date, it's also worked on the same date, therefore I have chosen to decrement the WIP after each date is passed.
 
 \chapter{Planning the project}        %% ... or ??
 
