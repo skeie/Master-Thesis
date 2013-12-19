@@ -6,6 +6,43 @@
 \usepackage[section]{placeins}
 \usepackage{amsmath}
 
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  rulecolor=\color{blue},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=0,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
+
 \setlength{\parskip}{\baselineskip}%
 \setlength{\parindent}{0pt}%
 
@@ -209,6 +246,7 @@ In this thesis the plan is to measure the data in one big step, where I measure 
 The set from SI contains almost thirty columns of different data. I will not examine every column in my thesis, but the columns I will use will be given a brief introduction to here.
 \newpage
 \subsection{The columns}
+\begin{table}[ht]
 \begin{center}
     \begin{tabular}{| l | p{5cm} |}
     \hline
@@ -221,8 +259,13 @@ The set from SI contains almost thirty columns of different data. I will not exa
     \hline
     Team &States the team who has been working on the task.\\ \hline
     \end{tabular}
+\caption{Information about the columns from the SI dataset}
+\label{IC} %% information columns
 \end{center}
+\end{table}
+
 \subsection {Algorithms for calculating WIP, backlog and throughput}
+\begin{table}[ht]
 \begin{center}
     \begin{tabular}{| l | l | p{5cm} |}
     \hline
@@ -231,8 +274,40 @@ The set from SI contains almost thirty columns of different data. I will not exa
     Throughput	& Number of tasks finished on a given day & Date To \\ \hline
     Backlog & Number of items in backlog on a given day & Created Date and Date From\\ \hline
  Hashmap &\parbox[t]{7cm}{Hash table algorithm works by associating keys and their values in one-to-one mapping and storing them in a hashmap \parencite{Hashmap}} & \\ \hline
-    \end{tabular}
+\end{tabular}
+\caption{Description of variable and which columns from the SI set that is used to measure the variable}
+\label{IC} %% information colum    
 \end{center}
+\end{table}
+
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{| l | p{5cm} |}
+    \hline
+     Key - Date  & Value - Integer\\ \hline
+     2008-10-07 & 2   \\ \hline     2008-10-08 & 0   \\ \hline     2008-10-09 & 0   \\ \hline     2008-10-10 & 2   \\ \hline     2008-10-11 & 3   \\ \hline     2008-10-12 & 0   \\ \hline     2008-10-13 & 0   \\ \hline     2008-10-14 & 2   \\ \hline     2008-10-15 & 0   \\ \hline     2008-10-16 & 0   \\ \hline     2008-10-17 & 0   \\ \hline     2008-10-18 & 0   \\ \hline     2008-10-19 & 0   \\ \hline
+     %%hva er dette til?
+    \end{tabular}
+\caption{skrive noe spennede}
+\label{IC} %% information columns
+\end{center}
+\end{table}
+
+\subsection {WIP-limit per day}
+In order to describe the algorithm of measuring WIP limit per day, I will do it stepwise.  A detailed example on how the algorithm works is listed in the \ref{sec:Example}.
+
+\subsection{Step 1: Gather all dates into a Hashmap}
+First step of WIP measurement is adding every date in the date from column into a hashmap. Hashmaps contains key-value pairs, which will be respectively Date and Integer in this algorithm.  The date will contain the 'date from' column and the counter is number of occurrence of the date also known as WIP for that date. 
+ \begin{lstlisting}
+FOR date IN date_from_column:WIP = nr_of_date_ occurrence(date)Hashmap.put(date, WIP)nr_of_date_ occurrence(Date date) FOR d IN date_from_column DO	IF d EQUAL date DO		nr_of_date_ occurrence++RETURN nr_of_date_ occurrence \end{lstlisting}
+\subsection{Step 2: Gather the remaining days}
+
+\subsection{Step 3 Measure WIP}
+
+\subsection{Example}
+\label{sec:Example}
+
+
 
 \chapter{Planning the project}        %% ... or ??
 
