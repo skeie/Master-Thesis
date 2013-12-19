@@ -1,14 +1,15 @@
 \documentclass[UKenglish]{ifimaster}  %% ... or USenglish or norsk or nynorsk
-%%\usepackage[latin1]{inputenc} 
 \usepackage[latin1]{inputenc}        %% ... or utf8 or applemac
 \usepackage[T1]{fontenc,url}
-\usepackage{listings}
 \urlstyle{sf}
 \usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx}
 \usepackage[section]{placeins}
 \usepackage{amsmath}
+
 \setlength{\parskip}{\baselineskip}%
 \setlength{\parindent}{0pt}%
+
+
 \title{Do Work in Progress (WIP) - Limit in Agile Software Development Matter?}        %% ... or whatever
 \author{Truls Skeie}                      %% ... or whoever 
 \usepackage[
@@ -160,7 +161,7 @@ The citation by Joyce above is the close to definition of what lead time is. Thi
 \end{table}
 
 \section{Chrun}
-
+%%fylle inn?
 \section {Limit WIP vs. Unlimited WIP}
 There's been done some research on how the throughput, leadtime and how developers experience WIP limit and unlimited WIP
 Simulation of software maintenance process, with and without a work-in-process limit has done research on limit WIP vs. unlimited WIP, one of the result from this paper was at the end of a simulation, the average of closed issued was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds like; developers are more focused on fixing few issues, because the number of issues they can work on is limited.  Because the limit of WIP, the developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduce overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on a another issue \parencite{SMR:SMR1599}.
@@ -198,6 +199,40 @@ In this section information about how my program will measure WIP, Items in back
 \end{table}
 
 The Date standard is specified as yyyy-mm-dd. \\When I write iterate it means looping through the data with a for each-loop. \\Quarter of a year is defined as January, February and March (Q1); April, May and June (Q2); July, August and September.\\ (Q3); and October, November and December (Q4) according to Investopedia \parencite{Quarter}
+
+\section{Analyzed Data}
+In this thesis the plan is to measure the data in one big step, where I measure all the teams and data in some given interval. I would also measure the data in small steps, when SI used Scrum, when SI was in the transforming phase and when they had changed to Kanban. Also I will measure WIP values for a given day, date, week, month, quarter and year. This will give me data to compare between teams in a specific interval.
+I will reuse some data from the paper from Quantifying the Effect of Using Kanban vs. Scrum: A Case Study \parencite{Dag} Mainly I will look at churn and lead-time measured in the paper and compare them with WIP and throughput between teams. Hopefully the data measured will give me some sense of what WIP limit does for SI and which factors helping determine if WIP-limit matters in agile software development
+Hopefully I would gather or get some other underlying data, so I will be able to compare my work, on the set from SI to the other data.
+
+\section{Information about the dataset}
+The set from SI contains almost thirty columns of different data. I will not examine every column in my thesis, but the columns I will use will be given a brief introduction to here.
+\newpage
+\subsection{The columns}
+\begin{center}
+    \begin{tabular}{| l | p{5cm} |}
+    \hline
+     Column & Description\\ \hline
+     Created Date & When a task is put in backlog \\ \hline
+     Date From & When a given task is taken from the backlog\\ \hline
+     Date to & When a task is done. Done is defined by SI to be ready for release. \\ \hline
+    Lead Time & The amount of time elapsed from the date the task was created until the tasks has finished  \\ \hline
+   Process Type &States the process used by the team which contains Kanban or Scrum \\
+    \hline
+    Team &States the team who has been working on the task.\\ \hline
+    \end{tabular}
+\end{center}
+\subsection {Algorithms for calculating WIP, backlog and throughput}
+\begin{center}
+    \begin{tabular}{| l | l | p{5cm} |}
+    \hline
+    Variable &	Description	 & Columns from SI\\ \hline 
+    Wip-Limit per day & \parbox[t]{5cm}{The number of items in progress on the given day} & Date From and Date To. \\ \hline
+    Throughput	& Number of tasks finished on a given day & Date To \\ \hline
+    Backlog & Number of items in backlog on a given day & Created Date and Date From\\ \hline
+ Hashmap &\parbox[t]{7cm}{Hash table algorithm works by associating keys and their values in one-to-one mapping and storing them in a hashmap \parencite{Hashmap}} & \\ \hline
+    \end{tabular}
+\end{center}
 
 \chapter{Planning the project}        %% ... or ??
 
