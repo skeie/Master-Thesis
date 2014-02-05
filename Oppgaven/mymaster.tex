@@ -2,13 +2,21 @@
 \usepackage[latin1]{inputenc}        %% ... or utf8 or applemac
 \usepackage[T1]{fontenc,url}
 \urlstyle{sf}
-\usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx,caption}
+\usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx,caption,nameref,caption}
 \usepackage[section]{placeins}
-\usepackage{amsmath}
+\usepackage{amsmath,lipsum}
 \setcounter{secnumdepth}{3}
 
 \usepackage{listings}
 \usepackage{color}
+\newcommand{\mypm}{\mathbin{\smash{%
+\raisebox{0.35ex}{%
+            $\underset{\raisebox{0.5ex}{$\smash -$}}{\smash+}$%
+            }%
+        }%
+    }%
+}
+
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -194,10 +202,12 @@ This is a simple example to illustrate throughput and different task sizes. Team
 \end{center}
 \end{table}
 
-\section{Chrun}
-%%fylle inn?
+\section{Churn}
+"Churn is defined as the sum of the number of lines added, deleted, and modified in the source code" \parencite{Dag}.
+In the set 
 
 \section{WIP}
+\label{WIPsec}
 ''WIP-limits seem to be the worst understood part of the Kanban system. When used properly, it exposes bottlenecks and reduces lead time for individual work items. Used improperly, it can starve developers for work or result in too many people working on the same work items.'' \parencite{Shinkle}
 
 
@@ -230,7 +240,7 @@ As notice, there's no clear rule on how to deal with WIP and how to determine WI
 \section {Limit WIP vs. Unlimited WIP}
 Simulation of software maintenance process, with and without a work- in-process limit did a research on how the throughput and how developers experience WIP limit and unlimited WIP\parencite{SMR:SMR1599}.
 
-One of the result from this paper was at the end of a simulation, the average of closed issued was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds like; developers are more focused on fixing few issues, because the number of issues they can work on is limited.  Because the limit of WIP, the developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduce overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on a another issue. The study also showed that limit WIP can improve throughput and work ef?ciency. \parencite{SMR:SMR1599}.
+One of the result from this paper was at the end of a simulation, the average of closed issued was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds like; developers are more focused on fixing few issues, because the number of issues they can work on is limited.  Because the limit of WIP, the developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduce overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on a another issue. The study also showed that limit WIP can improve throughput and work efficiency. \parencite{SMR:SMR1599}.
 
 \section{Software Innovation(SI)}
 Software Innovation is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control.
@@ -240,19 +250,25 @@ Software Innovation has approximately 300 employees, and has offices in Oslo, Co
 
 \part{The project}                    %% ... or ??
 \chapter{Research Questions}
-In this thesis the overall research question in this thesis is to study the effects of WIP limits in particular for SI. Some of the goals are:
+In this thesis the overall research question will be to study the effects of WIP limits for SI. Hopefully the research will give answers to the following question:
 \begin{itemize} 
 \item See if the exist an optimal WIP-limit for a given context.
 \item How to best find the optimal WIP-limit
-\item Which various parameters taking in to account in order to optimize WIP. 
+\item Which parameters to consider in order to optimize WIP. 
 \end{itemize}
+
 \chapter{Research Methods}
-%%Skrive om weekends
-In this section information about how my program will measure WIP, Items in backlog and throughput per date, per month, per quarter and per year will be explained. First off, there will be describe how the program do the measure in words, then the algorithm will be explained using algorithm in Pseudocode \parencite{jd}
+In order to see if WIP matters in agile method a raw dataset from SI will be analyzed. The SI set contains tasks recorded from 2008 to 2013.  The dataset contains various columns, but the columns of interest are listed in table \ref{IC}. In the table \ref{des} is a description of which columns the program needs in order to measure WIP, Throughput, Bugs, churn and Lead time.  
+Since there is no software for analyzing the raw data, a program was made. A program will transform the raw data from SI into quantitative data, which will be analyzed using SPSS.  How the program will measure WIP will be described in section \ref{WPD},  Bug in section \ref{Bug}, Throughput in section \ref{TP} and churn in section \ref{churn}. The data set has already defined lead time. Information about how the program will measure WIP, throughput, bugs and churn will be explained in this chapter. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a detailed description using Pseudocode\parencite{jd} will be provided. 
 
-The set from SI only contains dates when tasks was created, added to backlog, pulled from backlog or finished.  In order to measure average per month, quarter and year the program needs to know WIP and items in backlog for each day. In order to do so, the program will generate the remaining days.
 
-Table \ref {dataset} show an excerpt from the dataset, as the reader may notice, the date 2008-10-09 is not in the set, so in this case, the program has to create 2008-10-09 and add it to the set
+
+%% skrive noe om spss.
+
+
+%%The set from SI only contains dates when tasks was created, added to backlog, pulled from backlog or finished.  In order to measure average per month, quarter and year the program needs to know WIP and items in backlog for each day. In order to do so, the program will generate the remaining days.
+
+Table \ref {dataset} show an excerpt from the SI dataset.  The date 2008-10-09 is not in the set so the the program has to create 2008-10-09 and add it to the set in order to calculate WIP, throughput, bugs and lead time per day. 
 
 \begin{table}[ht]
 \begin{center}
@@ -271,16 +287,21 @@ Table \ref {dataset} show an excerpt from the dataset, as the reader may notice,
 \end{center}
 \end{table}
 
-The Date standard is specified as yyyy-mm-dd. \\
-When I write iterate it means looping through the data with a for each-loop. \\
-Quarter of a year is defined as January, February and March (Q1); April, May and June (Q2); July, August and September.\\ (Q3); and October, November and December (Q4) according to Investopedia \parencite{Quarter}
-
-\section{Analyzed Data}
-In this thesis the plan is to measure the data in one big step, where I measure all the teams and data in some given interval. I would also measure the data in small steps, when SI used Scrum, when SI was in the transforming phase and when they had changed to Kanban. Also I will measure WIP values for a given day, date, week, month, quarter and year. This will give me data to compare between teams in a specific interval.
-
-I will reuse some data from the paper from Quantifying the Effect of Using Kanban vs. Scrum: A Case Study \parencite{Dag} Mainly I will look at churn and lead-time measured in the paper and compare them with WIP and throughput between teams. Hopefully the data measured will give me some sense of what WIP limit does for SI and which factors helping determine if WIP-limit matters in agile software development
-
-Hopefully I would gather or get some other underlying data, so I will be able to compare my work, on the set from SI to the other data.
+\subsection{Information about how the measurement is done}
+\begin{itemize}
+\item The Date standard is specified as yyyy-mm-dd. 
+\item When I write iterate it means looping through the data with a for each-loop. 
+\item All seven days in the week are taken into account when measuring WIP, throughput, bugs and lead time included Saturdays and Sundays
+\item Quarter of a year is defined as: 
+\begin{itemize}
+\item January, February and March (Q1)
+\item April, May and June (Q2)
+\item July, August and September.(Q3)
+\item October. November and December (Q4)\parencite{Quarter}
+\end{itemize}
+\end{itemize}
+\section{Swag}
+The raw data from the SI set will first be ana
 
 \section{Information about the dataset}
 The set from SI contains almost thirty columns of different data. I will not examine every column in my thesis, but the columns I will use will be given a brief introduction to here.
@@ -304,15 +325,17 @@ The set from SI contains almost thirty columns of different data. I will not exa
 \end{center}
 \end{table}
 
-\subsection {Algorithms for calculating WIP, backlog and throughput}
+\subsection {Columns needed for calculating WIP, backlog and throughput}
 \begin{table}[ht]
 \begin{center}
     \begin{tabular}{| l | l | p{5cm} |}
     \hline
     Variable &	Description	 & Columns from SI\\ \hline 
-    Wip-Limit per day & \parbox[t]{5cm}{The number of items in progress on the given day} & Date From and Date To. \\ \hline
+    WIP-Limit per day & \parbox[t]{5cm}{The number of items in progress on the given day} & Date From and Date To. \\ \hline
     Throughput	& Number of tasks finished on a given day & Date To \\ \hline
     Backlog & Number of items in backlog on a given day & Created Date and Date From\\ \hline
+    Lead time & WRITE & Write \\ \hline
+    churn & W & W \\ \hline
  Hashmap &\parbox[t]{7cm}{Hash table algorithm works by associating keys and their values in one-to-one mapping and storing them in a hashmap \parencite{Hashmap}} & \\ \hline
 \end{tabular}
 \caption{Description of variable and which columns from the SI set that is used to measure the variable}
@@ -320,35 +343,11 @@ The set from SI contains almost thirty columns of different data. I will not exa
 \end{center}
 \end{table}
 
-\begin{table}[ht]
-\begin{center}
-    \begin{tabular}{| l | p{5cm} |}
-    \hline
-     Key - Date  & Value - Integer\\ \hline
-     2008-10-07 & 2   \\ \hline
-     2008-10-08 & 0   \\ \hline
-     2008-10-09 & 0   \\ \hline
-     2008-10-10 & 2   \\ \hline
-     2008-10-11 & 3   \\ \hline
-     2008-10-12 & 0   \\ \hline
-     2008-10-13 & 0   \\ \hline
-     2008-10-14 & 2   \\ \hline
-     2008-10-15 & 0   \\ \hline
-     2008-10-16 & 0   \\ \hline
-     2008-10-17 & 0   \\ \hline
-     2008-10-18 & 0   \\ \hline
-     2008-10-19 & 0   \\ \hline
-     %%hva er dette til?
-    \end{tabular}
-\caption{skrive noe spennede}
-\label{IC} %% information columns
-\end{center}
-\end{table}
-
 \subsection {WIP-limit per day}
-In order to describe the algorithm of measuring WIP limit per day, I will do it stepwise.  A detailed example on how the algorithm works is listed in the \ref{sec:Example}.
+\label{WPD}
+The algorithm To describe the algorithm of measuring WIP limit per day, A detailed example on how the algorithm works is listed in the \ref{sec:Example}.
 
-\subsection{Step 1: Gather all dates into a Hashmap}
+\subsubsection{Step 1: Gather all dates into a Hashmap}
 \label{sub:stepOne}
 First step of WIP measurement is adding every date in the date from column into a hashmap. Hashmaps contains key-value pairs, which will be respectively Date and Integer in this algorithm.  The date will contain the 'date from' column and the counter is number of occurrence of the date also known as WIP for that date. 
 
@@ -364,7 +363,7 @@ FOR d IN date_from_column DO
 		nr_of_date_occurrence++
 return nr_of_date_occurrence
  \end{lstlisting}
-\subsection{Step 2: Gather the remaining days}
+\subsubsection{Step 2: Gather the remaining days}
  \label{sub:stepTwo}
 Since the 'date from' column do not contain all dates, the algorithm will create the remaining dates.  
 In order to create the remaining dates, the program takes the first date and the last date from the hashmap created in previous (\ref{sub:stepOne}). Then the program checks if all the dates between the first date and the last date are in the hashmap. If the dates are not in the hashmap, the program will put the date into the hashmap.
@@ -385,7 +384,7 @@ addToHashMap(Date d)
 		Hashmap.put(date, 0) 
  \end{lstlisting}
 
-\subsection{Step 3 Measure WIP}
+\subsubsection{Step 3 Measure WIP}
 Now that all the dates are in the Hashmap, WIP per day will be measured. Iteration through the Hashmap is necessary. Through the iteration each date and WIP is extracted from the Hashmap and the new WIP is measured based on how many tasks that has been finished, illustrated by the pseudo code.
 
 Pseudocode step 3
@@ -410,15 +409,16 @@ Return Nr_of_dates_to_decrement
 
 \subsection{Example}
 \label{sec:Example}
-Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis. The green line indicates the duration of the task. This table indicates how many tasks in progress (WIP). On 2008-10-12, tasks 3, 5 and 6 are in progress, which means WIP is three for 2008-10-12.  
+Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis. The green line indicates the duration of the task. This table indicates how many tasks in progress (WIP). On 2008-10-12, tasks 3, 5 and 6 are in progress, which means WIP is 3 for 2008-10-12.  
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=150mm]{Picture/wip_example.jpg}
+\hspace*{-2.2in}
+\includegraphics[width=23cm]{Picture/wip_example.jpg}
 \caption{Illustrating a WIP timeline}
 \label{wip_timeline}
 \end{figure}
-
-\begin{table}[ht]
+\newpage
+\begin{table}[!ht]
 \begin{center}
     \begin{tabular}{| l | l | p{5cm} |}
     \hline
@@ -428,53 +428,34 @@ Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis.
      3 & 2008-10-09 & 2008-10-16   \\ \hline
      4 & 2008-10-09 & 2008-10-10   \\ \hline
      5 & 2008-10-09 & 2008-11-04   \\ \hline
-     6 & 2008-10-10 & 2008-10-05   \\ \hline
+     6 & 2008-10-10 & 2008-11-05   \\ \hline
      7 & 2008-10-10 & 2008-10-10   \\ \hline
      8 & 2008-10-13 & 2008-10-15   \\ \hline
-     9 & 2008-10-13 & 2008-10-15   \\ \hline
+     9 & 2008-10-13 & 2008-10-13   \\ \hline
     \end{tabular}
 \caption{Showing Task ID, Date From and Date to}
 \label{wt:2} %%  wip table 2
 \end{center}
 \end{table}
 
-\begin{center}
-    \begin{tabular}{| l | l | p{5cm} |}
-    \hline
-   Task ID &   Date From  & Date To\\ \hline
-     10 & 2008-10-07 & 10\\ \hline
-     11 & 2008-10-07 &  43\\ \hline
-     12 & 2008-10-09 & 65   \\ \hline
-     13 & 2008-10-09 & 30   \\ \hline
-     14 & 2008-10-09 & 25   \\ \hline
-     15 & 2008-10-10 & 85   \\ \hline
-     16 & 2008-10-10 & 57   \\ \hline
-     17 & 2008-10-13 & 24   \\ \hline
-     %18 & 2008-10-13 & ?  \\ \hline
-    \end{tabular}
-    \captionof{table}{Showing Task ID, Date From and Date to}
-
-\label{wt:3} %%  wip table 3
-\end{center}
-
-In the example dates from figure \ref{wip_timeline} and from table \ref{wt:2} (skal gel ha med table tre her go) will be used to illustrate how the algorithm measure WIP
+In the example dates from figure \ref{wip_timeline} and from table \ref{wt:2} will be used to illustrate how the algorithm measure WIP
 
 \subsubsection{First step}
 \label{subsubsec:ft}
-First the algorithm will do a look-up on the date 2008-10-07 referred with task ID one and two in WIP Table 2 and measure the current WIP counter, which is two, because its two tasks in progress on this date. Then, the program will put the date and the current WIP into a hashmap. 
-Next, the algorithm will see if any task was done in the last period, since task one and two is the two first tasks to be measured in this example, there's no task finished in the period and there's no WIP from other tasks, so the current WIP at 2008-10-07 is two illustrated by figure \ref{wip_timeline}. 
+First the algorithm will do a look-up on the date 2008-10-07 referred with task ID one and two in table \ref{wt:2} and measure the current WIP counter, which is two, because its two tasks in progress on this date. After this the program will put the date and the current WIP into a hashmap. 
+Now the algorithm will see if any task was done in the last period, since task one and two is the two first tasks to be measured in this example, there's no task finished in the period and there's no current WIP from other tasks, so the current WIP at 2008-10-07 is two illustrated by figure \ref{wip_timeline}. 
 \subsubsection{Second step}
 The program will do a look-up on the date 2008-10-09 referred with task ID three, four and five in table \ref{wt:2}  and measure the current WIP for this date, which is three. Then, the program will put the date and the current WIP into a hashmap.
 Next, the program will see that two tasks were done in the period of 2008-10-07 to 2008-10-09. So the program will measure that three new tasks were started at 2008-10-09, two where finished and the WIP from last date measure where two, so the calculation of WIP at 2008-10-09 is 3-2+2, which gives a WIP of three on 2008-10-09 illustrated by figure \ref{wip_timeline}. 
 
 \subsubsection{Third step}
-The program will do a look-up on the date 2008-10-10 referred with task ID six and seven in table \ref{wt:2}  and measure the current WIP for this date, which is two. Then, the program will put the date and the current WIP into a hashmap.
-Next, the program will see that no task where done in the period 2008-10-09 to 2008-10-10 and the currently WIP is three, so this gives a new WIP of 5 illustrated by figure \ref{wip_timeline}. 
+The program will do a look-up on the date 2008-10-10 referred with task ID six and seven in table \ref{wt:2}  and measure the current WIP for this date, which is two. Next the program will put the date and the current WIP into a hashmap.
+Last the program will see that no task where done in the period 2008-10-09 to 2008-10-10 and the currently WIP is three, so this gives a new WIP of 5 illustrated by figure \ref{wip_timeline}. 
 
 \subsubsection{Fourth step}
-The program will do a look-up on the date 2008-10-13 referred with task ID eight and nine in table \ref{wt:2}  and measure the current WIP for this date, which is two. Then, the program will put the date and the current WIP into a hashmap. 
-Next, the program will look at the period between 2008-10-10 and 2008-10-13, and see that task four and seven was done in this period. The WIP at 2008-10-13 will be $2-2+5 = 5$ as illustrated by figure \ref{wip_timeline}. 
-As illustrated by the example, WIPs are not decrement until the finished date is passed, even though the task is done on the date, it's also worked on the same date, therefore I have chosen to decrement the WIP after each date is passed.
+The program will do a look-up on the date 2008-10-13 referred with task ID eight and nine in table \ref{wt:2}  and measure the current WIP for this date, which is two. Then the program will put the date and the current WIP into a hashmap. 
+Next the program will look at the period between 2008-10-10 and 2008-10-13, and see that task four and seven was done in this period. The WIP at 2008-10-13 will be $2-2+5 = 5$ as illustrated by figure \ref{wip_timeline}. 
+As illustrated by the example, WIPs are not decrement until the finished date is passed, even though the task is done on the date, it's also worked on the same date, therefore the WIP is decrement after each date is passed.
 
 \subsection {Bug}
 \label{Bug}
@@ -503,7 +484,7 @@ Each task in the data set is label as either feature or bug as shown in figure \
 
 \begin{lstlisting}[caption=Pseudocode example of how bugs are found, label=findBug]
 void findBug()
-	while inputFile != EOF
+	while inputFile != EOF // End Of File
 		newLine = readLine()
 		if newLine.Type EQUALS 'Bug'
 			B = New Bug()
@@ -513,7 +494,7 @@ void findBug()
 			AddNewBug(B)
  \end{lstlisting}
 
-\subsection{Add Bug}
+\subsubsection{Add Bug}
 \label{addBugS}
 When adding a new bug to the data structure, each bug is gathered into a data structure based on which team the bug belongs to, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
 
@@ -551,6 +532,7 @@ return false
  \end{lstlisting}
  
  \subsection{Throughput}
+ \label{TP}
 Finding the throughput per day is quite similar to how bugs are found (described in section \ref{Bug}).  When reading in the data set a new throughput object is created for each line in the set.  Then all throughput objects are sorted based on team association. When all throughput objects are sorted, the program measure throughput. The throughput measurement is similar to the dateExists method (lines 26 to 32) in the listing \ref{addBug} stated in section \ref{addBugS}. 
 
 \newpage
@@ -566,23 +548,98 @@ void dateExists(Date d, DataStructure structure)
 			
 return false	
 \end{lstlisting}
+
+\subsection{churn}
+\label{churn}
+churn
  
-\section{Analyze the created data}
+\section{Analyzed Data}
+In this thesis the plan is to measure the data in one big step, where I measure all the teams and data in some given interval. I would also measure the data in small steps, when SI used Scrum, when SI was in the transforming phase and when they had changed to Kanban. Also I will measure WIP values for a given day, date, week, month, quarter and year. This will give me data to compare between teams in a specific interval.
+
+I will reuse some data from the paper from Quantifying the Effect of Using Kanban vs. Scrum: A Case Study \parencite{Dag} Mainly I will look at churn and lead-time measured in the paper and compare them with WIP and throughput between teams. Hopefully the data measured will give me some sense of what WIP limit does for SI and which factors helping determine if WIP-limit matters in agile software development
+
+Hopefully I would gather or get some other underlying data, so I will be able to compare my work, on the set from SI to the other data.
 From the data created i will analyze them using SPSS.
 \subsection{SPSS}
-IBM SPSS Statistics is a software product for managing data and calculating a wide variety of statistics. SPSS is built around the SPSS programming language. 
+"IBM® SPSS® Statistics is a comprehensive system for analyzing data. SPSS Statistics can take data from almost any type of file and use them to generate tabulated reports, charts and plots of distributions and trends, descriptive statistics, and complex statistical analyses." \parencite{IBM}
+
+In this master thesis function stated in figure \ref{SPSSfunctions} will be used to analyze data.
+\begin{figure}[ht]
+\begin{itemize}
+\item Case summaries
+\item Line Graph
+\item Correlation
+\caption{SPSS functions used to analyze data in this thesis}
+\label{SPSSfunctions}
+\end{itemize}
+\end{figure}
+\subsubsection{Case summaries}
+The case summarizes function is used to calculate average WIP, throughput, lead time, bugs and churn per quarter. 
+
+\subsubsection{Line Graph}
+The line graph function is used to line graph with both one and two y-axis. 
+
+\subsubsection{Correlation}
+The correlation function is used to look at the relationship between variables. In this thesis the correlation function will help determine if there are any relationship between WIP, throughput, bugs, lead time and churn.  In order to determine the relationship between variables the variables correlation goes from -1 to 1.
+\begin{itemize}
+\item If the correlation is between $ \mypm 0.4 $ it's a low correlation
+\item If the correlation is between $ \mypm 0.5-0.8$ it's a medium correlation
+\item If the correlation is between $ \mypm 0.8 $ it's a strong correlation
+\item If the correlation is positive it means that the variables are decreasing or increasing at the same time. 
+\item If the correlation is negative it means that the variables are going in the opposite direction. 
+\item If the correlation is low, it means that there is no detective pattern between the variable and there is no relationship exists between the variable.
+\item If the correlation is high, it means that the exists a pattern between the variables. 
+\end{itemize}
+
+In this thesis the focus will be on the correlation between %skrive her hva jeg gjør
 
 \subsection{Analyzed data per quarter}
+%%skrive at bug er fra da den blir rapportert
+In figure \ref{360pq} the average WIP, Throughput, Lead time and Bugs per quarter for team 360 are shown. As stated in section \ref{WIPsec}, to get best possible throughput the WIP-limit should be low. According to the figure \ref{360pq}, when WIP is high, throughput is also high and when WIP is low, throughput also low. This team data is contrary to what is suggested from Kanban and research.
+
+It's hard to find any correlation between lead time, WIP and throughput. In quarter three in 2011, lead time, WIP and throughput dropped to their lowest point. This was due to the summer vacation. In quarter two of 2011 and two of 2012 bugs dropped but both Throughput and WIP increased.  
+
+
+%\nameref{WIPsec} Why this?
 
 \begin{figure}[!htbp]
 \centering
-%%\includegraphics[scale=0.5]{Picture/All_WIP.jpg}
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{Picture/All_WIP.jpg}
-\caption{WIP for 360 per quarter}
-\label{W360pq} %% 360 per quarter
+\hspace*{-2in}
+\includegraphics[scale=0.8]{Picture/360/360_WIP_TP_BUGS_LT.jpg}
+\caption{WIP, Throughput, Lead time and Bugs for 360 per quarter}
+\label{360pq} %% 360 per quarter
 \end{figure}
+\newpage
+
+In figure \ref{Frontendpq} the average WIP, Throughput, Lead time and Bugs per quarter for team Frontend are shown
+\begin{figure}[!htbp]
+\centering
+\hspace*{-1.2in}
+\includegraphics[scale=0.7]{Picture/Frontend/Frontend-WIP-TP-LT-BUGS.jpg}
+\caption{WIP, Throughput, Lead time and Bugs for Frontend per quarter}
+\label{Frontendpq} %% fronted per quarter
+\end{figure}
+\newpage
+
+In figure \ref{Kryptonpq} the average WIP, Throughput, Lead time and Bugs per quarter for team Krypton are shown
+\begin{figure}[!htbp]
+\centering
+\hspace*{-1.8in}
+\includegraphics[scale=0.8]{Picture/Krypton/Krypton-WIP-TP-BUGS-LT.jpg}
+\caption{WIP, Throughput, Lead time and Bugs for Krypton per quarter}
+\label{Kryptonpq} %% fronted per quarter
+\end{figure}
+\newpage
 
 
+In figure \ref{Neonpq} the average WIP, Throughput, Lead time and Bugs per quarter for team Neon are shown
+\begin{figure}[!htbp]
+\centering
+\hspace*{-1.2in}
+\includegraphics[scale=1.5]{Picture/Neon/Neon-WIP-TP-BUGS-LT.jpg}
+\caption{WIP, Throughput, Lead time and Bugs for Neon per quarter}
+\label{Neonpq} %% fronted per quarter
+\end{figure}
 
 \chapter{Planning the project}        %% ... or ??
 
