@@ -6,9 +6,10 @@
 \usepackage[section]{placeins}
 \usepackage{amsmath,lipsum}
 \setcounter{secnumdepth}{3}
-
+\interfootnotelinepenalty=10000
 \usepackage{listings}
 \usepackage{color}
+
 \newcommand{\mypm}{\mathbin{\smash{%
 \raisebox{0.35ex}{%
             $\underset{\raisebox{0.5ex}{$\smash -$}}{\smash+}$%
@@ -204,7 +205,7 @@ This is a simple example to illustrate throughput and different task sizes. Team
 
 \section{Churn}
 "Churn is defined as the sum of the number of lines added, deleted, and modified in the source code" \parencite{Dag}.
-In the set 
+Churn is often used to see how big each task is.
 
 \section{WIP}
 \label{WIPsec}
@@ -250,6 +251,7 @@ Software Innovation has approximately 300 employees, and has offices in Oslo, Co
 
 \part{The project}                    %% ... or ??
 \chapter{Research Questions}
+\label{chap:RQ}
 In this thesis the overall research question will be to study the effects of WIP limits for SI. Hopefully the research will give answers to the following question:
 \begin{itemize} 
 \item See if the exist an optimal WIP-limit for a given context.
@@ -258,56 +260,53 @@ In this thesis the overall research question will be to study the effects of WIP
 \end{itemize}
 
 \chapter{Research Methods}
-In order to see if WIP matters in agile method a raw dataset from SI will be analyzed. The SI set contains tasks recorded from 2008 to 2013.  The dataset contains various columns, but the columns of interest are listed in table \ref{IC}. In the table \ref{des} is a description of which columns the program needs in order to measure WIP, Throughput, Bugs, churn and Lead time.  
-Since there is no software for analyzing the raw data, a program was made. A program will transform the raw data from SI into quantitative data, which will be analyzed using SPSS.  How the program will measure WIP will be described in section \ref{WPD},  Bug in section \ref{Bug}, Throughput in section \ref{TP} and churn in section \ref{churn}. The data set has already defined lead time. Information about how the program will measure WIP, throughput, bugs and churn will be explained in this chapter. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a detailed description using Pseudocode\parencite{jd} will be provided. 
+In order to try answering the research questions stated in chapter \ref{chap:RQ} a dataset from SI will be analyzed. The set from SI contains programing tasks recorded from 2008 to 2013.  The data set is represented in a excel document.  The excel document contains various columns, but the columns of interest are listed in table \ref{IC}. Table \ref {dataset} shows an excerpt from the columns in the excel document. In table \ref{des} is a description of which columns the program needs in order to measure WIP, throughput, bugs and churn. Lead time for each task is already defined in the excel document, so lead time will be extracted from the data set.
+ 
+Since there is no software for generating WIP, throughput, bugs and churn per day from the data set, a program was made. The program will transform the raw data from the excel document into quantitative data, which will be analyzed using SPSS. How the program will generate WIP will be described in section \ref{WPD},  bug in section \ref{Bug}, throughput in section \ref{TP} and churn in section \ref{churn}. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a detailed description using Pseudocode\parencite{jd} will be provided. 
 
-
-
-%% skrive noe om spss.
 
 
 %%The set from SI only contains dates when tasks was created, added to backlog, pulled from backlog or finished.  In order to measure average per month, quarter and year the program needs to know WIP and items in backlog for each day. In order to do so, the program will generate the remaining days.
 
-Table \ref {dataset} show an excerpt from the SI dataset.  The date 2008-10-09 is not in the set so the the program has to create 2008-10-09 and add it to the set in order to calculate WIP, throughput, bugs and lead time per day. 
-
-\begin{table}[ht]
+\begin{table}[!ht]
 \begin{center}
-    \begin{tabular}{| l | l | l | l |}
+\begin{tabular}{| l | l | l | l | l | l | l |}
     \hline
-    Created Date\\ \hline
-    2008-10-07\\ \hline
-    2008-10-07 \\ \hline
-    2008-10-07 \\ \hline
-    2008-10-08\\ \hline
-    2008-10-08\\ \hline
-   2008-10-10\\ \hline
+    ID	& Type &  Created Date & From Day & Date To & Lead Time \\ \hline
+    3027 & Bug & 2008-10-07 &  2008-10-09 & 2008-10-16 & 20\\ \hline
+    3028 & Bug  & 2008-10-07 & 2008-10-07 & 2008-10-08 & 10\\ \hline
+    3029 & Feature & 2008-10-07 &  2008-12-30	 & 2008-12-30 & 105\\ \hline
+    3030 & Feature & 2008-10-07 & 2008-10-07	& 2008-10-07 & 1\\ \hline
+    3035 & Bug & 2008-10-08 & 2008-11-20 & 2008-11-28 & 17\\ \hline
+    3037 & Feature & 2008-10-08 &  2008-10-19	 & 2008-10-19 & 7\\ \hline
+    3040 & Bug & 2008-10-10 &  2008-11-19 & 2008-11-19 & 48\\ \hline
     \end{tabular}
 \caption{Excerpt from the dataset}
-\label{dataset} %% throughput table
+\label{dataset}
 \end{center}
 \end{table}
+\newpage
 
 \subsection{Information about how the measurement is done}
+%%skrive om denne i inledningen?
+\label{sec:information}
 \begin{itemize}
 \item The Date standard is specified as yyyy-mm-dd. 
 \item When I write iterate it means looping through the data with a for each-loop. 
-\item All seven days in the week are taken into account when measuring WIP, throughput, bugs and lead time included Saturdays and Sundays
+\item All seven days in the week are taken into account when measuring included Saturdays and Sundays
 \item Quarter of a year is defined as: 
 \begin{itemize}
 \item January, February and March (Q1)
 \item April, May and June (Q2)
 \item July, August and September.(Q3)
-\item October. November and December (Q4)\parencite{Quarter}
+\item October. November and December (Q4)
 \end{itemize}
+\parencite{Quarter}
 \end{itemize}
-\section{Swag}
-The raw data from the SI set will first be ana
 
-\section{Information about the dataset}
-The set from SI contains almost thirty columns of different data. I will not examine every column in my thesis, but the columns I will use will be given a brief introduction to here.
 \newpage
 \subsection{The columns}
-\begin{table}[ht]
+\begin{table}[!ht]
 \begin{center}
     \begin{tabular}{| l | p{5cm} |}
     \hline
@@ -316,7 +315,12 @@ The set from SI contains almost thirty columns of different data. I will not exa
      Date From & When a given task is taken from the backlog\\ \hline
      Date to & When a task is done. Done is defined by SI to be ready for release. \\ \hline
     Lead Time & The amount of time elapsed from the date the task was created until the tasks has finished  \\ \hline
-   Process Type &States the process used by the team which contains Kanban or Scrum \\
+   Process Type &States the process used by the team which contains Kanban or Scrum \\ \hline
+   Type & The type column is labeled as either bug or feature depending on the type of the task \\ \hline
+   Lead time & Number of days used on a tasks \\ \hline
+   Lines added & Number of lines added to a feature or bug \\ \hline
+   Lines modified & Number of lines modified when working on a feature or bug \\ \hline
+   Lines deleted & Number of lines deleted from a bug or feature \\
     \hline
     Team &States the team who has been working on the task.\\ \hline
     \end{tabular}
@@ -324,99 +328,130 @@ The set from SI contains almost thirty columns of different data. I will not exa
 \label{IC} %% information columns
 \end{center}
 \end{table}
+\newpage
 
-\subsection {Columns needed for calculating WIP, backlog and throughput}
-\begin{table}[ht]
+\subsection {Columns needed for calculating WIP, Lead time, Churn, Bugs Throughput per day}
+\begin{table}[!ht]
 \begin{center}
-    \begin{tabular}{| l | l | p{5cm} |}
+    \begin{tabular}{| l | p{5cm} |  p{5cm} |}
     \hline
     Variable &	Description	 & Columns from SI\\ \hline 
-    WIP-Limit per day & \parbox[t]{5cm}{The number of items in progress on the given day} & Date From and Date To. \\ \hline
-    Throughput	& Number of tasks finished on a given day & Date To \\ \hline
-    Backlog & Number of items in backlog on a given day & Created Date and Date From\\ \hline
-    Lead time & WRITE & Write \\ \hline
-    churn & W & W \\ \hline
- Hashmap &\parbox[t]{7cm}{Hash table algorithm works by associating keys and their values in one-to-one mapping and storing them in a hashmap \parencite{Hashmap}} & \\ \hline
-\end{tabular}
-\caption{Description of variable and which columns from the SI set that is used to measure the variable}
-\label{des} %% Description   
+     WIP per day & \parbox[t]{5cm}{The number of items in progress on the given day} & Date From and Date To. \\ \hline
+     Throughput	& Number of tasks finished on a given day & Date To \\ \hline
+     Backlog & Number of items in backlog on a given day & Created Date and Date From\\ \hline
+     Churn & Lines added, lines modified and lines deleted added together & Lines added, lines modified and lines deleted \\ \hline
+    Bugs & The number of tasks labeled as Bug and not feature & Type \\ \hline
+    Lead time & The time used on a task & Lead time \\ \hline
+  \end{tabular}
+\caption{Information about the columns from the SI dataset}
+\label{des} %% desription
 \end{center}
 \end{table}
 
-\subsection {WIP-limit per day}
+\section {WIP-limit per day}
 \label{WPD}
-The algorithm To describe the algorithm of measuring WIP limit per day, A detailed example on how the algorithm works is listed in the \ref{sec:Example}.
 
-\subsubsection{Step 1: Gather all dates into a Hashmap}
+%% Table \ref {dataset} show an excerpt from the SI dataset.  The date 2008-10-09 is not in the set so the the program has to create 2008-10-09 and add it to the set in order to calculate WIP, throughput, bugs and lead time per day.  Skrive her at program lager hver dato for set self
+
+\subsection{Step 1: Gather all unique dates into a Arraylist}
 \label{sub:stepOne}
-First step of WIP measurement is adding every date in the date from column into a hashmap. Hashmaps contains key-value pairs, which will be respectively Date and Integer in this algorithm.  The date will contain the 'date from' column and the counter is number of occurrence of the date also known as WIP for that date. 
+First step of WIP measurement is adding every date in the date from column into a Arraylist. Before the date is added, the program checks if the date is already in the Arraylist as shown in line two in listing \ref{lst:Arraylist}. If the date contains in the Arraylist, then the date has already been measured, so the program will discard the date. The Arraylist will contain WIP objects, which will contain information about each date. The information about the object is stated in table \ref{tab:object} %%ref.
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{| l | l |}
+\hline
+Type & Variable name \\ \hline
+Date & start \\ \hline
+Date & end\\ \hline
+String & team\\ \hline
+String & processType\\ \hline
+int  & WIP\\ \hline
+\end{tabular}
+\caption{Variables of the WIP objects}
+\label{tab:object}
+\end{center}
+\end{table}
+%skrive her en tabell over hvordan objektet ser ut  
+ \footnote{Arraylist is a resizable array implementation of a list. The Arraylist class provides function for manipulate the size of the array, check the size of the list and convert the list to an array  \parencite{Arraylist}}
+ 
 
 Pseudocode step 1:
- \begin{lstlisting}
+ \begin{lstlisting}[caption={Gather all unique dates into Arraylist},label={lst:Arraylist}]
 for date IN date_from_column:
-WIP = nr_of_date_ occurrence(date)
-Hashmap.put(date, WIP)
+	if date not contains in Arralist
+		WIP = nr_of_date_occurrence(date)
+		Arraylist.put(WIP)
 
-nr_of_date_ occurrence(Date date) 
-FOR d IN date_from_column DO
+int nr_of_date_occurrence(Date date) 
+for d IN date_from_column DO
 	if d EQUALS date DO
 		nr_of_date_occurrence++
 return nr_of_date_occurrence
  \end{lstlisting}
-\subsubsection{Step 2: Gather the remaining days}
+\subsection{Step 2: Gather the remaining dates}
  \label{sub:stepTwo}
-Since the 'date from' column do not contain all dates, the algorithm will create the remaining dates.  
-In order to create the remaining dates, the program takes the first date and the last date from the hashmap created in previous (\ref{sub:stepOne}). Then the program checks if all the dates between the first date and the last date are in the hashmap. If the dates are not in the hashmap, the program will put the date into the hashmap.
+The data set from SI contains dates from 2008 to 2013, but there are some dates missing which table \ref{dataset} show. In table \ref{dataset} the date 2008-10-09 is missing. In order to generate WIP for each day the program has to create the dates that's not in the set. 
+  
+In order to create the remaining dates, the program takes the first date and the last date from the Arraylist created in previous section (\ref{sub:stepOne}) as shown in listing \ref{lst:remaining} line one and two. Then the program checks if all the dates between the first date and the last date are in the Arraylist. If the dates are not in the Arraylist, the program will put the date into the Arraylist as show in method on line ten to thirteen.
+In order to keep the pseudocode simple, the generateWIP method stated in line twelve was omit. The method creates a new WIP object and returns it.
 
-Pseudocode step 2
- \begin{lstlisting}
-First_date //points to the first date in the hashmap 
-Last_date //points to the last date in the the hashmap 
+ \begin{lstlisting}[caption={Gather the remaining dates},label={lst:remaining}]
+WIP first = Arraylist.get(0)//points to the first WIP object in the Arraylist 
+WIP last = Arraylist.get(Arraylist.size())//points to the last WIP object in the Arraylist 
 Next_date //points to the next date
-Next_date = First_date // Next_date assigned before iteration
-while Next_date NOT EQUALS Last_Date
-	New_date = Next_Date + 1 //Finds the date the next date
-	AddToHashMap(New_date)
+Next_date = first.getDate() // Next_date assigned before iteration
+while Next_date NOT EQUALS last.getDate()
+	New_date = Next_Date + 1 //Finds the next date
+	AddToArraylist(New_date)
 	Next_date = New_date
 
-addToHashMap(Date d)
-	if d NOT CONTAINS IN Hashmap
-		Hashmap.put(date, 0) 
+addToArraylist(Date d)
+	if d NOT CONTAINS IN Arraylist
+		WIP = generateWIP(d)
+		Arraylist.add(WIP) 
  \end{lstlisting}
 
-\subsubsection{Step 3 Measure WIP}
-Now that all the dates are in the Hashmap, WIP per day will be measured. Iteration through the Hashmap is necessary. Through the iteration each date and WIP is extracted from the Hashmap and the new WIP is measured based on how many tasks that has been finished, illustrated by the pseudo code.
+\subsection{Step 3 Measure WIP}
+The Arraylist from section \ref{sub:stepOne}  and \ref{sub:stepTwo} now contain a WIP object for each date from 2008 to 2013. The reader needs remember the WIP counter of every WIP objects contains the number of tasks started on the corresponding date. This measurement was done in section \ref{sub:stepOne}. In this step the program will loop through the Arraylist, during the iteration each WIP object is extracted from the Arraylist and the new WIP is measured based on how many tasks that has been finished illustrated in the listing \ref{lst:measure}.
 
-Pseudocode step 3
-The hashmap used in this pseudo code is the hashmap generated in section \ref{sub:stepTwo}.
-
-\begin{lstlisting}
+\begin{lstlisting}[caption={Meausre WIP},label={lst:measure}]
 lastWIP =  0
 CurrentWIP = 0
-for date AND WIP IN Hashmap	
-	CurrentWIP = WIP 
-	Nr_of_finishedDates = Occurrence_of_date(date)  
+for WIP Object IN Arraylist	
+	CurrentWIP = WIP.getWIP() 
+	Nr_of_finishedDates = Occurrence_of_date(WIP.getDate())  
 	WIP_measured = CurrentWIP - Nr_of_finishedDates + lastWIP
-	newHashMap.put(date, WIP_measured)
+	WIP.setWIP(WIP_measured)
+	WIP.setDate(WIP.getDate())
+	newArrayList.add(newWIP)
 	currentWIP = WIP_measured 
 
 Occurrence_of_date(Date date)
 	for d in The Date To column
 		if date AFTER d DO
 			Nr_of_dates_to_decrement++
-Return Nr_of_dates_to_decrement 
+return Nr_of_dates_to_decrement 
+%% Her mangler jeg å skrive at jeg setter isPicked slik at datoer ikke blir measuret flere ganger, burde jeg ta med det?
  \end{lstlisting}
 
 \subsection{Example}
 \label{sec:Example}
 Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis. The green line indicates the duration of the task. This table indicates how many tasks in progress (WIP). On 2008-10-12, tasks 3, 5 and 6 are in progress, which means WIP is 3 for 2008-10-12.  
+
+\begin{center}
+ \makebox[\textwidth]{\includegraphics[width=\paperwidth]{Picture/wip_example.jpg}}
+\end{center}
+  \noindent\makebox[\textwidth]{\includegraphics[width=\paperwidth]{Picture/wip_example.jpg}}
+
+\iffalse
 \begin{figure}[ht!]
 \centering
-\hspace*{-2.2in}
+\hspace*{-1.6in}
 \includegraphics[width=23cm]{Picture/wip_example.jpg}
 \caption{Illustrating a WIP timeline}
 \label{wip_timeline}
 \end{figure}
+\fi
 \newpage
 \begin{table}[!ht]
 \begin{center}
@@ -442,18 +477,18 @@ In the example dates from figure \ref{wip_timeline} and from table \ref{wt:2} wi
 
 \subsubsection{First step}
 \label{subsubsec:ft}
-First the algorithm will do a look-up on the date 2008-10-07 referred with task ID one and two in table \ref{wt:2} and measure the current WIP counter, which is two, because its two tasks in progress on this date. After this the program will put the date and the current WIP into a hashmap. 
+First the algorithm will do a look-up on the date 2008-10-07 referred with task ID one and two in table \ref{wt:2} and measure the current WIP counter, which is two, because its two tasks in progress on this date. After this the program will put the date and the current WIP into a Arraylist. 
 Now the algorithm will see if any task was done in the last period, since task one and two is the two first tasks to be measured in this example, there's no task finished in the period and there's no current WIP from other tasks, so the current WIP at 2008-10-07 is two illustrated by figure \ref{wip_timeline}. 
 \subsubsection{Second step}
-The program will do a look-up on the date 2008-10-09 referred with task ID three, four and five in table \ref{wt:2}  and measure the current WIP for this date, which is three. Then, the program will put the date and the current WIP into a hashmap.
+The program will do a look-up on the date 2008-10-09 referred with task ID three, four and five in table \ref{wt:2}  and measure the current WIP for this date, which is three. Then, the program will put the date and the current WIP into a Arraylist.
 Next, the program will see that two tasks were done in the period of 2008-10-07 to 2008-10-09. So the program will measure that three new tasks were started at 2008-10-09, two where finished and the WIP from last date measure where two, so the calculation of WIP at 2008-10-09 is 3-2+2, which gives a WIP of three on 2008-10-09 illustrated by figure \ref{wip_timeline}. 
 
 \subsubsection{Third step}
-The program will do a look-up on the date 2008-10-10 referred with task ID six and seven in table \ref{wt:2}  and measure the current WIP for this date, which is two. Next the program will put the date and the current WIP into a hashmap.
+The program will do a look-up on the date 2008-10-10 referred with task ID six and seven in table \ref{wt:2}  and measure the current WIP for this date, which is two. Next the program will put the date and the current WIP into a Arraylist.
 Last the program will see that no task where done in the period 2008-10-09 to 2008-10-10 and the currently WIP is three, so this gives a new WIP of 5 illustrated by figure \ref{wip_timeline}. 
 
 \subsubsection{Fourth step}
-The program will do a look-up on the date 2008-10-13 referred with task ID eight and nine in table \ref{wt:2}  and measure the current WIP for this date, which is two. Then the program will put the date and the current WIP into a hashmap. 
+The program will do a look-up on the date 2008-10-13 referred with task ID eight and nine in table \ref{wt:2}  and measure the current WIP for this date, which is two. Then the program will put the date and the current WIP into a Arraylist. 
 Next the program will look at the period between 2008-10-10 and 2008-10-13, and see that task four and seven was done in this period. The WIP at 2008-10-13 will be $2-2+5 = 5$ as illustrated by figure \ref{wip_timeline}. 
 As illustrated by the example, WIPs are not decrement until the finished date is passed, even though the task is done on the date, it's also worked on the same date, therefore the WIP is decrement after each date is passed.
 
@@ -480,7 +515,6 @@ Each task in the data set is label as either feature or bug as shown in figure \
 \label{bugsT} %%  bugs table
 \end{center}
 \end{table}
-\newpage
 
 \begin{lstlisting}[caption=Pseudocode example of how bugs are found, label=findBug]
 void findBug()
@@ -492,8 +526,7 @@ void findBug()
 			B.process = newLine.process
 			B.team = newLine.team 
 			AddNewBug(B)
- \end{lstlisting}
-
+\end{lstlisting}
 \subsubsection{Add Bug}
 \label{addBugS}
 When adding a new bug to the data structure, each bug is gathered into a data structure based on which team the bug belongs to, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
@@ -549,9 +582,35 @@ void dateExists(Date d, DataStructure structure)
 return false	
 \end{lstlisting}
 
-\subsection{churn}
+\subsection{Churn}
 \label{churn}
-churn
+To measure churn the data set from SI contains three columns as shown in table \ref{Churn}. To complete the measure the three columns are multiplied.  For task id one,  the churn is 2028 ($352+307+1369 = 2028$). %skal jeg skrive pseucode code tip denne? 
+
+\begin{table}[ht]
+\begin{center}
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+    Task id & Lines added & Lines modified  & Lines deleted \\ \hline
+1&352&307&1369\\ \hline
+2&314 & 31 & 15 \\ \hline
+3&314&31 & 15\\ \hline
+4&62&327&153 \\ \hline
+5&21&3&0 \\ \hline
+6&0&0&0 \\ \hline
+\end{tabular}
+\caption{How churn is presented in the excel document}
+\label{Churn} %%  bugs table
+\end{center}
+\end{table}
+
+
+\chapter{Planning the project}        %% ... or ??
+
+
+\part{Conclusion}                     %% ... or Konklusjon
+
+\chapter{Results}                     %% ... or ??
+
  
 \section{Analyzed Data}
 In this thesis the plan is to measure the data in one big step, where I measure all the teams and data in some given interval. I would also measure the data in small steps, when SI used Scrum, when SI was in the transforming phase and when they had changed to Kanban. Also I will measure WIP values for a given day, date, week, month, quarter and year. This will give me data to compare between teams in a specific interval.
@@ -640,14 +699,6 @@ In figure \ref{Neonpq} the average WIP, Throughput, Lead time and Bugs per quart
 \caption{WIP, Throughput, Lead time and Bugs for Neon per quarter}
 \label{Neonpq} %% fronted per quarter
 \end{figure}
-
-\chapter{Planning the project}        %% ... or ??
-
-
-\part{Conclusion}                     %% ... or Konklusjon
-
-\chapter{Results}                     %% ... or ??
-
 
 \backmatter{}
 \printbibliography
