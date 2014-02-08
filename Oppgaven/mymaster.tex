@@ -102,7 +102,7 @@ How to find the best WIP in software development (SD) for a given interval and c
 \section{Kanban}
 ''We can define Kanban software process as a WIP limited pull system visualized by the Kanban board''  \parencite{DavidAnderson}.
 
-Kanban system focus on;
+Kanban system focus on:
 \begin{itemize}
 \item Continuous flow of work
 \item	No fixed iterations or sprints
@@ -204,8 +204,10 @@ This is a simple example to illustrate throughput and different task sizes. Team
 \end{table}
 
 \section{Churn}
+\label{sec:Churn}
 "Churn is defined as the sum of the number of lines added, deleted, and modified in the source code" \parencite{Dag}.
-Churn is often used to see how big each task is.
+
+Churn is a measure that's not so quite known as lead time, throughput or WIP. Churn is a term that's used as surrogates for effort in software engineering. Many studies in software engineering use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates \parencite{el2000methodology}."  The authors in "Quantifying the effect of code smells on maintenance effort" agree that one should cautious when using surrogates for effort. 
 
 \section{WIP}
 \label{WIPsec}
@@ -229,7 +231,7 @@ Several people have their opinion on how to best measure the WIP, but most of th
 Ei=\frac{ai-ei}{ai}*100\%
 \end{equation}
 
-\subsubsection{Benefits with WIP-limit according to research}
+\subsubsection{Benefits with WIP-limit according to various articles}
 \begin{enumerate}
 \item The tasks should be prioritized from high to low, in order to keep the best WIP. The article also states that high WIP will keep people task switching and not be able to fully concentrate on each work in progress \parencite{Ikonen}.
 \item There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased' \parencite{Joyce}
@@ -243,7 +245,7 @@ Simulation of software maintenance process, with and without a work- in-process 
 
 One of the result from this paper was at the end of a simulation, the average of closed issued was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds like; developers are more focused on fixing few issues, because the number of issues they can work on is limited.  Because the limit of WIP, the developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduce overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on a another issue. The study also showed that limit WIP can improve throughput and work efficiency. \parencite{SMR:SMR1599}.
 
-\section{Software Innovation(SI)}
+\section{Software Innovation (SI)}
 Software Innovation is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control.
 
 Software Innovation has approximately 300 employees, and has offices in Oslo, Copenhagen and Stockholm and a development center in Bangalore \parencite{SI}.
@@ -434,9 +436,13 @@ return Nr_of_dates_to_decrement
 %% Her mangler jeg å skrive at jeg setter isPicked slik at datoer ikke blir measuret flere ganger, burde jeg ta med det?
  \end{lstlisting}
 
-\subsection{Example}
+\section{Example}
 \label{sec:Example}
-Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis. The green line indicates the duration of the task. This table indicates how many tasks in progress (WIP). On 2008-10-12, tasks 3, 5 and 6 are in progress, which means WIP is 3 for 2008-10-12.  
+This section will provide a comprehensive example of how the program WIP algorithm works. 
+Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis. The green line indicates the duration of the task. The figure visualize how many work in progress (WIP) there are. Such as on the date 2008-10-12, tasks 3, 5 and 6 are in progress, which means the WIP is 3 for 2008-10-12.  
+
+In the example dates from figure \ref{wip_timeline} and from table \ref{wt:2} will be used to illustrate how the algorithm measure WIP
+%skrive om tabellen
 \begin{figure}[ht!]
 \centering
 \hspace*{-1.6in}
@@ -466,26 +472,25 @@ Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis.
 \end{center}
 \end{table}
 
-In the example dates from figure \ref{wip_timeline} and from table \ref{wt:2} will be used to illustrate how the algorithm measure WIP
 
-\subsubsection{First step}
+\subsection{First step}
 \label{subsubsec:ft}
 First the algorithm will do a look-up on the date 2008-10-07 referred with task ID one and two in table \ref{wt:2} and measure the current WIP counter, which is two, because its two tasks in progress on this date. After this the program will put the date and the current WIP into a Arraylist. 
 Now the algorithm will see if any task was done in the last period, since task one and two is the two first tasks to be measured in this example, there's no task finished in the period and there's no current WIP from other tasks, so the current WIP at 2008-10-07 is two illustrated by figure \ref{wip_timeline}. 
-\subsubsection{Second step}
+\subsection{Second step}
 The program will do a look-up on the date 2008-10-09 referred with task ID three, four and five in table \ref{wt:2}  and measure the current WIP for this date, which is three. Then, the program will put the date and the current WIP into a Arraylist.
 Next, the program will see that two tasks were done in the period of 2008-10-07 to 2008-10-09. So the program will measure that three new tasks were started at 2008-10-09, two where finished and the WIP from last date measure where two, so the calculation of WIP at 2008-10-09 is 3-2+2, which gives a WIP of three on 2008-10-09 illustrated by figure \ref{wip_timeline}. 
 
-\subsubsection{Third step}
+\subsection{Third step}
 The program will do a look-up on the date 2008-10-10 referred with task ID six and seven in table \ref{wt:2}  and measure the current WIP for this date, which is two. Next the program will put the date and the current WIP into a Arraylist.
 Last the program will see that no task where done in the period 2008-10-09 to 2008-10-10 and the currently WIP is three, so this gives a new WIP of 5 illustrated by figure \ref{wip_timeline}. 
 
-\subsubsection{Fourth step}
+\subsection{Fourth step}
 The program will do a look-up on the date 2008-10-13 referred with task ID eight and nine in table \ref{wt:2}  and measure the current WIP for this date, which is two. Then the program will put the date and the current WIP into a Arraylist. 
 Next the program will look at the period between 2008-10-10 and 2008-10-13, and see that task four and seven was done in this period. The WIP at 2008-10-13 will be $2-2+5 = 5$ as illustrated by figure \ref{wip_timeline}. 
 As illustrated by the example, WIPs are not decrement until the finished date is passed, even though the task is done on the date, it's also worked on the same date, therefore the WIP is decrement after each date is passed.
 
-\subsection {Bug}
+\section {Bug}
 \label{Bug}
 Each task in the data set is label as either feature or bug as shown in figure \ref{bugsT}. When the program reads in the data file, each task label as bug are saved in a data structure as shown in listing \ref{findBug}.
 
@@ -520,7 +525,7 @@ void findBug()
 			B.team = newLine.team 
 			AddNewBug(B)
 \end{lstlisting}
-\subsubsection{Add Bug}
+\subsection{Add Bug}
 \label{addBugS}
 When adding a new bug to the data structure, each bug is gathered into a data structure based on which team the bug belongs to, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
 
@@ -557,7 +562,7 @@ void dateExists(Date d, DataStructure structure)
 return false	
  \end{lstlisting}
  
- \subsection{Throughput}
+\section{Throughput}
  \label{TP}
 Finding the throughput per day is quite similar to how bugs are found (described in section \ref{Bug}).  When reading in the data set a new throughput object is created for each line in the set.  Then all throughput objects are sorted based on team association. When all throughput objects are sorted, the program measure throughput. The throughput measurement is similar to the dateExists method (lines 26 to 32) in the listing \ref{addBug} stated in section \ref{addBugS}. 
 
@@ -575,8 +580,10 @@ void dateExists(Date d, DataStructure structure)
 return false	
 \end{lstlisting}
 
-\subsection{Churn}
+\section{Churn}
 \label{churn}
+As stated in section \ref{sec:Churn} in order to take churn into account one need to know it's good surrogates. The churn from is good surrogate based on 
+
 To measure churn the data set from SI contains three columns as shown in table \ref{Churn}. To complete the measure the three columns are multiplied.  For task id one,  the churn is 2028 ($352+307+1369 = 2028$). %skal jeg skrive pseucode code tip denne? 
 
 \begin{table}[ht]
