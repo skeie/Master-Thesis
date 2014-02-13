@@ -9,7 +9,9 @@
 \interfootnotelinepenalty=10000
 \usepackage{listings}
 \usepackage{color}
-
+\usepackage{array, dcolumn, booktabs,enumitem}
+\usepackage[showframe=false]{geometry}
+\usepackage{changepage}
 \newcommand{\mypm}{\mathbin{\smash{%
 \raisebox{0.35ex}{%
             $\underset{\raisebox{0.5ex}{$\smash -$}}{\smash+}$%
@@ -91,16 +93,20 @@
 \part{Introduction}                   %% ... or Innledning or Innleiing
 \chapter{Background}  
 \label{chap:Background}                %% ... or Bakgrunn
-In this master thesis the main topics will contain analyzing of the gathered data from Software Innovation (SI) in order to see if WIP - limit it agile methods matters. SI is a Scandinavian software company that delivers Enterprise Content Management applications.From 2008 to 2013 SI gathered information about each task that was develop. The main reason SI gathered the data was to see if Kanban was more sufficient than Scrum for their use. For interested reader, the case study can be found in the article "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. In this thesis the data will be used to determine if WIP-limit matters in agile methods.  
+In this master thesis the main topics will contain analyzing of the gathered data from Software Innovation (SI) in order to see if WIP - limit in agile methods matters. SI is a Scandinavian software company that delivers Enterprise Content Management applications. From 2008 to 2013 SI gathered information about each task that was develop. The main reason SI gathered the data was to see if Kanban was more sufficient than Scrum for their use. For interested reader, the case study can be found in the article "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. In this thesis the data will be used to determine if WIP-limit matters in agile methods.  
 
 In the this chapter there will be a brief introduction of Scrum, Kanban, affiliated tools and to Software Innovation.
-
-Research in the field of Work In Progress (WIP) and if WIP matters in software development, lacks proper research. But some similar research has been done, Giulio Concas and Hongyu Zhang  for instance has done research on the difference between limit WIP and unlimited WIP  \parencite{SMR:SMR1599} and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi also highlighted the difference between limit WIP and unlimited process in the article 'Studying Lean-Kanban Approach Using Software Process Simulation' \parencite{DavidAnderson}
-
-How to find the best WIP in software development (SD) for a given interval and context also lacks proper research, but in manufacture business some research has been done. Taho Yanga, Hsin-Pin Fub, Kuang-Yi Yanga stated that WIP could be defined as; ${WIP = cycle time * throughput \: rate}$ in manufacture business \parencite{Yang}.
-
+\newpage
 \section{Kanban}
 ''We can define Kanban software process as a WIP limited pull system visualized by the Kanban board''  \parencite{DavidAnderson}.
+
+Toyota production system introduced Kanban as a scheduling system for lean and just-in-time (JIT) production during late 1940's and early 1950's in order to catch up with the American car industry. The Kanban method combined with the lean approach was a success for Toyota. The success was noticed by the software development industry among other. In the last ten years more and more,  software development companies have started to implement agile methods such as Scrum and Kanban \parencite{Conboy}, \parencite{ono1988toyota}. 
+
+More and more software projects adapt to Kanban, and this is one of the reasons why this thesis will focuses on Kanban and one of it's main tools WIP.
+Kanban is one of the agile method in the wind these days, and is used with Lean Software development which is one of the fastest growing approaches in software development \parencite{DavidAnderson}
+One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" once stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
+
+The Kanban method splits one big problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban-board to visualize the problems and see potential bottlenecks during development. When people start to understand Kanban, they easily discovered where the bottlenecks are \parencite{Shinkle}.
 
 Kanban system focus on:
 \begin{itemize}
@@ -109,19 +115,12 @@ Kanban system focus on:
 \item Work is delivered when it's done
 \item Teams only work on few tasks at the time specified by the WIP limit
 \item Make constant flow of released tasks
-\end{itemize}
 \parencite{DavidAnderson}.
-
-Toyota production system introduced Kanban as a scheduling system for lean and just-in-time (JIT) production during late 1940's and early 1950's in order to catch up with the American car industry. The Kanban method combined with the lean approach was a success for Toyota. The success was noticed the software development industry among other. In the last ten years more and more software development companies have started to implement agile methods such as Scrum and Kanban \parencite{Conboy}, \parencite{ono1988toyota}. 
-
-More and more software projects adapt to Kanban, and this is one of the reasons why this thesis will focuses on Kanban and WIP.
-Kanban is one of the agile method in the wind these days, and is used with Lean Software development which is one of the fastest growing approaches in software development \parencite{DavidAnderson}
-One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" once stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
-
-The Kanban method splits one big problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban-board to visualize the problems and see potential bottlenecks. When people started to understand Kanban, they easily discovered where the bottlenecks where \parencite{Shinkle}.
-
+\end{itemize}
+\newpage
 
 One of the main difference between Scrum and Kanban is estimation, in simulation of software maintenance process, with and without a work-in-process limit \parencite{SMR:SMR1599} estimation was defined to be the main source of waste. In their research, they find out, if they let the developers work with small tasks at time and not be interrupted, they will be more effective. The developers in this case was interrupted when they was assigned to estimate tasks. The research groups decided to implement Lean-Kanban, which includes minimizing waste, which meant estimation for this case. After implementing Lean-Kanban the teams increased the ability to perform work, lower the lead time and meet the production dates.
+
 
 \section {Lean-Kanban}
 The Lean approach was introduced between 1948 and 1975 in manufacturing work in Japan. It was designed to find and eliminate waste, so the manufacturing could deliver value to the costumer more efficiently. In 2003 Mary and Tom Poppendieck first introduced Lean thinking to software development, they published 'Principles of Lean Thinking' \parencite{Lean:2003}. Poppendieck stated that an important tool to manage work flow is the concept of pull-systems, which means tasks are put in production only when a costumer asks for it \parencite{Lean:2009}.
@@ -139,7 +138,7 @@ In each sprint a minimal backlog is created so the developer knows which tasks t
 \section {Kanban Board}
 ''The Kanban board makes it clear to all the team members the exact status of progress, blockages, bottlenecks and they also signal possible future issues to prepare for''\parencite{Joyce}.
 
-The Kanban board is one of many important tools in Kanban. It's used to control the WIP, increase the information flow with visualization and spot bottlenecks \parencite{SMR:SMR1599}. A Kanban is board is illustrated in figure \ref{kanban_board}. Each column has an intuitive name in order to describe itself so the developers easily can track where each task is. In figure \ref{kanban_board} each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP-limit to specify how many works in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP-limit is stated under the column name. The backlog columns have a WIP-limit of 4, In progress has 5 and obviously done doesn't have a WIP-limit.
+The Kanban board is one of many important tools in Kanban. It's used to control the WIP, increase the information flow with visualization and spot bottlenecks \parencite{SMR:SMR1599}. A Kanban is board is illustrated in figure \ref{kanban_board}. Each column has an intuitive name in order to describe itself so the developers easily can track where each task is. In figure \ref{kanban_board} each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP-limit to specify how many works in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP-limit is stated under the column name. The backlog columns have a WIP-limit of 4, In progress has 5 and obviously done doesn't have a WIP-limit. The yellow stickers represents the tasks. Some follow to path to mark stickers with different colors representing the severities. In "Kanban Implementation in a Telecom Product Maintenance" the stickers has three different colors, green, yellow and red. Each of the color indicates how close to overdue the tasks are. If the sticker is red, the tasks is already overdue \parencite{6068363}. 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=90mm]{Picture/kanban_board.jpg}
@@ -150,11 +149,12 @@ The Kanban board is one of many important tools in Kanban. It's used to control 
 \section {Lead time}
 ''Lead time is the total elapsed time from when a customer requests software to when the finished software is released to the customer'' \parencite{Joyce}.
 
-The citation by Joyce above is close to definition of what lead time is. This definition could be useful for consultancy companies, but for SI, who is a big in-house development company with few releases each year this definition is unsuitable. Quantifying the effect of Using Kanban versus Scrum stated  two reason why this is unsuitable for SI: 
+Lead time is an essential ingredient when you look for the optimal WIP. Often in project, lead time is split into pieces, so every task has its own lead-time; this gives the development teams the advantages to experiment with different WIP's in order to see the different lead-times and then measure which WIP that suits this project the best. 
+
+The citation by Joyce above is close to definition of what lead time is. This definition could be useful for consultancy companies, but for in-house development company with few releases each year this definition is unsuitable. Quantifying the effect of Using Kanban versus Scrum stated two reason why this is unsuitable for in house development companies: 
 
 "First, the amount of time a work item remains in the backlog queue before it's put on the board is a function of priority, not whether the company uses Scrum, Kanban, or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it's finished'' \parencite{Dag}.
 
-Lead time is an essential ingredient when you look for the optimal WIP. Often in project, lead time is split into pieces, so every task has its own lead-time; this gives the development teams the advantages to experiment with different WIP's in order to see the different lead-times and then measure which WIP that suits this project the best. 
 
 \section{Just-In-Time}
 "Just-In-Time is based on delivering only the necessary products, to the necessary time and the necessary quantity." \parencite{JIT}.
@@ -171,23 +171,22 @@ Just-In-Time was introduced 30 years ago by Toyota Motor in combination with Lea
 
 In the picture \ref{JITE} the stream reflects the inventory.  Under the stream, there are rocks located in different sizes. The rocks illustrates waste and problems that can occur.  If the stream level is lowered, the rocks are more visualized. At this point you have to clear out rocks in order to make the boat continue it's journey, or it will crash into the rocks. After the rocks are cleaned out, you can lower the stream level again and continue until it's just pebbles left
 
-If we lower the stream, problem and waste will become visible. But why do Lean want to lower inventory in order to make problems and waste occur? Because when problem and waste occurs, you are able to fix the problem and remove the waste. Fixing the problem and removing the waste can have several benefits such as, your process could be optimized and you are on step closer to have zero problems and zero waste.  \parencite{JIT} \parencite{Lean:2006}.
+If one lower the stream, problem and waste will become visible. But why do Lean want to lower inventory in order to make problems and waste occur? Because when problem and waste occurs, you are able to fix the problem and remove the waste. Fixing the problem and removing the waste can have several benefits such as, your process could be optimized and you are on step closer to have zero problems and zero waste.  \parencite{JIT} \parencite{Lean:2006}.
 
 
 \section{Throughput}
 ''The output of a production process (machine, workstation, line plant) per unit time (e.g., parts per hour) is defined as the systems throughput or sometimes throughput rate'' \parencite{Adams}
 
-The concept of throughput in order to measure how productive teams, people or companies is similar in both software development and manufacturing. On the other hand, in software development each task is more abstract, tasks can have different solutions depending on how the team or developer approaches the task and the tasks is usually only done once.
+The main concept of throughput in order to measure how productive teams, people or companies is similar in both software development and manufacturing. But the factors are not similar. In software development each task is more abstract than in manufacturing. In software development each tasks can have different solutions depending on how the team or developer approaches the task and the tasks is usually only done once not mass produced.
 
 In manufacturing, each task usually has one solution and when the solution is found the physical item is mass produced.  Adam said "Throughput in plant, line or workstation, is defined as the average quantity of good  parts produced per unit time" \parencite{Adams}, which gives a good example of the relationship between tasks in manufacturing and software development. In manufacturing the part either fits its purpose (good) or not (defective), in software development a tasks can fit a purpose, but the purpose may be wrong.
  
-In software development throughput is measured in number of finished delivered tasks per day, week, month, quarter or year. A key factor in successfully measuring throughput is to specify the size of each task. If the size is not specified   before, each tasks has to require almost the same amount of work.  
 % As long as the software development task is bug free, it's delivered as non-defective but it may not fit the defined purpose by the end users. 
 
-In software development throughput is measured in number of finished delivered tasks per day, week, month, quarter or year. A key factor in successfully measuring throughput is to specify the size of each task. If the size is not specified a developer x can have throughput of 1, but another developer y could have throughput of 3 and they still have done the same amount of work and this will give wrong results if the throughput is measured.  So its recommend to specify the amount of work for each task in advanced. 
+In software development throughput is measured in number of finished delivered tasks per day, week, month, quarter or year. A key factor in successfully measuring throughput is to specify the size of each task. If the size is not specified a developer x can have throughput of 1, but another developer y could have throughput of 3 and they still have done the same amount of work and this will give wrong results if the throughput is measured.  So it's recommend to specify the amount of work for each task in advanced. 
 
 \subsubsection{Example of throughput measurement}
-This is a simple example to illustrate throughput and different task sizes. Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter and they used Scrum the first two quarters and Kanban the last two as illustrated by table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. In order to to get valid result from throughput measurement the size of tasks has to be agreed. 
+This is a simple example to illustrate throughput with different task sizes. Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter and they used Scrum the first two quarters and Kanban the last two as illustrated by table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. In order to to get valid result from throughput measurement the size of tasks has to be agreed upon the team. 
 \begin{table}[ht]
 \begin{center}
     \begin{tabular}{| l | l | l | l |}
@@ -215,6 +214,11 @@ Churn is a measure that's not so quite known as lead time, throughput or WIP. Ch
 
 
 WIP-limit is a tool in Kanban to reduce overhead by limit task-switching for each developer and visualize bottlenecks. One of the best way to explain WIP and the impact of WIP-limit is to use cars and roads as analogy. All roads have it maximum capacity width number of cars . When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams, a software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks decreases and lead time increases.
+
+
+Research in the field of Work In Progress (WIP) and if WIP matters in software development, lacks proper research. But some similar research has been done, Giulio Concas and Hongyu Zhang  for instance has done research on the difference between limit WIP and unlimited WIP  \parencite{SMR:SMR1599} and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi also highlighted the difference between limit WIP and unlimited process in the article 'Studying Lean-Kanban Approach Using Software Process Simulation' \parencite{DavidAnderson}
+
+How to find the best WIP in software development (SD) for a given interval and context also lacks proper research, but in manufacture business some research has been done. Taho Yanga, Hsin-Pin Fub, Kuang-Yi Yanga stated that WIP could be defined as; ${WIP = cycle time * throughput \: rate}$ in manufacture business \parencite{Yang}.
 
 WIP-limit helps team to reduce overhead, decrease lead time and increase throughput \parencite {CONWIP}. But in order to get the best throughput and lead time, a software team needs to experiment with WIP in order to find their WIP-limit. When first implementing Kanban, Shinkle explains that the users don't care about the WIP, but rather the visibility of Kanban through the Kanban board. When the user get more experience with Kanban, they start to attempt the principles of WIP-limit \parencite{Shinkle}.
 
@@ -262,11 +266,17 @@ In this thesis the overall research question will be to study the effects of WIP
 \end{itemize}
 
 \chapter{Research Methods}
+\label{chap:RM}
 In order to try answering the research questions stated in chapter \ref{chap:RQ} a dataset from SI will be analyzed. The set from SI contains programing tasks recorded from 2008 to 2013.  The data set is represented in a excel document.  The excel document contains various columns, but the columns of interest are listed in table \ref{IC}. Table \ref {dataset} shows an excerpt from the columns in the excel document. In table \ref{des} is a description of which columns the program needs in order to measure WIP, throughput, bugs and churn. Lead time for each task is already defined in the excel document, so lead time will be extracted from the data set.
  
 Since there is no software for generating WIP, throughput, bugs and churn per day from the data set, a program was made. The program will transform the raw data from the excel document into quantitative data, which will be analyzed using SPSS. How the program will generate WIP will be described in section \ref{WPD},  bug in section \ref{Bug}, throughput in section \ref{TP} and churn in section \ref{churn}. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a detailed description using Pseudocode\parencite{jd} will be provided. 
 
+%%In this thesis the plan is to measure the data in one big step, where I measure all the teams and data in some given interval. I would also measure the data in small steps, when SI used Scrum, when SI was in the transforming phase and when they had changed to Kanban. Also I will measure WIP values for a given day, date, week, month, quarter and year. This will give me data to compare between teams in a specific interval.
 
+%%I will reuse some data from the paper from Quantifying the Effect of Using Kanban vs. Scrum: A Case Study \parencite{Dag} Mainly I will look at churn and lead-time measured in the paper and compare them with WIP and throughput between teams. Hopefully the data measured will give me some sense of what WIP limit does for SI and which factors helping determine if WIP-limit matters in agile software development
+
+%%Hopefully I would gather or get some other underlying data, so I will be able to compare my work, on the set from SI to the other data.
+%%From the data created i will analyze them using SPSS.
 
 %%The set from SI only contains dates when tasks was created, added to backlog, pulled from backlog or finished.  In order to measure average per month, quarter and year the program needs to know WIP and items in backlog for each day. In order to do so, the program will generate the remaining days.
 
@@ -492,7 +502,7 @@ As illustrated by the example, WIPs are not decrement until the finished date is
 
 \section {Bug}
 \label{Bug}
-Each task in the data set is label as either feature or bug as shown in figure \ref{bugsT}. When the program reads in the data file, each task label as bug are saved in a data structure as shown in listing \ref{findBug}.
+Each task in the data set is label as either feature or bug as shown in figure \ref{bugsT}. When the program reads in the data file, each task label as bug are saved in a data structure. The code is shown in listing \ref{findBug}.
 
 \begin{table}[ht]
 \begin{center}
@@ -527,7 +537,7 @@ void findBug()
 \end{lstlisting}
 \subsection{Add Bug}
 \label{addBugS}
-When adding a new bug to the data structure, each bug is gathered into a data structure based on which team the bug belongs to, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
+When adding a new bug, each bug is gathered into a data structure based on which team the bug belongs to, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
 
 Since the program knows which team the new bug belongs to (after the checks on line 3, 8, 13 and 18) a counter can represent each bug. In our analyze the only important for us is to know how many bugs there are on a given date and which team it belongs to.  
 \newpage
@@ -567,7 +577,7 @@ return false
 Finding the throughput per day is quite similar to how bugs are found (described in section \ref{Bug}).  When reading in the data set a new throughput object is created for each line in the set.  Then all throughput objects are sorted based on team association. When all throughput objects are sorted, the program measure throughput. The throughput measurement is similar to the dateExists method (lines 26 to 32) in the listing \ref{addBug} stated in section \ref{addBugS}. 
 
 \newpage
-The dateExists method starts of with a test, the same test is done for throughput, if the date of the throughput object is in the data structure the corresponding counter is incremented.  If the date is not in the data structure, the new throughput object is added to the data structure. An excerpt of the code is listed in \ref{throughputCode} 
+The dateExists method starts of with a test, the same test is done for bugs. If the date of the throughput object is in the data structure the corresponding counter is incremented.  If the date is not in the data structure, the new throughput object is added to the data structure. An excerpt of the code is listed in \ref{throughputCode} 
 
 \begin{lstlisting}[caption=Pseudocode example of how throughput is measured, label=throughputCode]
 
@@ -579,6 +589,9 @@ void dateExists(Date d, DataStructure structure)
 			
 return false	
 \end{lstlisting}
+
+
+
 
 \section{Churn}
 \label{churn}
@@ -604,25 +617,23 @@ To measure churn the data set from SI contains three columns as shown in table \
 \end{table}
 
 
-\chapter{Planning the project}        %% ... or ??
-
-
-\part{Conclusion}                     %% ... or Konklusjon
-
+%%\part{The project} 
 \chapter{Results}                     %% ... or ??
 
  
-\section{Analyzed Data}
-In this thesis the plan is to measure the data in one big step, where I measure all the teams and data in some given interval. I would also measure the data in small steps, when SI used Scrum, when SI was in the transforming phase and when they had changed to Kanban. Also I will measure WIP values for a given day, date, week, month, quarter and year. This will give me data to compare between teams in a specific interval.
-
-I will reuse some data from the paper from Quantifying the Effect of Using Kanban vs. Scrum: A Case Study \parencite{Dag} Mainly I will look at churn and lead-time measured in the paper and compare them with WIP and throughput between teams. Hopefully the data measured will give me some sense of what WIP limit does for SI and which factors helping determine if WIP-limit matters in agile software development
-
-Hopefully I would gather or get some other underlying data, so I will be able to compare my work, on the set from SI to the other data.
-From the data created i will analyze them using SPSS.
+\section{Introduction}
+In this following chapter SPSS will be used on the data derived from chapter \ref{chap:RM}. SPSS will help to answer the research question stated in chapter \ref{chap:RQ}.  SPSS will help to compute Correlation and Graph's based on case summaries.  The case summaries will be done on:
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item WIP
+\item Throughput
+\item Lead time
+\item Churn
+\item Bugs
+\end{itemize}
 \subsection{SPSS}
 "IBM® SPSS® Statistics is a comprehensive system for analyzing data. SPSS Statistics can take data from almost any type of file and use them to generate tabulated reports, charts and plots of distributions and trends, descriptive statistics, and complex statistical analyses." \parencite{IBM}
 
-In this master thesis function stated in figure \ref{SPSSfunctions} will be used to analyze data.
+From SPSS the function stated in figure \ref{SPSSfunctions} will be used to analyze data.
 \begin{figure}[ht]
 \begin{itemize}
 \item Case summaries
@@ -634,6 +645,7 @@ In this master thesis function stated in figure \ref{SPSSfunctions} will be used
 \end{figure}
 \subsubsection{Case summaries}
 The case summarizes function is used to calculate average WIP, throughput, lead time, bugs and churn per quarter. 
+%skrive her om descriptive statistics go
 
 \subsubsection{Line Graph}
 The line graph function is used to line graph with both one and two y-axis. 
@@ -699,6 +711,220 @@ In figure \ref{Neonpq} the average WIP, Throughput, Lead time and Bugs per quart
 \caption{WIP, Throughput, Lead time and Bugs for Neon per quarter}
 \label{Neonpq} %% fronted per quarter
 \end{figure}
+
+
+\begin{table}[htbp]
+  \centering
+  \scalebox{0.9}{
+    \begin{tabular}{|llllllll|}
+    \hline
+    Teamname & Quarter & N     & Mean  & Median & Std. Deviation & Maximum & Minimum \\
+    \hline
+    360   & 2010-3 & 39    & 5.82  & 5     & 2.553 & 15    & 1 \\
+          & 2010-4 & 92    & 1.7   & 2     & 0.707 & 4     & 1 \\
+          & 2011-1 & 90    & 4.37  & 2     & 6.874 & 31    & 1 \\
+          & 2011-2 & 91    & 14.25 & 5     & 14.497 & 52    & 3 \\
+          & 2011-3 & 92    & 2.4   & 3     & 0.973 & 4     & 1 \\
+          & 2011-4 & 92    & 14.26 & 4     & 22.718 & 97    & 1 \\
+          & 2012-1 & 91    & 13.35 & 5     & 16.624 & 67    & 4 \\
+          & 2012-2 & 91    & 15.35 & 3     & 27.145 & 94    & 2 \\
+          & 2012-3 & 92    & 16.97 & 13.5  & 8.715 & 52    & 5 \\
+          & 2012-4 & 90    & 9.07  & 2     & 17.073 & 74    & 1 \\
+          & Total & 860   & 9.99  & 4     & 16.047 & 97    & 1 \\ \hline
+    Frontend & 2010-3 & 24    & 9.29  & 10    & 6.43  & 23    & 1 \\
+          & 2010-4 & 92    & 13.92 & 13    & 3.931 & 25    & 5 \\
+          & 2011-1 & 90    & 15.3  & 15.5  & 3.945 & 23    & 7 \\
+          & 2011-2 & 91    & 23.51 & 24    & 4.199 & 37    & 13 \\
+          & 2011-3 & 92    & 20.13 & 20    & 5.433 & 32    & 9 \\
+          & 2011-4 & 92    & 21.33 & 21    & 6.928 & 34    & 7 \\
+          & 2012-1 & 91    & 22.91 & 22    & 6.639 & 40    & 11 \\
+          & 2012-2 & 91    & 21.93 & 21    & 3.369 & 32    & 17 \\
+          & 2012-3 & 92    & 25.93 & 27    & 4.921 & 36    & 19 \\
+          & 2012-4 & 67    & 19.18 & 15    & 9.664 & 41    & 9 \\
+          & Total & 822   & 20.18 & 20    & 6.939 & 41    & 1 \\ \hline
+    Krypton & 2010-3 & 25    & 14.12 & 14    & 5.093 & 27    & 9 \\
+          & 2010-4 & 92    & 23    & 23.5  & 7.819 & 48    & 12 \\
+          & 2011-1 & 90    & 14.76 & 13.5  & 5.006 & 26    & 6 \\
+          & 2011-2 & 91    & 12.75 & 12    & 4.642 & 22    & 3 \\
+          & 2011-3 & 92    & 17.2  & 16    & 6.476 & 32    & 8 \\
+          & 2011-4 & 92    & 17.47 & 17    & 6.32  & 30    & 4 \\
+          & 2012-1 & 91    & 14.35 & 15    & 3.911 & 24    & 7 \\
+          & 2012-2 & 91    & 16.53 & 14    & 6.036 & 34    & 10 \\
+          & 2012-3 & 92    & 23.83 & 20    & 10.387 & 43    & 7 \\
+          & 2012-4 & 67    & 1.69  & 0     & 3.016 & 11    & 0 \\
+          & Total & 823   & 16.11 & 15    & 8.438 & 48    & 0 \\ \hline
+    Neon  & 2010-3 & 25    & 14.4  & 15    & 6.191 & 23    & 6 \\
+          & 2010-4 & 92    & 21.41 & 20    & 7.172 & 41    & 9 \\
+          & 2011-1 & 90    & 27.2  & 27.5  & 4.904 & 38    & 17 \\
+          & 2011-2 & 91    & 29.71 & 27    & 14.42 & 62    & 12 \\
+          & 2011-3 & 92    & 31.98 & 30    & 8.905 & 55    & 18 \\
+          & 2011-4 & 92    & 29.09 & 29    & 10.098 & 45    & 12 \\
+          & 2012-1 & 91    & 19.03 & 18    & 4.637 & 30    & 7 \\
+          & 2012-2 & 91    & 24.34 & 25    & 10.282 & 50    & 5 \\
+          & 2012-3 & 92    & 23.24 & 21.5  & 7.897 & 44    & 10 \\
+          & 2012-4 & 92    & 19.49 & 22    & 10.995 & 45    & 1 \\
+          & 2013-1 & 11    & 2.18  & 2     & 0.603 & 3     & 1 \\
+          & Total & 859   & 24.45 & 24    & 10.543 & 62    & 1 \\
+    \bottomrule
+    \end{tabular}%
+    }
+      \caption{Descriptive statistics for WIP}
+  \label{tab:addlabel}%
+\end{table}% 
+  
+\begin{table}[htbp]
+  \centering
+  \begin{adjustwidth}{-3cm}{}
+  \scalebox{0.9}{
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+    \hline
+          &       & Bugs  & Throughput & WIP & LeadTimeTen & Churn & TP Feature & Churn Bugs \\ \hline
+    Bugs  & Pearson Correlation & 1     & .945** & .753* & .657* & .752* & -0.328 & .813** \\ \hline
+          & Sig. (2-tailed) &       & 0     & 0.012 & 0.039 & 0.012 & 0.354 & 0.004 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Throughput & Pearson Correlation & .945** & 1     & .816** & .749* & .716* & -0.34 & .776** \\ \hline
+          & Sig. (2-tailed) & 0     &       & 0.004 & 0.013 & 0.02  & 0.336 & 0.008 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    WIP   & Pearson Correlation & .753* & .816** & 1     & 0.549 & .642* & -0.441 & .708* \\ \hline
+          & Sig. (2-tailed) & 0.012 & 0.004 &       & 0.101 & 0.045 & 0.202 & 0.022 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    LeadTimeTen & Pearson Correlation & .657* & .749* & 0.549 & 1     & 0.551 & -0.353 & 0.528 \\ \hline
+          & Sig. (2-tailed) & 0.039 & 0.013 & 0.101 &       & 0.099 & 0.318 & 0.116 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Churn & Pearson Correlation & .752* & .716* & .642* & 0.551 & 1     & -0.421 & .975** \\ \hline
+          & Sig. (2-tailed) & 0.012 & 0.02  & 0.045 & 0.099 &       & 0.226 & 0 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+	TP Feature & Pearson Correlation & 0.681* & 0.849** & 0.656* & 0.837** & 0.606 & 1     & 0.594 \\ \hline
+          & Sig. (2-tailed) & 0.03  & 0.002 & 0.039 & 0.003 & 0.063 &       & 0.07 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Churn Bugs & Pearson Correlation & .813** & .776** & .708* & 0.528 & .975** & -0.419 & 1 \\ \hline
+          & Sig. (2-tailed) & 0.004 & 0.008 & 0.022 & 0.116 & 0     & 0.228 &  \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+              \end{tabular}%
+    }
+        \centerline{  ** Correlation is significant at the 0.01 level (2-tailed).}
+    \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
+      \caption{360 - Correlation}
+
+  \label{tab:addlabel}%
+ \end{adjustwidth}
+\end{table}%
+   
+ \begin{table}[htbp]
+  \centering
+    \begin{adjustwidth}{-2.5cm}{}
+    \scalebox{0.9}{
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+    \hline
+     &       & WIP   & Throughput & Bugs  & Leadtime & Churn & TP feature & Churn Bugs \\ \hline
+    WIP   & Pearson Correlation & 1     & 0.491 & -.740* & .819** & -0.446 & -0.608 & -0.446 \\ \hline
+          & Sig. (2-tailed) &       & 0.15  & 0.014 & 0.004 & 0.196 & 0.062 & 0.196 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Throughput & Pearson Correlation & 0.491 & 1     & -0.42 & 0.23  & -0.036 & -0.368 & 0.217 \\ \hline
+          & Sig. (2-tailed) & 0.15  &       & 0.227 & 0.522 & 0.921 & 0.295 & 0.548 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Bugs  & Pearson Correlation & -.740* & -0.42 & 1     & -.634* & 0.437 & .975** & 0.176 \\ \hline
+          & Sig. (2-tailed) & 0.014 & 0.227 &       & 0.049 & 0.207 & 0     & 0.627 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Leadtime & Pearson Correlation & .819** & 0.23  & -.634* & 1     & -0.451 & -0.55 & -0.573 \\ \hline
+          & Sig. (2-tailed) & 0.004 & 0.522 & 0.049 &       & 0.191 & 0.1   & 0.083 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Churn & Pearson Correlation & -0.446 & -0.036 & 0.437 & -0.451  & 1     & 0.338 & .791** \\ \hline
+          & Sig. (2-tailed) & 0.196 & 0.921 & 0.207 & 0.191 &       & 0.339 & 0.006 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+        TP feature & Pearson Correlation & -0.702* & -0.225 & 0.856** & -0.609 & 0.729* & 1     & 0.422 \\ \hline
+              & Sig. (2-tailed) & 0.024 & 0.533 & 0.002 & 0.062 & 0.017 &       & 0.224 \\ \hline
+              & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Churn Bugs & Pearson Correlation & -0.446 & 0.217 & 0.176 & -0.573 & .791** & 0.032 & 1 \\ \hline
+          & Sig. (2-tailed) & 0.196 & 0.548 & 0.627 & 0.083 & 0.006 & 0.929 &  \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    \end{tabular}%
+    }
+       \centerline{  ** Correlation is significant at the 0.01 level (2-tailed).}
+    \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
+      \caption{Frontend Correlation}
+  \label{tab:addlabel}%
+   \end{adjustwidth}
+
+\end{table}%
+  
+
+\begin{table}[htbp]
+  \centering
+   \begin{adjustwidth}{-3cm}{}
+    \scalebox{0.9}{
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+    \hline
+             &       & WIP   & Throughput & Bugs  & Leadtime & Churn & TP feature & Churn Bugs \\ \hline
+    WIP   & Pearson Correlation & 1     & .761* & 0.007 & 0.503 & 0.573 & 0.262 & 0.598 \\ \hline
+          & Sig. (2-tailed) &       & 0.011 & 0.986 & 0.138 & 0.083 & 0.465 & 0.068 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Throughput & Pearson Correlation & .761* & 1     & 0.466 & -0.039 & 0.582 & .655* & .715* \\ \hline
+          & Sig. (2-tailed) & 0.011 &       & 0.174 & 0.915 & 0.078 & 0.04  & 0.02 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Bugs  & Pearson Correlation & 0.007 & 0.466 & 1     & -0.14 & 0.376 & .742* & .661* \\ \hline
+          & Sig. (2-tailed) & 0.986 & 0.174 &       & 0.699 & 0.284 & 0.014 & 0.037 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Leadtime & Pearson Correlation & 0.503 & -0.039 & -0.14 & 1     & 0.251 & -0.034 & 0.295 \\ \hline
+          & Sig. (2-tailed) & 0.138 & 0.915 & 0.699 &       & 0.485 & 0.926 & 0.408 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Churn & Pearson Correlation & 0.573 & 0.582 & 0.376 & 0.251 & 1     & 0.551 & 0.572 \\ \hline
+          & Sig. (2-tailed) & 0.083 & 0.078 & 0.284 & 0.485 &       & 0.099 & 0.084 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+  TP feature & Pearson Correlation & 0.13  & 0.409 & 0.76*  & 0.025 & 0.693* & 1     & 0.412 \\ \hline
+              & Sig. (2-tailed) & 0.72  & 0.24  & 0.011 & 0.945 & 0.026 &       & 0.237 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline 
+    Churn Bugs & Pearson Correlation & 0.598 & .715* & .661* & 0.295 & 0.572 & 0.547 & 1 \\ \hline
+          & Sig. (2-tailed) & 0.068 & 0.02  & 0.037 & 0.408 & 0.084 & 0.102 &  \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+      \end{tabular}%
+    }
+    \centerline{*Correlation is significant at the 0.05 level (2-tailed).}
+  \caption{Krypton - correlation}%
+  \label{swag}
+    \end{adjustwidth}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+   \begin{adjustwidth}{-2.5cm}{}
+     \scalebox{0.9}{
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|} 
+   \hline
+          &       & WIP   & Throughput & Bugs  & Leadtime & Churn & TP feature & Churn Bug \\ \hline
+    WIP   & Pearson Correlation & 1     & -0.19 & -0.043 & .698* & -0.231 & -0.198 & -0.25 \\ \hline
+          & Sig. (2-tailed) &       & 0.598 & 0.907 & 0.025 & 0.521 & 0.583 & 0.486 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Throughput & Pearson Correlation & -0.19 & 1     & 0.203 & -0.262 & 0.3   & 0.069 & .677* \\ \hline
+          & Sig. (2-tailed) & 0.598 &       & 0.573 & 0.464 & 0.4   & 0.85  & 0.032 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Bugs  & Pearson Correlation & -0.043 & 0.203 & 1     & 0.564 & -0.535 & .910** & -0.428 \\ \hline
+          & Sig. (2-tailed) & 0.907 & 0.573 &       & 0.09  & 0.111 & 0     & 0.217 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Lead time & Pearson Correlation & .698* & -0.262 & 0.564 & 1     & -0.435 & 0.432 & -0.55 \\ \hline
+          & Sig. (2-tailed) & 0.025 & 0.464 & 0.09  &       & 0.209 & 0.212 & 0.099 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Churn & Pearson Correlation & -0.231 & 0.3   & -0.535 & -0.435 & 1     & -0.485 & .779** \\ \hline
+          & Sig. (2-tailed) & 0.521 & 0.4   & 0.111 & 0.209 &       & 0.156 & 0.008 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+   TP feature & Pearson Correlation & -0.08 & -0.346 & 0.735* & 0.513 & -0.627 & 1     & -0.782** \\ \hline
+              & Sig. (2-tailed) & 0.826 & 0.328 & 0.015 & 0.129 & 0.052 &       & 0.007 \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    Churn Bug & Pearson Correlation & -0.25 & .677* & -0.428 & -0.55 & .779** & -0.476 & 1 \\ \hline
+          & Sig. (2-tailed) & 0.486 & 0.032 & 0.217 & 0.099 & 0.008 & 0.164 &  \\ \hline
+          & N     & 10    & 10    & 10    & 10    & 10    & 10    & 10 \\ \hline
+    
+    \end{tabular}%
+    }
+    \centerline{* Correlation is significant at the 0.05 level (2-tailed).}
+    \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
+      \caption{Neon - Correlation}
+  \label{tab:addlabel}%
+      \end{adjustwidth}
+\end{table}%
+
+  
+  
 
 \backmatter{}
 \printbibliography
