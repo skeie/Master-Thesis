@@ -70,7 +70,8 @@
     natbib=true,
     url=false, 
     doi=true,
-    eprint=false
+    eprint=false,
+    citestyle=authoryear
 ]{biblatex}
 % !BIB TS-program = biber
 
@@ -177,21 +178,22 @@ If one lower the stream, problem and waste will become visible. But why do Lean 
 \section{Throughput}
 ''The output of a production process (machine, workstation, line plant) per unit time (e.g., parts per hour) is defined as the systems throughput or sometimes throughput rate'' \parencite{Adams}
 
-The main concept of throughput in order to measure how productive teams, people or companies is similar in both software development and manufacturing. But the factors are not similar. In software development each task is more abstract than in manufacturing. In software development each tasks can have different solutions depending on how the team or developer approaches the task and the tasks is usually only done once not mass produced.
+The main concept of throughput is to measure how productive teams, people or companies are. Throughput is measured in number of finished delivered tasks per hour, day, week, month, quarter or year. This applies to both software development and manufacturing. But there are some difference. In software development each task is more abstract than in manufacturing and in software development each tasks can have different solutions depending on how the team or developer approaches the task.
+% and the tasks is usually only done once not mass produced.
 
-In manufacturing, each task usually has one solution and when the solution is found the physical item is mass produced.  Adam said "Throughput in plant, line or workstation, is defined as the average quantity of good  parts produced per unit time" \parencite{Adams}, which gives a good example of the relationship between tasks in manufacturing and software development. In manufacturing the part either fits its purpose (good) or not (defective), in software development a tasks can fit a purpose, but the purpose may be wrong.
+In manufacturing each task usually has one solution and when the solution is found the physical item is mass produced.  Adam said "Throughput in plant, line or workstation, is defined as the average quantity of good  parts produced per unit time" \parencite{Adams}, which gives a good example of the relationship between tasks in manufacturing and software development. In manufacturing the part either fits its purpose (good) or not (defective). In software development a tasks can fit a purpose, but the purpose may be wrong. 
  
 % As long as the software development task is bug free, it's delivered as non-defective but it may not fit the defined purpose by the end users. 
 
-In software development throughput is measured in number of finished delivered tasks per day, week, month, quarter or year. A key factor in successfully measuring throughput is to specify the size of each task. If the size is not specified a developer x can have throughput of 1, but another developer y could have throughput of 3 and they still have done the same amount of work and this will give wrong results if the throughput is measured.  So it's recommend to specify the amount of work for each task in advanced. 
+A key factor in successfully measuring throughput in software development is to specify the size of each task. If the size is not specified a developer x can have throughput of 1, but another developer could have throughput of 3 and they still have done the same amount of work and this will give wrong results if the throughput is measured.  So it's recommend to specify the amount of work for each task in advanced. 
 
 \subsubsection{Example of throughput measurement}
-This is a simple example to illustrate throughput with different task sizes. Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter and they used Scrum the first two quarters and Kanban the last two as illustrated by table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. In order to to get valid result from throughput measurement the size of tasks has to be agreed upon the team. 
+This is a simple example to illustrate throughput with different task sizes. Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter and they used Scrum the first two quarters and Kanban the last two as illustrated by table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. In order to to get valid result from throughput measurement the size of tasks has to be agreed upon by the teams or company. 
 \begin{table}[ht]
 \begin{center}
     \begin{tabular}{| l | l | l | l |}
     \hline
-    Quarter & Throughput &  Framework\\ \hline
+    Quarter & Throughput & Method\\ \hline
     1 & 18 & Scrum\\ \hline
     2 & 20 & Scrum \\ \hline
     3 & 15 & Kanban\\ \hline
@@ -208,51 +210,84 @@ This is a simple example to illustrate throughput with different task sizes. Tea
 
 Churn is a measure that's not so quite known as lead time, throughput or WIP. Churn is a term that's used as surrogates for effort in software engineering. Many studies in software engineering use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates \parencite{el2000methodology}."  The authors in "Quantifying the effect of code smells on maintenance effort" agree that one should cautious when using surrogates for effort. 
 
-\section{WIP}
+\section{WIP-limit}
 \label{WIPsec}
 ''WIP-limits seem to be the worst understood part of the Kanban system. When used properly, it exposes bottlenecks and reduces lead time for individual work items. Used improperly, it can starve developers for work or result in too many people working on the same work items.'' \parencite{Shinkle}
 
 
-WIP-limit is a tool in Kanban to reduce overhead by limit task-switching for each developer and visualize bottlenecks. One of the best way to explain WIP and the impact of WIP-limit is to use cars and roads as analogy. All roads have it maximum capacity width number of cars . When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams, a software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks decreases and lead time increases.
+WIP-limit is a tool in Kanban to reduce overhead by limit task-switching for each developer and visualize bottlenecks. One of the best way to explain WIP and the impact of WIP-limit is to use cars and roads as analogy. All roads have it maximum capacity of cars . When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams, a software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks decreases and lead time increases.
 
 
-Research in the field of Work In Progress (WIP) and if WIP matters in software development, lacks proper research. But some similar research has been done, Giulio Concas and Hongyu Zhang  for instance has done research on the difference between limit WIP and unlimited WIP  \parencite{SMR:SMR1599} and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi also highlighted the difference between limit WIP and unlimited process in the article 'Studying Lean-Kanban Approach Using Software Process Simulation' \parencite{DavidAnderson}
-
-How to find the best WIP in software development (SD) for a given interval and context also lacks proper research, but in manufacture business some research has been done. Taho Yanga, Hsin-Pin Fub, Kuang-Yi Yanga stated that WIP could be defined as; ${WIP = cycle time * throughput \: rate}$ in manufacture business \parencite{Yang}.
-
-WIP-limit helps team to reduce overhead, decrease lead time and increase throughput \parencite {CONWIP}. But in order to get the best throughput and lead time, a software team needs to experiment with WIP in order to find their WIP-limit. When first implementing Kanban, Shinkle explains that the users don't care about the WIP, but rather the visibility of Kanban through the Kanban board. When the user get more experience with Kanban, they start to attempt the principles of WIP-limit \parencite{Shinkle}.
-
-Shinkle defined novice and more experience kanban-users with a descriptive analogy \parencite{Shinkle}:
-''Think about a typical person wanting to bake a cake. They go to the store, purchase a boxed cake mix, and follow the directions as described on the back of the box. They have little to no knowledge about how to alter the recipe nor do they have a desire to do so. Their goal is simply to bake a cake.''
-
-''An advanced beginner understands how to apply some context to the instructions or rules on the back of the box. They can make minor adjustments for things like altitude, pan size, oven conditions, etc. They are still following the basic recipe, but can make minor adjustments likely based on previous experiences." According to Shinkle, principles like WIP-limit will be adopted when the user has some experience with Kanban. 
-
-Setting the WIP-limit has a number of benefits according to Hopp, Spearman and Suri. They stated that it reduces flow times, reduces variation and improves quality \parencite{CONWIP}. However Srinivasan, Ebbing and Swearing said that setting the WIP is not easy. They suggest that WIP are just set, and then observe throughput, and adjust after that \parencite{Mandyam}. The principle of Kanban also says you should limit WIP. So what should the limit be? The principles of Kanban tells us to experiment \parencite{Kniberg}. Lean Software Management and the Impact of Kanban on Software Project Work suggest that WIP should be minimized as well. The study suggest to minimize WIP-limit to keep high quality \parencite{Ikonen} and to create continuous flow and bring problems to the surface \parencite{Joyce}. The conclusion of present study is to keep the WIP-limit low and experiment by slowing increase the WIP-limit until the throughput decreased and lead time increased, then you know that the previous WIP-limit was the perfect one.
-
-Several people have their opinion on how to best measure the WIP, but most of them agree upon that's there is no clear rule of how to measure WIP in software development. Lukasz proposes to use The Effectiveness as an indicator measured at the end of each cycle. The effectiveness is a formula that takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers ,etc.)(ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
+Research in the field of Work In Progress (WIP) and if WIP-limit matters in software development lacks proper research. But some research has been done, Giulio Concas and Hongyu Zhang for instance has done research on the difference between limit WIP and unlimited WIP\parencite{SMR:SMR1599} and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi has also highlighted the difference between limit WIP and unlimited WIP the article 'Studying Lean-Kanban Approach Using Software Process Simulation' \parencite{DavidAnderson}. Lukasz proposes to use the effectiveness metric to help determine WIP-limit. The effectiveness metric should be applied after end cycle according to Lukasz, so after each cycle, one can apply it and the result could be used as a guideline for WIP-limit for the next cycle. The effectiveness takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers ,etc.) (ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
 
 \begin{equation} \label{WIPEQ}
 Ei=\frac{ai-ei}{ai}*100\%
 \end{equation}
 
-\subsubsection{Benefits with WIP-limit according to various articles}
+In manufacture business Taho Yanga, Hsin-Pin Fub, Kuang-Yi Yanga stated that WIP could be defined as: 
+
+\begin{equation} \label{WIPMAN}
+WIP-limit = cycle time * throughput \: rate
+\end{equation}
+\parencite{Yang}.
+
+When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP-limit, but rather the visibility of Kanban through the Kanban board. When the user get more experience with Kanban, they start to attempt the principles of WIP-limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP-limit is not easy. They suggest that the WIP-limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. 
+
+The principle of Kanban also says you should limit WIP, but what should the limit be? The principles of Kanban tells us to experiment \parencite{Kniberg}. Lean Software Management and the Impact of Kanban on Software Project Work suggest that WIP should be minimized as well. The study suggest to minimize WIP-limit to keep high quality \parencite{Ikonen} and to create continuous flow and bring problems to the surface \parencite{Joyce}. The conclusion of present study is to keep the WIP-limit low and experiment by slowly increase the WIP-limit until the throughput decreased and lead time increased, then you know that the previous WIP-limit was the perfect one.
+
+
+
+\iffalse
+Shinkle defined novice and more experience kanban-users with a descriptive analogy \parencite{Shinkle}:
+''Think about a typical person wanting to bake a cake. They go to the store, purchase a boxed cake mix, and follow the directions as described on the back of the box. They have little to no knowledge about how to alter the recipe nor do they have a desire to do so. Their goal is simply to bake a cake.''
+
+''An advanced beginner understands how to apply some context to the instructions or rules on the back of the box. They can make minor adjustments for things like altitude, pan size, oven conditions, etc. They are still following the basic recipe, but can make minor adjustments likely based on previous experiences." According to Shinkle, principles like WIP-limit will be adopted when the user has some experience with Kanban. 
+\fi
+
+\subsection{Benefits with WIP-limit according to various articles}
 \begin{enumerate}
-\item The tasks should be prioritized from high to low, in order to keep the best WIP. The article also states that high WIP will keep people task switching and not be able to fully concentrate on each work in progress \parencite{Ikonen}.
+\item When lowering the WIP-limit will help people avoid task switching. When one is task swtiching it's hard to be able to fully concentrate. \parencite{Ikonen}.
 \item There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased' \parencite{Joyce}
-\item The team in Lean Software Management study realized the where bottlenecks. So the team started to determine WIP by their constraints. The team quickly realized that they had fewer quality assurance/testing staff and business analysts than software developers. This reflected the bottlenecks and the constraints, so the team adjusted WIP to how much work they could handle; this gave the team more experience in dealing with WIP and increased productivity \parencite{Joyce}.
+\item The team in Lean Software Management study realized the where bottlenecks. So the team started to determine WIP by their constraints. The team quickly realized that they had fewer quality assurance/testing staff and business analysts than software developers. This reflected the bottlenecks and the constraints, so the team adjusted the WIP-limit to how much work they could handle; this gave the team more experience in dealing with WIP and increased productivity \parencite{Joyce}.
+
+\item To set a WIP-limit has some advantages:
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item It helps team to reduce overhead 
+\item Decrease lead time
+\item Increase throughput
+\item It reduces flow times
+\item Reduces variation 
+\item Improves quality
+\end{itemize}
+\parencite {CONWIP}.
 \end{enumerate}
 
-As notice, there's no clear rule on how to deal with WIP and how to determine WIP, although WIP is a crucial tool in order to Kanban sufficient
+As one can see, several people have their opinion on WIP and the importance of defining WIP-limit. If we disregard Lukasz's effectiveness metric, there is no clear rule on how to determine the WIP-limit without  recording throughput and lead time and measure them, even though WIP is a crucial tool in order to use Kanban sufficient. 
 
-\section {Limit WIP vs. Unlimited WIP}
-Simulation of software maintenance process, with and without a work- in-process limit did a research on how the throughput and how developers experience WIP limit and unlimited WIP\parencite{SMR:SMR1599}.
+\subsection {Limit WIP vs. Unlimited WIP}
+Simulation of software maintenance process, with and without a work- in-process limit did a research on how the throughput and how developers experience WIP limit and unlimited WIP \parencite{SMR:SMR1599}.
 
-One of the result from this paper was at the end of a simulation, the average of closed issued was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds like; developers are more focused on fixing few issues, because the number of issues they can work on is limited.  Because the limit of WIP, the developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduce overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on a another issue. The study also showed that limit WIP can improve throughput and work efficiency. \parencite{SMR:SMR1599}.
+One of the result from this paper was at the end of a simulation, the average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduce overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on a another issue. The study also showed that limit WIP can improve throughput and work efficiency. \parencite{SMR:SMR1599}.
 
 \section{Software Innovation (SI)}
-Software Innovation is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control.
+Software Innovation is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI build products around Microsoft Sharepoint platform and tightly integrated into the Microsoft Office environment \parencite{Dag}. \parencite{SI}.
 
-Software Innovation has approximately 300 employees, and has offices in Oslo, Copenhagen and Stockholm and a development center in Bangalore \parencite{SI}.
+SI has approximately 300 employees. SI has offices in Oslo, Copenhagen and Stockholm and a development center in Bangalore\parencite{SI}.  From 2001 to 2006 SI used Waterfall process with a life cycle of design, implementation, testing, and deployment for each new release. In 2007 SI changed to Scrum. Scrum was implemented with the standard elements of Scrum: 
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Cross functional teams
+\item Sprint planning meetings 
+\item Estimation of work items using planning poker
+\item Daily standup meetings
+\item Sprints of three weeks
+\end{itemize}
+After a three week sprint a fully tested shippable code is ready. In 2010 SI went from Scrum to Kanban. SI felt that Scrum was too rigid and didn't fit their purpose, they also feared that inaccurate estimation and time boxes gave longer lead times. They also saw Scrum planning meetings as waste which reduced productivity and quality\parencite{SI}. 
+
+SI decided to implemented Kanban in the following manner. When a work items starts SI tries to make the item flow through all the stages until its ready for release as quick as possible. In order for a item to be ready for release it has to be at a satisfactory quality level which is defined by SI. SI also implemented WIP limits, if the WIP limit is reached, no new tasks are started until another task is finished also known as just-in-time. \parencite{SI}.
+
+
+
+%The data gathered for this theses is gathered used TFS. For this theses four teams will be analyzed to see if 
+
 
 
 \part{The project}                    %% ... or ??
@@ -455,8 +490,8 @@ In the example dates from figure \ref{wip_timeline} and from table \ref{wt:2} wi
 %skrive om tabellen
 \begin{figure}[ht!]
 \centering
-\hspace*{-1.6in}
-\includegraphics[width=23cm,trim=4 4 4 4,clip]{Picture/wip_example.jpg}
+\hspace*{-1in}
+\includegraphics[width=21cm,trim=4 4 4 4,clip]{Picture/wip_example.jpg}
 \caption{Illustrating the WIP timeline for this example}
 \label{wip_timeline}
 \end{figure}
@@ -524,6 +559,7 @@ Each task in the data set is label as either feature or bug as shown in figure \
 \end{center}
 \end{table}
 
+\begin{minipage}{\textwidth}
 \begin{lstlisting}[caption=Pseudocode example of how bugs are found, label=findBug]
 void findBug()
 	while inputFile != EOF // End Of File
@@ -535,6 +571,7 @@ void findBug()
 			B.team = newLine.team 
 			AddNewBug(B)
 \end{lstlisting}
+\end{minipage}
 \subsection{Add Bug}
 \label{addBugS}
 When adding a new bug, each bug is gathered into a data structure based on which team the bug belongs to, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
@@ -591,13 +628,13 @@ return false
 \end{lstlisting}
 
 
-
-
 \section{Churn}
 \label{churn}
-As stated in section \ref{sec:Churn} in order to take churn into account one need to know it's good surrogates. The churn from is good surrogate based on 
+As stated in section \ref{sec:Churn} in order to take churn into account one need to know it's good surrogates. SI has gathered churn with help of Microsoft's Team Foundation Server (TFS). The TFS system automatically records data such as churn and lead time. Based on TFS one can know that churn for SI a is good surrogate.
 
-To measure churn the data set from SI contains three columns as shown in table \ref{Churn}. To complete the measure the three columns are multiplied.  For task id one,  the churn is 2028 ($352+307+1369 = 2028$). %skal jeg skrive pseucode code tip denne? 
+To measure churn the data set from SI contains three columns as shown in table \ref{Churn}. To complete the measure the three columns are multiplied.  For task id one, the churn is 2028 ($352+307+1369 = 2028$). The tasks with id six has zero churn, since there are tasks that don't need code in order to be completed. Some tasks are reported as bugs, and needs support to be finished.
+
+%skal jeg skrive pseucode code til denne? 
 
 \begin{table}[ht]
 \begin{center}
