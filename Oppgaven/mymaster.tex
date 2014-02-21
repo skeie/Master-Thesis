@@ -653,13 +653,9 @@ To measure churn the data set from SI contains three columns as shown in table \
 \end{center}
 \end{table}
 
-
-%%\part{The project} 
-\chapter{Results}                     %% ... or ??
-
- 
-\section{Introduction}
-In this following chapter SPSS will be used on the data derived from chapter \ref{chap:RM}. SPSS will help to answer the research question stated in chapter \ref{chap:RQ}.  SPSS will help to compute Correlation and Graph's based on case summaries.  The case summaries will be done on:
+\section{SPSS}
+\subsection{Introduction}
+After the program has analyzed the data from SI,  SPSS will be used on the data derived from from the program. SPSS will help to answer the research question stated in chapter \ref{chap:RQ} with help of  Correlation, Graph's  and case summaries. The case summaries will be used on:
 \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
 \item WIP
 \item Throughput
@@ -671,7 +667,7 @@ In this following chapter SPSS will be used on the data derived from chapter \re
 "IBM® SPSS® Statistics is a comprehensive system for analyzing data. SPSS Statistics can take data from almost any type of file and use them to generate tabulated reports, charts and plots of distributions and trends, descriptive statistics, and complex statistical analyses." \parencite{IBM}
 
 From SPSS the function stated in figure \ref{SPSSfunctions} will be used to analyze data.
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \begin{itemize}
 \item Case summaries
 \item Line Graph
@@ -680,8 +676,23 @@ From SPSS the function stated in figure \ref{SPSSfunctions} will be used to anal
 \label{SPSSfunctions}
 \end{itemize}
 \end{figure}
+\newpage
 \subsubsection{Case summaries}
-The case summarizes function is used to calculate average WIP, throughput, lead time, bugs and churn per quarter. 
+The case summarize function is used on WIP, throughput, lead time, bugs and churn to calculate in variable in figure \ref{DS} per quarter:
+\begin{figure}[!ht]
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Mean
+\item Median
+\item Standard Derivation
+\item Number (N)
+\item Max
+\item Min
+\caption{Descriptive statistic}
+\label{DS}
+\end{itemize}
+\end{figure}
+
+
 %skrive her om descriptive statistics go
 
 \subsubsection{Line Graph}
@@ -699,7 +710,246 @@ The correlation function is used to look at the relationship between variables. 
 \item If the correlation is high, it means that the exists a pattern between the variables. 
 \end{itemize}
 
-In this thesis the focus will be on the correlation between %skrive her hva jeg gjør
+
+
+%%\part{The project} 
+\chapter{Results}                     %% ... or ??
+
+ 
+\section{Introduction}
+In this chapter 
+
+
+\section {Team 1}
+\newpage
+\subsection{WIP}
+As shown in table \ref{corr:1} bugs, throughput, churn, churn bugs and throughput bugs have a significant correlation with WIP. in table \ref{DS:1} is descriptive statistic for WIP shown.  As shown by the N column all quarters besides 2010-3 give reasonable data since in each quarter has 90 days give or take. 
+
+% hadde SI or 360 WIP-limit?
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Bugs & Throughput & Churn & Churn Bugs & Throughput bugs \\ \hline 
+	WIP & .753* & .816** & .738* & .708* & .800** \\ \hline 
+\end{tabular} 
+ \caption{Team one - Correlation - 	WIP} 
+ \label{corr:1}
+    \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
+      \centerline{  ** Correlation is significant at the 0.01 level (2-tailed).}
+ \end{table}  
+ 
+ \begin{table}[!htbp]
+  \centering
+  \scalebox{1}{
+   \begin{tabular}{ | l | l | l | l | l | l | l | l | }
+\hline
+	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	360 & 2010-3 & 39 & 5.82 & 5 & 2.55 & 15 & 1 \\ \hline
+	 & 2010-4 & 92 & 1.7 & 2 & 0.70 & 4 & 1 \\ \hline
+	 & 2011-1 & 90 & 4.37 & 2 & 6.87 & 31 & 1 \\ \hline
+	 & 2011-2 & 91 & 14.25 & 5 & 14.497 & 52 & 3 \\ \hline
+	 & 2011-3 & 92 & 2.4 & 3 & 0.97 & 4 & 1 \\ \hline
+	 & 2011-4 & 92 & 14.26 & 4 & 22.718 & 97 & 1 \\ \hline
+	 & 2012-1 & 91 & 13.35 & 5 & 16.62& 67 & 4 \\ \hline
+	 & 2012-2 & 91 & 15.35 & 3 & 27.145 & 94 & 2 \\ \hline
+	 & 2012-3 & 92 & 16.97 & 13.5 & 8.719 & 52 & 5 \\ \hline
+	 & 2012-4 & 90 & 9.07 & 2 & 17.073 & 74 & 1 \\ \hline
+	 & Total & 860 & 9.99 & 4 & 16.04 & 97 & 1 \\ \hline
+	\end{tabular}
+       }
+      \caption{Descriptive statistics for WIP - Team one}
+  \label{DS:1}%
+\end{table}% 
+\newpage
+
+\subsection{WIP and throughput correlation}Both throughput and throughput bugs have a significant correlation relationship with WIP. This is inconsistent with Kanban philosophy and what the research says about WIP-limit.  All the research and the principles of Kanban suggest lowering WIP in order to get high throughput. In team one's case the higher the WIP the higher the throughput.  
+In table \ref{DS:1} the mean column shows indication that team one could have experimented with WIP-limit the first five quarters. But in the last quarter, the WIP-limit decreased.  In the mean column in table \ref{DS:T:1}  if one take a look at the quarter 2012-4, the throughput are second highest, the same quarter as WIP decreased.  This link could have several reasons. One could be that they experimented with WIP and found out after the quarter 2012-3 that they needed to lower the WIP in order to increase the t hroughput, which it did.  Or maybe team one didn't care about setting a WIP-limit as stated in section \ref{WIPsec} by Shinkle. %ha med ref her til artikkelen?The maximum column in table \ref{DS:1} shows  
+
+The throughput bugs variable and throughput variable both have a significant correlation with WIP, which make sense since throughput bugs are a subset of throughput. But, throughput feature on the other hand has a -0.441 correlation with WIP. % burde jeg her legge inn -0.441 inn I en tabell? I samme correlationstabellen?
+As shown in table \ref{NoT:1} there are more tasks labeled as feature than bug. -0.441 is not a significant correlation, but it?s not the opposite site of throughput, and throughput feature is also a subset of throughput.  This also goes in the literatures favor, because when WIP is low, more throughput feature is produced. Maybe this could have something to do with the relationship bugs and feature? Features are often more challenging and more fun to work with than bugs. 
+
+The mean column shows gives indication that team one experimented with WIP-limit the first five quarters. But in the last quarter, the WIP-limit decreased.  In the mean column in table \ref{DS:T:1}  if one take a look at the quarter 2012-4, the throughput are second highest, the same quarter as WIP decreased.  This link could have several reasons. One could be that they experimented with WIP and found out after the quarter 2012-3 that they needed to lower the WIP in order to increase the Throughput, which it did.  Or maybe team one didn?t care about setting a WIP-limit as stated in section \ref{sec:WIP} by Shinkle. %ha med ref her til artikkelen?The maximum column in table \ref{DS:1} shows  %2012-3 releases? Det kan være en sammenheng med at median er så høy der
+   \begin{table}[!htbp]
+ \begin{tabular}{ | l | l | l | l | l | l | l | l | }
+\hline
+	Team & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	360 & 2010-3 & 5 & 2.6 & 2 & 1.34 & 4 & 1 \\ \hline
+	 & 2011-1 & 7 & 5.71 & 6 & 4.03 & 13 & 1 \\ \hline
+	 & 2011-2 & 26 & 3.38 & 3 & 1.96 & 8 & 1 \\ \hline
+	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
+	 & 2011-4 & 15 & 6.13 & 4 & 4.984 & 18 & 2 \\ \hline
+	 & 2012-1 & 16 & 6.56 & 6.5 & 3.59 & 14 & 1 \\ \hline
+	 & 2012-2 & 13 & 10.15 & 10 & 5.742 & 23 & 1 \\ \hline
+	 & 2012-3 & 22 & 3.41 & 2 & 3.33 & 12 & 1 \\ \hline
+	 & 2012-4 & 14 & 8.14 & 7 & 6.5 & 21 & 1 \\ \hline
+	 & Total & 119 & 5.55 & 4 & 4.694 & 23 & 1 \\ \hline
+	 \end{tabular}
+	 \caption{Descriptive statistic for throughput - team one }
+	 \label{DS:T:1}
+	 \end{table}%
+	 
+\begin{table}[!htbp]
+\begin{tabular}{ | l | l | l | l | l | l | l | l | }
+\hline
+	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	360 & 2010-3 & 5 & 2.6 & 2 & 1.34 & 4 & 1 \\ \hline
+	 & 2011-1 & 7 & 5.71 & 6 & 4.03 & 13 & 1 \\ \hline
+	 & 2011-2 & 26 & 3.38 & 3 & 1.96 & 8 & 1 \\ \hline
+	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
+	 & 2011-4 & 15 & 6.13 & 4 & 4.984 & 18 & 2 \\ \hline
+	 & 2012-1 & 16 & 6.56 & 6.5 & 3.59 & 14 & 1 \\ \hline
+	 & 2012-2 & 13 & 10.15 & 10 & 5.742 & 23 & 1 \\ \hline
+	 & 2012-3 & 22 & 3.41 & 2 & 3.33 & 12 & 1 \\ \hline
+	 & 2012-4 & 14 & 8.14 & 7 & 6.50 & 21 & 1 \\ \hline
+	 & Total & 119 & 5.55 & 4 & 4.694 & 23 & 1 \\ \hline
+	 \end{tabular}
+\caption{Descriptive statistic for throughput feature - team one }%
+\end{table}	 
+
+\begin{table}[!htbp]	 
+\begin{tabular}{ | l | l | l | l | l | l | l | l | }
+\hline
+	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	360 & 2010-3 & 9 & 1.11 & 1 & 0.33& 2 & 1 \\ \hline
+	 & 2010-4 & 3 & 1 & 1 & 0 & 1 & 1 \\ \hline
+	 & 2011-2 & 26 & 5 & 3 & 4.45 & 17 & 1 \\ \hline
+	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
+	 & 2011-4 & 24 & 6.79 & 4 & 6.35 & 20 & 1 \\ \hline
+	 & 2012-1 & 18 & 4.83 & 4 & 3.20 & 11 & 1 \\ \hline
+	 & 2012-2 & 19 & 7.84 & 9 & 5.843 & 17 & 1 \\ \hline
+	 & 2012-3 & 6 & 2.67 & 1.5 & 2.25 & 6 & 1 \\ \hline
+	 & 2012-4 & 11 & 3.18 & 3 & 1.77 & 7 & 1 \\ \hline
+	 & Total & 117 & 5.08 & 3 & 4.88 & 20 & 1 \\ \hline
+	 \end{tabular}
+\caption{Descriptive statistic for throughput bugs - team one }%
+\end{table}   
+\newpage
+
+\subsubsection{WIP and bugs correlation}
+Only looking at WIP and throughput correlation without taking other factores into account may give bias.
+
+Bugs and Churn have also have a significant correlation with WIP.  A positive bug correlation could help favor what said about WIP and throughput in literature. Since both WIP and throughput increases and decreases at the same time, the same goes for bug. This could mean that when WIP is high, and throughput is high team one also has a lot of bugs in their code. This means that they don?t do their job well, and this could be because they have a lot of task switching due to high WIP. As stated I table \ref{PB:1} one can see that almost each bug that was reported was finished in the same quarter. The outcast could be the bugs reported just before the quarter end. Worth noticing in quarter 2011-1 there was no bugs recorded. %2012-3 releases? Det kan være en sammenheng med at median er så høy der
+\subsection{WIP and churn correlation}
+When WIP increases so do churn. This means that when team one has more tasks in progress the tasks requires more coding. This is odd and could be a coincidence. Churn and churn bugs have also here as with throughput a close correlation with WIP. Churn feature has a correlation of 0.467 %legge inn I tabell? 
+Which is closer than throughput feature had. As shown in table \ref{DS:CF:1} the maximum size of tasks requires almost 60 times more coding than the maximum showed in table \ref{ DS:CB:1}. In the same table the column std. deviation shows way more proliferation for churn feature. This indicates that the numbers in churn feature are way more spread, which again indicates that it?s random of how big the tasks are. In the churn bugs the std. deviation is much lower than in the feature table.Both median and mean favors that churn feature requires more work than churn bugs% This could due to releaser sjekke ut dette.  Hvis det har noe med releaser så er det slik at når de er nærmere en release så blir oppgavene større siden de har mer å gjøre for releasen kommer. Er det slik at SI da har satt seg I et mål om  å levere så og så mye slik som de gjorde I Scrum?
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{ | l | l | l | l | l | l | l | }
+\hline
+	Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	2010-3 & 5 & 434 & 106 & 808.67 & 1879 & 30 \\ \hline
+	2011-1 & 7 & 0 & 0 & 0 & 0 & 0 \\ \hline
+	2011-2 & 26 & 1199.54 & 139 & 4695.424 & 24139 & 0 \\ \hline
+	2011-3 & 1 & 0 & 0 & . & 0 & 0 \\ \hline
+	2011-4 & 15 & 516.4 & 148 & 1063.92 & 3946 & 0 \\ \hline
+	2012-1 & 16 & 5775.25 & 410 & 20692.09 & 83317 & 0 \\ \hline
+	2012-2 & 14 & 7569.14 & 522.5 & 24655.70 & 93108 & 0 \\ \hline
+	2012-3 & 23 & 6.74 & 0 & 25.44 & 118 & 0 \\ \hline
+	2012-4 & 16 & 408 & 47 & 1056.23 & 4275 & 0 \\ \hline
+	Total & 123 & 2001.29 & 65 & 11380.06 & 93108 & 0 \\ \hline
+\end{tabular}
+   \caption{Descriptive Statistic for churn feature - Team one}
+  \label{DS:CF:1}% descriptive statistic churn feature team 1
+\end{table}%
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{ | l | l | l | l | l | l | l | }
+\hline
+	Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	2010-3 & 7 & 57.14 & 22 & 73.91 & 193 & 4 \\ \hline
+	2010-4 & 2 & 30 & 30 & 41.012 & 59 & 1 \\ \hline
+	2011-2 & 21 & 386.33 & 177 & 431.94& 1604 & 2 \\ \hline
+	2011-3 & 1 & 2 & 2 & . & 2 & 2 \\ \hline
+	2011-4 & 19 & 306.89 & 148 & 437.13 & 1557 & 12 \\ \hline
+	2012-1 & 16 & 312.81 & 160 & 307.73& 1035 & 4 \\ \hline
+	2012-2 & 13 & 296.92 & 169 & 292.29 & 1019 & 18 \\ \hline
+	2012-3 & 7 & 37.71 & 9 & 56.494 & 126 & 0 \\ \hline
+	2012-4 & 8 & 118.75 & 84 & 103.09 & 292 & 3 \\ \hline
+	Total & 94 & 260.48 & 135 & 346.25 & 1604 & 0 \\ \hline
+\end{tabular}
+ \caption{Descriptive Statistic for churn bugs - Team one}
+  \label{DS:CB:1}% descriptive statistic churn bugs team 1
+\end{table}%
+
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{ | l |l | }
+\hline
+	Quarter & Precent of bugs finished in the same quarter as reported   \\ \hline
+	2010-3 & 100\%   \\ \hline
+	2010-4 & 100\%   \\ \hline
+	2011-1 & 0\%    \\ \hline
+	2011-2 & 97.74\%  \\ \hline
+	2011-3 & 20\%   \\ \hline
+	2011-4 & 97.5\%  \\ \hline
+	2012-1 & 96.51\%  \\ \hline
+	2012-2 & 98.63\%   \\ \hline
+	2012-3 & 82.35\%  \\ \hline
+	2012-4 & 100\%    \\ \hline
+\end{tabular}
+   \caption{The percent number of bugs finished in the same quarter as reported - Team one}
+  \label{PB:1}%Precent bugs team 1
+\end{table}% 
+
+
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{ | l | l | }
+\hline
+	Number of features & Number of bugs \\ \hline
+	660 & 594 \\ \hline
+\end{tabular}
+   \caption{Number of throughput divided into bugs and feature - Team one}
+  \label{NoT:1}%Nr of throughput 
+\end{table}% 
+\newpage
+
+
+\subsection {Bugs}
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Throughput & WIP & Churn & Churn Bugs & Churn feature & TP bugs \\ \hline 
+	Bugs & .945** & .753* & .992** & .813** & .730* & .984** \\ \hline 
+
+\end{tabular} 
+\caption{Team one - Correlation - Bugs }%
+   \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
+      \centerline{  ** Correlation is significant at the 0.01 level (2-tailed).}
+\end{table}  
+
+ \begin{table}[!htbp]
+\begin{tabular}{ | l | l | l | l | l | l | l | l | }
+\hline
+	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	360 & 2010-3 & 7 & 1.29 & 1 & 0.48 & 2 & 1 \\ \hline
+	 & 2010-4 & 4 & 1 & 1 & 0 & 1 & 1 \\ \hline
+	 & 2011-2 & 32 & 4.16 & 3.5 & 3.63 & 14 & 1 \\ \hline
+	 & 2011-3 & 5 & 1 & 1 & 0 & 1 & 1 \\ \hline
+	 & 2011-4 & 26 & 6.15 & 4 & 5.80 & 22 & 1 \\ \hline
+	 & 2012-1 & 21 & 4.09 & 4 & 2.7 & 11 & 1 \\ \hline
+	 & 2012-2 & 17 & 8.59 & 9 & 5.59& 19 & 1 \\ \hline
+	 & 2012-3 & 7 & 2.43 & 2 & 1.512 & 5 & 1 \\ \hline
+	 & 2012-4 & 11 & 3 & 3 & 2 & 6 & 1 \\ \hline
+	 & Total & 131 & 4.53 & 3 & 4.44 t & 22 & 1 \\ \hline
+	 \end{tabular}
+\caption{360 - Descriptive statistic - Bugs }%
+\end{table}
+
+
+
+
+
+
+
+
+
 
 \subsection{Analyzed data per quarter}
 %%skrive at bug er fra da den blir rapportert
@@ -756,32 +1006,11 @@ In figure \ref{Neonpq} the average WIP, Throughput, Lead time and Bugs per quart
 \section {360}
 
 
-\begin{table}[htbp]
-  \centering
-  \scalebox{0.9}{
-   \begin{tabular}{ | l | l | l | l | l | l | l | l | }
-\hline
-	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	360 & 2010-3 & 39 & 5.82 & 5 & 2.55 & 15 & 1 \\ \hline
-	 & 2010-4 & 92 & 1.7 & 2 & 0.70 & 4 & 1 \\ \hline
-	 & 2011-1 & 90 & 4.37 & 2 & 6.87 & 31 & 1 \\ \hline
-	 & 2011-2 & 91 & 14.25 & 5 & 14.497 & 52 & 3 \\ \hline
-	 & 2011-3 & 92 & 2.4 & 3 & 0.97 & 4 & 1 \\ \hline
-	 & 2011-4 & 92 & 14.26 & 4 & 22.718 & 97 & 1 \\ \hline
-	 & 2012-1 & 91 & 13.35 & 5 & 16.62& 67 & 4 \\ \hline
-	 & 2012-2 & 91 & 15.35 & 3 & 27.145 & 94 & 2 \\ \hline
-	 & 2012-3 & 92 & 16.97 & 13.5 & 8.719 & 52 & 5 \\ \hline
-	 & 2012-4 & 90 & 9.07 & 2 & 17.073 & 74 & 1 \\ \hline
-	 & Total & 860 & 9.99 & 4 & 16.04 & 97 & 1 \\ \hline
-	\end{tabular}
-       }
-      \caption{Descriptive statistics for WIP - 360}
-  \label{tab:addlabel}%
-\end{table}% 
+
   
 \begin{table}[htbp]
   \centering
-  \begin{adjustwidth}{-3cm}{}
+  \begin{adjustwidth}{-2cm}{}
   \scalebox{0.38}{
   \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | }
 \hline
@@ -915,76 +1144,7 @@ Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
 \end{adjustwidth}
  \end{table}%
  
-  \begin{table}[!htbp]
- \begin{tabular}{ | l | l | l | l | l | l | l | l | }
-\hline
-	Team & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	360 & 2010-3 & 5 & 2.6 & 2 & 1.34 & 4 & 1 \\ \hline
-	 & 2011-1 & 7 & 5.71 & 6 & 4.03 & 13 & 1 \\ \hline
-	 & 2011-2 & 26 & 3.38 & 3 & 1.96 & 8 & 1 \\ \hline
-	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
-	 & 2011-4 & 15 & 6.13 & 4 & 4.984 & 18 & 2 \\ \hline
-	 & 2012-1 & 16 & 6.56 & 6.5 & 3.59 & 14 & 1 \\ \hline
-	 & 2012-2 & 13 & 10.15 & 10 & 5.742 & 23 & 1 \\ \hline
-	 & 2012-3 & 22 & 3.41 & 2 & 3.33 & 12 & 1 \\ \hline
-	 & 2012-4 & 14 & 8.14 & 7 & 6.5 & 21 & 1 \\ \hline
-	 & Total & 119 & 5.55 & 4 & 4.694 & 23 & 1 \\ \hline
-	 \end{tabular}
-	 \caption{360 - Descriptive statistic - Throughput}
-	 \end{table}%
-	  \begin{table}[!htbp]
-\begin{tabular}{ | l | l | l | l | l | l | l | l | }
-\hline
-	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	360 & 2010-3 & 7 & 1.29 & 1 & 0.48 & 2 & 1 \\ \hline
-	 & 2010-4 & 4 & 1 & 1 & 0 & 1 & 1 \\ \hline
-	 & 2011-2 & 32 & 4.16 & 3.5 & 3.63 & 14 & 1 \\ \hline
-	 & 2011-3 & 5 & 1 & 1 & 0 & 1 & 1 \\ \hline
-	 & 2011-4 & 26 & 6.15 & 4 & 5.80 & 22 & 1 \\ \hline
-	 & 2012-1 & 21 & 4.09 & 4 & 2.7 & 11 & 1 \\ \hline
-	 & 2012-2 & 17 & 8.59 & 9 & 5.59& 19 & 1 \\ \hline
-	 & 2012-3 & 7 & 2.43 & 2 & 1.512 & 5 & 1 \\ \hline
-	 & 2012-4 & 11 & 3 & 3 & 2 & 6 & 1 \\ \hline
-	 & Total & 131 & 4.53 & 3 & 4.44 t & 22 & 1 \\ \hline
-	 \end{tabular}
-\caption{360 - Descriptive statistic - Bugs }%
-\end{table}
-
-\begin{table}[!htbp]
-\begin{tabular}{ | l | l | l | l | l | l | l | l | }
-\hline
-	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	360 & 2010-3 & 5 & 2.6 & 2 & 1.34 & 4 & 1 \\ \hline
-	 & 2011-1 & 7 & 5.71 & 6 & 4.03 & 13 & 1 \\ \hline
-	 & 2011-2 & 26 & 3.38 & 3 & 1.96 & 8 & 1 \\ \hline
-	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
-	 & 2011-4 & 15 & 6.13 & 4 & 4.984 & 18 & 2 \\ \hline
-	 & 2012-1 & 16 & 6.56 & 6.5 & 3.59 & 14 & 1 \\ \hline
-	 & 2012-2 & 13 & 10.15 & 10 & 5.742 & 23 & 1 \\ \hline
-	 & 2012-3 & 22 & 3.41 & 2 & 3.33 & 12 & 1 \\ \hline
-	 & 2012-4 & 14 & 8.14 & 7 & 6.50 & 21 & 1 \\ \hline
-	 & Total & 119 & 5.55 & 4 & 4.694 & 23 & 1 \\ \hline
-	 \end{tabular}
-\caption{360 - Descriptive statistic - TP Feature }%
-\end{table}	 
-
-\begin{table}[!htbp]	 
-\begin{tabular}{ | l | l | l | l | l | l | l | l | }
-\hline
-	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	360 & 2010-3 & 9 & 1.11 & 1 & 0.33& 2 & 1 \\ \hline
-	 & 2010-4 & 3 & 1 & 1 & 0 & 1 & 1 \\ \hline
-	 & 2011-2 & 26 & 5 & 3 & 4.45 & 17 & 1 \\ \hline
-	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
-	 & 2011-4 & 24 & 6.79 & 4 & 6.35 & 20 & 1 \\ \hline
-	 & 2012-1 & 18 & 4.83 & 4 & 3.20 & 11 & 1 \\ \hline
-	 & 2012-2 & 19 & 7.84 & 9 & 5.843 & 17 & 1 \\ \hline
-	 & 2012-3 & 6 & 2.67 & 1.5 & 2.25 & 6 & 1 \\ \hline
-	 & 2012-4 & 11 & 3.18 & 3 & 1.77 & 7 & 1 \\ \hline
-	 & Total & 117 & 5.08 & 3 & 4.88 & 20 & 1 \\ \hline
-	 \end{tabular}
-\caption{360 - Descriptive statistic - TP Bugs }%
-\end{table}	
+	
 
  
 %%%%%%%%%%%%%%%%%

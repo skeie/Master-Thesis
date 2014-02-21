@@ -1,0 +1,147 @@
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Throughput & WIP & Churn & Churn Bugs & Churn feature & TP bugs \\ \hline 
+	Bugs & .945** & .753* & .992** & .813** & .730* & .984** \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Bugs} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Bugs & WIP & Churn & Churn Bugs & Churn feature & TP bugs & Churn Average \\ \hline 
+	Throughput & .945** & .816** & .962** & .776** & .736* & .940** & .638* \\ \hline
+ \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Throughput} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Bugs & Throughput & Churn & Churn Bugs & TP bugs \\ \hline 
+	WIP & .753* & .816** & .738* & .708* & .800** \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	WIP} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Bugs & Throughput & WIP & Churn Bugs & Churn feature & TP bugs \\ \hline 
+	Churn & .992** & .962** & .738* & .804** & .741* & .974** \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Churn} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|} 
+\hline 
+Correlation  & Precent bugs fininshed \\ \hline 
+	TP\_Feature & -.795** \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	TP\_Feature} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Bugs & Throughput & WIP & Churn & TP bugs & Average Days Backlog & Churn Average \\ \hline 
+	Churn\_Bugs & .813** & .776** & .708* & .804** & .884** & .700* & .665* \\ \hline
+ \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Churn\_Bugs} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|} 
+\hline 
+Correlation  & Precent bugs fininshed \\ \hline 
+	Churn\_Union & .634* \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Churn\_Union} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Bugs & Throughput & Churn & TP bugs & Bugs churn average & Churn Average \\ \hline 
+	Churn\_feature & .730* & .736* & .741* & .681* & .924** & .947** \\ \hline
+ \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Churn\_feature} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|l|l|} 
+\hline 
+Correlation  & Bugs & Throughput & WIP & Churn & Churn Bugs & Churn feature \\ \hline 
+	TP\_bugs & .984** & .940** & .800** & .974** & .884** & .681* \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	TP\_bugs} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|} 
+\hline 
+Correlation  & Churn Bugs \\ \hline 
+	Average\_Days\_Backlog & .700* \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Average\_Days\_Backlog} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|} 
+\hline 
+Correlation  & Churn feature & Churn Average \\ \hline 
+	Bugs\_churn\_average & .924** & .973** \\ \hline
+ \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Bugs\_churn\_average} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|} 
+\hline 
+Correlation  & TP Feature & Churn Union \\ \hline 
+	Precent\_bugs\_fininshed & -.795** & .634* \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Precent\_bugs\_fininshed} 
+ \end{table}  
+
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|} 
+\hline 
+Correlation  & Throughput & Churn Bugs & Churn feature & Bugs churn average \\ \hline 
+	Churn\_Average & .638* & .665* & .947** & .973** \\ \hline 
+
+\end{tabular} 
+ \caption{Team one - Correlation - 	Churn\_Average} 
+ \end{table}  
+
