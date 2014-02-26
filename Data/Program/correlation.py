@@ -43,7 +43,6 @@ with open(sys.argv[1], mode="r") as f:
                 for a,i in enumerate(index):
                     if a == 0:
                         tmp+= "Correlation "
-                       
                     first = firstLine[swag(firstLine, i)].split("\_")
                     fi = removeHline(' '.join(first))
                     tmp+=" & " + fi
@@ -55,6 +54,7 @@ with open(sys.argv[1], mode="r") as f:
                     tmp += " & " + i 
                 tmp +=" \\\\ \\hline \n"
                 tmp +="\n\\end{tabular} \n \caption{Team one - Correlation - "+cols[0]+"} \n \\end{table}  \n\n"
+                print "skriver"
                 out.write(tmp)
                 index = []
                 elements = []

@@ -441,8 +441,8 @@ The data set from SI contains dates from 2008 to 2013, but there are some dates 
   
 In order to create the remaining dates, the program takes the first date and the last date from the Arraylist created in previous section (\ref{sub:stepOne}) as shown in listing \ref{lst:remaining} line one and two. Then the program checks if all the dates between the first date and the last date are in the Arraylist. If the dates are not in the Arraylist, the program will put the date into the Arraylist as show in method on line ten to thirteen.
 In order to keep the pseudocode simple, the generateWIP method stated in line twelve was omit. The method creates a new WIP object and returns it.
-
- \begin{lstlisting}[caption={Gather the remaining dates},label={lst:remaining}]
+\begin{minipage}{\textwidth} 
+\begin{lstlisting}[caption={Gather the remaining dates},label={lst:remaining}]
 WIP first = Arraylist.get(0)//points to the first WIP object in the Arraylist 
 WIP last = Arraylist.get(Arraylist.size())//points to the last WIP object in the Arraylist 
 Next_date //points to the next date
@@ -457,7 +457,8 @@ addToArraylist(Date d)
 		WIP = generateWIP(d)
 		Arraylist.add(WIP) 
  \end{lstlisting}
-
+\end{minipage}
+ 
 \subsection{Step 3 Measure WIP}
 The Arraylist from section \ref{sub:stepOne}  and \ref{sub:stepTwo} now contain a WIP object for each date from 2008 to 2013. The reader needs remember the WIP counter of every WIP objects contains the number of tasks started on the corresponding date. This measurement was done in section \ref{sub:stepOne}. In this step the program will loop through the Arraylist, during the iteration each WIP object is extracted from the Arraylist and the new WIP is measured based on how many tasks that has been finished illustrated in the listing \ref{lst:measure}.
 
@@ -611,20 +612,20 @@ return false
  
 \section{Throughput}
  \label{TP}
-Finding the throughput per day is quite similar to how bugs are found (described in section \ref{Bug}).  When reading in the data set a new throughput object is created for each line in the set.  Then all throughput objects are sorted based on team association. When all throughput objects are sorted, the program measure throughput. The throughput measurement is similar to the dateExists method (lines 26 to 32) in the listing \ref{addBug} stated in section \ref{addBugS}. 
+Finding the throughput per day is quite similar to how bugs are found (described in section \ref{Bug}).  When reading in the data set a new throughput object is created for each line in the data set.  Then all throughput objects are sorted based on team association. When all throughput objects are sorted, the program measure throughput. The throughput measurement is similar to the dateExists method (lines 26 to 32) in the listing \ref{addBug} stated in section \ref{addBugS}. 
 
 \newpage
 The dateExists method starts of with a test, the same test is done for bugs. If the date of the throughput object is in the data structure the corresponding counter is incremented.  If the date is not in the data structure, the new throughput object is added to the data structure. An excerpt of the code is listed in \ref{throughputCode} 
 
 \begin{lstlisting}[caption=Pseudocode example of how throughput is measured, label=throughputCode]
 
-void dateExists(Date d, DataStructure structure)
+dateExists(Throughput tp d, DataStructure structure)
 	for Throughput t in structure
-		if t.date EQUALS d
+		if t.date EQUALS tp.date
 			t.counter++
-			return true
+			return
 			
-return false	
+structure.add(tp);
 \end{lstlisting}
 
 
@@ -632,7 +633,7 @@ return false
 \label{churn}
 As stated in section \ref{sec:Churn} in order to take churn into account one need to know it's good surrogates. SI has gathered churn with help of Microsoft's Team Foundation Server (TFS). The TFS system automatically records data such as churn and lead time. Based on TFS one can know that churn for SI a is good surrogate.
 
-To measure churn the data set from SI contains three columns as shown in table \ref{Churn}. To complete the measure the three columns are multiplied.  For task id one, the churn is 2028 ($352+307+1369 = 2028$). The tasks with id six has zero churn, since there are tasks that don't need code in order to be completed. Some tasks are reported as bugs, and needs support to be finished.
+To measure churn the data set from SI contains three columns as shown in table \ref{Churn}. To complete the measure the three columns are multiplied.  For task id one, the churn is 2028 ($352+307+1369 = 2028$). The task with id six has zero churn. In the data set there exists tasks with zero churn, these tasks don't need code in order to be completed such tasks needs support to be finished.
 
 %skal jeg skrive pseucode code til denne? 
 
@@ -655,7 +656,7 @@ To measure churn the data set from SI contains three columns as shown in table \
 
 \section{SPSS}
 \subsection{Introduction}
-After the program has analyzed the data from SI,  SPSS will be used on the data derived from from the program. SPSS will help to answer the research question stated in chapter \ref{chap:RQ} with help of  Correlation, Graph's  and case summaries. The case summaries will be used on:
+After the program has analyzed the data from SI,  SPSS will be used on the data derived from from the program. SPSS will help to answer the research question stated in chapter \ref{chap:RQ} with help of these three statistics method: Correlation, Graph's  and case summaries. The case summaries will be used on:
 \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
 \item WIP
 \item Throughput
@@ -732,7 +733,7 @@ As shown in table \ref{corr:1} bugs, throughput, churn, churn bugs and throughpu
  \begin{tabular}{|l|l|l|l|l|l|} 
 \hline 
 Correlation  & Bugs & Throughput & Churn & Churn Bugs & Throughput bugs \\ \hline 
-	WIP & .753* & .816** & .738* & .708* & .800** \\ \hline 
+	WIP & .753* & .637** & .738* & .708* & .800** \\ \hline 
 \end{tabular} 
  \caption{Team one - Correlation - 	WIP} 
  \label{corr:1}
@@ -764,8 +765,10 @@ Correlation  & Bugs & Throughput & Churn & Churn Bugs & Throughput bugs \\ \hlin
 \end{table}% 
 \newpage
 
-\subsection{WIP and throughput correlation}Both throughput and throughput bugs have a significant correlation relationship with WIP. This is inconsistent with Kanban philosophy and what the research says about WIP-limit.  All the research and the principles of Kanban suggest lowering WIP in order to get high throughput. In team one's case the higher the WIP the higher the throughput.  
-In table \ref{DS:1} the mean column shows indication that team one could have experimented with WIP-limit the first five quarters. But in the last quarter, the WIP-limit decreased.  In the mean column in table \ref{DS:T:1}  if one take a look at the quarter 2012-4, the throughput are second highest, the same quarter as WIP decreased.  This link could have several reasons. One could be that they experimented with WIP and found out after the quarter 2012-3 that they needed to lower the WIP in order to increase the t hroughput, which it did.  Or maybe team one didn't care about setting a WIP-limit as stated in section \ref{WIPsec} by Shinkle. %ha med ref her til artikkelen?
+\subsubsection{WIP and throughput correlation}
+Both throughput and throughput bugs have a significant correlation relationship with WIP. This is inconsistent with Kanban philosophy and what the research says about WIP-limit.  All the research and the principles of Kanban suggest lowering WIP in order to get high throughput. In team one's case the higher the WIP the higher the throughput.  
+
+In table \ref{DS:1} the mean column shows indication that team one could have experimented with WIP-limit the first five quarters. But in the last quarter, the WIP-limit decreased.  In the mean column in table \ref{DS:T:1}  if one take a look at the quarter 2012-4, the throughput are second highest, the same quarter as WIP decreased.  This link could have several reasons. One could be that they experimented with WIP and found out after the quarter 2012-3 that they needed to lower the WIP in order to increase the t hroughput, which it did.  Or maybe team one didn't care about setting a WIP-limit as stated in section \ref{WIPsec} by Shinkle. %ha med ref her til artikkelen?
 
 The throughput bugs variable and throughput variable both have a significant correlation with WIP, which make sense since throughput bugs are a subset of throughput. But throughput feature on the other hand has a -0.441 correlation with WIP. % burde jeg her legge inn -0.441 inn I en tabell? I samme correlationstabellen?
 As shown in table \ref{NoT:1}. The correlation number -0.441 is not a significant correlation, but it's on the opposite site level of throughput and throughput feature although it's also a subset of throughput.  This also goes in the literatures favor, because when WIP is low, more throughput feature is produced. Maybe this could have something to do with the relationship bugs and feature? Features are often more challenging and more fun to work with than bugs.
@@ -792,19 +795,20 @@ One could also argue that maybe it's was significant fewer tasks labeled as bug 
 	 \end{table}%
 	 
 \begin{table}[!htbp]
-\begin{tabular}{ | l | l | l | l | l | l | l | l | }
+\begin{tabular}{ | l | l | l | l | l | l | l | }
 \hline
-	TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	360 & 2010-3 & 5 & 2.6 & 2 & 1.34 & 4 & 1 \\ \hline
-	 & 2011-1 & 7 & 5.71 & 6 & 4.03 & 13 & 1 \\ \hline
-	 & 2011-2 & 26 & 3.38 & 3 & 1.96 & 8 & 1 \\ \hline
-	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
-	 & 2011-4 & 15 & 6.13 & 4 & 4.984 & 18 & 2 \\ \hline
-	 & 2012-1 & 16 & 6.56 & 6.5 & 3.59 & 14 & 1 \\ \hline
-	 & 2012-2 & 13 & 10.15 & 10 & 5.742 & 23 & 1 \\ \hline
-	 & 2012-3 & 22 & 3.41 & 2 & 3.33 & 12 & 1 \\ \hline
-	 & 2012-4 & 14 & 8.14 & 7 & 6.50 & 21 & 1 \\ \hline
-	 & Total & 119 & 5.55 & 4 & 4.694 & 23 & 1 \\ \hline
+	Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	2010-3 & 14.00 & 3.07 & 2.00 & 3.47 & 14.00 & 1.00\\ \hline
+	2010-4 & 71.00 & 2.73 & 2.00 & 2.05 & 11.00 & 1.00\\ \hline
+	2011-1 & 67.00 & 2.55 & 2.00 & 1.96 & 13.00 & 1.00\\ \hline
+	2011-2 & 38.00 & 1.97 & 2.00 & 1.03 & 4.00 & 1.00\\ \hline
+	2011-3 & 43.00 & 1.65 & 1.00 & 0.92 & 4.00 & 1.00\\ \hline
+	2011-4 & 53.00 & 1.83 & 1.00 & 1.31 & 6.00 & 1.00\\ \hline
+	2012-1 & 40.00 & 1.90 & 1.00 & 1.46 & 7.00 & 1.00\\ \hline
+	2012-2 & 27.00 & 2.07 & 2.00 & 1.36 & 6.00 & 1.00\\ \hline
+	2012-3 & 40.00 & 2.70 & 2.00 & 2.43 & 13.00 & 1.00\\ \hline
+	2012-4 & 3.00 & 1.00 & 1.00 & 0 & 1.00 & 1.00\\ \hline
+	Total & 396.00 & 2.26 & 2.00 & 1.82 & 14.00 & 1.00\\ \hline
 	 \end{tabular}
 \caption{Descriptive statistic for throughput feature - team one }%
 \end{table}	 
@@ -843,7 +847,8 @@ One could also argue that maybe it's was significant fewer tasks labeled as bug 
 \subsubsection{WIP and bugs correlation}
 Only looking at WIP and throughput correlation without taking other factores into account may give bias.
 
-Bugs and churn have also have a significant correlation with WIP.  A positive bug correlation could help favor what said about WIP and throughput in literature. Since both WIP and throughput increases and decreases at the same time, the same goes for bug. This could mean that when WIP is high, and throughput is high team one also has a lot of bugs in their code. This means that they don't do their job well, and this could be because they have a lot of task switching due to high WIP-limit. As stated in table \ref{PB:1} one can see that almost each bug that was reported was finished in the same quarter. The outcast could be the bugs reported just before the quarter end. Worth noticing in quarter 2011-1 there was no bugs recorded. This conclude the statement that the WIP-limit is set too high. 0.467%2012-3 releases? Det kan være en sammenheng med at median er så høy der
+Bugs and churn have also have a significant correlation with WIP.  A positive bug correlation could help favor what said about WIP and throughput in literature. Since both WIP and throughput increases and decreases at the same time, the same goes for bug. This could mean that when WIP is high, and throughput is high team one also has a lot of bugs in their code. This means that they don't do their job well, and this could be because they have a lot of task switching due to high WIP-limit. As stated in table \ref{PB:1} one can see that almost each bug that was reported was finished in the same quarter. The outcast could be the bugs reported just before the quarter end. Worth noticing in quarter 2011-1 there was no bugs recorded. This conclude the statement that the WIP-limit is set too high. 0.467
+%2012-3 releases? Det kan være en sammenheng med at median er så høy der
 
 \begin{table}[!htbp]
 \centering
@@ -868,10 +873,14 @@ Bugs and churn have also have a significant correlation with WIP.  A positive bu
 
 \newpage
 
-\subsection{WIP and churn correlation}
+\subsubsection{WIP and churn correlation}
 Churn and WIP have a positive correlation. This means that when team one has more tasks in progress the tasks requires more coding. This is odd and could be a coincidence. Churn and churn bugs have also here as with throughput a close correlation with WIP. But churn feature has a correlation of 0.467 %legge inn I tabell? komme med et poeng her? 
  
-As shown in table \ref{DS:CF:1}  and the column 'maximum' the biggest feature task requires almost 60 times more code editing than the biggest bug task as showed in table \ref{DS:CB:1}. In the same table the column std. deviation shows way more proliferation for churn feature. This indicates that the numbers in churn feature are way more spread, which again indicates that it's random of how big the tasks are. In the churn bugs the std. deviation is much lower than in the feature table. This could explain why churn feature not has a positive correlation as churn and churn bugs.  Both median and mean favors that churn feature requires more work than churn bugs% This could due to releaser sjekke ut dette.  Hvis det har noe med releaser så er det slik at når de er nærmere en release så blir oppgavene større siden de har mer å gjøre for releasen kommer. Er det slik at SI da har satt seg I et mål om  å levere så og så mye slik som de gjorde I Scrum?
+As shown in table \ref{DS:CF:1}  and the column 'maximum' the biggest feature task requires almost 60 times more code editing than the biggest bug task as showed in table \ref{DS:CB:1}. In the same table the column std. deviation shows way more proliferation for churn feature. This indicates that the numbers in churn feature are way more spread, which again indicates that it's random of how big the tasks are. In the churn bugs the std. deviation is much lower than in the feature table. This could explain why churn feature not has a positive correlation as churn and churn bugs.  Both median and mean favors that churn feature requires more work than churn bugs
+
+
+
+% This could due to releaser sjekke ut dette.  Hvis det har noe med releaser så er det slik at når de er nærmere en release så blir oppgavene større siden de har mer å gjøre for releasen kommer. Er det slik at SI da har satt seg I et mål om  å levere så og så mye slik som de gjorde I Scrum?
 
 \begin{table}[!htbp]
 \centering
@@ -914,7 +923,7 @@ As shown in table \ref{DS:CF:1}  and the column 'maximum' the biggest feature ta
 \end{table}%
  \newpage 
 
-\section{Throughput}
+\subsection{Throughput}
 In table \ref{TP:C:1} is correlation for throughput for team one stated. Throughput has a positive correlation to bugs, WIP, churn, churn bugs, churn feature, throughput bugs and churn average. In table \ref{DS:T:1:2} is descriptive statistic for throughput shown. The range from 2011-2 to 2012-4 is the most valuable quarters based on the number of tasks finished if one excludes the quarter 2011-3.
 \begin{table}[!htbp] 
  \centering
@@ -931,26 +940,37 @@ Correlation  & Bugs & WIP & Churn & Churn Bugs & Churn feature & Throughput bugs
  \end{table} 
  
     \begin{table}[!htbp]
- \begin{tabular}{ | l | l | l | l | l | l | l | l | }
+ \begin{tabular}{ | l | l | l | l | l | l | l | }
 \hline
-	Team & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	360 & 2010-3 & 5 & 2.6 & 2 & 1.34 & 4 & 1 \\ \hline
-	 & 2011-1 & 7 & 5.71 & 6 & 4.03 & 13 & 1 \\ \hline
-	 & 2011-2 & 26 & 3.38 & 3 & 1.96 & 8 & 1 \\ \hline
-	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
-	 & 2011-4 & 15 & 6.13 & 4 & 4.984 & 18 & 2 \\ \hline
-	 & 2012-1 & 16 & 6.56 & 6.5 & 3.59 & 14 & 1 \\ \hline
-	 & 2012-2 & 13 & 10.15 & 10 & 5.742 & 23 & 1 \\ \hline
-	 & 2012-3 & 22 & 3.41 & 2 & 3.33 & 12 & 1 \\ \hline
-	 & 2012-4 & 14 & 8.14 & 7 & 6.5 & 21 & 1 \\ \hline
-	 & Total & 119 & 5.55 & 4 & 4.694 & 23 & 1 \\ \hline
+	 Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	 2010-3 & 5 & 2.6 & 2 & 1.34 & 4 & 1 \\ \hline
+	 2011-1 & 7 & 5.71 & 6 & 4.03 & 13 & 1 \\ \hline
+	 2011-2 & 26 & 3.38 & 3 & 1.96 & 8 & 1 \\ \hline
+	 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
+	 2011-4 & 15 & 6.13 & 4 & 4.984 & 18 & 2 \\ \hline
+	 2012-1 & 16 & 6.56 & 6.5 & 3.59 & 14 & 1 \\ \hline
+	 2012-2 & 13 & 10.15 & 10 & 5.742 & 23 & 1 \\ \hline
+	 2012-3 & 22 & 3.41 & 2 & 3.33 & 12 & 1 \\ \hline
+	 2012-4 & 14 & 8.14 & 7 & 6.5 & 21 & 1 \\ \hline
+	 Total & 119 & 5.55 & 4 & 4.694 & 23 & 1 \\ \hline
 	 \end{tabular}
 	 \caption{Descriptive statistic for throughput - team one }
 	 \label{DS:T:1:2}
 	 \end{table}%
 	 
-\subsection{Throughput and bugs correlation}
-The correlation between throughput and bugs is 0.945, which is significantly high. The quarters from 2011-2 to 2012-4 minus 2011-3 is also the most valid in bugs. The correlation between bugs and throughput means that when team one has high throughput of tasks they also produce more bugs. This correlation can be used to favor the literature of WIP as stated in section\ref{sec:WIPC}. Since team one produces more bugs when they finished feature or bugs could be an indicator that they may have a too high WIP-limit so they cannot focus enough on each task.Throughput and bugs also have the same relationship as WIP and bugs, because throughput and throughput bugs has a significant correlation to both, but throughput feature not. Throughput feature have correlation of -0.340 compared to -0.441 in WIP. What this means is that when team one has high throughput of tasks, they mostly produces tasks labeled as bug.  This could be because the feature tasks are more comprehensive than the tasks labeled as bug so the lead time is longer for feature tasks than bug tasks. Or it could due the reason that when there is an upcoming release, all the bugs are pushed through the Kanban system. In table \ref{cfb:1} the hypotheses that feature tasks is more comprehensive is verified.  Four out of the six valid quarters churn feature is significant higher.  In table \ref{lfb:1} one can see that throughput bug's lead time is higher than throughput feature in four out of six quarters. The lead time cannot be counted, since bugs usually have longer lead time than feature, because feature usually has higher priority than bugs.     	%Both of these hypotheses would contradict the principle of WIP or Agile. %for det hvis de pusher bugs gjennom systemet vil WIP-limit stige. Eller hvis tasks er forskjellige størrelser så er det umulig å male TP, som da igjen gjør det vanskelig å male WIP. %Jeg må sjekke leadtimene og churn for tp feature og tp bugs for 360%Det andre statementet må jeg sjekke når jeg får releaser av Dag
+\subsubsection{Throughput and bugs correlation}
+The correlation between throughput and bugs is 0.945, which is significantly high. 
+The quarters from 2011-2 to 2012-4 minus 2011-3 is also the most valid in bugs. The correlation between bugs and throughput means that when team one has high throughput of tasks they also produce more bugs. This correlation can be used to favor the literature of WIP as stated in section\ref{sec:WIPC}. Since team one produces more bugs when they finished feature or bugs could be an indicator that they may have a too high WIP-limit so they cannot focus enough on each task.
+
+Throughput and bugs also have the same relationship as WIP and bugs, because throughput and throughput bugs has a significant correlation to both, but throughput feature not. Throughput feature have correlation of -0.340 compared to -0.441 in WIP. What this means is that when team one has high throughput of tasks, they mostly produces tasks labeled as bug.  This could be because the feature tasks are more comprehensive than the tasks labeled as bug so the lead time is longer for feature tasks than bug tasks. Or it could due the reason that when there is an upcoming release, all the bugs are pushed through the Kanban system. 
+
+In table \ref{cfb:1} the hypotheses that feature tasks is more comprehensive is verified.  Four out of the six valid quarters churn feature is significant higher.  In table \ref{lfb:1} one can see that throughput bug's lead time is higher than throughput feature in four out of six quarters. The lead time cannot be counted, since bugs usually have longer lead time than feature, because feature usually has higher priority than bugs.   
+  
+	
+%Both of these hypotheses would contradict the principle of WIP or Agile. %for det hvis de pusher bugs gjennom systemet vil WIP-limit stige. Eller hvis tasks er forskjellige størrelser så er det umulig å male TP, som da igjen gjør det vanskelig å male WIP. 
+
+%Jeg må sjekke leadtimene og churn for tp feature og tp bugs for 360
+%Det andre statementet må jeg sjekke når jeg får releaser av Dag
 
 \begin{table}[!htbp] 
  \centering
@@ -968,7 +988,7 @@ The correlation between throughput and bugs is 0.945, which is significantly hig
 	2012-3 & 6.74 & 15.68 \\ \hline
 	2012-4 & 408 & 168.28 \\ \hline
 \end{tabular}
-\caption{360 - Average churn for feature and bugs - Bugs }%
+\caption{team one - Average churn for feature and bugs - Bugs }%
 \label{cfb:1} %churn feature bugs
 \end{table}
 
@@ -992,14 +1012,30 @@ The correlation between throughput and bugs is 0.945, which is significantly hig
 \label{lfb:1} %lead time feature bugs
 \end{table}
 \newpage 
-\subsection{Throughput and churn correlation}
-Se på churn, churn feature churn bugs, average trenger  jeg vel ikke se på?
+\subsubsection{Throughput and churn correlation}
+Churn, churn bugs, churn feature and the average of churn all have a positive correlation with throughput which mean that when throughput is high, the tasks requires more coding. From table \ref{dsc:1} in the number column one can see that in each quarter there is a lot of tasks. Although from the median column one can see that in 6 of the valid quarters, three of them have a median of 0, which gives and indicator that in these three quarter there is probably minority of tasks which has high churn.  So the correlation between throughput and churn may not be valid.
+
+\begin{table}[!htbp] 
+\begin{tabular}{ | l | l | l | l | l | l | l | }
+\hline
+Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	2010-3 & 11.00 & 17.00 & 11.00 & 18.94 & 60.00 & 0\\ \hline
+	2011-1 & 73.00 & 0 & 0 & 0 & 0 & 0\\ \hline
+	2011-2 & 136.00 & 14.40 & 3.00 & 21.51 & 83.00 & 0\\ \hline
+	2011-3 & 48.00 & 1.67 & 0 & 7.71 & 50.00 & 0\\ \hline
+	2011-4 & 156.00 & 14.81 & 6.50 & 19.91 & 86.00 & 0\\ \hline
+	2012-1 & 157.00 & 9.47 & 0 & 19.55 & 86.00 & 0\\ \hline
+	2012-2 & 238.00 & 10.11 & 0 & 18.50 & 83.00 & 0\\ \hline
+	2012-3 & 53.00 & 3.02 & 0 & 9.62 & 53.00 & 0\\ \hline
+	2012-4 & 26.00 & 21.42 & 14.50 & 20.55 & 67.00 & 1.00\\ \hline
+	Total & 902.00 & 10.14 & 0 & 18.55 & 86.00 & 0\\ \hline
+\end{tabular}
+\caption{Descriptive statistic for churn - team one }
+\label{dsc:1} %
+\end{table}
 
 
-\section {Lead time}
-
-
-\section {Bugs}
+\subsection {Bugs}
 \begin{table}[!htbp] 
  \centering 
  \begin{tabular}{|l|l|l|l|l|l|l|} 
@@ -1008,7 +1044,7 @@ Correlation  & Throughput & WIP & Churn & Churn Bugs & Churn feature & TP bugs \
 	Bugs & .945** & .753* & .992** & .813** & .730* & .984** \\ \hline 
 
 \end{tabular} 
-\caption{Team one - Correlation - Bugs }%
+\caption{Team two - Correlation - Throughput }%
    \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
       \centerline{  ** Correlation is significant at the 0.01 level (2-tailed).}
 \end{table}  
@@ -1029,20 +1065,109 @@ Correlation  & Throughput & WIP & Churn & Churn Bugs & Churn feature & TP bugs \
 	 & Total & 131 & 4.53 & 3 & 4.44 t & 22 & 1 \\ \hline
 	 \end{tabular}
 \caption{360 - Descriptive statistic - Bugs }%
+
 \end{table}
 
+It's hard to find any correlation between lead time, WIP and throughput. In quarter three in 2011, lead time, WIP and throughput dropped to their lowest point. This was due to the summer vacation. In quarter two of 2011 and two of 2012 bugs dropped but both Throughput and WIP increased.  
+\newpage
+
+
+\section{Team 2}
+\subsection{WIP}
+For team two there is no significant correlation between WIP or any of the variables that have been measured. In table \ref{dsw:2} one can see that every quarter beside 2010 is a valid quarter based on the number of dates in quarter. An excerpt of the correlation data is shown in table \ref{wc:2}.  As in section \ref{sec:WIPC} for team one, throughput is fairly high, not significant high as for team one, but fairly high. For team two the correlation between bugs and WIP is quite low, so the conclusion stated in section \ref{sec:WIPC}  may not suit team two. 
+
+In table \ref{tc:2} the correlation for throughput for team two is shown.  Here one can see that throughput and bugs have a significant correlation. That means when WIP increases, throughput increases and when throughput increases the number of bugs reported increases. Which could mean that the WIP-limit is to high.
+
+
+\begin{table}[!htbp] 
+ \centering 
+\begin{tabular}{|l|l|l|l|l|} \hline
+&Throughput & Bugs & Churn  & Leadtime  \\ 
+\hline
+	WIP &    0.341 & 0.278  & -0.446 & 0.096 \\ \hline
+ \end{tabular}
+  \caption{Team two - Correlation - WIP} 
+  \label{wc:2}
+  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
+      \centerline{  ** Correlation is significant at the 0.01 level (2-tailed).}
+ \end{table} 
+ 
+ 
+  \begin{table}[!htbp]
+  \begin{tabular}{ | l | l | l | l | l | l | l | l | }
+\hline
+TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+Frontend & 2010-3 & 24 & 9.28 & 10 & 6.43 & 23 & 1 \\ \hline
+	 & 2010-4 & 92 & 13.92 & 13 & 3.931 & 25 & 5 \\ \hline
+	 & 2011-1 & 90 & 15.3 & 15.5 & 3.94 & 23 & 7 \\ \hline
+	 & 2011-2 & 91 & 23.51 & 24 & 4.19 & 37 & 13 \\ \hline
+	 & 2011-3 & 92 & 20.13 & 20 & 5.43 & 32 & 9 \\ \hline
+	 & 2011-4 & 92 & 21.33 & 21 & 6.92 & 34 & 7 \\ \hline
+	 & 2012-1 & 91 & 22.91 & 22 & 6.63 & 40 & 11 \\ \hline
+	 & 2012-2 & 91 & 21.93 & 21 & 3.36 & 32 & 17 \\ \hline
+	 & 2012-3 & 92 & 25.93 & 27 & 4.92 & 36 & 19 \\ \hline
+	 & 2012-4 & 67 & 19.18 & 15 & 9.66 & 41 & 9 \\ \hline
+	 & Total & 822 & 20.18 & 20 & 6.93 & 41 & 1 \\ \hline
+	 \end{tabular}
+  	  \caption{Descriptive statistic - WIP - Team two }%
+	  \label{dsw:2}
+\end{table}	
 
 
 
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|} 
+\hline 
+Correlation  & Bugs & Throughput feature & Bugs finished in the same quarter\\ \hline  %Nr of bugs finished in the same quarter precent
+	Throughput & .885** & .669* & .640* \\ \hline 
 
+\end{tabular} 
+ \caption{Team one - Correlation - Throughput} 
+ \label{tc:2}
+  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
+      \centerline{  ** Correlation is significant at the 0.01 level (2-tailed).}
+ \end{table} 
+ \newpage
+\subsection {Lead time}
+\begin{table}[!htbp] 
+ \centering 
+ \begin{tabular}{|l|l|l|l|l|} 
+\hline 
+Correlation  & Churn Bugs & Churn union & Precent bugs fininshed & Churn Average \\ \hline 
+	Leadtime & -.771** & .704* & -.697* & .766** \\ \hline
+\end{tabular} 
+ \caption{Team one - Correlation - 	Leadtime\_union} 
+ \end{table}   
+ 
+    \begin{table}[!htbp]
+   \centering
+ \begin{tabular}{ | l | l | l | l | l | l | l | }
+\hline
+	Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	2010-3 & 14.00 & 3.07 & 2.00 & 3.47 & 14.00 & 1.00\\ \hline
+	2010-4 & 71.00 & 2.73 & 2.00 & 2.05 & 11.00 & 1.00\\ \hline
+	2011-1 & 67.00 & 2.55 & 2.00 & 1.96 & 13.00 & 1.00\\ \hline
+	2011-2 & 38.00 & 1.97 & 2.00 & 1.03 & 4.00 & 1.00\\ \hline
+	2011-3 & 43.00 & 1.65 & 1.00 & 0.92 & 4.00 & 1.00\\ \hline
+	2011-4 & 53.00 & 1.83 & 1.00 & 1.31 & 6.00 & 1.00\\ \hline
+	2012-1 & 40.00 & 1.90 & 1.00 & 1.46 & 7.00 & 1.00\\ \hline
+	2012-2 & 27.00 & 2.07 & 2.00 & 1.36 & 6.00 & 1.00\\ \hline
+	2012-3 & 40.00 & 2.70 & 2.00 & 2.43 & 13.00 & 1.00\\ \hline
+	2012-4 & 3.00 & 1.00 & 1.00 & 0 & 1.00 & 1.00\\ \hline
+	Total & 396.00 & 2.26 & 2.00 & 1.82 & 14.00 & 1.00\\ \hline
+	 \end{tabular}
+  	  \caption{ Descriptive statistic - Throughput - Team two}%
+\end{table}
+ \newpage 
 \subsection{Analyzed data per quarter}
 %%skrive at bug er fra da den blir rapportert
 In figure \ref{360pq} the average WIP, Throughput, Lead time and Bugs per quarter for team 360 are shown. As stated in section \ref{WIPsec}, to get best possible throughput the WIP-limit should be low. According to the figure \ref{360pq}, when WIP is high, throughput is also high and when WIP is low, throughput also low. This team data is contrary to what is suggested from Kanban and research.
 
-It's hard to find any correlation between lead time, WIP and throughput. In quarter three in 2011, lead time, WIP and throughput dropped to their lowest point. This was due to the summer vacation. In quarter two of 2011 and two of 2012 bugs dropped but both Throughput and WIP increased.  
 
 
-%\nameref{WIPsec} Why this?
+
+
 
 \begin{figure}[!htbp]
 \centering
@@ -1374,40 +1499,8 @@ Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
 \end{adjustwidth}
  \end{table}%
  
-   \begin{table}[!htbp]
- 	 \begin{tabular}{ | l | l | l | l | l | l | l | l | }
-\hline
 
-	Team & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	Frontend & 2010-3 & 8 & 1.25 & 1 & 0.46& 2 & 1 \\ \hline
-	 & 2010-4 & 35 & 1.63 & 1 & 0.877 & 4 & 1 \\ \hline
-	 & 2011-1 & 32 & 1.53 & 1 & 0.67& 3 & 1 \\ \hline
-	 & 2011-2 & 21 & 1.57 & 1 & 0.92& 4 & 1 \\ \hline
-	 & 2011-3 & 2 & 1 & 1 & 0 & 1 & 1 \\ \hline
-	 & 2012-1 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
-	 & Total & 99 & 1.54 & 1 & 0.78 & 4 & 1 \\ \hline
-	 \end{tabular}
-  	  \caption{Frontend - Descriptive statistic - Throughput }%
-\end{table}
  
- \begin{table}[!htbp]
-  \begin{tabular}{ | l | l | l | l | l | l | l | l | }
-\hline
-TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-Frontend & 2010-3 & 24 & 9.28 & 10 & 6.43 & 23 & 1 \\ \hline
-	 & 2010-4 & 92 & 13.92 & 13 & 3.931 & 25 & 5 \\ \hline
-	 & 2011-1 & 90 & 15.3 & 15.5 & 3.94 & 23 & 7 \\ \hline
-	 & 2011-2 & 91 & 23.51 & 24 & 4.19 & 37 & 13 \\ \hline
-	 & 2011-3 & 92 & 20.13 & 20 & 5.43 & 32 & 9 \\ \hline
-	 & 2011-4 & 92 & 21.33 & 21 & 6.92 & 34 & 7 \\ \hline
-	 & 2012-1 & 91 & 22.91 & 22 & 6.63 & 40 & 11 \\ \hline
-	 & 2012-2 & 91 & 21.93 & 21 & 3.36 & 32 & 17 \\ \hline
-	 & 2012-3 & 92 & 25.93 & 27 & 4.92 & 36 & 19 \\ \hline
-	 & 2012-4 & 67 & 19.18 & 15 & 9.66 & 41 & 9 \\ \hline
-	 & Total & 822 & 20.18 & 20 & 6.93 & 41 & 1 \\ \hline
-	 \end{tabular}
-  	  \caption{Frontend - Descriptive statistic - WIP }%
-\end{table}	
 
  \begin{table}[!htbp]
 \begin{tabular}{ | l | l | l | l | l | l | l | l | }
@@ -1613,22 +1706,24 @@ TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \
  \end{table}%
  
    \begin{table}[!htbp]
-
- 	 \begin{tabular}{ | l | l | l | l | l | l | l | l | }
+   \centering
+ \begin{tabular}{ | l | l | l | l | l | l | l | }
 \hline
-
-	Team & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
-	Krypton & 2010-3 & 10 & 2.2 & 1.5 & 1.619 & 5 & 1 \\ \hline
-	 & 2010-4 & 48 & 2.79 & 2 & 2.278 & 11 & 1 \\ \hline
-	 & 2011-1 & 30 & 1.7 & 1 & 0.95 & 4 & 1 \\ \hline
-	 & 2011-2 & 10 & 1.8 & 1 & 1.31& 4 & 1 \\ \hline
-	 & 2011-3 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
-	 & 2011-4 & 1 & 1 & 1 & . & 1 & 1 \\ \hline
-	 & Total & 100 & 2.27 & 2 & 1.847 & 11 & 1 \\ \hline
-\end{tabular}
-\caption{Krypton - Descriptive statistic Throughput}
-\end{table} 
-
+	Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \hline
+	2010-3 & 14.00 & 3.07 & 2.00 & 3.47 & 14.00 & 1.00\\ \hline
+	2010-4 & 71.00 & 2.73 & 2.00 & 2.05 & 11.00 & 1.00\\ \hline
+	2011-1 & 67.00 & 2.55 & 2.00 & 1.96 & 13.00 & 1.00\\ \hline
+	2011-2 & 38.00 & 1.97 & 2.00 & 1.03 & 4.00 & 1.00\\ \hline
+	2011-3 & 43.00 & 1.65 & 1.00 & 0.92 & 4.00 & 1.00\\ \hline
+	2011-4 & 53.00 & 1.83 & 1.00 & 1.31 & 6.00 & 1.00\\ \hline
+	2012-1 & 40.00 & 1.90 & 1.00 & 1.46 & 7.00 & 1.00\\ \hline
+	2012-2 & 27.00 & 2.07 & 2.00 & 1.36 & 6.00 & 1.00\\ \hline
+	2012-3 & 40.00 & 2.70 & 2.00 & 2.43 & 13.00 & 1.00\\ \hline
+	2012-4 & 3.00 & 1.00 & 1.00 & 0 & 1.00 & 1.00\\ \hline
+	Total & 396.00 & 2.26 & 2.00 & 1.82 & 14.00 & 1.00\\ \hline
+	 \end{tabular}
+  	  \caption{Frontend - Descriptive statistic - Throughput }%
+\end{table}
 \begin{table}[!htbp]
 \begin{tabular}{ | l | l | l | l | l | l | l | l | }
 \hline

@@ -10,8 +10,8 @@ with open(sys.argv[1], mode="r") as f:
                 num = float(col)
                 if -0.00001 < num < 0.00001:
                     cols[i] = "0"
-                elif -1 < num < 1:
-                    cols[i] = "%.3f" % num
+                else:
+                    cols[i] = "%.2f" % num
             except:
                 pass
 
@@ -21,8 +21,8 @@ with open(sys.argv[1], mode="r") as f:
                         num = float(col.split(" ")[0])
                         if -0.00001 < num < 0.00001:
                             cols[i] = "0" + " ".join(col.split(" ")[1:])
-                        elif -1 < num < 1:
-                            cols[i] = ("%.3f" % num) + " ".join(col.split(" ")[1:])
+                        else:
+                            cols[i] = ("%.2f" % num) + " ".join(col.split(" ")[1:])
                     except:
                         pass
 
