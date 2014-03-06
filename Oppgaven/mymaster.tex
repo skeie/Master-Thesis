@@ -12,7 +12,10 @@
 \usepackage{array, dcolumn, booktabs,enumitem}
 \usepackage[showframe=false]{geometry}
 \usepackage{changepage}
-\newcommand{\mypm}{\mathbin{\smash{%
+\let\Chaptermark\chaptermark
+\def\chaptermark#1{\def\Chaptername{#1}\Chaptermark{#1}}
+\let\Sectionmark\sectionmark
+\makeatother\newcommand{\mypm}{\mathbin{\smash{%
 \raisebox{0.35ex}{%
             $\underset{\raisebox{0.5ex}{$\smash -$}}{\smash+}$%
             }%
@@ -24,7 +27,6 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-
 \lstset{ %
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
@@ -92,6 +94,47 @@
 
 \mainmatter{}
 \part{Introduction}                   %% ... or Innledning or Innleiing
+\chapter{Introduction}
+\label{chap:intro}
+\section{Motivation}
+In software development the processes and methods are important in order to deliver the right product on time. In software development one rarely solve two identical problems for different stakeholders. And the problems are getting bigger and more complex, which means that the process and methods needs to adapt as well.  The number of popular software development methods (e.g. Extreme programming, Spiral, Scrum and Kanban) in the recent years proves the assumption.This is why this thesis will focus on software development method, because the method in each development project is such a key element. Within software development methods, the Kanban method and the tool Work In Progress (WIP) -limit will be the main focus of this thesis. In Kanban the WIP-limit is used to limit the number of tasks each developer can work on to prevent bottlenecks and to ensure flow of tasks through the development cycle. There are published various literature on Kanban in software development such as "Kanban: Successful Evolutionary Change for Your Technology Business" \parencite{0984521402}, "Kanban and Scrum - making the most of both"  \parencite{Kniberg} and "Lean Software Management: BBC Worldwide Case Study" \parencite{Joyce}. Even though there is various literature there is no information on how to apply WIP-limit, even through most of the experience Kanban people agree that WIP-limit is an important tool.  There is no research backing the statement. There exist no clear rule or research on how to apply WIP-limit.  The literature states that one should experiment with WIP-limits in order to find the best WIP-limit for one's case.Since there is lack of available research on WIP-limit I choose to focus this thesis on the subject.
+
+\section{Research Question}
+\label{chap:RQ}
+In this thesis the overall research question will be to study the effects of WIP-limits for an in house software company, and to see if the research will give answers to the following question:
+\begin{itemize} 
+\item See if the exist an optimal WIP-limit for a given context.
+\item How to best find the optimal WIP-limit
+\item Which parameters to consider in order to optimize WIP. 
+\end{itemize}
+
+
+\section{Approach}
+This thesis will use case study as an approach in order to answer the research questions. A data set from an in house software company in Norway will be analyzed. The first part of the analyze will be done by a program that will interpret the data set into qualitative data. SPSS will be used to analyze the qualitative data.The data from SPSS will be represented in chapter \ref{chap:res} by correlation table and descriptive statistics tables. 
+\section{Evaluation}
+To evaluate the data in order to answer the research question will be done by evaluate the data set on a team level. The most valuable teams will be picked and their data will be extracted form the data set. After the program has analyzed the data for each of the teams. SPSS will compute correlation and descriptive statistic.  
+
+\section{Contribution}
+Our contribution on the research on WIP and WIP-limit consist of creating a Java-based program that will measure WIP for each day based on a data set. For the program to work, the data set given, as a parameter to needs to have the same standard format as described in this thesis. 
+
+\section{Chapter overview}
+\begin{description}
+
+\item[Chapter \ref{chap:intro}: \nameref{chap:intro}:] \hfill \\
+ The first chapter will consist of a section where the motivation behind this thesis is stated. A section where the research questions this thesis will address. A section how we will approach the data in order to answer the research questions.  A section that will explain how we will evaluate the data in order to answer the research question and a section where contribution will be stated. 
+\item[Chapter \ref{chap:Background}: \nameref{chap:Background}:] \hfill \\  The second item
+\item[Chapter \ref{chap:RM}: \nameref{chap:RM}:] \hfill \\  The third etc \ldots
+\item[Chapter \ref{ch:DCC}: \nameref{ch:DCC}:] \hfill \\
+\item[Chapter \ref{ch:res}: \nameref{ch:res}:] \hfill \\
+\item[Chapter \ref{ch:dis}: \nameref{ch:dis}:] \hfill \\
+\item[Chapter \ref{ch:con}: \nameref{ch:con}:] \hfill \\
+\end{description}
+
+
+
+
+%\textbf{Chapter \ref{chap:intro}: \Chaptername:} The first chapter will consist of a section where the motivation behind this thesis is stated. A section where the research questions this thesis will address. A section how we will approach the data in order to answer the research questions.  A section that will explain how we will evaluate the data in order to answer the research question and a section where contribution will be stated.   
+
 \chapter{Background}  
 \label{chap:Background}                %% ... or Bakgrunn
 In this master thesis the question "do work in progress (WIP) - limit in agile method matters?" will be investigated. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) is used. SI is a Scandinavian software company that delivers Enterprise Content Management applications. The data set has already been interpreted by another study, but that study investigated  Scrum VS Kanban for SI. For interested reader, the case study can be found in the article "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. In this thesis the data will be used to determine if WIP-limit matters in agile methods.  
@@ -250,7 +293,24 @@ As one can see, several people have their opinion on WIP and the importance of d
 
 One of the result from this paper was at the end of a simulation, the average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduce overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on a another issue. The study also showed that limit WIP can improve throughput and work efficiency. \parencite{SMR:SMR1599}.
 
-The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of the impact of WIP-limit vs. no WIP-limit on developers with skills in different activities. The activities from the article:\begin{enumerate}\item Design\item Development\item Testing\item Deployment\end{enumerate}The article did four different simulations. \begin{enumerate}\item A simulation with WIP-limits and seven developers with skill in two of the four activities. \item A simulation with no WIP-limit and seven developers with skilled in two of the four activities. \item A simulation with WIP-limits and seven developers with skill in all of the activities.\item A simulation with no WIP-limits and seven developers with skill in two of the four activities.\end{enumerate}The research paper concluded that the two latter is unlikely in the real world, since there is seldom a whole team with developers skilled in all activities. When the developers had skill in two out of four activities the WIP-limit simulation used 100 days, but the non WIP-limit simulation used 120 days. The simulation with WIP-limit shown an almost constant flow of features that where completed. While in the same simulation with no WIP-limit, the flow of feature was much more irregular.  
+The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of the impact of WIP-limit vs. no WIP-limit on developers with skills in different activities. The activities from the article:
+\begin{enumerate}
+\item Design
+\item Development
+\item Testing
+\item Deployment
+\end{enumerate}
+
+The article did four different simulations. 
+\begin{enumerate}
+\item A simulation with WIP-limits and seven developers with skill in two of the four activities. 
+\item A simulation with no WIP-limit and seven developers with skilled in two of the four activities. 
+\item A simulation with WIP-limits and seven developers with skill in all of the activities.
+\item A simulation with no WIP-limits and seven developers with skill in two of the four activities.
+\end{enumerate}
+The research paper concluded that the two latter is unlikely in the real world, since there is seldom a whole team with developers skilled in all activities.
+ 
+When the developers had skill in two out of four activities the WIP-limit simulation used 100 days, but the non WIP-limit simulation used 120 days. The simulation with WIP-limit shown an almost constant flow of features that where completed. While in the same simulation with no WIP-limit, the flow of feature was much more irregular.  
 \parencite{DavidAnderson}
 
 
@@ -322,19 +382,10 @@ SI has approximately 300 employees. SI has offices in Oslo, Copenhagen and Stock
 %The data gathered for this theses is gathered used TFS. For this theses four teams will be analyzed to see if 
 
 
-\part{The project}                    %% ... or ??
-\chapter{Research Questions}
-\label{chap:RQ}
-In this thesis the overall research question will be to study the effects of WIP limits for S , and to see if the research will give answers to the following question:
-\begin{itemize} 
-\item See if the exist an optimal WIP-limit for a given context.
-\item How to best find the optimal WIP-limit
-\item Which parameters to consider in order to optimize WIP. 
-\end{itemize}
 
 \chapter{Research Methods}
 \label{chap:RM}
-In this chapter the research methods will be revealed and the reason why the data from Software Innovation is used in this master thesis will be stated. The first section in this chapter, section \ref{sec:coc} is about the choice of case and complementary information about SI. The next section will give information about the content of the data set that will be used in this thesis (section \ref{sec:tc}). The next section (\ref{WPD}) will reveals the algorithm of how the program measure WIP for each day. The subsection \ref{sec:Example} will provide a comprehensive example of how the program measure WIP per day. The consecutively sections reveals the algorithm of how the program measure bugs (section \ref{sec:bug}) throughput (section \ref{sec:TP}),  churn (section \ref{sec:churn}) and lead time (section \ref{sec:LT}) per day.  In the last section SPSS is introduced (section \ref{sec:SPSS})
+In this chapter the research methods will be revealed and the reason why the data from Software Innovation is used in this master thesis will be stated. The first section in this chapter, section \ref{sec:coc} is about the choice of case and complementary information about SI. The next section will give information about the content of the data set that will be used in this thesis (section \ref{sec:tc}). The next section (\ref{WPD}) will reveal the algorithm of how the program measure WIP for each day. The subsection \ref{sec:Example} will provide a comprehensive example of how the program measure WIP per day. The consecutively sections reveals the algorithm of how the program measure bugs (section \ref{sec:bug}) throughput (section \ref{sec:TP}),  churn (section \ref{sec:churn}) and lead time (section \ref{sec:LT}) per day.  In the last section SPSS is introduced (section \ref{sec:SPSS})
 
 For this thesis a program was made in order to measure the variable (shown in table \ref{table:variable}) per day. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a description using Pseudocode \parencite{jd} will be provided. The Pseudocode are simplified with only the key elements of the program code. 
 
@@ -371,7 +422,8 @@ The following two tables (table \ref{table:variable} and table \ref{tab:measurem
 \end{itemize}
 \end{table}
 
-
+\section{Case study}
+To answer the research question, a case study will be conducted.  A case study is used to explore causation in order to find underlying principles of a study \parencite{0078285763}\parencite{9781412960991}.  But which method one can use in a case study or how the case study is conducted is ambiguous.  It might be that the method is qualitative or quantitate.  Or that it utilizes a particular type of evidence (for example ethnographic, participant observation or field research). Jennifer Platt stated: "Much case study theorizing has been conceptually confused because too many different themes have been packed into the idea "case study" "\parencite{0521676568}.  As one can see there is no clear rule what exactly a case study is.John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is - at least in part to shed light on a larger class of cases (a population)" \parencite{0521676568}.John also stated: "Case connotes a spatially delimited phenomenon (a unit) observed at a single point in time or over a period of time"\parencite{0521676568}. In this thesis the case study is used to explore WIP-limit's effect in software development.  And the purpose is the shed light on WIP-limit in software development and if it matter. In order to do so, the data set from SI with quantitative data analyzed, with data over a period of time (2010-2013).
 \section{Choice of case}
 \label{sec:coc}
 The case study in this thesis is based on data set from an in-house software company named Software Innovation (SI). The data set contains information about each task SI has worked on in the last five years (2008-2013). The data set is represented in a excel document, a excerpt of the document is shown in table \ref{dataset}.
@@ -397,7 +449,7 @@ The case study in this thesis is based on data set from an in-house software com
 
 In order to try answering the research questions stated in chapter \ref{chap:RQ}, the data from SI will be interpreted. The data set contains thirty columns with different data for each task, mostly of this columns are irrelevant for this study but the important columns is stated in table \ref{IC}. 
 
-The reason SI and the data set from SI is analyzed in this thesis is based on the article "Quantifying the Effect of Using Kanban versus Scrum" by Dag Sjøberg, Anders Johnsen and Jørgen Solberg \parencite{Dag}. In the article the three authors investigated how SI benefitted from Kanban vs. Scrum. Since Dag is the supervisor of this thesis and he had access to the data set, it is natural to use it for this study.
+The reason SI and the data set from SI is analyzed in this thesis is based on the article "Quantifying the Effect of Using Kanban versus Scrum" by Dag Sjøberg, Anders Johnsen and Jørgen Solberg \parencite{Dag}. In the article the three authors investigated how SI benefitted from Kanban vs. Scrum. Since Dag is the supervisor of this thesis and he had access to the data set, to use the set from SI is a choice of convenience. 
 
 \subsection{Software Innovation's development process}
 From 2001 to 2006 SI used the Waterfall process with a life cycle of:
@@ -426,6 +478,8 @@ SI decided to implemented Kanban in the following manner. When a work item is pu
 To answer the research question from chapter \ref{chap:RQ} the data from SI will be interpreted on team level.  SI has about 25 teams. From the data set there are six teams who have worked on the most tasks. The data from these six teams will be used. 
 The data from SI will be analyzed using the program, which will compute the variables shown in table \ref{table:variable} for per day each of the six team. This data will be further analyzed using SPSS. With SPSS the data produced by the program will be interpreted. The interpreted data will be presented in chapter \ref{chap:res}. 
 
+\chapter{Data collected and calculations}
+\label{ch:DCC}
 \newpage
 \section{The columns}
 \label{sec:tc}
@@ -604,9 +658,34 @@ In this example dates from figure \ref{wip_timeline} and from table \ref{wt:2} w
 \subsubsection{Step 1}
 The program will first read in the first line of table \ref{wt:2}.  The first line is the one labeled with task id one.  The program creates the WIP-object for line one and it will look like the listing \ref{lst:WIPOBJ}.  The program will follow the exact same procedure until all the dates are read in. 
 
-\begin{minipage}{\textwidth} \begin{lstlisting}[caption={Creating WIP-object},label={lst:WIPOBJ}]WIP = new WIP()WIP.start = 2008-10-07WIP.end = 2008-10-08WIP.team = "Team One"
-WIP.processType = "Waterfall"WIP.WIP = 1\end{lstlisting}  \end{minipage} \subsubsection{Step two}\label{sub:sub:st}Now that the whole set has been read in and saved. The next thing to do is to create the remaining dates. The Arraylist contains dates from table \ref{wt:2}.  The program will now extract the first and the last date from the Arraylist. The first date is 2008-10-07 and the last date is 2008-10-13.  The program will check if the date after 2008-10-07 contains in the set, which it don't. The program then generates a WIP object for the date 2008-10-08 and adds it to the Arraylist as shown in listing \ref{lst:WIPCREATE}. 
-\begin{minipage}{\textwidth} \begin{lstlisting}[caption={Creating WIP-object},label={lst:WIPCREATE}]void createNewWIP(Date d, String team) WIP.start = dWIP.end = dWIP.team = teamWIP.processType = "Uknown"WIP.WIP = 0\end{lstlisting}  \end{minipage}\subsubsection{Step three}The Arraylist now contains the dates from 2008-10-08 to 2008-10-13. The next and last step is to measure WIP for each date.  The program will now loop through the Arraylist. The first date is 2008-10-07.  The get\_current\_wip method from line nine in listing \ref{lst:measure} will be called with the date 2008-10-07 as parameter.  The method will return two, since both task one and two where started at 2008-10-07 as shown by figure \ref{wip_timeline}. The next to do is to find out how many tasks to decrement the current WIP with.  The method Nr\_of\_fininshed\_dates in line seventeen is called with the date 2008-10-07. As shown by the table \ref{wt:2} and figure \ref{wip_timeline} there was no task finished at the date 2008-10-07. So the program updates the WIP objects' counter to two and saves the WIP in the lastWIP object. The next date is 2008-10-08, who the program made in subsection \ref{sub:sub:st}. There is no task started at 2008-10-08, but task one is finished at the date. So the Nr\_of\_fininshed\_dates returns one and flag the current date at line twenty-three. The result of WIP\_measure in line five is 1 ($0-1+2=1$). WIP at date 2008-10-08 is one, as shown by figure \ref{wip_timeline}. The program will continue this procedure until all the dates are measured.  The reason why the date is flagged is sure that each day only evaluates ones. The if statement in line twenty-one assurance that each date is max evaluates ones. 
+\begin{minipage}{\textwidth} 
+\begin{lstlisting}[caption={Creating WIP-object},label={lst:WIPOBJ}]
+WIP = new WIP()
+WIP.start = 2008-10-07
+WIP.end = 2008-10-08
+WIP.team = "Team One"
+WIP.processType = "Waterfall"
+WIP.WIP = 1
+\end{lstlisting}
+  \end{minipage}
+
+ \subsubsection{Step two}
+\label{sub:sub:st}
+Now that the whole set has been read in and saved. The next thing to do is to create the remaining dates. The Arraylist contains dates from table \ref{wt:2}.  The program will now extract the first and the last date from the Arraylist. The first date is 2008-10-07 and the last date is 2008-10-13.  The program will check if the date after 2008-10-07 contains in the set, which it don't. The program then generates a WIP object for the date 2008-10-08 and adds it to the Arraylist as shown in listing \ref{lst:WIPCREATE}. 
+\begin{minipage}{\textwidth} 
+\begin{lstlisting}[caption={Creating WIP-object},label={lst:WIPCREATE}]
+void createNewWIP(Date d, String team) 
+WIP.start = d
+WIP.end = d
+WIP.team = team
+WIP.processType = "Uknown"
+WIP.WIP = 0
+\end{lstlisting}
+  \end{minipage}
+
+
+\subsubsection{Step three}
+The Arraylist now contains the dates from 2008-10-08 to 2008-10-13. The next and last step is to measure WIP for each date.  The program will now loop through the Arraylist. The first date is 2008-10-07.  The get\_current\_wip method from line nine in listing \ref{lst:measure} will be called with the date 2008-10-07 as parameter.  The method will return two, since both task one and two where started at 2008-10-07 as shown by figure \ref{wip_timeline}. The next to do is to find out how many tasks to decrement the current WIP with.  The method Nr\_of\_fininshed\_dates in line seventeen is called with the date 2008-10-07. As shown by the table \ref{wt:2} and figure \ref{wip_timeline} there was no task finished at the date 2008-10-07. So the program updates the WIP objects' counter to two and saves the WIP in the lastWIP object. The next date is 2008-10-08, who the program made in subsection \ref{sub:sub:st}. There is no task started at 2008-10-08, but task one is finished at the date. So the Nr\_of\_fininshed\_dates returns one and flag the current date at line twenty-three. The result of WIP\_measure in line five is 1 ($0-1+2=1$). WIP at date 2008-10-08 is one, as shown by figure \ref{wip_timeline}. The program will continue this procedure until all the dates are measured.  The reason why the date is flagged is sure that each day only evaluates ones. The if statement in line twenty-one assurance that each date is max evaluates ones. 
 
 \iffalse
 \subsubsection{First step}
@@ -774,7 +853,10 @@ structure.add(t)
 \end{lstlisting}
 
 \section{Lead time and churn}
-As in the article "Quantifying the Effect of Using Kanban versus Scrum" \parencite{Dag} to prevent outliers from having a large effect the top and lowest ten percent of lead time and churn are removed from the data set.For churn a module or a feature, which consists of hundred or thousand lines of code, could be removed without much work.  For lead time some tasks could be given low priority due to lack of manpower or the tasks is labeled as not critical after the tasks has been started.  
+As in the article "Quantifying the Effect of Using Kanban versus Scrum" \parencite{Dag} to prevent outliers from having a large effect the top and lowest ten percent of lead time and churn are removed from the data set.
+
+For churn a module or a feature, which consists of hundred or thousand lines of code, could be removed without much work.  For lead time some tasks could be given low priority due to lack of manpower or the tasks is labeled as not critical after the tasks has been started. 
+ 
 \iffalse
 \section{Outcome}
 This is how the result looks like after the program has measured WIP
@@ -820,7 +902,7 @@ The correlation function is used to look at the relationship between variables. 
 
 %%\part{The project} 
 \chapter{Results}                     %% ... or ??
-\label{chap:res}
+\label{ch:res}
  
 \section{Introduction}
 In this chapter 
@@ -2141,6 +2223,12 @@ Neon & 2010-3 & 25 & 14.4 & 15 & 6.19 & 23 & 6 \\ \hline
 \end{tabular}
 \caption{Neon - Descriptive statistic - TP bugs}
 \end{table}
+
+\chapter{Discussion}
+\label{ch:dis}
+
+\chapter{Conclusion}
+\label{ch:con}
 
 
 \backmatter{}
