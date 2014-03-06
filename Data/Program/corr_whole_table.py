@@ -43,7 +43,7 @@ def makeFloat(list):
 				list[i] = "%.2f" % num
 		except:
 			pass
-	del list[index]
+	#del list[index]
 	
 
 def writeOutList(list):
@@ -77,22 +77,58 @@ def writeToFile():
 
 
 
-with open(sys.argv[1], mode="r") as fOne:
-	with open(sys.argv[2], mode="r") as fTwo:
-		#out = open(sys.argv[2], mode="w")
-		tmp = "T1 & T2 & T3 & T4 & T5 & T6 \\\\ \\hline \n"
-		firstLine = [x.strip() for x in fOne.readline().split("&")]
-		firstLineTwo = [x.strip() for x in fTwo.readline().split("&")]
+with open(sys.argv[1], mode="r") as three:
+	with open(sys.argv[2], mode="r") as Neon:
+		with open(sys.argv[3], mode="r") as Frontend:
+			with open(sys.argv[4], mode="r") as Radon:
+				with open(sys.argv[5], mode="r") as Argon:
+					with open(sys.argv[6], mode="r") as Xenon:
+
+						#out = open(sys.argv[2], mode="w")
+						tmp = "T1 & T2 & T3 & T4 & T5 & T6 \\\\ \\hline \n"
+						
 
 
-		for line in fOne.readlines():
+		for line in three.readlines():
 			if "WIP" in line:
 				line = line.split("&")
 				line = line[2:]
 				makeFloat(line)
 				diagonal_data(line, 0)
+
 				
-		for line in fTwo.readlines():
+		for line in Neon.readlines():
+			if "WIP" in line:
+				line = line.split("&")
+				line = line[2:]
+				makeFloat(line)
+				diagonal_data(line, 1)
+
+
+		for line in Frontend.readlines():
+			if "WIP" in line:
+				line = line.split("&")
+				line = line[2:]
+				makeFloat(line)
+				diagonal_data(line, 1)
+
+
+		for line in Radon.readlines():
+			if "WIP" in line:
+				line = line.split("&")
+				line = line[2:]
+				makeFloat(line)
+				diagonal_data(line, 1)
+
+		for line in Argon.readlines():
+			if "WIP" in line:
+				line = line.split("&")
+				line = line[2:]
+				makeFloat(line)
+				diagonal_data(line, 1)
+
+
+		for line in Xenon.readlines():
 			if "WIP" in line:
 				line = line.split("&")
 				line = line[2:]
