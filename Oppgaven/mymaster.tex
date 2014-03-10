@@ -63,7 +63,7 @@
 \setlength{\parindent}{0pt}%
 
 
-\title{Do Work in Progress (WIP) - Limit in Software Development Matter?}        %% ... or whatever
+\title{Does Limit on Work-In-Progress (WIP) matter?}        %% ... or whatever
 \author{Truls Skeie}                      %% ... or whoever 
 \usepackage[
     backend=biber,
@@ -95,34 +95,34 @@
 \mainmatter{}
 \chapter{Introduction}
 \label{chap:intro}
-In this master thesis we will look at a tool (WIP-limit) in software development to see what impact the tool has in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) is used. SI is a Scandinavian software company that delivers Enterprise Content Management applications. 
+In this master thesis the focus will be on one of the principles of Kanban namely WIP limit. The focus will be to see what impact the principle has in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) is used. SI is a Scandinavian software company that delivers Enterprise Content Management applications. 
 
 The data set has already been interpreted by another study, but the study investigated Scrum vs. Kanban for SI. For interested reader the case study can be found in the article "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. 
 
 \section{Motivation}
-In software development the processes and methods are important in order to deliver the right product on time. In software development one rarely solve two identical problems for different stakeholders. And the problems are getting bigger and more complex, which means that new processes and methods are introduced and the already existing processes and methods needs to adapt to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years proves the assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.This is why this thesis will focus on software development methods, because the method in each development project is such a key element. Within software development methods, the main focus of this thesis will be the Kanban method and the tool Work In Progress (WIP) -limit. In Kanban the WIP-limit is used to  limit the number of tasks each developer can work on at each workflow state to prevent bottlenecks and to ensure flow of tasks through the development cycle \parencite{gandomani2013important} \parencite{ikonen2010exploring}.There are published various literature on Kanban in software development such as "Kanban: Successful Evolutionary Change for Your Technology Business" \parencite{0984521402}, "Kanban and Scrum - making the most of both"  \parencite{Kniberg} and "Lean Software Management: BBC Worldwide Case Study" \parencite{Joyce}. Even though there is various literature there is no information on how to apply WIP-limit, even through most of the experience Kanban enthusiasts agree that WIP-limit is an important tool.  There is no research backing the statement. There exist no clear rule or research on how to apply WIP-limit.  The literature states that one should experiment with WIP-limits in order to find the best WIP-limit for one's case\parencite{Ikonen} \parencite{Kniberg}.Since there is lack of available research on WIP-limit our motivation is to investigate WIP-limit in this thesis.
+In software development the processes and methods are important in order to deliver the right product on time. In software development one rarely solve two identical problems for different stakeholders. And the problems are getting bigger and more complex, which means that new processes and methods are introduced and the already existing processes and methods needs to adapt to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years proves the assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.This is why this thesis will focus on software development methods, because the method in each development project is such a key element. Within software development methods, the main focus of this thesis will be the Kanban method and the tool Work In Progress (WIP) -limit. In Kanban the WIP limit is used to  limit the number of tasks each developer can work on at each workflow state to prevent bottlenecks and to ensure flow of tasks through the development cycle \parencite{gandomani2013important} \parencite{ikonen2010exploring}.There are published various literature on Kanban in software development such as "Kanban: Successful Evolutionary Change for Your Technology Business" \parencite{0984521402}, "Kanban and Scrum - making the most of both"  \parencite{Kniberg} and "Lean Software Management: BBC Worldwide Case Study" \parencite{Joyce}. Even though there is various literature there is no information on how to apply WIP limit, even through most of the experience Kanban enthusiasts agree that WIP limit is an important tool.  There is no research backing the statement. There exist no clear rule or research on how to apply WIP limit.  The literature states that one should experiment with WIP limits in order to find the best WIP limit for one's case\parencite{Ikonen} \parencite{Kniberg}.Since there is lack of available research on WIP limit our motivation is to investigate WIP limit in this thesis.
 
 \section{Research Question}
 \label{chap:RQ}
-In this thesis the overall research question will be to study the effects of WIP-limits for an in house software company, and to see if the research will give answers to the following question:
+In this thesis the overall research question will be to study the effects of WIP limits for an in house software company, and to see if the research will give answers to the following question:
 \begin{itemize}
-\item Do WIP-limit in software development matter.
-\item See if the exist an optimal WIP-limit for a given context.
-\item How to best find the optimal WIP-limit
-\item Which parameters to consider in order to optimize WIP. 
+\item Do WIP limit in software development matter?
+%\item See if the exist an optimal WIP limit for a given context.
+\item How to best find the optimal WIP limit?
+\item Which parameters to consider in order to optimize WIP? 
 \end{itemize}
 
 
 \section{Approach}
-This thesis will use case study as an approach in order to answer the research questions. The data will be calculated and analyzed. The first part of the analyze will be done by a program. The program was made for this thesis in order to calculate the data. The program will turn the data set into quantitative data. statistical analysis will be used to analyze the quantitative data.The output from statistical analysis will be represented in chapter \ref{ch:res}.
-\section{Evaluation}
+This thesis will use case study as an approach in order to answer the research questions. The data set will be calculated and analyzed. The first part of the analyze will be done by a program. The program was made for this thesis in order to calculate the data set. The program will turn the data set from "raw" quantitative into more suited quantitative data.  statistical analysis will be used to analyze the quantitative data.The output from statistical analysis will be represented in chapter \ref{ch:res}.
+
 The data evaluation will be done by evaluate the data set on team level. The most valuable teams will be picked and their data will be extracted form the data set by the program.  The teams will be evaluated on the basis of number of task labeled with their name in the data set.  After the program has calculated each team, statistical analysis will be used to compute correlation and descriptive statistic.  
 \section{Contribution}
-Our contribution on the research on WIP and WIP-limit consist of creating a Java-based program that will measure WIP for each day based on a data set. For the program to work, the data set given as a parameter to needs to have the same standard format as described in this thesis. 
+Our contribution on the research on WIP and WIP limit consist of creating a Java-based program that will measure WIP for each day based on a data set. For the program to work, the data set given as a parameter to needs to have the same standard format as described in this thesis. 
 \section{Chapter overview}
 \begin{description}
 \item[Chapter \ref{chap:intro}: \nameref{chap:intro}:] \hfill \\
-The first chapter will consist of a section where the motivation behind this thesis is stated. A section where the research questions this is stated. A section which gives a brief description of how we will approach the data set in order to answer the research questions.  A section that will give a brief explanation on how we will evaluate the data set in order to answer the research question and a section where our contribution to the research of WIP-limit will be stated.
+The first chapter will consist of a section where the motivation behind this thesis is stated. A section where the research questions this is stated. A section which gives a brief description of how I will approach the data set in order to answer the research questions.  A section that will give a brief explanation on how I will evaluate the data set in order to answer the research question and a section where our contribution to the research of WIP limit will be stated.
 \item[Chapter \ref{chap:Background}: \nameref{chap:Background}:] \hfill \\  
 Chapter \ref{chap:Background} consist of background information which gives a brief introduction to concepts and methods in software development as well as the in house software company Software Innovation. These methods and concepts are referred to later in the thesis.  The chapter consists of information about Waterfall, Scrum, Kanban, Lean and Software Innovation.  
 \item[Chapter \ref{chap:RM}: \nameref{chap:RM}:] \hfill \\  
@@ -138,7 +138,7 @@ Chapter \ref{ch:DCC} gives information about the data set and calculation. Compl
 
 
 
-%\textbf{Chapter \ref{chap:intro}: \Chaptername:} The first chapter will consist of a section where the motivation behind this thesis is stated. A section where the research questions this thesis will address. A section how we will approach the data in order to answer the research questions.  A section that will explain how we will evaluate the data in order to answer the research question and a section where contribution will be stated.   
+%\textbf{Chapter \ref{chap:intro}: \Chaptername:} The first chapter will consist of a section where the motivation behind this thesis is stated. A section where the research questions this thesis will address. A section how I will approach the data in order to answer the research questions.  A section that will explain how I will evaluate the data in order to answer the research question and a section where contribution will be stated.   
 
 \chapter{Background}  
 \label{chap:Background}                %% ... or Bakgrunn
@@ -205,14 +205,14 @@ The only thing worth doing is deliver value to the costumer, anything else is wa
 \item \textbf{Avoid Sub-optimization:} In software development it's normal to break down a complex problem into small parts of the problem in order to minimize the complexity.  If some of the parts are sub-optimized bottleneck can occur. For example, if ten developers are hired to work on tasks, but only three testers, the developers will likely produce more than the tester can test and that will cause bottleneck.
 \end{enumerate}
 \parencite{poppendieck2003lean}
-
+I
 \section{Kanban process}
 \label{sec:Kan}
-''We can define Kanban software process as a WIP limited pull system visualized by the Kanban board''  \parencite{DavidAnderson}.
+''One can define Kanban software process as a WIP limited pull system visualized by the Kanban board''  \parencite{DavidAnderson}.
 
 Toyota production system introduced Kanban as a scheduling system for Lean and just-in-time (JIT) production during late 1940's and early 1950's in order to catch up with the American car industry. The Kanban method combined with the Lean approach was a success for Toyota. The success was noticed by the software development industry among others. In the last ten years, more and more software development companies have started to implement development methods such as Scrum and Kanban \parencite{Conboy}, \parencite{ono1988toyota}. 
 
-In the recent years, more software projects adapt to Kanban and Lean \parencite{DavidAnderson}, and this is one of the reasons why this thesis will focuses on Kanban and one of it's main tools WIP-limit.
+In the recent years, more software projects adapt to Kanban and Lean \parencite{DavidAnderson}, and this is one of the reasons why this thesis will focuses on Kanban and one of it's main tools WIP limit.
 One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" has stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
 
 The Kanban method splits the problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban-board to visualize the problems, track what others are working on and see potential bottlenecks during development. When people start to understand Kanban, they easily discovered where the bottlenecks are \parencite{Shinkle}.
@@ -234,7 +234,7 @@ One of the main difference between Scrum and Kanban is estimation. In the articl
 \subsection {Kanban Board}
 ''The Kanban board makes it clear to all the team members the exact status of progress, blockages, bottlenecks and they also signal possible future issues to prepare for''\parencite{Joyce}.
 
-The Kanban board is one of many tools in Kanban. It's used to control the WIP, increase the information flow with visualization and spot bottlenecks \parencite{SMR:SMR1599}. A Kanban board is illustrated in figure \ref{kanban_board}. Each column has an intuitive name in order to describe itself so the developers easily can track where each task is. In figure \ref{kanban_board} each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP-limit to specify how many works in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP-limit is stated under the column name. The backlog column have a WIP-limit of 4, In progress has 5 and  done doesn't need a WIP-limit. The yellow stickers represents the tasks. Some follow the path to mark stickers with different colors representing the severities. In "Kanban Implementation in a Telecom Product Maintenance" the stickers has three different colors, green, yellow and red depending on how close to overdue the tasks are. If the sticker is red, the task is already overdue, if the tasks are soon-to-overdue its marked with yellow stickers \parencite{6068363}.
+The Kanban board is one of many tools in Kanban. It's used to control the WIP, increase the information flow with visualization and spot bottlenecks \parencite{SMR:SMR1599}. A Kanban board is illustrated in figure \ref{kanban_board}. Each column has an intuitive name in order to describe itself so the developers easily can track where each task is. In figure \ref{kanban_board} each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP limit to specify how many works in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP limit is stated under the column name. The backlog column have a WIP limit of 4, In progress has 5 and  done doesn't need a WIP limit. The yellow stickers represents the tasks. Some follow the path to mark stickers with different colors representing the severities. In "Kanban Implementation in a Telecom Product Maintenance" the stickers has three different colors, green, yellow and red depending on how close to overdue the tasks are. If the sticker is red, the task is already overdue, if the tasks are soon-to-overdue its marked with yellow stickers \parencite{6068363}.
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=90mm]{Picture/kanban_board.jpg}
@@ -243,51 +243,51 @@ The Kanban board is one of many tools in Kanban. It's used to control the WIP, i
 \end{figure}
 \newpage
 
-\subsection{WIP-limit}
+\subsection{WIP limit}
 \label{WIPsec}
-''WIP-limits seem to be the worst understood part of the Kanban system. When used properly, it exposes bottlenecks and reduces lead time for individual work items. Used improperly, it can starve developers for work or result in too many people working on the same work items.'' \parencite{Shinkle}
+''WIP limits seem to be the worst understood part of the Kanban system. When used properly, it exposes bottlenecks and reduces lead time for individual work items. Used improperly, it can starve developers for work or result in too many people working on the same work items.'' \parencite{Shinkle}
 
-WIP-limit is one of the core factors in Kanban \parencite{6068363}. WIP-limit is a tool that helps to reduce overhead by limit task-switching for each developer, visualize bottlenecks and make constant flow of released features throughout the development \parencite{DavidAnderson}. One way to explain WIP and the impact of WIP-limit is to use cars and roads as analogy. All roads have it maximum capacity of cars . When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams, a software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks decreases and lead time increases.
+WIP limit is one of the core factors in Kanban \parencite{6068363}. WIP limit is a tool that helps to reduce overhead by limit task-switching for each developer, visualize bottlenecks and make constant flow of released features throughout the development \parencite{DavidAnderson}. One way to explain WIP and the impact of WIP limit is to use cars and roads as analogy. All roads have it maximum capacity of cars . When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams, a software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks decreases and lead time increases.
 
 
-Research in the field of Work In Progress (WIP) and if WIP-limit matters in software development lacks proper research. But some research has been done. Giulio Concas and Hongyu Zhang for instance has done research on the difference between limit WIP and unlimited WIP \parencite{SMR:SMR1599} and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi has also highlighted the difference between limit WIP and unlimited WIP \parencite{DavidAnderson}. 
+Research in the field of Work In Progress (WIP) and if WIP limit matters in software development lacks proper research. But some research has been done. Giulio Concas and Hongyu Zhang for instance has done research on the difference between limit WIP and unlimited WIP \parencite{SMR:SMR1599} and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi has also highlighted the difference between limit WIP and unlimited WIP \parencite{DavidAnderson}. 
 
-If one implement Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine WIP-limit. The effectiveness metric should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness and the result could be used as a guideline for WIP-limit for the next sprint. The effectiveness metric takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) (ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
+If one implement Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine WIP limit. The effectiveness metric should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness and the result could be used as a guideline for WIP limit for the next sprint. The effectiveness metric takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) (ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
 
 \begin{equation} \label{WIPEQ}
 Ei=\frac{ai-ei}{ai}*100\%
 \end{equation}
-But there is no research done on how to set WIP-limit. 
+But there is no research done on how to set WIP limit. 
 
-%In manufacture business Taho Yanga, Hsin-Pin Fub, Kuang-Yi Yanga stated that WIP-limit could be defined as: 
+%In manufacture business Taho Yanga, Hsin-Pin Fub, Kuang-Yi Yanga stated that WIP limit could be defined as: 
 %\begin{equation} \label{WIPMAN}
-%WIP-limit = cycle time * throughput \: rate
+%WIP limit = cycle time * throughput \: rate
 %\end{equation}
 %\parencite{Yang}.
 
-When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP-limit, but rather the visibility of Kanban through the Kanban board. When user get more experience with Kanban, they start to attempt the principles of WIP-limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP-limit is not easy. They suggest that the WIP-limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. 
+When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP limit, but rather the visibility of Kanban through the Kanban board. When user get more experience with Kanban, they start to attempt the principles of WIP limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP limit is not easy. They suggest that the WIP limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. 
 
-The principle of Kanban also says you should limit WIP, but what should the limit be? The principles of Kanban tells us to experiment \parencite{Kniberg}. The Lean Software Management article\parencite{Kniberg}.and the Impact of Kanban on Software Project Work \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP-limit low and experiment by slowly increase the WIP-limit until the throughput decreased and lead time increased, then you know that the previous WIP-limit was the perfect one.
+The principle of Kanban also says you should limit WIP, but what should the limit be? The principles of Kanban tells us to experiment \parencite{Kniberg}. The Lean Software Management article\parencite{Kniberg}.and the Impact of Kanban on Software Project Work \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
 
 
 \iffalse
 Shinkle defined novice and more experience kanban-users with a descriptive analogy \parencite{Shinkle}:
 ''Think about a typical person wanting to bake a cake. They go to the store, purchase a boxed cake mix, and follow the directions as described on the back of the box. They have little to no knowledge about how to alter the recipe nor do they have a desire to do so. Their goal is simply to bake a cake.''
 
-''An advanced beginner understands how to apply some context to the instructions or rules on the back of the box. They can make minor adjustments for things like altitude, pan size, oven conditions, etc. They are still following the basic recipe, but can make minor adjustments likely based on previous experiences." According to Shinkle, principles like WIP-limit will be adopted when the user has some experience with Kanban. 
+''An advanced beginner understands how to apply some context to the instructions or rules on the back of the box. They can make minor adjustments for things like altitude, pan size, oven conditions, etc. They are still following the basic recipe, but can make minor adjustments likely based on previous experiences." According to Shinkle, principles like WIP limit will be adopted when the user has some experience with Kanban. 
 \fi
 
-\subsection{Benefits with WIP-limit according to various articles}
+\subsection{Benefits with WIP limit according to various articles}
 \begin{enumerate}
-\item When lowering the WIP-limit it will help people avoid task switching. When one is task swtiching it's hard to be able to fully concentrate. \parencite{Ikonen}.
+\item When lowering the WIP limit it will help people avoid task switching. When one is task swtiching it's hard to be able to fully concentrate. \parencite{Ikonen}.
 \item There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased' \parencite{Joyce}
-\item The team in Lean Software Management study realized the where bottlenecks. So the team started to determine WIP by their constraints. The team quickly realized that they had fewer quality assurance/testing staff and business analysts than software developers. This reflected the bottlenecks and the constraints, so the team adjusted the WIP-limit to how much work they could handle; this gave the team more experience in dealing with WIP and increased productivity \parencite{Joyce}.
+\item The team in Lean Software Management study realized the where bottlenecks. So the team started to determine WIP by their constraints. The team quickly realized that they had fewer quality assurance/testing staff and business analysts than software developers. This reflected the bottlenecks and the constraints, so the team adjusted the WIP limit to how much work they could handle; this gave the team more experience in dealing with WIP and increased productivity \parencite{Joyce}.
 
-\item To set a WIP-limit has some advantages:
+\item To set a WIP limit has some advantages:
 \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
 \item It helps team to reduce overhead 
 \item Decrease lead time
-\item Increase throughput
+\item Increase throughputI
 \item It reduces flow times
 \item Reduces variation 
 \item Improves quality
@@ -295,14 +295,14 @@ Shinkle defined novice and more experience kanban-users with a descriptive analo
 \parencite {CONWIP}.
 \end{enumerate}
 
-As one can see, several people have their opinion on WIP and the importance of defining WIP-limit. If we disregard Lukasz's effectiveness metric, there is no clear rule on how to determine WIP-limit even though WIP is a crucial tool in order to use Kanban sufficient. 
+As one can see, several people have their opinion on WIP and the importance of defining WIP limit. If  \L ukasz's effectiveness metric is disregard, there is no clear rule on how to determine WIP limit even though WIP is a crucial tool in order to use Kanban sufficient. 
 
 \subsubsection {Limit WIP vs. Unlimited WIP}
 "Simulation of software maintenance process, with and without a work- in-process limit" did a research on how the throughput and how developers experience WIP limit and unlimited WIP \parencite{SMR:SMR1599}.
 
 One of the result from this paper was at the end of a simulation, the average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduce overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on a another issue. The study also showed that limit WIP can improve throughput and work efficiency. \parencite{SMR:SMR1599}.
 
-The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of the impact of WIP-limit vs. no WIP-limit on developers with skills in different activities. The activities from the article:
+The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of the impact of WIP limit vs. no WIP limit on developers with skills in different activities. The activities from the article:
 \begin{enumerate}
 \item Design
 \item Development
@@ -312,14 +312,14 @@ The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of 
 
 The article did four different simulations. 
 \begin{enumerate}
-\item A simulation with WIP-limits and seven developers with skill in two of the four activities. 
-\item A simulation with no WIP-limit and seven developers with skilled in two of the four activities. 
-\item A simulation with WIP-limits and seven developers with skill in all of the activities.
-\item A simulation with no WIP-limits and seven developers with skill in two of the four activities.
+\item A simulation with WIP limits and seven developers with skill in two of the four activities. 
+\item A simulation with no WIP limit and seven developers with skilled in two of the four activities. 
+\item A simulation with WIP limits and seven developers with skill in all of the activities.
+\item A simulation with no WIP limits and seven developers with skill in two of the four activities.
 \end{enumerate}
 The research paper concluded that the two latter is unlikely in the real world, since there is seldom a whole team with developers skilled in all activities.
  
-When the developers had skill in two out of four activities the WIP-limit simulation used 100 days, but the non WIP-limit simulation used 120 days. The simulation with WIP-limit shown an almost constant flow of features that where completed. While in the same simulation with no WIP-limit, the flow of feature was much more irregular.  
+When the developers had skill in two out of four activities the WIP limit simulation used 100 days, but the non WIP limit simulation used 120 days. The simulation with WIP limit shown an almost constant flow of features that where completed. While in the same simulation with no WIP limit, the flow of feature was much more irregular.  
 \parencite{DavidAnderson}
 
 
@@ -400,7 +400,7 @@ In this chapter the research methods will be introduced and the reason why the d
 
 \section{Case study}
 \label{sec:CS}
-To answer the research question, a case study will be conducted.  A case study is used to explore causation in order to find underlying principles of a study \parencite{0078285763}\parencite{9781412960991}.  But which method one can use in a case study or how the case study is conducted is ambiguous.  It might be that the method is qualitative or quantitate.  Or that it utilizes a particular type of evidence (for example ethnographic, participant observation or field research). Jennifer Platt stated: "Much case study theorizing has been conceptually confused because too many different themes have been packed into the idea "case study" "\parencite{0521676568}.  As one can see there is no clear rule what exactly a case study is.John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is - at least in part to shed light on a larger class of cases (a population)" \parencite{0521676568}.John also stated: "Case connotes a spatially delimited phenomenon (a unit) observed at a single point in time or over a period of time"\parencite{0521676568}. In this thesis the case study is used to explore WIP-limit's effect in software development.  And the purpose is the shed light on WIP-limit in software development and if it matter. In order to do so, the data set from SI with quantitative data analyzed, with data over a period of time (2010-2013).
+To answer the research question, a case study will be conducted.  A case study is used to explore causation in order to find underlying principles of a study \parencite{0078285763}\parencite{9781412960991}.  But which method one can use in a case study or how the case study is conducted is ambiguous.  It might be that the method is qualitative or quantitate.  Or that it utilizes a particular type of evidence (for example ethnographic, participant observation or field research). Jennifer Platt stated: "Much case study theorizing has been conceptually confused because too many different themes have been packed into the idea "case study" "\parencite{0521676568}.  As one can see there is no clear rule what exactly a case study is.John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is - at least in part to shed light on a larger class of cases (a population)" \parencite{0521676568}.John also stated: "Case connotes a spatially delimited phenomenon (a unit) observed at a single point in time or over a period of time"\parencite{0521676568}. In this thesis the case study is used to explore WIP limit's effect in software development.  And the purpose is the shed light on WIP limit in software development and if it matter. In order to do so, the data set from SI with quantitative data analyzed, with data over a period of time (2010-2013).
 \section{Choice of case}
 \label{sec:coc}
 The case study in this thesis is based on data set from an in-house software company named Software Innovation (SI). The data set contains information about each task SI has worked on in the last five years (2008-2013). The data set is represented in a excel document, a excerpt of the document is shown in table \ref{dataset}.
@@ -905,7 +905,7 @@ In this chapter
 \label{sec:WIPC}
 As shown in table \ref{corr:1} bugs, throughput, churn, churn bugs and throughput bugs have a significant correlation with WIP. In table \ref{DS:1} is descriptive statistic for WIP shown.  As shown by the N column all quarters besides 2010-3 give reasonable data since in each quarter has 90 days give or take. 
 
-% hadde SI or 360 WIP-limit?
+% hadde SI or 360 WIP limit?
 \begin{table}[!htbp] 
  \centering 
  \begin{tabular}{|l|l|l|l|l|l|} 
@@ -944,9 +944,9 @@ Correlation  & Bugs & Throughput & Churn & Churn Bugs & Throughput bugs \\ \hlin
 \newpage
 
 \subsubsection{WIP and throughput correlation}
-Both throughput and throughput bugs have a significant correlation relationship with WIP. This is inconsistent with Kanban philosophy and what the research says about WIP-limit.  All the research and the principles of Kanban suggest lowering WIP in order to get high throughput. In team one's case the higher the WIP the higher the throughput.  
+Both throughput and throughput bugs have a significant correlation relationship with WIP. This is inconsistent with Kanban philosophy and what the research says about WIP limit.  All the research and the principles of Kanban suggest lowering WIP in order to get high throughput. In team one's case the higher the WIP the higher the throughput.  
 
-In table \ref{DS:1} the mean column shows indication that team one could have experimented with WIP-limit the first five quarters. But in the last quarter, the WIP-limit decreased.  In the mean column in table \ref{DS:T:1}  if one take a look at the quarter 2012-4, the throughput are second highest, the same quarter as WIP decreased.  This link could have several reasons. One could be that they experimented with WIP and found out after the quarter 2012-3 that they needed to lower the WIP in order to increase the t hroughput, which it did.  Or maybe team one didn't care about setting a WIP-limit as stated in section \ref{WIPsec} by Shinkle. %ha med ref her til artikkelen?
+In table \ref{DS:1} the mean column shows indication that team one could have experimented with WIP limit the first five quarters. But in the last quarter, the WIP limit decreased.  In the mean column in table \ref{DS:T:1}  if one take a look at the quarter 2012-4, the throughput are second highest, the same quarter as WIP decreased.  This link could have several reasons. One could be that they experimented with WIP and found out after the quarter 2012-3 that they needed to lower the WIP in order to increase the t hroughput, which it did.  Or maybe team one didn't care about setting a WIP limit as stated in section \ref{WIPsec} by Shinkle. %ha med ref her til artikkelen?
 
 The throughput bugs variable and throughput variable both have a significant correlation with WIP, which make sense since throughput bugs are a subset of throughput. But throughput feature on the other hand has a -0.441 correlation with WIP. % burde jeg her legge inn -0.441 inn I en tabell? I samme correlationstabellen?
 As shown in table \ref{NoT:1}. The correlation number -0.441 is not a significant correlation, but it's on the opposite site level of throughput and throughput feature although it's also a subset of throughput.  This also goes in the literatures favor, because when WIP is low, more throughput feature is produced. Maybe this could have something to do with the relationship bugs and feature? Features are often more challenging and more fun to work with than bugs.
@@ -1025,7 +1025,7 @@ One could also argue that maybe it's was significant fewer tasks labeled as bug 
 \subsubsection{WIP and bugs correlation}
 Only looking at WIP and throughput correlation without taking other factores into account may give bias.
 
-Bugs and churn have also have a significant correlation with WIP.  A positive bug correlation could help favor what said about WIP and throughput in literature. Since both WIP and throughput increases and decreases at the same time, the same goes for bug. This could mean that when WIP is high, and throughput is high team one also has a lot of bugs in their code. This means that they don't do their job well, and this could be because they have a lot of task switching due to high WIP-limit. As stated in table \ref{PB:1} one can see that almost each bug that was reported was finished in the same quarter. The outcast could be the bugs reported just before the quarter end. Worth noticing in quarter 2011-1 there was no bugs recorded. This conclude the statement that the WIP-limit is set too high. 0.467
+Bugs and churn have also have a significant correlation with WIP.  A positive bug correlation could help favor what said about WIP and throughput in literature. Since both WIP and throughput increases and decreases at the same time, the same goes for bug. This could mean that when WIP is high, and throughput is high team one also has a lot of bugs in their code. This means that they don't do their job well, and this could be because they have a lot of task switching due to high WIP limit. As stated in table \ref{PB:1} one can see that almost each bug that was reported was finished in the same quarter. The outcast could be the bugs reported just before the quarter end. Worth noticing in quarter 2011-1 there was no bugs recorded. This conclude the statement that the WIP limit is set too high. 0.467
 %2012-3 releases? Det kan være en sammenheng med at median er så høy der
 
 \begin{table}[!htbp]
@@ -1138,14 +1138,14 @@ Correlation  & Bugs & WIP & Churn & Churn Bugs & Churn feature & Throughput bugs
 	 
 \subsubsection{Throughput and bugs correlation}
 The correlation between throughput and bugs is 0.945, which is significantly high. 
-The quarters from 2011-2 to 2012-4 minus 2011-3 is also the most valid in bugs. The correlation between bugs and throughput means that when team one has high throughput of tasks they also produce more bugs. This correlation can be used to favor the literature of WIP as stated in section\ref{sec:WIPC}. Since team one produces more bugs when they finished feature or bugs could be an indicator that they may have a too high WIP-limit so they cannot focus enough on each task.
+The quarters from 2011-2 to 2012-4 minus 2011-3 is also the most valid in bugs. The correlation between bugs and throughput means that when team one has high throughput of tasks they also produce more bugs. This correlation can be used to favor the literature of WIP as stated in section\ref{sec:WIPC}. Since team one produces more bugs when they finished feature or bugs could be an indicator that they may have a too high WIP limit so they cannot focus enough on each task.
 
 Throughput and bugs also have the same relationship as WIP and bugs, because throughput and throughput bugs has a significant correlation to both, but throughput feature not. Throughput feature have correlation of -0.340 compared to -0.441 in WIP. What this means is that when team one has high throughput of tasks, they mostly produces tasks labeled as bug.  This could be because the feature tasks are more comprehensive than the tasks labeled as bug so the lead time is longer for feature tasks than bug tasks. Or it could due the reason that when there is an upcoming release, all the bugs are pushed through the Kanban system. 
 
 In table \ref{cfb:1} the hypotheses that feature tasks is more comprehensive is verified.  Four out of the six valid quarters churn feature is significant higher.  In table \ref{lfb:1} one can see that throughput bug's lead time is higher than throughput feature in four out of six quarters. The lead time cannot be counted, since bugs usually have longer lead time than feature, because feature usually has higher priority than bugs.   
   
 	
-%Both of these hypotheses would contradict the principle of WIP or Agile. %for det hvis de pusher bugs gjennom systemet vil WIP-limit stige. Eller hvis tasks er forskjellige størrelser så er det umulig å male TP, som da igjen gjør det vanskelig å male WIP. 
+%Both of these hypotheses would contradict the principle of WIP or Agile. %for det hvis de pusher bugs gjennom systemet vil WIP limit stige. Eller hvis tasks er forskjellige størrelser så er det umulig å male TP, som da igjen gjør det vanskelig å male WIP. 
 
 %Jeg må sjekke leadtimene og churn for tp feature og tp bugs for 360
 %Det andre statementet må jeg sjekke når jeg får releaser av Dag
@@ -1254,7 +1254,7 @@ It's hard to find any correlation between lead time, WIP and throughput. In quar
 \subsection{WIP}
 For team two there is no significant correlation between WIP or any of the variables that have been measured. In table \ref{dsw:2} one can see that every quarter beside 2010 is a valid quarter based on the number of dates in quarter. An excerpt of the correlation data is shown in table \ref{wc:2}.  As in section \ref{sec:WIPC} for team one, throughput is fairly high, not significant high as for team one, but fairly high. For team two the correlation between bugs and WIP is quite low, so the conclusion stated in section \ref{sec:WIPC}  may not suit team two. 
 
-In table \ref{tc:2} the correlation for throughput for team two is shown.  Here one can see that throughput and bugs have a significant correlation. That means when WIP increases, throughput increases and when throughput increases the number of bugs reported increases. Which could mean that the WIP-limit is to high.
+In table \ref{tc:2} the correlation for throughput for team two is shown.  Here one can see that throughput and bugs have a significant correlation. That means when WIP increases, throughput increases and when throughput increases the number of bugs reported increases. Which could mean that the WIP limit is to high.
 
 
 \begin{table}[!htbp] 
@@ -1340,7 +1340,7 @@ Correlation  & Churn Bugs & Churn union & Precent bugs fininshed & Churn Average
  \newpage 
 \subsection{Analyzed data per quarter}
 %%skrive at bug er fra da den blir rapportert
-In figure \ref{360pq} the average WIP, Throughput, Lead time and Bugs per quarter for team 360 are shown. As stated in section \ref{WIPsec}, to get best possible throughput the WIP-limit should be low. According to the figure \ref{360pq}, when WIP is high, throughput is also high and when WIP is low, throughput also low. This team data is contrary to what is suggested from Kanban and research.
+In figure \ref{360pq} the average WIP, Throughput, Lead time and Bugs per quarter for team 360 are shown. As stated in section \ref{WIPsec}, to get best possible throughput the WIP limit should be low. According to the figure \ref{360pq}, when WIP is high, throughput is also high and when WIP is low, throughput also low. This team data is contrary to what is suggested from Kanban and research.
 
 
 
