@@ -43,7 +43,9 @@ def makeFloat(list):
 				list[i] = "%.2f" % num
 		except:
 			pass
-	#del list[index]
+
+	if index != None:
+		del list[index]
 	
 
 def writeOutList(list):
@@ -57,8 +59,8 @@ def writeOutList(list):
 
 
 def writeToFile():
-	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{|l|l|l|l|l|l|l|} \n\\hline \n"
-	tmp+="T1 & T2 & T3 & T4 & T5 & T6& T7 \\\\ \\hline\n"
+	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{|l|l|l|l|l|l|l|l|} \n\\hline \n"
+	tmp+=" & T1 & T2 & T3 & T4 & T5 & T6& T7 \\\\ \\hline\n"
 	tmp+= "Throughput &"+ writeOutList(Throughput)
 	tmp+= "Throughput Feature &" + writeOutList(Throughput_ft)
 	tmp+= "Throughput bug &"+writeOutList(Throughput_bug)
@@ -70,7 +72,10 @@ def writeToFile():
 	tmp+= "Churn for feature tasks &" + writeOutList(Churn_ft)
 	tmp+= "Churn for bug tasks &"+writeOutList(Churn_bugs)
 	tmp+= "The average churn &"+writeOutList(Churn_average)
-	tmp+= "\n\\end{tabular} \n \label{corr:WIP} \n \caption{Correlation - WIP} \n \\end{table}  \n\n"
+	tmp+= "\n\\end{tabular} \n \label{corr:WIP} \n \caption{Correlation - WIP} \n "
+	tmp+= "\\centerline {* Correlation is significant at the 0.05 level (2-tailed).} \n"
+	tmp+= "\\centerline{** Correlation is significant at the 0.01 level (2-tailed).} \n"
+	tmp+= "\\end{table}  \n\n"
 	
 	print tmp
 
@@ -83,57 +88,70 @@ with open(sys.argv[1], mode="r") as three:
 			with open(sys.argv[4], mode="r") as Radon:
 				with open(sys.argv[5], mode="r") as Argon:
 					with open(sys.argv[6], mode="r") as Xenon:
+						with open(sys.argv[7], mode="r") as Krypton:
 
 						#out = open(sys.argv[2], mode="w")
-						tmp = "T1 & T2 & T3 & T4 & T5 & T6 \\\\ \\hline \n"
 						
 
+							for line in three.readlines():
+								if "WIP" in line:
+									if "Pearson Correlation" in line:
+										line = line.split(",")
+										line = line[2:]
+										makeFloat(line)
+										diagonal_data(line, 0)
 
-		for line in three.readlines():
-			if "WIP" in line:
-				line = line.split("&")
-				line = line[2:]
-				makeFloat(line)
-				diagonal_data(line, 0)
-
-				
-		for line in Neon.readlines():
-			if "WIP" in line:
-				line = line.split("&")
-				line = line[2:]
-				makeFloat(line)
-				diagonal_data(line, 1)
-
-
-		for line in Frontend.readlines():
-			if "WIP" in line:
-				line = line.split("&")
-				line = line[2:]
-				makeFloat(line)
-				diagonal_data(line, 1)
+							for line in Neon.readlines():
+								if "WIP" in line:
+									if "Pearson Correlation" in line:
+										line = line.split(",")
+										line = line[2:]
+										makeFloat(line)
+										diagonal_data(line, 0)
 
 
-		for line in Radon.readlines():
-			if "WIP" in line:
-				line = line.split("&")
-				line = line[2:]
-				makeFloat(line)
-				diagonal_data(line, 1)
 
-		for line in Argon.readlines():
-			if "WIP" in line:
-				line = line.split("&")
-				line = line[2:]
-				makeFloat(line)
-				diagonal_data(line, 1)
+							for line in Frontend.readlines():
+								if "WIP" in line:
+									if "Pearson Correlation" in line:
+										line = line.split(",")
+										line = line[2:]
+										makeFloat(line)
+										diagonal_data(line, 0)
+
+							for line in Radon.readlines():
+								if "WIP" in line:
+									if "Pearson Correlation" in line:
+										line = line.split(",")
+										line = line[2:]
+										makeFloat(line)
+										diagonal_data(line, 0)
+
+							for line in Argon.readlines():
+								if "WIP" in line:
+									if "Pearson Correlation" in line:
+										line = line.split(",")
+										line = line[2:]
+										makeFloat(line)
+										diagonal_data(line, 0)
 
 
-		for line in Xenon.readlines():
-			if "WIP" in line:
-				line = line.split("&")
-				line = line[2:]
-				makeFloat(line)
-				diagonal_data(line, 1)
+							for line in Xenon.readlines():
+								if "WIP" in line:
+									if "Pearson Correlation" in line:
+										line = line.split(",")
+										line = line[2:]
+										makeFloat(line)
+										diagonal_data(line, 0)
 
-		writeToFile()
+							for line in Krypton.readlines():
+								if "WIP" in line:
+									if "Pearson Correlation" in line:
+										line = line.split(",")
+										line = line[2:]
+										makeFloat(line)
+										diagonal_data(line, 0)
+
+
+writeToFile()
 				

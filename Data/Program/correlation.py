@@ -58,3 +58,39 @@ with open(sys.argv[1], mode="r") as f:
                 index = []
                 elements = []
 out.close()
+
+
+
+
+
+
+for line in Frontend.readlines():
+            if "WIP" in line:
+                line = line.split(",")
+                line = line[2:]
+                makeFloat(line)
+                diagonal_data(line, 1)
+
+
+        for line in Radon.readlines():
+            if "WIP" in line:
+                line = line.split(",")
+                line = line[2:]
+                makeFloat(line)
+                diagonal_data(line, 1)
+
+        for line in Argon.readlines():
+            if "WIP" in line:
+                line = line.split(",")
+                line = line[2:]
+                makeFloat(line)
+                diagonal_data(line, 1)
+
+
+        for line in Xenon.readlines():
+            if "WIP" in line:
+                line = line.split(",")
+                line = line[2:]
+                makeFloat(line)
+                diagonal_data(line, 1)
+
