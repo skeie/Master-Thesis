@@ -776,6 +776,7 @@ When adding a new bug, each bug is gathered into a data structure based on which
 
 Since the program knows which team the new bug belongs to (after the checks on line 3, 8, 13 and 18) a counter can represent each bug. In the analyze the only important is to know how many bugs there are on a given date and which team it belongs to.  
 
+\begin{minipage}{\textwidth}
 \begin{lstlisting}[caption=Pseudocode example of how bugs are added, label=addBug]
 void addBug(Bug b)
 	if b.team EQUALS "TeamOne"
@@ -806,6 +807,8 @@ void dateExists(Date d, Arraylist list)
 	
 return false	
  \end{lstlisting}
+ \end{minipage}
+
  
 \section{Throughput}
  \label{sec:TP}
@@ -924,6 +927,7 @@ The average churn &0.10& 0.10& 0.10& 0.10& 0.10& 0.10& 0.10\\ \hline
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \end{table}
 
+Remove 
  
 \section{Introduction}
 In this chapter 

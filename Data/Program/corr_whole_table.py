@@ -65,12 +65,12 @@ def writeToFile():
 	tmp+= "Throughput Feature &" + writeOutList(Throughput_ft)
 	tmp+= "Throughput bug &"+writeOutList(Throughput_bug)
 	tmp+= "Bugs &" + writeOutList(Bugs)
-	tmp+= "Number of bugs finished in the same quarter &"+writeOutList(precent_bugs)
+	tmp+= "Bugs finished in the same quarter &"+writeOutList(precent_bugs)
 	tmp+= "The average days for bugs in backlog &"+writeOutList(Average_days_in_backlog_bugs)
 	tmp+= "Leadtime &"+writeOutList(Leadtime)
 	tmp+= "Churn &"+writeOutList(Churn)
-	tmp+= "Churn for feature tasks &" + writeOutList(Churn_ft)
-	tmp+= "Churn for bug tasks &"+writeOutList(Churn_bugs)
+	tmp+= "Churn feature &" + writeOutList(Churn_ft)
+	tmp+= "Churn bug &"+writeOutList(Churn_bugs)
 	tmp+= "The average churn &"+writeOutList(Churn_average)
 	tmp+= "\n\\end{tabular} \n \label{corr:WIP} \n \caption{Correlation - WIP} \n "
 	tmp+= "\\centerline {* Correlation is significant at the 0.05 level (2-tailed).} \n"
