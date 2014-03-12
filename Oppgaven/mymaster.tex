@@ -96,7 +96,7 @@
 \mainmatter{}
 \chapter{Introduction}
 \label{chap:intro}
-In this master thesis the focus will be on limit Work In Progress (WIP) who is one of the principles in Kanban. The focus will be to see what impact the principle has in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) is used. SI is a Scandinavian software company that delivers Enterprise Content Management applications. 
+In this master thesis the focus will be on limit Work In Progress (WIP) who is one of the principles in Kanban. The focus will be to see what impact WIP limit have in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) is used. SI is a Scandinavian software company that delivers Enterprise Content Management applications. 
 
 The data set has already been interpreted by another study. That study investigated Scrum vs. Kanban for SI. For interested reader the case study can be found in the article "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. 
 
@@ -160,7 +160,7 @@ In this chapter there will be a brief introduction to Waterfall (Section \ref{se
 
 The main goal of the waterfall model is to plan in early stages to ensure design flaws before coding is started. Since planning is so critical in the waterfall method it fits project where quality control is a major concern  \parencite{munassar2010comparison}.
 
-The waterfall method consist of several non-overlapping stages as shown in figure \ref{fig:waterfall}. The figure shows the waterfall model with a life cycle of establishing system requirements and software requirements and continues with architectural design, detailed design, coding, testing and maintenance  \parencite{munassar2010comparison}.
+The waterfall method consist of several non-overlapping stages as shown in figure \ref{fig:waterfall}. The figure an example of the waterfall model with a life cycle of establishing system requirements and software requirements and continues with architectural design, detailed design, coding, testing and maintenance  \parencite{munassar2010comparison}.
 
 One of the main principles of the waterfall method discourage return to an earlier phase. For example returning from detailed design to architectural design. However, if returning to an earlier phase is needed, it involves costly rework. When a phase is completed the phase requires formal review and extensive documentation development. Therefore, if something is missed out the architectural design phase it is expensive to correct later  \parencite{munassar2010comparison}
 
@@ -234,7 +234,7 @@ In the recent years, more software projects adapt to Kanban and Lean \parencite{
 
 One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" has stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
 
-The Kanban method splits the problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban board to visualize the problems, track what others are working on and see potential bottlenecks during development. When people start to understand Kanban, they easily discovered where the bottlenecks are \parencite{Shinkle}.
+In software development the Kanban method splits the major problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban board to visualize the problems, track what others are working on and see potential bottlenecks during development. When people start to understand Kanban, they easily discovered where the bottlenecks are \parencite{Shinkle}.
 
 Kanban system focus on:
 \begin{itemize}
@@ -247,21 +247,20 @@ Kanban system focus on:
 \parencite{DavidAnderson}.
 
 
-One of the main differences between Scrum and Kanban is sprint and estimation. Contrary to Scrum, Kanban do not use the principles of sprints or estimation. In Kanban the tasks do not need to be estimated or finished within a certain time. In the article "simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} they did found out that if they let the developers work with small tasks at time and not interrupted, they will be more effective. The authors did found that Scrum was to rigid for the development team.  The estimation and sprint meetings worked counterproductive. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
+One of the main differences between Scrum and Kanban is sprint and estimation. Contrary to Scrum, Kanban do not use the principles of sprints or estimations. In Kanban the tasks do not need to be estimated or finished within a certain time. In the article "simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} the authors found out that if they let the developers work with small tasks at time and not interrupted, they will be more effective. They also found out that Scrum was too rigid for the development team.  The estimation and sprint meetings worked counterproductive. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
 
 In the article "Quantifying the Effect of Using Kanban versus Scrum:" the company also felt that the Scrum approach was too rigid, and the article also reported positive results when the team changed to Kanban.  The company almost halved its lead time, reduced the number of weighted bugs by 10 percent, and improved productivity \parencite{Dag}. Other article also states that Scrum is too rigid and that's Kanbans advantages over Scrum \parencite{beedle1999scrum} \parencite{brekkanintroducing} .  
 
 \subsection {Kanban Board}
 ''The Kanban board makes it clear to all the team members the exact status of progress, blockages, bottlenecks and they also signal possible future issues to prepare for''\parencite{Joyce}.
 
-The Kanban board is one of many tools in Kanban. It's used to control WIP, increase the information flow with visualization and spot bottlenecks \parencite{SMR:SMR1599}. A Kanban board is illustrated in figure \ref{kanban_board}. Each column has an intuitive name in order to describe itself so the developers easily can track where each task is. In figure \ref{kanban_board} each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP limit to specify how many works in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP limit is stated under the column name. The backlog column have a WIP limit of 4, In progress has 5 and  done doesn't need a WIP limit. The yellow stickers represents the tasks. Some follow the path to mark stickers with different colors representing the severities. In "Kanban Implementation in a Telecom Product Maintenance" the stickers has three different colors, green, yellow and red depending on how close to overdue the tasks are. If the sticker is red, the task is already overdue, if the tasks are soon-to-overdue its marked with yellow stickers \parencite{6068363}.
+The Kanban board is one of many tools in Kanban. It's used to control WIP, increase the information flow with visualization and spot bottlenecks \parencite{SMR:SMR1599}. A Kanban board is illustrated in figure \ref{kanban_board}. Each column has an intuitive name in order to describe itself so the developers easily can track where each task is. In figure \ref{kanban_board} each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP limit to specify how many works in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP limit is stated under the column name. The backlog column has a WIP limit of 4, In progress has 5 and Done doesn't need a WIP limit. The yellow stickers represent the tasks. Some follow the path to mark stickers with different colors representing the severities. In "Kanban Implementation in a Telecom Product Maintenance" for example, the stickers has three different colors, green, yellow and red depending on how close to overdue the tasks are. If the sticker is red, the task is already overdue, if the tasks are soon-to-overdue its marked with yellow stickers \parencite{6068363}.
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=90mm]{Picture/kanban_board.jpg}
 \caption{Example of a Kanban board}
 \label{kanban_board}
 \end{figure}
-\newpage
 
 \subsection{WIP limit}
 \label{WIPsec}
@@ -271,11 +270,11 @@ WIP limit is one of the core principles in Kanban \parencite{6068363}. WIP limit
 
 When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP limit, but rather the visibility of Kanban through the Kanban board. When user get more experience with Kanban, they start to attempt the principles of WIP limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP limit is not easy. They suggest that the WIP limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. 
 
-The principle of Kanban also says you should limit WIP, but what should the limit be? The principles of Kanban tells us to experiment \parencite{Kniberg}. The Lean Software Management article\parencite{Kniberg}.and the Impact of Kanban on Software Project Work \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
+The principle of Kanban also says you should limit WIP, but what should the limit be? The principles of Kanban tells us to experiment \parencite{Kniberg}. The Lean Software Management article\parencite{Kniberg} and the Impact of Kanban on Software Project Work \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
 
-The importance of limit WIP has been stated by research. Both the articles by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson} did a research on the difference between limit WIP and unlimited WIP.  A summary of this two articles is shown in section \ref{sub:wip:vs:wip} 
+The importance of limit WIP has been stated by research. Both the articles by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson} researched the difference between limit WIP and unlimited WIP.  A summary of this two articles is shown in section \ref{sub:wip:vs:wip}
 
-On how to determine WIP limit one research was found, if one implement Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine the WIP limit. The effectiveness metric should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness and the result could be used as a guideline for WIP limit for the next sprint. The effectiveness metric takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) (ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
+On how to determine WIP limit one research was found. If one implement Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine the WIP limit. The effectiveness metric should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness and the result could be used as a guideline for WIP limit for the next sprint. The effectiveness metric takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) (ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
 
 \begin{equation} \label{WIPEQ}
 Ei=\frac{ai-ei}{ai}*100\%
@@ -283,21 +282,21 @@ Ei=\frac{ai-ei}{ai}*100\%
 
 \subsection{Benefits with WIP limit according to various articles}
 \begin{enumerate}
-\item When lowering the WIP limit it will help people avoid task switching. When one is task swtiching it's hard to be able to fully concentrate. \parencite{Ikonen}.
-\item There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased' \parencite{Joyce}
+\item Lowering the WIP limit will help people avoid task switching. When one is task swtiching it's hard to be able to fully concentrate. \parencite{Ikonen}.
+\item There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased \parencite{Joyce}:
 \item In the article "Lean Software Management: BBC Worldwide Case Study" \parencite{Joyce} the team started to determine WIP by their constraints and quickly find their bottlenecks; this gave the team more experience in dealing with WIP and increased productivity\parencite{Joyce}.
-\item It helps team to reduce overhead \parencite {CONWIP}.
-\item Decrease lead time \parencite {CONWIP}.
-\item Increase throughput \parencite {CONWIP}.
-\item It reduces flow times \parencite {CONWIP}.
-\item Reduces variation \parencite {CONWIP}.
-\item Improves quality \parencite {CONWIP}.
+\item Limit WIP helps team to reduce overhead \parencite {CONWIP}.
+\item Limit WIP decrease lead time \parencite {CONWIP}.
+\item Limit WIP increase throughput \parencite {CONWIP}.
+\item Limit WIP reduces flow times \parencite {CONWIP}.
+\item Limit WIP reduces variation \parencite {CONWIP}.
+\item Limit WIP improves quality \parencite {CONWIP}.
 \end{enumerate}
 
 
 \subsection {Limit WIP vs. Unlimited WIP}
 \label{sub:wip:vs:wip}
-In the article by Giulio Concas and Hongyu Zhang one of the result was visible at the end of a simulation, the average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduces overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on another issue. The study also showed that limit WIP can improve throughput and work efficiency.\parencite{SMR:SMR1599}.
+In the article by Giulio Concas and Hongyu Zhang one of the result was visible at the end of a simulation. The average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduces overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on another issue. The study also showed that limit WIP can improve throughput and work efficiency.\parencite{SMR:SMR1599}.
 
 The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of the impact of WIP limit vs. no WIP limit on developers with skills in different activities. The four skill activities from the article where:
 \begin{enumerate}
@@ -319,15 +318,14 @@ The research paper concluded that the two latter is unlikely in the real world, 
 When the developers had skill in two out of four activities the WIP limit simulation used 100 days, but the non WIP limit simulation used 120 days. The simulation with WIP limit shown an almost constant flow of features that where completed. While in the same simulation with no WIP limit, the flow of feature was much more irregular.  
 \parencite{DavidAnderson}
 
-Both the studies on WIP limit vs. No limit and the articles and research shows the importance of WIP limit. If  \L ukasz's effectiveness metric is disregard, there is no clear rule on how to determine WIP limit even though WIP is a crucial principle in order to maxims the potential of Kanban.
-
+Both the studies on WIP limit vs. No limit and the articles and research shows the importance of WIP limit. If  \L ukasz's effectiveness metric is disregard, there is no clear rule on how to determine WIP limit even though WIP is a crucial principle in order to take full advantages of Kanban.
 
 \section {Lead time}
 ''Lead time is the total elapsed time from when a customer requests software to when the finished software is released to the customer'' \parencite{Joyce}.
 
 Lead time is an essential ingredient when you look for the optimal WIP. Often in project, lead time is split into pieces, so every task has its own lead time. This gives the development teams the advantages to experiment with different WIP's in order to see the different lead times and then measure which WIP that suits this project the best. 
 
-The citation by Middleton and Joyce above is close to definition of what lead time is. This definition could be useful for consultancy companies, but for in-house development company with few releases each year this definition is unsuitable. The article "Quantifying the effect of Using Kanban versus Scrum" \parencite{Dag} stated two reason why this is unsuitable for in house development companies: 
+The citation by Middleton and Joyce above is close to definition of what lead time is. This definition could be useful for consultancy companies, but for in-house development company with few releases each year this definition is unsuitable. The article "Quantifying the effect of Using Kanban versus Scrum" \parencite{Dag} stated some reasons why this is unsuitable for in house development companies: 
 
 "First, the amount of time a work item remains in the backlog queue before it's put on the board is a function of priority, not whether the company uses Scrum, Kanban, or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it's finished'' \parencite{Dag}.
 
@@ -335,7 +333,7 @@ The citation by Middleton and Joyce above is close to definition of what lead ti
 \section{Just-In-Time}
 "Just-In-Time is based on delivering only the necessary products, to the necessary time and the necessary quantity." \parencite{JIT}.
 
-Just-In-Time (JIT) was introduced 30 years ago by Toyota in combination with Lean.  JIT has been developed to increase productivity through waste reduction and increasing the value added on the production processes. In one of the books by Mary and Tom Poppendieck the JIT principle is explained \parencite{Lean:2006}. To explain, illustrate and visualize the JIT principle Mary and Tom Poppendieck uses the picture \ref{JITE}  \parencite{JIT} \parencite{Lean:2006}.
+Just-In-Time was introduced 30 years ago by Toyota in combination with Lean.  JIT has been developed to increase productivity through waste reduction and increasing the value added on the production processes. In one of the books by Mary and Tom Poppendieck the JIT principle is explained \parencite{Lean:2006}. To explain, illustrate and visualize the JIT principle Mary and Tom Poppendieck uses the picture sown in figure \ref{JITE}  \parencite{JIT} \parencite{Lean:2006}.
 
 \begin{figure}[ht!]
 \centering
@@ -345,21 +343,21 @@ Just-In-Time (JIT) was introduced 30 years ago by Toyota in combination with Lea
 \end{figure}
 
 
-In picture \ref{JITE} the stream reflects the inventory.  Under the stream, there are rocks located in different sizes. The rocks illustrates waste and problems that can occur.  If the stream level is lowered, the rocks are more visualized. At this point you have to clear out rocks in order to make the boat continue it's journey, or it will crash into the rocks. After the rocks are cleaned out, one can lower the stream level again and continue until it's just pebbles left
+In figure \ref{JITE} the stream reflects the inventory.  Under the stream, there are rocks located in different sizes. The rocks illustrates waste and problems that can occur.  If the stream level is lowered, the rocks are more visualized. At this point you have to clear out rocks in order to make the boat continue it's journey, or it will crash into the rocks. After the rocks are cleaned out, one can lower the stream level again and continue until it's just pebbles left
 
-If one lower the stream (inventory), problem and waste will become visible. But why do Lean want to lower inventory in order to make problems and waste occur? Because when problem and waste occurs, you are able to fix the problem and remove the waste. Fixing the problem and removing the waste can have several benefits such as, your process could be optimized and you are on step closer to have zero problems and zero waste.  \parencite{JIT} \parencite{Lean:2006}.
+If one lower the stream (inventory), problems and waste will become visible. But why do Lean want to lower inventory in order to make problems and waste occur? Because when problems and waste occurs, you are able to fix the problems and remove the waste. Fixing the problem and removing the waste can have several benefits such as, your process could be optimized and you are on step closer to have zero problems and zero waste.  \parencite{JIT} \parencite{Lean:2006}.
 
 
 \section{Throughput}
 ''The output of a production process (machine, workstation, line plant) per unit time (e.g., parts per hour) is defined as the systems throughput or sometimes throughput rate'' \parencite{Adams}
 
-The main concept of throughput is to measure how productive teams, people or companies are. Throughput is measured in number of finished delivered tasks or units per hour, day, week, month, quarter or year. This applies to both software development and manufacturing. But there are some difference. In software development each task is more abstract than in manufacturing and in software development each tasks can have different solutions depending on how the team or developer approaches the task \parencite{Throughput}.
+The main concept of throughput is to measure how productive teams, people or companies are. Throughput is measured in number of finished delivered tasks or units per hour, day, week, month, quarter or year. This applies to both software development and manufacturing. But the tasks in manufacturing and software development are often difference. In software development each task is more abstract than in manufacturing and in software development each tasks can have different solutions depending on how the team or developer approaches the task \parencite{Throughput}.
 
-A key factor in successfully measuring throughput in software development is to specify the size of each task. If the size is not specified a developer x can have throughput of 1 per week, but another developer could have throughput of 3 and they still have done the same amount of work and this will give wrong results if the throughput is measured. An example of throughput is listed in subsection \ref{sub:sub:throughput}.  \parencite{Throughput} 
+A key factor in successfully measuring throughput in software development is to specify a standard work amount for each task. If the standard is not specified a developer x can have throughput of 1 task per week, another developer y could have throughput of 3 tasks per week and they still have done the same amount of work, since the task of developer x is the same work amount as the three to developer y combined.  This will give wrong results if the throughput is measured. An example of throughput is listed in subsection \ref{sub:sub:throughput}.  \parencite{Throughput}
 
 \subsection{Example of throughput measurement}
 \label{sub:sub:throughput}
-This is a simple example to illustrate throughput with different task sizes. Lets say Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter and they used Scrum the first two quarters and Kanban the last two as illustrated in table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. In order to get valid result from throughput measurement the size of tasks has to be agreed upon by the teams or company.
+This is a simple example to illustrate throughput with different task sizes. Lets say Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter and they used Scrum the first two quarters and Kanban the last two as illustrated in table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. In order to get valid result from throughput measurements the size of tasks has to be agreed upon by the teams or company.
 \begin{table}[ht]
 \begin{center}
     \begin{tabular}{| l | l | l | l |}
@@ -387,7 +385,7 @@ Churn is a measure that's not so quite known as lead time, throughput or WIP. Ch
 \label{sec:SI}
 Software Innovation is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around Microsoft Sharepoint platform and tightly integrated into the Microsoft Office environment \parencite{Dag}. \parencite{SI}.
 
-SI has approximately 300 employees in Oslo, Copenhagen and Stockholm and Bangalore \parencite{SI}. From 2001 to 2006 SI used Waterfall process. In 2007 SI changed to Scrum and in 2010 SI went from Scrum to Kanban.
+SI has approximately 300 employees in Oslo, Copenhagen and Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used Waterfall process. In 2007 SI changed to Scrum and in 2010 SI went from Scrum to Kanban.
 
 
 
@@ -400,14 +398,15 @@ In this chapter the research methods will be introduced and the reason why the d
 \label{sec:CS}
 To answer the research question, a case study will be conducted.  A case study is used to explore causation in order to find underlying principles of a study \parencite{0078285763}\parencite{9781412960991}.  But which methods one can use in a case study or how the case study is conducted is ambiguous.  It might be that the method is qualitative or quantitate.  Or that it utilizes a particular type of evidence (for example ethnographic, participant observation or field research). Jennifer Platt stated: "Much case study theorizing has been conceptually confused because too many different themes have been packed into the idea "case study" "\parencite{0521676568}.  
 
-John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is - at least in part to shed light on a larger class of cases (a population)" \parencite{0521676568}.
+John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is - at least in part to shed light on a larger class of cases  \parencite{0521676568}.
 John also stated: "Case connotes a spatially delimited phenomenon (a unit) observed at a single point in time or over a period of time"\parencite{0521676568}. 
 
-As one can see there is no clear rule what exactly a case study is. In this thesis the case study is used to explore WIP limit's effect in software development.  And the purpose is to shed light on WIP limit in software development and if it matter. In order to do so, the data set from SI with quantitative data analyzed, with data over a period of time (2010-2013).
+As one can see there is no clear rule what exactly a case study is. In this thesis the case study is used to explore WIP limit's effect in software development.  And the purpose is to shed light on WIP limit in software development and if it matter. In order to do so, the data set from SI with quantitative data will be interpreted. The data set contains data over a five-year period of time (2008-2013). 
+
 \section{Choice of case}
 \label{sec:coc}
 The case study in this thesis is based on data set from an in-house software company named Software Innovation. The data set contains information about each task SI has worked on in the last five years (2008-2013). The data set is represented in a excel document, a excerpt of some of the columns in the document is shown in table \ref{dataset}.
-
+Skrive her at data fra 2010 og utover er tatt med
 \begin{table}[!ht]
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|}
@@ -464,7 +463,7 @@ This chapter will introduce complementary information about the data set and the
 
 For this thesis a program was made in order to measure the variable (shown in table \ref{des}) per day. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a description using Pseudocode \parencite{jd} will be provided. The Pseudocode for each section is simplified with only the key elements of the program code. 
 
-The following two tables (table \ref{des} and table \ref{tab:measurementDone}) shows the five variables that will measured by the program and the latter table shows how quarters, dates and days are represented. 
+The table \ref{tab:measurementDone} shows how quarters, dates and days are represented. 
 
 \begin{table}[!ht]
 \centering
@@ -489,8 +488,7 @@ The following two tables (table \ref{des} and table \ref{tab:measurementDone}) s
 \newpage
 \section{The columns}
 \label{sec:tc}
-In this section information about the columns in the data set is given. Table \ref{IC} shows the columns that the program use from the data set. The table contains the name of the columns and a brief description about what the column mean.  The two columns in the table are "Columns from data set" and "Description". The "Columns from data set" contains the name of each column used by the program. The "Description" column gives a brief description of each column in the data set.  
-
+In this section information about the columns in the data set is given. Table \ref{IC} shows the columns used by the program.  The table \ref{IC} contains two columns. The first column with name "Columns from data set" shows the columns needed from the data set. These columns are extracted by the program. The second column in table \ref{IC} with name "Description" gives a brief description of each column in the data set. 
 
 \begin{table}[!ht]
 \begin{center}
@@ -516,7 +514,7 @@ In this section information about the columns in the data set is given. Table \r
 \newpage
 
 
-Table \ref{des} contains three columns, "variable", "description" and "columns from SI". The "variable" column displays the five variables that will measured by the program. The "description" column gives a recap of what the variable is and the "columns from SI" column shows which columns from the data set is needed to compute the variable.
+Table \ref{des} contains three columns, "variable", "description" and "columns from SI". The "variable" column displays the five variables that will calculated by the program. The "description" column gives a recap of what the variable is and the "columns from SI" column shows which columns from the data set is needed to compute the variable.
 
 \begin{table}[!ht]
 \begin{center}
@@ -600,8 +598,8 @@ void FindTeam (WIP w)
  \label{sub:stepTwo}
 The data set from SI contains dates from 2008 to 2013, but there are some dates missing which table \ref{dataset} shows. For example the date 2008-10-09 is missing. In order to generate WIP for each day the program has to create the dates that's not in the set. 
   
-In order to create the remaining dates, the program takes the first date and the last date from each of the teams's Arraylist created in previous section (\ref{sub:stepOne}) as shown in listing \ref{lst:remaining} in line one and two. Then the program checks if all the dates between the first date and the last date are in the team's Arraylist. Each of the Arraylist are sorted on date. If the dates are not in the Arraylist, the program will put the date into the Arraylist as show in method on line ten to thirteen.
-In order to keep the pseudocode simple, the generateWIP method stated in line twelve was omit. The method creates a new WIP object and returns it. 
+In order to create the remaining dates, the program takes the first date and the last date from each of the teams's Arraylist created in previous section (\ref{sub:stepOne}) as shown in listing \ref{lst:remaining} in line one and two. Then the program checks if all the dates between the first date and the last date are in the team's Arraylist. Each of the Arraylists are sorted on date. If the dates are not in the Arraylist, the program will put the date into the Arraylist as show in method on line ten to thirteen.
+In order to keep the pseudocode simple, the generateWIP method stated in line twelve was omit. The genereteWIP method creates a new WIP object and returns it. 
 \begin{minipage}{\textwidth} 
 \begin{lstlisting}[caption={Gather the remaining dates.},label={lst:remaining}]
 WIP first = Arraylist.get(0)//points to the first WIP object in the Arraylist 
@@ -620,7 +618,7 @@ addToArraylist(Date d, String team)
  \end{lstlisting}
  \end{minipage}
 \subsection{Step 3 Measure WIP}
-The Arraylist from section \ref{sub:stepOne}  and \ref{sub:stepTwo} now contain a WIP object for each date from 2008 to 2013 for each team. In this step the program will loop through the Arraylist, during the iteration each WIP object is extracted from the Arraylist and the WIP is measured. The two methods stated in line ten and eighteen respectively gather the current WIP (method in line ten) and finds out how many finished tasks (method in line eighteen) and returns the result. The result is used in line five to compute the current WIP. 
+The Arraylist from section \ref{sub:stepOne}  and \ref{sub:stepTwo} now contains a WIP object for each date from 2008 to 2013 for each team. In this step the program will loop through each of the Arraylists. During the iteration each WIP object is extracted from the Arraylist and the WIP is measured. The two methods stated in line ten and eighteen respectively gather the current WIP (method in line ten) and finds out how many finished tasks (method in line eighteen) and returns the result. The result is used in line five to compute the current WIP. 
 
 \begin{minipage}{\textwidth} 
 \begin{lstlisting}[caption={WIP measurement},label={lst:measure}]
@@ -652,10 +650,9 @@ return Nr_of_dates_to_decrement
 
 \subsection{Example}
 \label{sec:Example}
-This section will provide a comprehensive example of how the programs' WIP algorithm works.  
-Figure \ref{wip_timeline}  shows tasks id in the y-axis and dates in the x-axis. The green line indicates the duration of the task. The figure visualize how many WIPs there are for a given date. For example on the date 2008-10-12, tasks 3, 5 and 6 are in progress, which means the WIP is 3 for 2008-10-12.  
+This section will provide a comprehensive example of how the programs' WIP algorithm works.  Figure \ref{wip_timeline}  shows tasks id?s in the y-axis and dates in the x-axis. The green line indicates the duration of the task. The figure visualizes how many WIPs there are for a given date. For example on the date 2008-10-12, tasks 3, 5 and 6 are in progress, which means the WIP is 3 for 2008-10-12.  
 
-In this example dates from figure \ref{wip_timeline} and from table \ref{wt:2} will be used to illustrate how the algorithm measure WIP
+In this example dates from table \ref{wt:2}  will be used to illustrate how the algorithm measure WIP.  The figure \ref{wip_timeline} visualize WIP for each date.
 %skrive om tabellen
 \begin{figure}[ht!]
 \centering
@@ -700,9 +697,9 @@ WIP.WIP = 1
 \end{lstlisting}
   \end{minipage}
 
- \subsubsection{Step two}
+ \subsubsection{Step 2}
 \label{sub:sub:st}
-Now that the whole set has been read in and saved. The next thing to do is to create the remaining dates. The Arraylist contains dates from table \ref{wt:2}.  The program will now extract the first and the last date from the Arraylist. The first date is 2008-10-07 and the last date is 2008-10-13.  The program will check if the date after 2008-10-07 contains in the set, which it don't. The program then generates a WIP object for the date 2008-10-08 and adds it to the Arraylist as shown in listing \ref{lst:WIPCREATE}. 
+Now that the whole set has been read in and saved. The next thing to do is to create the remaining dates. The Arraylist contains all the dates from table \ref{wt:2}.  The program will now extract the first and the last date from the Arraylist. The first date is 2008-10-07 and the last date is 2008-10-13.  The program will check if the date after 2008-10-07 contains in the set, which it don't. The program then generates a WIP object for the date 2008-10-08 and adds it to the Arraylist as shown in listing \ref{lst:WIPCREATE}. After the date is created, the program will see if the date 2008-10-09 exits and will do so for all dates until the date 2008-10-13.
 \begin{minipage}{\textwidth} 
 \begin{lstlisting}[caption={Creating WIP-object},label={lst:WIPCREATE}]
 void createNewWIP(Date d, String team) 
@@ -715,8 +712,8 @@ void createNewWIP(Date d, String team)
   \end{minipage}
 
 
-\subsubsection{Step three}
-The Arraylist now contains the dates from 2008-10-08 to 2008-10-13. The next and last step is to measure WIP for each date.  The program will now loop through the Arraylist. The first date is 2008-10-07.  The get\_current\_wip method from line nine in listing \ref{lst:measure} will be called with the date 2008-10-07 as parameter.  The method will return two, since both task one and two where started at 2008-10-07 as shown by figure \ref{wip_timeline}. The next to do is to find out how many tasks to decrement the current WIP with.  The method Nr\_of\_fininshed\_dates in line seventeen is called with the date 2008-10-07. As shown by the table \ref{wt:2} and figure \ref{wip_timeline} there was no task finished at the date 2008-10-07. So the program updates the WIP objects' counter to two and saves the WIP in the lastWIP object. The next date is 2008-10-08, who the program made in subsection \ref{sub:sub:st}. There is no task started at 2008-10-08, but task one is finished at the date. So the Nr\_of\_fininshed\_dates returns one and flag the current date at line twenty-three. The result of WIP\_measure in line five is 1 ($0-1+2=1$). WIP at date 2008-10-08 is one, as shown by figure \ref{wip_timeline}. The program will continue this procedure until all the dates are measured.  The reason why the date is flagged is to be sure that each day only evaluates ones. The if statement listed in listing \ref{lst:measure} at line twenty-one assurance that.
+\subsubsection{Step 3}
+The Arraylist now contains the dates from 2008-10-08 to 2008-10-13. The next and last step is to measure WIP for each date.  The program will now loop through the Arraylist. The first date is 2008-10-07.  The get\_current\_wip method from line nine in listing \ref{lst:measure} will be called with the date 2008-10-07 as parameter.  The method will return two, since both task one and two where started at 2008-10-07 as shown by figure \ref{wip_timeline}. The next to do is to find out how many tasks to decrement the current WIP with.  The method Nr\_of\_fininshed\_dates in line seventeen is called with the date 2008-10-07. As shown by the table \ref{wt:2} and figure \ref{wip_timeline} there was no task finished at the date 2008-10-07, so the method returns 0. The program then updates the WIP objects' counter to two and saves the WIP in the lastWIP object. The next date is 2008-10-08, who the program made in subsection \ref{sub:sub:st}. There is no task started at 2008-10-08, but task one is finished at the date. So the Nr\_of\_fininshed\_dates returns one and flag the current date at line twenty-three. The result of WIP\_measure in line five is 1 ($0-1+2=1$). WIP at date 2008-10-08 is one, as shown by figure \ref{wip_timeline}. The program will continue this procedure until all the dates are measured.  The reason why the date is flagged is to be sure that each day only evaluates ones. The if statement listed in listing \ref{lst:measure} at line twenty-one assurance that.
 
 \iffalse
 \subsubsection{First step}
@@ -819,10 +816,9 @@ return false
 Finding throughput per day is quite similar to how bugs are found (described in section \ref{sec:bug}).  When reading in the data set a new throughput object is created for each line in the data set smilier to how the bugs was created.  Then all throughput objects are sorted based on team association as shown in listing \ref{addBug} . When all throughput objects are gathered, the program measure throughput. The throughput measurement is similar to the dateExists method (lines 26 to 32) in the listing \ref{addBug} stated in section \ref{addBugS}. 
 
 The dateExists method starts of with a test, the same test is done for bugs. If the date of the throughput object is in the data structure, the corresponding counter is incremented.  If the date is not in the data structure, the new throughput object is added to the data structure. An excerpt of the code is listed in \ref{throughputCode} 
-
+\begin{minipage}{\textwidth}
 \begin{lstlisting}[caption=Pseudocode example of how throughput is measured, label=throughputCode]
-
-dateExists(Throughput tp d, Arraylist list)
+void dateExists(Throughput tp d, Arraylist list)
 	for Throughput t in list
 		if t.date EQUALS tp.date
 			t.counter++
@@ -830,13 +826,14 @@ dateExists(Throughput tp d, Arraylist list)
 			
 structure.add(tp);
 \end{lstlisting}
+ \end{minipage}
 
 
 \section{Churn}
 \label{sec:churn}
-As stated in section \ref{sec:Churn} in order to take churn into account one need to know it's good surrogates. SI has gathered churn with help of Microsoft's Team Foundation Server (TFS). The TFS system automatically records data such as churn and lead time. Based on TFS one can know that churn for SI a is good surrogate.
+As stated in section \ref{sec:Churn} in order to take churn into account one need to know it's good surrogates. SI has gathered churn with help of Microsoft's Team Foundation Server (TFS). The TFS system automatically records data such as churn and lead time. Based on TFS one can know that churn for SI is a good surrogate.
 
-To measure churn the data set from SI contains three columns ("Lines added, "Lines modified" and "Lines deleted") shown in table \ref{table:churn}. These three columns are automatically measured by TFS.  To complete the churn measure the three columns are multiplied.  For task id one, the churn is 2028 ($352+307+1369 = 2028$). Some tasks has zero churn, for example task with id six, these tasks don't need code in order to be finished such tasks needs technical support to be finished.
+To measure churn the data set from SI contains three columns ("Lines added, "Lines modified" and "Lines deleted") shown in table \ref{table:churn}. These three columns are automatically recorded by TFS.  To complete the churn measurements the three columns are multiplied.  For task id one, the churn is 2028 ($352+307+1369 = 2028$). Some tasks has zero churn, for example task with id six, these tasks don't need code in order to be finished such tasks needs technical support to be finished.
 
 %skal jeg skrive pseucode code til denne? 
 
@@ -889,7 +886,7 @@ structure.add(t)
 \section{Lead time and churn}
 As in the article "Quantifying the Effect of Using Kanban versus Scrum" \parencite{Dag} to prevent outliers from having a large effect on the results, the top and lowest ten percent of lead time and churn are removed from the data set.
 
-Churn is removed because a module or a feature, which consists of hundred or thousand lines of code could be removed without much work and in this thesis churn is used as surrogate estimate the complexity of the task. Lead time is removed because some tasks could be given low priority due to lack of manpower in a given period or tasks could be labeled as not critical.
+Churn is removed because a module or a feature, which consists of hundred or thousand lines of code could be removed without much work and in this thesis churn is used as surrogate effort to know the complexity of the task. Lead time is removed because some tasks could be given low priority due to lack of manpower in a given period or tasks could be labeled as not critical and the lead time of these tasks will effect the result.
  
 
 \section{Outcome}
@@ -898,9 +895,11 @@ This is how the result looks like after the program has measured WIP
 
 \section{SPSS}
 \label{sec:SPSS}
+"IBM® SPSS® Statistics is a comprehensive system for analyzing data. SPSS Statistics can take data from almost any type of file and use them to generate tabulated reports, charts and plots of distributions and trends, descriptive statistics, and complex statistical analyses." \parencite{IBM}
+
 After the program has finished the measurements of the data, SPSS will be used to analyze the derived data. SPSS will help to answer the research question stated in chapter \ref{chap:RQ} with help of two statistics method: Correlation and case summaries. 
 
-"IBM® SPSS® Statistics is a comprehensive system for analyzing data. SPSS Statistics can take data from almost any type of file and use them to generate tabulated reports, charts and plots of distributions and trends, descriptive statistics, and complex statistical analyses." \parencite{IBM}
+
 
 
 
