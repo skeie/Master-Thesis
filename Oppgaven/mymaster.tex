@@ -89,6 +89,7 @@
 \tableofcontents{}
 \listoffigures{}
 \listoftables{}
+\lstlistoflistings{}
 
 \chapter*{Preface}                    %% ... or Forord
 
@@ -120,11 +121,13 @@ In this thesis the overall research question will be to study the effects of WIP
 
 
 \section{Approach}
-This thesis will use case study as an approach in order to answer the research questions. The case study contains a data set from an in house software company.  The data set will be calculated and analyzed. The first part of the analyze will be done by a program. The program was made for this thesis in order to calculate the data set. The program will turn the data set from raw quantitative into more suited quantitative data. 
+This thesis will use case study as an approach in order to answer the research questions. To conduct the case study a data set from an in house software company will be used.  The data set will be calculated and analyzed. The first part of the analyze will be done by a program. The program was made for this thesis in order to calculate the data set. The program will turn the data set from quantitative into more suited quantitative data set. 
 
-The analyzed data will be evaluated on team level. The most valuable teams will be picked and their data will be extracted form the data set by the program.  The teams will be evaluated on the basis of number of task labeled with their name in the data set.  After the program has calculated each team, statistical analysis will be used to compute correlation and descriptive statistic.The correlation and  descriptive statistic will be represented in chapter \ref{ch:res}. 
+The analyzed data will be evaluated on team level. The most valuable teams will be picked and their data will be extracted form the data set by the program.  The teams will be evaluated on the basis of number of task labeled with their name in the data set.  After the program has calculated each team, statistical analysis will be used to compute correlation and descriptive statistic.
+
+The correlation and  descriptive statistic will be represented in chapter \ref{ch:res}. 
 \section{Contribution}
-My contribution on the research on WIP and WIP limit consist of creating a Java-based program that will measure WIP for each day based on a data set. For the program to work, the data set given as a parameter to needs to have the same format as the data set in this thesis. 
+My contribution to the research on WIP and WIP limit consist of creating a Java-based program that will measure WIP for each day based on a data set. For the program to work, the data set given as a parameter to needs to have the same format as the data set in this thesis. 
 
 \section{Chapter overview}
 \begin{description}
@@ -166,14 +169,14 @@ One of the main principles of the waterfall method discourage return to an earli
 \centering
 \includegraphics[scale=0.7]{Picture/waterfall.jpg}
 \caption{Waterfall model}
-\label{fig:waterfall} % JIT example
+\label{fig:waterfall} % 
 \end{figure}
 
 \section {Scrum}
 \label{sec:Scrum}
-"Scrum is the best-known of the Agile frameworks. It is the source of much of the thinking behind the values and principles of the Agile Manifesto, which form a common basis for all of these approaches" \parencite{Scrum}.
+"Scrum is the best-known of the Agile frameworks. It is the source of much of the thinking behind the values and principles of the Agile Manifesto" \parencite{Scrum}.
 
-The Scrum method relates to value as "Individuals and interactions over processes and tools", "Working software over comprehensive documentation", "Customer collaboration over contract negotiation" and "Responding to change over following a plan" from the Agile Manifesto\parencite{Scrum}. These principles are the opposite of the principles of the Waterfall method. 
+The Scrum method relates to value as "Individuals and interactions over processes and tools", "Working software over comprehensive documentation", "Customer collaboration over contract negotiation" and "Responding to change over following a plan" from the Agile Manifesto\parencite{Scrum}. These principles are not so rigid as the principles of the Waterfall method. Some may say that Scrum is the opposite of the Waterfall method \parencite{cocco2011simulating}. 
 
 Scrum have three main roles, the Product Owner, the Scrum Master and the members of the development team. The Product owner in collaboration with the Scrum Master decides which work to be prioritized in the backlog. The backlog represents the tasks to be done in order to complete the project. The Scrum Master acts like a team leader and helps the development team and the organization to take best advantages of Scrum. The development team works on tasks specific for the sprint there in \parencite{Scrum}.
 
@@ -228,6 +231,7 @@ Shinkle defined novice and more experience kanban-users with a descriptive analo
 Toyota production system introduced Kanban as a scheduling system for Lean and just-in-time (JIT) production during late 1940's and in the early 1950's in order to catch up with the American car industry. The Kanban method combined with the Lean approach was a success for Toyota. The success was noticed by the software development industry among others. In the last ten years, more and more software development companies have started to implement development methods such as Scrum and Kanban \parencite{Conboy}, \parencite{ono1988toyota}. 
 
 In the recent years, more software projects adapt to Kanban and Lean \parencite{DavidAnderson}, and this is one of the reasons why this thesis will focuses on Kanban and one of it's main principle WIP limit.
+
 One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" has stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
 
 The Kanban method splits the problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban board to visualize the problems, track what others are working on and see potential bottlenecks during development. When people start to understand Kanban, they easily discovered where the bottlenecks are \parencite{Shinkle}.
@@ -243,7 +247,7 @@ Kanban system focus on:
 \parencite{DavidAnderson}.
 
 
-One of the main differences between Scrum and Kanban is sprint and estimation. Contrary to Scrum, Kanban do not use the principles of sprints. In Kanban the tasks do not need to be estimated or finished within a certain time. In the article "simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} they did found out that if they let the developers work with small tasks at time and not interrupted, they will be more effective. The authors did found that Scrum was to rigid for the development team.  The estimation and sprint meetings worked counterproductive. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints. After removing sprints the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
+One of the main differences between Scrum and Kanban is sprint and estimation. Contrary to Scrum, Kanban do not use the principles of sprints or estimation. In Kanban the tasks do not need to be estimated or finished within a certain time. In the article "simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} they did found out that if they let the developers work with small tasks at time and not interrupted, they will be more effective. The authors did found that Scrum was to rigid for the development team.  The estimation and sprint meetings worked counterproductive. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
 
 In the article "Quantifying the Effect of Using Kanban versus Scrum:" the company also felt that the Scrum approach was too rigid, and the article also reported positive results when the team changed to Kanban.  The company almost halved its lead time, reduced the number of weighted bugs by 10 percent, and improved productivity \parencite{Dag}. Other article also states that Scrum is too rigid and that's Kanbans advantages over Scrum \parencite{beedle1999scrum} \parencite{brekkanintroducing} .  
 
@@ -657,7 +661,7 @@ In this example dates from figure \ref{wip_timeline} and from table \ref{wt:2} w
 \centering
 \hspace*{-1in}
 \includegraphics[width=21cm,trim=4 4 4 4,clip]{Picture/wip_example.jpg}
-\caption{Illustrating the WIP timeline for this example}
+\caption{Illustrating the WIP timeline for example stated in section \ref{sec:Example}}
 \label{wip_timeline}
 \end{figure}
 
