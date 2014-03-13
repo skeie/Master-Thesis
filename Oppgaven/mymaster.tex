@@ -23,6 +23,8 @@
     }%
 }
 
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
 
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
@@ -59,8 +61,7 @@
 
 
 
-\setlength{\parskip}{\baselineskip}%
-\setlength{\parindent}{0pt}%
+
 
 
 \title{Does Limit on Work-In-Progress (WIP) matter?}        %% ... or whatever
@@ -353,7 +354,7 @@ If one lower the stream (inventory), problems and waste will become visible. But
 
 The main concept of throughput is to measure how productive teams, people or companies are. Throughput is measured in number of finished delivered tasks or units per hour, day, week, month, quarter or year. This applies to both software development and manufacturing. The tasks in manufacturing are often different from the tasks in software development. In software development each task is more abstract than in manufacturing and in software development each tasks can have different solutions depending on how the team or developer approaches the task \parencite{Throughput}.
 
-A key factor in successfully measuring throughput in software development is to specify a standard work amount for each task. If the standard is not specified a developer x can have throughput of one task per week, another developer y could have throughput of three tasks per week and they still have done the same amount of work, since the task of developer x is the same work amount as the three to developer y combined.  This will give wrong results if the throughput is measured \parencite{Throughput}. An example of throughput is listed in subsection \ref{sub:sub:throughput}. 
+A key factor in successfully measuring throughput in software development is to specify a standard size for each task. If the standard is not specified a developer x can have throughput of one task per week, another developer y could have throughput of three tasks per week and they still have done the same amount of work, since the task of developer x is the same work amount as the three to developer y combined.  This will give wrong results if the throughput is measured \parencite{Throughput}. An example of throughput is listed in subsection \ref{sub:sub:throughput}. 
 
 \subsection{Example of throughput measurement}
 \label{sub:sub:throughput}
@@ -383,9 +384,9 @@ Churn is a measure that's not so quite known as lead time, throughput or WIP. Ch
 
 \section{Software Innovation}
 \label{sec:SI}
-Software Innovation is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around Microsoft Sharepoint platform and tightly integrated into the Microsoft Office environment \parencite{Dag}. \parencite{SI}.
+Software Innovation(SI) is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around Microsoft Sharepoint platform and tightly integrated into the Microsoft Office environment \parencite{Dag}. \parencite{SI}.
 
-SI has approximately 300 employees in Oslo, Copenhagen and Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used Waterfall process. In 2007 SI changed to Scrum and in 2010 SI went from Scrum to Kanban.
+SI has approximately 300 employees in Oslo, Copenhagen and Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used Waterfall process. In 2007 SI changed to Scrum and in 2010 SI went from Scrum to Kanban \parencite{Dag}.
 
 
 
@@ -405,8 +406,8 @@ As one can see there is no clear rule what exactly a case study is. In this thes
 
 \section{Choice of case}
 \label{sec:coc}
-The case study in this thesis is based on data set from an in-house software company named Software Innovation. The data set contains information about each task SI has worked on in the last five years (2008-2013). The data set is represented in a excel document, a excerpt of some of the columns in the document is shown in table \ref{dataset}.
-Skrive her at data fra 2010 og utover er tatt med
+The case study in this thesis is based on data set from an in house software company named Software Innovation. The data set contains information about each task SI has worked on in the last five years (2008-2013). The data set is represented in a excel document, a excerpt of some of the columns in the document is shown in table \ref{dataset}.
+Skrive her at data fra 2010 og utover er tatt med, samme som i artikkelen til Dag, de har fjernet en del. 
 \begin{table}[!ht]
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|}
@@ -426,10 +427,52 @@ Skrive her at data fra 2010 og utover er tatt med
 \end{table}
 \newpage
 
-In order to try answering the research questions stated in chapter \ref{chap:RQ}, the data from SI will be interpreted. The data set contains thirty columns with different data for each task, mostly of this columns are irrelevant for this study but the important columns is stated in table \ref{IC}. The data from SI will be interpreted on team level.  SI has about 25 teams. From the data set there are six teams who have worked on the most tasks. The data from these six teams will be used. 
+In order to try answering the research questions stated in chapter \ref{chap:RQ}, the data from SI will be interpreted. The data set contains thirty columns with different data for each task, mostly of this columns are irrelevant for this study but the important columns is stated in table \ref{IC}.
+
+The data from SI will be interpreted on team level.  SI has about 25 teams. From the data set there are six teams who have worked on the most tasks. The data from these six teams will be used. 
 The data from SI will be analyzed using the program, which will compute the variables shown in table \ref{des} for per day for each of the six team. This data will be further analyzed using SPSS. With SPSS the data produced by the program will be interpreted. The interpreted data will be presented in chapter \ref{ch:res}. 
 
 The reason SI and the data set from SI is analyzed in this thesis is based on the article "Quantifying the Effect of Using Kanban versus Scrum" by Dag Sjøberg, Anders Johnsen and Jørgen Solberg \parencite{Dag}. In the article the three authors investigated how SI benefitted from Kanban vs. Scrum. Since Dag is the supervisor of this thesis and he had access to the data set, to use the set from SI is a choice of convenience. 
+
+\begin{table}[!ht]
+\begin{center}
+    \begin{tabular}{| l | p{5cm} |}
+    \hline
+     Columns from data set & Description\\ \hline
+     Created Date & When a task is put in backlog \\ \hline
+     Date From & When a given task is pulled out from the backlog\\ \hline
+     Date to & When a task is finished and ready for release. \\ \hline
+    Lead Time & The amount of days elapsed from the date the task was created until the tasks has finished  \\ \hline
+   Type & The type column is labeled as either bug or feature depending on the type of the task \\ \hline
+   Lines added & Number of lines added to a feature or bug \\ \hline
+   Lines modified & Number of lines modified when working on a feature or bug \\ \hline
+   Lines deleted & Number of lines deleted from a bug or feature \\
+    \hline
+    Team &States the team who has been working on the task.\\ \hline
+    \end{tabular}
+\caption{Information about the columns from the SI dataset}
+\label{IC} %% information columns
+\end{center}
+\end{table}
+
+\newpage
+
+
+\begin{table}[!ht]
+\begin{center}
+    \begin{tabular}{| l | p{5cm} |  p{5cm} |}
+    \hline
+    Variable &	Description	 & Columns from SI\\ \hline 
+     WIP & \parbox[t]{5cm}{The number of items in progress on the given day} & Date From and Date To. \\ \hline
+     Throughput	& Number of tasks finished on a given day & Date To \\ \hline
+     Churn & Lines added, lines modified and lines deleted added together & Lines Added, Lines Modified, Lines Deleted and Date To \\ \hline
+    Bugs & The number of tasks labeled as Bug and not feature & Type and Created Date \\ \hline
+    Lead time & The time used on a task, measured in days & Lead time and Date To \\ \hline
+  \end{tabular}
+\caption{Relationship between variable and columns from SI}
+\label{des} %% desription
+\end{center}
+\end{table}
 
 \subsection{Software Innovation's development process}
 From 2001 to 2006 SI used the Waterfall process with a life cycle of:
@@ -459,11 +502,11 @@ SI decided to implemented Kanban in the following manner. When a work item is pu
 
 \chapter{Data collected and calculations}
 \label{ch:DCC}
-This chapter will introduce complementary information about the data set and the program. The first section will contains information about the content of the data set  (Section \ref{sec:tc}). Section \ref{WPD} will introduce the algorithm of how the program measure WIP for each day. The subsection \ref{sec:Example} will provide a comprehensive example of how the program measure WIP per day. The consecutively sections reveals the algorithm of how the program measure bugs (Section \ref{sec:bug}) throughput (Section \ref{sec:TP}),  churn (Section \ref{sec:churn}) and lead time (Section \ref{sec:LT}) per day.  In the last section the statistical analyze program SPSS is introduced (Section \ref{sec:SPSS})
+This chapter will introduce complementary information about the data set and the program. The first section, Section \ref{WPD} will introduce the algorithm of how the program measure WIP for each day. The subsection \ref{sec:Example} will provide a comprehensive example of how the program measure WIP per day. The consecutively sections reveals the algorithm of how the program measure bugs (Section \ref{sec:bug}) throughput (Section \ref{sec:TP}),  churn (Section \ref{sec:churn}) and lead time (Section \ref{sec:LT}). Keep in mind that each of these sections are not measured at the same time. Each of the sections represent one process in the program, and each of these processes uses the data set.  In the last section the statistical analyze program SPSS is introduced (Section \ref{sec:SPSS})
 
-For this thesis a program was made in order to measure the variable (shown in table \ref{des}) per day. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a description using Pseudocode \parencite{jd} will be provided. The Pseudocode for each section is simplified with only the key elements of the program code. 
+For this thesis a program was made in order to measure the variable shown in table \ref{des}. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a description using Pseudocode \parencite{jd} will be provided. The Pseudocode for each section is simplified with only the key elements of the program code. 
 
-The table \ref{tab:measurementDone} shows how quarters, dates and days are represented. 
+The table \ref{tab:measurementDone} shows how quarters, dates and days are represented in this thesis. 
 
 \begin{table}[!ht]
 \centering
@@ -485,52 +528,6 @@ The table \ref{tab:measurementDone} shows how quarters, dates and days are repre
 
 
 
-\newpage
-\section{The columns}
-\label{sec:tc}
-In this section information about the columns in the data set is given. Table \ref{IC} shows the columns used by the program.  The table \ref{IC} contains two columns. The first column with name "Columns from data set" shows the columns needed from the data set. These columns are extracted by the program. The second column in table \ref{IC} with name "Description" gives a brief description of each column in the data set. 
-
-\begin{table}[!ht]
-\begin{center}
-    \begin{tabular}{| l | p{5cm} |}
-    \hline
-     Columns from data set & Description\\ \hline
-     Created Date & When a task is put in backlog \\ \hline
-     Date From & When a given task is pulled out from the backlog\\ \hline
-     Date to & When a task is finished and ready for release. \\ \hline
-    Lead Time & The amount of days elapsed from the date the task was created until the tasks has finished  \\ \hline
-   Type & The type column is labeled as either bug or feature depending on the type of the task \\ \hline
-   Lines added & Number of lines added to a feature or bug \\ \hline
-   Lines modified & Number of lines modified when working on a feature or bug \\ \hline
-   Lines deleted & Number of lines deleted from a bug or feature \\
-    \hline
-    Team &States the team who has been working on the task.\\ \hline
-    \end{tabular}
-\caption{Information about the columns from the SI dataset}
-\label{IC} %% information columns
-\end{center}
-\end{table}
-
-\newpage
-
-
-Table \ref{des} contains three columns, "variable", "description" and "columns from SI". The "variable" column displays the five variables that will calculated by the program. The "description" column gives a recap of what the variable is and the "columns from SI" column shows which columns from the data set is needed to compute the variable.
-
-\begin{table}[!ht]
-\begin{center}
-    \begin{tabular}{| l | p{5cm} |  p{5cm} |}
-    \hline
-    Variable &	Description	 & Columns from SI\\ \hline 
-     WIP & \parbox[t]{5cm}{The number of items in progress on the given day} & Date From and Date To. \\ \hline
-     Throughput	& Number of tasks finished on a given day & Date To \\ \hline
-     Churn & Lines added, lines modified and lines deleted added together & Lines Added, Lines Modified, Lines Deleted and Date To \\ \hline
-    Bugs & The number of tasks labeled as Bug and not feature & Type and Created Date \\ \hline
-    Lead time & The time used on a task, measured in days & Lead time and Date To \\ \hline
-  \end{tabular}
-\caption{Relationship between variable and columns from SI}
-\label{des} %% desription
-\end{center}
-\end{table}
 
 
 
@@ -542,7 +539,7 @@ Table \ref{des} contains three columns, "variable", "description" and "columns f
 
 \subsection{Step 1: Gather all unique dates into a Arraylist}
 \label{sub:stepOne}
-First step of WIP measurement is to create a WIP object with the attributes in table \ref{tab:object}.  The values that are assigned to the attributes are gathered from the data set file.  The program creates a WIP object and assigned values to it a shown in listing \ref{lst:Arraylist} . After the values are assigned the program puts it into the right Arraylist based on the team variable as shown in listing \ref{lst:addWIP}
+First step of WIP measurement is to create a WIP object with the attributes in table \ref{tab:object}.  The values that are assigned to the attributes are gathered from the data set file.  The program creates a WIP object and assigned values to it a shown in listing \ref{lst:Arraylist} . After the values are assigned the program puts it into the right Arraylist\footnote{Arraylist is a resizable array implementation of a list. The Arraylist class provides function for manipulate the size of the array, check the size of the list and convert the list to an array  \parencite{Arraylist}} based on the team variable as shown in listing \ref{lst:addWIP}
 
 \begin{table}[!ht]
 \begin{center}
@@ -559,7 +556,7 @@ int  & WIP\\ \hline
 \label{tab:object}
 \end{center}
 \end{table}
- \footnote{Arraylist is a resizable array implementation of a list. The Arraylist class provides function for manipulate the size of the array, check the size of the list and convert the list to an array  \parencite{Arraylist}}
+
 
 \begin{minipage}{\textwidth} 
 Pseudocode step 1:
@@ -598,9 +595,8 @@ void FindTeam (WIP w)
  \label{sub:stepTwo}
 The data set from SI contains dates from 2008 to 2013, but there are some dates missing which table \ref{dataset} shows. For example the date 2008-10-09 is missing. In order to generate WIP for each day the program has to create the dates that's not in the set. 
   
-In order to create the remaining dates, the program takes the first date and the last date from each of the teams's Arraylist created in previous section (\ref{sub:stepOne}) as shown in listing \ref{lst:remaining} in line one and two. Then the program checks if all the dates between the first date and the last date are in the team's Arraylist. Each of the Arraylists are sorted on date. If the dates are not in the Arraylist, the program will put the date into the Arraylist as show in method on line ten to thirteen.
+In order to create the remaining dates, the program takes the first date and the last date from each of the teams's Arraylist created in previous section (\ref{sub:stepOne}) as shown in listing \ref{lst:remaining} in line one and two. Then the program checks if all the dates between the first date and the last date are in the team's Arraylist. Each of the Arraylists are sorted on date. If the dates are not in the Arraylist, the program will put the date into the Arraylist as show in method addToArraylist on line ten to thirteen.
 In order to keep the pseudocode simple, the generateWIP method stated in line twelve was omit. The genereteWIP method creates a new WIP object and returns it. 
-\begin{minipage}{\textwidth} 
 \begin{lstlisting}[caption={Gather the remaining dates.},label={lst:remaining}]
 WIP first = Arraylist.get(0)//points to the first WIP object in the Arraylist 
 WIP last = Arraylist.get(Arraylist.size()-1)//points to the last WIP object in the Arraylist 
@@ -611,12 +607,12 @@ while Next_date NOT EQUALS last.getDate()
 	AddToArraylist(New_date, first.getTeam())
 	Next_date = New_date
 
-addToArraylist(Date d, String team)
+void addToArraylist(Date d, String team)
 	if d NOT CONTAINS IN Arraylist
 		WIP = generateWIP(d, team)
 		Arraylist.add(WIP) 
  \end{lstlisting}
- \end{minipage}
+ 
 \subsection{Step 3 Measure WIP}
 The Arraylist from section \ref{sub:stepOne}  and \ref{sub:stepTwo} now contains a WIP object for each date from 2008 to 2013 for each team. In this step the program will loop through each of the Arraylists. During the iteration each WIP object is extracted from the Arraylist and the WIP is measured. The two methods stated in line ten and eighteen respectively gather the current WIP (method in line ten) and finds out how many finished tasks (method in line eighteen) and returns the result. The result is used in line five to compute the current WIP. 
 
@@ -650,7 +646,7 @@ return Nr_of_dates_to_decrement
 
 \subsection{Example}
 \label{sec:Example}
-This section will provide a comprehensive example of how the programs' WIP algorithm works.  Figure \ref{wip_timeline}  shows tasks id?s in the y-axis and dates in the x-axis. The green line indicates the duration of the task. The figure visualizes how many WIPs there are for a given date. For example on the date 2008-10-12, tasks 3, 5 and 6 are in progress, which means the WIP is 3 for 2008-10-12.  
+This section will provide a comprehensive example of how the WIP algorithm works.  Figure \ref{wip_timeline}  shows tasks id's in the y-axis and dates in the x-axis. The green line indicates the duration of the task. The figure visualizes how many WIPs there are for a given date. For example on the date 2008-10-12, tasks 3, 5 and 6 are in progress, which means the WIP is 3 for 2008-10-12.  
 
 In this example dates from table \ref{wt:2}  will be used to illustrate how the algorithm measure WIP.  The figure \ref{wip_timeline} visualize WIP for each date.
 %skrive om tabellen
@@ -699,7 +695,8 @@ WIP.WIP = 1
 
  \subsubsection{Step 2}
 \label{sub:sub:st}
-Now that the whole set has been read in and saved. The next thing to do is to create the remaining dates. The Arraylist contains all the dates from table \ref{wt:2}.  The program will now extract the first and the last date from the Arraylist. The first date is 2008-10-07 and the last date is 2008-10-13.  The program will check if the date after 2008-10-07 contains in the set, which it don't. The program then generates a WIP object for the date 2008-10-08 and adds it to the Arraylist as shown in listing \ref{lst:WIPCREATE}. After the date is created, the program will see if the date 2008-10-09 exits and will do so for all dates until the date 2008-10-13.
+Now that the whole set has been read in and saved. The next thing to do is to create the remaining dates. The Arraylist contains all the dates from table \ref{wt:2}.  The program will now extract the first and the last date from the Arraylist. Before this step, the objects in the Arraylist are sorted by date. The first date is 2008-10-07 and the last date is 2008-10-13.  The program will check if the date after 2008-10-07 contains in the set, which it don't. The program then generates a WIP object for the date 2008-10-08 and adds it to the Arraylist as shown in listing \ref{lst:WIPCREATE}. After the date is created, the program will see if the date 2008-10-09 exits and will do so for all dates until the date 2008-10-13.
+
 \begin{minipage}{\textwidth} 
 \begin{lstlisting}[caption={Creating WIP-object},label={lst:WIPCREATE}]
 void createNewWIP(Date d, String team) 
@@ -713,7 +710,7 @@ void createNewWIP(Date d, String team)
 
 
 \subsubsection{Step 3}
-The Arraylist now contains the dates from 2008-10-08 to 2008-10-13. The next and last step is to measure WIP for each date.  The program will now loop through the Arraylist. The first date is 2008-10-07.  The get\_current\_wip method from line nine in listing \ref{lst:measure} will be called with the date 2008-10-07 as parameter.  The method will return two, since both task one and two where started at 2008-10-07 as shown by figure \ref{wip_timeline}. The next to do is to find out how many tasks to decrement the current WIP with.  The method Nr\_of\_fininshed\_dates in line seventeen is called with the date 2008-10-07. As shown by the table \ref{wt:2} and figure \ref{wip_timeline} there was no task finished at the date 2008-10-07, so the method returns 0. The program then updates the WIP objects' counter to two and saves the WIP in the lastWIP object. The next date is 2008-10-08, who the program made in subsection \ref{sub:sub:st}. There is no task started at 2008-10-08, but task one is finished at the date. So the Nr\_of\_fininshed\_dates returns one and flag the current date at line twenty-three. The result of WIP\_measure in line five is 1 ($0-1+2=1$). WIP at date 2008-10-08 is one, as shown by figure \ref{wip_timeline}. The program will continue this procedure until all the dates are measured.  The reason why the date is flagged is to be sure that each day only evaluates ones. The if statement listed in listing \ref{lst:measure} at line twenty-one assurance that.
+The Arraylist now contains the dates from 2008-10-08 to 2008-10-13. The next and last step is to measure WIP for each date.  The program will now loop through the Arraylist. The first date is 2008-10-07.  The get\_current\_wip method from line nine in listing \ref{lst:measure} will be called with the date 2008-10-07 as parameter.  The method will return two, since both task one and two where started at 2008-10-07 as shown by figure \ref{wip_timeline}. The next thing to do is to find out how many tasks to decrement the current WIP with.  The method Nr\_of\_fininshed\_dates in line seventeen is called with the date 2008-10-07. As shown by the table \ref{wt:2} and figure \ref{wip_timeline} there was no task finished at the date 2008-10-07, so the method returns 0. The program then updates the WIP objects' counter to two and saves the WIP in the lastWIP object. The next date is 2008-10-08, who the program made in subsection \ref{sub:sub:st}. There is no task started at 2008-10-08, but task one is finished at the date. So the Nr\_of\_fininshed\_dates returns one and flag the current date at line twenty-three. The result of WIP\_measure in line five is 1 ($0-1+2=1$). WIP at date 2008-10-08 is one, as shown by figure \ref{wip_timeline}. The program will continue this procedure until all the dates are measured.  The reason why the date is flagged is to be sure that each day only evaluates ones. The if statement listed in listing \ref{lst:measure} at line twenty-one assurance that.
 
 \iffalse
 \subsubsection{First step}
@@ -773,7 +770,7 @@ void findBug()
 \end{minipage}
 \subsection{Add Bug}
 \label{addBugS}
-When adding a new bug, each bug is gathered into a data structure based on which team the bug belongs to, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
+When adding a new bug, each bug is gathered into a data structure based on team association, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
 
 Since the program knows which team the new bug belongs to (after the checks on line 3, 8, 13 and 18) a counter can represent each bug. In the analyze the only important is to know how many bugs there are on a given date and which team it belongs to.  
 
@@ -856,7 +853,7 @@ To measure churn the data set from SI contains three columns ("Lines added, "Lin
 
 \section{Lead time}
 \label{sec:LT}
-The program does not need to analyze  the lead time for each task. The lead time for each task is stated in the data set as shown in table \ref{table:LT}. The program will gather all the tasks that are started on the same day and belongs to the same team and add up their lead time together as shown in code listing \ref{LTcode}.   
+The program does not need to analyze  the lead time for each task. The lead time for each task is recorded by TFS. The lead time is representer in the data set as shown in table \ref{table:LT}. The program will gather all the tasks that are started on the same day and belongs to the same team and add up their lead time together as shown in code listing \ref{LTcode}.   
 \begin{table}[!ht]
 \begin{center}
 \begin{tabular}{ | l | l | l | }
