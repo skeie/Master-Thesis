@@ -27,7 +27,6 @@ def diagonal_data(list, index):
 	Churn.append(list[7])
 	Churn_ft.append(list[8])
 	Churn_bugs.append(list[9])
-	Churn_average.append(list[10])
 
 def makeFloat(list):
 	index = None
@@ -89,12 +88,13 @@ with open(sys.argv[1], mode="r") as three:
 				with open(sys.argv[5], mode="r") as Argon:
 					with open(sys.argv[6], mode="r") as Xenon:
 						with open(sys.argv[7], mode="r") as Krypton:
+							input = str(raw_input())
+							
 
-						#out = open(sys.argv[2], mode="w")
 						
 
 							for line in three.readlines():
-								if "WIP" in line:
+								if input in line:
 									if "Pearson Correlation" in line:
 										line = line.split(",")
 										line = line[2:]
@@ -102,7 +102,7 @@ with open(sys.argv[1], mode="r") as three:
 										diagonal_data(line, 0)
 
 							for line in Neon.readlines():
-								if "WIP" in line:
+								if input in line:
 									if "Pearson Correlation" in line:
 										line = line.split(",")
 										line = line[2:]
@@ -112,7 +112,7 @@ with open(sys.argv[1], mode="r") as three:
 
 
 							for line in Frontend.readlines():
-								if "WIP" in line:
+								if input in line:
 									if "Pearson Correlation" in line:
 										line = line.split(",")
 										line = line[2:]
@@ -120,7 +120,7 @@ with open(sys.argv[1], mode="r") as three:
 										diagonal_data(line, 0)
 
 							for line in Radon.readlines():
-								if "WIP" in line:
+								if input in line:
 									if "Pearson Correlation" in line:
 										line = line.split(",")
 										line = line[2:]
@@ -128,7 +128,7 @@ with open(sys.argv[1], mode="r") as three:
 										diagonal_data(line, 0)
 
 							for line in Argon.readlines():
-								if "WIP" in line:
+								if input in line:
 									if "Pearson Correlation" in line:
 										line = line.split(",")
 										line = line[2:]
@@ -137,7 +137,7 @@ with open(sys.argv[1], mode="r") as three:
 
 
 							for line in Xenon.readlines():
-								if "WIP" in line:
+								if input in line:
 									if "Pearson Correlation" in line:
 										line = line.split(",")
 										line = line[2:]
@@ -145,7 +145,7 @@ with open(sys.argv[1], mode="r") as three:
 										diagonal_data(line, 0)
 
 							for line in Krypton.readlines():
-								if "WIP" in line:
+								if input in line:
 									if "Pearson Correlation" in line:
 										line = line.split(",")
 										line = line[2:]
