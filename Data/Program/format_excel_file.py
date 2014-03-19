@@ -1,6 +1,7 @@
 import sys
 import csv
 import xlrd
+idList =[]
 
 def unicodeList(list):
 	new_list = []
@@ -22,9 +23,13 @@ def csv_from_excel():
     wr = csv.writer(your_csv_file, quoting=csv.QUOTE_ALL)
 
     for rownum in xrange(sh.nrows):
-    	tmp =  sh.row_values(rownum)
-    	tmp = unicodeList(tmp)
-   	wr.writerow(tmp)
+    	if sh.row_values(rownum)[0] != idList:
+    		if sh.row_values(rownum)[22] != " ":
+    			if sh.row_values(rownum)[22] != "":
+					tmp =  sh.row_values(rownum)
+					tmp = unicodeList(tmp)
+					wr.writerow(tmp)
+					idList.append(sh.row_values(rownum)[0])
 
 	       
 
@@ -37,4 +42,4 @@ with open(sys.argv[1],"rb") as source:
 	    with open("result.csv","wb") as result:
 	        wtr= csv.writer( result )
 	        for r in rdr:
-	            wtr.writerow( (r[0], r[1], r[5], r[8],r[11],r[20],r[22],r[23],r[24],r[27]) )
+	            wtr.writerow( (str(r[0]), r[1], r[5], r[8],r[11],r[22],r[24],r[25],r[26], r[29]) )
