@@ -1,0 +1,38 @@
+Correlations,,,,,,,,,,,,
+,,WIP,Throughput,TP_feature,TP_bug,Bugs,Bugs__precent_finished_in_quarter,Average_days_in_backlog_bugs,Leadtime,Churn,Churn_ft,Churn_bugs
+WIP,Pearson Correlation,1,.815**,.895**,.544*,.738**,.581*,0.512,.694**,.c,.c,.c
+,Sig. (2-tailed),,0,0,0.045,0.003,0.029,0.061,0.006,.,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+Throughput,Pearson Correlation,.815**,1,.947**,.537*,0.513,0.387,0.37,0.49,.c,.c,.c
+,Sig. (2-tailed),0,,0,0.048,0.061,0.172,0.193,0.075,.,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+TP_feature,Pearson Correlation,.895**,.947**,1,.533*,.619*,.581*,0.318,.636*,.c,.c,.c
+,Sig. (2-tailed),0,0,,0.05,0.018,0.029,0.268,0.014,.,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+TP_b,Pearson Correlation,.544*,.537*,.533*,1,.590*,.545*,0.211,0.335,.c,.c,.c
+,Sig. (2-tailed),0.045,0.048,0.05,,0.026,0.044,0.47,0.242,.,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+Bugs,Pearson Correlation,.738**,0.513,.619*,.590*,1,.869**,.533*,0.438,.c,.c,.c
+,Sig. (2-tailed),0.003,0.061,0.018,0.026,,0,0.05,0.117,.,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+b__precent_finished_in_quarter,Pearson Correlation,.581*,0.387,.581*,.545*,.869**,1,0.189,0.477,.c,.c,.c
+,Sig. (2-tailed),0.029,0.172,0.029,0.044,0,,0.517,0.084,.,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+Average_days_in_backlog_b,Pearson Correlation,0.512,0.37,0.318,0.211,.533*,0.189,1,0.133,.c,.c,.c
+,Sig. (2-tailed),0.061,0.193,0.268,0.47,0.05,0.517,,0.651,.,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+Leadtime,Pearson Correlation,.694**,0.49,.636*,0.335,0.438,0.477,0.133,1,.c,.c,.c
+,Sig. (2-tailed),0.006,0.075,0.014,0.242,0.117,0.084,0.651,,.,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+Churn,Pearson Correlation,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c
+,Sig. (2-tailed),.,.,.,.,.,.,.,.,,.,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+Churn_ft,Pearson Correlation,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c
+,Sig. (2-tailed),.,.,.,.,.,.,.,.,.,,.
+,N,14,14,14,14,14,14,14,14,14,14,14
+Churn_b,Pearson Correlation,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c
+,Sig. (2-tailed),.,.,.,.,.,.,.,.,.,.,
+,N,14,14,14,14,14,14,14,14,14,14,14
+** Correlation is significant at the 0.01 level (2-tailed).,,,,,,,,,,,,
+* Correlation is significant at the 0.05 level (2-tailed).,,,,,,,,,,,,
+c. Cannot be computed because at least one of the variables is constant.,,,,,,,,,,,,
