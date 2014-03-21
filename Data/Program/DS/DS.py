@@ -51,8 +51,8 @@ def writeOut(list):
 	list = list[6:]
 	tmp+="2012-1"+writeOutTable(list,counter)+"\n"
 	list = list[6:]
-	#tmp+="2012-2"+writeOutTable(list,counter)+"\n"
-	#list = list[6:]
+	tmp+="2012-2"+writeOutTable(list,counter)+"\n"
+	list = list[6:]
 	tmp+="2012-3"+writeOutTable(list,counter)+"\n"
 	list = list[6:]
 	tmp+="2012-4"+writeOutTable(list,counter)+"\n"
