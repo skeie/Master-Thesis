@@ -37,8 +37,8 @@ def writeOut(list):
 	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{ | l | r | r | r | r | r | r | } \n \\hline"
 	tmp+= "\n Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\\\ \\hline\n"
 
-	tmp+= "2010-3 "+writeOutTable(list,counter)+"\n"
-	list = list[6:]
+	#tmp+= "2010-3 "+writeOutTable(list,counter)+"\n"
+	#list = list[6:]
 	tmp+="2010-4"+writeOutTable(list,counter)+"\n"
 	list = list[6:]
 	tmp+="2011-1"+writeOutTable(list,counter)+"\n"
@@ -63,15 +63,17 @@ def writeOut(list):
 	list = list[6:]
 	tmp+="2013-3"+writeOutTable(list,counter)+"\n"
 	list = list[6:]
-	tmp+="2013-4"+writeOutTableSpecial(list)+"\\\\ \\hline"
-	tmp+= "\n\\end{tabular} \n \caption{Descriptive Statistic - Bugs} \n \label{DS:Bugs:"+input+"} \n "
+	tmp+="2013-4"+writeOutTable(list,counter)+"\n"
+	list = list[6:]
+	tmp+="Total"+writeOutTableSpecial(list)+"\\\\ \\hline"
+	tmp+= "\n\\end{tabular} \n \caption{Descriptive Statistic - Bugs} \n \label{DS:Bugs:} \n "
 	tmp+= "\\end{table}  \n\n"
 
 	print tmp
 
 
 with open(sys.argv[1], mode="r") as f:
-	input =str(raw_input()) 
+	#input =str(raw_input()) 
 	list = make_float(f.readlines())
 	writeOut(list)
 	

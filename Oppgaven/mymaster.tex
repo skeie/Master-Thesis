@@ -928,17 +928,14 @@ In this chapter
 
 
 \section{Correlation - WIP}
+\label{sec:corr:WIP}
 The table \ref{corr:WIP} shows the correlation between the seven teams and the WIP. The seven variables (T1-T7) shown horizontal in the table represents the seven teams from SI. T1 stands for team one, T2 for team two and so on. 
 
-Some of the ten variables shown vertically are shown in table \ref{des} and are explained in chapter \ref{ch:DCC} ?Throughput Feature? means that tasks labeled with type ?feature? are the only one who is counted. For ?Throughput Bug? only the tasks labeled with type ?bug? is counted. The same goes for ?Churn Bug? and ?Churn Feature?. 
+Some of the ten variables shown vertically are shown in table \ref{des} and are explained in chapter \ref{ch:DCC} "Throughput Feature" means that tasks labeled with type "feature" are the only one who is counted. For "Throughput Bug" only the tasks labeled with type "bug" is counted. The same goes for "Churn Bug" and "Churn Feature". 
 
-The ?Bugs finished in the same quarter? variable represents how many tasks labeled as bug that are finished within the same quarter as it was recorded.  The ?Average days for bugs in backlog? variable is used to see how long tasks labeled with ?bug? are in the backlog before pulled out. These two variables are used to see the prioritizing of bugs within a quarter as well as indicator of the workload for the quarter.   
+The "Bugs finished in the same quarter" variable represents how many tasks labeled as bug that are finished within the same quarter as it was recorded.  The "Average days for bugs in backlog" variable is used to see how long tasks labeled with "bug" are in the backlog before pulled out. These two variables are used to see the prioritizing of bugs within a quarter as well as indicator of the workload for the quarter.   
 
-
-Team one and four have a positive correlation between WIP and the throughput variables.  These two teams also have a positive correlation between WIP and bugs. 
-Team three and six has positive correlation between WIP and lead time. Team five has a positive correlation with only the throughput bug variable. Team seven has a positive correlation between bugs finished in the same quarter and WIP.
-
-
+In table \ref{corr:WIP} the correlation between WIP and the other variables for each team is shown. The table shows team one, three, four and six have significant positive relationship between WIP and throughput.  Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP.  For team six variable throughput bug that's not the case.  Throughput bug have a positive correlation of 0.11. The total row in table\ref{DS:Throughput:6} shows that total number of throughput is 691 and table \ref{DS:TPB:6} shows that the total number of throughput bug is 223. 223 is 1/3 of all throughputs and this results reflects that throughput feature is higher than throughput, since throughput bug lowers the average of throughput.
 
 \begin{table}[!htbp]
  \centering
@@ -966,10 +963,18 @@ Churn bug &0.05& 0.13& -.671**
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{table}
 
+For team one and four bugs have significant positive relationship with WIP. Which makes sense, since a subset of bugs is throughput bugs that also have a significant positive relationship with WIP as described in above.   Team three's variable throughput bug had a significant positive correlation with WIP, but bugs do not have significant positive correlation with WIP. Because the variable "Bugs" is recorded when the bug is created hence the "Created date" column from the data set. The variable "Throughput bugs" is recorded from when the bug was finished, hence the "Date to" column. The table \ref{DS:FTPQ:3} shows that in average 14 \% of the tasks labeled with bug are not finished within the same quarter. Team four's leadtime have a significant positive correlation with WIP.  Team three's churn and churn bug have a significant positive correlation with WIP as well.  Initially should also team three's churn feature had a significant positive correlation with WIP since it's a subset of churn.  But since feature counts for just 1/3 (317/1065) of tasks as shown in the total row in table \ref{DS:CF:3} and table \ref{DS:Churn:3}, the feature variable do not contribute to much to the churn variable as bug.For team six churn and churn feature do not have a significant positive correlation with WIP, but churn bug only consist of 17\% (265/1533) of all churn for team six. This shows that churn bug have a small impact on the churn variable, and that's why churn bug have a significant positive correlation with WIP.
+
+
+
+
+
+
 
 
 \section{Correlation - Leadtime}
-\begin{table}[!htbp]
+\label{sec:corr:lt}
+In this section the table (Table \ref{corr:Leadtime}) correlation between leadtime and the variable for the seven team is stated.  In section \ref{sec:corr:WIP} the WIP correlation was stated, so any positive correlation here will ignored. Throughput has a significant positive correlation with leadtime for team six.  For team two, bugs finished within the same quarter have a significant positive correlation with leadtime.  Team two also has a significant positive correlation between leadtime and churn bug, but not with churn or churn feature. Churn bug (-.725) and churn feature (0.41) is on the opposite of each other in the correlation table. Churn bug consist of 1197 tasks, churn feature consist of 375 tasks as shown in the total row in table \ref{DS:CF:4} and \ref{DS:CB:4}.  The churn variable in table \ref{corr:Leadtime} with value of -0.45 will benefit most from churn bugs, which reflects. But had churn been -0.55 for example, churn would also have a significant positive correlation with leadtime. \begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
@@ -994,8 +999,12 @@ Churn bug &0.28& -.725**
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{table}
-
+Team six has a significant positive correlation with leadtime for the variable churn bug as well. The reason why churn or churn feature not have a significant positive correlation with leadtime was stated in section \ref{sec:corr:WIP}
 \section{Correlation - Bugs}
+\label{sec:corr:bug}
+
+This section contains information about the correlation for bugs. The result is listed in table \ref{corr:bug}. For team one, three and five, all three-throughput variables have a significant positive correlation. For team two both throughput and throughput bug have a significant positive correlation. Why throughput feature differs from throughput and throughput bug is explained in section \ref{sec:corr:lt}.Team four both throughput feature and throughput bug has a significant positive correlation. The throughput variable is close to significant also. The average for throughput is 5, but for throughput bugs its don't knowTeam six has a positive correlation with throughput bug. Throughput bug has little impact on the throughput variable since throughput bug have 223 items in total, shown in table \ref{DS:TPB:6} and throughput feature have 661 items in total shown in table \ref{DS:TPF}. That's why throughput bug's correlation is different to throughput and throughput feature. Throughput (0.27) and throughput feature (0.25) value is alike 
+
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|}
@@ -1023,6 +1032,7 @@ Churn bug &0.37& 0.17& -0.08& .c
 
 
 \section {Correlation - Throughput}
+This section consist of the correlation table ( table\ref{corr:TP}) for throughput. The teams two and six do not have a significant correlation between throughput and throughput feature and throughput bug. Why the throughput feature and throughput bug differ in the case of team two is stated in section \ref{sec:corr:bug}. Why throughput differ in in the case of team six is stated in section \ref{sec:corr:lt}. Team six also has a significant correlation between throughput and leadtime.
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|}
@@ -1049,6 +1059,33 @@ Churn bug &-0.11& 0.06& -0.32& .c
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{table}
 
+\section{Correlation - Churn}
+\begin{table}[!htbp]
+ \centering
+ \begin{tabular}{|l|r|r|r|r|r|r|}
+\hline
+ & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
+WIP &-0.18& -0.30& -.569*& .c& -0.25& -0.03\\ \hline
+Throughput &-0.27& -0.23& -0.26& .c& -0.20& -0.27\\ \hline
+Throughput Feature &-0.31& 0.14& -0.31& .c& -0.06& -0.22\\ \hline
+Throughput bug &0.26& -0.24& -0.27& .c& -0.19& 0.12\\ \hline
+Bugs &0.23& -0.01& 0.00& .c& -0.17& -0.10\\ \hline
+Bugs finished in the same quarter &0.48& 0.15& -0.14& .c& -0.50& 0.04\\ \hline
+The average days for bugs in backlog &0.36& -0.19& -0.01& .c& 0.39& 0.53\\ \hline
+Leadtime &0.41& -0.45& -0.13& .c& 0.24& -0.08\\ \hline
+Churn feature &.570*& 0.38& .790**& .c& 0.27& .980**\\ \hline
+Churn bug &.828**& .728**& .955**& .c& .983**& 0.18\\ \hline
+
+\end{tabular}
+ \caption{Correlation - Churn}
+ \label{corr:churn}
+ \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
+\centerline{** Correlation is significant at the 0.01 level (2-tailed).}
+\centerline{c. Cannot be computed because at least one of the variables is constant.}
+\end{table}
+
+
+
 \section{Team 1 - Descriptive Statistics}
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
@@ -1072,6 +1109,8 @@ Churn bug &-0.11& 0.06& -0.32& .c
 2013-2 & 182.0 & 33.5 & 1.5 & 45.9 & 178.0 & 0\\ \hline
 2013-3 & 184.0 & 3.7 & 0.5 & 7.2 & 31.0 & 0\\ \hline
 2013-4 & 166.0 & 2.3 & 0 & 6.0 & 35.0 & 0\\ \hline
+Total	&3282&	7.5&	.00&	18.6&	178&	0\\ \hline
+
 \end{tabular}
 }
 }
@@ -1095,6 +1134,8 @@ Churn bug &-0.11& 0.06& -0.32& .c
 2013-2 & 26.0 & 21.6 & 18.0 & 16.9 & 60.0 & 1.0\\ \hline
 2013-3 & 17.0 & 9.0 & 7.0 & 7.7 & 27.0 & 1.0\\ \hline
 2013-4 & 17.0 & 6.3 & 3.0 & 7.5 & 24.0 & 1.0\\ \hline
+Total&290&11.0&6.0&12.5&60&1\\ \hline
+
 \end{tabular}
 }
 }
@@ -1102,6 +1143,64 @@ Churn bug &-0.11& 0.06& -0.32& .c
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:1}, \subref{DS:Throughput:1}}
 \label{DS:1:1}
 \end{table}
+
+
+%%%%%%%%%%%%%
+%Throughput FT and Throughput Bug
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic -Throughput feature]{
+ \label{DS:TPFT:1}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 1.0 & 7.0 & 7.0 & - & 7.0 & 7.0\\ \hline
+2011-1 & 7.0 & 10.4 & 11.0 & 8.1 & 25.0 & 1.0\\ \hline
+2011-2 & 26.0 & 9.5 & 10.0 & 5.8 & 24.0 & 1.0\\ \hline
+2011-3 & 1.0 & 1.0 & 1.0 & - & 1.0 & 1.0\\ \hline
+2011-4 & 15.0 & 14.5 & 10.0 & 10.4 & 35.0 & 4.0\\ \hline
+2012-1 & 24.0 & 11.3 & 11.5 & 9.7 & 33.0 & 1.0\\ \hline
+2012-2 & 30.0 & 14.5 & 4.0 & 17.1 & 56.0 & 1.0\\ \hline
+2012-3 & 25.0 & 6.0 & 4.0 & 6.5 & 23.0 & 1.0\\ \hline
+2012-4 & 15.0 & 15.1 & 15.0 & 13.8 & 44.0 & 1.0\\ \hline
+2013-1 & 10.0 & 23.3 & 20.0 & 17.4 & 58.0 & 3.0\\ \hline
+2013-2 & 23.0 & 22.3 & 17.0 & 17.8 & 60.0 & 1.0\\ \hline
+2013-3 & 16.0 & 9.5 & 7.5 & 7.7 & 27.0 & 1.0\\ \hline
+2013-4 & 12.0 & 8.3 & 7.5 & 8.1 & 24.0 & 1.0\\ \hline
+Total & 205.0 & 12.8 & 9.0 & 12.9 & 60.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic -Throughput bug]{
+ \label{DS:TPB:1}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+2010-4 & 3.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+2011-2 & 26.0 & 6.1 & 3.0 & 6.3 & 26.0 & 1.0\\ \hline
+2011-3 & 1.0 & 1.0 & 1.0 & - & 1.0 & 1.0\\ \hline
+2011-4 & 24.0 & 11.2 & 6.5 & 13.8 & 49.0 & 1.0\\ \hline
+2012-1 & 48.0 & 5.2 & 4.0 & 4.5 & 21.0 & 1.0\\ \hline
+2012-2 & 35.0 & 6.4 & 2.0 & 8.9 & 47.0 & 1.0\\ \hline
+2012-3 & 16.0 & 4.1 & 2.5 & 5.0 & 21.0 & 1.0\\ \hline
+2012-4 & 11.0 & 5.1 & 3.0 & 6.5 & 24.0 & 1.0\\ \hline
+2013-1 & 9.0 & 4.0 & 3.0 & 5.0 & 17.0 & 1.0\\ \hline
+2013-2 & 23.0 & 8.7 & 8.0 & 5.4 & 21.0 & 1.0\\ \hline
+2013-3 & 9.0 & 1.4 & 1.0 & 0.7 & 3.0 & 1.0\\ \hline
+2013-4 & 9.0 & 2.1 & 1.0 & 1.5 & 5.0 & 1.0\\ \hline
+Total & 216.0 & 6.0 & 3.0 & 7.5 & 49.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:1}, \subref{DS:TPB:1}}
+\label{DS:1:2}
+\end{table}
+
+
 
 
 
@@ -1128,6 +1227,8 @@ Churn bug &-0.11& 0.06& -0.32& .c
 2013-2 & 253.0 & 5.3 & 4.0 & 4.4 & 15.0 & 1.0\\ \hline
 2013-3 & 85.0 & 4.6 & 4.0 & 3.0 & 13.0 & 1.0\\ \hline
 2013-4 & 63.0 & 3.7 & 3.0 & 2.6 & 10.0 & 1.0\\ \hline
+Total&1521&3.7&3&3.3&15&1\\ \hline
+
 \end{tabular}
 }
 }
@@ -1150,18 +1251,79 @@ Churn bug &-0.11& 0.06& -0.32& .c
 2013-2 & 253.0 & 7.6 & 0 & 15.7 & 92.0 & 0\\ \hline
 2013-3 & 85.0 & 2.5 & 0 & 9.1 & 54.0 & 0\\ \hline
 2013-4 & 63.0 & 4.3 & 0 & 16.2 & 90.0 & 0\\ \hline
+Total&1521&10.2&.00&19.4&94&0 \\ \hline
+
 \end{tabular}
 }
 }
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:1}, \subref{DS:Churn:1}}
-\label{DS:1:2} % 
+\label{DS:1:3} % 
+\end{table}
+
+%%%%%%%%%%%%%
+% Churn FT and Churn Bug
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic - Churn feature]{
+ \label{DS:CF:1}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2011-2 & 8.0 & 23.2 & 22.0 & 21.2 & 49.0 & 1.0\\ \hline
+2011-4 & 31.0 & 8.3 & 0 & 20.6 & 86.0 & 0\\ \hline
+2012-1 & 106.0 & 4.2 & 0 & 11.8 & 49.0 & 0\\ \hline
+2012-2 & 134.0 & 5.6 & 0 & 16.2 & 90.0 & 0\\ \hline
+2012-3 & 65.0 & 3.1 & 0 & 12.8 & 75.0 & 0\\ \hline
+2012-4 & 111.0 & 1.7 & 0 & 9.5 & 67.0 & 0\\ \hline
+2013-1 & 89.0 & 0.0 & 0 & 0.1 & 1.0 & 0\\ \hline
+2013-2 & 130.0 & 1.1 & 0 & 6.2 & 43.0 & 0\\ \hline
+2013-3 & 75.0 & 1.0 & 0 & 6.5 & 54.0 & 0\\ \hline
+2013-4 & 48.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+Total & 797.0 & 2.8 & 0 & 11.3 & 90.0 & 0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic - Churn bug]{
+ \label{DS:CB:1}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 1.0 & 13.0 & 13.0 & - & 13.0 & 13.0\\ \hline
+2010-4 & 2.0 & 30.0 & 30.0 & 41.0 & 59.0 & 1.0\\ \hline
+2011-2 & 86.0 & 21.3 & 10.0 & 23.2 & 83.0 & 1.0\\ \hline
+2011-3 & 1.0 & 2.0 & 2.0 & - & 2.0 & 2.0\\ \hline
+2011-4 & 130.0 & 19.7 & 11.0 & 23.1 & 94.0 & 0\\ \hline
+2012-1 & 125.0 & 20.3 & 8.0 & 25.7 & 93.0 & 0\\ \hline
+2012-2 & 149.0 & 19.5 & 9.0 & 24.7 & 92.0 & 0\\ \hline
+2012-3 & 31.0 & 15.8 & 4.0 & 23.7 & 69.0 & 0\\ \hline
+2012-4 & 25.0 & 14.6 & 8.0 & 16.9 & 64.0 & 0\\ \hline
+2013-1 & 26.0 & 9.1 & 6.0 & 10.3 & 32.0 & 0\\ \hline
+2013-2 & 123.0 & 14.4 & 6.0 & 19.4 & 92.0 & 0\\ \hline
+2013-3 & 10.0 & 14.0 & 8.0 & 16.0 & 45.0 & 0\\ \hline
+2013-4 & 15.0 & 18.1 & 3.0 & 29.8 & 90.0 & 0\\ \hline
+Total & 724.0 & 18.2 & 8.0 & 23.0 & 94.0 & 0\\ \hline
+
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:1}, \subref{DS:CB:1}}
+\label{DS:1:4} % 
 \end{table}
 
 
-  \begin{table}[!htbp]
- \centering
- \begin{tabular}{ | l | r | r | r | r | r | r | }
+
+%%%%%%%%%%%%%
+% Bugs and Bugs finished in quarter
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic - Bugs]{
+ \label{DS:B:1}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 1.0 & 1.0 & 1.0 & . & 1.0 & 1.0\\ \hline
@@ -1177,16 +1339,44 @@ Churn bug &-0.11& 0.06& -0.32& .c
 2013-2 & 27.0 & 5.8 & 4.0 & 4.8 & 17.0 & 1.0\\ \hline
 2013-3 & 11.0 & 1.3 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
 2013-4 & 10.0 & 1.7 & 1.0 & 1.9 & 7.0 & 1.0\\ \hline
+Total&240&4.0&2.0&4.0&22&1 \\ \hline
 \end{tabular}
- \caption{Descriptive Statistic - Bugs}
- \label{DS:Bugs:1}
- \end{table}
+}
+}
+\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
+ \label{DS:BQ:1}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
+2010-3 & 1 & 0 & 1 & 100 & 0 \\ \hline
+2010-4 & 4 & 0 & 4 & 100 & 0 \\ \hline
+2011-2 & 130 & 3 & 133 & 97.7 & 2.3 \\ \hline
+2011-3 & 1 & 4 & 5 & 20 & 80 \\ \hline
+2011-4 & 156 & 22 & 178 & 87.6 & 12.3 \\ \hline
+2012-1 & 146 & 4 & 150 & 97.3 & 2.7 \\ \hline
+2012-2 & 176 & 3 & 179 & 98.3& 1.7 \\ \hline
+2012-3 & 37 & 2 & 39 & 94.9& 5.1\\ \hline
+2012-4 & 33 & 3 & 36 & 91.7 & 8.3 \\ \hline
+2013-1 & 24 & 4 & 28 & 85.7 & 14.3 \\ \hline
+2013-2 & 157 & 0 & 157 & 100 & 0 \\ \hline
+2013-3 & 13 & 1 & 14 & 92.9& 7.1 \\ \hline
+2013-4 & 17 & 0 & 17 & 100 & 0 \\ \hline
+Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
+
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:1}, \subref{DS:BQ:1}}
+\label{DS:1:5} % 
+\end{table}
  
  
  
 \section{Team 2 - Descriptive Statistics}
 \begin{table}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-2.5cm}{}
 \subfigure[Descriptive Statistic -WIP]{
  \label{DS:WIP:2}
  \scalebox{0.85}{
@@ -1207,6 +1397,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 182.0 & 14.0 & 7.5 & 14.4 & 37.0 & 0\\ \hline
 2013-3 & 184.0 & 9.4 & 4.5 & 9.9 & 28.0 & 0\\ \hline
 2013-4 & 177.0 & 6.5 & 0 & 8.1 & 29.0 & 0\\ \hline
+Total&3292	&8.8&	.00&	13&	62&	0\\ \hline
+
 \end{tabular}
 }
 }
@@ -1230,6 +1422,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 50.0 & 3.3 & 3.0 & 2.4 & 9.0 & 1.0\\ \hline
 2013-3 & 55.0 & 3.9 & 4.0 & 2.9 & 16.0 & 1.0\\ \hline
 2013-4 & 47.0 & 3.2 & 3.0 & 2.7 & 13.0 & 1.0\\ \hline
+Total&690&4.39&3.00&3.7&25&1\\ \hline
+
 \end{tabular}
 }
 }
@@ -1238,10 +1432,72 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 \label{DS:2:1} % 1 = team 2 = table nr 2
 \end{table}
 
+
+
+%%%%%%%%%%%%%
+%Throughput FT and Throughput Bug
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic -Throughput feature]{
+ \label{DS:TPFT:2}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 10.0 & 3.3 & 3.0 & 2.6 & 10.0 & 1.0\\ \hline
+2010-4 & 34.0 & 2.5 & 2.0 & 2.5 & 11.0 & 1.0\\ \hline
+2011-1 & 31.0 & 3.3 & 2.0 & 3.5 & 17.0 & 1.0\\ \hline
+2011-2 & 12.0 & 2.2 & 2.0 & 1.3 & 5.0 & 1.0\\ \hline
+2011-3 & 34.0 & 3.1 & 2.0 & 3.4 & 14.0 & 1.0\\ \hline
+2011-4 & 16.0 & 2.6 & 2.0 & 2.5 & 11.0 & 1.0\\ \hline
+2012-1 & 23.0 & 1.7 & 1.0 & 1.4 & 7.0 & 1.0\\ \hline
+2012-2 & 32.0 & 2.5 & 2.0 & 2.0 & 8.0 & 1.0\\ \hline
+2012-3 & 32.0 & 2.8 & 3.0 & 1.7 & 8.0 & 1.0\\ \hline
+2012-4 & 42.0 & 3.4 & 2.0 & 3.4 & 13.0 & 1.0\\ \hline
+2013-1 & 29.0 & 2.6 & 2.0 & 2.4 & 11.0 & 1.0\\ \hline
+2013-2 & 33.0 & 2.5 & 2.0 & 1.9 & 9.0 & 1.0\\ \hline
+2013-3 & 43.0 & 3.3 & 3.0 & 2.5 & 11.0 & 1.0\\ \hline
+2013-4 & 27.0 & 2.7 & 1.0 & 2.7 & 10.0 & 1.0\\ \hline
+Total & 398.0 & 2.8 & 2.0 & 2.6 & 17.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic -Throughput bug]{
+ \label{DS:TPB:2}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 15.0 & 3.5 & 2.0 & 3.9 & 16.0 & 1.0\\ \hline
+2010-4 & 39.0 & 4.1 & 3.0 & 4.2 & 21.0 & 1.0\\ \hline
+2011-1 & 52.0 & 4.2 & 4.0 & 3.1 & 13.0 & 1.0\\ \hline
+2011-2 & 41.0 & 6.8 & 5.0 & 5.8 & 25.0 & 1.0\\ \hline
+2011-3 & 40.0 & 3.6 & 2.0 & 3.3 & 15.0 & 1.0\\ \hline
+2011-4 & 46.0 & 3.6 & 3.0 & 2.7 & 11.0 & 1.0\\ \hline
+2012-1 & 48.0 & 4.7 & 3.5 & 3.4 & 12.0 & 1.0\\ \hline
+2012-2 & 41.0 & 4.0 & 3.0 & 3.8 & 21.0 & 1.0\\ \hline
+2012-3 & 50.0 & 5.9 & 5.0 & 4.6 & 18.0 & 1.0\\ \hline
+2012-4 & 37.0 & 5.1 & 4.0 & 3.3 & 15.0 & 1.0\\ \hline
+2013-1 & 45.0 & 4.5 & 3.0 & 3.6 & 16.0 & 1.0\\ \hline
+2013-2 & 31.0 & 3.2 & 2.0 & 2.6 & 9.0 & 1.0\\ \hline
+2013-3 & 37.0 & 3.1 & 2.0 & 2.9 & 16.0 & 1.0\\ \hline
+2013-4 & 37.0 & 2.8 & 2.0 & 2.3 & 13.0 & 1.0\\ \hline
+Total & 559.0 & 4.3 & 3.0 & 3.8 & 25.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:2}, \subref{DS:TPB:2}}
+\label{DS:2:2}
+\end{table}
+
+
+
+
 %%%%%%%%%%%%%
 % Leadtime and bugs
 \begin{table}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-1.5cm}{}
 \subfigure[Descriptive Statistic - Leadtime]{
  \label{DS:LT:2}
  \scalebox{0.85}{
@@ -1262,6 +1518,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 72.0 & 6.6 & 5.0 & 6.4 & 26.0 & 1.0\\ \hline
 2013-3 & 100.0 & 6.7 & 5.0 & 6.0 & 27.0 & 1.0\\ \hline
 2013-4 & 93.0 & 6.6 & 6.0 & 4.7 & 20.0 & 1.0\\ \hline
+Total&1572&6.7&5&5.7&27&1 \\ \hline
+
 \end{tabular}
 }
 }
@@ -1285,17 +1543,84 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 72.0 & 62.8 & 19.5 & 98.1 & 419.0 & 0\\ \hline
 2013-3 & 100.0 & 88.2 & 33.5 & 120.5 & 514.0 & 0\\ \hline
 2013-4 & 93.0 & 81.0 & 24.0 & 125.1 & 474.0 & 0\\ \hline
+Total &	1572&65.7&21.&99.3&521&0\\ \hline
+
 \end{tabular}
 }
 }
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:2}, \subref{DS:Churn:2}}
-\label{DS:2:2}
+\label{DS:2:3}
 \end{table}
 
+%%%%%%%%%%%%% Churn ft and Churn bug
 \begin{table}[!htbp]
- \centering
+  \begin{adjustwidth}{-1.5cm}{}
+\subfigure[Descriptive Statistic - Churn feature]{
+ \label{DS:CF:4}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 7.0 & 167.6 & 144.0 & 154.4 & 352.0 & 1.0\\ \hline
+2010-4 & 24.0 & 155.8 & 87.0 & 155.8 & 493.0 & 6.0\\ \hline
+2011-1 & 26.0 & 72.2 & 47.0 & 87.0 & 312.0 & 1.0\\ \hline
+2011-2 & 6.0 & 117.3 & 70.5 & 137.7 & 383.0 & 2.0\\ \hline
+2011-3 & 22.0 & 126.7 & 103.5 & 113.5 & 379.0 & 1.0\\ \hline
+2011-4 & 12.0 & 116.3 & 120.0 & 96.0 & 294.0 & 12.0\\ \hline
+2012-1 & 18.0 & 108.9 & 54.5 & 119.6 & 377.0 & 0\\ \hline
+2012-2 & 29.0 & 97.7 & 35.0 & 123.8 & 432.0 & 0\\ \hline
+2012-3 & 56.0 & 86.0 & 44.5 & 99.1 & 321.0 & 0\\ \hline
+2012-4 & 50.0 & 140.4 & 48.0 & 157.7 & 513.0 & 0\\ \hline
+2013-1 & 38.0 & 71.6 & 1.5 & 137.3 & 467.0 & 0\\ \hline
+2013-2 & 16.0 & 100.1 & 39.0 & 135.9 & 419.0 & 0\\ \hline
+2013-3 & 42.0 & 120.8 & 40.5 & 153.1 & 514.0 & 0\\ \hline
+2013-4 & 29.0 & 140.0 & 59.0 & 161.5 & 465.0 & 0\\ \hline
+Total & 375.0 & 111.4 & 48.0 & 134.3 & 514.0 & 0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic - Churn bug]{
+ \label{DS:CB:4}
+ \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 26.0 & 26.8 & 8.0 & 46.6 & 193.0 & 1.0\\ \hline
+2010-4 & 73.0 & 33.3 & 18.0 & 41.6 & 191.0 & 1.0\\ \hline
+2011-1 & 107.0 & 34.1 & 16.0 & 58.2 & 407.0 & 1.0\\ \hline
+2011-2 & 107.0 & 50.7 & 14.0 & 85.1 & 509.0 & 1.0\\ \hline
+2011-3 & 76.0 & 32.5 & 13.5 & 47.8 & 321.0 & 1.0\\ \hline
+2011-4 & 76.0 & 61.5 & 25.5 & 90.1 & 446.0 & 1.0\\ \hline
+2012-1 & 110.0 & 62.2 & 18.0 & 90.5 & 521.0 & 0\\ \hline
+2012-2 & 86.0 & 59.3 & 21.0 & 99.9 & 475.0 & 0\\ \hline
+2012-3 & 156.0 & 55.2 & 19.5 & 88.3 & 442.0 & 0\\ \hline
+2012-4 & 104.0 & 64.8 & 19.0 & 85.6 & 328.0 & 0\\ \hline
+2013-1 & 98.0 & 47.2 & 14.0 & 67.5 & 318.0 & 0\\ \hline
+2013-2 & 56.0 & 52.1 & 14.5 & 82.9 & 376.0 & 0\\ \hline
+2013-3 & 58.0 & 64.6 & 32.5 & 83.8 & 345.0 & 0\\ \hline
+2013-4 & 64.0 & 54.2 & 19.5 & 94.5 & 474.0 & 1.0\\ \hline
+Total & 1197.0 & 51.3 & 17.0 & 80.4 & 521.0 & 0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug \subref{DS:CF:4}, \subref{DS:CB:4}}
+\label{DS:2:4}
+\end{table}
+
+
+
+
+
+%%%%%%%%%%%%%
+% Bugs and Bugs finished in quarter
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic - Bugs]{
+ \label{DS:B:2}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 20.0 & 2.6 & 2.0 & 3.5 & 17.0 & 1.0\\ \hline
@@ -1312,15 +1637,47 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 32.0 & 1.9 & 1.5 & 1.2 & 5.0 & 1.0\\ \hline
 2013-3 & 35.0 & 1.8 & 1.0 & 1.1 & 5.0 & 1.0\\ \hline
 2013-4 & 37.0 & 1.9 & 1.0 & 1.3 & 7.0 & 1.0\\ \hline
+Total&536&2.7&2.0&2.2&17&1 \\ \hline
 \end{tabular}
- \caption{Descriptive Statistic - Bugs}
- \label{DS:Bugs:2}
- \end{table}
+}
+}
+\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
+ \label{DS:BQ:2}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
+2010-3 & 30 & 23 & 53 & 56.6 & 43.4\\ \hline
+2010-4 & 65 & 34 & 99 & 65.7 & 34.3 \\ \hline
+2011-1 & 101 & 13 & 114 & 88.6 & 11.4 \\ \hline
+2011-2 & 142 & 8 & 150 & 94.7 & 5.3\\ \hline
+2011-3 & 87 & 24 & 111 & 78.4 & 21.6\\ \hline
+2011-4 & 90 & 29 & 119 & 75.6 & 24.4 \\ \hline
+2012-1 & 94 & 23 & 117 & 80.3 & 19.7 \\ \hline
+2012-2 & 70 & 9 & 79 & 88.6 & 11.4\\ \hline
+2012-3 & 146 & 7 & 153 & 95.4 & 4.6\\ \hline
+2012-4 & 101 & 27 & 128 & 78.9& 21.1 \\ \hline
+2013-1 & 78 & 5 & 83 & 94.0 & 6.0 \\ \hline
+2013-2 & 58 & 3 & 61 & 95.1 & 4.9 \\ \hline
+2013-3 & 62 & 2 & 64 & 96.9 & 3.1 \\ \hline
+2013-4 & 69 & 0 & 69 & 100 & 0 \\ \hline
+Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
+
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:2}, \subref{DS:BQ:2}}
+\label{DS:2:5} % 
+\end{table}
+ 
+
+
 
  \section{Team 3 - Descriptive Statistics}
  
  \begin{table}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-2.5cm}{}
 \subfigure[Descriptive Statistic -WIP]{
  \label{DS:WIP:3}
  \scalebox{0.85}{
@@ -1341,6 +1698,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 182.0 & 3.5 & 1.0 & 4.1 & 13.0 & 0\\ \hline
 2013-3 & 184.0 & 3.5 & 1.5 & 3.8 & 14.0 & 0\\ \hline
 2013-4 & 157.0 & 2.4 & 0 & 3.2 & 13.0 & 0\\ \hline
+Total	&3272&6.7&.00	&10.4&44&0\\ \hline
+
 \end{tabular}
 }
 }
@@ -1364,6 +1723,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 22.0 & 1.6 & 1.0 & 1.0 & 5.0 & 1.0\\ \hline
 2013-3 & 29.0 & 2.0 & 1.0 & 2.0 & 11.0 & 1.0\\ \hline
 2013-4 & 18.0 & 1.6 & 1.0 & 1.1 & 5.0 & 1.0\\ \hline
+Total&542&3.7&3.0&3.8&27&1\\ \hline
+
 \end{tabular}
 }
 }
@@ -1372,8 +1733,68 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 \label{DS:3:1}
 \end{table}
 
+
+%%%%%%%%%%%%%
+%Throughput FT and Throughput Bug
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic -Throughput feature]{
+ \label{DS:TPFT:3}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 8.0 & 1.8 & 1.5 & 0.9 & 3.0 & 1.0\\ \hline
+2010-4 & 35.0 & 2.3 & 1.0 & 1.9 & 9.0 & 1.0\\ \hline
+2011-1 & 32.0 & 2.2 & 2.0 & 1.5 & 7.0 & 1.0\\ \hline
+2011-2 & 31.0 & 3.4 & 3.0 & 2.4 & 8.0 & 1.0\\ \hline
+2011-3 & 31.0 & 3.6 & 3.0 & 3.2 & 13.0 & 1.0\\ \hline
+2011-4 & 28.0 & 3.2 & 2.0 & 3.9 & 21.0 & 1.0\\ \hline
+2012-1 & 22.0 & 3.5 & 1.0 & 4.3 & 16.0 & 1.0\\ \hline
+2012-2 & 23.0 & 2.2 & 1.0 & 1.6 & 6.0 & 1.0\\ \hline
+2012-3 & 21.0 & 2.8 & 1.0 & 3.5 & 13.0 & 1.0\\ \hline
+2012-4 & 34.0 & 3.4 & 2.0 & 3.5 & 17.0 & 1.0\\ \hline
+2013-1 & 14.0 & 1.7 & 1.0 & 1.4 & 6.0 & 1.0\\ \hline
+2013-2 & 5.0 & 1.4 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
+2013-3 & 8.0 & 1.8 & 1.5 & 0.9 & 3.0 & 1.0\\ \hline
+2013-4 & 8.0 & 1.4 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
+Total & 300.0 & 2.8 & 2.0 & 2.8 & 21.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic -Throughput bug]{
+ \label{DS:TPB:3}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 15.0 & 3.3 & 2.0 & 3.0 & 12.0 & 1.0\\ \hline
+2010-4 & 41.0 & 3.5 & 3.0 & 3.1 & 15.0 & 1.0\\ \hline
+2011-1 & 18.0 & 1.8 & 1.5 & 0.9 & 3.0 & 1.0\\ \hline
+2011-2 & 35.0 & 3.8 & 2.0 & 4.1 & 20.0 & 1.0\\ \hline
+2011-3 & 39.0 & 3.3 & 3.0 & 3.1 & 15.0 & 1.0\\ \hline
+2011-4 & 40.0 & 4.4 & 2.5 & 5.1 & 27.0 & 1.0\\ \hline
+2012-1 & 41.0 & 6.2 & 5.0 & 5.7 & 20.0 & 1.0\\ \hline
+2012-2 & 29.0 & 3.0 & 2.0 & 3.6 & 15.0 & 1.0\\ \hline
+2012-3 & 30.0 & 3.2 & 3.0 & 2.5 & 9.0 & 1.0\\ \hline
+2012-4 & 45.0 & 4.4 & 3.0 & 4.2 & 22.0 & 1.0\\ \hline
+2013-1 & 38.0 & 3.2 & 1.5 & 3.0 & 10.0 & 1.0\\ \hline
+2013-2 & 21.0 & 1.6 & 1.0 & 1.1 & 5.0 & 1.0\\ \hline
+2013-3 & 25.0 & 2.0 & 1.0 & 2.1 & 11.0 & 1.0\\ \hline
+2013-4 & 13.0 & 1.6 & 1.0 & 1.3 & 5.0 & 1.0\\ \hline
+Total & 430.0 & 3.6 & 2.0 & 3.8 & 27.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:3}, \subref{DS:TPB:3}}
+\label{DS:3:2}
+\end{table}
+
+
+
+
  %%%%%%%%%%%%%
-% Leadtime and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
 \subfigure[Descriptive Statistic - Leadtime]{
@@ -1396,6 +1817,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 27.0 & 8.2 & 7.0 & 6.7 & 27.0 & 1.0\\ \hline
 2013-3 & 32.0 & 6.9 & 4.0 & 7.9 & 29.0 & 1.0\\ \hline
 2013-4 & 18.0 & 12.0 & 12.5 & 4.5 & 21.0 & 1.0\\ \hline
+Total&1065	&7.9&6.0&7.0&30&1\\ \hline
+
 \end{tabular}
 }
 }
@@ -1419,18 +1842,82 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 27.0 & 56.8 & 30.0 & 62.1 & 216.0 & 0\\ \hline
 2013-3 & 32.0 & 66.1 & 34.5 & 87.2 & 403.0 & 0\\ \hline
 2013-4 & 18.0 & 89.0 & 52.5 & 92.2 & 266.0 & 0\\ \hline
+Total	& 1065 &	59.4&16.0&91.3&494&0\\ \hline
+
 \end{tabular}
 }
 }
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:3}, \subref{DS:Churn:3}}
-\label{DS:3:2}
+\label{DS:3:3}
 \end{table}
 
 
+ %%%%%%%%%%%%% Churn ft and Churn bug
 \begin{table}[!htbp]
- \centering
+  \begin{adjustwidth}{-1.5cm}{}
+\subfigure[Descriptive Statistic - Churn feature]{
+ \label{DS:CF:3}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 7.0 & 197.4 & 141.0 & 136.1 & 383.0 & 16.0\\ \hline
+2010-4 & 33.0 & 105.4 & 59.0 & 116.5 & 471.0 & 2.0\\ \hline
+2011-1 & 19.0 & 104.0 & 76.0 & 84.4 & 320.0 & 14.0\\ \hline
+2011-2 & 36.0 & 119.7 & 84.0 & 127.9 & 426.0 & 1.0\\ \hline
+2011-3 & 40.0 & 89.9 & 48.5 & 106.8 & 407.0 & 0\\ \hline
+2011-4 & 44.0 & 64.8 & 33.5 & 99.3 & 393.0 & 0\\ \hline
+2012-1 & 41.0 & 93.3 & 59.0 & 113.1 & 421.0 & 0\\ \hline
+2012-2 & 12.0 & 132.1 & 70.5 & 150.7 & 365.0 & 0\\ \hline
+2012-3 & 17.0 & 101.9 & 66.0 & 121.4 & 406.0 & 0\\ \hline
+2012-4 & 44.0 & 122.8 & 67.5 & 127.5 & 494.0 & 0\\ \hline
+2013-1 & 13.0 & 68.8 & 64.0 & 64.9 & 193.0 & 0\\ \hline
+2013-2 & 2.0 & 76.5 & 76.5 & 65.8 & 123.0 & 30.0\\ \hline
+2013-3 & 5.0 & 146.6 & 120.0 & 149.0 & 403.0 & 24.0\\ \hline
+2013-4 & 4.0 & 151.5 & 167.5 & 92.0 & 237.0 & 34.0\\ \hline
+Total & 317.0 & 102.6 & 61.0 & 115.2 & 494.0 & 0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic - Churn bug]{
+ \label{DS:CB:3}
+ \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 24.0 & 129.8 & 64.5 & 145.2 & 377.0 & 1.0\\ \hline
+2010-4 & 46.0 & 56.1 & 26.0 & 61.1 & 210.0 & 2.0\\ \hline
+2011-1 & 13.0 & 48.9 & 41.0 & 39.3 & 121.0 & 2.0\\ \hline
+2011-2 & 59.0 & 37.3 & 21.0 & 51.6 & 279.0 & 1.0\\ \hline
+2011-3 & 50.0 & 58.9 & 13.0 & 97.8 & 476.0 & 0\\ \hline
+2011-4 & 97.0 & 11.9 & 0 & 25.9 & 128.0 & 0\\ \hline
+2012-1 & 130.0 & 29.1 & 0 & 63.6 & 475.0 & 0\\ \hline
+2012-2 & 52.0 & 21.9 & 0 & 38.8 & 169.0 & 0\\ \hline
+2012-3 & 54.0 & 38.8 & 8.5 & 64.8 & 302.0 & 0\\ \hline
+2012-4 & 95.0 & 50.5 & 8.0 & 86.2 & 402.0 & 0\\ \hline
+2013-1 & 62.0 & 40.5 & 7.0 & 69.1 & 291.0 & 0\\ \hline
+2013-2 & 25.0 & 55.2 & 29.0 & 63.0 & 216.0 & 0\\ \hline
+2013-3 & 27.0 & 51.1 & 15.0 & 64.6 & 223.0 & 0\\ \hline
+2013-4 & 14.0 & 71.1 & 35.5 & 87.3 & 266.0 & 0\\ \hline
+Total & 748.0 & 41.1 & 9.0 & 71.7 & 476.0 & 0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug \subref{DS:CF:3}, \subref{DS:CB:3}}
+\label{DS:3:4}
+\end{table}
+
+
+
+
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-3.0cm}{}
+\subfigure[Descriptive Statistic - Bugs]{
+ \label{DS:B:3}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 14.0 & 2.8 & 2.0 & 2.9 & 12.0 & 1.0\\ \hline
@@ -1447,10 +1934,51 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 19.0 & 1.5 & 1.0 & 1.0 & 5.0 & 1.0\\ \hline
 2013-3 & 26.0 & 1.3 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
 2013-4 & 8.0 & 1.9 & 1.0 & 1.7 & 6.0 & 1.0\\ \hline
+Total&399&2.7&1.0&2.6&30&1\\ \hline
+
 \end{tabular}
- \caption{Descriptive Statistic - Bugs}
- \label{DS:Bugs:3}
- \end{table}
+}
+}
+\subfigure[Descriptive Statistic - Finished bugs per quarter]{
+ \label{DS:FTPQ:3}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | }
+ \hline
+Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
+2010-3 & 30 & 9 & 39 & 76.9 & 23.1 \\ \hline
+2010-4 & 75 & 6 & 81 & 92.6 & 7.4 \\ \hline
+2011-1 & 27 & 13 & 40 & 67.5 & 32.5 \\ \hline
+2011-2 & 79 & 7 & 86 & 91.9& 8.1 \\ \hline
+2011-3 & 77 & 13 & 90 & 85.6& 14.4 \\ \hline
+2011-4 & 88 & 13 & 101 & 87.1 & 12.9 \\ \hline
+2012-1 & 132 & 11 & 143 & 92.3& 7.7\\ \hline
+2012-2 & 44 & 12 & 56 & 78.6 & 21.4\\ \hline
+2012-3 & 54 & 15 & 69 & 78.3& 21.7 \\ \hline
+2012-4 & 97 & 10 & 107 & 90.7 & 9.3 \\ \hline
+2013-1 & 48 & 5 & 53 & 90.6 & 9.4 \\ \hline
+2013-2 & 21 & 7 & 28 & 75 & 25 \\ \hline
+2013-3 & 32 & 1 & 33 & 97& 3 \\ \hline
+2013-4&15.0&.0&15.0&100.0&.0 \\ \hline
+Mean&58.5&8.7&67.2&86&14\\ \hline
+
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Finished bugs per quarter  \subref{DS:B:3}, \subref{DS:FTPQ:3}}
+\label{DS:3:5}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Team 4 - Descriptive Statistics}
@@ -1476,6 +2004,7 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 182.0 & 8.0 & 3.0 & 8.7 & 29.0 & 0\\ \hline
 2013-3 & 184.0 & 7.7 & 3.0 & 8.8 & 29.0 & 0\\ \hline
 2013-4 & 181.0 & 5.3 & 1.0 & 6.0 & 19.0 & 0\\ \hline
+Total&3280	&5.1&.00&7.7&37&0\\ \hline
 
 \end{tabular}
 }
@@ -1499,13 +2028,70 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-1 & 61.0 & 8.6 & 7.0 & 6.9 & 34.0 & 1.0\\ \hline
 2013-2 & 59.0 & 8.3 & 7.0 & 4.7 & 19.0 & 1.0\\ \hline
 2013-3 & 60.0 & 8.0 & 7.0 & 5.1 & 26.0 & 1.0\\ \hline
-2013-4 & 46.0 & 5.0 & 4.0 & 3.8 & 15.0 & 1.0\\ \hline\end{tabular}
+2013-4 & 46.0 & 5.0 & 4.0 & 3.8 & 15.0 & 1.0\\ \hline
+Total&674&6.2&5.0&5.0&34&1\\ \hline
+\end{tabular}
 }
 }
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:4}, \subref{DS:Throughput:4}}
 \label{DS:4:1}
 \end{table}
+
+%%%%%%%%%%%%%
+%Throughput FT and Throughput Bug
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic -Throughput feature]{
+ \label{DS:TPFT:4}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 4.0 & 3.0 & 1.0 & 4.0 & 9.0 & 1.0\\ \hline
+2010-4 & 39.0 & 2.9 & 1.0 & 2.5 & 11.0 & 1.0\\ \hline
+2011-1 & 48.0 & 3.8 & 3.0 & 2.8 & 15.0 & 1.0\\ \hline
+2011-2 & 48.0 & 6.3 & 5.0 & 5.6 & 31.0 & 1.0\\ \hline
+2011-3 & 54.0 & 6.3 & 5.0 & 5.0 & 31.0 & 1.0\\ \hline
+2011-4 & 52.0 & 7.5 & 5.0 & 5.9 & 23.0 & 1.0\\ \hline
+2012-1 & 61.0 & 6.7 & 5.0 & 4.4 & 17.0 & 1.0\\ \hline
+2012-2 & 57.0 & 3.9 & 3.0 & 2.8 & 15.0 & 1.0\\ \hline
+2012-3 & 32.0 & 6.1 & 5.0 & 4.3 & 15.0 & 1.0\\ \hline
+2012-4 & 51.0 & 5.6 & 5.0 & 4.8 & 21.0 & 1.0\\ \hline
+2013-1 & 60.0 & 8.5 & 7.0 & 7.0 & 34.0 & 1.0\\ \hline
+2013-2 & 59.0 & 7.8 & 7.0 & 4.7 & 19.0 & 1.0\\ \hline
+2013-3 & 60.0 & 8.0 & 7.0 & 5.1 & 26.0 & 1.0\\ \hline
+2013-4 & 44.0 & 5.1 & 5.0 & 3.8 & 15.0 & 1.0\\ \hline
+Total & 669.0 & 6.2 & 5.0 & 5.0 & 34.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic -Throughput bug]{
+ \label{DS:TPB:4}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2011-1 & 1.0 & 1.0 & 1.0 & . & 1.0 & 1.0\\ \hline
+2011-2 & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+2011-3 & 1.0 & 1.0 & 1.0 & . & 1.0 & 1.0\\ \hline
+2012-1 & 2.0 & 6.0 & 6.0 & 7.1 & 11.0 & 1.0\\ \hline
+2012-2 & 1.0 & 1.0 & 1.0 & . & 1.0 & 1.0\\ \hline
+2012-3 & 3.0 & 3.0 & 2.0 & 2.6 & 6.0 & 1.0\\ \hline
+2012-4 & 13.0 & 2.4 & 1.0 & 2.3 & 8.0 & 1.0\\ \hline
+2013-1 & 33.0 & 2.8 & 2.0 & 2.4 & 9.0 & 1.0\\ \hline
+2013-2 & 17.0 & 4.5 & 2.0 & 4.5 & 15.0 & 1.0\\ \hline
+2013-3 & 13.0 & 1.7 & 1.0 & 1.4 & 6.0 & 1.0\\ \hline
+2013-4 & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+Total & 88.0 & 2.8 & 1.0 & 3.0 & 15.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:4}, \subref{DS:TPB:4}}
+\label{DS:4:2}
+\end{table}
+
 
 
 %%%%%%%%%%%%%
@@ -1528,6 +2114,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-1 & 316.0 & 2.7 & 2.0 & 2.4 & 11.0 & 1.0\\ \hline
 2013-2 & 281.0 & 2.7 & 1.0 & 2.5 & 12.0 & 1.0\\ \hline
 2013-4 & 157.0 & 2.8 & 2.0 & 2.5 & 12.0 & 1.0\\ \hline
+Total&1829&3.6&3.0&2.9&12&1 \\ \hline
+
 \end{tabular}
 }
 }
@@ -1547,17 +2135,75 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-1 & 316.0 & 0 & 0 & 0 & 0 & 0\\ \hline
 2013-2 & 281.0 & 0 & 0 & 0 & 0 & 0\\ \hline
 2013-3 & 157.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+Total&1829&.00&.00&.000&0&0 \\ \hline
+
 \end{tabular}
 }
 }
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:4}, \subref{DS:Churn:4}}
-\label{DS:4:2}
+\label{DS:4:3}
 \end{table}
 
+%%%%%%%%%%%%%
+% Churn FT and Churn Bug
 \begin{table}[!htbp]
- \centering
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic - Churn feature]{
+ \label{DS:CF:4}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2011-2 & 116.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2011-3 & 183.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2011-4 & 204.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2012-1 & 228.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2012-2 & 116.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2012-3 & 85.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2012-4 & 114.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2013-1 & 266.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2013-2 & 254.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2013-3 & 149.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+Total & 1715.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic - Churn bug]{
+ \label{DS:CB:4}
+ \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2011-2 & 1.0 & 0 & 0 & - & 0 & 0\\ \hline
+2011-3 & 1.0 & 0 & 0 & - & 0 & 0\\ \hline
+2012-1 & 2.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2012-2 & 1.0 & 0 & 0 & - & 0 & 0\\ \hline
+2012-3 & 4.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2012-4 & 20.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2013-1 & 50.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2013-2 & 27.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+2013-3 & 8.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+Total & 114.0 & 0 & 0 & 0 & 0 & 0\\ \hline
+
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:4}, \subref{DS:CB:4}}
+\label{DS:4:4} % 
+\end{table}
+
+
+
+%%%%%%%%%%%%%
+% Bugs and Bugs finished in quarter
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic - Bugs]{
+ \label{DS:B:4}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2011-1 & 1.0 & 1.0 & 1.0 & . & 1.0 & 1.0\\ \hline
@@ -1571,10 +2217,39 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 19.0 & 1.5 & 1.0 & 0.6 & 3.0 & 1.0\\ \hline
 2013-3 & 12.0 & 1.2 & 1.0 & 0.4 & 2.0 & 1.0\\ \hline
 2013-4 & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+Total & 88 & 1.4 & 1 & 0.8 & 4 & 1 \\ \hline
 \end{tabular}
- \caption{Descriptive Statistic - Bugs}
- \label{DS:Bugs:4}
- \end{table}
+}
+}
+\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
+ \label{DS:BQ:4}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
+2011-1 & 1 & 0 & 1 & 100 & 0 \\ \hline
+2011-2 & 2 & 0 & 2 & 100 & 0 \\ \hline
+2011-3 & 1 & 0 & 1 & 100 & 0 \\ \hline
+2012-1 & 2 & 0 & 2 & 100 & 0 \\ \hline
+2012-2 & 1 & 0 & 1 & 100 & 0 \\ \hline
+2012-3 & 4 & 0 & 4 & 100 & 0 \\ \hline
+2012-4 & 21 & 1 & 22 & 95.5 & 4.5 \\ \hline
+2013-1 & 49 & 2 & 51 & 96.1& 3.9\\ \hline
+2013-2 & 27 & 1 & 28 & 96.4 & 3.6 \\ \hline
+2013-3 & 14 & 0 & 14 & 100 & 0 \\ \hline
+2013-4 & 2 & 0 & 2 & 100 & 0 \\ \hline
+Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
+
+
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:4}, \subref{DS:BQ:4}}
+\label{DS:2:5} % 
+\end{table}
+ 
+
 
 \section{Team 5 - Descriptive Statistics}
 
@@ -1600,6 +2275,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 182.0 & 115.5 & 6.0 & 130.7 & 286.0 & 0\\ \hline
 2013-3 & 184.0 & 10.6 & 5.5 & 11.8 & 43.0 & 0\\ \hline
 2013-4 & 141.0 & 3.5 & 0 & 5.3 & 19.0 & 0\\ \hline
+Total&3255&17.4&.00&48.2&286&0\\ \hline
+
 \end{tabular}
 }
 }
@@ -1623,6 +2300,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 58.0 & 6.7 & 7.0 & 4.6 & 22.0 & 1.0\\ \hline
 2013-3 & 53.0 & 4.6 & 3.0 & 4.3 & 17.0 & 1.0\\ \hline
 2013-4 & 19.0 & 2.0 & 1.0 & 1.7 & 7.0 & 1.0\\ \hline
+Total&674&6.3&5.0&6.9&59&1 \\ \hline
+
 \end{tabular}
 }
 }
@@ -1633,9 +2312,67 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+%Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic -Throughput feature]{
+ \label{DS:TPFT:5}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+2010-4 & 15.0 & 2.3 & 1.0 & 2.4 & 10.0 & 1.0\\ \hline
+2011-1 & 12.0 & 2.4 & 1.0 & 2.1 & 7.0 & 1.0\\ \hline
+2011-2 & 28.0 & 6.6 & 6.0 & 5.6 & 17.0 & 1.0\\ \hline
+2011-3 & 37.0 & 4.6 & 3.0 & 5.0 & 24.0 & 1.0\\ \hline
+2011-4 & 22.0 & 2.8 & 2.0 & 2.2 & 8.0 & 1.0\\ \hline
+2012-1 & 16.0 & 2.4 & 1.0 & 3.1 & 10.0 & 1.0\\ \hline
+2012-2 & 20.0 & 2.5 & 1.5 & 3.2 & 15.0 & 1.0\\ \hline
+2012-3 & 3.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+2012-4 & 16.0 & 3.6 & 2.0 & 3.8 & 14.0 & 1.0\\ \hline
+2013-1 & 9.0 & 8.6 & 4.0 & 10.7 & 30.0 & 1.0\\ \hline
+2013-2 & 11.0 & 1.3 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
+2013-3 & 8.0 & 1.6 & 1.0 & 1.1 & 4.0 & 1.0\\ \hline
+2013-4 & 7.0 & 1.6 & 1.0 & 1.0 & 3.0 & 1.0\\ \hline
+Total & 206.0 & 3.6 & 2.0 & 4.5 & 30.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic -Throughput bug]{
+ \label{DS:TPB:5}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 11.0 & 3.8 & 3.0 & 2.1 & 7.0 & 1.0\\ \hline
+2010-4 & 43.0 & 4.4 & 3.0 & 3.5 & 15.0 & 1.0\\ \hline
+2011-1 & 31.0 & 3.5 & 3.0 & 2.7 & 12.0 & 1.0\\ \hline
+2011-2 & 49.0 & 6.0 & 6.0 & 4.8 & 19.0 & 1.0\\ \hline
+2011-3 & 59.0 & 4.3 & 3.0 & 4.0 & 22.0 & 1.0\\ \hline
+2011-4 & 53.0 & 5.1 & 5.0 & 3.7 & 17.0 & 1.0\\ \hline
+2012-1 & 56.0 & 6.2 & 5.0 & 4.5 & 17.0 & 1.0\\ \hline
+2012-2 & 56.0 & 5.2 & 4.5 & 3.7 & 15.0 & 1.0\\ \hline
+2012-3 & 49.0 & 6.4 & 5.0 & 5.0 & 27.0 & 1.0\\ \hline
+2012-4 & 48.0 & 4.4 & 3.0 & 4.1 & 17.0 & 1.0\\ \hline
+2013-1 & 60.0 & 15.5 & 9.0 & 15.0 & 59.0 & 1.0\\ \hline
+2013-2 & 58.0 & 6.7 & 7.0 & 4.7 & 22.0 & 1.0\\ \hline
+2013-3 & 52.0 & 4.7 & 3.0 & 4.4 & 17.0 & 1.0\\ \hline
+2013-4 & 14.0 & 2.1 & 1.0 & 1.8 & 7.0 & 1.0\\ \hline
+Total & 639.0 & 6.1 & 4.0 & 6.8 & 59.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:5}, \subref{DS:TPB:5}}
+\label{DS:5:2}
+\end{table}
+
+
+%%%%%%%%%%%%%
+% Leadtime and bugs
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-1.5cm}{}
 \subfigure[Descriptive Statistic - Leadtime]{
  \label{DS:LT:5}
  \scalebox{0.85}{
@@ -1656,6 +2393,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 197.0 & 10.5 & 8.0 & 10.1 & 60.0 & 1.0\\ \hline
 2013-3 & 139.0 & 8.7 & 5.0 & 10.5 & 59.0 & 1.0\\ \hline
 2013-4 & 16.0 & 6.7 & 4.0 & 5.9 & 17.0 & 1.0\\ \hline
+Total&1901&9.4&6.0&11.2&66&1 \\ \hline
+
 \end{tabular}
 }
 }
@@ -1679,17 +2418,81 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 197.0 & 21.6 & 1.0 & 40.8 & 209.0 & 0\\ \hline
 2013-3 & 139.0 & 18.3 & 0 & 40.0 & 175.0 & 0\\ \hline
 2013-4 & 16.0 & 19.4 & 2.0 & 31.9 & 115.0 & 0\\ \hline
+Total&1901&23.5&2.0&42.3&211&0 \\ \hline
 \end{tabular}
 }
 }
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:5}, \subref{DS:Churn:5}}
-\label{DS:5:2}
+\label{DS:5:3}
 \end{table}
 
+%%%%%%%%%%%%%
+% Churn FT and Churn Bug
 \begin{table}[!htbp]
- \centering
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic - Churn feature]{
+ \label{DS:CF:5}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-4 & 11.0 & 98.5 & 78.0 & 79.4 & 205.0 & 6.0\\ \hline
+2011-1 & 4.0 & 88.5 & 74.0 & 88.3 & 201.0 & 5.0\\ \hline
+2011-2 & 11.0 & 94.8 & 59.0 & 75.0 & 205.0 & 2.0\\ \hline
+2011-3 & 60.0 & 13.4 & 0 & 37.2 & 151.0 & 0\\ \hline
+2011-4 & 25.0 & 47.9 & 13.0 & 59.4 & 172.0 & 0\\ \hline
+2012-1 & 12.0 & 20.7 & 0 & 49.2 & 170.0 & 0\\ \hline
+2012-2 & 18.0 & 69.8 & 61.0 & 66.7 & 192.0 & 0\\ \hline
+2012-3 & 2.0 & 27.5 & 27.5 & 9.2 & 34.0 & 21.0\\ \hline
+2012-4 & 12.0 & 24.5 & 0 & 38.5 & 100.0 & 0\\ \hline
+2013-1 & 15.0 & 64.8 & 0 & 81.2 & 206.0 & 0\\ \hline
+2013-2 & 8.0 & 31.5 & 4.0 & 40.5 & 91.0 & 0\\ \hline
+2013-3 & 4.0 & 73.5 & 65.0 & 86.0 & 164.0 & 0\\ \hline
+Total & 182.0 & 43.1 & 2.0 & 62.8 & 206.0 & 0\\ \hline
+
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic - Churn bug]{
+ \label{DS:CB:5}
+ \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 16.0 & 65.8 & 49.5 & 60.1 & 195.0 & 6.0\\ \hline
+2010-4 & 76.0 & 44.8 & 25.0 & 47.2 & 176.0 & 1.0\\ \hline
+2011-1 & 29.0 & 37.1 & 14.0 & 52.9 & 200.0 & 1.0\\ \hline
+2011-2 & 121.0 & 37.1 & 16.0 & 48.0 & 207.0 & 1.0\\ \hline
+2011-3 & 109.0 & 23.3 & 6.0 & 40.4 & 198.0 & 0\\ \hline
+2011-4 & 146.0 & 14.9 & 0 & 34.5 & 207.0 & 0\\ \hline
+2012-1 & 169.0 & 16.8 & 0 & 34.2 & 200.0 & 0\\ \hline
+2012-2 & 152.0 & 19.4 & 1.0 & 37.5 & 211.0 & 0\\ \hline
+2012-3 & 165.0 & 14.9 & 0 & 32.4 & 149.0 & 0\\ \hline
+2012-4 & 119.0 & 12.2 & 0 & 26.9 & 167.0 & 0\\ \hline
+2013-1 & 277.0 & 20.6 & 3.0 & 35.7 & 204.0 & 0\\ \hline
+2013-2 & 189.0 & 21.1 & 0 & 40.8 & 209.0 & 0\\ \hline
+2013-3 & 135.0 & 16.7 & 0 & 37.2 & 175.0 & 0\\ \hline
+2013-4 & 16.0 & 19.4 & 2.0 & 31.9 & 115.0 & 0\\ \hline
+Total & 1719.0 & 21.4 & 2.0 & 38.9 & 211.0 & 0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:5}, \subref{DS:CB:5}}
+\label{DS:5:4} % 
+\end{table}
+
+
+
+%%%%%%%%%%%%%
+% Bugs and Bugs finished in quarter
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic - Bugs]{
+ \label{DS:B:5}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 19.0 & 1.9 & 1.0 & 1.8 & 7.0 & 1.0\\ \hline
@@ -1706,14 +2509,44 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 49.0 & 4.2 & 4.0 & 2.7 & 12.0 & 1.0\\ \hline
 2013-3 & 41.0 & 3.1 & 2.0 & 2.4 & 10.0 & 1.0\\ \hline
 2013-4 & 11.0 & 1.4 & 1.0 & 0.9 & 4.0 & 1.0\\ \hline
+Total&604&3.8&3.0&4.1&38&1 \\ \hline
 \end{tabular}
- \caption{Descriptive Statistic - Bugs}
- \label{DS:Bugs:5}
- \end{table}
+}
+}
+\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
+ \label{DS:BQ:5}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
+2010-3 & 24 & 13 & 37 & 64.9 & 35.1 \\ \hline
+2010-4 & 108 & 13 & 121 & 89.3 & 10.7 \\ \hline
+2011-1 & 57 & 12 & 69 & 82.6 & 17.4 \\ \hline
+2011-2 & 202 & 47 & 249 & 81.1 & 18.9 \\ \hline
+2011-3 & 119 & 33 & 152 & 78.3 & 21.7 \\ \hline
+2011-4 & 147 & 37 & 184 & 79.9 & 20.1 \\ \hline
+2012-1 & 149 & 45 & 194 & 76.8 & 23.2 \\ \hline
+2012-2 & 116 & 35 & 151 & 76.8 & 23.2 \\ \hline
+2012-3 & 133 & 25 & 158 & 84.2 & 15.8 \\ \hline
+2012-4 & 99 & 5 & 104 & 95.2 & 4.8 \\ \hline
+2013-1 & 502 & 37 & 539 & 93.1 & 6.9 \\ \hline
+2013-2 & 183 & 21 & 204 & 89.7 & 10.3 \\ \hline
+2013-3 & 123 & 5 & 128 & 96.1 & 3.9 \\ \hline
+2013-4 & 15 & 0 & 15 & 100 & 0 \\ \hline
+Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
+
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:5}, \subref{DS:BQ:5}}
+\label{DS:2:5} % 
+\end{table}
+
 
 \section{Team 6 - Descriptive Statistics}
 \begin{table}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-2.5cm}{}
 \subfigure[Descriptive Statistic -WIP]{
  \label{DS:WIP:6}
  \scalebox{0.85}{
@@ -1734,10 +2567,12 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 182.0 & 21.9 & 18.0 & 22.2 & 60.0 & 0\\ \hline
 2013-3 & 184.0 & 15.3 & 8.5 & 16.3 & 61.0 & 0\\ \hline
 2013-4 & 175.0 & 18.1 & 0 & 23.7 & 125.0 & 0\\ \hline
+Total&3290&8.1&.00&13.4&125&0\\ \hline
+
 \end{tabular}
 }
 }
-\subfigure[Descriptive Statistic -Throughput]{
+\subfigure[Descriptive Statistic - Throughput]{
  \label{DS:Throughput:6}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1757,6 +2592,7 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 61.0 & 4.4 & 3.0 & 3.7 & 15.0 & 1.0\\ \hline
 2013-3 & 61.0 & 4.7 & 4.0 & 3.6 & 15.0 & 1.0\\ \hline
 2013-4 & 58.0 & 9.1 & 5.0 & 23.8 & 181.0 & 1.0\\ \hline
+Total & 691 & 4.58 & 3 & 181 & 1 & 7.8\\ \hline
 \end{tabular}
 }
 }
@@ -1766,9 +2602,67 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 \end{table}
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+%Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic -Throughput feature]{
+ \label{DS:TPFT:6}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 17.0 & 3.9 & 3.0 & 3.1 & 10.0 & 1.0\\ \hline
+2010-4 & 47.0 & 3.5 & 3.0 & 2.7 & 10.0 & 1.0\\ \hline
+2011-1 & 43.0 & 2.4 & 1.0 & 1.9 & 8.0 & 1.0\\ \hline
+2011-2 & 35.0 & 2.7 & 3.0 & 1.9 & 8.0 & 1.0\\ \hline
+2011-3 & 47.0 & 2.7 & 1.0 & 2.1 & 7.0 & 1.0\\ \hline
+2011-4 & 40.0 & 3.2 & 3.0 & 2.3 & 9.0 & 1.0\\ \hline
+2012-1 & 54.0 & 3.2 & 3.0 & 2.4 & 9.0 & 1.0\\ \hline
+2012-2 & 51.0 & 5.2 & 3.0 & 5.8 & 37.0 & 1.0\\ \hline
+2012-3 & 45.0 & 3.9 & 3.0 & 3.7 & 21.0 & 1.0\\ \hline
+2012-4 & 61.0 & 6.0 & 5.0 & 4.5 & 23.0 & 1.0\\ \hline
+2013-1 & 56.0 & 6.1 & 5.0 & 4.4 & 16.0 & 1.0\\ \hline
+2013-2 & 54.0 & 4.6 & 3.0 & 3.7 & 15.0 & 1.0\\ \hline
+2013-3 & 58.0 & 4.2 & 3.0 & 3.6 & 15.0 & 1.0\\ \hline
+2013-4 & 53.0 & 9.6 & 5.0 & 24.8 & 181.0 & 1.0\\ \hline
+Total & 661.0 & 4.5 & 3.0 & 8.0 & 181.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic -Throughput bug]{
+ \label{DS:TPF:6}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 10.0 & 2.4 & 1.0 & 2.3 & 7.0 & 1.0\\ \hline
+2010-4 & 7.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+2011-1 & 4.0 & 2.5 & 2.0 & 1.9 & 5.0 & 1.0\\ \hline
+2011-3 & 7.0 & 2.4 & 1.0 & 2.2 & 7.0 & 1.0\\ \hline
+2011-4 & 4.0 & 2.5 & 2.0 & 1.9 & 5.0 & 1.0\\ \hline
+2012-1 & 4.0 & 2.2 & 2.0 & 1.5 & 4.0 & 1.0\\ \hline
+2012-2 & 8.0 & 2.1 & 1.5 & 2.0 & 7.0 & 1.0\\ \hline
+2012-3 & 9.0 & 1.7 & 1.0 & 1.0 & 4.0 & 1.0\\ \hline
+2012-4 & 26.0 & 2.3 & 2.0 & 2.1 & 11.0 & 1.0\\ \hline
+2013-1 & 42.0 & 2.2 & 1.0 & 1.9 & 9.0 & 1.0\\ \hline
+2013-2 & 32.0 & 2.1 & 2.0 & 2.0 & 12.0 & 1.0\\ \hline
+2013-3 & 38.0 & 2.7 & 2.0 & 2.6 & 13.0 & 1.0\\ \hline
+2013-4 & 32.0 & 1.8 & 1.0 & 1.0 & 4.0 & 1.0\\ \hline
+Total & 223.0 & 2.2 & 1.0 & 1.9 & 13.0 & 1.0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:6}, \subref{DS:TPF:6}}
+\label{DS:6:2}
+\end{table}
+
+
+
+%%%%%%%%%%%%%
+% Leadtime and bugs
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-1.5cm}{}
 \subfigure[Descriptive Statistic - Leadtime]{
  \label{DS:LT:6}
  \scalebox{0.85}{
@@ -1789,6 +2683,8 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 128.0 & 6.3 & 6.0 & 4.8 & 24.0 & 1.0\\ \hline
 2013-3 & 155.0 & 7.3 & 5.0 & 6.5 & 28.0 & 1.0\\ \hline
 2013-4 & 233.0 & 4.7 & 2.0 & 5.5 & 25.0 & 1.0\\ \hline
+Total&1533&7.0&6.0&6.2&28&1 \\ \hline
+
 \end{tabular}
 }
 }
@@ -1812,18 +2708,78 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 128.0 & 221.8 & 91.5 & 301.9 & 1174.0 & 0\\ \hline
 2013-3 & 155.0 & 145.5 & 31.0 & 244.7 & 1164.0 & 0\\ \hline
 2013-4 & 233.0 & 147.7 & 14.0 & 260.1 & 1199.0 & 0\\ \hline
+Total&	1533	&146&	17.0&	257&	1234&	0\\ \hline
+
 \end{tabular}
 }
 }
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:6}, \subref{DS:Churn:6}}
-\label{DS:6:2}
+\label{DS:6:3}
+\end{table}
+
+ %%%%%%%%%%%%% Churn ft and Churn bug
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-1.5cm}{}
+\subfigure[Descriptive Statistic - Churn feature]{
+ \label{DS:CF:6}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+2010-3  & 23.0 & 187.3 & 37.0 & 298.3 & 1122.0 & 1.0\\ \hline
+2010-4 & 45.0 & 244.5 & 106.0 & 317.7 & 1078.0 & 1.0\\ \hline
+2011-1 & 40.0 & 143.9 & 40.0 & 259.4 & 1112.0 & 1.0\\ \hline
+2011-2 & 26.0 & 263.1 & 191.0 & 293.3 & 1187.0 & 1.0\\ \hline
+2011-3 & 28.0 & 226.2 & 154.5 & 231.2 & 952.0 & 4.0\\ \hline
+2011-4 & 61.0 & 105.6 & 0 & 216.7 & 1002.0 & 0\\ \hline
+2012-1 & 99.0 & 118.1 & 0 & 269.4 & 1234.0 & 0\\ \hline
+2012-2 & 145.0 & 113.0 & 0 & 244.6 & 1197.0 & 0\\ \hline
+2012-3 & 89.0 & 107.0 & 0 & 252.4 & 1225.0 & 0\\ \hline
+2012-4 & 171.0 & 157.8 & 25.0 & 253.0 & 1144.0 & 0\\ \hline
+2013-1 & 148.0 & 144.6 & 19.5 & 239.6 & 1166.0 & 0\\ \hline
+2013-2 & 94.0 & 247.4 & 99.0 & 324.2 & 1174.0 & 0\\ \hline
+2013-3 & 109.0 & 172.9 & 50.0 & 272.3 & 1164.0 & 0\\ \hline
+2013-4 & 190.0 & 156.3 & 16.0 & 269.2 & 1199.0 & 0\\ \hline
+Total & 1268.0 & 156.5 & 17.0 & 266.5 & 1234.0 & 0\\ \hline
+\end{tabular}
+}
+}
+\subfigure[Descriptive Statistic - Churn bug]{
+ \label{DS:CB:6}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 6.0 & 27.5 & 9.0 & 45.3 & 119.0 & 2.0\\ \hline
+2010-4 & 1.0 & 68.0 & 68.0 & . & 68.0 & 68.0\\ \hline
+2011-1 & 3.0 & 15.7 & 11.0 & 13.6 & 31.0 & 5.0\\ \hline
+2011-2 & 2.0 & 0.5 & 0.5 & 0.7 & 1.0 & 0\\ \hline
+2012-1 & 8.0 & 4.2 & 0 & 12.0 & 34.0 & 0\\ \hline
+2012-3 & 12.0 & 18.8 & 0 & 39.5 & 114.0 & 0\\ \hline
+2012-4 & 40.0 & 49.6 & 10.5 & 125.3 & 658.0 & 0\\ \hline
+2013-1 & 70.0 & 130.8 & 18.5 & 262.3 & 1210.0 & 0\\ \hline
+2013-2 & 34.0 & 151.0 & 65.0 & 218.2 & 947.0 & 0\\ \hline
+2013-3 & 46.0 & 80.7 & 15.0 & 144.2 & 574.0 & 0\\ \hline
+2013-4 & 43.0 & 109.6 & 8.0 & 214.4 & 1127.0 & 0\\ \hline
+Total & 265.0 & 95.2 & 12.0 & 197.8 & 1210.0 & 0\\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug \subref{DS:CF:6}, \subref{DS:CB:6}}
+\label{DS:6:4}
 \end{table}
 
 
- \begin{table}[!htbp]
- \centering
- \begin{tabular}{ | l | r | r | r | r | r | r | }
+
+%%%%%%%%%%%%%
+% Bugs and Bugs finished in quarter
+\begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+\subfigure[Descriptive Statistic - Bugs]{
+ \label{DS:B:6}
+ \scalebox{0.85}{
+  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 10.0 & 1.5 & 1.5 & 0.5 & 2.0 & 1.0\\ \hline
@@ -1839,10 +2795,40 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2013-2 & 33.0 & 1.5 & 1.0 & 0.7 & 3.0 & 1.0\\ \hline
 2013-3 & 34.0 & 1.6 & 1.0 & 0.8 & 4.0 & 1.0\\ \hline
 2013-4 & 27.0 & 1.8 & 2.0 & 0.9 & 4.0 & 1.0\\ \hline
+Total&211&1.6&1.0&.868&7&1 \\ \hline
 \end{tabular}
- \caption{Descriptive Statistic - Bugs}
- \label{DS:Bugs:6}
- \end{table}
+}
+}
+\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
+ \label{DS:BQ:6}
+ \scalebox{0.85}{
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
+2010-3 & 14 & 1 & 15 & 93.3 & 6.7 \\ \hline
+2010-4 & 6 & 1 & 7 & 85.7 & 14.3 \\ \hline
+2011-1 & 6 & 1 & 7 & 85.7 & 14.3 \\ \hline
+2011-2 & 7 & 2 & 9 & 77.8 & 22.2 \\ \hline
+2011-3 & 3 & 2 & 5 & 60 & 40 \\ \hline
+2011-4 & 3 & 1 & 4 & 75 & 25 \\ \hline
+2012-1 & 8 & 0 & 8 & 100 & 0 \\ \hline
+2012-3 & 12 & 2 & 14 & 85.7 & 14.3 \\ \hline
+2012-4 & 41 & 2 & 43 & 95.3 & 4.7 \\ \hline
+2013-1 & 66 & 9 & 75 & 88 & 12 \\ \hline
+2013-2 & 43 & 7 & 50 & 86 & 14 \\ \hline
+2013-3 & 52 & 1 & 53 & 98.1 & 1.9 \\ \hline
+2013-4 & 49 & 0 & 49 & 100 & 0 \\ \hline
+Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
+\end{tabular}
+}
+}
+\end{adjustwidth}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:6}, \subref{DS:BQ:6}}
+\label{DS:6:5} % 
+\end{table}
+
+
+ 
  
 
 \newpage
