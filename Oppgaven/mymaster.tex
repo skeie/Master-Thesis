@@ -4,7 +4,7 @@
 \usepackage[latin1]{inputenc}        %% ... or utf8 or applemac
 \usepackage[T1]{fontenc,url}
 \urlstyle{sf}
-\usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx,caption,nameref,caption}
+\usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx,caption,nameref,caption,amssymb}
 \usepackage[section]{placeins}
 \usepackage{amsmath,lipsum}
 \setcounter{secnumdepth}{3}
@@ -912,7 +912,7 @@ Churn is removed because a module or a feature, which consists of hundred or tho
 
 \section{SPSS}
 \label{sec:SPSS}
-"IBM® SPSS® Statistics is a comprehensive system for analyzing data. SPSS Statistics can take data from almost any type of file and use them to generate tabulated reports, charts and plots of distributions and trends, descriptive statistics, and complex statistical analyses." \parencite{IBM}
+"IBM\circledR  SPSS\circledR Statistics is a comprehensive system for analyzing data. SPSS Statistics can take data from almost any type of file and use them to generate tabulated reports, charts and plots of distributions and trends, descriptive statistics, and complex statistical analyses." \parencite{IBM}
 
 After the program has finished the measurements of the data, SPSS will be used to analyze the derived data. SPSS will help to answer the research question stated in chapter \ref{chap:RQ} with help of two statistics method: Correlation and case summaries. 
 
@@ -923,19 +923,16 @@ After the program has finished the measurements of the data, SPSS will be used t
 \chapter{Results}                     %% ... or ??
 \label{ch:res}
 \section{Introduction}
-In this chapter 
+In this chapter the results are presented. There are five correlation tables presenting the results. Vertically in the table, the variables are stated. Horizontally the corresponding teams are stated. In the table the team names are shortened, team one is shortened to T1, team two is shortened to T2 and so on. The result will be presented in the following manner. The first, Section \ref{sec:corr:WIP} shows the correlation table for WIP, Section \ref{sec:corr:lt} shows the correlation table for leadtime, Section \ref{sec:corr:bug} show the correlation table for bug, Section \ref {sec:corr:TP} show the correlation table for throughput and Section \ref {sec:corr:churn} show the correlation table for churn. Following the correlation tables, a section for each team's descriptive statistics  is shown.  The relationship between two variables will occur twice, in both their correlation table, since the correlation tables are symmetric. When the relationship is stated in one of the sections, the relationship will not be stated in the following sections. Some of the ten variables shown vertically are shown in table \ref{des} and are explained in chapter \ref{ch:DCC}. "Throughput Feature" means tasks labeled with type "feature" are the only one who is counted. For "Throughput Bug", only the tasks labeled with type "bug" is counted as described in section . The same goes for "Churn Bug" and "Churn Feature". 
+
+The "Bugs finished in the same quarter" variable represents how many tasks labeled "Bug" that are finished within the same quarter as it was created in backlog.  The "Average days for bugs in backlog" variable is used to see how long tasks with type "bug" are in the backlog, before pulled out. These two variables are used to see the prioritizing of bugs within a quarter as well as indicator of the workload for the quarter.   
+
 
 
 
 \section{Correlation - WIP}
 \label{sec:corr:WIP}
-The table \ref{corr:WIP} shows the correlation between the seven teams and the WIP. The seven variables (T1-T7) shown horizontal in the table represents the seven teams from SI. T1 stands for team one, T2 for team two and so on. 
-
-Some of the ten variables shown vertically are shown in table \ref{des} and are explained in chapter \ref{ch:DCC} "Throughput Feature" means that tasks labeled with type "feature" are the only one who is counted. For "Throughput Bug" only the tasks labeled with type "bug" is counted. The same goes for "Churn Bug" and "Churn Feature". 
-
-The "Bugs finished in the same quarter" variable represents how many tasks labeled as bug that are finished within the same quarter as it was recorded.  The "Average days for bugs in backlog" variable is used to see how long tasks labeled with "bug" are in the backlog before pulled out. These two variables are used to see the prioritizing of bugs within a quarter as well as indicator of the workload for the quarter.   
-
-In table \ref{corr:WIP} the correlation between WIP and the other variables for each team is shown. The table shows team one, three, four and six have significant positive relationship between WIP and throughput.  Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP.  For team six variable throughput bug that's not the case.  Throughput bug have a positive correlation of 0.11. The total row in table\ref{DS:Throughput:6} shows that total number of throughput is 691 and table \ref{DS:TPB:6} shows that the total number of throughput bug is 223. 223 is 1/3 of all throughputs and this results reflects that throughput feature is higher than throughput, since throughput bug lowers the average of throughput.
+Table  \ref{corr:WIP} shows team one, three, four and six have significant positive relationship between WIP and throughput.  Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP.  For team six that's not the case. Throughput bug have a positive correlation of 0.11, while throughput and throughput feature have respectively .594 and .609. The reason why throughput bug do not have a close relationship to throughput is because throughput feature consist of 661 tasks as shown in the total row in table \ref{DS:TPFT:6}, while Throughput bug consist of 223 finished tasks as shown in \ref{DS:TPB:6} . 223 are 1/3 of all throughputs feature and this results reflects that throughput has a strong relationship to throughput feature. 
 
 \begin{table}[!htbp]
  \centering
@@ -963,18 +960,19 @@ Churn bug &0.05& 0.13& -.671**
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{table}
 
-For team one and four bugs have significant positive relationship with WIP. Which makes sense, since a subset of bugs is throughput bugs that also have a significant positive relationship with WIP as described in above.   Team three's variable throughput bug had a significant positive correlation with WIP, but bugs do not have significant positive correlation with WIP. Because the variable "Bugs" is recorded when the bug is created hence the "Created date" column from the data set. The variable "Throughput bugs" is recorded from when the bug was finished, hence the "Date to" column. The table \ref{DS:FTPQ:3} shows that in average 14 \% of the tasks labeled with bug are not finished within the same quarter. Team four's leadtime have a significant positive correlation with WIP.  Team three's churn and churn bug have a significant positive correlation with WIP as well.  Initially should also team three's churn feature had a significant positive correlation with WIP since it's a subset of churn.  But since feature counts for just 1/3 (317/1065) of tasks as shown in the total row in table \ref{DS:CF:3} and table \ref{DS:Churn:3}, the feature variable do not contribute to much to the churn variable as bug.For team six churn and churn feature do not have a significant positive correlation with WIP, but churn bug only consist of 17\% (265/1533) of all churn for team six. This shows that churn bug have a small impact on the churn variable, and that's why churn bug have a significant positive correlation with WIP.
 
+For team one and four, bugs have significant positive relationship with WIP. This seems obvious since both of the teams' throughput bug have a significant positive correlation with WIP.  For Team three, bugs do not have significant positive correlation with WIP, even though throughput bug have. This states that these two variables are independent. Since the variable "Bugs" is recorded when the bug is created hence the "Created date" column from the data set. The variable "Throughput bugs" is recorded from when the bug was finished, hence the "Date to" column. This shows that there is no direct connection between throughput bugs and bugs. Even though often the value in "Created date" column and the value in "Date to" column's date are close. Which is indicated by tables \ref{DS:FTPQ:1}, \ref{DS:FTPQ:2} , \ref{DS:FTPQ:3}, \ref{DS:FTPQ:4}, \ref{DS:FTPQ:5} and \ref{DS:FTPQ:6}. These tables indicate that mostly of each bug is fixed within the same quarter.
 
+Team four's leadtime have a significant positive correlation with WIP.  Team three's churn and churn bug have a significant positive correlation with WIP as well.  Initially should also team three's churn feature had a significant positive correlation with WIP since it's a subset of churn.  But since feature counts for just 1/3 (317/1065) of tasks as shown in the total row in table \ref{DS:CF:3} and table \ref{DS:Churn:3}, the churn feature variable do not contribute to much to the churn variable as churn bug.
 
-
-
-
+For team six, churn and churn feature do not have a significant positive correlation with WIP, but churn bug do. Churn bug consist of 17\% (265/1533) of all churn for team six. This shows that churn bug have a small impact on the churn variable, and that's why churn bug have a significant positive correlation with WIP.
 
 
 \section{Correlation - Leadtime}
 \label{sec:corr:lt}
-In this section the table (Table \ref{corr:Leadtime}) correlation between leadtime and the variable for the seven team is stated.  In section \ref{sec:corr:WIP} the WIP correlation was stated, so any positive correlation here will ignored. Throughput has a significant positive correlation with leadtime for team six.  For team two, bugs finished within the same quarter have a significant positive correlation with leadtime.  Team two also has a significant positive correlation between leadtime and churn bug, but not with churn or churn feature. Churn bug (-.725) and churn feature (0.41) is on the opposite of each other in the correlation table. Churn bug consist of 1197 tasks, churn feature consist of 375 tasks as shown in the total row in table \ref{DS:CF:4} and \ref{DS:CB:4}.  The churn variable in table \ref{corr:Leadtime} with value of -0.45 will benefit most from churn bugs, which reflects. But had churn been -0.55 for example, churn would also have a significant positive correlation with leadtime. \begin{table}[!htbp]
+In this section the table \ref{corr:Leadtime} shows the correlation between leadtime and the variable for the seven teams.  Throughput has a significant positive correlation with leadtime for team six.  For team two, bugs finished within the same quarter have a significant positive correlation with leadtime.  Team two also has a significant positive correlation between leadtime and churn bug, but not with churn or churn feature. Churn bug have a correlation of -.725 and churn feature with 0.41. These two values are in the opposite ends of each other in the correlation table. The reason is, churn bug consist of 1197 tasks, churn feature consist of 375 tasks as shown in the total row in table \ref{DS:CF:4} and \ref{DS:CB:4}.  The churn variable in table \ref{corr:Leadtime} with value of -0.45 will benefit most from churn bugs, the value -0.35 reflects that.
+
+\begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|l|l|l|l|l|l|}
 \hline
@@ -1003,8 +1001,13 @@ Team six has a significant positive correlation with leadtime for the variable c
 \section{Correlation - Bugs}
 \label{sec:corr:bug}
 
-This section contains information about the correlation for bugs. The result is listed in table \ref{corr:bug}. For team one, three and five, all three-throughput variables have a significant positive correlation. For team two both throughput and throughput bug have a significant positive correlation. Why throughput feature differs from throughput and throughput bug is explained in section \ref{sec:corr:lt}.Team four both throughput feature and throughput bug has a significant positive correlation. The throughput variable is close to significant also. The average for throughput is 5, but for throughput bugs its don't knowTeam six has a positive correlation with throughput bug. Throughput bug has little impact on the throughput variable since throughput bug have 223 items in total, shown in table \ref{DS:TPB:6} and throughput feature have 661 items in total shown in table \ref{DS:TPF}. That's why throughput bug's correlation is different to throughput and throughput feature. Throughput (0.27) and throughput feature (0.25) value is alike 
+This section contains information about the correlation for bugs. The result is listed in table \ref{corr:bug}. For team one, three and five, all three-throughput variables have a significant positive correlation with bug. For team two both throughput and throughput bug have a significant positive correlation. 
 
+
+Why throughput feature differs from throughput and throughput bug is don't know
+Team four both throughput feature and throughput bug has a significant positive correlation. The throughput variable is close to significant also. The average for throughput is 5, but for throughput bugs its don't know
+
+Team six has a significant positive correlation between bugs and throughput bug. The reason why throughput does not have a significant positive correlation as well is that throughput bug has little impact on the throughput variable. Since throughput bug have 223 items in total, shown in table \ref{DS:TPB:6}. Throughput feature have 661 items in total shown in table \ref{DS:TPFT:6}. Which means that throughput feature has the most impact on the throughput variable. 
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|}
@@ -1032,7 +1035,8 @@ Churn bug &0.37& 0.17& -0.08& .c
 
 
 \section {Correlation - Throughput}
-This section consist of the correlation table ( table\ref{corr:TP}) for throughput. The teams two and six do not have a significant correlation between throughput and throughput feature and throughput bug. Why the throughput feature and throughput bug differ in the case of team two is stated in section \ref{sec:corr:bug}. Why throughput differ in in the case of team six is stated in section \ref{sec:corr:lt}. Team six also has a significant correlation between throughput and leadtime.
+\label{sec:corr:TP}
+This section consist of the correlation table ( table \ref{corr:TP} ) for throughput. The teams two and six do not have a significant correlation between throughput and throughput feature and throughput bug. Why the throughput feature and throughput bug differ in the case of team two is stated in section \ref{sec:corr:bug}. Why throughput differ in in the case of team six is stated in section \ref{sec:corr:lt}. Team six also has a significant correlation between throughput and leadtime.
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|}
@@ -1060,6 +1064,8 @@ Churn bug &-0.11& 0.06& -0.32& .c
 \end{table}
 
 \section{Correlation - Churn}
+\label{sec:corr:churn}
+Team two, five and six 
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|}
@@ -1344,7 +1350,7 @@ Total&240&4.0&2.0&4.0&22&1 \\ \hline
 }
 }
 \subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:BQ:1}
+ \label{DS:FTPQ:1}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1368,7 +1374,7 @@ Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:1}, \subref{DS:BQ:1}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:1}, \subref{DS:FTPQ:1}}
 \label{DS:1:5} % 
 \end{table}
  
@@ -1642,7 +1648,7 @@ Total&536&2.7&2.0&2.2&17&1 \\ \hline
 }
 }
 \subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:BQ:2}
+ \label{DS:FTPQ:2}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1667,7 +1673,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:2}, \subref{DS:BQ:2}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:2}, \subref{DS:FTPQ:2}}
 \label{DS:2:5} % 
 \end{table}
  
@@ -2222,7 +2228,7 @@ Total & 88 & 1.4 & 1 & 0.8 & 4 & 1 \\ \hline
 }
 }
 \subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:BQ:4}
+ \label{DS:FTPQ:4}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2245,7 +2251,7 @@ Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:4}, \subref{DS:BQ:4}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:4}, \subref{DS:FTPQ:4}}
 \label{DS:2:5} % 
 \end{table}
  
@@ -2514,7 +2520,7 @@ Total&604&3.8&3.0&4.1&38&1 \\ \hline
 }
 }
 \subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:BQ:5}
+ \label{DS:FTPQ:5}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2539,7 +2545,7 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:5}, \subref{DS:BQ:5}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:5}, \subref{DS:FTPQ:5}}
 \label{DS:2:5} % 
 \end{table}
 
@@ -2630,7 +2636,7 @@ Total & 661.0 & 4.5 & 3.0 & 8.0 & 181.0 & 1.0\\ \hline
 }
 }
 \subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPF:6}
+ \label{DS:TPB:6}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2653,7 +2659,7 @@ Total & 223.0 & 2.2 & 1.0 & 1.9 & 13.0 & 1.0\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:6}, \subref{DS:TPF:6}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:6}, \subref{DS:TPB:6}}
 \label{DS:6:2}
 \end{table}
 
@@ -2800,7 +2806,7 @@ Total&211&1.6&1.0&.868&7&1 \\ \hline
 }
 }
 \subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:BQ:6}
+ \label{DS:FTPQ:6}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2823,7 +2829,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:6}, \subref{DS:BQ:6}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:6}, \subref{DS:FTPQ:6}}
 \label{DS:6:5} % 
 \end{table}
 
