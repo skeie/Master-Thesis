@@ -11,10 +11,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.6}Creating WIP-object}{31}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.7}Pseudocode example of how bugs are found}{33}
+\contentsline {lstlisting}{\numberline {4.7}Pseudocode example of how throughput objects are added}{33}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.8}Pseudocode example of how bugs are added}{34}
+\contentsline {lstlisting}{\numberline {4.8}Pseudocode example of how throughput is measured}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.9}Pseudocode example of how throughput is measured}{35}
+\contentsline {lstlisting}{\numberline {4.9}Pseudocode example of how throughput is measured}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.10}Pseudocode example of lead time is measured}{36}
+\contentsline {lstlisting}{\numberline {4.10}Pseudocode example of lead time is measured}{35}

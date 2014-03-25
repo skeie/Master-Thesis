@@ -755,9 +755,103 @@ Next the program will look at the period between 2008-10-10 and 2008-10-13, and 
 As illustrated by the example, WIPs are not decrement until the finished date is passed, even though the task is done on the date, it's also worked on the same date, therefore the WIP is decrement after each date is passed.
 \fi
 
-\section {Bug}
+
+
+
+ \section{Rest of the variables}
+ \label{sec:rotv}
+ To compute churn, leadtime and throughput the algorithm is almost the same.  First the program read in the data set from SI. For each of the lines in the data set, the program creates an object and saves the valuable information from the data set. Then each object is saved in a data structure based on team association as showed in \ref{addObj}. When all the lines has been read in, and all objects has been put in the right data structure the algorithm differs. In the following subsections the algorithm for each of the variables is presented. \begin{minipage}{\textwidth}\begin{lstlisting}[caption=Pseudocode example of how throughput objects are added, label=addObj]void addBug(Bug b)	if b.team EQUALS "TeamOne"		if dateExists(b.date, TeamOne) EQUALS false			// if date don't exists, then add the bug			TeamOne.add(b)				if b.team EQUALS "TeamTwo"		if dateExists(b.date, TeamTwo) EQUALS false			// if date don't exists, then add the bug			TeamTwo.add(b)				if b.team EQUALS "TeamThree"		if dateExists(b.date, TeamThree) EQUALS false 			// if date don't exists, then add the bug			TeamThree.add(b)				if b.team EQUALS "TeamFour"		if dateExists(b.date, TeamFour) EQUALS false			// if date don't exists, then add the bug			TeamFour.add(b)		void dateExists(Date d, Arraylist list)	for Bug b in list		if b.date EQUALS d			b.counter++			return true	return false	 \end{lstlisting} \end{minipage}
+ 
+\subsection{Throughput}
+ \label{sec:TP}
+When the steps described in section \ref{sec:rotv} are finished, the program takes each of the data structures and compute throughput. To compute throughput a counter represent the throughput for a given day. The method dateExists  does the actual computation. The method starts of with a test. If the date of the throughput object is in the data structure, the corresponding counter is incremented.  If the date is not in the data structure, the new throughput object is added to the data structure. An excerpt of the code is listed in \ref{throughputCode}
+\begin{minipage}{\textwidth}
+\begin{lstlisting}[caption=Pseudocode example of how throughput is measured, label=throughputCode]
+void dateExists(Throughput tp d, Arraylist list)
+	for Throughput t in list
+		if t.date EQUALS tp.date
+			t.counter++
+			return
+			
+structure.add(tp);
+\end{lstlisting}
+ \end{minipage}
+
+
+\subsection{Churn}
+\label{sec:churn}
+As stated in section \ref{sec:Churn} in order to take churn into account one need to know it's good surrogates. SI has gathered churn with help of Microsoft's Team Foundation Server (TFS). The TFS system automatically records data such as churn and lead time. Based on TFS one can know that churn for SI is a good surrogate.
+
+To measure churn the data set from SI contains three columns ("Lines added, "Lines modified" and "Lines deleted") shown in table \ref{table:churn}. These three columns are automatically recorded by TFS.  To complete the churn measurements the three columns are multiplied.  For task id one, the churn is 2028 ($352+307+1369 = 2028$). Some tasks has zero churn, for example task with id six, these tasks don't need code in order to be finished such tasks needs technical support to be finished. The algorithm is shown in listing \ref{churnCode}
+
+\begin{minipage}{\textwidth}
+\begin{lstlisting}[caption=Pseudocode example of how throughput is measured, label=churnCode]
+void updateChurn(Churn c, Arraylist list)
+	for Churn ch in list
+		if ch.date EQUALS c.date
+			ch.churn += c.churn
+			return
+			
+structure.add(c);
+\end{lstlisting}
+ \end{minipage}
+%skal jeg skrive pseucode code til denne? 
+
+\begin{table}[!ht]
+\begin{center}
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+    Task id & Lines added & Lines modified  & Lines deleted \\ \hline
+1&352&307&1369\\ \hline
+2&314 & 31 & 15 \\ \hline
+3&314&31 & 15\\ \hline
+4&62&327&153 \\ \hline
+5&21&3&0 \\ \hline
+6&0&0&0 \\ \hline
+\end{tabular}
+\caption{How churn is presented in the excel document}
+\label{table:churn} %%  bugs table
+\end{center}
+\end{table}
+
+\subsection{Lead time}
+\label{sec:LT}
+The program does not need to analyze  the lead time for each task. The lead time for each task is recorded by TFS. The lead time is represented in the data set as shown in table \ref{table:LT}. The program will gather all the tasks that are started on the same day and belongs to the same team and add up their lead time together as shown in code listing \ref{LTcode}.   
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{ | l | l | l | }
+\hline
+	ID & Type & Leadtime \\ \hline
+	84096 &  Feature  & 1 \\ \hline
+	84118 &  Bug  & 25 \\ \hline
+	84096 &  Feature  & 7 \\ \hline
+	84118 &  Bug  & 13 \\ \hline
+\end{tabular}
+\caption{How lead time is recorded in the excel document}
+\label{table:LT} %%  bugs table
+\end{center}
+\end{table}
+
+\begin{minipage}{\textwidth}
+\begin{lstlisting}[caption=Pseudocode example of lead time is measured, label=LTcode]
+
+addLeadTime(lead_time t, Arraylist list)
+	for lead_time in list
+		if lead_time.date EQUALS t.date
+			lead_time.leadtime+= t.leadtime
+			return
+			
+structure.add(t)
+\end{lstlisting}
+\end{minipage}
+\section{Lead time and churn}
+As in the article "Quantifying the Effect of Using Kanban versus Scrum" \parencite{Dag} to prevent outliers from having a large effect on the results, the top and lowest ten percent of lead time and churn are removed from the data set.
+
+Churn is removed because a module or a feature, which consists of hundred or thousand lines of code could be removed without much work and in this thesis churn is used as surrogate effort to know the complexity of the task. Lead time is removed because some tasks could be given low priority due to lack of manpower in a given period or tasks could be labeled as not critical and the lead time of these tasks will effect the result.
+
+\section {Bug and feature}
 \label{sec:bug}
-Each task in the data set is label as either feature or bug as shown in figure \ref{bugsT}. When the program reads in the data file, each task label as bug are saved in a data structure. The code is shown in listing \ref{findBug}.
+Each task in the data set is label as either feature or bug as shown in figure \ref{bugsT}. 
 
 \begin{table}[ht]
 \begin{center}
@@ -779,136 +873,7 @@ Each task in the data set is label as either feature or bug as shown in figure \
 \end{center}
 \end{table}
 
-\begin{minipage}{\textwidth}
-\begin{lstlisting}[caption=Pseudocode example of how bugs are found, label=findBug]
-void findBug()
-	while inputFile != EOF //  EOF = End Of File
-		newLine = readLine()
-		if newLine.Type EQUALS 'Bug'
-			B = New Bug()
-			B.startDate = newLine.startDate
-			B.process = newLine.process
-			B.team = newLine.team 
-			AddNewBug(B)
-\end{lstlisting}
-\end{minipage}
-\subsection{Add Bug}
-\label{addBugS}
-When adding a new bug, each bug is gathered into a data structure based on team association, as the tests in lines 2, 7, 12 and 17 of the listing \ref{addBug} shows. After the right team is found the program tries to add the bug to the corresponding data structure as illustrated in lines 3, 8, 13 and 18. If the date of newly arrived bug already contains in the data structure, a counter representing the date is incremented and the new bug is discarded as shown the method dateExists in lines 26 to 32. 
-
-Since the program knows which team the new bug belongs to (after the checks on line 3, 8, 13 and 18) a counter can represent number of bugs for each dates. In the analyze the only important is to know how many bugs there are on a given date and which team it belongs to.  
-
-\begin{minipage}{\textwidth}
-\begin{lstlisting}[caption=Pseudocode example of how bugs are added, label=addBug]
-void addBug(Bug b)
-	if b.team EQUALS "TeamOne"
-		if dateExists(b.date, TeamOne) EQUALS false
-			// if date don't exists, then add the bug
-			TeamOne.add(b)
-			
-	if b.team EQUALS "TeamTwo"
-		if dateExists(b.date, TeamTwo) EQUALS false
-			// if date don't exists, then add the bug
-			TeamTwo.add(b)
-			
-	if b.team EQUALS "TeamThree"
-		if dateExists(b.date, TeamThree) EQUALS false 
-			// if date don't exists, then add the bug
-			TeamThree.add(b)
-			
-	if b.team EQUALS "TeamFour"
-		if dateExists(b.date, TeamFour) EQUALS false
-			// if date don't exists, then add the bug
-			TeamFour.add(b)
-		
-void dateExists(Date d, Arraylist list)
-	for Bug b in list
-		if b.date EQUALS d
-			b.counter++
-			return true
-	
-return false	
- \end{lstlisting}
- \end{minipage}
-
- 
-\section{Throughput}
- \label{sec:TP}
-Finding throughput per day is quite similar to how bugs are found (described in section \ref{sec:bug}).  When reading in the data set a new throughput object is created for each line in the data set smilier to how the bugs was created.  Then all throughput objects are sorted based on team association as shown in listing \ref{addBug} . When all throughput objects are gathered, the program measure throughput. The throughput measurement is similar to the dateExists method (lines 26 to 32) in the listing \ref{addBug} stated in section \ref{addBugS}. 
-
-The dateExists method starts of with a test, the same test is done for bugs. If the date of the throughput object is in the data structure, the corresponding counter is incremented.  If the date is not in the data structure, the new throughput object is added to the data structure. An excerpt of the code is listed in \ref{throughputCode} 
-\begin{minipage}{\textwidth}
-\begin{lstlisting}[caption=Pseudocode example of how throughput is measured, label=throughputCode]
-void dateExists(Throughput tp d, Arraylist list)
-	for Throughput t in list
-		if t.date EQUALS tp.date
-			t.counter++
-			return
-			
-structure.add(tp);
-\end{lstlisting}
- \end{minipage}
-
-
-\section{Churn}
-\label{sec:churn}
-As stated in section \ref{sec:Churn} in order to take churn into account one need to know it's good surrogates. SI has gathered churn with help of Microsoft's Team Foundation Server (TFS). The TFS system automatically records data such as churn and lead time. Based on TFS one can know that churn for SI is a good surrogate.
-
-To measure churn the data set from SI contains three columns ("Lines added, "Lines modified" and "Lines deleted") shown in table \ref{table:churn}. These three columns are automatically recorded by TFS.  To complete the churn measurements the three columns are multiplied.  For task id one, the churn is 2028 ($352+307+1369 = 2028$). Some tasks has zero churn, for example task with id six, these tasks don't need code in order to be finished such tasks needs technical support to be finished.
-
-%skal jeg skrive pseucode code til denne? 
-
-\begin{table}[!ht]
-\begin{center}
-    \begin{tabular}{| l | l | l | l |}
-    \hline
-    Task id & Lines added & Lines modified  & Lines deleted \\ \hline
-1&352&307&1369\\ \hline
-2&314 & 31 & 15 \\ \hline
-3&314&31 & 15\\ \hline
-4&62&327&153 \\ \hline
-5&21&3&0 \\ \hline
-6&0&0&0 \\ \hline
-\end{tabular}
-\caption{How churn is presented in the excel document}
-\label{table:churn} %%  bugs table
-\end{center}
-\end{table}
-
-\section{Lead time}
-\label{sec:LT}
-The program does not need to analyze  the lead time for each task. The lead time for each task is recorded by TFS. The lead time is representer in the data set as shown in table \ref{table:LT}. The program will gather all the tasks that are started on the same day and belongs to the same team and add up their lead time together as shown in code listing \ref{LTcode}.   
-\begin{table}[!ht]
-\begin{center}
-\begin{tabular}{ | l | l | l | }
-\hline
-	ID & Type & Leadtime \\ \hline
-	84096 &  Feature  & 1 \\ \hline
-	84118 &  Bug  & 25 \\ \hline
-	84096 &  Feature  & 7 \\ \hline
-	84118 &  Bug  & 13 \\ \hline
-\end{tabular}
-\caption{How lead time is recorded in the excel document}
-\label{table:LT} %%  bugs table
-\end{center}
-\end{table}
-
-\begin{lstlisting}[caption=Pseudocode example of lead time is measured, label=LTcode]
-
-addLeadTime(lead_time t, Arraylist list)
-	for lead_time in list
-		if lead_time.date EQUALS t.date
-			lead_time.leadtime+= t.leadtime
-			return
-			
-structure.add(t)
-\end{lstlisting}
-
-\section{Lead time and churn}
-As in the article "Quantifying the Effect of Using Kanban versus Scrum" \parencite{Dag} to prevent outliers from having a large effect on the results, the top and lowest ten percent of lead time and churn are removed from the data set.
-
-Churn is removed because a module or a feature, which consists of hundred or thousand lines of code could be removed without much work and in this thesis churn is used as surrogate effort to know the complexity of the task. Lead time is removed because some tasks could be given low priority due to lack of manpower in a given period or tasks could be labeled as not critical and the lead time of these tasks will effect the result.
- 
+In order to measure feature and bug the program and SPSS will be used. The program will generate throughput and churn as described in section \ref{sec:TP} and \ref{sec:churn}. When the program has produced throughput and churn, SPSS will be used to produce throughput bug and feature as well as churn bug and churn feature. In order to do so a command called case summaries will be used. The case summaries groups variables. In table \ref{tab:ftb} a excerpt from the result data produced by the program.  With the case summaries function the variable "Team name", "Quarter" and "Type" will be grouped over churn in order to find churn feature and churn bug per quarter. \begin{table}[!ht]\center\begin{tabular}{ | l | l | l | l | l | }\hline	Team name & Churn & Date & Quarter & Type \\ \hline	Team one & 25 &2011-12-20& 2011-4 & Feature \\ \hline	Team two & 3 &2012-04-19 & 2012-2 & bug \\ \hline	Team one & 7 & 2010-08-06 & 2010-3 & Feature \\ \hline\end{tabular}\caption{A excerpt from the result data produced by the program }\label{tab:ftb} \end{table}
 
 \section{SPSS}
 \label{sec:SPSS}
@@ -940,9 +905,9 @@ Table  \ref{corr:WIP} shows team one, three, four and six have significant posit
 \hline
  & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
 Throughput &.747**& 0.19& .717**& .815**& 0.53& .594*\\ \hline
-Throughput Feature &.735**& -0.24& .828**& .895**& 0.14& .609*\\ \hline
-Throughput bug &.625*& 0.30& .662**& .544*& .547*& 0.11\\ \hline
-Bugs &.728**& 0.17& 0.53& .738**& 0.51& 0.43\\ \hline
+Throughput Feature &.735**& -0.22& .806**& .811**& 0.26& .609*\\ \hline
+Throughput bug &.625*& 0.25& .687**& .811**& .543*& 0.11\\ \hline
+Bugs &.728**& 0.17& 0.53& .545*& 0.51& 0.43\\ \hline
 Bugs finished in the same quarter &0.35& 0.27& -0.03& .581*& 0.20& 0.16\\ \hline
 The average days for bugs in backlog &-0.02& 0.39& 0.41& 0.51& -0.18& 0.05\\ \hline
 Leadtime &-0.23& 0.04& -0.11& .694**& 0.09& -0.09\\ \hline
@@ -979,16 +944,16 @@ In this section the table \ref{corr:Leadtime} shows the correlation between lead
  & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
 WIP &-0.23& 0.04& -0.11& .694**& 0.09& -0.09\\ \hline
 Throughput &-0.44& -0.22& -0.39& 0.49& -0.19& -.554*\\ \hline
-Throughput Feature &-0.35& 0.30& -0.34& .636*& -0.33& -0.52\\ \hline
-Throughput bug &-0.27& -0.32& -0.31& 0.34& -0.14& 0.09\\ \hline
-Bugs &-0.23& -0.23& -0.24& 0.44& -0.25& -0.22\\ \hline
+Throughput Feature &-0.35& 0.22& -0.38& 0.47& -0.22& -0.52\\ \hline
+Throughput bug &-0.27& -0.31& -0.33& 0.47& -0.14& 0.09\\ \hline
+Bugs &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22\\ \hline
 Bugs finished in the same quarter &0.38& -.550*& 0.02& 0.48& -0.47& -0.36\\ \hline
 The average days for bugs in backlog &-0.27& 0.44& -0.15& 0.13& 0.07& 0.01\\ \hline
 Churn &0.41& -0.45& -0.13& .c& 0.24& -0.08\\ \hline
 Churn feature &0.27& 0.41& 0.15& .c& -0.22& -0.20\\ \hline
 Churn bug &0.28& -.725**
 & -0.12& .c
-& 0.25& -.553*
+& 0.25& -.553
 \\ \hline
 \end{tabular}
  \caption{Correlation - Leadtime}
@@ -1001,25 +966,21 @@ Team six has a significant positive correlation with leadtime for the variable c
 \section{Correlation - Bugs}
 \label{sec:corr:bug}
 
-This section contains information about the correlation for bugs. The result is listed in table \ref{corr:bug}. For team one, three and five, all three-throughput variables have a significant positive correlation with bug. For team two both throughput and throughput bug have a significant positive correlation. 
+This section contains information about the correlation for bugs. The result is listed in table \ref{corr:bug}. For team one, three and five, all three-throughput variables have a significant positive correlation with bug. Team one also has significant positive correlation between WIP and bug. For team two both throughput and throughput bug have a significant positive correlation. 
+Why throughput feature differs from throughput and throughput bug is because throughput feature consist of 230 items and throughput bug consist of 460 which is shown by table \ref{DS:TPFT:2} and \ref{DS:TPB:2}. This shows that throughput bug contribute 1/3 more to the throughput variable than throughput feature and that's why throughput feature differs. 
 
-
-Why throughput feature differs from throughput and throughput bug is don't know
-Team four both throughput feature and throughput bug has a significant positive correlation. The throughput variable is close to significant also. The average for throughput is 5, but for throughput bugs its don't know
-
-Team six has a significant positive correlation between bugs and throughput bug. The reason why throughput does not have a significant positive correlation as well is that throughput bug has little impact on the throughput variable. Since throughput bug have 223 items in total, shown in table \ref{DS:TPB:6}. Throughput feature have 661 items in total shown in table \ref{DS:TPFT:6}. Which means that throughput feature has the most impact on the throughput variable. 
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|}
 \hline
  & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
-WIP &.728**& 0.17& 0.53& .738**& 0.51& 0.43\\ \hline
-Throughput &.687**& .810**& .880**& 0.51& .975**& 0.27\\ \hline
-Throughput Feature &.681**& -0.17& .744**& .619*& .825**& 0.25\\ \hline
-Throughput bug &.925**& .856**& .867**& .590*& .957**& .744**\\ \hline
-Bugs finished in the same quarter &0.50& -0.18& 0.12& .869**& 0.17& .762**\\ \hline
-The average days for bugs in backlog &0.52& 0.38& 0.43& .533*& 0.18& 0.24\\ \hline
-Leadtime &-0.23& -0.23& -0.24& 0.44& -0.25& -0.22\\ \hline
+WIP &.728**& 0.17& 0.53& .545*& 0.51& 0.43\\ \hline
+Throughput &.687**& .810**& .880**& .586*& .975**& 0.27\\ \hline
+Throughput Feature &.681**& 0.01& .822**& .583*& .881**& 0.25\\ \hline
+Throughput bug &.925**& .834**& .868**& .583*& .959**& .744**\\ \hline
+Bugs finished in the same quarter &0.50& -0.18& 0.12& 0.40& 0.17& .762**\\ \hline
+The average days for bugs in backlog &0.52& 0.38& 0.43& 0.30& 0.18& 0.24\\ \hline
+Leadtime &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22\\ \hline
 Churn &0.23& -0.01& 0.00& .c& -0.17& -0.10\\ \hline
 Churn feature &0.30& 0.07& -0.03& .c& 0.28& -0.04\\ \hline
 Churn bug &0.37& 0.17& -0.08& .c
@@ -1034,18 +995,24 @@ Churn bug &0.37& 0.17& -0.08& .c
 \end{table}
 
 
+Team four has four variables with a significant positive correlation with bugs. These are WIP, throughput bug, bug finished within the same quarter and average days for bugs in backlog. Since throughput bug have a significant positive correlation, should also throughput and throughput feature have it. But, if one look at the correlation table, throughput has a correlation of .513, throughput feature has a correlation of .531 and throughput bug with .535, so there is not much difference between these variables.
+
+Team six has a significant positive correlation between bugs and throughput bug. The reason why throughput does not have a significant positive correlation as well is that throughput bug has little impact on the throughput variable. Since throughput bug have 223 items in total, shown in table \ref{DS:TPB:6}. Throughput feature have 661 items in total shown in table \ref{DS:TPFT:6}. Which means that throughput feature has the most impact on the throughput variable. 
+
+
+
 \section {Correlation - Throughput}
 \label{sec:corr:TP}
-This section consist of the correlation table ( table \ref{corr:TP} ) for throughput. The teams two and six do not have a significant correlation between throughput and throughput feature and throughput bug. Why the throughput feature and throughput bug differ in the case of team two is stated in section \ref{sec:corr:bug}. Why throughput differ in in the case of team six is stated in section \ref{sec:corr:lt}. Team six also has a significant correlation between throughput and leadtime.
+This section consist of the correlation table \ref{corr:TP}. Table  \ref{corr:TP} represents the correlation for throughput. The teams two and six do not have a significant correlation between throughput and throughput feature and throughput bug. Why throughput feature and throughput bug differ in the case of team two is stated in section \ref{sec:corr:bug}. Why throughput differ in in the case of team six is stated in section \ref{sec:corr:WIP}. Team six also has a significant correlation between throughput and leadtime.
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|}
 \hline
  & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
 WIP &.747**& 0.19& .717**& .815**& 0.53& .594*\\ \hline
-Throughput Feature &.971**& -0.17& .846**& .947**& .775**& .991**\\ \hline
-Throughput bug &.662**& .962**& .984**& .537*& .989**& -0.19\\ \hline
-Bugs &.687**& .810**& .880**& 0.51& .975**& 0.27\\ \hline
+Throughput Feature &.971**& 0.09& .933**& .997**& .854**& .991**\\ \hline
+Throughput bug &.662**& .970**& .986**& .997**& .994**& -0.19\\ \hline
+Bugs &.687**& .810**& .880**& .586*& .975**& 0.27\\ \hline
 Bugs finished in the same quarter &0.16& 0.12& 0.23& 0.39& 0.12& 0.12\\ \hline
 The average days for bugs in backlog &0.16& 0.12& 0.45& 0.37& 0.14& -0.17\\ \hline
 Leadtime &-0.44& -0.22& -0.39& 0.49& -0.19& -.554*\\ \hline
@@ -1054,7 +1021,6 @@ Churn feature &0.11& -0.18& -0.25& .c& 0.22& -0.23\\ \hline
 Churn bug &-0.11& 0.06& -0.32& .c
 & -0.21& .592*
 \\ \hline
-
 \end{tabular}
  \caption{Correlation - Throughput}
  \label{corr:TP}
@@ -1064,6 +1030,7 @@ Churn bug &-0.11& 0.06& -0.32& .c
 \end{table}
 
 \section{Correlation - Churn}
+This section consist of the correlation table \ref{sec:corr:churn}Table \ref{sec:corr:churn} represents the correlation for churn. Both team one and team three have a positive significant correlation between churn and churn feature and churn bug. Which is normal. For team six, two and five this is not the case. Team six's churn bug has a positive correlation of 0.18. The reason churn bug differ from churn and churn feature is stated in section \ref{sec:corr:WIP}. For team two and five, churn feature differs from churn bug and churn.  Why churn feature differs from churn bug and churn for team two's case is stated in section \ref{sec:corr:lt}. In team five's case the churn feature has a total number of 182 tasks while churn bug has a total of 1719 tasks which are most of the contribution to the throughput variable. 
 \label{sec:corr:churn}
 Team two, five and six 
 \begin{table}[!htbp]
@@ -1073,14 +1040,18 @@ Team two, five and six
  & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
 WIP &-0.18& -0.30& -.569*& .c& -0.25& -0.03\\ \hline
 Throughput &-0.27& -0.23& -0.26& .c& -0.20& -0.27\\ \hline
-Throughput Feature &-0.31& 0.14& -0.31& .c& -0.06& -0.22\\ \hline
-Throughput bug &0.26& -0.24& -0.27& .c& -0.19& 0.12\\ \hline
+Throughput Feature &-0.31& -0.09& -0.28& .c& -0.10& -0.22\\ \hline
+Throughput bug &0.26& -0.17& -0.28& .c& -0.21& 0.12\\ \hline
 Bugs &0.23& -0.01& 0.00& .c& -0.17& -0.10\\ \hline
 Bugs finished in the same quarter &0.48& 0.15& -0.14& .c& -0.50& 0.04\\ \hline
 The average days for bugs in backlog &0.36& -0.19& -0.01& .c& 0.39& 0.53\\ \hline
 Leadtime &0.41& -0.45& -0.13& .c& 0.24& -0.08\\ \hline
 Churn feature &.570*& 0.38& .790**& .c& 0.27& .980**\\ \hline
-Churn bug &.828**& .728**& .955**& .c& .983**& 0.18\\ \hline
+Churn bug &.828**
+& .728**
+& .955**
+& .c& .983**
+& 0.18\\ \hline
 
 \end{tabular}
  \caption{Correlation - Churn}
@@ -1163,18 +1134,18 @@ Total&290&11.0&6.0&12.5&60&1\\ \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 1.0 & 7.0 & 7.0 & - & 7.0 & 7.0\\ \hline
 2011-1 & 7.0 & 10.4 & 11.0 & 8.1 & 25.0 & 1.0\\ \hline
-2011-2 & 26.0 & 9.5 & 10.0 & 5.8 & 24.0 & 1.0\\ \hline
+2011-2 & 24.0 & 10.1 & 10.0 & 5.6 & 24.0 & 1.0\\ \hline
 2011-3 & 1.0 & 1.0 & 1.0 & - & 1.0 & 1.0\\ \hline
-2011-4 & 15.0 & 14.5 & 10.0 & 10.4 & 35.0 & 4.0\\ \hline
-2012-1 & 24.0 & 11.3 & 11.5 & 9.7 & 33.0 & 1.0\\ \hline
-2012-2 & 30.0 & 14.5 & 4.0 & 17.1 & 56.0 & 1.0\\ \hline
-2012-3 & 25.0 & 6.0 & 4.0 & 6.5 & 23.0 & 1.0\\ \hline
-2012-4 & 15.0 & 15.1 & 15.0 & 13.8 & 44.0 & 1.0\\ \hline
+2011-4 & 11.0 & 16.6 & 13.0 & 11.0 & 35.0 & 4.0\\ \hline
+2012-1 & 16.0 & 15.2 & 15.0 & 9.3 & 33.0 & 1.0\\ \hline
+2012-2 & 26.0 & 16.1 & 5.0 & 17.7 & 56.0 & 1.0\\ \hline
+2012-3 & 23.0 & 6.0 & 4.0 & 6.6 & 23.0 & 1.0\\ \hline
+2012-4 & 14.0 & 15.1 & 14.5 & 14.3 & 44.0 & 1.0\\ \hline
 2013-1 & 10.0 & 23.3 & 20.0 & 17.4 & 58.0 & 3.0\\ \hline
-2013-2 & 23.0 & 22.3 & 17.0 & 17.8 & 60.0 & 1.0\\ \hline
+2013-2 & 21.0 & 23.6 & 24.0 & 18.1 & 60.0 & 1.0\\ \hline
 2013-3 & 16.0 & 9.5 & 7.5 & 7.7 & 27.0 & 1.0\\ \hline
 2013-4 & 12.0 & 8.3 & 7.5 & 8.1 & 24.0 & 1.0\\ \hline
-Total & 205.0 & 12.8 & 9.0 & 12.9 & 60.0 & 1.0\\ \hline
+Total & 182.0 & 13.7 & 10.0 & 13.2 & 60.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -1186,18 +1157,18 @@ Total & 205.0 & 12.8 & 9.0 & 12.9 & 60.0 & 1.0\\ \hline
 Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
 2010-4 & 3.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
-2011-2 & 26.0 & 6.1 & 3.0 & 6.3 & 26.0 & 1.0\\ \hline
+2011-2 & 8.0 & 7.5 & 2.0 & 9.3 & 26.0 & 1.0\\ \hline
 2011-3 & 1.0 & 1.0 & 1.0 & - & 1.0 & 1.0\\ \hline
-2011-4 & 24.0 & 11.2 & 6.5 & 13.8 & 49.0 & 1.0\\ \hline
-2012-1 & 48.0 & 5.2 & 4.0 & 4.5 & 21.0 & 1.0\\ \hline
-2012-2 & 35.0 & 6.4 & 2.0 & 8.9 & 47.0 & 1.0\\ \hline
-2012-3 & 16.0 & 4.1 & 2.5 & 5.0 & 21.0 & 1.0\\ \hline
-2012-4 & 11.0 & 5.1 & 3.0 & 6.5 & 24.0 & 1.0\\ \hline
-2013-1 & 9.0 & 4.0 & 3.0 & 5.0 & 17.0 & 1.0\\ \hline
-2013-2 & 23.0 & 8.7 & 8.0 & 5.4 & 21.0 & 1.0\\ \hline
-2013-3 & 9.0 & 1.4 & 1.0 & 0.7 & 3.0 & 1.0\\ \hline
-2013-4 & 9.0 & 2.1 & 1.0 & 1.5 & 5.0 & 1.0\\ \hline
-Total & 216.0 & 6.0 & 3.0 & 7.5 & 49.0 & 1.0\\ \hline
+2011-4 & 14.0 & 13.6 & 5.0 & 17.3 & 49.0 & 1.0\\ \hline
+2012-1 & 33.0 & 5.3 & 5.0 & 5.0 & 21.0 & 1.0\\ \hline
+2012-2 & 19.0 & 4.5 & 1.0 & 10.5 & 47.0 & 1.0\\ \hline
+2012-3 & 11.0 & 4.4 & 3.0 & 5.8 & 21.0 & 1.0\\ \hline
+2012-4 & 3.0 & 10.0 & 3.0 & 12.1 & 24.0 & 3.0\\ \hline
+2013-1 & 3.0 & 7.0 & 3.0 & 8.7 & 17.0 & 1.0\\ \hline
+2013-2 & 5.0 & 13.4 & 13.0 & 7.1 & 21.0 & 3.0\\ \hline
+2013-3 & 1.0 & 1.0 & 1.0 & - & 1.0 & 1.0\\ \hline
+2013-4 & 5.0 & 1.4 & 1.0 & 0.9 & 3.0 & 1.0\\ \hline
+Total & 108.0 & 6.4 & 3.0 & 9.6 & 49.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -1449,22 +1420,22 @@ Total&690&4.39&3.00&3.7&25&1\\ \hline
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
- Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
-2010-3  & 10.0 & 3.3 & 3.0 & 2.6 & 10.0 & 1.0\\ \hline
-2010-4 & 34.0 & 2.5 & 2.0 & 2.5 & 11.0 & 1.0\\ \hline
-2011-1 & 31.0 & 3.3 & 2.0 & 3.5 & 17.0 & 1.0\\ \hline
-2011-2 & 12.0 & 2.2 & 2.0 & 1.3 & 5.0 & 1.0\\ \hline
-2011-3 & 34.0 & 3.1 & 2.0 & 3.4 & 14.0 & 1.0\\ \hline
-2011-4 & 16.0 & 2.6 & 2.0 & 2.5 & 11.0 & 1.0\\ \hline
-2012-1 & 23.0 & 1.7 & 1.0 & 1.4 & 7.0 & 1.0\\ \hline
-2012-2 & 32.0 & 2.5 & 2.0 & 2.0 & 8.0 & 1.0\\ \hline
-2012-3 & 32.0 & 2.8 & 3.0 & 1.7 & 8.0 & 1.0\\ \hline
-2012-4 & 42.0 & 3.4 & 2.0 & 3.4 & 13.0 & 1.0\\ \hline
-2013-1 & 29.0 & 2.6 & 2.0 & 2.4 & 11.0 & 1.0\\ \hline
-2013-2 & 33.0 & 2.5 & 2.0 & 1.9 & 9.0 & 1.0\\ \hline
-2013-3 & 43.0 & 3.3 & 3.0 & 2.5 & 11.0 & 1.0\\ \hline
-2013-4 & 27.0 & 2.7 & 1.0 & 2.7 & 10.0 & 1.0\\ \hline
-Total & 398.0 & 2.8 & 2.0 & 2.6 & 17.0 & 1.0\\ \hline
+Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2010-3  & 5.0 & 4.6 & 3.0 & 3.2 & 10.0 & 2.0\\ \hline
+2010-4 & 22.0 & 3.1 & 2.5 & 2.8 & 11.0 & 1.0\\ \hline
+2011-1 & 15.0 & 5.1 & 4.0 & 4.4 & 17.0 & 1.0\\ \hline
+2011-2 & 4.0 & 2.8 & 2.5 & 1.0 & 4.0 & 2.0\\ \hline
+2011-3 & 25.0 & 3.7 & 2.0 & 3.8 & 14.0 & 1.0\\ \hline
+2011-4 & 10.0 & 3.4 & 3.0 & 2.9 & 11.0 & 1.0\\ \hline
+2012-1 & 9.0 & 2.1 & 1.0 & 2.0 & 7.0 & 1.0\\ \hline
+2012-2 & 16.0 & 3.5 & 3.5 & 2.3 & 8.0 & 1.0\\ \hline
+2012-3 & 12.0 & 4.2 & 3.5 & 1.9 & 8.0 & 1.0\\ \hline
+2012-4 & 25.0 & 4.6 & 3.0 & 3.9 & 13.0 & 1.0\\ \hline
+2013-1 & 11.0 & 3.6 & 3.0 & 3.3 & 11.0 & 1.0\\ \hline
+2013-2 & 27.0 & 2.7 & 2.0 & 2.0 & 9.0 & 1.0\\ \hline
+2013-3 & 29.0 & 3.9 & 3.0 & 2.7 & 11.0 & 1.0\\ \hline
+2013-4 & 19.0 & 3.4 & 2.0 & 3.0 & 10.0 & 1.0\\ \hline
+Total & 229.0 & 3.6 & 3.0 & 3.0 & 17.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -1474,21 +1445,21 @@ Total & 398.0 & 2.8 & 2.0 & 2.6 & 17.0 & 1.0\\ \hline
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
-2010-3  & 15.0 & 3.5 & 2.0 & 3.9 & 16.0 & 1.0\\ \hline
-2010-4 & 39.0 & 4.1 & 3.0 & 4.2 & 21.0 & 1.0\\ \hline
-2011-1 & 52.0 & 4.2 & 4.0 & 3.1 & 13.0 & 1.0\\ \hline
-2011-2 & 41.0 & 6.8 & 5.0 & 5.8 & 25.0 & 1.0\\ \hline
-2011-3 & 40.0 & 3.6 & 2.0 & 3.3 & 15.0 & 1.0\\ \hline
-2011-4 & 46.0 & 3.6 & 3.0 & 2.7 & 11.0 & 1.0\\ \hline
-2012-1 & 48.0 & 4.7 & 3.5 & 3.4 & 12.0 & 1.0\\ \hline
-2012-2 & 41.0 & 4.0 & 3.0 & 3.8 & 21.0 & 1.0\\ \hline
-2012-3 & 50.0 & 5.9 & 5.0 & 4.6 & 18.0 & 1.0\\ \hline
-2012-4 & 37.0 & 5.1 & 4.0 & 3.3 & 15.0 & 1.0\\ \hline
-2013-1 & 45.0 & 4.5 & 3.0 & 3.6 & 16.0 & 1.0\\ \hline
-2013-2 & 31.0 & 3.2 & 2.0 & 2.6 & 9.0 & 1.0\\ \hline
-2013-3 & 37.0 & 3.1 & 2.0 & 2.9 & 16.0 & 1.0\\ \hline
-2013-4 & 37.0 & 2.8 & 2.0 & 2.3 & 13.0 & 1.0\\ \hline
-Total & 559.0 & 4.3 & 3.0 & 3.8 & 25.0 & 1.0\\ \hline
+2010-3  & 11.0 & 4.1 & 3.0 & 4.4 & 16.0 & 1.0\\ \hline
+2010-4 & 32.0 & 4.8 & 4.0 & 4.4 & 21.0 & 1.0\\ \hline
+2011-1 & 42.0 & 4.4 & 4.0 & 3.3 & 13.0 & 1.0\\ \hline
+2011-2 & 36.0 & 7.4 & 5.5 & 5.9 & 25.0 & 1.0\\ \hline
+2011-3 & 27.0 & 3.9 & 3.0 & 3.5 & 15.0 & 1.0\\ \hline
+2011-4 & 42.0 & 3.7 & 3.0 & 2.7 & 11.0 & 1.0\\ \hline
+2012-1 & 46.0 & 4.7 & 3.5 & 3.5 & 12.0 & 1.0\\ \hline
+2012-2 & 35.0 & 4.3 & 3.0 & 4.0 & 21.0 & 1.0\\ \hline
+2012-3 & 45.0 & 6.3 & 5.0 & 4.6 & 18.0 & 1.0\\ \hline
+2012-4 & 27.0 & 5.8 & 5.0 & 3.3 & 15.0 & 1.0\\ \hline
+2013-1 & 40.0 & 4.8 & 4.0 & 3.7 & 16.0 & 1.0\\ \hline
+2013-2 & 23.0 & 3.9 & 3.0 & 2.8 & 9.0 & 1.0\\ \hline
+2013-3 & 26.0 & 3.8 & 4.0 & 3.2 & 16.0 & 1.0\\ \hline
+2013-4 & 28.0 & 3.1 & 3.0 & 2.5 & 13.0 & 1.0\\ \hline
+Total & 460.0 & 4.8 & 4.0 & 3.9 & 25.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -1750,21 +1721,21 @@ Total&542&3.7&3.0&3.8&27&1\\ \hline
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
-2010-3  & 8.0 & 1.8 & 1.5 & 0.9 & 3.0 & 1.0\\ \hline
-2010-4 & 35.0 & 2.3 & 1.0 & 1.9 & 9.0 & 1.0\\ \hline
-2011-1 & 32.0 & 2.2 & 2.0 & 1.5 & 7.0 & 1.0\\ \hline
-2011-2 & 31.0 & 3.4 & 3.0 & 2.4 & 8.0 & 1.0\\ \hline
-2011-3 & 31.0 & 3.6 & 3.0 & 3.2 & 13.0 & 1.0\\ \hline
-2011-4 & 28.0 & 3.2 & 2.0 & 3.9 & 21.0 & 1.0\\ \hline
-2012-1 & 22.0 & 3.5 & 1.0 & 4.3 & 16.0 & 1.0\\ \hline
-2012-2 & 23.0 & 2.2 & 1.0 & 1.6 & 6.0 & 1.0\\ \hline
-2012-3 & 21.0 & 2.8 & 1.0 & 3.5 & 13.0 & 1.0\\ \hline
-2012-4 & 34.0 & 3.4 & 2.0 & 3.5 & 17.0 & 1.0\\ \hline
-2013-1 & 14.0 & 1.7 & 1.0 & 1.4 & 6.0 & 1.0\\ \hline
-2013-2 & 5.0 & 1.4 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
+2010-3  & 3.0 & 2.3 & 3.0 & 1.2 & 3.0 & 1.0\\ \hline
+2010-4 & 19.0 & 2.9 & 2.0 & 2.4 & 9.0 & 1.0\\ \hline
+2011-1 & 29.0 & 2.3 & 2.0 & 1.5 & 7.0 & 1.0\\ \hline
+2011-2 & 24.0 & 4.0 & 3.5 & 2.4 & 8.0 & 1.0\\ \hline
+2011-3 & 23.0 & 4.3 & 3.0 & 3.5 & 13.0 & 1.0\\ \hline
+2011-4 & 19.0 & 4.0 & 3.0 & 4.5 & 21.0 & 1.0\\ \hline
+2012-1 & 10.0 & 5.4 & 2.0 & 5.6 & 16.0 & 1.0\\ \hline
+2012-2 & 18.0 & 2.2 & 1.5 & 1.5 & 6.0 & 1.0\\ \hline
+2012-3 & 12.0 & 3.9 & 1.5 & 4.3 & 13.0 & 1.0\\ \hline
+2012-4 & 17.0 & 4.8 & 3.0 & 4.5 & 17.0 & 1.0\\ \hline
+2013-1 & 8.0 & 2.1 & 1.5 & 1.7 & 6.0 & 1.0\\ \hline
+2013-2 & 3.0 & 1.7 & 2.0 & 0.6 & 2.0 & 1.0\\ \hline
 2013-3 & 8.0 & 1.8 & 1.5 & 0.9 & 3.0 & 1.0\\ \hline
-2013-4 & 8.0 & 1.4 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
-Total & 300.0 & 2.8 & 2.0 & 2.8 & 21.0 & 1.0\\ \hline
+2013-4 & 7.0 & 1.3 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
+Total & 200.0 & 3.3 & 2.0 & 3.2 & 21.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -1774,21 +1745,21 @@ Total & 300.0 & 2.8 & 2.0 & 2.8 & 21.0 & 1.0\\ \hline
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
-2010-3  & 15.0 & 3.3 & 2.0 & 3.0 & 12.0 & 1.0\\ \hline
-2010-4 & 41.0 & 3.5 & 3.0 & 3.1 & 15.0 & 1.0\\ \hline
-2011-1 & 18.0 & 1.8 & 1.5 & 0.9 & 3.0 & 1.0\\ \hline
-2011-2 & 35.0 & 3.8 & 2.0 & 4.1 & 20.0 & 1.0\\ \hline
-2011-3 & 39.0 & 3.3 & 3.0 & 3.1 & 15.0 & 1.0\\ \hline
-2011-4 & 40.0 & 4.4 & 2.5 & 5.1 & 27.0 & 1.0\\ \hline
-2012-1 & 41.0 & 6.2 & 5.0 & 5.7 & 20.0 & 1.0\\ \hline
-2012-2 & 29.0 & 3.0 & 2.0 & 3.6 & 15.0 & 1.0\\ \hline
-2012-3 & 30.0 & 3.2 & 3.0 & 2.5 & 9.0 & 1.0\\ \hline
-2012-4 & 45.0 & 4.4 & 3.0 & 4.2 & 22.0 & 1.0\\ \hline
-2013-1 & 38.0 & 3.2 & 1.5 & 3.0 & 10.0 & 1.0\\ \hline
-2013-2 & 21.0 & 1.6 & 1.0 & 1.1 & 5.0 & 1.0\\ \hline
-2013-3 & 25.0 & 2.0 & 1.0 & 2.1 & 11.0 & 1.0\\ \hline
-2013-4 & 13.0 & 1.6 & 1.0 & 1.3 & 5.0 & 1.0\\ \hline
-Total & 430.0 & 3.6 & 2.0 & 3.8 & 27.0 & 1.0\\ \hline
+2010-3  & 13.0 & 3.5 & 3.0 & 3.2 & 12.0 & 1.0\\ \hline
+2010-4 & 35.0 & 3.9 & 3.0 & 3.3 & 15.0 & 1.0\\ \hline
+2011-1 & 13.0 & 2.1 & 2.0 & 1.0 & 3.0 & 1.0\\ \hline
+2011-2 & 21.0 & 4.8 & 3.0 & 4.9 & 20.0 & 1.0\\ \hline
+2011-3 & 28.0 & 3.8 & 3.0 & 3.5 & 15.0 & 1.0\\ \hline
+2011-4 & 31.0 & 5.2 & 3.0 & 5.5 & 27.0 & 1.0\\ \hline
+2012-1 & 36.0 & 6.8 & 5.0 & 5.8 & 20.0 & 1.0\\ \hline
+2012-2 & 22.0 & 3.5 & 2.0 & 4.1 & 15.0 & 1.0\\ \hline
+2012-3 & 24.0 & 3.2 & 3.0 & 2.4 & 9.0 & 1.0\\ \hline
+2012-4 & 34.0 & 5.2 & 4.0 & 4.5 & 22.0 & 1.0\\ \hline
+2013-1 & 34.0 & 3.4 & 2.0 & 3.0 & 10.0 & 1.0\\ \hline
+2013-2 & 19.0 & 1.6 & 1.0 & 1.1 & 5.0 & 1.0\\ \hline
+2013-3 & 21.0 & 2.1 & 1.0 & 2.2 & 11.0 & 1.0\\ \hline
+2013-4 & 11.0 & 1.7 & 1.0 & 1.3 & 5.0 & 1.0\\ \hline
+Total & 342.0 & 4.0 & 3.0 & 4.1 & 27.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -2060,15 +2031,15 @@ Total&674&6.2&5.0&5.0&34&1\\ \hline
 2011-2 & 48.0 & 6.3 & 5.0 & 5.6 & 31.0 & 1.0\\ \hline
 2011-3 & 54.0 & 6.3 & 5.0 & 5.0 & 31.0 & 1.0\\ \hline
 2011-4 & 52.0 & 7.5 & 5.0 & 5.9 & 23.0 & 1.0\\ \hline
-2012-1 & 61.0 & 6.7 & 5.0 & 4.4 & 17.0 & 1.0\\ \hline
+2012-1 & 60.0 & 6.7 & 5.0 & 4.4 & 17.0 & 1.0\\ \hline
 2012-2 & 57.0 & 3.9 & 3.0 & 2.8 & 15.0 & 1.0\\ \hline
-2012-3 & 32.0 & 6.1 & 5.0 & 4.3 & 15.0 & 1.0\\ \hline
-2012-4 & 51.0 & 5.6 & 5.0 & 4.8 & 21.0 & 1.0\\ \hline
-2013-1 & 60.0 & 8.5 & 7.0 & 7.0 & 34.0 & 1.0\\ \hline
-2013-2 & 59.0 & 7.8 & 7.0 & 4.7 & 19.0 & 1.0\\ \hline
-2013-3 & 60.0 & 8.0 & 7.0 & 5.1 & 26.0 & 1.0\\ \hline
+2012-3 & 31.0 & 6.2 & 5.0 & 4.4 & 15.0 & 1.0\\ \hline
+2012-4 & 48.0 & 5.8 & 5.0 & 4.8 & 21.0 & 1.0\\ \hline
+2013-1 & 51.0 & 9.2 & 8.0 & 7.3 & 34.0 & 1.0\\ \hline
+2013-2 & 50.0 & 8.5 & 7.0 & 4.8 & 19.0 & 1.0\\ \hline
+2013-3 & 58.0 & 8.1 & 7.5 & 5.1 & 26.0 & 1.0\\ \hline
 2013-4 & 44.0 & 5.1 & 5.0 & 3.8 & 15.0 & 1.0\\ \hline
-Total & 669.0 & 6.2 & 5.0 & 5.0 & 34.0 & 1.0\\ \hline
+Total & 644.0 & 6.2 & 5.0 & 5.1 & 34.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -2077,19 +2048,15 @@ Total & 669.0 & 6.2 & 5.0 & 5.0 & 34.0 & 1.0\\ \hline
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
- Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
-2011-1 & 1.0 & 1.0 & 1.0 & . & 1.0 & 1.0\\ \hline
-2011-2 & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
-2011-3 & 1.0 & 1.0 & 1.0 & . & 1.0 & 1.0\\ \hline
-2012-1 & 2.0 & 6.0 & 6.0 & 7.1 & 11.0 & 1.0\\ \hline
-2012-2 & 1.0 & 1.0 & 1.0 & . & 1.0 & 1.0\\ \hline
-2012-3 & 3.0 & 3.0 & 2.0 & 2.6 & 6.0 & 1.0\\ \hline
-2012-4 & 13.0 & 2.4 & 1.0 & 2.3 & 8.0 & 1.0\\ \hline
-2013-1 & 33.0 & 2.8 & 2.0 & 2.4 & 9.0 & 1.0\\ \hline
-2013-2 & 17.0 & 4.5 & 2.0 & 4.5 & 15.0 & 1.0\\ \hline
-2013-3 & 13.0 & 1.7 & 1.0 & 1.4 & 6.0 & 1.0\\ \hline
+  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
+2012-1 & 1.0 & 11.0 & 11.0 & -& 11.0 & 11.0\\ \hline
+2012-3 & 2.0 & 3.5 & 3.5 & 3.5 & 6.0 & 1.0\\ \hline
+2012-4 & 4.0 & 4.8 & 5.0 & 3.0 & 8.0 & 1.0\\ \hline
+2013-1 & 10.0 & 5.5 & 6.0 & 2.5 & 9.0 & 1.0\\ \hline
+2013-2 & 9.0 & 7.2 & 7.0 & 4.7 & 15.0 & 2.0\\ \hline
+2013-3 & 2.0 & 4.5 & 4.5 & 2.1 & 6.0 & 3.0\\ \hline
 2013-4 & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
-Total & 88.0 & 2.8 & 1.0 & 3.0 & 15.0 & 1.0\\ \hline
+Total & 30.0 & 5.6 & 5.5 & 3.7 & 15.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -2327,21 +2294,20 @@ Total&674&6.3&5.0&6.9&59&1 \\ \hline
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
-2010-3  & 2.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
-2010-4 & 15.0 & 2.3 & 1.0 & 2.4 & 10.0 & 1.0\\ \hline
-2011-1 & 12.0 & 2.4 & 1.0 & 2.1 & 7.0 & 1.0\\ \hline
-2011-2 & 28.0 & 6.6 & 6.0 & 5.6 & 17.0 & 1.0\\ \hline
-2011-3 & 37.0 & 4.6 & 3.0 & 5.0 & 24.0 & 1.0\\ \hline
-2011-4 & 22.0 & 2.8 & 2.0 & 2.2 & 8.0 & 1.0\\ \hline
-2012-1 & 16.0 & 2.4 & 1.0 & 3.1 & 10.0 & 1.0\\ \hline
-2012-2 & 20.0 & 2.5 & 1.5 & 3.2 & 15.0 & 1.0\\ \hline
-2012-3 & 3.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
-2012-4 & 16.0 & 3.6 & 2.0 & 3.8 & 14.0 & 1.0\\ \hline
-2013-1 & 9.0 & 8.6 & 4.0 & 10.7 & 30.0 & 1.0\\ \hline
-2013-2 & 11.0 & 1.3 & 1.0 & 0.5 & 2.0 & 1.0\\ \hline
-2013-3 & 8.0 & 1.6 & 1.0 & 1.1 & 4.0 & 1.0\\ \hline
-2013-4 & 7.0 & 1.6 & 1.0 & 1.0 & 3.0 & 1.0\\ \hline
-Total & 206.0 & 3.6 & 2.0 & 4.5 & 30.0 & 1.0\\ \hline
+2010-3  & 1.0 & 1.0 & 1.0 & - & 1.0 & 1.0\\ \hline
+2010-4 & 8.0 & 2.9 & 1.0 & 3.2 & 10.0 & 1.0\\ \hline
+2011-1 & 7.0 & 3.4 & 4.0 & 2.2 & 7.0 & 1.0\\ \hline
+2011-2 & 19.0 & 9.1 & 7.0 & 5.1 & 17.0 & 1.0\\ \hline
+2011-3 & 23.0 & 6.4 & 4.0 & 5.7 & 24.0 & 1.0\\ \hline
+2011-4 & 11.0 & 3.7 & 3.0 & 2.7 & 8.0 & 1.0\\ \hline
+2012-1 & 6.0 & 4.7 & 3.0 & 4.2 & 10.0 & 1.0\\ \hline
+2012-2 & 8.0 & 4.4 & 3.0 & 4.6 & 15.0 & 1.0\\ \hline
+2012-4 & 10.0 & 5.1 & 3.5 & 4.2 & 14.0 & 1.0\\ \hline
+2013-1 & 4.0 & 16.8 & 16.5 & 11.9 & 30.0 & 4.0\\ \hline
+2013-2 & 1.0 & 2.0 & 2.0 & - & 2.0 & 2.0\\ \hline
+2013-3 & 4.0 & 2.2 & 2.0 & 1.3 & 4.0 & 1.0\\ \hline
+2013-4 & 6.0 & 1.7 & 1.0 & 1.0 & 3.0 & 1.0\\ \hline
+Total & 108.0 & 5.7 & 4.0 & 5.5 & 30.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -2352,20 +2318,20 @@ Total & 206.0 & 3.6 & 2.0 & 4.5 & 30.0 & 1.0\\ \hline
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 11.0 & 3.8 & 3.0 & 2.1 & 7.0 & 1.0\\ \hline
-2010-4 & 43.0 & 4.4 & 3.0 & 3.5 & 15.0 & 1.0\\ \hline
-2011-1 & 31.0 & 3.5 & 3.0 & 2.7 & 12.0 & 1.0\\ \hline
-2011-2 & 49.0 & 6.0 & 6.0 & 4.8 & 19.0 & 1.0\\ \hline
-2011-3 & 59.0 & 4.3 & 3.0 & 4.0 & 22.0 & 1.0\\ \hline
-2011-4 & 53.0 & 5.1 & 5.0 & 3.7 & 17.0 & 1.0\\ \hline
-2012-1 & 56.0 & 6.2 & 5.0 & 4.5 & 17.0 & 1.0\\ \hline
-2012-2 & 56.0 & 5.2 & 4.5 & 3.7 & 15.0 & 1.0\\ \hline
+2010-4 & 41.0 & 4.5 & 3.0 & 3.5 & 15.0 & 1.0\\ \hline
+2011-1 & 27.0 & 3.6 & 3.0 & 2.8 & 12.0 & 1.0\\ \hline
+2011-2 & 32.0 & 6.2 & 5.5 & 5.4 & 19.0 & 1.0\\ \hline
+2011-3 & 40.0 & 5.2 & 4.5 & 4.6 & 22.0 & 1.0\\ \hline
+2011-4 & 47.0 & 5.2 & 5.0 & 3.9 & 17.0 & 1.0\\ \hline
+2012-1 & 53.0 & 6.4 & 6.0 & 4.6 & 17.0 & 1.0\\ \hline
+2012-2 & 51.0 & 5.5 & 5.0 & 3.7 & 15.0 & 1.0\\ \hline
 2012-3 & 49.0 & 6.4 & 5.0 & 5.0 & 27.0 & 1.0\\ \hline
-2012-4 & 48.0 & 4.4 & 3.0 & 4.1 & 17.0 & 1.0\\ \hline
-2013-1 & 60.0 & 15.5 & 9.0 & 15.0 & 59.0 & 1.0\\ \hline
-2013-2 & 58.0 & 6.7 & 7.0 & 4.7 & 22.0 & 1.0\\ \hline
-2013-3 & 52.0 & 4.7 & 3.0 & 4.4 & 17.0 & 1.0\\ \hline
-2013-4 & 14.0 & 2.1 & 1.0 & 1.8 & 7.0 & 1.0\\ \hline
-Total & 639.0 & 6.1 & 4.0 & 6.8 & 59.0 & 1.0\\ \hline
+2012-4 & 40.0 & 4.6 & 3.0 & 4.1 & 17.0 & 1.0\\ \hline
+2013-1 & 56.0 & 15.7 & 9.0 & 15.4 & 59.0 & 1.0\\ \hline
+2013-2 & 57.0 & 6.8 & 7.0 & 4.6 & 22.0 & 1.0\\ \hline
+2013-3 & 49.0 & 4.8 & 3.0 & 4.5 & 17.0 & 1.0\\ \hline
+2013-4 & 13.0 & 2.1 & 1.0 & 1.9 & 7.0 & 1.0\\ \hline
+Total & 566.0 & 6.4 & 5.0 & 7.0 & 59.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -2617,21 +2583,21 @@ Total & 691 & 4.58 & 3 & 181 & 1 & 7.8\\ \hline
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
-2010-3  & 17.0 & 3.9 & 3.0 & 3.1 & 10.0 & 1.0\\ \hline
+2010-3  & 14.0 & 4.3 & 3.0 & 3.4 & 10.0 & 1.0\\ \hline
 2010-4 & 47.0 & 3.5 & 3.0 & 2.7 & 10.0 & 1.0\\ \hline
-2011-1 & 43.0 & 2.4 & 1.0 & 1.9 & 8.0 & 1.0\\ \hline
-2011-2 & 35.0 & 2.7 & 3.0 & 1.9 & 8.0 & 1.0\\ \hline
-2011-3 & 47.0 & 2.7 & 1.0 & 2.1 & 7.0 & 1.0\\ \hline
-2011-4 & 40.0 & 3.2 & 3.0 & 2.3 & 9.0 & 1.0\\ \hline
-2012-1 & 54.0 & 3.2 & 3.0 & 2.4 & 9.0 & 1.0\\ \hline
+2011-1 & 42.0 & 2.3 & 1.0 & 1.9 & 8.0 & 1.0\\ \hline
+2011-2 & 33.0 & 2.7 & 3.0 & 1.9 & 8.0 & 1.0\\ \hline
+2011-3 & 45.0 & 2.7 & 1.0 & 2.2 & 7.0 & 1.0\\ \hline
+2011-4 & 38.0 & 3.2 & 3.0 & 2.4 & 9.0 & 1.0\\ \hline
+2012-1 & 51.0 & 3.3 & 3.0 & 2.4 & 9.0 & 1.0\\ \hline
 2012-2 & 51.0 & 5.2 & 3.0 & 5.8 & 37.0 & 1.0\\ \hline
-2012-3 & 45.0 & 3.9 & 3.0 & 3.7 & 21.0 & 1.0\\ \hline
-2012-4 & 61.0 & 6.0 & 5.0 & 4.5 & 23.0 & 1.0\\ \hline
-2013-1 & 56.0 & 6.1 & 5.0 & 4.4 & 16.0 & 1.0\\ \hline
-2013-2 & 54.0 & 4.6 & 3.0 & 3.7 & 15.0 & 1.0\\ \hline
-2013-3 & 58.0 & 4.2 & 3.0 & 3.6 & 15.0 & 1.0\\ \hline
-2013-4 & 53.0 & 9.6 & 5.0 & 24.8 & 181.0 & 1.0\\ \hline
-Total & 661.0 & 4.5 & 3.0 & 8.0 & 181.0 & 1.0\\ \hline
+2012-3 & 43.0 & 4.0 & 3.0 & 3.7 & 21.0 & 1.0\\ \hline
+2012-4 & 55.0 & 6.4 & 5.0 & 4.5 & 23.0 & 1.0\\ \hline
+2013-1 & 49.0 & 6.7 & 6.0 & 4.3 & 16.0 & 1.0\\ \hline
+2013-2 & 47.0 & 5.0 & 3.0 & 3.8 & 15.0 & 1.0\\ \hline
+2013-3 & 44.0 & 4.8 & 4.0 & 3.8 & 15.0 & 1.0\\ \hline
+2013-4 & 50.0 & 10.1 & 5.0 & 25.5 & 181.0 & 1.0\\ \hline
+Total & 609.0 & 4.8 & 3.0 & 8.3 & 181.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
@@ -2641,20 +2607,20 @@ Total & 661.0 & 4.5 & 3.0 & 8.0 & 181.0 & 1.0\\ \hline
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
-2010-3  & 10.0 & 2.4 & 1.0 & 2.3 & 7.0 & 1.0\\ \hline
-2010-4 & 7.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
-2011-1 & 4.0 & 2.5 & 2.0 & 1.9 & 5.0 & 1.0\\ \hline
-2011-3 & 7.0 & 2.4 & 1.0 & 2.2 & 7.0 & 1.0\\ \hline
+2010-3  & 3.0 & 5.3 & 6.0 & 2.1 & 7.0 & 3.0\\ \hline
+2010-4 & 4.0 & 1.0 & 1.0 & 0 & 1.0 & 1.0\\ \hline
+2011-1 & 3.0 & 2.3 & 1.0 & 2.3 & 5.0 & 1.0\\ \hline
+2011-3 & 4.0 & 3.5 & 3.0 & 2.5 & 7.0 & 1.0\\ \hline
 2011-4 & 4.0 & 2.5 & 2.0 & 1.9 & 5.0 & 1.0\\ \hline
-2012-1 & 4.0 & 2.2 & 2.0 & 1.5 & 4.0 & 1.0\\ \hline
-2012-2 & 8.0 & 2.1 & 1.5 & 2.0 & 7.0 & 1.0\\ \hline
-2012-3 & 9.0 & 1.7 & 1.0 & 1.0 & 4.0 & 1.0\\ \hline
-2012-4 & 26.0 & 2.3 & 2.0 & 2.1 & 11.0 & 1.0\\ \hline
-2013-1 & 42.0 & 2.2 & 1.0 & 1.9 & 9.0 & 1.0\\ \hline
-2013-2 & 32.0 & 2.1 & 2.0 & 2.0 & 12.0 & 1.0\\ \hline
-2013-3 & 38.0 & 2.7 & 2.0 & 2.6 & 13.0 & 1.0\\ \hline
-2013-4 & 32.0 & 1.8 & 1.0 & 1.0 & 4.0 & 1.0\\ \hline
-Total & 223.0 & 2.2 & 1.0 & 1.9 & 13.0 & 1.0\\ \hline
+2012-1 & 2.0 & 3.5 & 3.5 & 0.7 & 4.0 & 3.0\\ \hline
+2012-2 & 3.0 & 3.7 & 2.0 & 2.9 & 7.0 & 2.0\\ \hline
+2012-3 & 2.0 & 3.0 & 3.0 & 1.4 & 4.0 & 2.0\\ \hline
+2012-4 & 8.0 & 3.5 & 2.0 & 3.3 & 11.0 & 1.0\\ \hline
+2013-1 & 10.0 & 4.4 & 4.5 & 2.7 & 9.0 & 1.0\\ \hline
+2013-2 & 14.0 & 2.4 & 1.5 & 2.9 & 12.0 & 1.0\\ \hline
+2013-3 & 17.0 & 4.2 & 4.0 & 3.2 & 13.0 & 1.0\\ \hline
+2013-4 & 8.0 & 2.5 & 3.0 & 1.1 & 4.0 & 1.0\\ \hline
+Total & 82.0 & 3.3 & 2.5 & 2.6 & 13.0 & 1.0\\ \hline
 \end{tabular}
 }
 }
