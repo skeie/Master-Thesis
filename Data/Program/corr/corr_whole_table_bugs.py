@@ -179,9 +179,9 @@ with open(sys.argv[1], mode="r") as three:
 													line = line[2:]
 													makeFloat(line)
 													diagonal_data(line, 0)
+writeToFile()
 
 											
 
 
-writeToFile()
 				
