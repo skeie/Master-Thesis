@@ -900,29 +900,32 @@ The "Bugs finished in the same quarter" variable represents how many tasks label
 Table  \ref{corr:WIP} shows team one, three, four and six have significant positive relationship between WIP and throughput.  Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP.  For team six that's not the case. Throughput bug have a positive correlation of 0.11, while throughput and throughput feature have respectively .594 and .609. The reason why throughput bug do not have a close relationship to throughput is because throughput feature consist of 661 tasks as shown in the total row in table \ref{DS:TPFT:6}, while Throughput bug consist of 223 finished tasks as shown in \ref{DS:TPB:6} . 223 are 1/3 of all throughputs feature and this results reflects that throughput has a strong relationship to throughput feature. 
 
 \begin{table}[!htbp]
+ \begin{adjustwidth}{-2.5cm}{}
  \centering
- \begin{tabular}{|l|r|r|r|r|r|r|}
+ \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
- & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
-Throughput &.747**& 0.19& .717**& .815**& 0.53& .594*\\ \hline
-Throughput Feature &.735**& -0.22& .806**& .811**& 0.26& .609*\\ \hline
-Throughput bug &.625*& 0.25& .687**& .811**& .543*& 0.11\\ \hline
-Bugs &.728**& 0.17& 0.53& .545*& 0.51& 0.43\\ \hline
-Bugs finished in the same quarter &0.35& 0.27& -0.03& .581*& 0.20& 0.16\\ \hline
-The average days for bugs in backlog &-0.02& 0.39& 0.41& 0.51& -0.18& 0.05\\ \hline
-Leadtime &-0.23& 0.04& -0.11& .694**& 0.09& -0.09\\ \hline
-Churn &-0.18& -0.30& -.569*& .c& -0.25& -0.03\\ \hline
-Churn feature &0.38& -0.48& -0.44& .c& -0.02& 0.01\\ \hline
+ & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\ \hline
+Throughput &.747**& 0.19& .717**& .815**& 0.53& .594*& -0.28& 0.22& 0.36& 0.26\\ \hline
+Throughput Feature &.735**& -0.22& .806**& .811**& 0.26& .609*& -0.07& -0.35& 0.23& 0.33\\ \hline
+Throughput bug &.625*& 0.25& .687**& .811**& .543*& 0.11& -.857**& 0.17& 0.32& 0.31\\ \hline
+Bugs &.728**& 0.17& 0.53& .545*& 0.51& 0.43& 0.21& 0.20& .679**& -0.03\\ \hline
+Bugs finished, quarter &0.35& 0.27& -0.03& .581*& 0.20& 0.16& .698*& .750**& .789**& 0.36\\ \hline
+Avg days in backlog, bugs &-0.02& 0.39& 0.41& 0.51& -0.18& 0.05& -0.53& 0.21& 0.27& 0.34\\ \hline
+Leadtime &-0.23& 0.04& -0.11& .694**& 0.09& -0.09& 0.34& 0.32& -0.07& -0.31\\ \hline
+Churn &-0.18& -0.30& -.569*& .c& -0.25& -0.03& -.713*& -0.01& 0.03& 0.42\\ \hline
+Churn feature &0.38& -0.48& -0.44& .c& -0.02& 0.01& -0.62& 0.11& 0.29& 0.08\\ \hline
 Churn bug &0.05& 0.13& -.671**
 & .c
 & -0.24& .775**
-\\ \hline
+& -.659*
+& -0.04& 0.12& 0.36\\ \hline
 \end{tabular}
  \caption{Correlation - WIP}
 \label{corr:WIP}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
+\end{adjustwidth}
 \end{table}
 
 
@@ -939,21 +942,22 @@ In this section the table \ref{corr:Leadtime} shows the correlation between lead
 
 \begin{table}[!htbp]
  \centering
- \begin{tabular}{|l|l|l|l|l|l|l|}
+ \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
- & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
-WIP &-0.23& 0.04& -0.11& .694**& 0.09& -0.09\\ \hline
-Throughput &-0.44& -0.22& -0.39& 0.49& -0.19& -.554*\\ \hline
-Throughput Feature &-0.35& 0.22& -0.38& 0.47& -0.22& -0.52\\ \hline
-Throughput bug &-0.27& -0.31& -0.33& 0.47& -0.14& 0.09\\ \hline
-Bugs &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22\\ \hline
-Bugs finished in the same quarter &0.38& -.550*& 0.02& 0.48& -0.47& -0.36\\ \hline
-The average days for bugs in backlog &-0.27& 0.44& -0.15& 0.13& 0.07& 0.01\\ \hline
-Churn &0.41& -0.45& -0.13& .c& 0.24& -0.08\\ \hline
-Churn feature &0.27& 0.41& 0.15& .c& -0.22& -0.20\\ \hline
+ & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\ \hline
+WIP &-0.23& 0.04& -0.11& .694**& 0.09& -0.09& 0.34& 0.32& -0.07& -0.31\\ \hline
+Throughput &-0.44& -0.22& -0.39& 0.49& -0.19& -.554*& -0.03& 0.05& -0.29& -0.13\\ \hline
+Throughput Feature &-0.35& 0.22& -0.38& 0.47& -0.22& -0.52& 0.05& -0.18& -0.19& -0.29\\ \hline
+Throughput bug &-0.27& -0.31& -0.33& 0.47& -0.14& 0.09& -0.58& -0.23& -0.37& -0.08\\ \hline
+Bugs &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22& -0.01& -0.12& -0.06& -0.14\\ \hline
+Bugs finished, quarter &0.38& -.550*& 0.02& 0.48& -0.47& -0.36& -0.49& 0.28& -0.14& -0.36\\ \hline
+Avg days in backlog, bugs &-0.27& 0.44& -0.15& 0.13& 0.07& 0.01& 0.12& 0.11& -0.02& -0.42\\ \hline
+Churn &0.41& -0.45& -0.13& .c& 0.24& -0.08& -0.07& -0.28& -0.32& -.681**\\ \hline
+Churn feature &0.27& 0.41& 0.15& .c& -0.22& -0.20& 0.04& -0.02& -0.32& 0.31\\ \hline
 Churn bug &0.28& -.725**
 & -0.12& .c
-& 0.25& -.553
+& 0.25& -.553*
+& -0.34& -0.00& -0.21& -.728**
 \\ \hline
 \end{tabular}
  \caption{Correlation - Leadtime}
@@ -970,21 +974,22 @@ This section contains information about the correlation for bugs. The result is 
 Why throughput feature differs from throughput and throughput bug is because throughput feature consist of 230 items and throughput bug consist of 460 which is shown by table \ref{DS:TPFT:2} and \ref{DS:TPB:2}. This shows that throughput bug contribute 1/3 more to the throughput variable than throughput feature and that's why throughput feature differs. 
 
 \begin{table}[!htbp]
+ \begin{adjustwidth}{-2.5cm}{}
  \centering
- \begin{tabular}{|l|r|r|r|r|r|r|}
+ \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
- & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
-WIP &.728**& 0.17& 0.53& .545*& 0.51& 0.43\\ \hline
-Throughput &.687**& .810**& .880**& .586*& .975**& 0.27\\ \hline
-Throughput Feature &.681**& 0.01& .822**& .583*& .881**& 0.25\\ \hline
-Throughput bug &.925**& .834**& .868**& .583*& .959**& .744**\\ \hline
-Bugs finished in the same quarter &0.50& -0.18& 0.12& 0.40& 0.17& .762**\\ \hline
-The average days for bugs in backlog &0.52& 0.38& 0.43& 0.30& 0.18& 0.24\\ \hline
-Leadtime &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22\\ \hline
-Churn &0.23& -0.01& 0.00& .c& -0.17& -0.10\\ \hline
-Churn feature &0.30& 0.07& -0.03& .c& 0.28& -0.04\\ \hline
+ & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\ \hline
+WIP &.728**& 0.17& 0.53& .545*& 0.51& 0.43& 0.21& 0.20& .679**& -0.03\\ \hline
+Throughput &.687**& .810**& .880**& .586*& .975**& 0.27& 0.07& 0.41& .699**& .557*\\ \hline
+Throughput Feature &.681**& 0.01& .822**& .583*& .881**& 0.25& 0.10& 0.12& .597*& -0.14\\ \hline
+Throughput bug &.925**& .834**& .868**& .583*& .959**& .744**& -0.02& .915**& .653*& .589*\\ \hline
+Bugs finished, quarter &0.50& -0.18& 0.12& 0.40& 0.17& .762**& 0.14& 0.18& .701**& 0.05\\ \hline
+Avg days in backlog, bugs &0.52& 0.38& 0.43& 0.30& 0.18& 0.24& -0.40& 0.28& 0.21& 0.13\\ \hline
+Leadtime &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22& -0.01& -0.12& -0.06& -0.14\\ \hline
+Churn &0.23& -0.01& 0.00& .c& -0.17& -0.10& -0.21& -0.08& -0.34& 0.31\\ \hline
+Churn feature &0.30& 0.07& -0.03& .c& 0.28& -0.04& -0.39& -0.15& -.618*& 0.06\\ \hline
 Churn bug &0.37& 0.17& -0.08& .c
-& -0.19& 0.43\\ \hline
+& -0.19& 0.43& 0.22& 0.04& 0.10& 0.28\\ \hline
 
 \end{tabular}
  \caption{Correlation - Bugs}
@@ -992,6 +997,7 @@ Churn bug &0.37& 0.17& -0.08& .c
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
+\end{adjustwidth}
 \end{table}
 
 
@@ -1005,60 +1011,69 @@ Team six has a significant positive correlation between bugs and throughput bug.
 \label{sec:corr:TP}
 This section consist of the correlation table \ref{corr:TP}. Table  \ref{corr:TP} represents the correlation for throughput. The teams two and six do not have a significant correlation between throughput and throughput feature and throughput bug. Why throughput feature and throughput bug differ in the case of team two is stated in section \ref{sec:corr:bug}. Why throughput differ in in the case of team six is stated in section \ref{sec:corr:WIP}. Team six also has a significant correlation between throughput and leadtime.
 \begin{table}[!htbp]
+ \begin{adjustwidth}{-1cm}{}
  \centering
- \begin{tabular}{|l|r|r|r|r|r|r|}
+ \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
- & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
-WIP &.747**& 0.19& .717**& .815**& 0.53& .594*\\ \hline
-Throughput Feature &.971**& 0.09& .933**& .997**& .854**& .991**\\ \hline
-Throughput bug &.662**& .970**& .986**& .997**& .994**& -0.19\\ \hline
-Bugs &.687**& .810**& .880**& .586*& .975**& 0.27\\ \hline
-Bugs finished in the same quarter &0.16& 0.12& 0.23& 0.39& 0.12& 0.12\\ \hline
-The average days for bugs in backlog &0.16& 0.12& 0.45& 0.37& 0.14& -0.17\\ \hline
-Leadtime &-0.44& -0.22& -0.39& 0.49& -0.19& -.554*\\ \hline
-Churn &-0.27& -0.23& -0.26& .c& -0.20& -0.27\\ \hline
-Churn feature &0.11& -0.18& -0.25& .c& 0.22& -0.23\\ \hline
+ & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\ \hline
+WIP &.747**& 0.19& .717**& .815**& 0.53& .594*& -0.28& 0.22& 0.36& 0.26\\ \hline
+Throughput Feature &.971**& 0.09& .933**& .997**& .854**& .991**& .912**& .930**& .882**& 0.43\\ \hline
+Throughput bug &.662**& .970**& .986**& .997**& .994**& -0.19& .850**& 0.44& .960**& .980**\\ \hline
+Bugs &.687**& .810**& .880**& .586*& .975**& 0.27& 0.07& 0.41& .699**& .557*\\ \hline
+Bugs finished, quarter &0.16& 0.12& 0.23& 0.39& 0.12& 0.12& 0.03& 0.33& .696**& .589*\\ \hline
+Avg days in backlog, bugs &0.16& 0.12& 0.45& 0.37& 0.14& -0.17& -0.17& -0.17& -0.41& -0.09\\ \hline
+Leadtime &-0.44& -0.22& -0.39& 0.49& -0.19& -.554*& -0.03& 0.05& -0.29& -0.13\\ \hline
+Churn &-0.27& -0.23& -0.26& .c& -0.20& -0.27& .758*& -.635*& -0.01& 0.26\\ \hline
+Churn feature &0.11& -0.18& -0.25& .c& 0.22& -0.23& 0.54& -0.45& -0.27& -0.25\\ \hline
 Churn bug &-0.11& 0.06& -0.32& .c
 & -0.21& .592*
-\\ \hline
+& .693*
+& -0.28& 0.04& 0.21\\ \hline
 \end{tabular}
  \caption{Correlation - Throughput}
  \label{corr:TP}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
+\end{adjustwidth}
 \end{table}
 
 \section{Correlation - Churn}
-This section consist of the correlation table \ref{sec:corr:churn}Table \ref{sec:corr:churn} represents the correlation for churn. Both team one and team three have a positive significant correlation between churn and churn feature and churn bug. Which is normal. For team six, two and five this is not the case. Team six's churn bug has a positive correlation of 0.18. The reason churn bug differ from churn and churn feature is stated in section \ref{sec:corr:WIP}. For team two and five, churn feature differs from churn bug and churn.  Why churn feature differs from churn bug and churn for team two's case is stated in section \ref{sec:corr:lt}. In team five's case the churn feature has a total number of 182 tasks while churn bug has a total of 1719 tasks which are most of the contribution to the throughput variable. 
 \label{sec:corr:churn}
-Team two, five and six 
+
+This section consist of the correlation table \ref{sec:corr:churn}Table \ref{sec:corr:churn} represents the correlation for churn. Both team one and team three have a positive significant correlation between churn and churn feature and churn bug. Which is normal. For team six, two and five this is not the case. Team six's churn bug has a positive correlation of 0.18. The reason churn bug differ from churn and churn feature is stated in section \ref{sec:corr:WIP}. For team two and five, churn feature differs from churn bug and churn.  Why churn feature differs from churn bug and churn for team two's case is stated in section \ref{sec:corr:lt}. In team five's case the churn feature has a total number of 182 tasks while churn bug has a total of 1719 tasks which are most of the contribution to the throughput variable. 
 \begin{table}[!htbp]
+ \begin{adjustwidth}{-2.5cm}{}
+
  \centering
- \begin{tabular}{|l|r|r|r|r|r|r|}
+ \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
- & T1 & T2 & T3 & T4 & T5 & T6 \\ \hline
-WIP &-0.18& -0.30& -.569*& .c& -0.25& -0.03\\ \hline
-Throughput &-0.27& -0.23& -0.26& .c& -0.20& -0.27\\ \hline
-Throughput Feature &-0.31& -0.09& -0.28& .c& -0.10& -0.22\\ \hline
-Throughput bug &0.26& -0.17& -0.28& .c& -0.21& 0.12\\ \hline
-Bugs &0.23& -0.01& 0.00& .c& -0.17& -0.10\\ \hline
-Bugs finished in the same quarter &0.48& 0.15& -0.14& .c& -0.50& 0.04\\ \hline
-The average days for bugs in backlog &0.36& -0.19& -0.01& .c& 0.39& 0.53\\ \hline
-Leadtime &0.41& -0.45& -0.13& .c& 0.24& -0.08\\ \hline
-Churn feature &.570*& 0.38& .790**& .c& 0.27& .980**\\ \hline
+ & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\ \hline
+WIP &-0.18& -0.30& -.569*& .c& -0.25& -0.03& -.713*& -0.01& 0.03& 0.42\\ \hline
+Throughput &-0.27& -0.23& -0.26& .c& -0.20& -0.27& .758*& -.635*& -0.01& 0.26\\ \hline
+Throughput Feature &-0.31& -0.09& -0.28& .c& -0.10& -0.22& .633*& -.678*& 0.20& 0.05\\ \hline
+Throughput bug &0.26& -0.17& -0.28& .c& -0.21& 0.12& .866**& -0.10& -0.09& 0.27\\ \hline
+Bugs &0.23& -0.01& 0.00& .c& -0.17& -0.10& -0.21& -0.08& -0.34& 0.31\\ \hline
+Bugs finished, quarter &0.48& 0.15& -0.14& .c& -0.50& 0.04& -0.53& 0.06& -0.01& 0.43\\ \hline
+Avg days in backlog, bugs &0.36& -0.19& -0.01& .c& 0.39& 0.53& 0.52& 0.26& -0.15& 0.04\\ \hline
+Leadtime &0.41& -0.45& -0.13& .c& 0.24& -0.08& -0.07& -0.28& -0.32& -.681**\\ \hline
+Churn feature &.570*& 0.38& .790**& .c& 0.27& .980**& .879**& 0.55& .639*& -0.03\\ \hline
 Churn bug &.828**
 & .728**
 & .955**
 & .c& .983**
-& 0.18\\ \hline
-
+& 0.18& .750*
+& .817**
+& .599*
+& .969**
+\\ \hline
 \end{tabular}
  \caption{Correlation - Churn}
  \label{corr:churn}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
+\end{adjustwidth}
 \end{table}
 
 

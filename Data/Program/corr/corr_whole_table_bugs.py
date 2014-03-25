@@ -58,14 +58,14 @@ def writeOutList(list):
 
 
 def writeToFile():
-	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{|r|r|r|r|r|r|r|} \n\\hline \n"
-	tmp+=" & T1 & T2 & T3 & T4 & T5 & T6 \\\\ \\hline\n"
+	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|} \n\\hline \n"
+	tmp+=" & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\\\ \\hline\n"
 	tmp+= "WIP &"+writeOutList(WIP)
 	tmp+= "Throughput &"+ writeOutList(Throughput)
 	tmp+= "Throughput Feature &" + writeOutList(Throughput_ft)
 	tmp+= "Throughput bug &"+writeOutList(Throughput_bug)
-	tmp+= "Bugs finished in the same quarter &"+writeOutList(precent_bugs)
-	tmp+= "The average days for bugs in backlog &"+writeOutList(Average_days_in_backlog_bugs)
+	tmp+= "Bugs finished, quarter &"+writeOutList(precent_bugs)
+	tmp+= "Avg days in backlog, bugs &"+writeOutList(Average_days_in_backlog_bugs)
 	tmp+= "Leadtime &" + writeOutList(leadtime)
 	tmp+= "Churn &"+writeOutList(Churn)
 	tmp+= "Churn feature &" + writeOutList(Churn_ft)
@@ -87,62 +87,100 @@ with open(sys.argv[1], mode="r") as three:
 			with open(sys.argv[4], mode="r") as IT:
 				with open(sys.argv[5], mode="r") as Argon:
 					with open(sys.argv[6], mode="r") as Automation:
-						input = str(raw_input())
-							
+						with open(sys.argv[7], mode="r") as Krypton:
+							with open(sys.argv[8], mode="r") as ProArc:
+								with open(sys.argv[9], mode="r") as Radon:
+									with open(sys.argv[10], mode="r") as Xenon:
 
-						
+										input = str(raw_input())
+											
 
-						for line in three.readlines():
-							if input in line:
-								if "Pearson Correlation" in line:
-									line = line.split(",")
-									line = line[2:]
-									makeFloat(line)
-									diagonal_data(line, 0)
-							
-						for line in Neon.readlines():
-							if input in line:
-								if "Pearson Correlation" in line:
-									line = line.split(",")
-									line = line[2:]
-									makeFloat(line)
-									diagonal_data(line, 0)
+										
 
-
-						for line in Frontend.readlines():
-							if input in line:
-								if "Pearson Correlation" in line:
-									line = line.split(",")
-									line = line[2:]
-									makeFloat(line)
-									diagonal_data(line, 0)
-
-						for line in IT.readlines():
-							if input in line:
-								if "Pearson Correlation" in line:
-									line = line.split(",")
-									line = line[2:]
-									makeFloat(line)
-									diagonal_data(line, 0)
-
-						for line in Argon.readlines():
-							if input in line:
-								if "Pearson Correlation" in line:
-									line = line.split(",")
-									line = line[2:]
-									makeFloat(line)
-									diagonal_data(line, 0)
+										for line in three.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
+											
+										for line in Neon.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
 
 
-						for line in Automation.readlines():
-							if input in line:
-								if "Pearson Correlation" in line:
-									line = line.split(",")
-									line = line[2:]
-									makeFloat(line)
-									diagonal_data(line, 0)
+										for line in Frontend.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
 
-							
+										for line in IT.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
+
+										for line in Argon.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
+
+
+										for line in Automation.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
+
+										for line in Krypton.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
+
+
+										for line in ProArc.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
+
+										for line in Radon.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
+
+										for line in Xenon.readlines():
+											if input in line:
+												if "Pearson Correlation" in line:
+													line = line.split(",")
+													line = line[2:]
+													makeFloat(line)
+													diagonal_data(line, 0)
+
+											
 
 
 writeToFile()
