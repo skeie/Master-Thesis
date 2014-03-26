@@ -1241,12 +1241,17 @@ Team four's leadtime have a significant positive correlation with WIP.  Team thr
 
 For team six, churn and churn feature do not have a significant positive correlation with WIP, but churn bug do. Churn bug consist of 17\% (265/1533) of all churn for team six. This shows that churn bug have a small impact on the churn variable, and that's why churn bug have a significant positive correlation with WIP.
 
+Team seven have a significant negative correlation between WIP and the pair churn and churn bug. The churn is collected from 625 tasks as shown in the total row in table \ref{DS:Churn:7}. Out of 625, churn bug consist of 417 tasks, while churn feature consist of 235 tasks, as shown in table \ref{DS:CF:7} and \ref{DS:CB:7}. This reflects the result in the correlation table \ref{corr:WIP} where churn have the result -.713, churn bug -.659 and churn feature -0.62.  Team seven has a significant positive correlation between WIP and that bugs are finished within the same quarter there are started. 
+
+Team eight and nine have a significant positive correlation between WIP and that bugs are finished within in the same quarter as they are recorded. Team nine also has a significant positive correlation between WIP and bugs. 
+
 
 \section{Correlation - Leadtime}
 \label{sec:corr:lt}
 In this section the table \ref{corr:Leadtime} shows the correlation between leadtime and the variable for the seven teams.  Throughput has a significant positive correlation with leadtime for team six.  For team two, bugs finished within the same quarter have a significant positive correlation with leadtime.  Team two also has a significant positive correlation between leadtime and churn bug, but not with churn or churn feature. Churn bug have a correlation of -.725 and churn feature with 0.41. These two values are in the opposite ends of each other in the correlation table. The reason is, churn bug consist of 1197 tasks, churn feature consist of 375 tasks as shown in the total row in table \ref{DS:CF:4} and \ref{DS:CB:4}.  The churn variable in table \ref{corr:Leadtime} with value of -0.45 will benefit most from churn bugs, the value -0.35 reflects that.
 
 \begin{table}[!htbp]
+ \begin{adjustwidth}{-2.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1271,8 +1276,11 @@ Churn bug &0.28& -.725**
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
+\end{adjustwidth}
 \end{table}
-Team six has a significant positive correlation with leadtime for the variable churn bug as well. The reason why churn or churn feature not have a significant positive correlation with leadtime was stated in section \ref{sec:corr:WIP}
+Team six has a significant positive correlation with leadtime for the variable churn bug as well. The reason why churn or churn 
+feature not have a significant positive correlation with leadtime was stated in section \ref{sec:corr:WIP}. Team ten has a significant negative correlation between WIP and both the variables churn and churn bug. Churn feature do not have a significant positive correlation with WIP. Churn feature consist of 92 tasks while churn bug consist of 517 tasks as shown in table \ref{DS:CF:10} and \ref{DS:CB:10}. Hence the close relationship between churn and churn bug. 
+
 \section{Correlation - Bugs}
 \label{sec:corr:bug}
 
@@ -1311,13 +1319,15 @@ Team four has four variables with a significant positive correlation with bugs. 
 
 Team six has a significant positive correlation between bugs and throughput bug. The reason why throughput does not have a significant positive correlation as well is that throughput bug has little impact on the throughput variable. Since throughput bug have 223 items in total, shown in table \ref{DS:TPB:6}. Throughput feature have 661 items in total shown in table \ref{DS:TPFT:6}. Which means that throughput feature has the most impact on the throughput variable. 
 
+Team nine has six variables with a significant positive correlation with bugs. These variables are WIP, throughput, throughput feature, throughput bug, bugs finished within same quarter and churn feature. Churn feature consist of approximately 1/3 of the total churn (295/923) shown in tables \ref{DS:CF:9} and \ref{DS:Churn:9}. Therefore churn bug contributes mostly to the churn variable and that's why churn do not have a significant positive correlation with bugs when churn feature have. 
 
+Team ten has two variables with a significant positive correlation with bugs. These two are Throughput and throughput bug. Throughput bug consist of almost 86\% of all throughput as shown in tables \ref{DS:Throughput:10} and \ref{DS:TPB:10}, hence the relationship between throughput and throughput bug. 
 
 \section {Correlation - Throughput}
 \label{sec:corr:TP}
 This section consist of the correlation table \ref{corr:TP}. Table  \ref{corr:TP} represents the correlation for throughput. The teams two and six do not have a significant correlation between throughput and throughput feature and throughput bug. Why throughput feature and throughput bug differ in the case of team two is stated in section \ref{sec:corr:bug}. Why throughput differ in in the case of team six is stated in section \ref{sec:corr:WIP}. Team six also has a significant correlation between throughput and leadtime.
 \begin{table}[!htbp]
- \begin{adjustwidth}{-1cm}{}
+ \begin{adjustwidth}{-2.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1343,6 +1353,8 @@ Churn bug &-0.11& 0.06& -0.32& .c
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{adjustwidth}
 \end{table}
+Both team seven and nine has a significant positive correlation between throughput and throughputs sub variables, throughput feature and throughput bug.  For team eight and ten that's not the case. For team eigth snakker med dag om. For team ten, the relationship between the throughput variables where stated in section \ref{sec:corr:bug}. Team seven also has a significant positive correlation between churn and churn bug. Why churn feature have a close relationship to churn where stated in section \ref{sec:corr:WIP}. Both team nine and ten also have a significant positive correlation between throughput and the variable bugs and bugs finished within the same quarter.  
+
 
 \section{Correlation - Churn}
 \label{sec:corr:churn}
@@ -1382,7 +1394,7 @@ Churn bug &.828**
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{adjustwidth}
 \end{table}
-
+ Team seven has a significant positive correlation between churn and the variables WIP, throughput, throughput feature, throughput bug, churn feature and churn bug. Team nine has a significant positive correlation between churn and both churn feature and churn bug. Team ten also has a positive correlation between churn and churn bug. Churn bug consist of 517 tasks out of 609 churn tasks as stated in section \ref{sec:corr:lt}, that's why churn feature do not have a close relationship with churn.  
 
 
 \section{Team 1 - Descriptive Statistics}
