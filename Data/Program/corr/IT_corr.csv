@@ -1,35 +1,36 @@
+Correlations,,,,,,,,,,,,
 ,,WIP,Throughput,TP_feature,TP_bug,Bugs,Bugs__precent_finished_in_quarter,Average_days_in_backlog_bugs,Leadtime,Churn,Churn_ft,Churn_bugs
-WIP,Pearson Correlation,1,.815**,.811**,.811**,.545*,.581*,0.512,.694**,.c,.c,.c
-,Sig. (2-tailed),,0,0,0,0.044,0.029,0.061,0.006,.,.,.
+WIP,Pearson Correlation,1,.826**,.823**,.823**,.560*,.561*,.537*,.688**,.c,.c,.c
+,Sig. (2-tailed),,0,0,0,0.037,0.037,0.048,0.007,.,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-Throughput,Pearson Correlation,.815**,1,.997**,.997**,.586*,0.387,0.37,0.49,.c,.c,.c
+Throughput,Pearson Correlation,.826**,1,.997**,.997**,.586*,0.387,0.37,0.49,.c,.c,.c
 ,Sig. (2-tailed),0,,0,0,0.028,0.172,0.193,0.075,.,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-TP_feature,Pearson Correlation,.811**,.997**,1,1.000**,.583*,0.392,0.421,0.474,.c,.c,.c
+TP_feature,Pearson Correlation,.823**,.997**,1,1.000**,.583*,0.392,0.421,0.474,.c,.c,.c
 ,Sig. (2-tailed),0,0,,0,0.029,0.166,0.134,0.087,.,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-TP_b,Pearson Correlation,.811**,.997**,1.000**,1,.583*,0.392,0.421,0.474,.c,.c,.c
+TP_b,Pearson Correlation,.823**,.997**,1.000**,1,.583*,0.392,0.421,0.474,.c,.c,.c
 ,Sig. (2-tailed),0,0,0,,0.029,0.166,0.134,0.087,.,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-Bugs,Pearson Correlation,.545*,.586*,.583*,.583*,1,0.4,0.304,0.249,.c,.c,.c
-,Sig. (2-tailed),0.044,0.028,0.029,0.029,,0.157,0.291,0.391,.,.,.
+Bugs,Pearson Correlation,.560*,.586*,.583*,.583*,1,0.4,0.304,0.249,.c,.c,.c
+,Sig. (2-tailed),0.037,0.028,0.029,0.029,,0.157,0.291,0.391,.,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-b__precent_finished_in_quarter,Pearson Correlation,.581*,0.387,0.392,0.392,0.4,1,0.189,0.477,.c,.c,.c
-,Sig. (2-tailed),0.029,0.172,0.166,0.166,0.157,,0.517,0.084,.,.,.
+B_precent_finished_in_quarter,Pearson Correlation,.561*,0.387,0.392,0.392,0.4,1,0.189,0.477,.c,.c,.c
+,Sig. (2-tailed),0.037,0.172,0.166,0.166,0.157,,0.517,0.084,.,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-Average_days_in_backlog_b,Pearson Correlation,0.512,0.37,0.421,0.421,0.304,0.189,1,0.133,.c,.c,.c
-,Sig. (2-tailed),0.061,0.193,0.134,0.134,0.291,0.517,,0.651,.,.,.
+Average_days_in_backlog_b,Pearson Correlation,.537*,0.37,0.421,0.421,0.304,0.189,1,0.133,.c,.c,.c
+,Sig. (2-tailed),0.048,0.193,0.134,0.134,0.291,0.517,,0.651,.,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-Leadtime,Pearson Correlation,.694**,0.49,0.474,0.474,0.249,0.477,0.133,1,.c,.c,.c
-,Sig. (2-tailed),0.006,0.075,0.087,0.087,0.391,0.084,0.651,,.,.,.
+Leadtime,Pearson Correlation,.688**,0.49,0.474,0.474,0.249,0.477,0.133,1,.c,.c,.c
+,Sig. (2-tailed),0.007,0.075,0.087,0.087,0.391,0.084,0.651,,.,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
 Churn,Pearson Correlation,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c
 ,Sig. (2-tailed),.,.,.,.,.,.,.,.,,.,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-C_ft,Pearson Correlation,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c
+Chrn_ft,Pearson Correlation,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c
 ,Sig. (2-tailed),.,.,.,.,.,.,.,.,.,,.
 ,N,14,14,14,14,14,14,14,14,14,14,14
-ch_b,Pearson Correlation,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c
+Chrn_b,Pearson Correlation,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c,.c
 ,Sig. (2-tailed),.,.,.,.,.,.,.,.,.,.,
 ,N,14,14,14,14,14,14,14,14,14,14,14
 ** Correlation is significant at the 0.01 level (2-tailed).,,,,,,,,,,,,

@@ -16,21 +16,48 @@ def make_float(list):
 	return new_list
 
 
-def formatElement(list):
+def writeOutTable(list, nr):
 	tmp =""
-	for i, e in enumerate(list):
-		if i == 9: 
+	for i, element in enumerate(list):
+		if i == nr:
+			tmp+="\\\\ \\hline"
 			return tmp
-		tmp += str(e)
+		else:
+			tmp += " & "+str(element[0])
+
+def writeOutTableSpecial(list):
+	tmp =""
+	for i, element in enumerate(list):
+		tmp += " & "+str(element[0])
+	return tmp
 
 
 def writeOut(list):
-	tmp = "WIP " + formatElement(list)
-	list = list[9:]
-	print tmp, "hello",list
-
-
-
+	counter = 6
+	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{ | l | r | r | r | r | r | r | } \n \\hline \n"
+	tmp+="& N & Mean & Median & Std.Dev & Max & Min \\\\ \\hline 	\n"
+	tmp+= "WIP "+writeOutTable(list,counter)+"\n"
+	list = list[6:]	
+	tmp+= "Throughput "+writeOutTable(list,counter)+"\n"
+	list = list[6:]
+	tmp+= "Throughput ft "+writeOutTable(list,counter)+"\n"
+	list = list[6:]	
+	tmp+= "Throughput bug "+writeOutTable(list,counter)+"\n"
+	list = list[6:]	
+	tmp+= "Bugs "+writeOutTable(list,counter)+"\n"
+	list = list[6:]	
+	tmp+= "Bugs finished, quarter "+writeOutTable(list,counter)+"\n"
+	list = list[6:]
+	tmp+= "Avg days backlog, bugs "+writeOutTable(list,counter)+"\n"
+	list = list[6:]	
+	tmp+= "Churn "+writeOutTable(list,counter)+"\n"
+	list = list[6:]
+	tmp+= "Churn ft "+writeOutTable(list,counter)+"\n"
+	list = list[6:]
+	tmp+= "Churn bug "+writeOutTableSpecial(list)+"\\\\ \\hline"
+	tmp+= "\n\\end{tabular} \n \caption{Descriptive Statistic - Correlation - Throughput} \n \label{DS:corr:TP} \n "
+	tmp+= "\\end{table}  \n\n"
+	print tmp
 
 with open(sys.argv[1], mode="r") as f:
 	list = make_float(f.readlines())

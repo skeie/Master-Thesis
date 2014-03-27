@@ -56,6 +56,17 @@ def writeOutList(list):
 	temp +="\\\\ \\hline \n"
 	return temp
 
+def formatItem(item):
+	if "*" in item:
+		if "-" in item:
+			item = "-0"+item.split("-")[1]
+			return item.split("*")[0] 
+		else:
+			return "0"+item.split("*")[0]
+	elif "c" in item:
+		return "0"
+	else:
+		return item
 
 def writeToFile():
 	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|} \n\\hline \n"
@@ -78,7 +89,12 @@ def writeToFile():
 	
 	print tmp
 
-
+def writeToDS():
+	tmp = 'Throughput, Throughput_ft, Throughput_bug, bugs, precent_bugs, Average_days_in_backlog_bugs, leadtime, Churn, Churn_ft, Churn_bugs\n'
+	for i in xrange(len(Throughput)):
+		tmp += formatItem(Throughput[i]) + ", "+formatItem(Throughput_ft[i])+","+formatItem(Throughput_bug[i])+","+formatItem(Bugs[i])+","+formatItem(precent_bugs[i])+","+formatItem(Average_days_in_backlog_bugs[i])+","+formatItem(Leadtime[i])+","+formatItem(Churn[i])+","+formatItem(Churn_ft[i])+","+formatItem(Churn_bugs[i])+"\n"
+	with open('output.csv', 'w') as f:
+		f.write(tmp)
 
 
 with open(sys.argv[1], mode="r") as three:
@@ -181,4 +197,5 @@ with open(sys.argv[1], mode="r") as three:
 													makeFloat(line)
 													diagonal_data(line, 0)
 writeToFile()
+writeToDS()
 											
