@@ -55,6 +55,25 @@ def writeOutList(list):
 	temp = temp[:-1] #need to remove the last &
 	temp +="\\\\ \\hline \n"
 	return temp
+def writeOutList_new(list):
+	temp = " "
+	for l in list:
+		temp +=str(l)+"\n"
+	temp = temp.strip()
+	temp = temp[:-1] #need to remove the last &
+	return temp
+def formatItem(item):
+	if "*" in item:
+		if "-" in item:
+			item = "-0"+item.split("-")[1]
+			return item.split("*")[0] 
+		else:
+			return "0"+item.split("*")[0]
+	elif "c" in item:
+		return "0"
+	else:
+		return item
+
 
 
 def writeToFile():
@@ -64,8 +83,8 @@ def writeToFile():
 	tmp+= "Throughput &"+ writeOutList(Throughput)
 	tmp+= "Throughput Feature &" + writeOutList(Throughput_ft)
 	tmp+= "Throughput bug &"+writeOutList(Throughput_bug)
-	tmp+= "Bugs finished, quarter &"+writeOutList(precent_bugs)
-	tmp+= "Avg days in backlog, bugs &"+writeOutList(Average_days_in_backlog_bugs)
+	tmp+= "Bugs finished& quarter &"+writeOutList(precent_bugs)
+	tmp+= "Avg days in backlog& bugs &"+writeOutList(Average_days_in_backlog_bugs)
 	tmp+= "Leadtime &" + writeOutList(leadtime)
 	tmp+= "Churn &"+writeOutList(Churn)
 	tmp+= "Churn feature &" + writeOutList(Churn_ft)
@@ -77,12 +96,20 @@ def writeToFile():
 	tmp+= "\\end{table}  \n\n"
 	
 	print tmp
+def writeToDS():
+	tmp = 'WIP, Throughput, Throughput_ft, Throughput_bug, precent_bugs, Average_days_in_backlog_bugs, leadtime, Churn, Churn_ft, Churn_bugs\n'
+	for i in xrange(len(Throughput)):
+		tmp += formatItem(WIP[i]) + ", " + formatItem(Throughput[i]) + ", "+formatItem(Throughput_ft[i])+","+formatItem(Throughput_bug[i])+","+formatItem(precent_bugs[i])+","+formatItem(Average_days_in_backlog_bugs[i])+","+formatItem(leadtime[i])+","+formatItem(Churn[i])+","+formatItem(Churn_ft[i])+","+formatItem(Churn_bugs[i])+"\n"
+	with open('output.csv', 'w') as f:
+		f.write(tmp)
 
 
 
 
-with open(sys.argv[1], mode="r") as three:
-	with open(sys.argv[2], mode="r") as Neon:
+
+
+with open(sys.argv[1],mode="r") as three:
+	with open(sys.argv[2],mode="r") as Neon:
 		with open(sys.argv[3], mode="r") as Frontend:
 			with open(sys.argv[4], mode="r") as IT:
 				with open(sys.argv[5], mode="r") as Argon:
@@ -180,6 +207,7 @@ with open(sys.argv[1], mode="r") as three:
 													makeFloat(line)
 													diagonal_data(line, 0)
 writeToFile()
+writeToDS()
 
 											
 

@@ -4,7 +4,7 @@
 \usepackage[latin1]{inputenc}        %% ... or utf8 or applemac
 \usepackage[T1]{fontenc,url}
 \urlstyle{sf}
-\usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx,caption,nameref,caption,amssymb}
+\usepackage{babel,textcomp,csquotes,ifimasterforside,varioref,graphicx,caption,nameref,caption,amssymb,framed}
 \usepackage[section]{placeins}
 \usepackage{amsmath,lipsum}
 \setcounter{secnumdepth}{3}
@@ -100,12 +100,12 @@
 \mainmatter{}
 \chapter{Introduction}
 \label{chap:intro}
-In this master thesis the focus will be on limit Work In Progress (WIP) who is one of the principles in Kanban. The focus will be to see what impact WIP limit have in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) is used. SI is a Scandinavian software company that delivers Enterprise Content Management applications. 
+In this master thesis the focus will be on limit Work In Progress (WIP) which is one of the principles in Kanban. The focus will be to see what impact WIP limit have in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) is used. SI is a Scandinavian software company that delivers Enterprise Content Management applications. 
 
 The data set has already been interpreted by another study. That study investigated Scrum vs. Kanban for SI. For interested readers the case study can be found in the article "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. 
 
 \section{Motivation}
-In software development the processes and methods are important in order to deliver the right product on time. In software development one rarely solve two identical problems for different stakeholders. And the problems are getting bigger and more complex, which means that new processes and methods are introduced and the already existing processes and methods needs to adapt to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years proves the assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
+In software development, the processes and methods are important in order to deliver the right product on time. In software development one rarely solve two identical problems for different stakeholders. And the problems are getting bigger and more complex, which means that new processes and methods are introduced and the already existing processes and methods needs to adapt to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years proves the assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
 
 This is why this thesis will focus on software development methods, the method in each development project is such a key element. Within software development methods, the main focus of this thesis will be the Kanban method and the principle to limit Work In Progress (WIP). In Kanban the WIP limit is used to  limit the number of tasks each developer can work on at each workflow state to prevent bottlenecks and to ensure flow of tasks through the development cycle \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
 
@@ -125,9 +125,9 @@ In this thesis the overall research question will be to study the effects of WIP
 
 
 \section{Approach}
-This thesis will use case study as an approach in order to answer the research questions. To conduct the case study a data set from an in house software company will be used.  The data set will be calculated and analyzed. The first part of the analyze will be done by a program. The program was made for this thesis in order to calculate the data set. The program will turn the data set from quantitative into more suited quantitative data set. 
+This thesis will use case study as an approach  to answer the research questions. To conduct the case study a data set from an in house software company will be used.  The data set will be evaluated on team level. SI consist of ten teams, all of the ten teams will be investigated in this thesis to answer the research questions. 
 
-The analyzed data will be evaluated on team level. The most valuable teams will be picked and their data will be extracted form the data set by the program.  The most valuable teams will be picked on the basis of number of task labeled with their name in the data set.  After the program has calculated the most valuable teams, statistical analysis will be used to compute correlation and descriptive statistic.
+The first part of the analyze will be done by a program. The program was made for this thesis in order to calculate the data set. The second part of the analyze will consist of statistical analysis to compute correlation and descriptive statistic .
 
 The correlation and  descriptive statistic will be represented in chapter \ref{ch:res}. 
 \section{Contribution}
@@ -166,7 +166,7 @@ The main goal of the waterfall model is to plan in early stages to ensure design
 
 The waterfall method consist of several non-overlapping stages as shown in figure \ref{fig:waterfall}. The figure is an example of the waterfall model with a life cycle of establishing system requirements and software requirements and continues with architectural design, detailed design, coding, testing and maintenance  \parencite{munassar2010comparison}.
 
-One of the main principles of the waterfall method discourage return to an earlier phase. For example returning from detailed design to architectural design. However, if returning to an earlier phase is needed, it involves costly rework. When a phase is completed the phase requires formal review and extensive documentation development. Therefore, if something is missed out the architectural design phase it is expensive to correct later  \parencite{munassar2010comparison}
+One of the main principles of the waterfall method discourages return to an earlier phase. For example returning from detailed design to architectural design. However, if returning to an earlier phase is needed, it involves costly rework. When a phase is completed the phase requires formal review and extensive documentation development. Therefore, if something is missed out an earlier phase it is expensive to correct later  \parencite{munassar2010comparison}
 
 
 \begin{figure}[ht!]
@@ -178,25 +178,24 @@ One of the main principles of the waterfall method discourage return to an earli
 
 \section {Scrum}
 \label{sec:Scrum}
-"Scrum is the best-known of the Agile frameworks. It is the source of much of the thinking behind the values and principles of the Agile Manifesto" \parencite{Scrum}.
+"Scrum is the best-known of the Agile frameworks. It is the source of much of the thinking behind the values and principles of the Agile Manifesto. These values are:"  
 
-The Scrum method relates to value as
-\\ 
-\begin{center} \textbf{Individuals and interactions}  \textit{over processes and tools} \\
+\begin{center}
+\textbf{Individuals and interactions}  \textit{over processes and tools} \\
 \textbf{Working software} \textit{over comprehensive documentation} \\
 \textbf{Customer collaboration} \textit{over contract negotiation} \\
 \textbf{Responding to change} \textit{over following a plan} \\
+\parencite{Scrum}.
 \end{center}
-
 %"Individuals and interactions over processes and tools", "Working software over comprehensive documentation", "Customer collaboration over contract negotiation" and "Responding to change over following a plan" from the Agile Manifesto\parencite{Scrum}. 
 
-These principles are not so rigid as the principles of the Waterfall method. Some may say that Scrum is the opposite of the Waterfall method \parencite{cocco2011simulating}. 
+These principles of Scrum and Agile manifesto are not so rigid as the principles of the Waterfall method. Some may say that Scrum is the opposite of the Waterfall method \parencite{cocco2011simulating}. 
 
 Scrum have three main roles, the Product Owner, the Scrum Master and the members of the development team. The Product owner in collaboration with the Scrum Master decides which work to be prioritized in the backlog. The backlog represents the tasks to be done in order to complete the project. The Scrum Master acts like a team leader and helps the development team and the organization to take best advantages of Scrum. The development team works on tasks specific for the sprint there in \parencite{Scrum}.
 
 Sprint is a time-boxed interval over a given time. The Scrum framework suggests duration of sprints to be from one to four weeks. Before each sprint, a sprint planning meeting is conducted with all the team members attending.  A Sprint planning meeting is held so the team can discuss tasks from the backlog and come to an agreement of which tasks to be put in the minimal backlog \parencite{Scrum}.
 
-In each sprint a minimal backlog is created so the developer knows which tasks to work on in the current sprint. The Product Owner and the team members discuss and decide which tasks from the backlog to be added to the minimal backlog. After the minimal backlog is complete, the Product Owner and the team members discuss each task in order to get a better and shared understanding of what is required in order to complete the tasks \parencite{Scrum}. 
+In each sprint a minimal backlog is created so the developer knows which tasks to work on in the current sprint. The Product Owner and the team members discuss and decide which tasks from the backlog to be added to the minimal backlog. After the minimal backlog is complete, the Product Owner and the team members discuss each task in order to get a better and shared understanding of what is required to complete the tasks \parencite{Scrum}. 
 
 One of the main principles in Scrum is that it requires that a new feature is ready for release after each sprint. The feature should be a visible part of the product in order to get feedback from end-users. So all the tasks in the minimal backlog combined should be a visible part of the product.  \parencite{Scrum}.
 
@@ -205,10 +204,10 @@ One of the main principles in Scrum is that it requires that a new feature is re
 \label{sec:Lean}
 "Lean is all about getting the right things to the right place at the right time the first time while minimizing waste and being open to change" \parencite{741480}
 
-The Lean approach was introduced around 1948 in manufacturing in Japan.  In 1975, Toyota was able to create almost 50 more production units per employee than in 1948 due to the Lean approach \parencite{manning}. Lean strives to maximize the value produced by an organization and delivered to costumer. This is done by finding and eliminate waste, controlling variability and maximizing the flow of delivered software all within the culture of continuous improvements \parencite{DavidAnderson}. In 2003 Mary and Tom Poppendieck first introduced Lean thinking to software development. Poppendieck published the book "Lean Software Development: An Agile Toolkit" \parencite{Lean:2003}. Poppendieck stated that an important tool to manage work flow is the concept of pull-systems, which means tasks are put in production only when a costumer asks for it \parencite{Lean:2009}.
+The Lean approach was introduced around 1948 in manufacturing in Japan.  In 1975, Toyota was able to create almost 50 more production units per employee than in 1948 due to the Lean approach \parencite{manning}. Lean strives to maximize the value produced by an organization and delivered to costumer. This is done by finding and eliminate waste, controlling variability and maximizing the flow of delivered software all within the culture of continuous improvements \parencite{DavidAnderson}. In 2003 Mary and Tom Poppendieck first introduced Lean thinking to software development. Poppendieck published the book "Lean Software Development: An Agile Toolkit" \parencite{Lean:2003}. In the book, Poppendieck stated that an important tool to manage work flow is the concept of pull-systems, which means tasks are put in production only when a costumer asks for it \parencite{Lean:2009}.
 The pull-system based method Kanban, has in the recent years been introduced more and more to software development, and is becoming one of the keys to Lean practice in software development \parencite{DavidAnderson}.  
 
-There are eight fundamental principles in Lean. The eight principles are:
+In Lean there are eight fundamental principles. The eight principles are:
 \begin{enumerate}
 \centering
 \item \textbf{Start Early:}  Don't wait for details. As soon as enough information is gathered start the development activity. Get everyone involved in figure out the details. Don't build any walls between people, make people collaborate and start a two-way communication as soon possible. This will start the learning cycle as well.
@@ -242,14 +241,14 @@ Shinkle defined novice and more experience kanban-users with a descriptive analo
 
 ''One can define Kanban software process as a WIP limited pull system visualized by the Kanban board''  \parencite{DavidAnderson}.
 
-Toyota production system introduced Kanban as a scheduling system for Lean and just-in-time (JIT) production during late 1940's and in the early 1950's in order to catch up with the American car industry. The Kanban method combined with the Lean approach was a success for Toyota. The success was noticed by the software development industry among others \parencite{Conboy}, \parencite{ono1988toyota}. In the recent years, more software projects adapt to Kanban and Lean \parencite{DavidAnderson}, and this is one of the reasons why this thesis will focuses on Kanban and one of it's main principle WIP limit. 
+Toyota production system introduced Kanban as a scheduling system for Lean and just-in-time (JIT) production during late 1940's and in the early 1950's in order to catch up with the American car industry. The Kanban method combined with the Lean approach was a success for Toyota. The success was noticed by the software development industry among others \parencite{Conboy}, \parencite{ono1988toyota}. In the recent years, more software projects adapt to Kanban and Lean \parencite{DavidAnderson}, and this is one of the reasons why this thesis will focuses on Kanban and one of its principles; WIP limit. 
 
 
-One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" has stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
+One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
 
 In software development the Kanban method splits the major problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban board to visualize the problems, track what others are working on and see potential bottlenecks during development. Shinkle stated that when people start to understand Kanban, they easily discovered where the bottlenecks are \parencite{Shinkle}.
 
-In short Kanban systems focus on:
+In short, Kanban systems focus on:
 \begin{itemize}
 \item Continuous flow of work.
 \item	No fixed iterations or sprints.
@@ -260,7 +259,7 @@ In short Kanban systems focus on:
 \parencite{DavidAnderson}.
 
 
-One of the main differences between Scrum and Kanban is sprint and estimation. Contrary to Scrum, Kanban do not use the principles of sprints or estimations. In Kanban the tasks do not need to be estimated or finished within a certain time. In the article "simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} the authors found out that if they let the developers work with small tasks at time and not be interrupted, they will be more effective. They also found out that Scrum was too rigid for the development team because when the team had to estimate tasks they felt interrupted.  So the estimation and sprint meetings worked counterproductive. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
+One of the main differences between Scrum and Kanban is sprint and estimation. Contrary to Scrum, Kanban do not use the principles of sprints or estimations. In Kanban the tasks do not need to be estimated or finished within a certain time. In the article "Simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} the authors found out that if they let the developers work with small tasks and not be interrupted, they will be more effective. They also found out that Scrum was too rigid for the development team because when the team had to estimate tasks they felt interrupted.  The estimation and sprint meetings worked counterproductive in their case. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
 
 In the article "Quantifying the Effect of Using Kanban versus Scrum:" the company also felt that the Scrum approach was too rigid. The article also reported positive results when the team changed to Kanban.  The company almost halved its lead time, reduced the number of weighted bugs by 10 percent, and improved productivity \parencite{Dag}. Other article also states that Scrum is too rigid and that's Kanbans advantages over Scrum \parencite{beedle1999scrum} \parencite{brekkanintroducing} .  
 
@@ -271,10 +270,10 @@ The Kanban board is one of many tools in Kanban. It's used to control WIP, incre
 
 Each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP limit to specify how many works in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP limit is stated under the column name. The backlog column has a WIP limit of 4, In progress has 5 and Done doesn't need a WIP limit. 
 
-The yellow stickers represent the tasks. Some follow the path to mark stickers with different colors representing the severities or by marking if its a feature or a bug. In "Kanban Implementation in a Telecom Product Maintenance" for example, the stickers has three different colors, green, yellow and red depending on how close to overdue the tasks are. If the sticker is red, the task is already overdue, if the tasks are soon-to-overdue its marked with yellow stickers \parencite{6068363}.
+The yellow stickers represent the tasks. Some follow the path to mark stickers with different colors representing the severities or by marking if its a feature or a bug. In the article "Kanban Implementation in a Telecom Product Maintenance" for instance, the stickers has three different colors, green, yellow and red depending on how close to overdue the tasks are. If the sticker is red, the task is already overdue, if the tasks are soon-to-overdue its marked with yellow stickers \parencite{6068363}.
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=90mm]{Picture/kanban_board.jpg}
+\includegraphics[width=\textwidth]{Picture/kanban_board.jpg}
 \caption{Example of a Kanban board}
 \label{kanban_board}
 \end{figure}
@@ -285,11 +284,11 @@ The yellow stickers represent the tasks. Some follow the path to mark stickers w
 
 WIP limit is one of the core principles in Kanban \parencite{6068363}. WIP limit helps to reduce overhead by limit task-switching for each developer, visualize bottlenecks and make constant flow of tasks throughout the development \parencite{DavidAnderson}. One way to explain WIP and the impact of WIP limit is to use cars and roads as analogy. All roads have it maximum capacity of cars. When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams. A software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks decreases and lead time increases.
 
-When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP limit, but rather the visibility of Kanban through the Kanban board. When user get more experience with Kanban, they start to attempt the principles of WIP limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP limit is not easy. They suggest that the WIP limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. The Kanban method also says you should limit WIP, but what should the limit be? The Kanban method tells us to experiment \parencite{Kniberg}. The article "Lean Software Management" \parencite{Kniberg} and the "Impact of Kanban on Software Project Work" \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
+When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP limit, but rather the visibility of Kanban through the Kanban board. When user get more experience with Kanban, they start to attempt the principles of WIP limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP limit is not easy. They suggest that the WIP limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. The principles in the Kanban method also says you start by limiting WIP, then experiment with it \parencite{Kniberg}. The article "Lean Software Management" \parencite{Kniberg} and the "Impact of Kanban on Software Project Work" \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
 
-The importance of limit WIP has been stated by various researches. A summary of benefits with WIP limit is shown in section \ref{sub:sub:benefits} .  The articles by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson} researched the difference between limit WIP and unlimited WIP.  A summary of this two articles are shown in section \ref{sub:wip:vs:wip}
+The importance of limit WIP has been stated by various researches. A summary of benefits with WIP limit is stated in section \ref{sub:sub:benefits} .  The articles by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson} researched the difference between limit WIP and unlimited WIP.  A summary of this two articles are stated in section \ref{sub:wip:vs:wip}
 
-On how to determine WIP limit one research was found. If one implement Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine the WIP limit. The effectiveness metric should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness metric and the result could be used as a guideline for WIP limit for the next sprint. The effectiveness metric takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) (ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
+On how to determine WIP limit one research was found. If one implement Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine the WIP limit. The effectiveness metric shown in \ref{WIPEQ}, should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness metric and the result could be used as a guideline for WIP limit for the next sprint. The effectiveness metric takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) (ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
 
 \begin{equation} \label{WIPEQ}
 Ei=\frac{(ai-ei)}{ai}*100\%
@@ -297,7 +296,7 @@ Ei=\frac{(ai-ei)}{ai}*100\%
 
 \subsection {Limit WIP vs. Unlimited WIP}
 \label{sub:wip:vs:wip}
-In the article by Giulio Concas and Hongyu Zhang one of the result was showed that the average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduces overhead. When developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on another issue. The study also showed that limit WIP can improve throughput and work efficiency \parencite{SMR:SMR1599}.
+In the article by Giulio Concas and Hongyu Zhang one of the result was showed that the average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduces overhead. Because, when developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on another issue. The study also showed that limit WIP can improve throughput and work efficiency \parencite{SMR:SMR1599}.
 
 The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of the impact of WIP limit vs. no WIP limit on developers with skills in different activities. The four skill activities from the article where:
 \begin{enumerate}
@@ -324,7 +323,7 @@ When the developers had skill in two out of four activities the WIP limit simula
 \begin{enumerate}
 \item Lowering the WIP limit will help people avoid task switching. When one is task switching it's hard to be able to fully concentrate. \parencite{Ikonen}.
 \item There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased \parencite{Joyce}:
-\item In the article "Lean Software Management: BBC Worldwide Case Study", the team started to determine WIP by their constraints and quickly find their bottlenecks; this gave the team more experience in dealing with WIP and increased productivity\parencite{Joyce}.
+\item WIP increases productivity \parencite{Joyce}.
 \item Limit WIP helps team to reduce overhead \parencite {CONWIP}.
 \item Limit WIP decrease lead time \parencite {CONWIP}.
 \item Limit WIP increase throughput \parencite {CONWIP}.
@@ -333,7 +332,7 @@ When the developers had skill in two out of four activities the WIP limit simula
 \item Limit WIP improves quality \parencite {CONWIP}.
 \end{enumerate}
 
-Both the studies on WIP limit vs. No limit and the articles and research shows the importance of WIP limit. If  \L ukasz's effectiveness metric is disregard, there is no clear rule on how to determine WIP limit even though WIP is a crucial principle in order to take full advantages of Kanban.
+Both the studies on WIP limit vs. No limit, the articles and research shows the importance of WIP limit. If  \L ukasz's effectiveness metric is disregard, there is no clear rule on how to determine WIP limit even though WIP is a crucial principle in order to take full advantages of Kanban.
 
 \section {Lead time}
 ''Lead time is the total elapsed time from when a customer requests software to when the finished software is released to the customer'' \parencite{Joyce}.
@@ -362,18 +361,16 @@ In figure \ref{JITE} the stream reflects the inventory.  Under the stream, there
 
 If one lower the stream (inventory), problems and waste will become visible (visualized by rocks). Lean want to lower inventory in order to make problems and waste occur, because when problems and waste occurs, you are able to fix the problems and remove the waste. Fixing the problem and removing the waste has several benefits such as, your process could be optimized and you are on step closer to have zero problems and zero waste.  \parencite{JIT} \parencite{Lean:2006}.
 
-In Software development the JIT principle means that one should not deliver anything before it's demand. For example if a development team adds two new features to a product without consulting the stakeholders and work a day on these features. When stakeholders review the product they may say that they don't want the two features that, and that's waste. 
+In Software development the JIT principle means that one should not deliver anything before it's demand. For example if a development team adds two new features to a product without consulting the stakeholders and work a day on these features, and the stakeholders don't want the features, then the development team has produced waste. 
 
 \section{Throughput}
 ''The output of a production process (machine, workstation, line plant) per unit time (e.g., parts per hour) is defined as the systems throughput or sometimes throughput rate'' \parencite{Adams}
 
-The main concept of throughput is to measure how productive teams, people or companies are. Throughput is measured in number of finished delivered tasks or units per hour, day, week, month, quarter or year. This applies to both software development and manufacturing. The tasks in manufacturing are often different from the tasks in software development. In software development each task is more abstract than in manufacturing and in software development each tasks can have different solutions depending on how the team or developer approaches the task \parencite{Throughput}.
-
-A key factor in successfully measuring throughput in software development is to specify a standard size for each task. If the standard is not specified a developer x can have throughput of one task per week, another developer y could have throughput of three tasks per week and they still have done the same amount of work, since the task of developer x is the same work amount as the three to developer y combined.  This will give wrong results if the throughput is measured \parencite{Throughput}. An example of throughput is listed in subsection \ref{sub:sub:throughput}. 
+The main concept of throughput is to measure how productive teams, people or companies are. Throughput is measured in number of finished delivered tasks or units per hour, day, week, month, quarter or year. A key factor in successfully measuring throughput in software development is to specify a standard size for each task. If the standard is not specified there is little use in throughput measurements.  \parencite{Throughput}. An example of why is listed in subsection \ref{sub:sub:throughput}. 
 
 \subsection{Example of throughput measurement}
 \label{sub:sub:throughput}
-This is a simple example to illustrate throughput with different task sizes. Lets say Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter and they used Scrum the first two quarters and Kanban the last two as illustrated in table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. In order to get valid result from throughput measurements the size of tasks has to be agreed upon by the teams or company.
+This is a simple example to illustrate throughput with different task sizes. Lets say Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter. Team x used Scrum the first two quarters and Kanban the last two as illustrated in table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. So to get valid result from throughput measurements the size of tasks has to be agreed upon by the teams or company.
 \begin{table}[ht]
 \begin{center}
     \begin{tabular}{| l | l | l | l |}
@@ -393,24 +390,23 @@ This is a simple example to illustrate throughput with different task sizes. Let
 \label{sec:Churn}
 "Churn is defined as the sum of the number of lines added, deleted, and modified in the source code" \parencite{Dag}.
 
-Churn is a measure that's not so quite known as lead time, throughput or WIP. Churn is a term that's used as surrogates for effort in software engineering. Many studies in software engineering use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates \parencite{el2000methodology}."  The authors of "Quantifying the effect of code smells on maintenance effort" agree that one should cautious when using surrogates for effort. 
-
+Churn is a measure that's not so known as lead time, throughput or WIP. Churn is a term that's used as surrogates for effort in software engineering. Many studies in software engineering use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates \parencite{el2000methodology}."  
 
 
 \section{Software Innovation}
 \label{sec:SI}
 Software Innovation(SI) is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around Microsoft Sharepoint platform and tightly integrated into the Microsoft Office environment \parencite{Dag}. \parencite{SI}.
 
-SI has approximately 300 employees in Oslo, Copenhagen and Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used Waterfall process. In 2007 SI changed to Scrum and in 2010 SI went from Scrum to Kanban \parencite{Dag}.
+SI has approximately 300 employees in Oslo, Copenhagen and Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used Waterfall process. In 2007, SI changed to Scrum and in 2010, SI went from Scrum to Kanban \parencite{Dag}.
 
 \subsection{Teams}
-This section states the team size of each team. The team size for each quarter will be used in the discussion chapter - chapter \ref{ch:discussion}.
+Here are the ten teams, and the number of employee working with the team for each quarter. Team four in table \ref{Team:4} is the it-support team in SI. These tables will be used in the discussion chapter - chapter \ref{ch:discussion}. 
 %DEL EN TEAM 1-4
 \begin{table}[!htbp]
   \begin{adjustwidth}{-0cm}{}
 \subfigure[Team One]{
- \label{DS:TPFT:1}
- \scalebox{0.62}{
+ \label{Team:1}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	Year & Quarter & Team Size \\ \hline
@@ -432,8 +428,8 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \subfigure[Team two]{
- \label{DS:TPB:1}
- \scalebox{0.62}{
+ \label{Team:2}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	Year & Quarter & Team Size \\ \hline
@@ -455,8 +451,8 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \subfigure[Team three]{
- \label{DS:TPB:1}
- \scalebox{0.62}{
+ \label{Team:3}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	 Year & Quarter & Team Size \\ \hline
@@ -480,8 +476,8 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \subfigure[Team four]{
- \label{DS:TPB:1}
- \scalebox{0.62}{
+ \label{Team:4}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	Year & Quarter & Team Size \\ \hline
@@ -503,16 +499,16 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Team size for team one, two, three and four}
-\label{DS:1:2}
+\caption[Optional caption for list of figures]{Caption of team size for team one, two, three and four}
+\label{Teams:1:4}
 \end{table}
 
 %%%%%%% DEL TO TEAM 5-8
 \begin{table}[!htbp]
   \begin{adjustwidth}{-0cm}{}
 \subfigure[Team five]{
- \label{DS:TPB:1}
- \scalebox{0.62}{
+ \label{Team:5}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	Year & Quarter & Team Size \\ \hline
@@ -534,8 +530,8 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \subfigure[Team six]{
- \label{DS:TPB:1}
- \scalebox{0.62}{
+ \label{Team:6}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	 Year & Quarter & Team Size \\ \hline
@@ -557,8 +553,8 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \subfigure[Team Seven]{
- \label{DS:TPB:1}
- \scalebox{0.62}{
+ \label{Team:7}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	 Year & Quarter & Team Size \\ \hline
@@ -576,8 +572,8 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \subfigure[Team eigth]{
- \label{DS:TPFT:1}
- \scalebox{0.62}{
+ \label{Team:8}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	Year & Quarter & Team Size \\ \hline
@@ -598,18 +594,18 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Team size for team five, six, seven and eight}
-\label{DS:1:2}
+\caption[Optional caption for list of figures]{Caption of team size for team five, six, seven and eight}
+\label{Teams:5:8}
 \end{table}
 
 
 
 %%%%%% DEL tree TEAM 9-10
 \begin{table}[!htbp]
-  \begin{adjustwidth}{-0cm}{}
+  \begin{adjustwidth}{2cm}{}
 \subfigure[Team nine]{
- \label{DS:TPB:1}
- \scalebox{0.85}{
+ \label{Team:9}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	Year & Quarter & Team Size \\ \hline
@@ -629,8 +625,8 @@ This section states the team size of each team. The team size for each quarter w
 \end{tabular}}
 }
 \subfigure[Team ten]{
- \label{DS:TPB:1}
- \scalebox{0.85}{
+ \label{Team:10}
+ \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
 	 Year & Quarter & Team Size \\ \hline
@@ -652,7 +648,7 @@ This section states the team size of each team. The team size for each quarter w
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Team size for team nine and ten}
+\caption[Optional caption for list of figures]{Caption of team size for team nine and ten}
 \label{DS:1:2}
 \end{table}
 
@@ -1203,7 +1199,7 @@ The "Bugs finished in the same quarter" variable represents how many tasks label
 
 \section{Correlation - WIP}
 \label{sec:corr:WIP}
-Table  \ref{corr:WIP} shows team one, three, four and six have significant positive relationship between WIP and throughput.  Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP.  For team six that's not the case. Throughput bug have a positive correlation of 0.11, while throughput and throughput feature have respectively .594 and .609. The reason why throughput bug do not have a close relationship to throughput is because throughput feature consist of 661 tasks as shown in the total row in table \ref{DS:TPFT:6}, while Throughput bug consist of 223 finished tasks as shown in \ref{DS:TPB:6} . 223 is 1/3 of all throughputs and this results reflects that throughput has a strong relationship to throughput feature. 
+Table  \ref{corr:WIP} shows team one, three, four and six have significant positive relationship between WIP and throughput.  Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP.  For team six that's not the case. Throughput bug have a positive correlation of 0.11, while throughput and throughput feature have respectively correlation of .594 and .609. The reason why throughput bug do not have a close relationship to throughput is because throughput feature consist of 661 tasks as shown in the total row in table \ref{DS:TPFT:6}, while Throughput bug consist of 223 finished tasks as shown in \ref{DS:TPB:6} . 223 is 1/3 of all throughputs and this results reflects that throughput has a strong relationship to throughput feature. 
 
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
@@ -1241,7 +1237,7 @@ Team four's leadtime have a significant positive correlation with WIP.  Team thr
 
 For team six, churn and churn feature do not have a significant positive correlation with WIP, but churn bug do. Churn bug consist of 17\% (265/1533) of all churn for team six. This shows that churn bug have a small impact on the churn variable, and that's why churn bug have a significant positive correlation with WIP while churn and churn feature do not.
 
-Team seven have a significant negative correlation between WIP and the pair churn and churn bug. The churn consist of 625 tasks as shown in the total row in table \ref{DS:Churn:7}. Out of 625, churn bug consist of 417 tasks, while churn feature consist of 235 tasks, as shown in table \ref{DS:CF:7} and \ref{DS:CB:7}. This reflects the result in the correlation table \ref{corr:WIP} where churn have the result -.713, churn bug -.659 and churn feature -0.62.  Team seven has a significant positive correlation between WIP and that bugs are finished within the same quarter there are started. 
+Team seven have a significant negative correlation between WIP and the pair churn and churn bug. The churn consist of 625 tasks as shown in the total row in table \ref{DS:Churn:7}. Out of 625, churn bug consist of 417 tasks, while churn feature consist of 235 tasks, as shown in table \ref{DS:CF:7} and \ref{DS:CB:7}. This reflects the result in the correlation table \ref{corr:WIP} where churn have the result -.713, churn bug -.659 and churn feature -0.62.  Team seven has a significant positive correlation between WIP and that bugs are finished within the same quarter there are started. Team seven also has 
 
 Team eight and nine have a significant positive correlation between WIP and that bugs are finished within in the same quarter as they are recorded. Team nine also has a significant positive correlation between WIP and bugs. 
 
