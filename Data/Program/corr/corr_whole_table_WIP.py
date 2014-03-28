@@ -173,7 +173,6 @@ with open(sys.argv[1], mode="r") as three:
 
 
 										for line in ProArc.readlines():
-											print line
 											if input in line:
 												if "Pearson Correlation" in line:
 													line = line.split(",")

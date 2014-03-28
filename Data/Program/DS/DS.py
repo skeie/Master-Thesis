@@ -37,7 +37,7 @@ def writeOut(list):
 	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{ | l | r | r | r | r | r | r | } \n \\hline"
 	tmp+= "\n Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\\\ \\hline\n"
 
-	tmp+= "2010-3 "+writeOutTable(list,counter)+"\n"
+	tmp+="2010-3 "+writeOutTable(list,counter)+"\n"
 	list = list[6:]
 	tmp+="2010-4"+writeOutTable(list,counter)+"\n"
 	list = list[6:]
