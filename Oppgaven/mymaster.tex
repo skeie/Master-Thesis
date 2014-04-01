@@ -16,6 +16,7 @@
 \usepackage{changepage}
 \usepackage{subfigure}
 \usepackage[toc,page]{appendix}
+
 \let\Chaptermark\chaptermark
 \def\chaptermark#1{\def\Chaptername{#1}\Chaptermark{#1}}
 \let\Sectionmark\sectionmark
@@ -101,14 +102,14 @@
 \mainmatter{}
 \chapter{Introduction}
 \label{chap:intro}
-In this master thesis the focus will be on limit Work In Progress (WIP) which is one of the principles in Kanban. The focus will be to see what impact WIP limit have in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) is used. SI is a Scandinavian software company that delivers Enterprise Content Management applications. 
+This master thesis focuses on limit Work In Progress (WIP), which is one of the principles in Kanban. The focus will be to see what impact WIP limit has in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) was used. SI is a Scandinavian software company that delivers Enterprise Content Management applications.
 
-The data set has already been interpreted by another study. That study investigated Scrum vs. Kanban for SI. For interested readers the case study can be found in the article "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. 
+The data set had already been interpreted by another study. That study investigated Scrum vs. Kanban for SI. For interested readers the case study can be found in the article "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. 
 
 \section{Motivation}
-In software development, the processes and methods are important in order to deliver the right product on time. In software development one rarely solve two identical problems for different stakeholders. And the problems are getting bigger and more complex, which means that new processes and methods are introduced and the already existing processes and methods needs to adapt to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years proves the assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
+In software development, processes and methods are important in order to deliver the right product on time. In software development one rarely solves two identical problems for different stakeholders. And the problems are getting bigger and more complex, which means that new processes and methods are introduced and the already existing processes and methods needs to be adapted to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years proves the assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
 
-This is why this thesis will focus on software development methods, the method in each development project is such a key element. Within software development methods, the main focus of this thesis will be the Kanban method and the principle to limit Work In Progress (WIP). In Kanban the WIP limit is used to  limit the number of tasks each developer can work on at each workflow state to prevent bottlenecks and to ensure flow of tasks through the development cycle \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
+This is why this thesis will focus on software development methods, the method in each development project is such a key element. The main focus of this thesis will be the Kanban method and the principle to limit Work In Progress (WIP). In Kanban the WIP limit is used to  limit the number of tasks each developer can work on at each workflow state to prevent bottlenecks and to ensure flow of tasks through the development cycle \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
 
 There are published various literature on Kanban in software development such as "Kanban: Successful Evolutionary Change for Your Technology Business" \parencite{0984521402}, "Kanban and Scrum - making the most of both"  \parencite{Kniberg} and "Lean Software Management: BBC Worldwide Case Study" \parencite{Joyce}. Although there is various literature, there is no information on how to apply WIP limit, even though most of the experience Kanban enthusiasts agree that WIP limit is an important principle.  There is no research backing the statement.  The literature states that one should experiment with WIP limits in order to find the best WIP limit for one's case \parencite{Ikonen} \parencite{Kniberg}.
 
@@ -116,34 +117,29 @@ Since there is lack of available research on WIP limit my motivation is to inves
 
 \section{Research Question}
 \label{chap:RQ}
-In this thesis the overall research question will be to study the effects of WIP limits for an in house software company, and to see if the research will give answers to the following question:
+In this thesis the overall research question will be to study the effects of WIP limits for an in house software company,in particular:
 \begin{itemize}
-\item Do WIP limit in software development matter?
+\item Does WIP limit in software development matter?
 %\item See if the exist an optimal WIP limit for a given context.
-\item How to best find the optimal WIP limit?
-\item Which parameters to consider in order to optimize WIP? 
+\item In case how to find the optimal WIP limit?
+\item Which parameters should be considered in order to optimize WIP? 
 \end{itemize}
 
 
 \section{Approach}
-This thesis will use case study as an approach  to answer the research questions. To conduct the case study a data set from an in house software company will be used.  The data set will be evaluated on team level. SI consist of ten teams, all of the ten teams will be investigated in this thesis to answer the research questions. 
+This thesis will use case study as an approach  to answer the research questions. To conduct the case study a data set from an in house software company will be used.  The data set will be evaluated at team level. SI consist of ten teams, all of them will be investigated to answer the research questions. 
 
-The first part of the analyze will be done by a program. The program was made for this thesis in order to calculate the data set. The second part of the analyze will consist of statistical analysis to compute correlation and descriptive statistic .
-
-The correlation and  descriptive statistic will be represented in chapter \ref{ch:res}. 
-\section{Contribution}
-My contribution to the research on WIP and WIP limit consist of creating a Java-based program that will measure WIP for each day based on a data set. For the program to work, the data set given as a parameter to needs to have the same format as the data set in this thesis. 
+The program will take the part of the analysis. The program was made for this thesis in order to transform the data set from SI into more suited. The second part of the analysis will consist of statistical analysis to compute correlation and descriptive statistic.
+ 
 
 \section{Chapter overview}
 \begin{description}
-\item[Chapter \ref{chap:intro}: \nameref{chap:intro}:] \hfill \\
-The first chapter will consist of a section where the motivation behind this thesis is stated. A section where the research questions this is stated. A section which gives a brief description of how I will approach the data set in order to answer the research questions and a section where my contribution to the research of WIP limit will be stated.
 \item[Chapter \ref{chap:Background}: \nameref{chap:Background}:] \hfill \\  
-Chapter \ref{chap:Background} consist of background information which gives a brief introduction to concepts and methods in software development as well as information about the in house software company, Software Innovation. These methods and concepts are referred to later in the thesis.  
+Chapter \ref{chap:Background} introduces background information and introduces relevant concepts and methods in software development as well as information about the in house software company, Software Innovation. 
 \item[Chapter \ref{chap:RM}: \nameref{chap:RM}:] \hfill \\  
 Chapter \ref{chap:RM} introduces and explains the research methods used in the thesis as well as complementary information about Software Innovation and why the data set from Software Innovation is used in this thesis.  
 \item[Chapter \ref{ch:DCC}: \nameref{ch:DCC}:] \hfill \\
-Chapter \ref{ch:DCC} gives information about the data set and the calculations. Complementary information about how the program operates is given in the chapter as well as information about how the output data from the program is measured using statistical analysis. 
+Chapter \ref{ch:DCC} gives information about the data set and the calculations. Complementary information about how the program operates is given in as well as information about how the output data from the program is measured using statistical analysis. 
 
 \item[Chapter \ref{ch:res}: \nameref{ch:res}:] \hfill \\
 \item[Chapter \ref{ch:dis}: \nameref{ch:dis}:] \hfill \\
@@ -157,17 +153,13 @@ Chapter \ref{ch:DCC} gives information about the data set and the calculations. 
 
 \chapter{Background}  
 \label{chap:Background}                %% ... or Bakgrunn
-In this chapter there will be a brief introduction to Waterfall (Section \ref{sec:WP}), Scrum (Section \ref{sec:Scrum}), Lean (Section \ref{sec:Lean}) and Kanban (Section \ref{sec:Kan}) with affiliated tools. There will also be given a brief introduction to the software development company Software Innovation (Section \ref{sec:SI})
+In this chapter there will be a brief introduction to Waterfall (Section \ref{sec:WP}), Scrum (Section \ref{sec:Scrum}), Lean (Section \ref{sec:Lean}) and Kanban (Section \ref{sec:Kan}) with affiliated tools. The software development company Software Innovation is briefly introduced (Section \ref{sec:SI})
 
 \section {Waterfall}
 \label{sec:WP}
-"The waterfall model is the classical model of software engineering. This model is one of the oldest models and is widely used in government projects and in many major companies" \parencite{munassar2010comparison}.
+"The waterfall model is the classical model of software engineering. This model is one of the oldest models and is widely used in government projects and in many major companies" \parencite{munassar2010comparison}.The main goal of the waterfall model is to plan in early stages to ensure design flaws before coding is started. Since planning is so critical in the waterfall method it fits project where quality control is a major concern  \parencite{munassar2010comparison}.
 
-The main goal of the waterfall model is to plan in early stages to ensure design flaws before coding is started. Since planning is so critical in the waterfall method it fits project where quality control is a major concern  \parencite{munassar2010comparison}.
-
-The waterfall method consist of several non-overlapping stages as shown in figure \ref{fig:waterfall}. The figure is an example of the waterfall model with a life cycle of establishing system requirements and software requirements and continues with architectural design, detailed design, coding, testing and maintenance  \parencite{munassar2010comparison}.
-
-One of the main principles of the waterfall method discourages return to an earlier phase. For example returning from detailed design to architectural design. However, if returning to an earlier phase is needed, it involves costly rework. When a phase is completed the phase requires formal review and extensive documentation development. Therefore, if something is missed out an earlier phase it is expensive to correct later  \parencite{munassar2010comparison}
+The waterfall method consist of several non-overlapping stages as shown in figure \ref{fig:waterfall}. The figure is an example of the waterfall model with a life cycle of establishing system requirements and software requirements and continues with architectural design, detailed design, coding, testing and maintenance  \parencite{munassar2010comparison}. One of the main principles of the waterfall method discourages return to an earlier phase. For example returning from detailed design to architectural design. However, if returning to an earlier phase is needed, it involves costly rework. When a phase is completed, the phase requires formal review and extensive documentation development. Therefore, if something is missed out an earlier phase it is expensive to correct it later  \parencite{munassar2010comparison}
 
 
 \begin{figure}[ht!]
@@ -198,19 +190,15 @@ Sprint is a time-boxed interval over a given time. The Scrum framework suggests 
 
 In each sprint a minimal backlog is created so the developer knows which tasks to work on in the current sprint. The Product Owner and the team members discuss and decide which tasks from the backlog to be added to the minimal backlog. After the minimal backlog is complete, the Product Owner and the team members discuss each task in order to get a better and shared understanding of what is required to complete the tasks \parencite{Scrum}. 
 
-One of the main principles in Scrum is that it requires that a new feature is ready for release after each sprint. The feature should be a visible part of the product in order to get feedback from end-users. So all the tasks in the minimal backlog combined should be a visible part of the product.  \parencite{Scrum}.
+One of the main principles in Scrum is that it requires that at least one new feature is ready for release after each sprint. The feature should be a visible part of the product in order to get feedback from end-users. So all the tasks in the minimal backlog combined should be a visible part of the product \parencite{Scrum}.
 
 
 \section {Lean}
 \label{sec:Lean}
-"Lean is all about getting the right things to the right place at the right time the first time while minimizing waste and being open to change" \parencite{741480}
-
+"Lean is all about getting the right things to the right place at the right time the first time while minimizing waste and being open to change" \parencite{741480}.
 The Lean approach was introduced around 1948 in manufacturing in Japan.  In 1975, Toyota was able to create almost 50 more production units per employee than in 1948 due to the Lean approach \parencite{manning}. Lean strives to maximize the value produced by an organization and delivered to costumer. This is done by finding and eliminate waste, controlling variability and maximizing the flow of delivered software all within the culture of continuous improvements \parencite{DavidAnderson}. In 2003 Mary and Tom Poppendieck first introduced Lean thinking to software development. Poppendieck published the book "Lean Software Development: An Agile Toolkit" \parencite{Lean:2003}. In the book, Poppendieck stated that an important tool to manage work flow is the concept of pull-systems, which means tasks are put in production only when a costumer asks for it \parencite{Lean:2009}.
-The pull-system based method Kanban, has in the recent years been introduced more and more to software development, and is becoming one of the keys to Lean practice in software development \parencite{DavidAnderson}.  
-
-In Lean there are eight fundamental principles. The eight principles are:
+The pull-system based method Kanban has in recent years been introduced more and more to software development, and is becoming one of the keys to Lean practice in software development \parencite{DavidAnderson}. In Lean there are eight fundamental principles \parencite{poppendieck2003lean}.
 \begin{enumerate}
-\centering
 \item \textbf{Start Early:}  Don't wait for details. As soon as enough information is gathered start the development activity. Get everyone involved in figure out the details. Don't build any walls between people, make people collaborate and start a two-way communication as soon possible. This will start the learning cycle as well.
 
 \item \textbf{Learn Constantly:} Start with a breadth-first approach, explore multiple options. The system is expected to change, so focus on creating simplicity code and robustness so the system is easy to change
@@ -228,7 +216,7 @@ The only thing worth doing is deliver value to the costumer, anything else is wa
 
 \item \textbf{Avoid Sub-optimization:} In software development it's normal to break down a complex problem into small parts of the problem in order to minimize the complexity.  If some of the parts are sub-optimized, bottleneck can occur. For example, if ten developers are hired to work on tasks, but only three testers are hired. The development process is sub-optimized since the developers will likely produce more than the tester can test and that will cause bottleneck.
 \end{enumerate}
-\parencite{poppendieck2003lean}
+
 
 \section{Kanban}
 \label{sec:Kan}
@@ -240,36 +228,32 @@ Shinkle defined novice and more experience kanban-users with a descriptive analo
 \fi
 
 
-''One can define Kanban software process as a WIP limited pull system visualized by the Kanban board''  \parencite{DavidAnderson}.
-
 Toyota production system introduced Kanban as a scheduling system for Lean and just-in-time (JIT) production during late 1940's and in the early 1950's in order to catch up with the American car industry. The Kanban method combined with the Lean approach was a success for Toyota. The success was noticed by the software development industry among others \parencite{Conboy}, \parencite{ono1988toyota}. In the recent years, more software projects adapt to Kanban and Lean \parencite{DavidAnderson}, and this is one of the reasons why this thesis will focuses on Kanban and one of its principles; WIP limit. 
 
+''One can define Kanban software process as a WIP limited pull system visualized by the Kanban board''  \parencite{DavidAnderson}.
+One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} .
 
-One of the most important people in Kanban software development, David Anderson  also referred to as ''father of Kanban in the software development industry''  \parencite{InfoQ:2013:May:Online} and author of the book "Kanban: Successful Evolutionary Change for Your Technology Business" stated ''If you think that there was Capability Maturity Model Integration, there was Rational Unified Process, there was Extreme Programming and there was Scrum, Kanban is the next thing in that succession.''   \parencite{InfoQ} 
+In software development, Kanban splits the major problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban board to visualize the problems, track what others are working on and see potential bottlenecks during development. Shinkle stated that when people start to understand Kanban, they easily discover where the bottlenecks are \parencite{Shinkle}. In short, Kanban systems focus on \parencite{DavidAnderson}:
 
-In software development the Kanban method splits the major problem into many small pieces of problems. When the small pieces are defined by the team, the problems are put up on the Kanban board to visualize the problems, track what others are working on and see potential bottlenecks during development. Shinkle stated that when people start to understand Kanban, they easily discovered where the bottlenecks are \parencite{Shinkle}.
-
-In short, Kanban systems focus on:
 \begin{itemize}
-\item Continuous flow of work.
-\item	No fixed iterations or sprints.
-\item Work is delivered when it's done.
-\item Teams only work on few tasks at the time specified by the WIP limit.
-\item Make constant flow of released tasks.
+\item continuous flow of work,
+\item	no fixed iterations or sprints,
+\item work is delivered when it's done,
+\item teams only work on few tasks at the time specified by the WIP limit and
+\item make constant flow of released tasks.
 \end{itemize}
-\parencite{DavidAnderson}.
 
 
-One of the main differences between Scrum and Kanban is sprint and estimation. Contrary to Scrum, Kanban do not use the principles of sprints or estimations. In Kanban the tasks do not need to be estimated or finished within a certain time. In the article "Simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} the authors found out that if they let the developers work with small tasks and not be interrupted, they will be more effective. They also found out that Scrum was too rigid for the development team because when the team had to estimate tasks they felt interrupted.  The estimation and sprint meetings worked counterproductive in their case. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
+Contrary to Scrum, Kanban do not use the principles of sprints or estimations. In Kanban the tasks do not need to be estimated or finished within a certain time. In the article "Simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} the authors found out that if they let the developers work with small tasks and not be interrupted, they will be more effective. They also found out that Scrum was too rigid for the development team because when the team had to estimate tasks, they felt interrupted.  The estimation and sprint meetings worked counterproductive in their case. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
 
-In the article "Quantifying the Effect of Using Kanban versus Scrum:" the company also felt that the Scrum approach was too rigid. The article also reported positive results when the team changed to Kanban.  The company almost halved its lead time, reduced the number of weighted bugs by 10 percent, and improved productivity \parencite{Dag}. Other article also states that Scrum is too rigid and that's Kanbans advantages over Scrum \parencite{beedle1999scrum} \parencite{brekkanintroducing} .  
+In the article "Quantifying the Effect of Using Kanban versus Scrum:" the company also felt that the Scrum approach was too rigid. The article also reported positive results when the team changed to Kanban.  The company almost halved its lead time, reduced the number of weighted bugs by 10 percent, and improved productivity \parencite{Dag}. Other articles also state that Scrum maybe too rigid and that's Kanbans advantages over Scrum \parencite{beedle1999scrum} \parencite{brekkanintroducing} .  
 
 \subsection {Kanban Board}
 ''The Kanban board makes it clear to all the team members the exact status of progress, blockages, bottlenecks and they also signal possible future issues to prepare for''\parencite{Joyce}.
 
-The Kanban board is one of many tools in Kanban. It's used to control WIP, increase the information flow with visualization and spot bottlenecks \parencite{SMR:SMR1599}. A Kanban board is illustrated in figure \ref{kanban_board}. Each column in figure has \ref{kanban_board} an intuitive name in order to describe itself so the developers easily can track where each task is. 
+The Kanban board is one of many tools in Kanban. It's used to control WIP, increase the information flow with visualization \parencite{SMR:SMR1599}. A Kanban board is illustrated in figure \ref{kanban_board}. Each column in figure has \ref{kanban_board} an intuitive name in order to describe itself so the developers easily can track where each task is. 
 
-Each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP limit to specify how many works in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP limit is stated under the column name. The backlog column has a WIP limit of 4, In progress has 5 and Done doesn't need a WIP limit. 
+Each column is named "Backlog", "In progress" and "Done".  Each column can have a WIP limit to specify how many items in progress there are allowed in the column \parencite{Joyce}. In figure \ref{kanban_board} the WIP limit is stated under the column name. The backlog column has a WIP limit of 4, In progress has 5 and Done doesn't need a WIP limit. 
 
 The yellow stickers represent the tasks. Some follow the path to mark stickers with different colors representing the severities or by marking if its a feature or a bug. In the article "Kanban Implementation in a Telecom Product Maintenance" for instance, the stickers has three different colors, green, yellow and red depending on how close to overdue the tasks are. If the sticker is red, the task is already overdue, if the tasks are soon-to-overdue its marked with yellow stickers \parencite{6068363}.
 \begin{figure}[!htbp]
@@ -283,13 +267,13 @@ The yellow stickers represent the tasks. Some follow the path to mark stickers w
 \label{WIPsec}
 ''WIP limits seem to be the worst understood part of the Kanban system. When used properly, it exposes bottlenecks and reduces lead time for individual work items. Used improperly, it can starve developers for work or result in too many people working on the same work items.'' \parencite{Shinkle}
 
-WIP limit is one of the core principles in Kanban \parencite{6068363}. WIP limit helps to reduce overhead by limit task-switching for each developer, visualize bottlenecks and make constant flow of tasks throughout the development \parencite{DavidAnderson}. One way to explain WIP and the impact of WIP limit is to use cars and roads as analogy. All roads have it maximum capacity of cars. When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams. A software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks decreases and lead time increases.
+WIP limit is one of the core principles in Kanban \parencite{6068363}. WIP limit helps to reduce overhead by limit task-switching for each developer and make constant flow of tasks throughout the development \parencite{DavidAnderson}. One way to explain WIP and the assertion impact of WIP limit is to use cars and roads as analogy. All roads have a maximum capacity of cars. When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams. A software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks may decreases and lead time may increases.
 
-When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP limit, but rather the visibility of Kanban through the Kanban board. When user get more experience with Kanban, they start to attempt the principles of WIP limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP limit is not easy. They suggest that the WIP limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. The principles in the Kanban method also says you start by limiting WIP, then experiment with it \parencite{Kniberg}. The article "Lean Software Management" \parencite{Kniberg} and the "Impact of Kanban on Software Project Work" \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
+When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP limit, but rather the visibility of Kanban through the Kanban board. When users gain more experience with Kanban, they start to attempt the principles of WIP limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP limit is not easy. They suggest that the WIP limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. In the book "Kanban and Scrum - making the most of both" suggests Kniberg that you start by limiting WIP, then experiment with it \parencite{Kniberg}. The article "Lean Software Management" \parencite{Kniberg} and the "Impact of Kanban on Software Project Work" \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
 
-The importance of limit WIP has been stated by various researches. A summary of benefits with WIP limit is stated in section \ref{sub:sub:benefits} .  The articles by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson} researched the difference between limit WIP and unlimited WIP.  A summary of this two articles are stated in section \ref{sub:wip:vs:wip}
+The importance of limit WIP has been stated by various researches. A summary of benefits with WIP limit is stated in Section \ref{sub:sub:benefits} .  The articles by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson} researched the difference between limit WIP and unlimited WIP.  A summary of this two articles are stated in Section \ref{sub:wip:vs:wip}
 
-On how to determine WIP limit one research was found. If one implement Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine the WIP limit. The effectiveness metric shown in \ref{WIPEQ}, should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness metric and the result could be used as a guideline for WIP limit for the next sprint. The effectiveness metric takes the number of bugs found (ai) and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) (ei), and minus ai and ei, then divide the result by ai and multiply it by 100\%  as shown in \ref{WIPEQ} \parencite{Sienkiewicz}
+On how to determine WIP limit one article was found. If one implements Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine the WIP limit.The effectiveness metric shown in formula \ref{WIPEQ}, should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness metric and the result could be used as a guideline for WIP limit for the next sprint. The effectiveness metric takes the number of bugs found \textit{(ai)} and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) \textit{(ei)}, and minus \textit{ai} and \textit{ei}, then divide the result by \textit{ai} and multiply it by 100\%  as shown in formula \ref{WIPEQ} \parencite{Sienkiewicz}
 
 \begin{equation} \label{WIPEQ}
 Ei=\frac{(ai-ei)}{ai}*100\%
@@ -297,30 +281,19 @@ Ei=\frac{(ai-ei)}{ai}*100\%
 
 \subsection {Limit WIP vs. Unlimited WIP}
 \label{sub:wip:vs:wip}
-In the article by Giulio Concas and Hongyu Zhang one of the result was showed that the average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduces overhead. Because, when developers start on a new issue, they need to use time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on another issue. The study also showed that limit WIP can improve throughput and work efficiency \parencite{SMR:SMR1599}.
+In the article by Giulio Concas and Hongyu Zhang, they compared the ability between WIP-limit and unlimited WIP by simulation a software maintenance process.The paper simulated two different software maintenance processes. The first process where based on 4 years of experience with Microsoft maintenance team. The second process where from a Chinese software firm.  The simulation executed 10 runs and one of the results showed that the average of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes their finds; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue, this reduces overhead. Because when developers start on a new issue, they need time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on another issue. The study also showed that limit WIP can improve throughput and work efficiency \parencite{SMR:SMR1599}.
 
-The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of the impact of WIP limit vs. no WIP limit on developers with skills in different activities. The four skill activities from the article where:
-\begin{enumerate}
-\item Design
-\item Development
-\item Testing
-\item Deployment
-\end{enumerate}
+The case by David Anderson et al. \parencite{DavidAnderson} did a simulation of the impact of WIP limit vs. no WIP limit on developers with skills in different activities. The four skill activities from the article where design, development, testing and deployment. 
 
-The article did four different simulations. 
-\begin{enumerate}
-\item A simulation with WIP limits and seven developers with skill in two of the four activities. 
-\item A simulation with no WIP limit and seven developers with skilled in two of the four activities. 
-\item A simulation with WIP limits and seven developers with skill in all of the activities.
-\item A simulation with no WIP limits and seven developers with skill in two of the four activities.
-\end{enumerate}
-The research paper concluded that the two latter is unlikely in the real world, since there is seldom a whole team with developers skilled in all activities.
- 
-When the developers had skill in two out of four activities the WIP limit simulation used 100 days, but the non WIP limit simulation used 120 days. The simulation with WIP limit shown an almost constant flow of features that where completed. While in the same simulation with no WIP limit, the flow of feature was much more irregular.  
-\parencite{DavidAnderson}
+The article did four different simulations.  A simulation with WIP limits and seven developers with skill in two of the four activities. A simulation with no WIP limit and seven developers with skilled in two of the four activities. A simulation with WIP limits and seven developers with skill in all of the activities. A simulation with no WIP limits and seven developers with skill in two of the four activities.
 
-\subsection{Benefits with setting WIP limit according to various articles}
+The paper concluded that the last two is unlikely in the real world, since there is seldom a whole team with developers skilled in all activities. 
+When the developers had skill in two out of four activities, the WIP limit simulation used 100 days, but the non WIP limit simulation used 120 days. The simulation with WIP limit shown an almost constant flow of features that completed, while in the same simulation with no WIP limit, the flow of feature was much more irregular\parencite{DavidAnderson}.
+
+\subsection{Benefits with setting WIP limit}
 \label{sub:sub:benefits}
+This subsection contains excerpt from papers from various authors that have done study on WIP limit. 
+
 \begin{enumerate}
 \item Lowering the WIP limit will help people avoid task switching. When one is task switching it's hard to be able to fully concentrate. \parencite{Ikonen}.
 \item There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased \parencite{Joyce}:
@@ -333,22 +306,25 @@ When the developers had skill in two out of four activities the WIP limit simula
 \item Limit WIP improves quality \parencite {CONWIP}.
 \end{enumerate}
 
-Both the studies on WIP limit vs. No limit, the articles and research shows the importance of WIP limit. If  \L ukasz's effectiveness metric is disregard, there is no clear rule on how to determine WIP limit even though WIP is a crucial principle in order to take full advantages of Kanban.
+Both the studies on WIP limit vs. No limit, the articles and research shows the importance of WIP limit. If  \L ukasz's effectiveness metric is isregarded , there is no clear rule on how to determine WIP limit even though WIP is suppose to be a crucial principle in order to take full advantages of Kanban.
 
 \section {Lead time}
 ''Lead time is the total elapsed time from when a customer requests software to when the finished software is released to the customer'' \parencite{Joyce}.
 
-Lead time is an essential ingredient when you look for the optimal WIP. Often in project, lead time is split into pieces, so every task has its own lead time. This gives the development teams the advantages to experiment with different WIPs in order to see the different lead times and then measure which WIP that suits this project the best. 
+Lead time is an essential ingredient when you look for the optimal WIP, if there is one. Often in a project, lead time is split into pieces, so every task has its own lead time. This gives the development teams the advantages to experiment with different WIPs in order to see the different lead times and then measure which WIP that suits this project the best. 
 
-The citation by Middleton and Joyce above is close to definition of what lead time is. This definition could be useful for consultancy companies, but for in-house development company with few releases each year this definition is unsuitable. The article "Quantifying the effect of Using Kanban versus Scrum" \parencite{Dag} stated some reasons why this is unsuitable for in house development companies: 
+According to the paper "Quantifying the effect of Using Kanban versus Scrum" \parencite{Dag} the citation by Middleton and Joyce above is close to definition of what lead time is. They define lead time as the amount of time that passed from the moment that the development team receives a request to the moment that it completes the work item. The reason why the paper disapproves the definition by Middleton and Joyce is because: "The amount of time a work item remains in the backlog queue before it's put on the board is a function of priority, not whether the company uses Scrum, Kanban or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it's finished'' \parencite{Dag}.
 
-"First, the amount of time a work item remains in the backlog queue before it's put on the board is a function of priority, not whether the company uses Scrum, Kanban, or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it's finished'' \parencite{Dag}.
 
 
 \section{Just-In-Time}
-"Just-In-Time is based on delivering only the necessary products, to the necessary time and the necessary quantity." \parencite{JIT}.
+"Just-In-Time is based on delivering only the necessary products, to the necessary time and the necessary quantity" \parencite{JIT}.
 
-Just-In-Time (JIT) was introduced in the 1970s by Toyota in combination with Lean \parencite{javadian2013just}.  JIT has been developed to increase productivity through waste reduction and increasing the value added on the production processes. To explain the JIT principle Mary and Tom Poppendieck uses the picture shown in figure \ref{JITE}  \parencite{JIT} \parencite{Lean:2006}.
+Just-In-Time (JIT) was introduced in the 1970s by Toyota in combination with Lean \parencite{javadian2013just}.  JIT has been introduced to increase productivity through waste reduction and increasing the value added in the production processes. To explain the JIT principle, Mary and Tom Poppendieck use the picture shown in Figure \ref{JITE}  \parencite{JIT} \parencite{Lean:2006}. The stream reflects the inventory.  Under the stream, there are rocks located in different sizes. The rocks illustrates waste and problems that can occur.  If the stream level is lowered, the rocks are more visualized. At this point you have to clear out rocks (remove waste and problems) in order to make the boat continue it's journey, or it will crash into the rocks. After the rocks are cleaned out, one can lower the stream level again and continue until there are pebbles left. Then the boat can float without problems.
+
+If one lower the stream (inventory), problems and waste will become visible (visualized by rocks). Lean wants to lower inventory in order to make problems and waste occur, because when problems and waste occurs, you are able to fix the problems and remove the waste. Fixing the problem and removing the waste has several benefits such as, your process could be optimized and you are on step closer to have zero problems and zero waste.  \parencite{JIT} \parencite{Lean:2006}.
+
+In Software development the JIT principle means that one should not deliver anything before its demand. For example, if a development team adds two new features to a product without the stakeholders asking for it and use a work day on these features, and the stakeholders don't want the features. Then the development team has produced the number of team members persons days of waste. 
 
 \begin{figure}[ht!]
 \centering
@@ -357,21 +333,12 @@ Just-In-Time (JIT) was introduced in the 1970s by Toyota in combination with Lea
 \label{JITE} % JIT example
 \end{figure}
 
-
-In figure \ref{JITE} the stream reflects the inventory.  Under the stream, there are rocks located in different sizes. The rocks illustrates waste and problems that can occur.  If the stream level is lowered, the rocks are more visualized. At this point you have to clear out rocks (remove waste and problems) in order to make the boat continue it's journey, or it will crash into the rocks. After the rocks are cleaned out, one can lower the stream level again and continue until it's just pebbles left. Then the boat can float without problems.
-
-If one lower the stream (inventory), problems and waste will become visible (visualized by rocks). Lean want to lower inventory in order to make problems and waste occur, because when problems and waste occurs, you are able to fix the problems and remove the waste. Fixing the problem and removing the waste has several benefits such as, your process could be optimized and you are on step closer to have zero problems and zero waste.  \parencite{JIT} \parencite{Lean:2006}.
-
-In Software development the JIT principle means that one should not deliver anything before its demand. For example if a development team adds two new features to a product without the stakeholders asking for it and use a work day on these features, and the stakeholders don't want the features, then the development team has produced waste. 
-
 \section{Throughput}
-''The output of a production process (machine, workstation, line plant) per unit time (e.g., parts per hour) is defined as the systems throughput or sometimes throughput rate'' \parencite{Adams}
+''The output of a production process (machine, workstation, line plant) per unit time (e.g., parts per hour) is defined as the systems throughput or sometimes throughput rate'' \parencite{Adams}.
 
-The main concept of throughput is to measure how productive teams, people or companies are. Throughput is measured in number of finished delivered tasks or units per hour, day, week, month, quarter or year. A key factor in successfully measuring throughput in software development is to specify a standard size for each task. If the standard is not specified there is little use in throughput measurements.  \parencite{Throughput}. An example of why is listed in subsection \ref{sub:sub:throughput}. 
+The main concept of throughput is to measure how productive teams, people or companies are. Throughput is measured in number of finished delivered tasks or units per hour, day, week, month, quarter or year. A key factor in successfully measuring throughput in software development is to specify a standard size for each task. If the standard is not specified there is little use in throughput measurements.  \parencite{Throughput}. To illustrate throughput with different task sizes. 
 
-\subsection{Example of throughput measurement}
-\label{sub:sub:throughput}
-This is a simple example to illustrate throughput with different task sizes. Lets say Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter. Team x used Scrum the first two quarters and Kanban the last two as illustrated in table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. So to get valid result from throughput measurements the size of tasks has to be agreed upon by the teams or company.
+Lets say Team x had a throughput of eighteen tasks after the first quarter, twenty after the second, fifteen after the third and twelve after the last quarter. Team x used Scrum the first two quarters and Kanban the last two as illustrated in table \ref{tt}. It will look like team x benefits most from Scrum. But if the task during the Kanban time was twice the size of Scrum, Kanban would suite team x the best. So, to get valid result from throughput measurements, the size of tasks has to be agreed upon by the teams or company.
 \begin{table}[ht]
 \begin{center}
     \begin{tabular}{| l | l | l | l |}
@@ -391,17 +358,17 @@ This is a simple example to illustrate throughput with different task sizes. Let
 \label{sec:Churn}
 "Churn is defined as the sum of the number of lines added, deleted, and modified in the source code" \parencite{Dag}.
 
-Churn is a measure that's not so known as lead time, throughput or WIP. Churn is a term that's used as surrogates for effort in software engineering. Many studies in software engineering use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates \parencite{el2000methodology}."  
+Churn is a measure that's not so known as lead time, throughput or WIP. Churn is a term that's used as surrogates for effort in software engineering. Many studies in software engineering use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates \parencite{el2000methodology}."  But, the study by Sjøberg et al. showed that churn could be used as a surrogate for task sizes \parencite{yamashita2012quantifying}. 
 
 
 \section{Software Innovation}
 \label{sec:SI}
-Software Innovation(SI) is a Scandinavian software company. SI develops and delivers market-leading Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around Microsoft Sharepoint platform and tightly integrated into the Microsoft Office environment \parencite{Dag}. \parencite{SI}.
+Software Innovation is a Scandinavian software company. SI develops and delivers Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around the Microsoft Sharepoint platform. \parencite{Dag}. \parencite{SI}.
 
-SI has approximately 300 employees in Oslo, Copenhagen and Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used Waterfall process. In 2007, SI changed to Scrum and in 2010, SI went from Scrum to Kanban \parencite{Dag}.
+SI has approximately 300 employees in Oslo, Copenhagen, Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used the Waterfall process. In 2007, SI changed to Scrum, and in 2010, SI went from Scrum to Kanban \parencite{Dag}.
 
 \subsection{Teams}
-Here are the ten teams, and the number of employee working with the team for each quarter. Team four in table \ref{Team:4} is the it-support team in SI. These tables will be used in the discussion chapter - chapter \ref{ch:discussion}. 
+Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four shown in table \ref{Team:4} is the it-support team for SI. 
 %DEL EN TEAM 1-4
 \begin{table}[!htbp]
   \begin{adjustwidth}{-0cm}{}
@@ -500,12 +467,8 @@ Here are the ten teams, and the number of employee working with the team for eac
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of team size for team one, two, three and four}
-\label{Teams:1:4}
-\end{table}
 
 %%%%%%% DEL TO TEAM 5-8
-\begin{table}[!htbp]
   \begin{adjustwidth}{-0cm}{}
 \subfigure[Team five]{
  \label{Team:5}
@@ -595,14 +558,11 @@ Here are the ten teams, and the number of employee working with the team for eac
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of team size for team five, six, seven and eight}
-\label{Teams:5:8}
-\end{table}
+
 
 
 
 %%%%%% DEL tree TEAM 9-10
-\begin{table}[!htbp]
   \begin{adjustwidth}{2cm}{}
 \subfigure[Team nine]{
  \label{Team:9}
@@ -650,7 +610,7 @@ Here are the ten teams, and the number of employee working with the team for eac
 }
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of team size for team nine and ten}
-\label{DS:1:2}
+\label{table:teams}
 \end{table}
 
 
@@ -1178,24 +1138,24 @@ After the program has finished the measurements of the data, SPSS will be used t
 \chapter{Results}                     
 \label{ch:res}
 \section{Introduction}
-Since correlation is symmetric 
-In this chapter the results are presented. There are five correlation tables presenting the results. Vertically in the table, the variables are stated. Horizontally the corresponding teams are stated. In the table the team names are shortened, team one is shortened to T1, team two is shortened to T2 and so on. 
-
-The result will be presented in the following manner. The first, Section \ref{sec:corr:WIP} shows the correlation table for WIP, Section \ref{sec:corr:lt} shows the correlation table for leadtime, Section \ref{sec:corr:bug} show the correlation table for bug, Section \ref {sec:corr:TP} show the correlation table for throughput and Section \ref {sec:corr:churn} show the correlation table for churn. Following the correlation tables, a section for each team's descriptive statistics  is shown.  
+In this chapter the results are presented. The results are presented with five correlation tables and five corresponding descriptive statistics tables. Vertically in the correlation tables, the correlation variables are stated. Horizontally is the corresponding teams are stated. The team names are shortened in order to fit the tables. Team one is shortened to T1, team two is shortened to T2 and so on. The correlation tables is based on the mean value from the variables. Some of the variables from the correlation tables are shown in Table \ref{des} and are explained in chapter \ref{ch:DCC}, the rest will be explained here. Variables with suffix of "Feature" means tasks labeled with type "feature" are the only one who is counted. The same goes for variables with suffix "Bug". The "Bugs finished, quarter" variable represents how many tasks labeled "Bug" that are finished within the same quarter as it was created.  The "Avg days backlog, bug" variable is used to see the average number of days bugs are in backlog before pulled out. These two variables are used to see the prioritizing of bugs within a quarter as well as indicator of the workload together with churn for a quarter.   
 
 
-The relationship between two variables will occur twice, in both their correlation table, since the correlation tables are symmetric. When the relationship is stated in one of the sections, the relationship will not be stated in the following sections. Some of the ten variables shown vertically are shown in table \ref{des} and are explained in chapter \ref{ch:DCC}. "Throughput Feature" means tasks labeled with type "feature" are the only one who is counted. For "Throughput Bug", only the tasks labeled with type "bug" is counted as described in section . The same goes for "Churn Bug" and "Churn Feature". 
-
-The "Bugs finished in the same quarter" variable represents how many tasks labeled "Bug" that are finished within the same quarter as it was created in backlog.  The "Average days for bugs in backlog" variable is used to see how long tasks with type "bug" are in the backlog, before pulled out. These two variables are used to see the prioritizing of bugs within a quarter as well as indicator of the workload for the quarter.   
+This chapter will be presented in the following manner. The first, Section \ref{sec:corr:WIP} shows the correlation table for WIP and the corresponding descriptive statistics table, Section \ref{sec:corr:lt} shows the correlation table for leadtime  and the corresponding descriptive statistics table, Section \ref{sec:corr:bug} shows the correlation table for bug and the corresponding descriptive statistics table, Section \ref {sec:corr:TP} shows the correlation table for throughput and the corresponding statistics table and Section \ref {sec:corr:churn} shows the correlation table for churn and the corresponding descriptive statistics table.
 
 
-Since ten percent of leadtime and churn is removed, these two tables are combined and can consist of up to 184 dates per quarter. 
+The content of the sections will consist of highlighting the variables with a significant correlation and variables that stands out. To back up any assumptions about the variables, descriptive statistic tables stated in appendix \ref{app:DS} and graphs will be used . The correlation relationship between two variables will occur twice, in both the correlation tables, since correlation is symmetric. When the relationship is highlighted in one of the sections, the relationship will not be highlighted in the other section. 
 
-Tables show number, mean, median standard deviation, maximum and minimum values based on the correlation table.  These values are not on team level, but on company level. For example, in table \ref{DS:corr:WIP} one can see that all the teams in SI have a mean of value of 0.6 for throughput, when talking about correlation between WIP and throughput. 
+
+
+
+Since ten percent of leadtime and churn is removed, these two tables are combined and can consist of up to 184 dates per quarter - Skal jeg skrive det?
+
+The descriptive statistics tables \ref{DS:corr:WIP}, \ref{DS:corr:LT}, \ref{DS:corr:Bugs},  \ref{DS:corr:TP} and \ref{DS:corr:Churn}  shows number(N), mean, median standard deviation(Std.dev), maximum(max)  and minimum(min) values from on the correlation table.  These values are based on all the teams values. For example, in table \ref{DS:corr:WIP}, one can see that all the teams in SI combined have a mean of value of 0.6 for throughput, when talking about correlation between WIP and throughput. 
 
 \section{Correlation - WIP}
 \label{sec:corr:WIP}
-Table \ref{corr:WIP} shows team one, three, four, six, seven, nine and ten have significant positive relationship between WIP and throughput. Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP. For team one, six, seven and ten that's not the case. 
+In this section the Table  \ref{corr:WIP}  shows the correlation between WIP and the variables for the teams. The table shows team one, three, four, six, seven, nine and ten have significant positive relationship between WIP and throughput. Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP. But, for team one, six, seven and ten that's not the case. 
 
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
@@ -1206,7 +1166,7 @@ Table \ref{corr:WIP} shows team one, three, four, six, seven, nine and ten have 
 Throughput &.74**& 0.21& .76**& .83**& 0.52& .64*& .67*& 0.47& .89**& .61*\\ \hline
 Throughput Feature &.73**& -0.14& .83**& .82**& 0.25& .68**& .63*& 0.40& .82**& 0.20\\ \hline
 Throughput bug &0.02& 0.25& .73**& .82**& .54*& 0.07& 0.55& 0.15& .88**& .63*\\ \hline
-Bugs &.73**& 0.20& .60*& .56*& 0.50& 0.46& -0.07& 0.04& .58*& 0.18\\ \hline
+Bugs &.73**& 0.20& .60*& .56*& 0.50& 0.46& -0.07& 0.04& t.58*& 0.18\\ \hline
 Bugs finished, quarter &0.35& 0.10& -0.07& .56*& 0.19& 0.19& 0.50& 0.23& 0.52& 0.35\\ \hline
 Avg days in backlog, bugs &-0.03& 0.44& 0.42& .54*& -0.18& 0.02& -0.64& 0.14& -0.20& -0.18\\ \hline
 Leadtime &-0.21& 0.23& -0.13& .69**& 0.10& -0.18& 0.39& 0.11& -0.35& 0.33\\ \hline
@@ -1214,7 +1174,7 @@ Churn &-0.18& -0.43& -0.47& .c& -0.24& -0.04& 0.23& -0.42& -0.03& 0.05\\ \hline
 Churn feature &0.38& -0.39& -0.35& .c& -0.03& 0.02& 0.10& -0.26& -0.07& 0.25\\ \hline
 Churn bug &0.05& -0.04& -.57*
 & .c
-& -0.22& .801**
+& -0.22& .80**
 & 0.07& -0.50& -0.06& -0.09\\ \hline
 \end{tabular}
  \caption{Correlation - WIP}
@@ -1225,9 +1185,47 @@ Churn bug &0.05& -0.04& -.57*
 \end{adjustwidth}
 \end{table}
 
-Both throughput and throughput feature in team one's case have significant positive relationship with WIP, throughput bug do not. Throughput and throughput feature have the values .74 and .73 while throughput bug's value is 0.02. The reason why throughput bug do not have a close relationship to throughput is because throughput feature have a total mean variable of 13.7 while throughput bug have 6.4 as shown in tables \ref{DS:TPFT:1} and \ref{DS:TPB:1}. The average of throughput is 11 as shown in table \ref{DS:Throughput:1} which shows that throughput feature contribute more tasks than bug.
+Both throughput and throughput feature in team one's case have significant positive relationship with WIP, throughput bug do not. Throughput and throughput feature have the correlation values .74 and .73 while throughput bug's value is 0.02. The reason why throughput bug do not have a close relationship to throughput maybe because throughput bug consist 37\% (108/290) of throughput as shown in the total row in tables \ref{DS:Throughput:1} and \ref{DS:TPB:1}. But it's possible to have a close relationship even though, since the correlation is based on the mean values. But throughput feature have a total mean of 13.7, while throughput bug have 6.4 as shown in tables \ref{DS:TPFT:1} and \ref{DS:TPB:1}. The total mean of throughput is 11 as shown in table \ref{DS:Throughput:1}. The mean values strengthens the assumption that throughput feature represents most of the throughput variable. The figures in Figure \ref{corr:Difference:1} proves the assumption. The pattern of the dots in the Figures \ref{fig:a:1} and \ref{fig:c:1} are similar. They both increase when the X values does.  While the dots in Figure \ref{fig:b:1} sometimes decrease when X do and sometimes decreases. 
 
-The same issue encounter for both team six and seven. In six's case both throughput and through feature have significant positive relationship with WIP while throughput bug do not. Throughput, throughput feature and throughput bug have the values .64, .68 and 0.07. The total row in tables \ref{DS:Throughput:6},  \ref{DS:TPFT:6} and \ref{DS:TPB:6} shows that throughput feature consist of 609 dates with a throughput counter and a mean value of 4.8, while throughput bug consist of 82 dates with a throughput counter and a mean of 3.3 The mean of throughput is 4.58 which reflects that throughput feature contribute more to throughput than throughput bug.
+\begin{figure}[h]
+\centering     %%% not \center
+\subfigure[WIP and Throughput]{\label{fig:a:1}\includegraphics[scale=0.5]{Picture/One/WIPvsTP.png}}
+\subfigure[WIP and Throughput feature]{\label{fig:b:1}\includegraphics[scale=0.5]{Picture/One/WIPvsTPFT.png}}
+\subfigure[WIP and Throughput bug]{\label{fig:c:1}\includegraphics[scale=0.5]{Picture/One/WIPvsTPB.png}}
+\caption{Correlation graphs between WIP and the throughput variables.}
+\label{corr:Difference:1}
+\end{figure}
+
+
+
+
+The same issue encounter for both team six and seven. In case of team six, both throughput and throughput feature have significant positive relationship with WIP while throughput bug do not. Throughput, throughput feature and throughput bug have the correlation values .64, .68 and 0.07. The total row in tables \ref{DS:Throughput:6},  \ref{DS:TPFT:6} and \ref{DS:TPB:6} shows that throughput feature consist of 609 dates and a mean value of 4.8, while throughput bug consist of 82 dates  and a mean of 3.3. The throughout variable consist of 691 dates and have a mean of 4.58 which reflects that throughput feature contribute more to throughput than throughput bug, hence the strong relationship.
+
+
+For team seven's case, the difference between throughput, throughput feature and throughput bug is so small, which also is indicated by the total row in tables \ref{DS:Throughput:7},  \ref{DS:TPFT:7} and \ref{DS:TPB:7}. In the total rows throughput have a total mean of 2.7, while throughput feature have 2.8 and throughput bug have 2.6. Throughput feature contributes 156 dates to throughput and throughput bug contributes 172 dates, so there is no need to explain the difference.
+
+Team ten has significant positive relationship between WIP and the variables throughput and throughput bug. Throughput for team ten consist of 404 tasks as show in the total row in Table \ref{DS:Throughput:7}. Throughput bug represents 335 of these dates while throughput feature stands for 69 dates as shown in Tables \ref{DS:TPFT:7} and \ref{DS:TPB:7}. But the overall mean for throughput, throughput feature and throughput bug is 2.2, 2.3 and 2.2, which could reflect that these three variables should close. The Figures in \ref{corr:Difference:10} disproves that assumption. The figure shows that the correlation dots between WIP and throughput and WIP and throughput bug is almost identical, which proves that throughput bug have a close relationship to throughput. 
+
+
+\begin{figure}[h]
+\centering     %%% not \center
+\subfigure[WIP and Throughput]{\label{fig:a}\includegraphics[scale=0.5]{Picture/Ten/WIPvsTP.png}}
+\subfigure[WIP and Throughput feature]{\label{fig:b}\includegraphics[scale=0.5]{Picture/Ten/WIPvsTPFT.png}}
+\subfigure[WIP and Throughput bug]{\label{fig:c}\includegraphics[scale=0.5]{Picture/Ten/WIPvsTPB.png}}
+\caption{Correlation graphs between WIP and the throughput variables for team ten.}
+\label{corr:Difference:10}
+\end{figure}
+
+
+
+
+
+
+Team one, three, four and nine have a significant positive relationship between WIP and bugs as well. Team three and six have a significant positive relationship between WIP and churn bug. Why churn bug differ from churn for team six is stated in section \ref{sec:corr:lt}. But for team three, churn bug do not differ much from churn. Churn has a correlation of -0.47, churn bug have -.57 and churn feature have -0.35.  The tables \ref{DS:Churn:3}, \ref{DS:CF:3} and \ref{DS:CB:3} shows that churn have a total mean of 59.4, churn feature have 102.6 and churn bug 41.1. This shows that churn bug contributes more to churn than churn feature, since the mean of churn is closer to churn bug. 
+
+Team four is the it-support team for SI.  IT-support do not have churn, since they don't code and that reflects why churn, churn feature and churn bug is indicated with a .c in Table \ref{corr:WIP}. But, team four have a significant positive relationship between WIP and the rest of the variables. 
+
+In Table \ref{DS:corr:WIP}, the total mean of throughput is 0.6 for all the teams and the median is 0.7 , which reflects the positive correlation between WIP and throughput. The bug variables have a total mean of 0.4 with a median of 0.5, this indicates that WIP and bug have a medium strong relationship. 
 
 \begin{table}[!htbp]
  \centering
@@ -1249,16 +1247,14 @@ Churn bug  & 10.0 & -0.1 & -0.1 & 0.4 & 0.8 & -0.6\\ \hline
  \label{DS:corr:WIP}
  \end{table}
 
-For team seven's case the difference between throughput, throughput feature and throughput bug is so small, which also is indicated by the total row in tables \ref{DS:Throughput:7},  \ref{DS:TPFT:7} and \ref{DS:TPB:7}. In the total rows throughput have a total mean of 2.7, while throughput feature have 2.8 and throughput bug have 2.6. Throughput feature contributes 156 dates to throughput and throughput bug contributes 172 dates, which is almost the same amount.Team ten has significant positive relationship between WIP and the variables throughput and throughput bug. Throughput for team ten consist of 404 tasks as show in the total row in table \ref{DS:Throughput:7}. Throughput bug represents 335 of these dates while throughput feature stands for 69 as shown in tables \ref{DS:TPFT:7} and \ref{DS:TPB:7}. The mean for each quarter rarely differ from more than 0,1 to -0,1 between throughput and throughput bug. Therefore throughput and throughput bug have a close relationship.  
 
-Team one, three, four and nine have a significant positive relationship between WIP and bugs as well. Team three and six have a significant positive relationship between WIP and churn bug. Team four is the it-support team in SI.  IT-support do not have churn since they don't code which is why churn, churn feature and churn bug is indicated with a .c in table \ref{corr:WIP}. But, team four have a significant positive relationship between WIP and the rest of the variables. 
-
-In table \ref{DS:corr:WIP} the mean of throughput is 0.6 for all the teams and the median is 0.7 , which reflects the amount of positive correlation between WIP and throughput. The bug variables have a total mean of 0.4 with a median of 0.5, this indicates that WIP and bug have a medium strong relationship. 
 
 
 \section{Correlation - Leadtime}
 \label{sec:corr:lt}
-In this section the table \ref{corr:Leadtime} shows the correlation between leadtime and the variable for all the teams. Team two, six and ten have significant negative relationship between leadtime and churn bug. The churn and churn bug variables for team two have the values of  -0.45 and -.73. These values are relative close.  However, churn feature have a value of 0.41. The total row in tables \ref{DS:Churn:2}, \ref{DS:CF:2} and \ref{DS:CB:2} shows that churn for team two consist of 1572 dates, churn feature of 375 dates and churn bug of 1197. Churn bug is 76\% of churn, which concludes that churn feature pulls a little down the over all value of churn, while churn bug consist of most of the values in churn.  Team two also has significant negative relationship between leadtime and number of bugs finished within quarter. Team six's churn bug have a negative correlation of -.55, churn have a value of -0.08 and churn feature -0.20. Churn bug consist of 17\% (265/1533) the churn variable as shown in tables \ref{DS:Churn:6} and \ref{DS:CB:6}. This is why churn bug's value doesn't reflect in the churn value. In section \ref{sec:corr:WIP} team six had a significant correlation between WIP and the variables throughput and throughput feature. The same goes for leadtime, but now it's a negative correlation. Why throughput bug differ from both throughput where explained in that section. 
+In this section the table \ref{corr:Leadtime} shows the correlation between leadtime and the variables. Team two, six and ten have significant negative relationship between leadtime and churn bug. The churn and churn bug variables for team two have the values of  -0.45 and -.73. These values are relative close.  However, churn feature have a value of 0.41. The total row in tables \ref{DS:Churn:2}, \ref{DS:CF:2} and \ref{DS:CB:2} shows that churn for team two consist of 1572 dates, churn feature of 375 dates and churn bug of 1197. Churn bug is 76\%  (1197/1572) of the total churn. The total mean of churn, churn feature and churn bug is 65.7, 111.4 and 51.3, which reflects that churn bug contribute more to the churn variable than churn feature, hence the two mean values are close.  Team two also has significant negative relationship between leadtime and bugs finished, quarter variable.
+
+The churn bug for team six have a negative correlation of -.55 while churn have a correlation of -0.08 and churn feature a correlation of -0.2. The reason why churn bug differ from churn is because churn bug consist of 17\% (265/1533) of the churn variable as shown in tables \ref{DS:Churn:6} and \ref{DS:CB:6}. The same tables shows that the total mean of churn is 146, while the total mean for churn feature is 156.5 and for churn bug it's 95.2. The total mean concludes that churn bug don't contribute to much to the churn variable, hence big difference of the two mean values. Why throughput bug differ from both throughput where explained in section \ref{corr:WIP}. 
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
  \centering
@@ -1287,8 +1283,19 @@ Churn bug &0.28& -.73**
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{adjustwidth}
 \end{table}
-Churn bug is not the only churn variable that has a significant negative relationship between leadtime for team team, churn do as well. In tables \ref{DS:Churn:10}, \ref{DS:CF:10} and \ref{DS:CB:10} the overall mean of churn is 50.4, 66 for churn feature and 47.7 for churn bug which shows that churn and churn bug overall mean is close. Churn bug consist of 85\% of the overall dates in churn (517/609), that's why churn and churn bug have a close relationship. In the mean column of table \ref{DS:corr:lt} one can see that there is no value with overall significant relationship with Leadtime.
+\newpage
+Churn bug is not the only churn variable that has a significant negative relationship between leadtime for team ten, churn do as well. Then the assumption is that churn feature does not have a close relationship with churn. The Tables \ref{DS:Churn:10}, \ref{DS:CF:10} and \ref{DS:CB:10} shows the total mean of churn is 50.4, for churn feature it's 66 and for churn bug it is 47.7. This shows that churn and churn bug total mean is close, but the churn feature is not so far away. Churn bug also consist of 85\% of the overall dates in churn (517/609) which supports the assumption that churn bug consist of much of the churn variable. The assumption is proven right by the Figure \ref{corr:Difference:lt}. One can clearly see that Figure \ref{fig:a:lt:10} and \ref{fig:c:lt:10} have a significant negative correlation. The dot pattern in these two figures is also similar,  which points to the case that churn and churn bug are alike and that churn feature don't consist of much of the churn or have a close relationship to churn. 
 
+\begin{figure}[h]
+\centering     %%% not \center
+\subfigure[Leadtime and Churn]{\label{fig:a:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrn.png}}
+\subfigure[Leadtime and Churn feature]{\label{fig:b:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrnFT.png}}
+\subfigure[Leadtime and Churn bug]{\label{fig:c:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrnB.png}}
+\caption{Correlation graphs between leadtime and churn variables for team ten.}
+\label{corr:Difference:lt}
+\end{figure}
+
+The descriptive statistic table for leadtime shown in table \ref{DS:corr:LT} shows that there is no value with overall significant relationship with leadtime. 
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1313,9 +1320,7 @@ Churn bug  & 10.0 & -0.2 & -0.2 & 0.4 & 0.3 & -0.7\\ \hline
 
 \section{Correlation - Bugs}
 \label{sec:corr:bug}
-
-This section contains information about the correlation for bugs. The result is listed in table \ref{corr:bug}. The teams one, two, three, four, five, nine and ten all have a significant positive correlation between bugs and throughput. Team three, four, five and nine all have a significant positive correlation between bugs and the three throughput variables. The relationship between the throughput variables for team one and ten is stated in section \ref{sec:corr:WIP}. For team two, throughput feature (0.01) differ from throughput (.81) and throughput bug (.83).   Throughput bug consist of 2/3 of the throughput variable (460/690) and the total mean of throughput is 4.39 while for throughput bug it's 4.8 and 3.7 for throughput feature as shown in tables \ref{DS:Throughput:2}, \ref{DS:TPFT:2} and \ref{DS:TPB:2}. This states why it's different correlation between throughput feature and throughput. 
-
+This section contains information about the correlation table between the variables and bugs. The result is listed in table \ref{corr:bug}. Teams one, two, three, four, five, nine and ten all have a significant positive correlation between bugs and throughput. Team three, four, five and nine all have a significant positive correlation between bugs and the three throughput variables. Why the relationship between the throughput variables differ for team one and ten is stated in section \ref{sec:corr:WIP}. 
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
  \centering
@@ -1342,8 +1347,26 @@ Churn bug &0.37& 0.17& -0.08& .c
 \end{adjustwidth}
 \end{table}
 
-Team six and nine have a significant positive correlation between that bugs are finished within the same quarter as they are laid in backlog and bugs. Team nine also has a negative correlation between bug and churn feature. Churn feature consist of approximately 1/3 (295/923) of the churn variable as shown in tables \ref{DS:Churn:9} and \ref{DS:CFT:10}.  The total mean of churn feature for team nine is 133.9, 81.9 for churn and 57.5 for churn bug shown in table \ref{DS:CB:10}, which means that there are fewer and more code required tasks for churn feature. This reflects why there is not a close relationship between churn and churn feature as well as churn and churn bug. 
-In table \ref{DS:corr:Bugs} one can see that on company level that WIP and throughput have a positive correlation relationship with bugs.  
+\newpage
+
+
+
+Throughput feature differ from throughput for team two. One could believe that the reason is that throughput bug consists of 2/3 of the throughput variable (460/690) as shown in the descriptive statistic Tables \ref{DS:Throughput:2}, \ref{DS:TPFT:2} and \ref{DS:TPB:2}. But the tables shows that the total mean of throughput is 4.39. While for throughput bug it's 4.8 and 3.7 for throughput feature. These three variables are quiet close, which should reflect that these three variables should be close based on correlation measurement. But, the Figures in \ref{corr:Difference:2} shows that they are not. Both Figures \ref{fig:a:2} and \ref{fig:c:2} shows that when x increases, y also increases. But for Figure \ref{fig:b:2} one can see that the dots are more randomly placed. For example, when the Y value is at vertex, x value is low.  When the two highest values of x, y values are both low and high.  
+
+\begin{figure}[h]
+\centering     %%% not \center
+\subfigure[Bug and Throughput]{\label{fig:a:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTP.png}}
+\subfigure[Bug and Throughput feature]{\label{fig:b:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTPFT.png}}
+\subfigure[Bug and Throughput bug]{\label{fig:c:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTPB.png}}
+\caption{Correlation graphs between Bug and the throughput variables.}
+\label{corr:Difference:2}
+\end{figure}
+\newpage
+
+Team six and nine have a significant positive correlation between the variable Bugs finished, quarter. Team nine also has a negative correlation between bug and churn feature. Churn feature consist of approximately 1/3 (295/923) of the churn variable as shown in tables \ref{DS:Churn:9} and \ref{DS:CF:9}.  The total mean of churn feature is 133.9, the total mean for churn is 81.9 and the total mean for churn bug is 57.5 as shown in the previous stated tables and table \ref{DS:CB:10}, which means that there are fewer and more code required tasks for churn feature. This reflects why there is not a close relationship between churn and churn feature as well as churn and churn bug. 
+
+
+In table \ref{DS:corr:Bugs} one can see that WIP with a mean value of 0.4 have a medium correlation with bugs as stated in Section \ref{corr:WIP}.  Throughput  have a value of 0.6. This indicates that throughput have a high correlation with bugs.
 
 \begin{table}[!htbp]
  \centering
@@ -1368,7 +1391,18 @@ Churn bug  & 10.0 & 0.1 & 0.1 & 0.2 & 0.4 & -0.2\\ \hline
 
 \section {Correlation - Throughput}
 \label{sec:corr:TP}
-This section contains information about the correlation for throughput. The result is listed in table \ref{corr:TP}. Throughput has a significant correlation to either throughput feature or throughput bug for each of the teams, which is obvious. Why throughput bug differ from throughput feature and throughput for team one and six is explained in section \ref{sec:corr:WIP}.   Why throughput bug differ from throughput and throughput feature for team ten is also stated in section \ref{sec:corr:WIP}.  Why throughput feature differ from throughput and throughput bug for team two is stated in section \ref{sec:corr:bug}. For team eight, throughput bug differ from throughput and throughput feature.  Throughput bug consist of 99 dates and a mean of 1.5. Throughput feature consist of 92 dates and a mean of 3.2. While throughput have a mean of 2.3. These numbers are obtained tables \ref{DS:Throughput:8}, \ref{DS:TPFT:8} and \ref{DS:TPB:8}.  On the basis of these numbers it will look like both of the sub variables of throughput contributes and both of them should have close relationship to throughput.  But, in table \ref{DS:Difference} the difference between throughput mean and the mean of throughput bug and throughput feature is stated. According to the table, throughput feature's mean is closer overall closer to throughput than bug.
+This section contains information about the correlation table between throughput and the variables. The result is listed in Table \ref{corr:TP}. Throughput has a significant correlation to either throughput feature or throughput bug for each of the teams. But for some teams case, both throughput bug and throughput feature don't have a significant correlation. Why throughput feature differ from throughput for team one and six is explained in section \ref{sec:corr:WIP}.   Why throughput bug differ from throughput for team ten is also stated in section \ref{sec:corr:WIP}.  Why throughput feature differ from throughput for team two is stated in section \ref{sec:corr:bug}. 
+
+For team eight, throughput bug differ from throughput. Throughput bug consist of 99 dates and have total mean of 1.5. Throughput feature consist of 92 dates and a mean of 3.2. While throughput have a mean of 2.3. These numbers are obtained from the descriptive statistic Tables \ref{DS:Throughput:8}, \ref{DS:TPFT:8} and \ref{DS:TPB:8}.  On the basis of these numbers it will look like both of the sub variables of throughput contributes and both of them should have close relationship to throughput.  But, in Figure \ref{corr:Difference:8} the difference are stated. In Figure \ref{fig:a:8} the dots are clearly moving in a upwards direction, while in Figure \ref{fig:b:8} all the dots are all gathered around the low values of Y  without one dot who are located in the top right corner. 
+
+
+\begin{figure}[h]
+\centering     %%% not \center
+\subfigure[Bug and Throughput]{\label{fig:a:8}\includegraphics[scale=0.5]{Picture/Eight/TPvsTPFT.png}}
+\subfigure[Bug and Throughput feature]{\label{fig:b:8}\includegraphics[scale=0.5]{Picture/Eight/TPvsTPB.png}}
+\caption{Correlation graphs between the throughput variables.}
+\label{corr:Difference:8}
+\end{figure}
 
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
@@ -1377,7 +1411,7 @@ This section contains information about the correlation for throughput. The resu
 \hline
  & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\ \hline
 WIP &.74**& 0.21& .76**& .82**& 0.52& .64*& .67*& 0.47& .89**& .61*\\ \hline
-Throughput Feature &.96**& 0.09& .93**& .1**& .85**& .1**& .91**& .93**& .88**& 0.43\\ \hline
+Throughput Feature &.96**& 0.09& .93**& .1**& .85**& .1**& .91**& .94**& .88**& 0.43\\ \hline
 Throughput bug &0.03& .97**& .99**& .1*& .99**& 0.04& .91**& 0.44& .96**& .98**\\ \hline
 Bugs &.69**& .81**& .88**& .59*& .98**& 0.27& 0.07& 0.41& .70**& .56*\\ \hline
 Bugs finished, quarter &0.16& 0.12& 0.23& 0.39& 0.12& 0.12& 0.03& 0.33& .70**& .60*\\ \hline
@@ -1399,32 +1433,12 @@ Churn bug &-0.11& 0.06& -0.32& .c
 \end{table}
 
 
-\begin{table}[!htbp]
- \centering
- \begin{tabular}{|l |r|r|}
- \hline 
-Quarter &Bug & Feature \\ \hline
-2010-4&0.0 & - \\ \hline
-2011-1&-0.1 & 0.5\\ \hline
-2011-2&0.1 & -0.2\\ \hline
-2011-3&-0.1 & 0.7\\ \hline
-2011-4&0.1 & -0.2\\ \hline
-2012-1&0.3 & -0.5\\ \hline
-2012-2&0.0 & -1.7\\ \hline
-2012-3&1.5 & 0.6\\ \hline
-2012-4&0.2 & -1.9\\ \hline
-2013-1&-0.4 & -1.2\\ \hline
-2013-2&2.2 & -1.3\\ \hline
-2013-3&2.2 & -0.9\\ \hline
-2013-4&2.5 & 0.3\\ \hline
-Total &  8.5&-5.7 \\ \hline
-\end{tabular}
- \caption{Difference between throughput for team eight}
- \label{DS:Difference}
- \end{table}
+Both team nine and ten have a positive significant correlation between bug and Bugs finished, quarter. Team six have a significant correlation between bugs and churn bug. Why churn bug differ from churn and churn feature is stated in section \ref{sec:corr:lt}. Team seven has a significant positive correlation between throughput and the variables churn and churn bug, but not churn feature. Churn feature has almost a significant positive correlation with throughput. Even though churn feature and churn bug have a positive correlation with churn as stated in section \ref{sec:corr:churn}, it not so that correlation is transitive \parencite{corr:transitive}. Bilder her?!
 
-Both team nine and ten have a positive significant correlation between bug and bugs finished within the same quarter as there where recorded. Team six have a significant correlation between bugs and churn bug. Why churn bug differ from churn and churn feature is stated in section \ref{sec:corr:lt}. Team seven has a significant positive correlation between throughput and the variables churn and churn bug. Churn bug consist of almost 2/3 of churn (417/652) as shown in tables \ref{DS:Churn:7} and \ref{DS:CB:7}. Which concludes that churn bug contributes more to churn than churn feature.Team eight has a significant negative correlation between throughput and churn. Churn has a negative value of -.64 while churn feature has a value of -0.45 and churn bug has a value of -0.28. Churn feature consist of 246 of 329 tasks, as shown in tables \ref{DS:CF:8} and \ref{DS:Churn:8}. Which reflects that churn feature's value is not too far away from churn value. Churn feature contains several quarters with zero churn, which is why churn feature doesn't have a strong correlation with throughput. 
+ 
+Team eight has a significant negative correlation between throughput and churn. Churn has a negative value of -.64, while churn feature has a value of -0.45 and churn bug has a value of -0.28. Churn feature consist of 246 of 329 tasks, as shown in Tables \ref{DS:Churn:8} and \ref{DS:CF:8}. The total mean of these three values are 0.9 for churn, 0.1 for churn feature and 3.6 for churn bug as shown in the two tables above and Table \ref{DS:CB:8}. These variables reflects that churn feature's value is not too far away from churn value. Churn feature contains several quarters with zero churn, which is why churn feature doesn't have a strong correlation with throughput. 
 
+According to Table \ref{DS:corr:TP}, bugs have a strong positive correlation with throughput while WIP have a medium positive relationship with throughput.
 
 \begin{table}[!htbp]
  \centering
@@ -1448,7 +1462,10 @@ Churn bug  & 10.0 & 0.1 & 0.1 & 0.2 & 0.4 & -0.2\\ \hline
 
 \section{Correlation - Churn}
 \label{sec:corr:churn}
-This section contains information about the correlation for throughput. The result is listed in table \ref{corr:churn}.  All teams with valid churn have either one or both churn variable with significant positive correlation with churn. Teams two, five, six eight and ten doesn't have a positive correlation between both the churn variables and churn.  Why churn feature for team two and ten differ from churn is stated in section \ref{sec:corr:lt}. The reason churn bug differ from churn in team six's case is also stated in section \ref{sec:corr:lt}.  Team five has a significant positive correlation between churn and churn bug, but not for churn feature.  Churn feature consist of approximately 10\% of the total churn value as shown in tables \ref{DS:Churn:5} and ref{DS:CFT:5}. That's the reason churn feature do not have a significant correlation with churn.   
+This section contains information about the correlation table between the variables and churn. The result is listed in Table \ref{corr:churn}.  All teams with valid churn have either one or both churn variable with significant positive correlation with churn. Teams two, five, six eight and ten doesn't have a positive correlation between both the churn variables and churn.  
+
+Why churn feature for team two and ten differ from churn is stated in Section \ref{sec:corr:lt}. The reason churn bug differ in the case of team six is also stated in Section \ref{sec:corr:lt}. Team five on the other hand,  has a significant positive correlation between churn and churn bug, but not for churn feature.  Churn feature consist of approximately 10\% of the total churn value as shown in Tables \ref{DS:Churn:5} and \ref{DS:CF:5}. The two tables and Table \ref{DS:CB:5} shows that churn has a mean value of 23.5, churn feature with a mean value of 43.1 and churn bug with a mean value of 21.4. These values show that churn bug and have a close relationship with churn.
+   
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
 
@@ -1483,7 +1500,12 @@ Churn bug &.828**
 \end{adjustwidth}
 \end{table}
 
-As stated in section \ref{sec:corr:TP}, churn have a significant correlation to throughput for team eight. And in section \ref{sec:corr:TP} it is stated churn and churn feature have a closer relationship than churn and churn bug. But in the correlation table for churn, that's not the case. Churn bug have a signifigtant positive relationship of .82 with churn. Although churn feature consist of approximately 75\% (246/329) of all churn dates as shown in tables \ref{DS:Churn:8} and \ref{DS:CFT:8}. But, also as stated in in \ref{sec:corr:TP}, almost each of the churn feature columns are zero, and the correlation measurement is based on the mean value. Which is why churn bug have a significant correlation to churn. As expected, shown in table \ref{DS:corr:Churn} both churn feature and churn bug on company level have a close relationship with churn
+As stated in Section \ref{sec:corr:TP}, churn have a significant correlation to throughput for team eight. And in Section \ref{sec:corr:TP} it is stated churn and churn feature have a closer relationship than churn and churn bug. But in the correlation table for churn, that's not the case. Churn bug have a signifigtant positive relationship of .82 with churn. Although churn feature consist of approximately 75\% (246/329) of all churn dates as shown in Tables \ref{DS:Churn:8} and \ref{DS:CF:8}. But, also as stated in in \ref{sec:corr:TP}, almost each of the churn feature columns are zero, and the correlation measurement is based on the mean value. Which is why churn bug have a significant correlation to churn.
+
+
+%Team seven: Churn bug consist of almost 2/3 of churn (417/652) as shown in tables \ref{DS:Churn:7} and \ref{DS:CB:7}. But the total mean for the three values is 97.1 for churn, 148.1 for churn feature and 68.4 for churn bug. The total mean shows that churn feature contribute more to the churn variable than churn bug. This shows in the correlation table for churn in section \ref{sec:corr:churn}
+\newpage
+As expected, shown in table \ref{DS:corr:Churn} both churn feature and churn bug on company level have a close relationship with churn
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1505,9 +1527,13 @@ Churn bug  & 10.0 & 0.7 & 0.8 & 0.3 & 1.0 & 0\\ \hline
  \end{table}
  
  
+ \chapter{Discussion}
+ \label{ch:discussion} 
+ 
+ 
  \begin{appendices}
 \chapter{Descriptive statistics for the ten teams}
-
+\label{app:DS}
  
 \section{Team 1 - Descriptive Statistics}
 \begin{table}[!htbp]
@@ -4347,8 +4373,7 @@ Mean & 30.8&9.3&40.13&67.0&33.0 \\ \hline
 \end{table}
  \end{appendices}
  
- \chapter{Discussion}
- \label{ch:discussion}
+
 
 \newpage
 \part{Notes}
