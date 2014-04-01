@@ -16,6 +16,7 @@
 \usepackage{changepage}
 \usepackage{subfigure}
 \usepackage[toc,page]{appendix}
+\usepackage{blindtext}
 
 \let\Chaptermark\chaptermark
 \def\chaptermark#1{\def\Chaptername{#1}\Chaptermark{#1}}
@@ -618,21 +619,22 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 
 \chapter{Research Methods}
 \label{chap:RM}
-In this chapter the research methods will be introduced and the reason why the data from Software Innovation where chosen for this master thesis will be stated. The first section in this chapter, Section \ref{sec:CS} will give a brief introduction to the research method "Case Study".  Section \ref{sec:coc} is about the choice of case and complementary information about SI. 
+In this chapter the research methods will be introduced and the reason why the data from Software Innovation where chosen for this master thesis will be stated. Section \ref{sec:CS} gives a brief introduction to the research method "Case Study".  Section \ref{sec:coc} is about the choice of case and complementary information about SI. 
 
 
 \section{Case study}
 \label{sec:CS}
-To answer the research questions, a case study will be conducted.  A case study is used to explore causation in order to find underlying principles of a study \parencite{0078285763}\parencite{9781412960991}.  But which methods one can use in a case study or how the case study is conducted is ambiguous.  It might be that the case study is qualitative or quantitate.  Or that it utilizes a particular type of evidence (for example ethnographic, participant observation or field research).  Jennifer Platt stated: "Much case study theorizing has been conceptually confused because too many different themes have been packed into the idea "case study" \parencite{0521676568}.  John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is - at least in part to shed light on a larger class of cases  \parencite{0521676568}.
+To answer the research questions, a case study was conducted.  A case study is used to explore causation in order to find underlying principles \parencite{0078285763}\parencite{9781412960991}.  But which methods one can use in a case study or how the case study is conducted is ambiguous.  It might be that the case study maybe qualitative or quantitate.  A case study might utilize a particular type of evidence (for example ethnographic, participant observation or field research).  Jennifer Platt stated: "Much case study theorizing has been conceptually confused because too many different themes have been packed into the idea "case study" \parencite{0521676568}.  John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is -- at least in part to shed light on a larger class of cases  \parencite{0521676568}.As shown there is no clear rule what exactly a case study is.
 
 
 %John also stated: "Case connotes a spatially delimited phenomenon (a unit) observed at a single point in time or over a period of time"\parencite{0521676568}. 
-
-As one can see there is no clear rule what exactly a case study is. In this thesis the case study is used to explore WIP limit's effect in software development.  And the purpose is to shed light on WIP limit in software development and if it matter. In order to do so, the data set from SI with quantitative data will be interpreted.
+In this thesis, the case study is used to explore WIP limit's effect in software development. The purpose is to shed light on WIP limit in software development and if it matters. In order to do so, the data set from SI with quantitative data was analyzed.
 
 \section{Choice of case}
 \label{sec:coc}
-The case study in this thesis is based on data set from an in house software company named Software Innovation. The data set contains information about each task SI has worked rom 2008 to 2013. The data set is represented in a excel document, a excerpt of some of the columns in the document is shown in table \ref{dataset}. Although the data set contains items from 2008-2013, data from year 2008, 2009 and the two first quarters of 2010 will be excluded. Based on output from the program, the data is not as valid as the rest. 
+The data set from SI contains information about each task SI has worked rom 2008 to 2013. The data set is represented in a excel document. An excerpt of some of the columns in the document is shown in table \ref{dataset}. Although the data set contains items from 2008-2013, data from year 2008, 2009 and the two first quarters of 2010 will be excluded. The dates will be excluded partially because the transition from between processes and it was inaccurate measurements when SI first started with TFS.
+
+The reason SI and the data set from SI is analyzed in this thesis is because the article "Quantifying the Effect of Using Kanban versus Scrum" \parencite{Dag} used the same data set. Since Dag is the supervisor of this thesis and he had access to the data set, to use the set from SI is a choice of convenience. 
 
 \begin{table}[!ht]
 \begin{center}
@@ -652,13 +654,13 @@ ID	& Type &  Created Date & From Day & Date To & Lead Time & Team \\ \hline
 \end{center}
 \end{table}
 
-To try answering the research questions stated in chapter \ref{chap:RQ}, the data from SI will be interpreted. The data set contains thirty columns with different data for each task, mostly of this columns are irrelevant for this study but the important columns is stated in table \ref{IC}.
+The data set contains thirty columns with different data for each task, mostly of this columns are irrelevant for this study but the important columns is stated in table \ref{IC}.
 
 \begin{table}[!ht]
 \begin{center}
     \begin{tabular}{| l | p{5cm} |}
     \hline
-     Columns from data set & Description\\ \hline
+     \bf{Variable} & \bf{Description}\\ \hline
      Created Date & When a task is put in backlog \\ \hline
      Date From & When a given task is pulled out from the backlog\\ \hline
      Date to & When a task is finished and ready for release. \\ \hline
@@ -670,21 +672,20 @@ To try answering the research questions stated in chapter \ref{chap:RQ}, the dat
     \hline
     Team &States the team who has been working on the task.\\ \hline
     \end{tabular}
-\caption{Information about the columns from the SI dataset}
+\caption{Variables from the SI dataset}
 \label{IC} %% information columns
 \end{center}
 \end{table}
 
 \newpage
 
-The data from SI will be interpreted on team level. The data from SI will be analyzed using the program, which will compute the variables shown in table \ref{des} for each of the six team. This data will be further analyzed using SPSS. With SPSS the data produced by the program will be interpreted. The interpreted data will be presented in chapter \ref{ch:res}. 
-
+The data from SI was analyzed on team level. The data from SI was analyzed using the program, which will compute the variables shown in table \ref{des} for all of the teams.
 \begin{table}[!htbp]
 \begin{center}
     \begin{tabular}{| l | p{5cm} |  p{5cm} |}
     \hline
-    Variable &	Description	 & Columns from SI\\ \hline 
-     WIP & \parbox[t]{5cm}{The number of items in progress on the given day} & Date From and Date To. \\ \hline
+    \bf{Computed variable} &	\bf{Description}	 & \bf{Columns from SI}\\ \hline 
+     WIP & \parbox[t]{5cm}{Items in progress on the given day} & Date From and Date To. \\ \hline
      Throughput	& Number of tasks finished on a given day & Date To \\ \hline
      Churn & Lines added, lines modified and lines deleted added together & Lines Added, Lines Modified, Lines Deleted and Date To \\ \hline
     Bugs & The number of tasks labeled as Bug and not feature & Type and Created Date \\ \hline
@@ -694,9 +695,8 @@ The data from SI will be interpreted on team level. The data from SI will be ana
 \label{des} %% desription
 \end{center}
 \end{table}
-\newpage
-The reason SI and the data set from SI is analyzed in this thesis is based on the article "Quantifying the Effect of Using Kanban versus Scrum" \parencite{Dag}. In the article the three authors investigated Kanban vs. Scrum for SI's case. Since Dag is the supervisor of this thesis and he had access to the data set, to use the set from SI is a choice of convenience. 
 
+The \textbf{Date from} column consist of dates form when tasks where created. The \textbf{Date to} column consist of all of the dates when tasks where marked as finished.The \textbf{Lines added}, \textbf{Lines Modified} and \textbf{Lines Deleted} columns contains the amount of lines added, modified or deleted in order to finished the task.The \textbf{Type} column consist of a string that has the value as either "Bug" or "Feature".The \textbf{Lead time} column consist of the lead time value.  
 
 
 
@@ -712,7 +712,7 @@ From 2001 to 2006 SI used the Waterfall process with a life cycle of:
 \end{enumerate} 
 \parencite{Dag}. 
 
-In 2007 SI examined their development process, which resulted in decision to change to Scrum. Scrum was implemented with the standard elements of Scrum:
+In 2007, SI examined their development process, which resulted in a decision to change to Scrum. Scrum was implemented with the standard elements of Scrum:
 \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
 \item Cross functional teams
 \item Sprint planning meetings 
@@ -724,21 +724,15 @@ In 2007 SI examined their development process, which resulted in decision to cha
 
 SI implemented three weeks sprint, after each sprint a fully tested shippable code was ready. In 2010, SI went from Scrum to Kanban. SI felt that Scrum was too rigid and didn't fit their purpose, they also feared that inaccurate estimation and time boxing gave them longer lead time. SI also saw Scrum planning meetings as waste which reduced productivity and quality \parencite{Dag}. 
 
-SI decided to implemented Kanban in the following manner. When a work item is pulled from the backlog, SI tries to make the item flow through all the stages until it's ready for release. This procedure happens as quick as possible. In order for an item to be ready for release it has to be at a satisfactory quality level, which is defined by SI. SI also implemented WIP limits. If the WIP limit is reached, no new tasks are started until another task is finished which is based on the principle of just-in-time. \parencite{Dag}.
-
-
-
-
+SI decided to implement Kanban in the following manner. When a work item is pulled from the backlog, SI tries to make the item flow through all the stages until it's ready for release. This procedure happens as quickly as possible. In order for an item to be ready for release, it has to be at a satisfactory quality level, which is defined by SI. SI also implemented WIP limits. If the WIP limit is reached, no new tasks are started until another task is finished which is based on the principle of just-in-time \parencite{Dag}.
 
 
 \chapter{Data collected and calculations}
 \label{ch:DCC}
-This chapter will introduce complementary information about the data set and the program. The first section, Section \ref{WPD} will introduce the algorithm of how the program measure WIP for each day. The subsection \ref{sec:Example} will provide a comprehensive example of how the program measure WIP per day. The consecutively sections reveals the algorithm of how the program measure bugs (Section \ref{sec:bug}) throughput (Section \ref{sec:TP}),  churn (Section \ref{sec:churn}) and lead time (Section \ref{sec:LT}). In the last section, a short introduction to the statistical analyze program SPSS is given (Section \ref{sec:SPSS})
-
-For this thesis a program was made in order to measure the variable shown in table \ref{des}. The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a description using Pseudocode \parencite{jd}.The Pseudocode for each section is simplified with only the key elements of the program code. 
+This chapter will introduce how the algorithms of the program works. The first section, Section \ref{WPD} introduces the algorithm of how the program measure WIP for each day. The subsection \ref{sec:Example} provides a comprehensive example of how the program measure WIP per day. The consecutively sections reveal the algorithm of how the program measure bugs (Section \ref{sec:bug}) throughput (Section \ref{sec:TP}),  churn (Section \ref{sec:churn}) and lead time (Section \ref{sec:LT}). In the last section, a short introduction to the statistical analyze program SPSS is given (Section \ref{sec:SPSS}). For this thesis a program was made in order to measure the variables shown in Table \ref{des}. %The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a description using Pseudocode \parencite{jd}.The Pseudocode for each section is simplified with only the key elements of the program code. 
 
 
-The table \ref{tab:measurementDone} shows how quarters, dates and days are represented in this thesis. 
+The Table \ref{tab:measurementDone} shows how quarters, dates and days are represented in this thesis. 
 
 \begin{table}[!ht]
 \centering
@@ -747,10 +741,10 @@ The table \ref{tab:measurementDone} shows how quarters, dates and days are repre
 \item All seven days in the week are taken into account when measuring included Saturdays and Sundays
 \item Quarter of a year is defined as: 
 \begin{itemize}
-\item January, February and March (Q1)
-\item April, May and June (Q2)
-\item July, August and September.(Q3)
-\item October. November and December (Q4)
+\item January, February and March (Q1),
+\item April, May and June (Q2),
+\item July, August and September (Q3),
+\item October. November and December (Q4).
 \end{itemize}
 \parencite{Quarter}
 \caption{The standard of the data set}
@@ -771,12 +765,12 @@ The table \ref{tab:measurementDone} shows how quarters, dates and days are repre
 
 \subsection{Step 1: Gather all unique dates into a Arraylist}
 \label{sub:stepOne}
-First step of WIP measurement is to create a WIP object with the attributes in table \ref{tab:object}.  The values that are assigned to the attributes are gathered from the data set file.  The program creates a WIP object and assigned values to it a shown in listing \ref{lst:Arraylist} . After the values are assigned the program puts it into the right Arraylist\footnote{Arraylist is a resizable array implementation of a list. The Arraylist class provides function for manipulate the size of the array, check the size of the list and convert the list to an array  \parencite{Arraylist}} based on the team variable as shown in listing \ref{lst:addWIP}. In listing \ref{lst:addWIP}.
+The first step of WIP this programs algorithm is to create a WIP object with the attributes in table \ref{tab:object}.  The values that are assigned to the attributes are gathered from the data set file.  The program creates a WIP object and assigned the data set values to the object a shown in listing \ref{lst:Arraylist} . After the values are assigned, the program puts the WIP object into the right Arraylist\footnote{Arraylist is a resizable array implementation of a list. The Arraylist class provides function for manipulate the size of the array, check the size of the list and convert the list to an array  \parencite{Arraylist}.} based on the team variable as shown in listing \ref{lst:addWIP}. In listing \ref{lst:addWIP}.
 \begin{table}[!ht]
 \begin{center}
 \begin{tabular}{| l | l |}
 \hline
-Type & Variable name \\ \hline
+\bf{Type} & \bf{Variable name} \\ \hline
 Date & start \\ \hline
 Date & end\\ \hline
 String & team\\ \hline
@@ -801,8 +795,8 @@ While inputFile != EOF // EOF = End Of file
 		FindTeam(WIP)
  \end{lstlisting}
  \end{minipage}
+
  
- \begin{minipage}{\textwidth} 
  \begin{lstlisting}[caption={Gather WIP object to the right data structure},label={lst:addWIP}]
 void FindTeam (WIP w) 
 		if w.team EQUALS "TeamOne"
@@ -810,22 +804,17 @@ void FindTeam (WIP w)
 		if w.team EQUALS "TeamTwo"
 			TeamTwo.add(w)
 		if w.team EQUALS "TeamThree"
-			TeamThree.add(w)
-		if w.team EQUALS "TeamFour"
-			TeamFour.add(w)
-				
-/* And so on for the rest if the six teams */
+			TeamThree.add(w)			
+/* And so on for the rest if the seven teams */
  \end{lstlisting}
- \end{minipage}
  
+ \newpage
 \subsection{Step 2: Gather the remaining dates}
  \label{sub:stepTwo}
-There are some dates missing which table \ref{wt:2} shows. For example the date 2010-10-08 is missing. In order to generate WIP for each day the program has to create the dates that's not in the set. 
-  
-In order to create the remaining dates, the program takes the first date and the last date from each of the teams's Arraylist created in previous section (\ref{sub:stepOne}) as shown in listing \ref{lst:remaining}, in line one and two. Then the program checks if all the dates between the first date and the last date are in the team's Arraylist. Each of the Arraylists are sorted on date. If the dates are not in the Arraylist, the program will put the date into the Arraylist as show in method addToArraylist on line ten to thirteen.
-In order to keep the pseudocode simple, the generateWIP method stated in line twelve was omit. The genereteWIP method creates a new WIP object and returns it. 
+There are some dates missing as shown in Table \ref{wt:2} shows. For example, the date 2010-10-08 is missing. In order to generate WIP for each day, the program has to create the dates that are not in the set. In order to create the remaining dates, the program takes the first date and the last date from each of the teams's Arraylist created in previous section (\ref{sub:stepOne}) as shown in line one and two of Listing \ref{lst:remaining}. Then the program checks if all the dates between the first date and the last date are in the team's Arraylist. Each of the Arraylists are sorted on date. If the dates are not in the Arraylist, the program will put the date into the Arraylist as show in method addToArraylist on line ten to thirteen.In order to keep the pseudocode simple, the generateWIP method stated in line twelve was omitted. The generateWIP method creates a new WIP object and returns it.
 
-\begin{minipage}{\textwidth} 
+
+
 \begin{lstlisting}[caption={Gather the remaining dates.},label={lst:remaining}]
 WIP first = Arraylist.get(0)//points to the first WIP object in the Arraylist 
 WIP last = Arraylist.get(Arraylist.size()-1)//points to the last WIP object in the Arraylist 
@@ -841,9 +830,9 @@ void addToArraylist(Date d, String team)
 		WIP = generateWIP(d, team)
 		Arraylist.add(WIP) 
  \end{lstlisting}
-   \end{minipage}
 
 \subsection{Step 3 Measure WIP}
+\vspace{-2.0em}
 The Arraylist from section \ref{sub:stepOne}  and \ref{sub:stepTwo} now contains a WIP object for each date from the third quarter of 2010 to 2013 for each team. In this step, the program will loop through each of the teams Arraylists. During the iteration each WIP object is extracted from the Arraylist and the WIP is measured. The two methods stated in line ten and eighteen respectively gather the current WIP (method in line ten) and finds out how many finished tasks (method in line eighteen) and returns the result. The result is used in six five to compute the current WIP. The if test in line four assures that there is only measured one WIP for each start date.  
 \begin{minipage}{\textwidth} 
 \begin{lstlisting}[caption={WIP measurement},label={lst:measure}]
@@ -964,10 +953,10 @@ As illustrated by the example, WIPs are not decrement until the finished date is
 
 
 
-
+\newpage
  \section{Rest of the variables}
  \label{sec:rotv}
-To compute the remaining variables, churn, leadtime and throughput a new algorithm is required.  The algorithm for the three variables is almost identical. First the program read in the data set from SI. For each of the lines in the data set, the program creates an object and saves the valuable information from the data set in the object. Then each object is saved in a data structure based on team association as showed in \ref{addObj}. When all the lines has been read in, and all objects has been put in the right data structure the algorithm differs. In the following subsections the algorithm for each of the variables is presented. In subsection \ref{sec:TP} the throughput algorithm is stated, in subsection \ref{sec:churn} churn is stated, in subsection \ref{sec:LT} leadtime is stated and in subsection \ref{sec:bug}  a description of how bug and feature is measured 
+To compute the remaining variables, churn, lead time and throughput a new algorithm is required.  The algorithm for the three variables is almost identical. First the program read in the data set from SI. For each of the lines in the data set, the program creates an object and saves the valuable information from the data set in the object. Then each object is saved in a data structure based on team association as showed in \ref{addObj}. When all the lines has been read in, and all objects has been put in the right data structure the algorithm differs. In the following subsections the algorithm for each of the variables is presented. In subsection \ref{sec:TP} the throughput algorithm is stated, in subsection \ref{sec:churn} churn is stated, in subsection \ref{sec:LT} lead time is stated and in subsection \ref{sec:bug}  a description of how bug and feature is measured 
 \begin{minipage}{\textwidth}
 \begin{lstlisting}[caption=Pseudocode example of how throughput objects are added, label=addObj]
 void addBug(Bug b)
@@ -1027,7 +1016,7 @@ To measure churn the data set from SI contains three columns ("Lines added, "Lin
 \begin{center}
     \begin{tabular}{| l | l | l | l |}
     \hline
-    Task id & Lines added & Lines modified  & Lines deleted \\ \hline
+\bf{Task id} & \bf{Lines added} & \bf{Lines modified}  & \bf{Lines deleted} \\ \hline
 1&352&307&1369\\ \hline
 2&314 & 31 & 15 \\ \hline
 3&314&31 & 15\\ \hline
@@ -1060,7 +1049,7 @@ The program does not need to analyze  the lead time for each task. The lead time
 \begin{center}
 \begin{tabular}{ | l | l | l | }
 \hline
-	ID & Type & Leadtime \\ \hline
+	\bf{ID} & \bf{Type} & \bf{Lead time} \\ \hline
 	84096 &  Feature  & 1 \\ \hline
 	84118 &  Bug  & 25 \\ \hline
 	84096 &  Feature  & 7 \\ \hline
@@ -1077,7 +1066,7 @@ The program does not need to analyze  the lead time for each task. The lead time
 addLeadTime(lead_time t, Arraylist list)
 	for lead_time in list
 		if lead_time.date EQUALS t.date
-			lead_time.leadtime+= t.leadtime
+			lead_time.lead time+= t.lead time
 			return
 			
 structure.add(t)
@@ -1090,28 +1079,6 @@ Churn is removed because a module or a feature, which consists of hundred or tho
 
 \subsection {Bug and feature}
 \label{sec:bug}
-Each task in the data set is label as either feature or bug as shown in figure \ref{bugsT}. 
-
-\begin{table}[ht]
-\begin{center}
-    \begin{tabular}{| l | l | p{5cm} |}
-    \hline
-    Task ID & Type \\ \hline
-57970 &	Bug\\ \hline
-57971&	Bug\\ \hline
-57972&	Bug\\ \hline
-57973&	Bug\\ \hline
-57974&	Feature\\ \hline
-57975&	Feature\\ \hline
-57976&	Feature\\ \hline
-57977&	Feature\\ \hline
-57978&	Feature\\ \hline
-    \end{tabular}
-\caption{Example of how tasks are labeled}
-\label{bugsT} %%  bugs table
-\end{center}
-\end{table}
-
 In order to measure feature and bug the program and SPSS will be used. The program will generate throughput and churn as described in section \ref{sec:TP} and \ref{sec:churn}. When the program has produced throughput and churn, SPSS will be used to produce throughput bug and feature as well as churn bug and churn feature. In order to do so a command called case summaries will be used. The case summaries groups variables. In table \ref{tab:ftb} a excerpt from the result data produced by the program.  With the case summaries function the variable "Team name", "Quarter" and "Type" will be grouped over churn in order to find churn feature and churn bug per quarter. 
 
 
@@ -1119,7 +1086,7 @@ In order to measure feature and bug the program and SPSS will be used. The progr
 \center
 \begin{tabular}{ | l | l | l | l | l | }
 \hline
-	Team name & Churn & Date & Quarter & Type \\ \hline
+	\bf{Team name} & \bf{Churn} & \bf{Date} & \bf{Quarte}r & \bf{Type} \\ \hline
 	Team one & 25 &2011-12-20& 2011-4 & Feature \\ \hline
 	Team two & 3 &2012-04-19 & 2012-2 & bug \\ \hline
 	Team one & 7 & 2010-08-06 & 2010-3 & Feature \\ \hline
@@ -1132,33 +1099,32 @@ In order to measure feature and bug the program and SPSS will be used. The progr
 \label{sec:SPSS}
 "IBM\circledR  SPSS\circledR Statistics is a comprehensive system for analyzing data. SPSS Statistics can take data from almost any type of file and use them to generate tabulated reports, charts and plots of distributions and trends, descriptive statistics, and complex statistical analyses." \parencite{IBM}
 
-After the program has finished the measurements of the data, SPSS will be used to analyze the derived data. SPSS will help to answer the research question stated in chapter \ref{chap:RQ} with help of two statistics method: Correlation and case summaries. 
+After the program has finished the measurements of the data, SPSS will be used to analyze the derived data. SPSS will help to answer the research question stated in chapter \ref{chap:RQ} with help of two statistics method: correlation and case summaries. 
 
 
 \chapter{Results}                     
 \label{ch:res}
 \section{Introduction}
-In this chapter the results are presented. The results are presented with five correlation tables and five corresponding descriptive statistics tables. Vertically in the correlation tables, the correlation variables are stated. Horizontally is the corresponding teams are stated. The team names are shortened in order to fit the tables. Team one is shortened to T1, team two is shortened to T2 and so on. The correlation tables is based on the mean value from the variables. Some of the variables from the correlation tables are shown in Table \ref{des} and are explained in chapter \ref{ch:DCC}, the rest will be explained here. Variables with suffix of "Feature" means tasks labeled with type "feature" are the only one who is counted. The same goes for variables with suffix "Bug". The "Bugs finished, quarter" variable represents how many tasks labeled "Bug" that are finished within the same quarter as it was created.  The "Avg days backlog, bug" variable is used to see the average number of days bugs are in backlog before pulled out. These two variables are used to see the prioritizing of bugs within a quarter as well as indicator of the workload together with churn for a quarter.   
+In this chapter the results are presented. The results are presented with five correlation tables and five corresponding descriptive statistics tables. Vertically in the correlation tables, the correlation variables are stated. Horizontally is the corresponding teams are stated. The team names are shortened in order to better fit the tables. Team one is shortened to T1, team two is shortened to T2 and so on. The correlation tables is based on the mean value from the teams variables. Some of the variables are shown in Table \ref{des} and are explained in chapter \ref{ch:DCC}, the rest will be explained here. Variables with suffix of "Feature" means tasks labeled with type "feature" are the only one who is counted. The same goes for variables with suffix "Bug". The "Bugs finished, quarter" variable represents how many tasks labeled "Bug" that are finished within the same quarter as it was created.  The "Avg days backlog, bug" variable represent the average number of days bugs are in backlog before it pulled out. These two variables are used as an indicator of the workload together with churn.   
 
 
-This chapter will be presented in the following manner. The first, Section \ref{sec:corr:WIP} shows the correlation table for WIP and the corresponding descriptive statistics table, Section \ref{sec:corr:lt} shows the correlation table for leadtime  and the corresponding descriptive statistics table, Section \ref{sec:corr:bug} shows the correlation table for bug and the corresponding descriptive statistics table, Section \ref {sec:corr:TP} shows the correlation table for throughput and the corresponding statistics table and Section \ref {sec:corr:churn} shows the correlation table for churn and the corresponding descriptive statistics table.
+This chapter will be presented in the following manner. Each of the sections contains a correlation table and a corresponding descriptive statistic table. The descriptive statistic tables present the correlation table with descriptive statistic.  The first Section \ref{sec:corr:WIP}, shows the tables for WIP, Section \ref{sec:corr:lt}, shows the tables for lead time, Section \ref{sec:corr:bug}, shows the tables for bug, Section \ref {sec:corr:TP}, shows the tables for throughput and Section \ref {sec:corr:churn}, shows the tables for churn.
 
 
-The content of the sections will consist of highlighting the variables with a significant correlation and variables that stands out. To back up any assumptions about the variables, descriptive statistic tables stated in appendix \ref{app:DS} and graphs will be used . The correlation relationship between two variables will occur twice, in both the correlation tables, since correlation is symmetric. When the relationship is highlighted in one of the sections, the relationship will not be highlighted in the other section. 
+The content of the sections will consist of highlighting the variables with a significant correlation and variables that stands out. To back up any assumptions about the variables, descriptive statistic tables for each of the variables for each of the teams stated in Appendix \ref{app:DS} and graphs will be used . The correlation relationship between two variables will occur twice, in both the correlation tables, since correlation is symmetric. When the relationship is highlighted in one of the sections, the relationship will not be highlighted in the other section. 
 
 
+%Since ten percent of lead time and churn is removed, these two tables are combined and can consist of up to 184 dates per quarter - Skal jeg skrive det?
 
-
-Since ten percent of leadtime and churn is removed, these two tables are combined and can consist of up to 184 dates per quarter - Skal jeg skrive det?
-
-The descriptive statistics tables \ref{DS:corr:WIP}, \ref{DS:corr:LT}, \ref{DS:corr:Bugs},  \ref{DS:corr:TP} and \ref{DS:corr:Churn}  shows number(N), mean, median standard deviation(Std.dev), maximum(max)  and minimum(min) values from on the correlation table.  These values are based on all the teams values. For example, in table \ref{DS:corr:WIP}, one can see that all the teams in SI combined have a mean of value of 0.6 for throughput, when talking about correlation between WIP and throughput. 
+The descriptive statistics tables \ref{DS:corr:WIP}, \ref{DS:corr:LT}, \ref{DS:corr:Bugs},  \ref{DS:corr:TP} and \ref{DS:corr:Churn}  shows number(N), mean, median standard deviation(Std.dev), maximum(max)  and minimum(min) values from on the correlation table.  The values in the descriptive statistics tables are summary from the correlation table. For example, in table \ref{DS:corr:WIP}, one can see that all the teams in SI combined have a mean of value of 0.6 for throughput, when talking about correlation between WIP and throughput.
+ 
 
 \section{Correlation - WIP}
 \label{sec:corr:WIP}
-In this section the Table  \ref{corr:WIP}  shows the correlation between WIP and the variables for the teams. The table shows team one, three, four, six, seven, nine and ten have significant positive relationship between WIP and throughput. Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP. But, for team one, six, seven and ten that's not the case. 
+This section contains the Table  \ref{corr:WIP}. The table shows the correlation between WIP and the variables for the teams. The table shows team one, three, four, six, seven, nine and ten have significant positive relationship between WIP and throughput. Since throughput feature and throughput bug is subset of throughput, its natural that these variables also have a significant positive correlation to WIP. But, for team one, six, seven and ten that's not the case. 
 
 \begin{table}[!htbp]
- \begin{adjustwidth}{-2.5cm}{}
+ \begin{adjustwidth}{-1.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1166,10 +1132,10 @@ In this section the Table  \ref{corr:WIP}  shows the correlation between WIP and
 Throughput &.74**& 0.21& .76**& .83**& 0.52& .64*& .67*& 0.47& .89**& .61*\\ \hline
 Throughput Feature &.73**& -0.14& .83**& .82**& 0.25& .68**& .63*& 0.40& .82**& 0.20\\ \hline
 Throughput bug &0.02& 0.25& .73**& .82**& .54*& 0.07& 0.55& 0.15& .88**& .63*\\ \hline
-Bugs &.73**& 0.20& .60*& .56*& 0.50& 0.46& -0.07& 0.04& t.58*& 0.18\\ \hline
+Bugs &.73**& 0.20& .60*& .56*& 0.50& 0.46& -0.07& 0.04& .58*& 0.18\\ \hline
 Bugs finished, quarter &0.35& 0.10& -0.07& .56*& 0.19& 0.19& 0.50& 0.23& 0.52& 0.35\\ \hline
 Avg days in backlog, bugs &-0.03& 0.44& 0.42& .54*& -0.18& 0.02& -0.64& 0.14& -0.20& -0.18\\ \hline
-Leadtime &-0.21& 0.23& -0.13& .69**& 0.10& -0.18& 0.39& 0.11& -0.35& 0.33\\ \hline
+Lead time &-0.21& 0.23& -0.13& .69**& 0.10& -0.18& 0.39& 0.11& -0.35& 0.33\\ \hline
 Churn &-0.18& -0.43& -0.47& .c& -0.24& -0.04& 0.23& -0.42& -0.03& 0.05\\ \hline
 Churn feature &0.38& -0.39& -0.35& .c& -0.03& 0.02& 0.10& -0.26& -0.07& 0.25\\ \hline
 Churn bug &0.05& -0.04& -.57*
@@ -1185,7 +1151,7 @@ Churn bug &0.05& -0.04& -.57*
 \end{adjustwidth}
 \end{table}
 
-Both throughput and throughput feature in team one's case have significant positive relationship with WIP, throughput bug do not. Throughput and throughput feature have the correlation values .74 and .73 while throughput bug's value is 0.02. The reason why throughput bug do not have a close relationship to throughput maybe because throughput bug consist 37\% (108/290) of throughput as shown in the total row in tables \ref{DS:Throughput:1} and \ref{DS:TPB:1}. But it's possible to have a close relationship even though, since the correlation is based on the mean values. But throughput feature have a total mean of 13.7, while throughput bug have 6.4 as shown in tables \ref{DS:TPFT:1} and \ref{DS:TPB:1}. The total mean of throughput is 11 as shown in table \ref{DS:Throughput:1}. The mean values strengthens the assumption that throughput feature represents most of the throughput variable. The figures in Figure \ref{corr:Difference:1} proves the assumption. The pattern of the dots in the Figures \ref{fig:a:1} and \ref{fig:c:1} are similar. They both increase when the X values does.  While the dots in Figure \ref{fig:b:1} sometimes decrease when X do and sometimes decreases. 
+Both throughput and throughput feature in team one's case have significant positive relationship with WIP, throughput bug don't. Throughput and throughput feature have the correlation values .74 and .73 while throughput bug's value is 0.02. The reason throughput bug do not have a close relationship to throughput might be because throughput bug consist 37\% (108/290) of throughput dates as shown in the total row in tables \ref{DS:Throughput:1} and \ref{DS:TPB:1}. But it's possible to have a close relationship even though, since the correlation is based on the mean values. But throughput feature has a total mean of 13.7, while throughput bug have 6.4 as shown in tables \ref{DS:TPFT:1} and \ref{DS:TPB:1}. The total mean of throughput is 11 as shown in table \ref{DS:Throughput:1}. The mean values strengthens the assumption that throughput feature represents most of the throughput variable. The correlation  graphs in Figure \ref{corr:Difference:1}  and the throughput correlation tables in Section \ref{sec:corr:TP} states the assumption. In the correlation graphs the X-axis represents WIP and the Y-axis represents the different throughput variables. The pattern of the dots in the Figures \ref{fig:a:1} and \ref{fig:c:1} are similar. They both increase when X values does.  While the dots in Figure \ref{fig:b:1} sometimes decrease when X do and sometimes decreases, which reflects the values correlation values between throughput and both throughput bug (0.03) and throughput feature (0.96).
 
 \begin{figure}[h]
 \centering     %%% not \center
@@ -1199,12 +1165,12 @@ Both throughput and throughput feature in team one's case have significant posit
 
 
 
-The same issue encounter for both team six and seven. In case of team six, both throughput and throughput feature have significant positive relationship with WIP while throughput bug do not. Throughput, throughput feature and throughput bug have the correlation values .64, .68 and 0.07. The total row in tables \ref{DS:Throughput:6},  \ref{DS:TPFT:6} and \ref{DS:TPB:6} shows that throughput feature consist of 609 dates and a mean value of 4.8, while throughput bug consist of 82 dates  and a mean of 3.3. The throughout variable consist of 691 dates and have a mean of 4.58 which reflects that throughput feature contribute more to throughput than throughput bug, hence the strong relationship.
+The same issue encounter for both team six and seven. In case of team six, both throughput and throughput feature have significant positive relationship with WIP while throughput bug do not. Throughput, throughput feature and throughput bug have the correlation values .64, .68 and 0.07. The total row in tables \ref{DS:Throughput:6},  \ref{DS:TPFT:6} and \ref{DS:TPB:6} shows that throughput feature consist of 609 dates and a mean value of 4.8, while throughput bug consist of 82 dates  and a mean of 3.3. The throughout variable consist of 691 dates and have a mean of 4.58 which reflects that throughput feature contribute more to throughput than throughput bug, hence the the close mean values. The assumption is stated in throughput correlation table in Section \ref{sec:corr:TP}.
 
 
-For team seven's case, the difference between throughput, throughput feature and throughput bug is so small, which also is indicated by the total row in tables \ref{DS:Throughput:7},  \ref{DS:TPFT:7} and \ref{DS:TPB:7}. In the total rows throughput have a total mean of 2.7, while throughput feature have 2.8 and throughput bug have 2.6. Throughput feature contributes 156 dates to throughput and throughput bug contributes 172 dates, so there is no need to explain the difference.
+For team seven's case, the difference between throughput, throughput feature and throughput bug is so small, which also can be assumed by the total row in tables \ref{DS:Throughput:7},  \ref{DS:TPFT:7} and \ref{DS:TPB:7}. In the total rows, throughput has a total mean of 2.7, while throughput feature have 2.8 and throughput bug have 2.6. Throughput feature contributes 156 dates to throughput and throughput bug contributes 172 dates. The throughput correlation table in Section \ref{sec:corr:TP} proves the assumption with values of .91 for both throughput feature and bug.  
 
-Team ten has significant positive relationship between WIP and the variables throughput and throughput bug. Throughput for team ten consist of 404 tasks as show in the total row in Table \ref{DS:Throughput:7}. Throughput bug represents 335 of these dates while throughput feature stands for 69 dates as shown in Tables \ref{DS:TPFT:7} and \ref{DS:TPB:7}. But the overall mean for throughput, throughput feature and throughput bug is 2.2, 2.3 and 2.2, which could reflect that these three variables should close. The Figures in \ref{corr:Difference:10} disproves that assumption. The figure shows that the correlation dots between WIP and throughput and WIP and throughput bug is almost identical, which proves that throughput bug have a close relationship to throughput. 
+Team ten has significant positive relationship between WIP and both throughput and throughput bug. Throughput for team ten consist of 404 tasks as show in the total row in Table \ref{DS:Throughput:7}. Throughput bug represents 335 of these dates while throughput feature stands for 69 dates as shown in Tables \ref{DS:TPFT:7} and \ref{DS:TPB:7}. But the overall mean for throughput, throughput feature and throughput bug is 2.2, 2.3 and 2.2, which could reflect that these three variables have a close relationship. Both the throughput correlation table in Section \ref{sec:corr:TP} and the correlation graphs Figures in \ref{corr:Difference:10} disproves that assumption. The figure shows that the correlation dots between WIP and throughput and WIP and throughput bug is almost identical, which proves that throughput bug have a close relationship to throughput while the correlation table shows that the correlation between throughput and throughput feature is .43 which is a medium strong correlation. 
 
 
 \begin{figure}[h]
@@ -1216,14 +1182,9 @@ Team ten has significant positive relationship between WIP and the variables thr
 \label{corr:Difference:10}
 \end{figure}
 
+Team one, three, four and nine have a significant positive relationship between WIP and bugs as well. Team three and six have a significant positive relationship between WIP and churn bug. Why churn bug differ from churn for team six is stated in section \ref{sec:corr:lt}. But for team three, churn bug do not differ much from churn which is shown in the correlation table for churn in Section \ref{sec:corr:churn}. In WIP's correlation table has churn a correlation of -0.47, churn bug has -.57 and churn feature has -0.35.  The tables \ref{DS:Churn:3}, \ref{DS:CF:3} and \ref{DS:CB:3} shows that churn has a total mean of 59.4, churn feature has 102.6 and churn bug 41.1. This shows that the churn feature variable has a small impact on the churn variable.
 
-
-
-
-
-Team one, three, four and nine have a significant positive relationship between WIP and bugs as well. Team three and six have a significant positive relationship between WIP and churn bug. Why churn bug differ from churn for team six is stated in section \ref{sec:corr:lt}. But for team three, churn bug do not differ much from churn. Churn has a correlation of -0.47, churn bug have -.57 and churn feature have -0.35.  The tables \ref{DS:Churn:3}, \ref{DS:CF:3} and \ref{DS:CB:3} shows that churn have a total mean of 59.4, churn feature have 102.6 and churn bug 41.1. This shows that churn bug contributes more to churn than churn feature, since the mean of churn is closer to churn bug. 
-
-Team four is the it-support team for SI.  IT-support do not have churn, since they don't code and that reflects why churn, churn feature and churn bug is indicated with a .c in Table \ref{corr:WIP}. But, team four have a significant positive relationship between WIP and the rest of the variables. 
+Team four is the it-support team for SI.  IT-support do not have churn, since they don't code and that reflects why the churn variables is indicated with a .c in Table \ref{corr:WIP}. However, the rest of the team four's variables have a significant positive relationship between WIP and the rest of the variables. 
 
 In Table \ref{DS:corr:WIP}, the total mean of throughput is 0.6 for all the teams and the median is 0.7 , which reflects the positive correlation between WIP and throughput. The bug variables have a total mean of 0.4 with a median of 0.5, this indicates that WIP and bug have a medium strong relationship. 
 
@@ -1238,7 +1199,7 @@ Throughput bug  & 10.0 & 0.4 & 0.4 & 0.3 & 0.9 & 0.0\\ \hline
 Bugs  & 10.0 & 0.4 & 0.5 & 0.3 & 0.7 & -0.1\\ \hline
 Bugs finished, quarter  & 10.0 & 0.3 & 0.3 & 0.2 & 0.6 & -0.1\\ \hline
 Avg days backlog, bugs  & 10.0 & 0.0 & -0.0 & 0.4 & 0.5 & -0.6\\ \hline
-Leadtime  & 10.0 & 0.1 & 0.1 & 0.3 & 0.7 & -0.3\\ \hline
+Lead time  & 10.0 & 0.1 & 0.1 & 0.3 & 0.7 & -0.3\\ \hline
 Churn  & 10.0 & -0.2 & -0.1 & 0.2 & 0.2 & -0.5\\ \hline
 Churn ft  & 10.0 & -0.0 & -0.0 & 0.2 & 0.4 & -0.4\\ \hline
 Churn bug  & 10.0 & -0.1 & -0.1 & 0.4 & 0.8 & -0.6\\ \hline
@@ -1250,11 +1211,11 @@ Churn bug  & 10.0 & -0.1 & -0.1 & 0.4 & 0.8 & -0.6\\ \hline
 
 
 
-\section{Correlation - Leadtime}
+\section{Correlation - Lead time}
 \label{sec:corr:lt}
-In this section the table \ref{corr:Leadtime} shows the correlation between leadtime and the variables. Team two, six and ten have significant negative relationship between leadtime and churn bug. The churn and churn bug variables for team two have the values of  -0.45 and -.73. These values are relative close.  However, churn feature have a value of 0.41. The total row in tables \ref{DS:Churn:2}, \ref{DS:CF:2} and \ref{DS:CB:2} shows that churn for team two consist of 1572 dates, churn feature of 375 dates and churn bug of 1197. Churn bug is 76\%  (1197/1572) of the total churn. The total mean of churn, churn feature and churn bug is 65.7, 111.4 and 51.3, which reflects that churn bug contribute more to the churn variable than churn feature, hence the two mean values are close.  Team two also has significant negative relationship between leadtime and bugs finished, quarter variable.
+This section contains the correlation Table \ref{corr:Lead time}. The table shows the correlation between lead time and the variables. Team two, six and ten have significant negative relationship between lead time and churn bug. The churn and churn bug variables for team two have the correlation values of  -0.45 and -.73. These values are relative close.  However, churn feature have a value of 0.41. The total row in tables \ref{DS:Churn:2}, \ref{DS:CF:2} and \ref{DS:CB:2} shows that churn for team two consist of 1572 dates. Churn feature consist of 375 dates and churn bug of 1197 dates. Churn bug contribute 76\%  (1197/1572) of the total amount of dates in churn. The total mean of churn, churn feature and churn bug is 65.7, 111.4 and 51.3, which could reflect that churn bug contribute more to the churn variable than churn feature. The churn correlation table in Section \ref{sec:corr:churn} with the correlation value of .08 for churn feature and .728 for churn bug, states that churn bug represents the most of the churn variable. Team two also has significant negative relationship between lead time and the bugs finished, quarter variable.
 
-The churn bug for team six have a negative correlation of -.55 while churn have a correlation of -0.08 and churn feature a correlation of -0.2. The reason why churn bug differ from churn is because churn bug consist of 17\% (265/1533) of the churn variable as shown in tables \ref{DS:Churn:6} and \ref{DS:CB:6}. The same tables shows that the total mean of churn is 146, while the total mean for churn feature is 156.5 and for churn bug it's 95.2. The total mean concludes that churn bug don't contribute to much to the churn variable, hence big difference of the two mean values. Why throughput bug differ from both throughput where explained in section \ref{corr:WIP}. 
+Churn bug for team six have a negative correlation of -.55 while churn have a correlation of -0.08 and churn feature a correlation of -0.2. The reason why churn bug differ from churn is because churn bug consist of 17\% (265/1533) of the churn dates as shown in tables \ref{DS:Churn:6} and \ref{DS:CB:6}. The two tables and Table \ref{DS:CF:6} also shows the total mean of churn is 146, while the total mean for churn feature is 156.5 and for churn bug it's 95.2. With the total mean, one can assume that churn bug don't contribute to much to the churn variable, hence big difference between the two mean values. The assumption is proved by the churn correlation table in Section \ref{sec:corr:churn} with the values .980 for churn feature and .018 for churn bug. Throughput bug also differ from throughput for team six. The reason why where explained in section \ref{corr:WIP}. 
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
  \centering
@@ -1276,26 +1237,26 @@ Churn bug &0.28& -.73**
 & -0.34& -0.00& -0.21& -.73**
 \\ \hline
 \end{tabular}
- \caption{Correlation - Leadtime}
- \label{corr:Leadtime}
+ \caption{Correlation - Lead time}
+ \label{corr:Lead time}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{adjustwidth}
 \end{table}
 \newpage
-Churn bug is not the only churn variable that has a significant negative relationship between leadtime for team ten, churn do as well. Then the assumption is that churn feature does not have a close relationship with churn. The Tables \ref{DS:Churn:10}, \ref{DS:CF:10} and \ref{DS:CB:10} shows the total mean of churn is 50.4, for churn feature it's 66 and for churn bug it is 47.7. This shows that churn and churn bug total mean is close, but the churn feature is not so far away. Churn bug also consist of 85\% of the overall dates in churn (517/609) which supports the assumption that churn bug consist of much of the churn variable. The assumption is proven right by the Figure \ref{corr:Difference:lt}. One can clearly see that Figure \ref{fig:a:lt:10} and \ref{fig:c:lt:10} have a significant negative correlation. The dot pattern in these two figures is also similar,  which points to the case that churn and churn bug are alike and that churn feature don't consist of much of the churn or have a close relationship to churn. 
+Churn bug is not the only churn variable that has a significant negative relationship between lead time for team ten, churn do as well, but churn feature don't. The Tables \ref{DS:Churn:10}, \ref{DS:CF:10} and \ref{DS:CB:10} shows the total mean of churn is 50.4, the total of churn feature its 66 and for churn bug its 47.7. This shows that churn and churn bug total mean is close, but the churn feature is not so far away. Churn bug also consist of 85\% of the overall dates in churn (517/609) which supports the assumption that churn bug consist of much of the churn variable. The assumption is proven right by the churn correlation table in \ref{sec:corr:churn} and correlation graphs in Figure \ref{corr:Difference:lt}. The figure shows the lead time in the X-axis and the churn variable in the Y-axis. One can clearly see that Figures \ref{fig:a:lt:10} and \ref{fig:c:lt:10} have a significant negative correlation with lead time. The dot pattern in these two figures is also similar, which points to the case that churn and churn bug are alike and that churn feature don't represents of much of the churn nor have a close relationship to churn. 
 
 \begin{figure}[h]
 \centering     %%% not \center
-\subfigure[Leadtime and Churn]{\label{fig:a:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrn.png}}
-\subfigure[Leadtime and Churn feature]{\label{fig:b:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrnFT.png}}
-\subfigure[Leadtime and Churn bug]{\label{fig:c:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrnB.png}}
-\caption{Correlation graphs between leadtime and churn variables for team ten.}
+\subfigure[Lead time and Churn]{\label{fig:a:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrn.png}}
+\subfigure[Lead time and Churn feature]{\label{fig:b:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrnFT.png}}
+\subfigure[Lead time and Churn bug]{\label{fig:c:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrnB.png}}
+\caption{Correlation graphs between lead time and churn variables for team ten.}
 \label{corr:Difference:lt}
 \end{figure}
 
-The descriptive statistic table for leadtime shown in table \ref{DS:corr:LT} shows that there is no value with overall significant relationship with leadtime. 
+The descriptive statistic table for lead time shown in Table \ref{DS:corr:LT} shows that there is no value with overall significant relationship with lead time. 
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1313,16 +1274,16 @@ Churn  & 10.0 & -0.1 & -0.1 & 0.3 & 0.4 & -0.7\\ \hline
 Churn ft  & 10.0 & 0.0 & 0.0 & 0.2 & 0.4 & -0.3\\ \hline
 Churn bug  & 10.0 & -0.2 & -0.2 & 0.4 & 0.3 & -0.7\\ \hline
 \end{tabular}
- \caption{Descriptive Statistic - Correlation - Leadtime}
+ \caption{Descriptive Statistic - Correlation - Lead time}
  \label{DS:corr:LT}
  \end{table}
 
 
 \section{Correlation - Bugs}
 \label{sec:corr:bug}
-This section contains information about the correlation table between the variables and bugs. The result is listed in table \ref{corr:bug}. Teams one, two, three, four, five, nine and ten all have a significant positive correlation between bugs and throughput. Team three, four, five and nine all have a significant positive correlation between bugs and the three throughput variables. Why the relationship between the throughput variables differ for team one and ten is stated in section \ref{sec:corr:WIP}. 
+This section contains information about the correlation table between the variables and bugs. The result is listed in Table \ref{corr:bug}. Teams one, two, three, four, five, nine and ten all have a significant positive correlation between bugs and throughput. In team three, four, five and nine's case, have all throughput variable a significant positive correlation with bugs. For team one and ten, the throughput  relationship differ. The reason why where stated in Section \ref{sec:corr:WIP}. 
 \begin{table}[!htbp]
- \begin{adjustwidth}{-2.5cm}{}
+ \begin{adjustwidth}{-1.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1333,7 +1294,7 @@ Throughput Feature &.74**& 0.01& .82**& .58*& .88**& 0.30& 0.10& 0.12& .60*& -0.
 Throughput bug &-0.17& .83**& .87**& .58*& .96**& .69**& -0.02& .92**& .65*& .59*\\ \hline
 Bugs finished, quarter &0.50& -0.18& 0.12& 0.40& 0.17& .76**& 0.14& 0.18& .70**& 0.05\\ \hline
 Avg days in backlog, bugs &0.52& 0.38& 0.43& 0.30& 0.18& 0.24& -0.40& 0.28& 0.21& 0.13\\ \hline
-Leadtime &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22& -0.01& -0.12& -0.06& -0.14\\ \hline
+Lead time &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22& -0.01& -0.12& -0.06& -0.14\\ \hline
 Churn &0.23& -0.01& 0.00& .c& -0.17& -0.10& -0.21& -0.08& -0.34& 0.31\\ \hline
 Churn feature &0.30& 0.07& -0.03& .c& 0.28& -0.04& -0.39& -0.15& -.62*& 0.06\\ \hline
 Churn bug &0.37& 0.17& -0.08& .c
@@ -1347,26 +1308,37 @@ Churn bug &0.37& 0.17& -0.08& .c
 \end{adjustwidth}
 \end{table}
 
-\newpage
 
 
 
-Throughput feature differ from throughput for team two. One could believe that the reason is that throughput bug consists of 2/3 of the throughput variable (460/690) as shown in the descriptive statistic Tables \ref{DS:Throughput:2}, \ref{DS:TPFT:2} and \ref{DS:TPB:2}. But the tables shows that the total mean of throughput is 4.39. While for throughput bug it's 4.8 and 3.7 for throughput feature. These three variables are quiet close, which should reflect that these three variables should be close based on correlation measurement. But, the Figures in \ref{corr:Difference:2} shows that they are not. Both Figures \ref{fig:a:2} and \ref{fig:c:2} shows that when x increases, y also increases. But for Figure \ref{fig:b:2} one can see that the dots are more randomly placed. For example, when the Y value is at vertex, x value is low.  When the two highest values of x, y values are both low and high.  
+
+Team two's Throughput feature differ from throughput. One could believe that the reason is that throughput bug consists of 2/3 of the throughput variable (460/690) as shown in the descriptive statistic Tables \ref{DS:Throughput:2} and \ref{DS:TPB:2}. But the two tables and table \ref{DS:TPFT:2} shows that the total mean of throughput is 4.39. While for throughput bug it's 4.8 and 3.7 for throughput feature. These three variables are quiet close, which could reflect that these three variables should be close based on correlation measurement. But, the Figures in \ref{corr:Difference:2} and the throughput correlation table in \ref{sec:corr:TP} shows that they are not. The Figure \ref{corr:Difference:2} shows the bugs variable in the X-axis and the throughput variable in the Y-axis. Both Figures \ref{fig:a:2} and \ref{fig:c:2} shows that when x increases, y also increases. But for Figure \ref{fig:b:2} one can see that the dots are more randomly placed. For example, when the Y value is at vertex, x value is low.  When x is at vertex, y values are both low and high.  
 
 \begin{figure}[h]
 \centering     %%% not \center
-\subfigure[Bug and Throughput]{\label{fig:a:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTP.png}}
-\subfigure[Bug and Throughput feature]{\label{fig:b:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTPFT.png}}
-\subfigure[Bug and Throughput bug]{\label{fig:c:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTPB.png}}
-\caption{Correlation graphs between Bug and the throughput variables.}
+\subfigure[Bugs and Throughput]{\label{fig:a:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTP.png}}
+\subfigure[Bugs and Throughput feature]{\label{fig:b:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTPFT.png}}
+\subfigure[Bugs and Throughput bug]{\label{fig:c:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTPB.png}}
+\caption{Correlation graphs between bugs and the throughput variables.}
 \label{corr:Difference:2}
 \end{figure}
 \newpage
 
-Team six and nine have a significant positive correlation between the variable Bugs finished, quarter. Team nine also has a negative correlation between bug and churn feature. Churn feature consist of approximately 1/3 (295/923) of the churn variable as shown in tables \ref{DS:Churn:9} and \ref{DS:CF:9}.  The total mean of churn feature is 133.9, the total mean for churn is 81.9 and the total mean for churn bug is 57.5 as shown in the previous stated tables and table \ref{DS:CB:10}, which means that there are fewer and more code required tasks for churn feature. This reflects why there is not a close relationship between churn and churn feature as well as churn and churn bug. 
+Team six and nine have a significant positive correlation between the variable Bugs finished, quarter. Team nine also has a significant negative correlation between bug and churn feature, but not churn. Churn feature consist of approximately 1/3 (295/923) of the churn variable as shown in Tables \ref{DS:Churn:9} and \ref{DS:CF:9}.  The total mean of churn feature is 133.9, the total mean for churn is 81.9 and the total mean for churn bug is 57.5, as shown in the previous stated tables and Table \ref{DS:CB:10}. The correlation graphs in Figure \ref{corr:Difference:9}, show the bugs variable in the X-axis and churn variable in the Y-axis. The figure shows that there is neither a significant negative nor significant positive pattern between either bug and churn or bug and churn bug. The Figure \ref{fig:b:9} however, shows that there is a vaguely significant negative correlation between bug and churn. Even though churn feature have a significant correlation to a variable, and the churn do not, does not say that churn feature can't have a significant positive correlation to churn. The correlation table for churn in Section \ref{sec:corr:churn} shows that both churn feature and churn bug for team nine have a significant correlation with churn. Judging from the Figure \ref{corr:Difference:9} and the correlation table from Section \ref{sec:corr:churn} one can assume that correlation is not transitive. The paper "The Non-Transitivity of Pearson's Correlation Coefficient: An Educational Perspective" \parencite{corr:transitive} proves the assumption.  
 
 
-In table \ref{DS:corr:Bugs} one can see that WIP with a mean value of 0.4 have a medium correlation with bugs as stated in Section \ref{corr:WIP}.  Throughput  have a value of 0.6. This indicates that throughput have a high correlation with bugs.
+\begin{figure}[h]
+\centering     %%% not \center
+\subfigure[Bug and Churn]{\label{fig:a:9}\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrn.png}}
+\subfigure[Bug and Churn feature]{\label{fig:b:9}\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrnFT.png}}
+\subfigure[Bug and Churn bug]{\label{fig:c:9}\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrnB.png}}
+\caption{Correlation graphs between bug and the churn variables for team nine.}
+\label{corr:Difference:9}
+\end{figure}
+
+
+
+In Table \ref{DS:corr:Bugs}, one can see that WIP with a mean value of 0.4 have a medium correlation with bugs as stated in Section \ref{corr:WIP}.  Throughput  have a value of 0.6. This shows that throughput have a high correlation with bugs.
 
 \begin{table}[!htbp]
  \centering
@@ -1379,7 +1351,7 @@ Throughput ft  & 10.0 & 0.4 & 0.4 & 0.4 & 0.9 & -0.1\\ \hline
 Throughput bug  & 10.0 & 0.6 & 0.7 & 0.4 & 1.0 & -0.2\\ \hline
 Bugs finished, quarter  & 10.0 & 0.3 & 0.2 & 0.3 & 0.8 & -0.2\\ \hline
 Avg days backlog, bugs  & 10.0 & 0.2 & 0.3 & 0.3 & 0.5 & -0.4\\ \hline
-Leadtime  & 10.0 & -0.1 & -0.2 & 0.2 & 0.2 & -0.2\\ \hline
+Lead time  & 10.0 & -0.1 & -0.2 & 0.2 & 0.2 & -0.2\\ \hline
 Churn  & 10.0 & -0.0 & -0.0 & 0.2 & 0.3 & -0.3\\ \hline
 Churn ft  & 10.0 & -0.1 & -0.0 & 0.3 & 0.3 & -0.6\\ \hline
 Churn bug  & 10.0 & 0.1 & 0.1 & 0.2 & 0.4 & -0.2\\ \hline
@@ -1391,21 +1363,10 @@ Churn bug  & 10.0 & 0.1 & 0.1 & 0.2 & 0.4 & -0.2\\ \hline
 
 \section {Correlation - Throughput}
 \label{sec:corr:TP}
-This section contains information about the correlation table between throughput and the variables. The result is listed in Table \ref{corr:TP}. Throughput has a significant correlation to either throughput feature or throughput bug for each of the teams. But for some teams case, both throughput bug and throughput feature don't have a significant correlation. Why throughput feature differ from throughput for team one and six is explained in section \ref{sec:corr:WIP}.   Why throughput bug differ from throughput for team ten is also stated in section \ref{sec:corr:WIP}.  Why throughput feature differ from throughput for team two is stated in section \ref{sec:corr:bug}. 
-
-For team eight, throughput bug differ from throughput. Throughput bug consist of 99 dates and have total mean of 1.5. Throughput feature consist of 92 dates and a mean of 3.2. While throughput have a mean of 2.3. These numbers are obtained from the descriptive statistic Tables \ref{DS:Throughput:8}, \ref{DS:TPFT:8} and \ref{DS:TPB:8}.  On the basis of these numbers it will look like both of the sub variables of throughput contributes and both of them should have close relationship to throughput.  But, in Figure \ref{corr:Difference:8} the difference are stated. In Figure \ref{fig:a:8} the dots are clearly moving in a upwards direction, while in Figure \ref{fig:b:8} all the dots are all gathered around the low values of Y  without one dot who are located in the top right corner. 
-
-
-\begin{figure}[h]
-\centering     %%% not \center
-\subfigure[Bug and Throughput]{\label{fig:a:8}\includegraphics[scale=0.5]{Picture/Eight/TPvsTPFT.png}}
-\subfigure[Bug and Throughput feature]{\label{fig:b:8}\includegraphics[scale=0.5]{Picture/Eight/TPvsTPB.png}}
-\caption{Correlation graphs between the throughput variables.}
-\label{corr:Difference:8}
-\end{figure}
+This section shows the correlation table between throughput and the variables. The result is listed in Table \ref{corr:TP}. Throughput has a significant correlation to either throughput feature or throughput bug for each of the teams. For team three, four, five, seven and nine, both the sub variables of throughput have significant positive correlation to throughput. For team one and six throughput feature differ from throughput, why is explained in section \ref{sec:corr:WIP}.   Why throughput bug differ from throughput for team ten is also stated in section \ref{sec:corr:WIP}.    Throughput feature differ from throughput for team two and the reason for that is stated in section \ref{sec:corr:bug}.
 
 \begin{table}[!htbp]
- \begin{adjustwidth}{-2.5cm}{}
+ \begin{adjustwidth}{-1.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1416,7 +1377,7 @@ Throughput bug &0.03& .97**& .99**& .1*& .99**& 0.04& .91**& 0.44& .96**& .98**\
 Bugs &.69**& .81**& .88**& .59*& .98**& 0.27& 0.07& 0.41& .70**& .56*\\ \hline
 Bugs finished, quarter &0.16& 0.12& 0.23& 0.39& 0.12& 0.12& 0.03& 0.33& .70**& .60*\\ \hline
 Avg days in backlog, bugs &0.16& 0.12& 0.45& 0.37& 0.14& -0.17& -0.17& -0.17& -0.41& -0.09\\ \hline
-Leadtime &-0.44& -0.22& -0.39& 0.49& -0.19& -.55*& -0.03& 0.05& -0.29& -0.13\\ \hline
+Lead time &-0.44& -0.22& -0.39& 0.49& -0.19& -.55*& -0.03& 0.05& -0.29& -0.13\\ \hline
 Churn &-0.27& -0.23& -0.26& .c& -0.20& -0.27& .76*& -.64*& -0.01& 0.26\\ \hline
 Churn feature &0.11& -0.18& -0.25& .c& 0.22& -0.23& 0.54& -0.45& -0.27& -0.25\\ \hline
 Churn bug &-0.11& 0.06& -0.32& .c
@@ -1432,13 +1393,20 @@ Churn bug &-0.11& 0.06& -0.32& .c
 \end{adjustwidth}
 \end{table}
 
+Both team nine and ten have a positive significant correlation between bug and the Bugs finished, quarter variable. Team six have a significant correlation between bugs and churn bug. Why churn bug differ from churn and churn feature is stated in Section \ref{sec:corr:lt}. Team seven has a significant positive correlation between throughput and the variables churn and churn bug, but not churn feature. Churn feature has almost a significant positive correlation with throughput. In the correlation table for churn in section \ref{sec:corr:churn}, churn feature and churn bug have a positive correlation with churn. This is another example of transitivity and correlation as stated in Section \ref{sec:corr:bug}.
 
-Both team nine and ten have a positive significant correlation between bug and Bugs finished, quarter. Team six have a significant correlation between bugs and churn bug. Why churn bug differ from churn and churn feature is stated in section \ref{sec:corr:lt}. Team seven has a significant positive correlation between throughput and the variables churn and churn bug, but not churn feature. Churn feature has almost a significant positive correlation with throughput. Even though churn feature and churn bug have a positive correlation with churn as stated in section \ref{sec:corr:churn}, it not so that correlation is transitive \parencite{corr:transitive}. Bilder her?!
+\begin{figure}[h]
+\centering     %%% not \center
+\subfigure[Throughput and Throughput feature]{\label{fig:a:8}\includegraphics[scale=0.5]{Picture/Eight/TPvsTPFT.png}}
+\subfigure[Throughput and Throughput bug]{\label{fig:b:8}\includegraphics[scale=0.5]{Picture/Eight/TPvsTPB.png}}
+\caption{Correlation graphs between the throughput variables.}
+\label{corr:Difference:8}
+\end{figure}
 
- 
-Team eight has a significant negative correlation between throughput and churn. Churn has a negative value of -.64, while churn feature has a value of -0.45 and churn bug has a value of -0.28. Churn feature consist of 246 of 329 tasks, as shown in Tables \ref{DS:Churn:8} and \ref{DS:CF:8}. The total mean of these three values are 0.9 for churn, 0.1 for churn feature and 3.6 for churn bug as shown in the two tables above and Table \ref{DS:CB:8}. These variables reflects that churn feature's value is not too far away from churn value. Churn feature contains several quarters with zero churn, which is why churn feature doesn't have a strong correlation with throughput. 
 
-According to Table \ref{DS:corr:TP}, bugs have a strong positive correlation with throughput while WIP have a medium positive relationship with throughput.
+For team eight, throughput bug differ from throughput. Throughput bug consist of 99 dates and have total mean of 1.5. Throughput feature consist of 92 dates and a mean of 3.2. While throughput have a mean of 2.3. These numbers are gathered from the descriptive statistic Tables \ref{DS:Throughput:8}, \ref{DS:TPFT:8} and \ref{DS:TPB:8}.  On the basis of these numbers it will look like both of the sub variables of throughput contributes and both of them should have close relationship to throughput.  But, in Figure \ref{corr:Difference:8} the difference are stated. The Figure \ref{corr:Difference:8} shows the throughput variable in the X-axis and the sub variables in the Y-axis. In Figure \ref{fig:a:8} the dots are clearly moving in a upwards direction, while in Figure \ref{fig:b:8} almost all the dots are all gathered around the low values of Y. Team eight also has a significant negative correlation between throughput and churn. Churn has a negative value of -.64, while churn feature has a value of -0.45 and churn bug has a value of -0.28. Churn feature consist of 246 of 329 tasks, as shown in Tables \ref{DS:Churn:8} and \ref{DS:CF:8}. The Table \ref{DS:CF:8} also shows that churn feature mostly consist of tasks that requires zero churn. The total mean of these three values are 0.9 for churn, 0.1 for churn feature and 3.6 for churn bug as shown in the Tables   \ref{DS:Churn:8}, \ref{DS:CF:8} and \ref{DS:CB:8}. The zeros from churn feature play a part in the mean value of churn. But, in the correlation for churn in section \ref{sec:corr:churn}, one can see that churn bug have a significant correlation with churn, while churn feature don't. So the contribution of the churn feature's mean in the case of correlation between throughput and churn made enough impact for churn to have a significant correlation with throughput.
+
+According to Table \ref{DS:corr:TP}, bugs have a strong positive correlation with throughput as stated Section \ref{sec:corr:bug}. WIP have a medium positive relationship with throughput which where stated in \ref{sec:corr:WIP}. The sub variables throughput feature (0.6) and throughput bug (0.4) have respectively a strong and medium relationship to throughput. 
 
 \begin{table}[!htbp]
  \centering
@@ -1451,7 +1419,7 @@ Throughput bug  & 10.0 & 0.4 & 0.4 & 0.4 & 0.9 & -0.1\\ \hline
 Bugs  & 10.0 & 0.6 & 0.7 & 0.4 & 1.0 & -0.2\\ \hline
 Bugs finished, quarter  & 10.0 & 0.3 & 0.2 & 0.3 & 0.8 & -0.2\\ \hline
 Avg days backlog, bugs  & 10.0 & 0.2 & 0.3 & 0.3 & 0.5 & -0.4\\ \hline
-Leadtime  & 10.0 & -0.1 & -0.2 & 0.2 & 0.2 & -0.2\\ \hline
+Lead time  & 10.0 & -0.1 & -0.2 & 0.2 & 0.2 & -0.2\\ \hline
 Churn  & 10.0 & -0.0 & -0.0 & 0.2 & 0.3 & -0.3\\ \hline
 Churn ft  & 10.0 & -0.1 & -0.0 & 0.3 & 0.3 & -0.6\\ \hline
 Churn bug  & 10.0 & 0.1 & 0.1 & 0.2 & 0.4 & -0.2\\ \hline
@@ -1464,11 +1432,8 @@ Churn bug  & 10.0 & 0.1 & 0.1 & 0.2 & 0.4 & -0.2\\ \hline
 \label{sec:corr:churn}
 This section contains information about the correlation table between the variables and churn. The result is listed in Table \ref{corr:churn}.  All teams with valid churn have either one or both churn variable with significant positive correlation with churn. Teams two, five, six eight and ten doesn't have a positive correlation between both the churn variables and churn.  
 
-Why churn feature for team two and ten differ from churn is stated in Section \ref{sec:corr:lt}. The reason churn bug differ in the case of team six is also stated in Section \ref{sec:corr:lt}. Team five on the other hand,  has a significant positive correlation between churn and churn bug, but not for churn feature.  Churn feature consist of approximately 10\% of the total churn value as shown in Tables \ref{DS:Churn:5} and \ref{DS:CF:5}. The two tables and Table \ref{DS:CB:5} shows that churn has a mean value of 23.5, churn feature with a mean value of 43.1 and churn bug with a mean value of 21.4. These values show that churn bug and have a close relationship with churn.
-   
 \begin{table}[!htbp]
- \begin{adjustwidth}{-2.5cm}{}
-
+ \begin{adjustwidth}{-1.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1480,17 +1445,9 @@ Throughput bug &-.590*& -0.17& -0.28& .c& -0.21& -0.15& .866**& -0.10& -0.09& 0.
 Bugs &0.23& -0.01& 0.00& .c& -0.17& -0.10& -0.21& -0.08& -0.34& 0.31\\ \hline
 Bugs finished, quarter &0.48& 0.15& -0.14& .c& -0.50& 0.04& -0.53& 0.06& -0.01& 0.43\\ \hline
 Avg days in backlog, bugs &0.36& -0.19& -0.01& .c& 0.39& 0.53& 0.52& 0.26& -0.15& 0.04\\ \hline
-Leadtime &0.41& -0.45& -0.13& .c& 0.24& -0.08& -0.07& -0.28& -0.32& -.681**\\ \hline
+Lead time &0.41& -0.45& -0.13& .c& 0.24& -0.08& -0.07& -0.28& -0.32& -.681**\\ \hline
 Churn feature &.570*& 0.38& .790**& .c& 0.27& .980**& .879**& 0.55& .639*& -0.03\\ \hline
-Churn bug &.828**
-& .728**
-& .955**
-& .c& .983**
-& 0.18& .750*
-& .817**
-& .599*
-& .969**
-\\ \hline
+Churn bug &.828**& .728**& .955**& .c& .983**& 0.18& .750*& .817**& .599*& .969**\\ \hline
 \end{tabular}
  \caption{Correlation - Churn}
  \label{corr:churn}
@@ -1500,12 +1457,12 @@ Churn bug &.828**
 \end{adjustwidth}
 \end{table}
 
-As stated in Section \ref{sec:corr:TP}, churn have a significant correlation to throughput for team eight. And in Section \ref{sec:corr:TP} it is stated churn and churn feature have a closer relationship than churn and churn bug. But in the correlation table for churn, that's not the case. Churn bug have a signifigtant positive relationship of .82 with churn. Although churn feature consist of approximately 75\% (246/329) of all churn dates as shown in Tables \ref{DS:Churn:8} and \ref{DS:CF:8}. But, also as stated in in \ref{sec:corr:TP}, almost each of the churn feature columns are zero, and the correlation measurement is based on the mean value. Which is why churn bug have a significant correlation to churn.
 
+For team two and ten's case, churn feature differ from churn, the reason why is stated in Section \ref{sec:corr:lt}. The reason churn bug differ in the case of team six is also stated in Section \ref{sec:corr:lt}. Team five on the other hand,  has a significant positive correlation between churn and churn bug, but not for churn feature.  Churn feature consist of approximately 10\% of the total churn value as shown in Tables \ref{DS:Churn:5} and \ref{DS:CF:5}. The two previous stated tables and Table \ref{DS:CB:5} shows that churn has a mean value of 23.5, churn feature has a mean value of 43.1 and churn bug with a mean value of 21.4. These values show that churn feature don't represent much of the churn variable. 
 
-%Team seven: Churn bug consist of almost 2/3 of churn (417/652) as shown in tables \ref{DS:Churn:7} and \ref{DS:CB:7}. But the total mean for the three values is 97.1 for churn, 148.1 for churn feature and 68.4 for churn bug. The total mean shows that churn feature contribute more to the churn variable than churn bug. This shows in the correlation table for churn in section \ref{sec:corr:churn}
-\newpage
-As expected, shown in table \ref{DS:corr:Churn} both churn feature and churn bug on company level have a close relationship with churn
+Team eight has a significant positive correlation between churn and churn bug and almost churn feature. Churn feature consist of approximately 75\% (246/329) of all churn dates as shown in Tables \ref{DS:Churn:8} and \ref{DS:CF:8}. But as stated in in \ref{sec:corr:TP}, almost each of the churn feature task requires zero churn, and with zero churn, its hard to make an impact on churn. 
+
+Table \ref{DS:corr:Churn} shows both churn feature and churn have a close relationship with churn
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1518,7 +1475,7 @@ Throughput bug  & 10.0 & -0.0 & -0.1 & 0.4 & 0.9 & -0.6\\ \hline
 Bugs  & 10.0 & -0.0 & -0.0 & 0.2 & 0.3 & -0.3\\ \hline
 Bugs finished, quarter  & 10.0 & -0.0 & 0.0 & 0.3 & 0.5 & -0.5\\ \hline
 Avg days backlog, bugs  & 10.0 & 0.2 & 0.1 & 0.3 & 0.5 & -0.2\\ \hline
-Leadtime  & 10.0 & -0.1 & -0.1 & 0.3 & 0.4 & -0.7\\ \hline
+Lead time  & 10.0 & -0.1 & -0.1 & 0.3 & 0.4 & -0.7\\ \hline
 Churn ft  & 10.0 & 0.5 & 0.6 & 0.3 & 1.0 & -0.0\\ \hline
 Churn bug  & 10.0 & 0.7 & 0.8 & 0.3 & 1.0 & 0\\ \hline
 \end{tabular}
@@ -1654,10 +1611,10 @@ Total & 108.0 & 6.4 & 3.0 & 9.6 & 49.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:1}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1706,7 +1663,7 @@ Total&1521&10.2&.00&19.4&94&0 \\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:1}, \subref{DS:Churn:1}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:1}, \subref{DS:Churn:1}}
 \label{DS:1:3} % 
 \end{table}
 
@@ -1944,10 +1901,10 @@ Total & 460.0 & 4.8 & 4.0 & 3.9 & 25.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:2}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1998,7 +1955,7 @@ Total &	1572&65.7&21.&99.3&521&0\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:2}, \subref{DS:Churn:2}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:2}, \subref{DS:Churn:2}}
 \label{DS:2:3}
 \end{table}
 
@@ -2245,7 +2202,7 @@ Total & 342.0 & 4.0 & 3.0 & 4.1 & 27.0 & 1.0\\ \hline
  %%%%%%%%%%%%%
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:3}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2296,7 +2253,7 @@ Total	& 1065 &	59.4&16.0&91.3&494&0\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:3}, \subref{DS:Churn:3}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:3}, \subref{DS:Churn:3}}
 \label{DS:3:3}
 \end{table}
 
@@ -2539,10 +2496,10 @@ Total & 30.0 & 5.6 & 5.5 & 3.7 & 15.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:4}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2585,7 +2542,7 @@ Total&1829&.00&.00&.000&0&0 \\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:4}, \subref{DS:Churn:4}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:4}, \subref{DS:Churn:4}}
 \label{DS:4:3}
 \end{table}
 
@@ -2813,10 +2770,10 @@ Total & 566.0 & 6.4 & 5.0 & 7.0 & 59.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:5}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2866,7 +2823,7 @@ Total&1901&23.5&2.0&42.3&211&0 \\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:5}, \subref{DS:Churn:5}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:5}, \subref{DS:Churn:5}}
 \label{DS:5:3}
 \end{table}
 
@@ -3103,10 +3060,10 @@ Total & 82.0 & 3.3 & 2.5 & 2.6 & 13.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:6}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3157,7 +3114,7 @@ Total&	1533	&146&	17.0&	257&	1234&	0\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:6}, \subref{DS:Churn:6}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:6}, \subref{DS:Churn:6}}
 \label{DS:6:3}
 \end{table}
 
@@ -3373,10 +3330,10 @@ Total & 172.0 & 2.6 & 2.0 & 2.1 & 14.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:7}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3418,7 +3375,7 @@ Total & 652.0 & 97.1 & 28.5 & 147.7 & 726.0 & 0\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:7}, \subref{DS:Churn:7}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:7}, \subref{DS:Churn:7}}
 \label{DS:7:3}
 \end{table}
 
@@ -3631,10 +3588,10 @@ Total & 99.0 & 1.5 & 1.0 & 1.6 & 14.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:8}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3682,7 +3639,7 @@ Total & 329.0 & 0.9 & 0 & 4.0 & 26.0 & 0\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:8}, \subref{DS:Churn:8}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:8}, \subref{DS:Churn:8}}
 \label{DS:8:3}
 \end{table}
 
@@ -3911,10 +3868,10 @@ Total & 307.0 & 2.8 & 2.0 & 1.9 & 10.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:9}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3962,7 +3919,7 @@ Total & 923.0 & 81.9 & 34.0 & 110.0 & 479.0 & 0\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:9}, \subref{DS:Churn:9}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:9}, \subref{DS:Churn:9}}
 \label{DS:9:3}
 \end{table}
 
@@ -4196,10 +4153,10 @@ Total & 335.0 & 2.2 & 2.0 & 1.6 & 13.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Leadtime and bugs
+% Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Leadtime]{
+\subfigure[Descriptive Statistic - Lead time]{
  \label{DS:LT:10}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4250,7 +4207,7 @@ Total & 609.0 & 50.4 & 4.0 & 96.9 & 469.0 & 0\\ \hline
 }
 }
 \end{adjustwidth}
-\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Leadtime and Churn  \subref{DS:LT:10}, \subref{DS:Churn:10}}
+\caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:10}, \subref{DS:Churn:10}}
 \label{DS:10:3}
 \end{table}
 
@@ -4626,7 +4583,7 @@ In table \ref{cfb:1} the hypotheses that feature tasks is more comprehensive is 
 	
 %Both of these hypotheses would contradict the principle of WIP or Agile. %for det hvis de pusher bugs gjennom systemet vil WIP limit stige. Eller hvis tasks er forskjellige størrelser så er det umulig å male TP, som da igjen gjør det vanskelig å male WIP. 
 
-%Jeg må sjekke leadtimene og churn for tp feature og tp bugs for 360
+%Jeg må sjekke lead timene og churn for tp feature og tp bugs for 360
 %Det andre statementet må jeg sjekke når jeg får releaser av Dag
 
 \begin{table}[!htbp] 
@@ -4739,7 +4696,7 @@ In table \ref{tc:2} the correlation for throughput for team two is shown.  Here 
 \begin{table}[!htbp] 
  \centering 
 \begin{tabular}{|l|l|l|l|l|} \hline
-&Throughput & Bugs & Churn  & Leadtime  \\ 
+&Throughput & Bugs & Churn  & Lead time  \\ 
 \hline
 	WIP &    0.341 & 0.278  & -0.446 & 0.096 \\ \hline
  \end{tabular}
@@ -4792,9 +4749,9 @@ Correlation  & Bugs & Throughput feature & Bugs finished in the same quarter\\ \
  \begin{tabular}{|l|l|l|l|l|} 
 \hline 
 Correlation  & Churn Bugs & Churn union & Precent bugs fininshed & Churn Average \\ \hline 
-	Leadtime & -.771** & .704* & -.697* & .766** \\ \hline
+	Lead time & -.771** & .704* & -.697* & .766** \\ \hline
 \end{tabular} 
- \caption{Team one - Correlation - 	Leadtime\_union} 
+ \caption{Team one - Correlation - 	Lead time\_union} 
  \end{table}   
  
     \begin{table}[!htbp]
@@ -4881,7 +4838,7 @@ In figure \ref{Neonpq} the average WIP, Throughput, Lead time and Bugs per quart
   \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | }
 \hline
 Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
-	 &  & Bugs & Throughput & WIP & Churn & TP\_Feature & Churn\_Bugs & Leadtime\_Union & Churn\_Union & Churn\_feature & TP\_bugs & Average\_Days\_Backlog & Bugs\_churn\_average & Average\_ft\_churn & Precent\_bugs\_fininshed & Churn\_Average \\ \hline
+	 &  & Bugs & Throughput & WIP & Churn & TP\_Feature & Churn\_Bugs & Lead time\_Union & Churn\_Union & Churn\_feature & TP\_bugs & Average\_Days\_Backlog & Bugs\_churn\_average & Average\_ft\_churn & Precent\_bugs\_fininshed & Churn\_Average \\ \hline
 	Bugs & Pearson Correlation & 1 & .945** & .753* & .992** & -0.328 & .813** & -0.240 & 0.433 & .730* & .984** & 0.377 & 0.581 & 0.119 & 0.543 & 0.622\\ \hline
 	 & Sig. (2-tailed) &  & 0 & 0.012 & 0 & 0.354 & 0.004 & 0.505 & 0.212 & 0.026 & 0 & 0.282 & 0.078 & 0.744 & 0.104 & 0.055\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 9 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
@@ -4900,7 +4857,7 @@ Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
 	Churn\_Bugs & Pearson Correlation & .813** & .776** & .708* & .804** & -0.419 & 1 & -0.126 & 0.516 & 0.597 & .884** & .700* & 0.560 & 0.523 & 0.551 & .665* \\ \hline
 	 & Sig. (2-tailed) & 0.004 & 0.008 & 0.022 & 0.005 & 0.228 &  & 0.729 & 0.127 & 0.090 & 0.001 & 0.024 & 0.092 & 0.121 & 0.099 & 0.036\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 9 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
-	Leadtime\_Union & Pearson Correlation & -0.240 & -0.177 & -0.336 & -0.203 & 0.376 & -0.126 & 1 & -0.060 & 0.138 & -0.280 & -0.012 & -0.003 & 0.158 & -0.598 & 0.059\\ \hline
+	Lead time\_Union & Pearson Correlation & -0.240 & -0.177 & -0.336 & -0.203 & 0.376 & -0.126 & 1 & -0.060 & 0.138 & -0.280 & -0.012 & -0.003 & 0.158 & -0.598 & 0.059\\ \hline
 	 & Sig. (2-tailed) & 0.505 & 0.624 & 0.342 & 0.574 & 0.284 & 0.729 &  & 0.868 & 0.724 & 0.433 & 0.974 & 0.994 & 0.663 & 0.068 & 0.871\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 9 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
 	Churn\_Union & Pearson Correlation & 0.433 & 0.399 & 0.365 & 0.372 & -0.460 & 0.516 & -0.060 & 1 & 0.202 & 0.466 & 0.231 & 0.146 & 0.410 & .634* & 0.198\\ \hline
@@ -4942,7 +4899,7 @@ Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
 \begin{tabular}{ | l | l | l | l | l | }
 \hline
 	 &  &  &  &  \\ \hline
-	Team & Quarter &  & Churn & Leadtime \\ \hline
+	Team & Quarter &  & Churn & Lead time \\ \hline
 	360 & 2010-3 & N & 11 & 11 \\ \hline
 	 &  & Mean & 17 & 3.55 \\ \hline
 	 &  & Median & 11 & 3 \\ \hline
@@ -5022,7 +4979,7 @@ Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
     \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | }
 \hline
 	Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
-	 &  & WIP & Throughput & Bugs & Churn & TP\_feature & Churn\_Bugs & Churn\_union & Leadtime\_union & Churn\_feature & Tp\_bugs & Average\_Days\_Backlog\_Bugs & Bugs\_Churn\_average & Churn\_feature\_Average & Precent\_bugs\_fininshed & Churn\_Average \\ \hline
+	 &  & WIP & Throughput & Bugs & Churn & TP\_feature & Churn\_Bugs & Churn\_union & Lead time\_union & Churn\_feature & Tp\_bugs & Average\_Days\_Backlog\_Bugs & Bugs\_Churn\_average & Churn\_feature\_Average & Precent\_bugs\_fininshed & Churn\_Average \\ \hline
 	WIP & Pearson Correlation & 1 & 0.491 & 0.278 & -0.446 & 0.380 & -0.446 & 0.316 & 0.096 & 0.362 & 0.508 & -0.178 & 0.257 & 0.337 & 0.367 & 0.223\\ \hline
 	 & Sig. (2-tailed) &  & 0.150 & 0.436 & 0.196 & 0.279 & 0.196 & 0.373 & 0.791 & 0.304 & 0.134 & 0.622 & 0.473 & 0.341 & 0.297 & 0.537\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
@@ -5044,7 +5001,7 @@ Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
 	Churn\_union & Pearson Correlation & 0.316 & -0.494 & -0.555 & -0.522 & -0.244 & -.707* & 1 & .704* & .844** & -0.368 & -0.139 & 0.152 & .841** & -0.312 & .981** \\ \hline
 	 & Sig. (2-tailed) & 0.373 & 0.147 & 0.096 & 0.122 & 0.497 & 0.022 &  & 0.023 & 0.002 & 0.296 & 0.702 & 0.674 & 0.002 & 0.379 & 0\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
-	Leadtime\_union & Pearson Correlation & 0.096 & -0.539 & -0.581 & -0.449 & -0.312 & -.771** & .704* & 1 & 0.492 & -0.301 & 0.327 & -0.227 & 0.631 & -.697* & .766** \\ \hline
+	Lead time\_union & Pearson Correlation & 0.096 & -0.539 & -0.581 & -0.449 & -0.312 & -.771** & .704* & 1 & 0.492 & -0.301 & 0.327 & -0.227 & 0.631 & -.697* & .766** \\ \hline
 	 & Sig. (2-tailed) & 0.791 & 0.108 & 0.078 & 0.192 & 0.381 & 0.009 & 0.023 &  & 0.148 & 0.398 & 0.357 & 0.528 & 0.050 & 0.025 & 0.010\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
 	Churn\_feature & Pearson Correlation & 0.362 & -0.433 & -0.478 & -0.517 & -0.026 & -0.460 & .844** & 0.492 & 1 & -0.314 & -0.358 & -0.201 & .921** & -0.172 & .842** \\ \hline
@@ -5082,7 +5039,7 @@ Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
      \scalebox{0.75}{
 \begin{tabular}{ | l | l | l | l | l | } 
 \hline
-	Team & Quarter &  & Leadtime & Churn \\ \hline
+	Team & Quarter &  & Lead time & Churn \\ \hline
 	Frontend & 2010-3 & N & 58 & 58 \\ \hline
 	 &  & Mean & 7.43 & 127.93 \\ \hline
 	 &  & Median & 6 & 53.5 \\ \hline
@@ -5226,7 +5183,7 @@ TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \
       \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | }
 \hline
 	Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
-	 &  & WIP & Throughput & Bugs & Churn & TP\_feature & Churn\_Bugs & Churn\_union & Leadtime\_union & Churn\_feature & Tp\_bugs & Average\_Days\_Backlog\_Bugs & Bugs\_Churn\_average & Churn\_feature\_Average & Precent\_bugs\_fininshed & Churn\_Average \\ \hline
+	 &  & WIP & Throughput & Bugs & Churn & TP\_feature & Churn\_Bugs & Churn\_union & Lead time\_union & Churn\_feature & Tp\_bugs & Average\_Days\_Backlog\_Bugs & Bugs\_Churn\_average & Churn\_feature\_Average & Precent\_bugs\_fininshed & Churn\_Average \\ \hline
 	WIP & Pearson Correlation & 1 & 0.491 & 0.278 & -0.446 & 0.380 & -0.446 & 0.316 & 0.096 & 0.362 & 0.508 & -0.178 & 0.257 & 0.337 & 0.367 & 0.223\\ \hline
 	 & Sig. (2-tailed) &  & 0.150 & 0.436 & 0.196 & 0.279 & 0.196 & 0.373 & 0.791 & 0.304 & 0.134 & 0.622 & 0.473 & 0.341 & 0.297 & 0.537\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
@@ -5248,7 +5205,7 @@ TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \
 	Churn\_union & Pearson Correlation & 0.316 & -0.494 & -0.555 & -0.522 & -0.244 & -.707* & 1 & .704* & .844** & -0.368 & -0.139 & 0.152 & .841** & -0.312 & .981** \\ \hline
 	 & Sig. (2-tailed) & 0.373 & 0.147 & 0.096 & 0.122 & 0.497 & 0.022 &  & 0.023 & 0.002 & 0.296 & 0.702 & 0.674 & 0.002 & 0.379 & 0\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
-	Leadtime\_union & Pearson Correlation & 0.096 & -0.539 & -0.581 & -0.449 & -0.312 & -.771** & .704* & 1 & 0.492 & -0.301 & 0.327 & -0.227 & 0.631 & -.697* & .766** \\ \hline
+	Lead time\_union & Pearson Correlation & 0.096 & -0.539 & -0.581 & -0.449 & -0.312 & -.771** & .704* & 1 & 0.492 & -0.301 & 0.327 & -0.227 & 0.631 & -.697* & .766** \\ \hline
 	 & Sig. (2-tailed) & 0.791 & 0.108 & 0.078 & 0.192 & 0.381 & 0.009 & 0.023 &  & 0.148 & 0.398 & 0.357 & 0.528 & 0.050 & 0.025 & 0.010\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
 	Churn\_feature & Pearson Correlation & 0.362 & -0.433 & -0.478 & -0.517 & -0.026 & -0.460 & .844** & 0.492 & 1 & -0.314 & -0.358 & -0.201 & .921** & -0.172 & .842** \\ \hline
@@ -5287,7 +5244,7 @@ TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \
      \scalebox{0.75}{
 \begin{tabular}{ | l | l | l | l | l | }
 \hline
-	Team & Quarter &  & Leadtime & Churn \\ \hline
+	Team & Quarter &  & Lead time & Churn \\ \hline
 	Krypton & 2010-3 & N & 46 & 46 \\ \hline
 	 &  & Mean & 7.89 & 159.38 \\ \hline
 	 &  & Median & 3.5 & 26.5 \\ \hline
@@ -5466,7 +5423,7 @@ TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \
 \begin{tabular}{ | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | l | }
 \hline
 	Correlations &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
-	 &  & WIP & Throughput & Bugs & Churn & TP\_feature & Churn\_Bugs & Churn\_union & Leadtime\_union & Churn\_feature & Tp\_bugs & Average\_Days\_Backlog\_Bugs & Bugs\_Churn\_average & Churn\_feature\_Average & Precent\_bugs\_fininshed & Churn\_Average \\ \hline
+	 &  & WIP & Throughput & Bugs & Churn & TP\_feature & Churn\_Bugs & Churn\_union & Lead time\_union & Churn\_feature & Tp\_bugs & Average\_Days\_Backlog\_Bugs & Bugs\_Churn\_average & Churn\_feature\_Average & Precent\_bugs\_fininshed & Churn\_Average \\ \hline
 	WIP & Pearson Correlation & 1 & 0.491 & 0.278 & -0.446 & 0.380 & -0.446 & 0.316 & 0.096 & 0.362 & 0.508 & -0.178 & 0.257 & 0.337 & 0.367 & 0.223\\ \hline
 	 & Sig. (2-tailed) &  & 0.150 & 0.436 & 0.196 & 0.279 & 0.196 & 0.373 & 0.791 & 0.304 & 0.134 & 0.622 & 0.473 & 0.341 & 0.297 & 0.537\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
@@ -5488,7 +5445,7 @@ TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \
 	Churn\_union & Pearson Correlation & 0.316 & -0.494 & -0.555 & -0.522 & -0.244 & -.707* & 1 & .704* & .844** & -0.368 & -0.139 & 0.152 & .841** & -0.312 & .981** \\ \hline
 	 & Sig. (2-tailed) & 0.373 & 0.147 & 0.096 & 0.122 & 0.497 & 0.022 &  & 0.023 & 0.002 & 0.296 & 0.702 & 0.674 & 0.002 & 0.379 & 0\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
-	Leadtime\_union & Pearson Correlation & 0.096 & -0.539 & -0.581 & -0.449 & -0.312 & -.771** & .704* & 1 & 0.492 & -0.301 & 0.327 & -0.227 & 0.631 & -.697* & .766** \\ \hline
+	Lead time\_union & Pearson Correlation & 0.096 & -0.539 & -0.581 & -0.449 & -0.312 & -.771** & .704* & 1 & 0.492 & -0.301 & 0.327 & -0.227 & 0.631 & -.697* & .766** \\ \hline
 	 & Sig. (2-tailed) & 0.791 & 0.108 & 0.078 & 0.192 & 0.381 & 0.009 & 0.023 &  & 0.148 & 0.398 & 0.357 & 0.528 & 0.050 & 0.025 & 0.010\\ \hline
 	 & N & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 & 10 \\ \hline
 	Churn\_feature & Pearson Correlation & 0.362 & -0.433 & -0.478 & -0.517 & -0.026 & -0.460 & .844** & 0.492 & 1 & -0.314 & -0.358 & -0.201 & .921** & -0.172 & .842** \\ \hline
@@ -5526,7 +5483,7 @@ TeamName & Quarter & N & Mean & Median & Std. Deviation & Maximum & Minimum \\ \
      \scalebox{0.75}{
  \begin{tabular}{ | l | l | l | l | l | }
 \hline
-	Team & Quarter &  & Churn & Leadtime \\ \hline
+	Team & Quarter &  & Churn & Lead time \\ \hline
 	Neon & 2010-3 & N & 62 & 62 \\ \hline
 	 &  & Mean & 25.27 & 7.69 \\ \hline
 	 &  & Median & 9 & 6 \\ \hline
