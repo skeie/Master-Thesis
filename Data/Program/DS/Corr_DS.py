@@ -9,10 +9,13 @@ def make_float(list):
 				if -0.00001 < num < 0.00001:
 					new_list.append(["0"])
 				else:
-					new_list.append(["%.1f" % num])
+					temp = ["%.1f" % num]
+					if temp[0].split('.')[1] == '0':
+						new_list.append(temp[0].split('.'))
+					else:					
+						new_list.append(["%.1f" % num])
 			except:
 				pass
-	
 	return new_list
 
 
@@ -23,6 +26,7 @@ def writeOutTable(list, nr):
 			tmp+="\\\\ \\hline"
 			return tmp
 		else:
+			print element
 			tmp += " & "+str(element[0])
 
 def writeOutTableSpecial(list):
@@ -35,7 +39,7 @@ def writeOutTableSpecial(list):
 def writeOut(list):
 	counter = 6
 	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{ | l | r | r | r | r | r | r | } \n \\hline \n"
-	tmp+="& N & Mean & Median & Std.Dev & Max & Min \\\\ \\hline 	\n"
+	tmp+="& \\bf{N} & \\bf{Mean} & \\bf{Median} & \\bf{Std.Dev} & \\bf{Max} & \\bf{Min} \\\\ \\hline 	\n"
 	tmp+= "WIP "+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
 	tmp+= "Throughput "+writeOutTable(list,counter)+"\n"
@@ -61,4 +65,5 @@ def writeOut(list):
 
 with open(sys.argv[1], mode="r") as f:
 	list = make_float(f.readlines())
+	print len(list)
 	writeOut(list)

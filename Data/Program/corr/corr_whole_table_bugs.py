@@ -11,6 +11,7 @@ Churn = []
 Churn_ft = []
 Churn_bugs = []
 Churn_average = []
+Team = []
 
 def diagonal_data(list, index):
 	WIP.append(list[0])
@@ -27,6 +28,8 @@ def diagonal_data(list, index):
 	Churn.append(list[7])
 	Churn_ft.append(list[8])
 	Churn_bugs.append(list[9])
+	Team.append(list[10])
+	print list[10]
 
 def makeFloat(list):
 	index = None
@@ -78,7 +81,7 @@ def formatItem(item):
 
 def writeToFile():
 	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|} \n\\hline \n"
-	tmp+=" & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\\\ \\hline\n"
+	tmp+=" &  \\bf{T1} & \\bf{T2} & \\bf{T3} & \\bf{T4} & \\bf{T5} & \\bf{T6} & \\bf{T7} & \\bf{T8} & \\bf{T9} & \\bf{T10}\\\\ \\hline\n"
 	tmp+= "WIP &"+writeOutList(WIP)
 	tmp+= "Throughput &"+ writeOutList(Throughput)
 	tmp+= "Throughput Feature &" + writeOutList(Throughput_ft)
@@ -89,6 +92,7 @@ def writeToFile():
 	tmp+= "Churn &"+writeOutList(Churn)
 	tmp+= "Churn feature &" + writeOutList(Churn_ft)
 	tmp+= "Churn bug &"+writeOutList(Churn_bugs)
+	tmp+= "Team size & "+ writeOutList(Team)
 	tmp+= "\n\\end{tabular} \n \caption{Correlation - Leadtime} \n \label{corr:WIP} \n "
 	tmp+= "\\centerline {* Correlation is significant at the 0.05 level (2-tailed).} \n"
 	tmp+= "\\centerline{** Correlation is significant at the 0.01 level (2-tailed).} \n"
@@ -97,9 +101,9 @@ def writeToFile():
 	
 	print tmp
 def writeToDS():
-	tmp = 'WIP, Throughput, Throughput_ft, Throughput_bug, precent_bugs, Average_days_in_backlog_bugs, leadtime, Churn, Churn_ft, Churn_bugs\n'
+	tmp = 'WIP, Throughput, Throughput_ft, Throughput_bug, precent_bugs, Average_days_in_backlog_bugs, leadtime, Churn, Churn_ft, Churn_bugs, Team_size\n'
 	for i in xrange(len(Throughput)):
-		tmp += formatItem(WIP[i]) + ", " + formatItem(Throughput[i]) + ", "+formatItem(Throughput_ft[i])+","+formatItem(Throughput_bug[i])+","+formatItem(precent_bugs[i])+","+formatItem(Average_days_in_backlog_bugs[i])+","+formatItem(leadtime[i])+","+formatItem(Churn[i])+","+formatItem(Churn_ft[i])+","+formatItem(Churn_bugs[i])+"\n"
+		tmp += formatItem(WIP[i]) + ", " + formatItem(Throughput[i]) + ", "+formatItem(Throughput_ft[i])+","+formatItem(Throughput_bug[i])+","+formatItem(precent_bugs[i])+","+formatItem(Average_days_in_backlog_bugs[i])+","+formatItem(leadtime[i])+","+formatItem(Churn[i])+","+formatItem(Churn_ft[i])+","+formatItem(Churn_bugs[i])+formatItem(Team[i])+"\n"
 	with open('output.csv', 'w') as f:
 		f.write(tmp)
 

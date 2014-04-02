@@ -1172,7 +1172,7 @@ Both throughput and throughput feature in team one's case have significant posit
 \newpage
 
 
-The same issue encounter for both team six and seven. In case of team six, both throughput and throughput feature have significant positive relationship with WIP while throughput bug do not. Throughput, throughput feature and throughput bug have the correlation values .64, .68 and 0.07. The total row in tables \ref{DS:Throughput:6},  \ref{DS:TPFT:6} and \ref{DS:TPB:6} shows that throughput feature consist of 609 dates and a mean value of 4.8, while throughput bug consist of 82 dates  and a mean of 3.3. The throughout variable consist of 691 dates and have a mean value of 4.58. The mean value and the number of dates strengthens the assumption that throughput feature represents more of throughput than throughput bug do. The assumption is stated by the throughput correlation table in Section \ref{sec:corr:TP}.
+The same issue encounter for both team six and seven. In case of team six, both throughput and throughput feature have significant positive relationship with WIP while throughput bug do not. Throughput, throughput feature and throughput bug have the correlation values .64, .68 and 0.07. The total row in tables \ref{DS:Throughput:6},  \ref{DS:TPFT:6} and \ref{DS:TPB:6} shows that throughput feature consist of 609 dates and a mean value of 4.8, while throughput bug consist of 82 dates  and a mean of 3.3. The throughout variable consist of 691 dates and have a mean value of 4.58. The mean value and the number of dates strengthens the assumption that throughput feature represents more of throughput than throughput bug do. The assumption that total of dates and the total of mean can be used to indicate the correlation relationship is stated by the throughput correlation table in Section \ref{sec:corr:TP}.
 
 
 For team seven's case, the difference between throughput, throughput feature and throughput bug is so small, which also can be assumed by the total row in tables \ref{DS:Throughput:7},  \ref{DS:TPFT:7} and \ref{DS:TPB:7}. In the total rows, throughput has a total mean of 2.7, while throughput feature have 2.8 and throughput bug have 2.6. Throughput feature contributes 156 dates to throughput and throughput bug contributes 172 dates. The throughput correlation table in Section \ref{sec:corr:TP} proves the assumption with values of .91 for both throughput feature and bug.  
@@ -1295,18 +1295,20 @@ This section contains information about the correlation table between the variab
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
- & \bf{T1} & \bf{T2} & \bf{T3} & \bf{T4} & \bf{T5} & \bf{T6} & \bf{T7} & \bf{T8} & \bf{T9} & \bf{T10}\\ \hline
-WIP &.73**& 0.20& .56*& .56*& 0.50& 0.46& -0.07& 0.04& .58*& 0.18\\ \hline
-Throughput &.69**& .81**& .88**& .59*& .98**& 0.27& 0.07& 0.41& .70**& .59*\\ \hline
-Throughput Feature &.74**& 0.01& .82**& .58*& .88**& 0.30& 0.10& 0.12& .60*& -0.14\\ \hline
-Throughput bug &-0.17& .83**& .87**& .58*& .96**& .69**& -0.02& .92**& .65*& .59*\\ \hline
-Bugs finished, quarter &0.50& -0.18& 0.12& 0.40& 0.17& .76**& 0.14& 0.18& .70**& 0.05\\ \hline
-Avg days in backlog, bugs &0.52& 0.38& 0.43& 0.30& 0.18& 0.24& -0.40& 0.28& 0.21& 0.13\\ \hline
-Lead time &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22& -0.01& -0.12& -0.06& -0.14\\ \hline
-Churn &0.23& -0.01& 0.00& .c& -0.17& -0.10& -0.21& -0.08& -0.34& 0.31\\ \hline
-Churn feature &0.30& 0.07& -0.03& .c& 0.28& -0.04& -0.39& -0.15& -.62*& 0.06\\ \hline
-Churn bug &0.37& 0.17& -0.08& .c
-& -0.19& 0.43& 0.22& 0.04& 0.10& 0.28\\ \hline
+ &  \bf{T1} & \bf{T2} & \bf{T3} & \bf{T4} & \bf{T5} & \bf{T6} & \bf{T7} & \bf{T8} & \bf{T9} & \bf{T10}\\ \hline
+WIP &.725**& 0.20& .599*& .560*& 0.50& 0.46& 0.62& 0.04& .581*& 0.18\\ \hline
+Throughput &.687**& .810**& .880**& .586*& .975**& 0.27& 0.53& 0.41& .699**& .557*\\ \hline
+Throughput Feature &.738**& 0.01& .822**& .583*& .881**& 0.30& 0.56& 0.22& .597*& -0.14\\ \hline
+Throughput bug &-0.17& .834**& .868**& .583*& .959**& .686**& 0.50& .915**& .653*& .589*\\ \hline
+Bugs finished, quarter &0.50& -0.18& 0.12& 0.40& 0.17& .762**& .785**& 0.18& .701**& 0.05\\ \hline
+Avg days in backlog, bugs &0.52& 0.38& 0.43& 0.30& 0.18& 0.24& 0.23& 0.28& 0.21& 0.13\\ \hline
+Leadtime &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22& 0.54& -0.12& -0.06& -0.14\\ \hline
+Churn &0.23& -0.01& 0.00& .c& -0.17& -0.10& 0.19& -0.08& -0.34& 0.31\\ \hline
+Churn feature &0.30& 0.07& -0.03& .c& 0.28& -0.04& 0.13& -0.15& -.618*& 0.06\\ \hline
+Churn bug &0.37& 0.17& -0.08& .c& -0.19& 0.43& 0.14& 0.04& 0.10& 0.28\\ \hline
+Team size & .803**
+& 0.26& 0.27& 0.17& .711**
+& 0.41& 0.41& 0.42& 0.41& 0.16\\ \hline
 \end{tabular}
  \caption{Correlation - Bugs}
  \label{corr:bug}
@@ -1491,13 +1493,60 @@ Churn bug  & 10.0 & 0.7 & 0.8 & 0.3 & 1.0 & 0\\ \hline
  \label{DS:corr:Churn}
  \end{table}
  
+ \section{Team size}
+ \begin{table}[!htbp]
+  \begin{adjustwidth}{-2.5cm}{}
+ \centering
+ \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
+\hline
+ & T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10\\ \hline
+WIP &.684**& 0.35& .778**& 0.06& .575*& .767**& 0.62& .651*& 0.54& .759**\\ \hline
+Throughput &.699**& 0.05& 0.52& 0.16& .687**& .858**& 0.62& .753**& 0.53& .573*\\ \hline
+Throughput Feature &.736**& -0.22& 0.53& 0.20& 0.48& .893**& 0.47& .745**& 0.48& 0.18\\ \hline
+Throughput bug &-0.10& 0.06& 0.51& 0.20& .673**& .001& .715*& 0.40& 0.48& .637*\\ \hline
+Bugs & .803**& 0.26& 0.27& 0.17& .711**& 0.41& 0.41& 0.42& 0.41& 0.16\\ \hline
+Bugs finished, quarter &0.42& -0.53& 0.25& -0.19& 0.28& 0.30& .711*& 0.05& 0.38& 0.34\\ \hline
+Avg days in backlog, bugs &0.48& .841**& 0.04& 0.44& 0.03& -0.03& 0.49& 0.03& 0.07& -0.03\\ \hline
+Leadtime &-.542*& 0.48& -0.01& -0.37& -0.33& -0.46& 0.12& 0& 0.01& 0.09\\ \hline
+Churn &-0.06& -0.45& -.599*& .c& -.627*& 0.01& 0.51& -.635*& 0.04& 0.04\\ \hline
+Churn feature &0.01& 0.14& -0.41& .c& 0.23& 0.06& 0.60& -0.41& -0.01& 0.32\\ \hline
+Churn bug &0.25& -0.41& -.593*& .c& -.646*& .758**& 0.05& -.592*& -0.07& -0.07\\ \hline
+\end{tabular}
+ \caption{Correlation - Leadtime}
+ \label{corr:Team}
+ \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
+\centerline{** Correlation is significant at the 0.01 level (2-tailed).}
+\centerline{c. Cannot be computed because at least one of the variables is constant.}
+\end{adjustwidth}
+\end{table}
+ 
+ 
+\begin{table}[!htbp]
+ \centering
+ \begin{tabular}{ | l | r | r | r | r | r | r | }
+ \hline
+& \bf{N} & \bf{Mean} & \bf{Median} & \bf{Std.Dev} & \bf{Max} & \bf{Min} \\ \hline
+WIP  & 10 & 0.6 & 0.6 & 0.2 & 0.8 & 0.1\\ \hline
+Throughput  & 10 & 0.5 & 0.6 & 0.3 & 0.9 & 0.1\\ \hline
+Throughput ft  & 10 & 0.4 & 0.5 & 0.3 & 0.9 & -0.2\\ \hline
+Throughput bug  & 10 & 0.4 & 0.4 & 0.3 & 0.7 & -0.1\\ \hline
+Bugs  & 10 & 0.4 & 0.4 & 0.2 & 0.8 & 0.2\\ \hline
+Bugs finished, quarter  & 10 & 0.2 & 0.3 & 0.3 & 0.7 & -0.5\\ \hline
+Avg days backlog, bugs  & 10 & 0.2 & 0.1 & 0.3 & 0.8 & 0\\ \hline
+Churn  & 10 & -0.1 & 0 & 0.3 & 0.5 & -0.5\\ \hline
+Churn ft  & 10 & -0.2 & 0 & 0.4 & 0.5 & -0.6\\ \hline
+Churn bug  & 10 & 0.1 & 0 & 0.3 & 0.6 & -0.4\\ \hline
+\end{tabular}
+ \caption{Descriptive Statistic - Correlation - Throughput}
+ \label{DS:corr:TP}
+ \end{table}
  
  \chapter{Discussion}
  \label{ch:discussion} 
  \section{swag}
  The research on kanban says you should limit WIP to increase throughput and decrease lead time. According to the Table \ref{DS:corr:WIP}, throughput increases when WIP increases for in average for all the teams.  Six out of ten teams have a significant positive correlation between WIP and throughput. One could argue, when throughput decreases, bug also decreases according to Table \ref{DS:corr:TP}. That may not be the case. When one produces more tasks, more bugs are produced. The Table \ref{DS:corr:WIP} shows that WIP and bugs have a medium relationship. Out of the six teams with a positive correlation between WIP and throughput, four has a significant positive correlation between WIP and bugs. The correlation values are not transitive as said in Section \ref{sec:corr:bug}, but that don't mean that there is no relationship between the WIP correlation and the throughput correlation. 
  
-
+In WIP’s correlation table (\ref{corr:WIP}) team four and team nine is the two teams with strongest correlation between throughput and WIP. Team four has the correlation value of .83 and team nine has the value of .89. Over the three year period the data was recorded, team four had the total of 63 employees while team nine had 109 as shown by Tables \ref{team:4} and \ref{team:9}. Over the period, team four is the team with fewest employees and team one with 330 is the team with highest employees, shown in Table \ref{table:teams}.   
  
  
  \begin{appendices}
@@ -2101,6 +2150,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
+Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 24.0 & 9.3 & 10.0 & 6.4 & 23.0 & 1.0\\ \hline
 2010-4 & 92.0 & 13.9 & 13.0 & 3.9 & 25.0 & 5.0\\ \hline
 2011-1 & 90.0 & 15.3 & 15.5 & 3.9 & 23.0 & 7.0\\ \hline
