@@ -12,21 +12,11 @@ Quarter =["2010-3","2010-4","2011-1",
 "2013-2","2013-3","2013-4"]
 
 def measure():
-	B_sum = 0
-	TP_sum = 0
-	for i, e in enumerate(TP):
-		tmp = float(e)-float(TP_B[i].split("\\")[0])
-		Bug_new.append(["%.1f" % tmp])
-		B_sum+= tmp
-		try:
-			tmp = float(e)-float(TP_FT[i].split("\\")[0])
-			FT_new.append(["%.1f" % tmp])
-			TP_sum+= tmp
-		except:
-			FT_new.append("-")
-	print B_sum,TP_sum
-	writeOut()
-
+	tmp = 0
+	for l in TP:
+		l = l.split("&")
+		tmp += int(l[2].split("\\")[0])
+	print "Total &", tmp," \\\\ \\hline"
 
 def writeOut():
 	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{|l|r|r|} \n \\hline"
@@ -40,12 +30,8 @@ def writeOut():
 
 
 with open(sys.argv[1], mode="r") as T:
-	with open(sys.argv[2], mode="r") as B:
-		with open(sys.argv[3], mode="r") as FT:	
-			TP = T.readlines()
-			TP_B = B.readlines()
-			TP_FT = FT.readlines()
-			measure()
+	TP = T.readlines()
+	measure()
 
 			
 			
