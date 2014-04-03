@@ -41,8 +41,8 @@ def writeOut(list):
 	tmp+="& \\bf{N} & \\bf{Mean} & \\bf{Median} & \\bf{Std.Dev} & \\bf{Max} & \\bf{Min} \\\\ \\hline 	\n"
 	tmp+= "WIP "+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
-	tmp+= "Throughput "+writeOutTable(list,counter)+"\n"
-	list = list[6:]
+	#tmp+= "Throughput "+writeOutTable(list,counter)+"\n"
+	#list = list[6:]
 	tmp+= "Throughput ft "+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
 	tmp+= "Throughput bug "+writeOutTable(list,counter)+"\n"
@@ -59,7 +59,10 @@ def writeOut(list):
 	list = list[6:]
 	tmp+= "Churn ft "+writeOutTable(list,counter)+"\n"
 	list = list[6:]
-	tmp+= "Churn bug "+writeOutTableSpecial(list)+"\\\\ \\hline"
+	tmp+= "Churn bug "+writeOutTable(list, counter)+"\n"
+	list = list[6:]
+	tmp+= "Team size "+writeOutTableSpecial(list)+"\\\\ \\hline"
+	list = list[6:]
 	tmp+= "\n\\end{tabular} \n \caption{Descriptive Statistic - Correlation - Throughput} \n \label{DS:corr:TP} \n "
 	tmp+= "\\end{table}  \n\n"
 	print tmp

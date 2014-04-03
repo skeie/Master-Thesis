@@ -43,6 +43,8 @@ def makeFloat(list):
 				list[i] = "0"
 			else:
 				list[i] = "%.2f" % num
+				#if list[i].split('.')[1] == '00':
+					#list[i] = '0'
 		except:
 			pass
 

@@ -12,6 +12,7 @@ Churn = []
 Churn_ft = []
 Churn_bugs = []
 Churn_average = []
+Team_size = []
 
 def diagonal_data(list, index):
 	WIP.append(list[0])
@@ -27,6 +28,7 @@ def diagonal_data(list, index):
 	Churn.append(list[7])
 	Churn_ft.append(list[8])
 	Churn_bugs.append(list[9])
+	Team_size.append(list[10])
 
 def makeFloat(list):
 	index = None
@@ -40,6 +42,7 @@ def makeFloat(list):
 				list[i] = "0"
 			else:
 				list[i] = "%.2f" % num
+				
 		except:
 			pass
 
@@ -80,6 +83,7 @@ def writeToFile():
 	tmp+= "Churn &"+writeOutList(Churn)
 	tmp+= "Churn feature &" + writeOutList(Churn_ft)
 	tmp+= "Churn bug &"+writeOutList(Churn_bugs)
+	tmp+= "Team size &"+writeOutList(Team_size)
 	tmp+= "\n\\end{tabular} \n \caption{Correlation - Leadtime} \n \label{corr:WIP} \n "
 	tmp+= "\\centerline {* Correlation is significant at the 0.05 level (2-tailed).} \n"
 	tmp+= "\\centerline{** Correlation is significant at the 0.01 level (2-tailed).} \n"
@@ -89,9 +93,9 @@ def writeToFile():
 	print tmp
 
 def writeToDS():
-	tmp = 'WIP, Throughput, Throughput_ft, Throughput_bug, bugs, precent_bugs, Average_days_in_backlog_bugs, Churn, Churn_ft, Churn_bugs\n'
+	tmp = 'WIP, Throughput, Throughput_ft, Throughput_bug, bugs, precent_bugs, Average_days_in_backlog_bugs, Churn, Churn_ft, Churn_bugs, Team_size\n'
 	for i in xrange(len(Throughput)):
-		tmp += formatItem(WIP[i]) + ", " + formatItem(Throughput[i]) + ", "+formatItem(Throughput_ft[i])+","+formatItem(Throughput_bug[i])+","+formatItem(Bugs[i])+","+formatItem(precent_bugs[i])+","+formatItem(Average_days_in_backlog_bugs[i])+","+formatItem(Churn[i])+","+formatItem(Churn_ft[i])+","+formatItem(Churn_bugs[i])+"\n"
+		tmp += formatItem(WIP[i]) + ", " + formatItem(Throughput[i]) + ", "+formatItem(Throughput_ft[i])+","+formatItem(Throughput_bug[i])+","+formatItem(Bugs[i])+","+formatItem(precent_bugs[i])+","+formatItem(Average_days_in_backlog_bugs[i])+","+formatItem(Churn[i])+","+formatItem(Churn_ft[i])+","+formatItem(Churn_bugs[i])+","+formatItem(Team_size[i])+"\n"
 	with open('output.csv', 'w') as f:
 		f.write(tmp)
 
