@@ -26,7 +26,6 @@ def writeOutTable(list, nr):
 			tmp+="\\\\ \\hline"
 			return tmp
 		else:
-			print element
 			tmp += " & "+str(element[0])
 
 def writeOutTableSpecial(list):
@@ -53,6 +52,8 @@ def writeOut(list):
 	tmp+= "Bugs finished, quarter "+writeOutTable(list,counter)+"\n"
 	list = list[6:]
 	tmp+= "Avg days backlog, bugs "+writeOutTable(list,counter)+"\n"
+	list = list[6:]	
+	tmp+="Lead time"+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
 	tmp+= "Churn "+writeOutTable(list,counter)+"\n"
 	list = list[6:]
