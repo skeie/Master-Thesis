@@ -41,8 +41,8 @@ def writeOut(list):
 	tmp+="& \\bf{N} & \\bf{Mean} & \\bf{Median} & \\bf{Std.Dev} & \\bf{Max} & \\bf{Min} \\\\ \\hline 	\n"
 	tmp+= "WIP "+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
-	#tmp+= "Throughput "+writeOutTable(list,counter)+"\n"
-	#list = list[6:]
+	tmp+= "Throughput "+writeOutTable(list,counter)+"\n"
+	list = list[6:]
 	tmp+= "Throughput ft "+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
 	tmp+= "Throughput bug "+writeOutTable(list,counter)+"\n"

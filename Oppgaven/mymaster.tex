@@ -274,7 +274,7 @@ The yellow stickers represent the tasks. Some follow the path to mark stickers w
 
 WIP limit is one of the core principles in Kanban \parencite{6068363}. WIP limit helps to reduce overhead by limit task-switching for each developer and make constant flow of tasks throughout the development \parencite{DavidAnderson}. One way to explain WIP and the assertion impact of WIP limit is to use cars and roads as analogy. All roads have a maximum capacity of cars. When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams. A software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks may decreases and lead time may increases.
 
-When first implementing Kanban, Shinkle explains that the users don't care about WIP or setting a WIP limit, but rather the visibility of Kanban through the Kanban board. When users gain more experience with Kanban, they start to attempt the principles of WIP limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP limit is not easy. They suggest that the WIP limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. In the book "Kanban and Scrum - making the most of both" suggests Kniberg that you start by limiting WIP, then experiment with it \parencite{Kniberg}. The article "Lean Software Management" \parencite{Kniberg} and the "Impact of Kanban on Software Project Work" \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
+When first implementing Kanban, Shinkle explains that the users often don't care about WIP or setting a WIP limit, but rather the visibility of Kanban through the Kanban board. When users gain more experience with Kanban, they start to attempt the principles of WIP limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP limit is not easy. They suggest that the WIP limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. In the book "Kanban and Scrum - making the most of both" suggests Kniberg that you start by limiting WIP, then experiment with it \parencite{Kniberg}. The article "Lean Software Management" \parencite{Kniberg} and the "Impact of Kanban on Software Project Work" \parencite{Ikonen} both suggest that WIP should be minimized as well. The conclusion of present study is to keep the WIP limit low and experiment by slowly increase the WIP limit until the throughput decreased and lead time increased, then you know that the previous WIP limit was the perfect one.
 
 The importance of limit WIP has been stated by various researches. A summary of benefits with WIP limit is stated in Section \ref{sub:sub:benefits} .  The articles by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson} researched the difference between limit WIP and unlimited WIP.  A summary of this two articles are stated in Section \ref{sub:wip:vs:wip}
 
@@ -314,9 +314,10 @@ This subsection contains excerpt from papers from various authors that have done
 Both the studies on WIP limit vs. No limit, the articles and research shows the importance of WIP limit. If  \L ukasz's effectiveness metric is isregarded , there is no clear rule on how to determine WIP limit even though WIP is suppose to be a crucial principle in order to take full advantages of Kanban.
 
 \section {Lead time}
+\label{sec:in:lt}
 ''Lead time is the total elapsed time from when a customer requests software to when the finished software is released to the customer'' \parencite{Joyce}.
 
-Lead time is an essential ingredient when you look for the optimal WIP, if there is one. Often in a project, lead time is split into pieces, so every task has its own lead time. This gives the development teams the advantages to experiment with different WIPs in order to see the different lead times and then measure which WIP that suits this project the best. 
+Lead time could be an essential ingredient when you look for the optimal WIP, if there is one.  Often in a project, lead time is split into pieces, so every task has its own lead time. This gives the development teams the advantages to experiment with different WIPs in order to see the different lead times and then measure which WIP that suits this project the best. 
 
 According to the paper "Quantifying the effect of Using Kanban versus Scrum" \parencite{Dag} the citation by Middleton and Joyce above is close to definition of what lead time is. They define lead time as the amount of time that passed from the moment that the development team receives a request to the moment that it completes the work item. The reason why the paper disapproves the definition by Middleton and Joyce is because: "The amount of time a work item remains in the backlog queue before it's put on the board is a function of priority, not whether the company uses Scrum, Kanban or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it's finished'' \parencite{Dag}.
 
@@ -744,10 +745,12 @@ SI implemented three weeks sprint, after each sprint a fully tested shippable co
 
 SI decided to implement Kanban in the following manner. When a work item is pulled from the backlog, SI tries to make the item flow through all the stages until it's ready for release. This procedure happens as quickly as possible. In order for an item to be ready for release, it has to be at a satisfactory quality level, which is defined by SI. SI also implemented WIP limits. If the WIP limit is reached, no new tasks are started until another task is finished which is based on the principle of just-in-time \parencite{Dag}.
 
+\section{Correlation}
+To run correlation I have chosen Pearson correlation, since I want to find a linear relationship between variables. 
 
 \chapter{Data collected and calculations}
 \label{ch:DCC}
-This chapter will introduce how the algorithms of the program works. The first section, Section \ref{WPD} introduces the algorithm of how the program measure WIP for each day. The subsection \ref{sec:Example} provides a comprehensive example of how the program measure WIP per day. The consecutively sections reveal the algorithm of how the program measure bugs (Section \ref{sec:bug}) throughput (Section \ref{sec:TP}),  churn (Section \ref{sec:churn}) and lead time (Section \ref{sec:LT}). In the last section, a short introduction to the statistical analyze program SPSS is given (Section \ref{sec:SPSS}). For this thesis a program was made in order to measure the variables shown in Table \ref{des}. %The explanation of how the program works will be split into sections so it will be easier to get a understanding of how the program operates. The explanation of how the program works will first contain a detailed description in words, then a description using Pseudocode \parencite{jd}.The Pseudocode for each section is simplified with only the key elements of the program code. 
+This chapter will introduce how the algorithms of the program works. The first section, Section \ref{WPD} introduces the algorithm of how the program measure WIP for each day. The subsection \ref{sec:Example} provides a comprehensive example of how the program measure WIP per day. The consecutively sections reveal the algorithm of how the program measure bugs (Section \ref{sec:bug}) throughput (Section \ref{sec:TP}),  churn (Section \ref{sec:churn}) and lead time (Section \ref{sec:LT}). In the last section, a short introduction to the statistical analyze program SPSS is given (Section \ref{sec:SPSS}). For this thesis a program was made in order to measure the variables shown in Table \ref{des}.
 
 
 The Table \ref{tab:measurementDone} shows how quarters, dates and days are represented in this thesis. 
@@ -1647,7 +1650,7 @@ Churn bug &0.26& -0.44& -.606*& 0.27& -.552*& .741**& -0.32& -0.14& -0.16& -0.10
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \end{adjustwidth}
 \end{table}
- Team three and six has a significant values between \textit{team size} and \textit{churn bug}. For team three's case, the reason where stated in Section \ref{sec:corr:lt} and for team six the reason where stated in Section \ref{sec:corr:WIP}. \textit{Churn feature} in case of team one has a significant value, the reason churn feature and churn don't have a close relationship is stated in Section \ref{sec:corr:WIP}. \textit{Churn} and \textit{churn bug} has negative significant correlation to \textit{team size}, while \textit{churn feature} has a medium positive relationship for team five. The reason \textit{churn feature} differ from \textit{churn} where stated in Section \ref{sec:corr:churn}. The values of interest in Table \ref{DS:corr:TS} has already been mentioned in earlier sections.
+ Team three and six has a significant values between \textit{team size} and \textit{churn bug}. For team three's case, the reason where stated in Section \ref{sec:corr:lt} and for team six the reason where stated in Section \ref{sec:corr:WIP}. \textit{Churn feature} in case of team one has a significant value, the reason churn feature and churn don't have a close relationship is stated in Section \ref{sec:corr:WIP}. \textit{Churn} and \textit{churn bug} has negative significant correlation to \textit{team size}, while \textit{churn feature} has a medium positive relationship for team five. The reason \textit{churn feature} differ from \textit{churn} where stated in Section \ref{sec:corr:churn}. The values of interest in Table \ref{DS:corr:TS} has already been mentioned in earlier sections. Table \ref{DS:corr:WIP:Team} shows average team size and average WIP for each of the teams.
 
 \begin{table}[!htbp]
  \centering
@@ -1670,6 +1673,58 @@ Churn bug  & 10 & -0.1 & -0.1 & 0.4 & 0.7 & -0.6\\ \hline
  \label{DS:corr:TS}
  \end{table}
  
+ \begin{table}[!htbp]
+ \centering
+ \begin{tabular}{|l|r|r|}
+  \hline
+  \textbf{Team} & \textbf{Average team size} & \textbf{Average WIP}\\ \hline
+Team one & 23 & 20.5  \\ \hline
+Team two & 10 & 23.8 \\ \hline
+Team three & 9 &  18.5\\ \hline
+Team four & 4 &  14\\ \hline
+Team five & 20 &  48.4\\ \hline
+Team six & 7 &  22.1\\ \hline
+Team seven & 7 & 14.8 \\ \hline
+Team eight & 12 &  8.1\\ \hline
+Team nine  & 8 &  9.1\\ \hline
+Team ten & 12 &  14.8\\ \hline
+ \end{tabular}
+ \caption{Average of team size and WIP}
+ \label{DS:corr:WIP:Team}
+ \end{table}
+ 
+ 
+\chapter{Discussion}
+\label{ch:dis}
+
+\section{WIP vs lead time}
+As stated in Section \ref{sec:in:lt}, lead time could be an important tool to measure productivity. Each development process would like to get their lead time as low as possible. WIP is a principle decrease lead time.  The overall result of this study shows that when WIP decreases, so does lead time. Team one, four, five, seven and ten has significant positive correlation between WIP and lead time and both team two and three has a medium correlation as shown in Table \ref{DS:corr:WIP}. 
+
+
+
+One could argue if number of team members increase, the number of work in progress also increases. But that should not have an impact on lead timem since with more employees, there is possible to work on more tasks.  The Table \ref{DS:corr:WIP:Team:LT} shows that over a period of 14 quarters, 
+
+ \begin{table}[!htbp]
+ \centering
+ \begin{tabular}{|l|r|r|r|}
+  \hline
+  \textbf{Team} & \textbf{Average team size} & \textbf{Average WIP} & \textbf{Averge Leadtime}\\ \hline
+Team one & 23 & 20.5 &   16.7\\ \hline
+Team two & 10 & 23.8 &  13.5\\ \hline
+Team three & 9 &  18.5  & 14.6\\ \hline
+Team four & 4 &  14  & 11.6\\ \hline
+Team five & 20 &  48.4  & 25.7\\ \hline
+Team six & 7 &  22.1  & 14.3\\ \hline
+Team seven & 7 & 14.8  & 14.8\\ \hline
+Team eight & 12 &  8.1 & 22.6\\ \hline
+Team nine  & 8 &  9.1  & 15.9\\ \hline
+Team ten & 12 &  14.8 &  22.7\\ \hline
+ \end{tabular}
+ \caption{Average of team size and WIP}
+ \label{DS:corr:WIP:Team:LT}
+ \end{table}
+
+Team one 23, four4, five 20, seven 7 and ten 12 
 
 %%%%%%%%%%%%%%%%%%%%%%%% appendices %%%%%%%%%%%%%%%%%%% 
 \begin{appendices}

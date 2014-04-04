@@ -1,0 +1,218 @@
+Year,Quarter,Team,Team Size
+2013,4, App Server,5
+2011,2, Architecture,2
+2012,4, Architecture,1
+2010,3, Argon,5
+2010,4, Argon,13
+2011,1, Argon,14
+2011,2, Argon,25
+2011,3, Argon,21
+2011,4, Argon,23
+2012,1, Argon,25
+2012,2, Argon,19
+2012,3, Argon,24
+2012,4, Argon,18
+2013,1, Argon,31
+2013,2, Argon,29
+2013,3, Argon,27
+2013,4, Argon,11
+2010,3, Automation,5
+2010,4, Automation,6
+2011,1, Automation,6
+2011,2, Automation,6
+2011,3, Automation,5
+2011,4, Automation,5
+2012,1, Automation,4
+2012,2, Automation,6
+2012,3, Automation,6
+2012,4, Automation,9
+2013,1, Automation,9
+2013,2, Automation,9
+2013,3, Automation,9
+2013,4, Automation,14
+2010,3, Automation Coverage 2010,6
+2010,4, Automation Coverage 2010,8
+2010,4, Common,1
+2011,3, Common,1
+2011,4, Common,1
+2012,3, Common,1
+2012,4, Common,2
+2013,1, Common,8
+2013,2, Common,12
+2013,3, Common,12
+2013,4, Common,11
+2013,1, Customer Bugs - Common,5
+2013,2, Customer Bugs - Common,1
+2013,3, Customer Bugs - Common,1
+2010,3, Deleted team Krypton,10
+2010,4, Deleted team Krypton,8
+2011,1, Deleted team Krypton,8
+2011,2, Deleted team Krypton,6
+2011,3, Deleted team Krypton,8
+2011,4, Deleted team Krypton,9
+2012,1, Deleted team Krypton,10
+2012,2, Deleted team Krypton,5
+2012,3, Deleted team Krypton,9
+2012,4, Deleted team Krypton,3
+2010,3, Documentation,4
+2010,4, Documentation,5
+2011,1, Documentation,4
+2011,2, Documentation,4
+2011,3, Documentation,3
+2011,4, Documentation,5
+2012,1, Documentation,4
+2012,2, Documentation,3
+2012,3, Documentation,3
+2012,4, Documentation,3
+2013,1, Documentation,3
+2013,2, Documentation,4
+2013,3, Documentation,5
+2013,4, Documentation,6
+2010,3, Frontend,6
+2010,4, Frontend,9
+2011,1, Frontend,7
+2011,2, Frontend,10
+2011,3, Frontend,9
+2011,4, Frontend,10
+2012,1, Frontend,11
+2012,2, Frontend,11
+2012,3, Frontend,13
+2012,4, Frontend,13
+2013,1, Frontend,13
+2013,2, Frontend,7
+2013,3, Frontend,8
+2013,4, Frontend,8
+2012,4, Helium,14
+2013,1, Helium,13
+2013,2, Helium,10
+2013,3, Helium,10
+2013,4, Helium,10
+2010,3, IT,3
+2010,4, IT,8
+2011,1, IT,4
+2011,2, IT,4
+2011,3, IT,4
+2011,4, IT,4
+2012,1, IT,4
+2012,2, IT,2
+2012,3, IT,3
+2012,4, IT,5
+2013,1, IT,7
+2013,2, IT,5
+2013,3, IT,5
+2013,4, IT,5
+2013,4, Kernel,5
+2010,3, Neon,10
+2010,4, Neon,15
+2011,1, Neon,13
+2011,2, Neon,12
+2011,3, Neon,15
+2011,4, Neon,14
+2012,1, Neon,15
+2012,2, Neon,7
+2012,3, Neon,8
+2012,4, Neon,9
+2013,1, Neon,10
+2013,2, Neon,7
+2013,3, Neon,7
+2013,4, Neon,8
+2011,1, PA Automation,5
+2011,2, PA Automation,2
+2011,3, PA Automation,2
+2011,4, PA Automation,4
+2012,1, PA Automation,4
+2012,2, PA Automation,2
+2010,4, ProArc,2
+2011,1, ProArc,8
+2011,2, ProArc,8
+2011,3, ProArc,13
+2011,4, ProArc,9
+2012,1, ProArc,10
+2012,2, ProArc,2
+2012,3, ProArc,25
+2012,4, ProArc,11
+2013,1, ProArc,22
+2013,2, ProArc,21
+2013,3, ProArc,23
+2013,4, ProArc,8
+2010,4, Radon,5
+2011,1, Radon,8
+2011,2, Radon,7
+2011,3, Radon,7
+2011,4, Radon,9
+2012,1, Radon,10
+2012,2, Radon,8
+2012,3, Radon,10
+2012,4, Radon,12
+2013,1, Radon,8
+2013,2, Radon,9
+2013,3, Radon,8
+2013,4, Radon,8
+2010,3, Setup+DB,3
+2010,4, Setup+DB,7
+2011,1, Setup+DB,16
+2011,2, Setup+DB,14
+2011,3, Setup+DB,17
+2011,4, Setup+DB,11
+2012,1, Setup+DB,14
+2012,2, Setup+DB,10
+2012,3, Setup+DB,7
+2012,4, Setup+DB,4
+2013,1, Setup+DB,2
+2013,2, Setup+DB,2
+2013,4, Setup+DB,1
+2013,4, SharePoint,4
+2011,1, SP4 release,19
+2011,2, SP4 release,7
+2011,3, SP4 release,2
+2011,4, SP4 release,1
+2012,3, SP4 release,1
+2011,2, SP5 release,1
+2012,4, Titanium,13
+2013,1, Titanium,13
+2013,2, Titanium,14
+2013,3, Titanium,10
+2013,4, Titanium,11
+2010,3, UI,3
+2010,4, UI,3
+2011,1, UI,2
+2011,2, UI,1
+2011,3, UI,2
+2011,4, UI,2
+2012,1, UI,2
+2012,2, UI,2
+2012,3, UI,2
+2012,4, UI,2
+2013,1, UI,2
+2013,2, UI,3
+2013,3, UI,4
+2013,4, UI,4
+2013,4, Win Client,10
+2010,3, Xenon,3
+2010,4, Xenon,11
+2011,1, Xenon,12
+2011,2, Xenon,9
+2011,3, Xenon,4
+2011,4, Xenon,17
+2012,1, Xenon,20
+2012,2, Xenon,17
+2012,3, Xenon,18
+2012,4, Xenon,14
+2013,1, Xenon,17
+2013,2, Xenon,9
+2013,3, Xenon,10
+2013,4, Xenon,10
+2010,3,360,6
+2010,4,360,3
+2011,1,360,16
+2011,2,360,28
+2011,3,360,2
+2011,4,360,38
+2012,1,360,35
+2012,2,360,34
+2012,3,360,32
+2012,4,360,29
+2013,1,360,24
+2013,2,360,37
+2013,3,360,23
+2013,4,360,23
