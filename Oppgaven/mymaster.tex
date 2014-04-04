@@ -1240,6 +1240,9 @@ Judging from the Figure ref and the correlation table from Section ref one can a
 
 In team six's case, \textit{churn bug} has a positive correlation of .77, while both \textit{churn} and \textit{churn} bug have the values of -.30 and -.36. Based on these values, the \textit{churn bug} variable represents the most of \textit{churn}. The Tables \ref{DS:Churn:6}, \ref{DS:CF:6} and \ref{DS:CB:6} backs the theory. The tables shows that \textit{churn feature} contribute 576 dates to \textit{churn} and has a total mean of 105.9. \textit{Churn bug} contains of 180 dates and has a total mean value of 73.8. The churn correlation table in Section \ref{sec:corr:churn}, one can see that \textit{churn feature} has a correlation value of .98, while \textit{churn bug} has a value of -.02. These values prove the theory on contribution between the churn variables.  
 
+\textit{Throughput bug} for team five has a significant value of .54, while \textit{throughput} has a value of .52 and throughput feature a value of .25. Based on these values, one can assume that \textit{throughput bug} represents most of \textit{throughput} for team five. The descriptive statistic Tables \ref{DS:Throughput:5}, \ref{DS:TPFT:5} and \ref{DS:TPB:5}, shows the number of date is 657 for \textit{throughput}. Out of the 657 dates, represents \textit{throughput feature} 108 dates, and \textit{throughput bug} 556 dates. These values also points towards the fact that\textit{throughput bug} represents most of \textit{throughput}. The overall mean for \textit{throughput} is 6.3, for \textit{throughput feature} it's 5.7 and for \textit{throughput bug} it is 6.4. Based on these values, it looks like both the sub variables contribute. The throughput correlation Table \ref{corr:TP} shows with the values .85 for \textit{throughput feature} and .99 for \textit{throughput bug} that both the sub variables contribute.
+
+
 The descriptive statistics tables are based on summary of the correlation values. The tables shows number of values measured(N), mean, median standard deviation(Std.dev), maximum(max)  and minimum(min) values from the correlation table.
 In Table \ref{DS:corr:WIP}, the total mean of throughput is 0.6 for all the teams and the median is 0.7 , which reflects the strong positive correlation between WIP and throughput.  The overall correlation between \textit{WIP} and \textit{team size}  is 0.6 as well. The bug variables have a total mean of 0.4 with a median of 0.5, this indicates that WIP and bug have a medium strong relationship. 
 
@@ -1616,7 +1619,10 @@ Team size  & 10 & -0 & -0 & 0.3 & 0.4 & -0.5\\ \hline
  
  
  \section{Team size}
- The team size correlation tables is stated in Table \ref{corr:Teams}. 
+ The team size correlation tables is stated in Table \ref{corr:Teams}. Team one, three, five, six, eight and ten have a significant positive correlation between \textit{team size} and  \textit{WIP}. Team one, five, six, eight and ten has a significant positive correlation between \textit{team size} and \textit{throughput}. For team one, six and eight's case, don't \textit{throughput bug} has a significant positive correlation, the reason \textit{throughput bug} differ for team one, six and eight where stated in Section \ref{sec:corr:WIP} and \ref{sec:corr:TP} . For team five and ten differ \textit{throughput feature}. The reason for this where stated in Section \ref{sec:corr:WIP}
+ 
+Team one and five has a significant positive correlation between \textit{bugs} and \textit{team size} Team two has a significant positive correlation between \textit{avg days in backlog, bugs} and \textit{team size}. Team one also has a positive correlation between \textit{time size} and \textit{lead time},  as well as \textit{churn feature}. The reason \textit{churn feature} has a significant value and churn don't where stated in section \ref{sec:corr:churn}. 
+
  \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
  \centering
@@ -1641,8 +1647,8 @@ Churn bug &0.26& -0.44& -.606*& 0.27& -.552*& .741**& -0.32& -0.14& -0.16& -0.10
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \end{adjustwidth}
 \end{table}
- 
- 
+ Team three and six has a significant values between \textit{team size} and \textit{churn bug}. For team three's case, the reason where stated in Section \ref{sec:corr:lt} and for team six the reason where stated in Section \ref{sec:corr:WIP}. \textit{Churn feature} in case of team one has a significant value, the reason churn feature and churn don't have a close relationship is stated in Section \ref{sec:corr:WIP}. \textit{Churn} and \textit{churn bug} has negative significant correlation to \textit{team size}, while \textit{churn feature} has a medium positive relationship for team five. The reason \textit{churn feature} differ from \textit{churn} where stated in Section \ref{sec:corr:churn}. The values of interest in Table \ref{DS:corr:TS} has already been mentioned in earlier sections.
+
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1661,7 +1667,7 @@ Churn ft  & 10 & 0.1 & 0.2 & 0.4 & 0.8 & -0.4\\ \hline
 Churn bug  & 10 & -0.1 & -0.1 & 0.4 & 0.7 & -0.6\\ \hline
 \end{tabular}
  \caption{Descriptive Statistic - Correlation - Team size}
- \label{DS:corr:TP}
+ \label{DS:corr:TS}
  \end{table}
  
 
