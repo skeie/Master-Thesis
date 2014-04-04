@@ -14,9 +14,13 @@
 \usepackage{array, dcolumn, booktabs,enumitem}
 \usepackage[showframe=false]{geometry}
 \usepackage{changepage}
-\usepackage{subfigure}
+\usepackage{subcaption}
 \usepackage[toc,page]{appendix}
 \usepackage{blindtext}
+
+
+
+
 
 \let\Chaptermark\chaptermark
 \def\chaptermark#1{\def\Chaptername{#1}\Chaptermark{#1}}
@@ -367,14 +371,11 @@ Churn is a measure that's not so known as lead time, throughput or WIP. Churn is
 Software Innovation is a Scandinavian software company. SI develops and delivers Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around the Microsoft Sharepoint platform. \parencite{Dag}. \parencite{SI}.
 
 SI has approximately 300 employees in Oslo, Copenhagen, Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used the Waterfall process. In 2007, SI changed to Scrum, and in 2010, SI went from Scrum to Kanban \parencite{Dag}.
-
 \subsection{Teams}
 Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four shown in table \ref{Team:4} is the it-support team for SI. 
 %DEL EN TEAM 1-4
-\begin{table}[!htbp]
-  \begin{adjustwidth}{-0cm}{}
-\subfigure[Team one]{
- \label{Team:1}
+\begin{figure}
+\begin{subfigure}{1\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -396,9 +397,10 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 	Total & & 330  \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Team two]{
- \label{Team:2}
+\caption{Team size - team one}
+ \label{Team:1}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -420,9 +422,10 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 	Total & & 150  \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Team three]{
- \label{Team:3}
+\caption{Team size - team two}
+ \label{Team:2}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -443,12 +446,11 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 	2013 & 4 & 8 \\ \hline
 	Total & &135  \\ \hline
 \end{tabular}
-
-
 }
-}
-\subfigure[Team four]{
- \label{Team:4}
+\caption{Team size - team three}
+ \label{Team:3}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -470,13 +472,11 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 	Total & &63  \\ \hline
 \end{tabular}
 }
-}
-\end{adjustwidth}
-
+\caption{Team size - team four}
+ \label{Team:4}
+\end{subfigure}
 %%%%%%% DEL TO TEAM 5-8
-  \begin{adjustwidth}{-0cm}{}
-\subfigure[Team five]{
- \label{Team:5}
+\begin{subfigure}{0.5\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -498,9 +498,11 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 	Total & &285  \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Team six]{
- \label{Team:6}
+\caption{Team size - team five}
+ \label{Team:5}
+\end{subfigure}
+
+\begin{subfigure}{0.3\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -522,9 +524,10 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 Total & &99  \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Team Seven]{
- \label{Team:7}
+\caption{Team size - team six}
+ \label{Team:6}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -542,9 +545,10 @@ Total & &99  \\ \hline
 	Total & &76  \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Team eigth]{
- \label{Team:8}
+\caption{Team size - team seven}
+ \label{Team:7}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -565,16 +569,15 @@ Total & &99  \\ \hline
 	Total & &162  \\ \hline
 \end{tabular}
 }
-}
-\end{adjustwidth}
+\caption{Team size - team eight}
+ \label{Team:8}
+\end{subfigure}
 
 
 
 
 %%%%%% DEL tree TEAM 9-10
-  \begin{adjustwidth}{2cm}{}
-\subfigure[Team nine]{
- \label{Team:9}
+\begin{subfigure}{0.2\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -593,10 +596,12 @@ Total & &99  \\ \hline
 	2013 & 3 & 8 \\ \hline
 	2013 & 4 & 8 \\ \hline
 	Total & &109  \\ \hline
-\end{tabular}}
+\end{tabular}
 }
-\subfigure[Team ten]{
- \label{Team:10}
+\caption{Team size - team nine}
+ \label{Team:9}
+\end{subfigure}
+\begin{subfigure}{0.3\textwidth}
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -618,11 +623,12 @@ Total & &99  \\ \hline
 	Total & &170  \\ \hline
 \end{tabular}
 }
-}
-\end{adjustwidth}
+\caption{Team size - team ten}
+ \label{Team:10}
+\end{subfigure}
 \caption[Optional caption for list of figures]{Caption of team size for teams in SI}
 \label{table:teams}
-\end{table}
+\end{figure}
 
 
 
@@ -1142,10 +1148,10 @@ Throughput bug &0.02& 0.25& .726**& .823**& .539*& 0.07& 0.55& 0.15& .882**& .62
 Bugs &.725**& 0.20& .599*& .560*& 0.50& 0.46& 0.62& 0.04& .581*& 0.18\\ \hline
 Bugs finished, quarter &0.35& 0.10& -0.07& .561*& 0.19& 0.19& .853**& 0.23& 0.52& 0.35\\ \hline
 Avg days in backlog, bugs &-0.03& 0.44& 0.42& .537*& -0.18& 0.02& 0.10& 0.14& -0.20& -0.18\\ \hline
-Leadtime &.749**& 0.46& 0.49& .704**& .566*& 0.29& .678*& 0.16& 0.23& .719**\\ \hline
-Churn &0.47& -.709**& -0.32& .656*& 0.03& -0.30& 0.10& 0.16& -0.09& 0.16\\ \hline
+Lead time &.749**& 0.46& 0.49& .704**& .566*& 0.29& .678*& 0.16& 0.23& .719**\\ \hline
+Churn &0.47& -.709**& -0.32& .656*& 0.03& -0.30& 0.15& 0.16& -0.09& 0.16\\ \hline
 Churn feature &.718**& -0.25& -0.34& .724**& 0.06& -0.36& 0.10& 0.20& -0.12& 0.32\\ \hline
-Churn bug &0.15& -.600*& -0.52& .622*& 0.11& .765**& 0.05& -0.22& -0.30& -0.10\\ \hline
+Churn bug &0.15& -.600*& -0.52& .622*& 0.11& .765**& -0.05& -0.22& -0.30& -0.10\\ \hline
 Team size &.684**
 & 0.35& .778**
 & 0.06& .575*
@@ -1158,23 +1164,31 @@ Team size &.684**
 \label{corr:WIP}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
-\centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{adjustwidth}
 \end{table}
 \newpage
 Both throughput and throughput feature in team one's case have significant positive relationship with WIP, throughput bug don't. Throughput and throughput feature have the correlation values .74 and .73 while throughput bug's value is 0.02. The reason throughput bug don't has a close relationship to throughput might be because throughput bug consist of 37\% (108/290) of the throughput dates, as shown in the total row in tables \ref{DS:Throughput:1} and \ref{DS:TPB:1}. But it's possible to have a close relationship even though, since the correlation is based on the mean values. Throughput feature has a total mean of 13.7, while throughput bug has 6.4 as shown in T ables \ref{DS:TPFT:1} and \ref{DS:TPB:1}. The total mean of throughput is 11 as shown in table \ref{DS:Throughput:1}. The mean values strengthens the assumption that throughput feature represents most of the throughput variable. The correlation  graphs in Figure \ref{corr:Difference:1}  and the throughput correlation table in Section \ref{sec:corr:TP} states the assumption. In the correlation graphs, the X-axis represents WIP and the Y-axis represents the different throughput variables. The pattern of dots in Figures \ref{fig:a:1} and \ref{fig:b:1} are similar. They both increase when X values do.  While the dots in Figure \ref{fig:c:1} are more randomly gathered, which reflects the correlation values between the throughput variables shown in Table \ref{corr:TP}.The table and the figure proves the assumption that total of dates and the total of mean can be used to indicate the correlation relationship.
 
-
-\begin{figure}[h]
-\centering     %%% not \center
-\subfigure[WIP and Throughput]{\label{fig:a:1}\includegraphics[scale=0.5]{Picture/One/WIPvsTP.png}}
-\subfigure[WIP and Throughput feature]{\label{fig:b:1}\includegraphics[scale=0.5]{Picture/One/WIPvsTPFT.png}}
-\subfigure[WIP and Throughput bug]{\label{fig:c:1}\includegraphics[scale=0.5]{Picture/One/WIPvsTPB.png}}
+\begin{figure}[h] 
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/One/WIPvsTP.png}
+ \caption{WIP and throughput} 
+ \label{fig:a:1}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/One/WIPvsTPFT.png}
+ \caption{WIP and throughput feature} 
+\label{fig:b:1}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/One/WIPvsTPB.png}
+ \caption{WIP and throughput bug} 
+\label{fig:c:1}
+  \end{subfigure}
 \caption{Correlation graphs between WIP and the throughput variables.}
 \label{corr:Difference:1}
 \end{figure}
 
-\newpage
 
 
 The same issue encounter for both team six and seven. In case of team six, both throughput and throughput feature have significant positive relationship with WIP while throughput bug do not. Throughput, throughput feature and throughput bug have the correlation values .64, .68 and 0.07. The total row in tables \ref{DS:Throughput:6},  \ref{DS:TPFT:6} and \ref{DS:TPB:6} shows that throughput feature consist of 609 dates and a mean value of 4.8, while throughput bug consist of 82 dates  and a mean of 3.3. The throughout variable consist of 691 dates and have a mean value of 4.58. The mean value and the number of dates strengthens the assumption that throughput feature represents more of throughput than throughput bug do.  Team four has a positive correlation between each of the variables except team size.
@@ -1183,39 +1197,51 @@ For team seven's case, the difference between throughput, throughput feature and
 
 Team ten has significant positive relationship between WIP and both throughput and throughput bug. Throughput for team ten consist of 404 tasks as show in the total row in Table \ref{DS:Throughput:7}. Throughput bug represents 335 of these dates while throughput feature stands for 69 dates as shown in Tables \ref{DS:TPFT:7} and \ref{DS:TPB:7}. But the overall mean for throughput, throughput feature and throughput bug is 2.2, 2.3 and 2.2, which could reflect that these three variables have a close relationship. Both the throughput correlation table in Section \ref{sec:corr:TP} and the correlation graphs Figures in \ref{corr:Difference:10} disproves that assumption. The figure shows that the correlation dots between WIP and throughput and WIP and throughput bug is almost identical, which proves that throughput bug have a close relationship to throughput while the correlation table shows that the correlation between throughput and throughput feature is .43 which is a medium strong correlation. 
 
-
-\begin{figure}[h]
-\centering     %%% not \center
-\subfigure[WIP and Throughput]{\label{fig:a}\includegraphics[scale=0.5]{Picture/Ten/WIPvsTP.png}}
-\subfigure[WIP and Throughput feature]{\label{fig:b}\includegraphics[scale=0.5]{Picture/Ten/WIPvsTPFT.png}}
-\subfigure[WIP and Throughput bug]{\label{fig:c}\includegraphics[scale=0.5]{Picture/Ten/WIPvsTPB.png}}
+\begin{figure}[h] 
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Ten/WIPvsTP.png}
+ \caption{WIP and throughput} 
+ \label{fig:a:WIP:10}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Ten/WIPvsTPFT.png}
+ \caption{WIP and throughput feature} 
+\label{fig:b:WIP:10}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Ten/WIPvsTPB.png}
+ \caption{WIP and throughput bug} 
+\label{fig:c:WIP:10}
+  \end{subfigure}
 \caption{Correlation graphs between WIP and the throughput variables for team ten.}
 \label{corr:Difference:10}
 \end{figure}
 
-Team one, three, four and nine have a significant positive relationship between WIP and bugs as well. For team one differ all the three churn variable from each other. Churn has a value of 0.47, churn feature has a value of .718 and churn bug of 0.15.  Judging from these variables, it will look like churn feature represents most of the churn variable. The descriptive statistic Tables \ref{DS:Churn:1}, \ref{DS:CF:1}  \ref{DS:CB:1} proves the assumption. The total mean of churn is 20.2, while churn feature has total mean of 24.5 and churn bug has a total mean of 16.8. The descriptive statistic tables also shows that churn feature contribute 150 dates to churn, while churn bug contribute 189 dates. The descriptive statistic data strengthens the assumption that both \textit{churn feature} and \textit{churn bug} represents the \textit{churn} variable. The churn correlation table in Section \ref{sec:corr:churn} proves the assumption. Both \textit{churn feature} (.566) and \textit{churn bug} (.798) have a significant positive correlation to \textit{churn}. legge inn transitive her og fiks tabeller 
+
+Team one, three, four and nine have a significant positive relationship between WIP and bugs as well. For team on,differ all the three churn variable from each other. Churn has a value of 0.47, churn feature has a value of .718 and churn bug of 0.15.  Judging from these variables, it will look like churn feature represents most of the churn variable. The descriptive statistic Tables \ref{DS:Churn:1}, A.4a and A.4b,  proves the assumption. The total mean of churn is 20.2, while churn feature has total mean of 24.5 and churn bug has a total mean of 16.8. The descriptive statistic tables also shows that churn feature contribute 150 dates to churn, while churn bug contribute 189 dates. The descriptive statistic data strengthens the assumption that both \textit{churn feature} and \textit{churn bug} represents the \textit{churn} variable. The churn correlation table in Section \ref{sec:corr:churn} proves the assumption. Both \textit{churn feature} (.566) and \textit{churn bug} (.798) have a significant positive correlation to \textit{churn}. legge inn transitive her og fiks tabeller 
+Judging from the Figure ref and the correlation table from Section ref one can assume that correlation is not transitive. The paper "The Non-Transitivity of Pearson's Correlation Coefficient: An Educational Perspective" \parencite{corr:transitive} proves the assumption. 
 
 %Figure \ref{corr:Difference:churn:1} states the correlation graph. The X-axis represents WIP, the Y-axis represents the churn variables.
 
 
 %\begin{figure}[h]
 %\centering     %%% not \center
-%\subfigure[WIP and Churn]{\label{fig:a:1}\includegraphics[scale=0.5]{Picture/One/WIPvsChurn}}
-%\subfigure[WIP and Churn feature]{\label{fig:b:1}\includegraphics[scale=0.5]{Picture/One/WIPvsChurnFT.png}}
-%\subfigure[WIP and Churn bug]{\label{fig:c:}\includegraphics[scale=0.5]{Picture/One/WIPvsChurnB.png}}
+%\subcaption[WIP and Churn]{\label{fig:a:1}\includegraphics[scale=0.5]{Picture/One/WIPvsChurn}}
+%\subcaption[WIP and Churn feature]{\label{fig:b:1}\includegraphics[scale=0.5]{Picture/One/WIPvsChurnFT.png}}
+%\subcaption[WIP and Churn bug]{\label{fig:c:}\includegraphics[scale=0.5]{Picture/One/WIPvsChurnB.png}}
 %\caption{Correlation graphs between WIP and the churn variables for team one.}
 %\label{corr:Difference:churn:1}
 %\end{figure}
 
 
 
-\textit{Churn} and \textit{churn bug} have a significant negative correlation in team two's case, according to the WIP correlation table. \textit{Churn feature} on the other hand has a correlation value of -0.25. According to the correlation values, one can assume that \textit{churn bug} represents most of \textit{churn}. The Tables \ref{DS:Churn:2}, \ref{DS:CF:2} and \ref{DS:CT:2} empower the assumption. \textit{Churn bug} contribute 521 dates and has a total mean value of 36.3. \textit{Churn feature} contribute 257 dates and has a mean value of 100.6. The total churn contains of 778 dates and a total mean of 57.6. The date and mean values strengthens the hypothesis. The churn correlation table in Section \ref{sec:corr:churn} proves the hypothesis. \textit{churn bug} has the value of .70 and \textit{churn feature} has the value of .58.  But both of them have a significant relationship with \textit{churn}.
+\textit{Churn} and \textit{churn bug} have a significant negative correlation in team two's case, according to the WIP correlation table. \textit{Churn feature} on the other hand has a correlation value of -0.25. According to the correlation values, one can assume that \textit{churn bug} represents most of \textit{churn}. The Tables \ref{DS:Churn:2}, \ref{DS:CF:2} and \ref{DS:CB:2} empower the assumption. \textit{Churn bug} contribute 521 dates and has a total mean value of 36.3. \textit{Churn feature} contribute 257 dates and has a mean value of 100.6. The total churn contains of 778 dates and a total mean of 57.6. The date and mean values strengthens the hypothesis. The churn correlation table in Section \ref{sec:corr:churn} proves the hypothesis. \textit{churn bug} has the value of .70 and \textit{churn feature} has the value of .58.  But both of them have a significant relationship with \textit{churn}.
 
 
-In team six's case, \textit{churn bug} has a positive correlation of .77, while both \textit{churn} and \textit{churn} bug have the values of -.30 and -.36. Based on these values, the \textit{churn bug} variable represents the most of \textit{churn}. The Tables \ref{DS:Churn:6}, \ref{DS:CF:6} and \ref{DS:CT:6} backs the theory. The tables shows that \textit{churn feature} contribute 576 dates to \textit{churn} and has a total mean of 105.9. \textit{Churn bug} contains of 180 dates and has a total mean value of 73.8. The churn correlation table in Section \ref{corr.sec:churn} one can see that \textit{churn feature} has a correlation value of .98, while \textit{churn bug} has a value of -.02. These values prove the theory on contribution between the churn variables.  
+In team six's case, \textit{churn bug} has a positive correlation of .77, while both \textit{churn} and \textit{churn} bug have the values of -.30 and -.36. Based on these values, the \textit{churn bug} variable represents the most of \textit{churn}. The Tables \ref{DS:Churn:6}, \ref{DS:CF:6} and \ref{DS:CB:6} backs the theory. The tables shows that \textit{churn feature} contribute 576 dates to \textit{churn} and has a total mean of 105.9. \textit{Churn bug} contains of 180 dates and has a total mean value of 73.8. The churn correlation table in Section \ref{sec:corr:churn}, one can see that \textit{churn feature} has a correlation value of .98, while \textit{churn bug} has a value of -.02. These values prove the theory on contribution between the churn variables.  
 
 The descriptive statistics tables are based on summary of the correlation values. The tables shows number of values measured(N), mean, median standard deviation(Std.dev), maximum(max)  and minimum(min) values from the correlation table.
-In Table \ref{DS:corr:WIP}, the total mean of throughput is 0.6 for all the teams and the median is 0.7 , which reflects the positive correlation between WIP and throughput. The bug variables have a total mean of 0.4 with a median of 0.5, this indicates that WIP and bug have a medium strong relationship. %skrive om team size
+In Table \ref{DS:corr:WIP}, the total mean of throughput is 0.6 for all the teams and the median is 0.7 , which reflects the strong positive correlation between WIP and throughput.  The overall correlation between \textit{WIP} and \textit{team size}  is 0.6 as well. The bug variables have a total mean of 0.4 with a median of 0.5, this indicates that WIP and bug have a medium strong relationship. 
 
 \begin{table}[!htbp]
  \centering
@@ -1243,9 +1269,10 @@ Team size  & 10 & 0.6 & 0.6 & 0.2 & 0.8 & 0.1\\ \hline
 
 \section{Correlation - Lead time}
 \label{sec:corr:lt}
-This section contains the correlation Table \ref{corr:Lead time}. The table shows the correlation between lead time and the variables. Team two, six and ten have significant negative relationship between lead time and churn bug. The churn and churn bug variables for team two have the correlation values of  -0.45 and -.73. These values are relative close.  However, churn feature have a value of 0.41. The total row in tables \ref{DS:Churn:2}, \ref{DS:CF:2} and \ref{DS:CB:2} shows that churn for team two consist of 1572 dates. Churn feature consist of 375 dates and churn bug of 1197 dates. Churn bug contribute 76\%  (1197/1572) of the total amount of dates in churn. The total mean of churn, churn feature and churn bug is 65.7, 111.4 and 51.3, which could reflect that churn bug contribute more to the churn variable than churn feature. The churn correlation table in Section \ref{sec:corr:churn} with the correlation value of .08 for churn feature and .728 for churn bug, states that churn bug represents the most of the churn variable. Team two also has significant negative relationship between lead time and the bugs finished, quarter variable.
+This section contains the correlation Table \ref{corr:Lead time}. The table shows the correlation between \textit{lead time} and the variables. Team one, four, five, seven and ten have a significant positive correlation between \textit{lead time} and \textit{WIP}. Team one also has a significant positive correlation between \textit{lead time} and all the variables except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug}. Both the sub variables \textit{throughput bug} and \textit{churn bug} differ from respectively \textit{throughput} and \textit{churn}. The reason \textit{throughput bug} and \textit{churn bug} differ from \textit{throughput} and \textit{churn} where stated in Section \ref{sec:corr:WIP}.  The reason \textit{throughput feature} differ from \textit{throughput} is listed in Section \ref{sec:corr:bug}.
 
-For team six, Churn bug has a negative correlation of -.55 while churn has a correlation of -0.08 and churn feature a correlation of -0.2. The reason why churn bug differ from churn is because churn bug consist of 17\% (265/1533) of the churn dates as shown in tables \ref{DS:Churn:6} and \ref{DS:CB:6}. The two tables and Table \ref{DS:CF:6} also shows the total mean of churn is 146, while the total mean for churn feature is 156.5 and for churn bug it's 95.2. With the total mean, one can assume that churn bug don't contribute too much to the churn variable, hence big difference between the two mean values. The assumption is proved by the churn correlation table in Section \ref{sec:corr:churn} with the values .980 for churn feature and .018 for churn bug. Throughput bug also differ from throughput for team six. The reason why where explained in section \ref{corr:WIP}.
+The three \textit{churn} variables for team three has the correlation values of -.45 for \textit{churn}, -.27 for \textit{churn feature} and -637 for \textit{churn bug}. These values indicates more contribution from \textit{churn bug}, than \textit{churn feature}. The total dates and churn in Tables \ref{DS:Churn:3}, \ref{DS:CF:3} and \ref{DS:CB:3} empower the assumption. The total \textit{churn} consist of 576 dates and a total mean of 61.8. \textit{Churn feature}  represents 205 of these dates and has a total mean of 98.9. \textit{Churn bug} answers for the remaining 371 dates and has a total mean of 41.4. The data imply that \textit{churn feature} represents most of \textit{churn}. Churn correlation table in Section \ref{sec:corr:churn} proves the assumption. Still,  \textit{churn bug} has a correlation of .85 while \textit{churn feature} has the correlation of .90 to \textit{churn}. \textit{Churn bug} contribute more than the descriptive statistic data assumes.   
+
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
  \centering
@@ -1259,9 +1286,9 @@ Throughput bug &-0.30& .596*& 0.52& .644*& 0.42& -0.01& 0.61& -0.17& 0.28& 0.37\
 Bugs &.767**& 0.50& .536*& 0.31& 0.32& -0.23& .692*& -0.13& 0.44& 0.04\\ \hline
 Bugs finished, quarter &.697**& -0.14& 0.20& 0.23& -0.09& -0.27& .731*& 0.37& 0.53& 0.19\\ \hline
 Avg days in backlog, bugs &0.06& 0.40& 0.07& 0.07& -0.08& -0.03& 0.57& -0.12& -0.48& -0.52\\ \hline
-Churn &.700**& -0.42& -0.45& .973**& 0.18& -0.34& 0.39& .908**& -0.37& -0.04\\ \hline
+Churn &.700**& -0.42& -0.45& .973**& 0.18& -0.34& 0.37& .908**& -0.37& -0.04\\ \hline
 Churn feature &.858**& 0.20& -0.27& .964**& 0.11& -0.31& 0.39& .786**& -0.46& 0.32\\ \hline
-Churn bug &0.26& -0.39& -.637*& 0.20& 0.24& 0.28& -0.05& -0.12& -0.08& -0.27\\ \hline
+Churn bug &0.26& -0.39& -.637*& 0.20& 0.24& 0.28& 0.16& -0.12& -0.08& -0.27\\ \hline
 Team size &.607*
 & 0.38& 0.44& -0.30& 0.36& -0.11& 0.59& 0.22& 0.38& 0.53\\ \hline
 \end{tabular}
@@ -1269,24 +1296,37 @@ Team size &.607*
  \label{corr:Lead time}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
-\centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{adjustwidth}
 \end{table}
 \newpage
 
+Both team four and eight's case, the variable \textit{churn bug} differ from \textit{churn}. The \textit{churn} variable representing team four, has the correlation value .97 and \textit{churn feature} has the correlation value of .96, while \textit{churn bug} has the correlation value 0.2. The Tables \ref{DS:Churn:4}, \ref{DS:CF:4} and \ref{DS:CB:4} shows that \textit{churn} consist of 574 dates. \textit{Churn bug} represents 78 of these dates. The total mean of \textit{churn} is 7.4, \textit{churn feature} is 8.4 and \textit{churn bug} is 1. These variables clearly indicates that \textit{churn feature} represents most of \textit{churn}. The churn correlation Table \ref{corr:churn} verifies the theory. \textit{Churn feature} has the correlation value of .99 and \textit{churn bug} has the correlation value .13.
 
-Both churn bug and churn for team ten have a significant negative relationship with lead time, but churn feature don't. The Tables \ref{DS:Churn:10}, \ref{DS:CF:10} and \ref{DS:CB:10} shows the total mean of churn is 50.4, the total of churn feature its 66 and for churn bug its 47.7. In case of the mean values, it looks like churn bug has a close relationship with churn. Churn bug also consist of 85\% of the overall dates in churn (517/609) which supports the assumption that churn bug consist of much of the churn variable. The assumption is proven right by the churn correlation table in \ref{sec:corr:churn} and correlation graphs in Figure \ref{corr:Difference:lt}. The figure shows the lead time in the X-axis and the churn variable in the Y-axis. One can clearly see that Figures \ref{fig:a:lt:10} and \ref{fig:c:lt:10} have a significant negative correlation with lead time. The dot pattern in these two figures is also similar, which points to the case that churn and churn bug are alike and that churn feature don't represents of much of the churn nor have a close relationship to churn. 
+Team eight also had difference between \textit{churn} and \textit{churn bug}. The correlation values between \textit{lead time} and \textit{churn} is .91, between \textit{lead time} and \textit{churn feature} is .79 and between \textit{lead time} and \textit{churn bug} is  -.1. Based on these variables, it will look like \textit{churn feature} represents a greater part of the \textit{churn} than \textit{churn bug}. The Tables \ref{DS:Churn:8}, \ref{DS:CF:8} and \ref{DS:CB:8} shows otherwise. \textit{Churn} is composed of 137 dates, and has a total mean of 13.4. \textit{Churn feature} represents 79 of these tasks, and has a total mean of 17.4. \textit{Churn bug} represents the remaining 58 tasks and has a total mean of 8.  The tables indicates both \textit{Churn feature} and \textit{Churn bug} contribute to \textit{churn}. The Figure \ref{corr:Difference:lt:8} and correlation Table \ref{corr:churn} disapproves the assumption. The figure shows \textit{lead time} in X-axis and churn variables in the Y-axis. The churn correlation Table\ref{corr:churn}, shows that \textit{churn feature} has the correlation of .84, while \textit{churn bug} has the value of -0.1. This reflects in the correlation graphs. The Figure \ref{fig:a:lt:8} show a clear positive correlation between  \textit{lead time} and  \textit{churn}. The Figure \ref{fig:b:lt:8} is more vague, but it represents a significant correlation, while Figure \ref{fig:c:lt:8} shows no pattern and shows a correlation close to 0.  
 
-\begin{figure}[h]
-\centering     %%% not \center
-\subfigure[Lead time and Churn]{\label{fig:a:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrn.png}}
-\subfigure[Lead time and Churn feature]{\label{fig:b:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrnFT.png}}
-\subfigure[Lead time and Churn bug]{\label{fig:c:lt:10}\includegraphics[scale=0.5]{Picture/Ten/LTvsChrnB.png}}
-\caption{Correlation graphs between lead time and churn variables for team ten.}
-\label{corr:Difference:lt}
+
+\begin{figure}[h] 
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Eight/LTvsChurn.png}
+ \caption{Lead time and churn} 
+ \label{fig:a:lt:8}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Eight/LTvsChurnFT.png}
+ \caption{Lead time and churn} 
+\label{fig:b:lt:8}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Eight/LTvsChurnB.png}
+  \caption{Lead time and churn} 
+\label{fig:c:lt:8}
+  \end{subfigure}
+\caption{Correlation graphs between lead time and churn variables for team eight.}
+\label{corr:Difference:lt:8}
 \end{figure}
 
-The descriptive statistic table for lead time shown in Table \ref{DS:corr:LT} shows that there is no value with overall significant relationship with lead time. 
+
+Team three and seven have a significant positive correlation between \textit{lead time} and \textit{bugs}. Team seven also has a significant positive correlation between \textit{lead time} and \textit{bugs finished, quarter}. The descriptive statistic table for lead time shown in Table \ref{DS:corr:LT} shows that both WIP and throughput has a medium to strong correlation with lead time. 
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1324,10 +1364,10 @@ Throughput Feature &.738**& 0.01& .822**& .583*& .881**& 0.30& 0.56& 0.22& .597*
 Throughput bug &-0.17& .834**& .868**& .583*& .959**& .686**& 0.50& .915**& .653*& .589*\\ \hline
 Bugs finished, quarter &0.50& -0.18& 0.12& 0.40& 0.17& .762**& .785**& 0.18& .701**& 0.05\\ \hline
 Avg days in backlog, bugs &0.52& 0.38& 0.43& 0.30& 0.18& 0.24& 0.23& 0.28& 0.21& 0.13\\ \hline
-Leadtime &-0.23& -0.23& -0.24& 0.25& -0.25& -0.22& 0.54& -0.12& -0.06& -0.14\\ \hline
-Churn &0.23& -0.01& 0.00& .c& -0.17& -0.10& 0.19& -0.08& -0.34& 0.31\\ \hline
-Churn feature &0.30& 0.07& -0.03& .c& 0.28& -0.04& 0.13& -0.15& -.618*& 0.06\\ \hline
-Churn bug &0.37& 0.17& -0.08& .c& -0.19& 0.43& 0.14& 0.04& 0.10& 0.28\\ \hline
+Lead time &.767**& 0.50& .536*& 0.31& 0.32& -0.23& .692*& -0.13& 0.44& 0.04\\ \hline
+Churn &.617*& -0.27& 0.10& 0.27& -0.06& -0.12& 0.11& -0.16& -0.48& 0.04\\ \hline
+Churn feature &.771**& 0.01& 0.09& 0.35& 0.43& -0.10& 0.11& -0.25& -.617*& 0.07\\ \hline
+Churn bug &0.42& -0.19& -0.19& 0.53& -0.11& 0.42& 0.12& .645*& -0.04& 0.00\\ \hline
 Team size & .803**
 & 0.26& 0.27& 0.17& .711**
 & 0.41& 0.41& 0.42& 0.41& 0.16\\ \hline
@@ -1336,7 +1376,6 @@ Team size & .803**
  \label{corr:bug}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
-\centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{adjustwidth}
 \end{table}
 
@@ -1346,30 +1385,54 @@ Team size & .803**
 
 Team two's Throughput feature differ from throughput. One could believe that the reason is that throughput bug consists of 2/3 of the throughput variable (460/690) as shown in the descriptive statistic Tables \ref{DS:Throughput:2} and \ref{DS:TPB:2}. But the two tables and table \ref{DS:TPFT:2} shows that the total mean of throughput is 4.39. While for throughput bug it's 4.8 and 3.7 for throughput feature. These three variables are quiet close, which could reflect that these three variables should be close based on correlation measurement. But, the Figures in \ref{corr:Difference:2} and the throughput correlation table in \ref{sec:corr:TP} shows that they are not. The Figure \ref{corr:Difference:2} shows the bugs variable in the X-axis and the throughput variable in the Y-axis. Both Figures \ref{fig:a:2} and \ref{fig:c:2} shows a significant positive correlation. But for Figure \ref{fig:b:2} one can see that the dots are more randomly placed. For example, when the Y value is at vertex, x value is low.  When x is at vertex, y values are both low and high.  
 
-\begin{figure}[h]
-\centering     %%% not \center
-\subfigure[Bugs and Throughput]{\label{fig:a:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTP.png}}
-\subfigure[Bugs and Throughput feature]{\label{fig:b:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTPFT.png}}
-\subfigure[Bugs and Throughput bug]{\label{fig:c:2}\includegraphics[scale=0.5]{Picture/Two/BugVSTPB.png}}
+\begin{figure}[h] 
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Two/BugVSTP.png}
+ \caption{Bugs and throughput} 
+ \label{fig:a:2}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Two/BugVSTPFT.png}
+ \caption{Bugs and throughput feature} 
+\label{fig:b:2}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Eight/LTvsChurnB.png}
+ \caption{Bugs and throughput bug} 
+\label{fig:c:2}
+  \end{subfigure}
 \caption{Correlation graphs between bugs and the throughput variables.}
 \label{corr:Difference:2}
 \end{figure}
-\newpage
-
-Team six and nine have a significant positive correlation between the variable Bugs finished, quarter. Team nine also has a significant negative correlation between bug and churn feature, but not churn. Churn feature consist of approximately 1/3 (295/923) of the churn variable as shown in Tables \ref{DS:Churn:9} and \ref{DS:CF:9}.  The total mean of churn feature is 133.9, the total mean for churn is 81.9 and the total mean for churn bug is 57.5, as shown in the previous stated tables and Table \ref{DS:CB:10}. The correlation graphs in Figure \ref{corr:Difference:9}, show the bugs variable in the X-axis and churn variable in the Y-axis. The figure shows that there is neither a significant negative nor significant positive pattern between either bug and churn nor bug and churn bug. The Figure \ref{fig:b:9} however, shows that there is a vaguely significant negative correlation between bug and churn. Even though churn feature have a significant correlation to a variable, and the churn do not, does not say that churn feature can't have a significant positive correlation to churn. The correlation table for churn in Section \ref{sec:corr:churn} shows that both churn feature and churn bug for team nine have a significant correlation with churn. Judging from the Figure \ref{corr:Difference:9} and the correlation table from Section \ref{sec:corr:churn} one can assume that correlation is not transitive. The paper "The Non-Transitivity of Pearson's Correlation Coefficient: An Educational Perspective" \parencite{corr:transitive} proves the assumption.  
 
 
-\begin{figure}[h]
-\centering     %%% not \center
-\subfigure[Bug and Churn]{\label{fig:a:9}\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrn.png}}
-\subfigure[Bug and Churn feature]{\label{fig:b:9}\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrnFT.png}}
-\subfigure[Bug and Churn bug]{\label{fig:c:9}\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrnB.png}}
+
+
+Team six and nine have a significant positive correlation between the variable Bugs finished, quarter. Team nine also has a significant negative correlation between bug and churn feature, but not churn. Churn feature represents 201 of 538 dates as shown in Tables \ref{DS:Churn:9} and \ref{DS:CF:9}.  The total mean of churn feature is 115.9, the total mean for churn is 72.2 and the total mean for churn bug is 46.1, as shown in the previous stated tables and Table \ref{DS:CB:10}. Judging from these numbers, both \textit{churn feature} and \textit{churn bug} contribute to \textit{churn}. The Figure \ref{corr:Difference:9} shows the correlation values in a graph. The X-axis shows the \textit{bug} variable and the Y-axis shows the churn variables. There is hard to find any pattern or evidence that \textit{churn feature} and \textit{churn bug} contribute to \textit{churn}. But, The churn correlation Table \ref{corr:churn} shows \textit{churn feature} correlation values is .62 and \textit{churn bug} correlation value is .40. This proves that both the sub variables of \textit{churn} contribute. 
+
+\begin{figure}[h] 
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrn.png}
+ \caption{Bugs and churn} 
+ \label{fig:a:9}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrnFT.png}
+ \caption{Bugs and churn feature} 
+\label{fig:b:9}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.3\textwidth}
+\includegraphics[scale=0.5]{Picture/Nine/BugsVSChrnB.png}
+ \caption{Bugs and churn bug} 
+\label{fig:c:9}
+  \end{subfigure}
 \caption{Correlation graphs between bug and the churn variables for team nine.}
 \label{corr:Difference:9}
 \end{figure}
 
 
 
+Team three and seven have a significant positive correlation between \textit{bugs} and \textit{lead time}
 In Table \ref{DS:corr:Bugs}, one can see that WIP with a mean value of 0.4 have a medium correlation with bugs as stated in Section \ref{corr:WIP}.  Throughput  have a value of 0.6. This shows that throughput have a high correlation with bugs.
 
 \begin{table}[!htbp]
@@ -1410,10 +1473,10 @@ Throughput bug &0.03& .970**& .986**& .997**& .994**& 0.04& .908**& 0.44& .960**
 Bugs &.687**& .810**& .880**& .586*& .975**& 0.27& 0.53& 0.41& .699**& .557*\\ \hline
 Bugs finished, quarter &0.16& 0.12& 0.23& 0.39& 0.12& 0.12& 0.58& 0.33& .696**& .589*\\ \hline
 Avg days in backlog, bugs &0.16& 0.12& 0.45& 0.37& 0.14& -0.17& 0.21& -0.17& -0.41& -0.09\\ \hline
-Leadtime &.700**& .673**& 0.49& .677**& 0.36& 0.13& 0.47& 0.54& 0.42& 0.32\\ \hline
-Churn &0.37& -0.43& -0.18& .725**& -0.06& -0.40& 0.43& .594*& -0.14& 0.02\\ \hline
+Lead time &.700**& .673**& 0.49& .677**& 0.36& 0.13& 0.47& 0.54& 0.42& 0.32\\ \hline
+Churn &0.37& -0.43& -0.18& .725**& -0.06& -0.40& 0.60& .594*& -0.14& 0.02\\ \hline
 Churn feature &.776**& -0.10& -0.20& .806**& 0.41& -0.40& 0.43& 0.43& -0.29& -0.20\\ \hline
-Churn bug &-0.06& -0.21& -0.33& 0.49& -0.10& .567*& -0.37& 0.03& -0.29& -0.06\\ \hline
+Churn bug &-0.06& -0.21& -0.33& 0.49& -0.10& .567*& -0.10& 0.03& -0.29& -0.06\\ \hline
 Team size &.699**
 & 0.05& 0.52& 0.16& .687**
 & .858**
@@ -1428,23 +1491,29 @@ Team size &.699**
 \end{adjustwidth}
 \end{table}
 
-Both team nine and ten have a positive significant correlation between bug and the Bugs finished, quarter variable. Team six have a significant correlation between bugs and churn bug. The reason churn bug differ from churn and churn feature where stated in Section \ref{sec:corr:lt}. Team seven has a significant positive correlation between throughput and the variables churn and churn bug, but not churn feature, but churn feature has almost a significant positive correlation.  Churn feature consist of 235, churn bug consist of 417 and churn of 652 dates. The mean values for the three variables are 148.1 for churn feature, 68.4 for churn bug and 91.1 for churn. An indication of these variables are that both churn feature and churn bug contribute to the churn variables, hence the mean values. The correlation table for churn in section \ref{sec:corr:churn} proves the assumption.  Churn feature and churn bug have a positive correlation with churn. This is another example of transitivity and correlation as stated in Section \ref{sec:corr:bug}.
-
+Both team nine and ten have a positive significant correlation between bug and the Bugs finished, quarter variable. Team six have a significant correlation between bugs and churn bug. The reason churn bug differ from churn and churn feature where stated in Section \ref{sec:corr:WIP}.  \textit{Churn}, \textit{churn feature} and \textit{churn bug} for team one, differ once more. The reason where stated in Section \ref{sec:corr:WIP} 
 
 For team eight, throughput bug differ from throughput. Throughput bug consist of 99 dates and have total mean of 1.5. Throughput feature consist of 92 dates and a mean of 3.2. While throughput have a mean of 2.3. These numbers are gathered from the descriptive statistic Tables \ref{DS:Throughput:8}, \ref{DS:TPFT:8} and \ref{DS:TPB:8}.  On the basis of these numbers it will look like both of the sub variables of throughput contributes and both of them should have close relationship to throughput.  But, in Figure \ref{corr:Difference:8} the difference are stated. The Figure \ref{corr:Difference:8} shows the throughput variable in the X-axis and the sub variables in the Y-axis. In Figure \ref{fig:a:8}, the dots are clearly moving in a upwards direction, while in Figure \ref{fig:b:8} almost all the dots are all gathered around the low values of Y.
 
-\begin{figure}[h]
-\centering     %%% not \center
-\subfigure[Throughput and Throughput feature]{\label{fig:a:8}\includegraphics[scale=0.5]{Picture/Eight/TPvsTPFT.png}}
-\subfigure[Throughput and Throughput bug]{\label{fig:b:8}\includegraphics[scale=0.5]{Picture/Eight/TPvsTPB.png}}
+\begin{figure}[h] 
+  \begin{subfigure}[b]{0.5\textwidth}
+\includegraphics[scale=0.5]{Picture/Eight/TPvsTPFT.png}
+ \caption{Throughput and throughput feature} 
+ \label{fig:a:8}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\textwidth}
+\includegraphics[scale=0.5]{Picture/Eight/TPvsTPB.png}
+ \caption{Throughput and throughput bug} 
+\label{fig:b:8}
+  \end{subfigure}
 \caption{Correlation graphs between the throughput variables.}
 \label{corr:Difference:8}
 \end{figure}
 
 
- Team eight also has a significant negative correlation between throughput and churn. Churn has a negative value of -.64, while churn feature has a value of -0.45 and churn bug has a value of -0.28. Churn feature consist of 246 of the 329 dates, as shown in Tables \ref{DS:Churn:8} and \ref{DS:CF:8}. The Table \ref{DS:CF:8} also shows that churn feature mostly consist of tasks that requires zero churn. The total mean of these three values are 0.9 for churn, 0.1 for churn feature and 3.6 for churn bug as shown in the Tables   \ref{DS:Churn:8}, \ref{DS:CF:8} and \ref{DS:CB:8}. The zeros from churn feature play a part in the mean value of churn. But, in the correlation for churn in section \ref{sec:corr:churn}, one can see that churn bug have a significant correlation with churn, while churn feature don't. So the contribution of the churn feature's mean in the case of correlation between throughput and churn made enough impact for churn to have a significant correlation with throughput.
+ Team eight also has a significant positive correlation between \textit{throughput} and \textit{churn}. \textit{Churn feature} has the correlation value of .43 with \textit{throughput} and \textit{churn bug} has the correlation value of 0.03. The reason \textit{churn bug's} value is not close to \textit{churn} where stated in section \ref{sec:corr:lt}. There is some difference between the correlation values of \textit{throughput} and the churn variables for team four. The reason for this where stated in section \ref{sec:corr:lt}. 
 
-According to Table \ref{DS:corr:TP}, bugs have a strong positive correlation with throughput as stated Section \ref{sec:corr:bug}. WIP have a medium positive relationship with throughput which where stated in \ref{sec:corr:WIP}. The sub variables throughput feature (0.6) and throughput bug (0.4) have respectively a strong and medium relationship to throughput. 
+Team one, two and four have a significante relationship between \textit{throughput} and \textit{lead time}. According to Table \ref{DS:corr:TP}, bugs have a strong positive correlation with throughput as stated Section \ref{sec:corr:bug}. WIP have a medium positive relationship with throughput which where stated in \ref{sec:corr:WIP}. \textit{Team size} and \textit{lead time} have a medium to strong relationship to throughput. The sub variables throughput feature (0.8) and throughput bug (0.7) have respectively a strong and medium relationship to throughput. 
 
 \begin{table}[!htbp]
  \centering
@@ -1458,7 +1527,7 @@ Bugs  & 10 & 0.6 & 0.6 & 0.2 & 1 & 0.3\\ \hline
 Bugs finished, quarter  & 10 & 0.3 & 0.3 & 0.2 & 0.7 & 0.1\\ \hline
 Avg days backlog, bugs  & 10 & 0.1 & 0.1 & 0.3 & 0.5 & -0.4\\ \hline
 Lead time & 10 & 0.5 & 0.5 & 0.2 & 0.7 & 0.1\\ \hline
-Churn  & 10 & 0.1 & -0 & 0.4 & 0.7 & -0.4\\ \hline
+Churn  & 10 & 0.2 & -0 & 0.4 & 0.7 & -0.4\\ \hline
 Churn ft  & 10 & 0.2 & 0.2 & 0.5 & 0.8 & -0.4\\ \hline
 Churn bug  & 10 & -0 & -0.1 & 0.3 & 0.6 & -0.4\\ \hline
 Team size  & 10 & 0.5 & 0.6 & 0.3 & 0.9 & 0.1\\ \hline
@@ -1469,10 +1538,10 @@ Team size  & 10 & 0.5 & 0.6 & 0.3 & 0.9 & 0.1\\ \hline
 
 \section{Correlation - Churn}
 \label{sec:corr:churn}
-This section contains information about the correlation table between the variables and churn. The result is listed in Table \ref{corr:churn}.  All teams with valid churn have either one or both churn variable with significant positive correlation with churn. Teams two, five, six eight and ten don't have a positive correlation between both the churn variables and churn.  
+This section contains information about the correlation table between the variables and churn. The result is listed in Table \ref{corr:churn}.  All teams with valid churn have either one or both churn variable with significant positive correlation with churn. Teams four, five, six, seven, eight, nine and ten don't have a positive correlation between both the churn variables and churn. The difference between the churn variable for team four, six, eight and nine where stated in Sections \ref{sec:corr:WIP}, \ref{sec:corr:lt} and \ref{sec:corr:TP}.
 
 \begin{table}[!htbp]
- \begin{adjustwidth}{-1.5cm}{}
+ \begin{adjustwidth}{-2.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1484,9 +1553,9 @@ Throughput bug &-0.52& -0.42& -0.22& .689**& -0.03& -0.03& 0.54& -0.17& -0.20& 0
 Bugs &.617*& -0.27& 0.10& 0.27& -0.06& -0.12& 0.11& -0.16& -0.48& 0.04\\ \hline
 Bugs finished, quarter &.804**& -0.22& -0.11& 0.15& -0.31& 0.04& 0.17& 0.49& -0.05& 0.31\\ \hline
 Avg days in backlog, bugs &0.19& -0.12& -0.06& 0.00& 0.15& .557*& 0.60& -0.17& -0.01& -0.11\\ \hline
-Leadtime &.700**& -0.42& -0.45& .973**& 0.18& -0.34& 0.39& .908**& -0.37& -0.04\\ \hline
-Churn feature &.566*& .584*& .901**& .988**& 0.22& .977**& 1.000**& .838**& .619*& 0.14\\ \hline
-Churn bug &.798**& .699**& .846**& 0.13& .943**& -0.02& -0.10& -0.07& 0.39& .938**\\ \hline
+Lead time &.700**& -0.42& -0.45& .973**& 0.18& -0.34& 0.39& .908**& -0.37& -0.04\\ \hline
+Churn feature &.566*& .584*& .901**& .988**& 0.22& .977**& .906**& .838**& .619*& 0.14\\ \hline
+Churn bug &.798**& .699**& .846**& 0.13& .943**& -0.02& 0.13& -0.07& 0.39& .938**\\ \hline
 Team size &0.42& -0.16& -0.51& -0.24& -.541*
 & -0.18& 0.36& 0.14& 0.11& 0.12\\ \hline
 \end{tabular}
@@ -1498,12 +1567,32 @@ Team size &0.42& -0.16& -0.51& -0.24& -.541*
 \end{adjustwidth}
 \end{table}
 
+\textit{Churn bug} for team five has a significant positive correlation of .94, while \textit{churn feature} has the correlation value of 0.2. This indicates that \textit{churn bug} represents most of \textit{churn}. The Tables \ref{DS:Churn:5}, \ref{DS:CF:5} and \ref{DS:CB:5} proves the assumption. \textit{Churn} consist of 698 dates and has a total mean of 33.4, while \textit{churn feature} and \textit{churn bug} represents has 123 dates and 575 dates. The total mean of \textit{churn feature} is 52.1 and for \textit{churn bug} it's 29.4. 
 
-For team two and ten's case, churn feature differ from churn, the reason where stated in Section \ref{sec:corr:lt}. Section \ref{sec:corr:lt} also states the reason churn bug differ from churn in the case of team six is. Team five on the other hand,  has a significant positive correlation between churn and churn bug, but not for churn feature.  Churn feature consist of approximately 10\% (182/1901) of the total churn dates as shown in Tables \ref{DS:Churn:5} and \ref{DS:CF:5}. The two previous stated tables and Table \ref{DS:CB:5} shows that churn has a mean value of 23.5, churn feature has a mean value of 43.1 and churn bug with a mean value of 21.4. These values show that churn feature don't represent much of the churn variable. 
+\textit{Churn feature} for team seven has the correlation value of .91 while \textit{churn bug} has the correlation value 0.13. The descriptive statistic Tables \ref{DS:Churn:7}, \ref{DS:CF:7} and \ref{DS:CB:7} shows that \textit{churn} contains 359 dates and has a total mean of 77.3.  \textit{Churn feature} represents 141 of these dates, and have a total mean of 121.2 and  \textit{churn bug} represents the 218 remaining dates and has a total mean of 48.9. These values, one could assume that both  \textit{churn feature} and  \textit{churn bug} contribute to  \textit{churn}, but the correlation disapproves that. The Figure \ref{corr:Difference:7} shows \textit{churn} in the X-axis and \textit{churn feature} and \textit{churn bug} in Y-axis. The Figure \ref{fig:a:7} shows clearly the significant positive relationship between \textit{churn} and \textit{churn feature}.
 
-Team eight has a significant positive correlation between churn and churn bug and almost churn feature. Churn feature consist of approximately 75\% (246/329) of all churn dates as shown in Tables \ref{DS:Churn:8} and \ref{DS:CF:8}. But as stated in in \ref{sec:corr:TP}, almost each of the churn feature task requires zero churn, and with zero churn, its hard to make an impact on the overall churn. 
 
-Table \ref{DS:corr:Churn} shows both churn feature and churn have a close relationship with churn
+
+\begin{figure}[h] 
+  \begin{subfigure}[b]{0.5\textwidth}
+\includegraphics[scale=0.5]{Picture/Seven/ChrnvsChrnFT.png}
+ \caption{Churn and churn feature} 
+ \label{fig:a:7}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\textwidth}
+\includegraphics[scale=0.5]{Picture/Seven/ChrnvsChrnB.png}
+ \caption{Churn and churn bug} 
+\label{fig:b:7}
+  \end{subfigure}
+\caption{Correlation graphs between the churn variables.}
+\label{corr:Difference:7}
+\end{figure}
+
+
+For team ten, \textit{churn bug} has the correlation value of .94 while \textit{churn feature} has the value .14. This shows that churn bug represents most of \textit{churn}.  Based on the Tables \ref{DS:Churn:10}, \ref{DS:CF:10} and \ref{DS:CB:10}, one can see that \textit{churn} contains 361 dates and has a total mean value of 45.4. \textit{Churn feature} represents 69 of these dates and has a total mean of 75.5, while \textit{churn bug} represents 292 of \textit{churn's} dates and has a total mean of 38.3. These data also shows the close relationship between \textit{churn} and \textit{churn bug}.  
+
+The variable \textit{bugs, bugs finished quarter} and \textit{lead time} including the previous stated \textit{churn feature} \textit{churn bug} has a significant positive relationship with \textit{churn} for team one. Both team two and four has a significant relationship between \textit{churn} and \textit{WIP}. Team four has a significant positive relationship between all the throughputs variable and \textit{churn}. Team eight has a close relationship between \textit{throughput} and \textit{throughput feature}, but not \textit{throughput bug}. The reason \textit{throughput bug} differ from \textit{throughput} where stated in Section \ref{corr:TP}. Team six has a positive correlation between \textit{Avg days in backlog, bugs} and \textit{churn}. Team four and eight shows a significant positive correlation between \textit{churn} and \textit{lead time}, and team five shows a significant negative correlation between \textit{churn} and \textit{team size}.The Table \ref{DS:corr:Churn} shows both churn feature and churn have a close relationship with churn.
+ 
 \begin{table}[!htbp]
  \centering
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -1525,7 +1614,9 @@ Team size  & 10 & -0 & -0 & 0.3 & 0.4 & -0.5\\ \hline
  \label{DS:corr:Churn}
  \end{table}
  
+ 
  \section{Team size}
+ The team size correlation tables is stated in Table \ref{corr:Teams}. 
  \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
  \centering
@@ -1539,16 +1630,15 @@ Throughput bug &-0.10& 0.06& 0.51& 0.20& .673**& 0.00& .715*& 0.40& 0.48& .637*\
 Bugs & .803**& 0.26& 0.27& 0.17& .711**& 0.41& 0.41& 0.42& 0.41& 0.16\\ \hline
 Bugs finished, quarter &0.42& -0.53& 0.25& -0.19& 0.28& 0.30& .711*& 0.05& 0.38& 0.34\\ \hline
 Avg days in backlog, bugs &0.48& .841**& 0.04& 0.44& 0.03& -0.03& 0.49& 0.03& 0.07& -0.03\\ \hline
-Leadtime &.607*& 0.38& 0.44& -0.30& 0.36& -0.11& 0.59& 0.22& 0.38& 0.53\\ \hline
-Churn &0.42& -0.16& -0.51& -0.24& -.541*& -0.18& 0.36& 0.14& 0.11& 0.12\\ \hline
+Lead time &.607*& 0.38& 0.44& -0.30& 0.36& -0.11& 0.59& 0.22& 0.38& 0.53\\ \hline
+Churn &0.42& -0.16& -0.51& -0.24& -.541*& -0.18& 0.33& 0.14& 0.11& 0.12\\ \hline
 Churn feature &.786**& 0.41& -0.42& -0.17& 0.32& -0.23& 0.36& 0.07& 0.01& 0.36\\ \hline
 Churn bug &0.26& -0.44& -.606*& 0.27& -.552*& .741**& -0.32& -0.14& -0.16& -0.10\\ \hline
 \end{tabular}
- \caption{Correlation - Leadtime}
+ \caption{Correlation - Team size}
  \label{corr:Teams}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
-\centerline{c. Cannot be computed because at least one of the variables is constant.}
 \end{adjustwidth}
 \end{table}
  
@@ -1570,29 +1660,20 @@ Churn  & 10 & -0 & -0 & 0.3 & 0.4 & -0.5\\ \hline
 Churn ft  & 10 & 0.1 & 0.2 & 0.4 & 0.8 & -0.4\\ \hline
 Churn bug  & 10 & -0.1 & -0.1 & 0.4 & 0.7 & -0.6\\ \hline
 \end{tabular}
- \caption{Descriptive Statistic - Correlation - Throughput}
+ \caption{Descriptive Statistic - Correlation - Team size}
  \label{DS:corr:TP}
  \end{table}
  
- \chapter{Discussion}
- \label{ch:discussion} 
- \section{swag}
- The research on kanban says you should limit WIP to increase throughput and decrease lead time. According to the Table \ref{DS:corr:WIP}, throughput increases when WIP increases for in average for all the teams.  Six out of ten teams have a significant positive correlation between WIP and throughput. One could argue, when throughput decreases, bug also decreases according to Table \ref{DS:corr:TP}. That may not be the case. When one produces more tasks, more bugs are produced. The Table \ref{DS:corr:WIP} shows that WIP and bugs have a medium relationship. Out of the six teams with a positive correlation between WIP and throughput, four has a significant positive correlation between WIP and bugs. The correlation values are not transitive as said in Section \ref{sec:corr:bug}, but that don't mean that there is no relationship between the WIP correlation and the throughput correlation. 
- 
-In WIP's correlation table (\ref{corr:WIP}) team four and team nine is the two teams with strongest correlation between throughput and WIP. Team four has the correlation value of .83 and team nine has the value of .89. Over the three year period the data was recorded, team four had the total of 63 employees while team nine had 109 as shown by Tables \ref{team:4} and \ref{team:9}. Over the period, team four is the team with fewest employees and team one with 330 is the team with highest employees, shown in Table \ref{table:teams}.   
- 
- 
-  T1(330-W:20.5),3(135),5(285),6(99),8(162) and 10(170) team vs wip = sig2(150- W:23.8),4(63),7(76),9(109) wip = not sig The teams one, three, five, six, eight and ten have a significant positive correlation between WIP and team size shown in Table \ref{corr:Teams}.  Both team seven and nine is close to have significant positive relationship with the values of 0.62 and 0.54. Four out of the six teams represents the four highest teams based on team size, while two of the teams without a significant correlation represent the two lowest teams based on team size as shown in Table \ref{table:teams}. Team seven represents one of these teams.  
- 
- \begin{appendices}
-\chapter{Descriptive statistics for the ten teams}
+
+%%%%%%%%%%%%%%%%%%%%%%%% appendices %%%%%%%%%%%%%%%%%%% 
+\begin{appendices}
+\chapter{Descriptive statistics (DS) for the ten teams}
 \label{app:DS}
  
 \section{Team 1 - Descriptive Statistics}
 \begin{table}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:1}
+\begin{adjustwidth}{-1.5cm}{}
+ \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1612,12 +1693,12 @@ In WIP's correlation table (\ref{corr:WIP}) team four and team nine is the two t
 2013-3 & 92.0 & 7.4 & 3.0 & 8.8 & 31.0 & 1.0\\ \hline
 2013-4 & 76.0 & 5.0 & 1.0 & 8.1 & 35.0 & 1.0\\ \hline
 Total & 1197.0 & 20.5 & 12.0 & 26.2 & 178.0 & 0\\ \hline
-
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
- \label{DS:Throughput:1}
+\caption{DS - WIP} 
+\label{DS:WIP:1}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1637,10 +1718,11 @@ Total & 1197.0 & 20.5 & 12.0 & 26.2 & 178.0 & 0\\ \hline
 2013-3 & 17.0 & 9.0 & 7.0 & 7.7 & 27.0 & 1.0\\ \hline
 2013-4 & 17.0 & 6.3 & 3.0 & 7.5 & 24.0 & 1.0\\ \hline
 Total&290&11.0&6.0&12.5&60&1\\ \hline
-
 \end{tabular}
 }
-}
+\caption{DS - Throughput}
+ \label{DS:Throughput:1}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:1}, \subref{DS:Throughput:1}}
 \label{DS:1:1}
@@ -1651,8 +1733,7 @@ Total&290&11.0&6.0&12.5&60&1\\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:1}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1673,9 +1754,10 @@ Total&290&11.0&6.0&12.5&60&1\\ \hline
 Total & 182.0 & 13.7 & 10.0 & 13.2 & 60.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:1}
+\caption{DS - Throughput feature}
+\label{DS:TPFT:1}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1696,7 +1778,9 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 Total & 108.0 & 6.4 & 3.0 & 9.6 & 49.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:1}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:1}, \subref{DS:TPB:1}}
 \label{DS:1:2}
@@ -1704,14 +1788,11 @@ Total & 108.0 & 6.4 & 3.0 & 9.6 & 49.0 & 1.0\\ \hline
 
 
 
-
-
 %%%%%%%%%%%%%
 % Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:1}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1730,15 +1811,16 @@ Total & 108.0 & 6.4 & 3.0 & 9.6 & 49.0 & 1.0\\ \hline
 2013-3 & 25.0 & 15.6 & 5.0 & 25.1 & 110.0 & 1.0\\ \hline
 2013-4 & 16.0 & 14.5 & 4.5 & 24.0 & 76.0 & 1.0\\ \hline
 Total & 339.0 & 16.7 & 8.0 & 36.2 & 508.0 & 1.0\\ \hline
-
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:1}
+\caption{DS - Lead time}
+ \label{DS:LT:1}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
+Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 1.0 & 13.0 & 13.0 & - & 13.0 & 13.0\\ \hline
 2010-4 & 2.0 & 30.0 & 30.0 & 41.0 & 59.0 & 1.0\\ \hline
 2011-2 & 28.0 & 20.1 & 13.0 & 18.0 & 74.0 & 1.0\\ \hline
@@ -1753,10 +1835,11 @@ Total & 339.0 & 16.7 & 8.0 & 36.2 & 508.0 & 1.0\\ \hline
 2013-3 & 25.0 & 14.7 & 5.0 & 23.0 & 99.0 & 0\\ \hline
 2013-4 & 16.0 & 15.1 & 4.5 & 23.2 & 72.0 & 0\\ \hline
 Total & 339.0 & 20.2 & 10.0 & 36.8 & 495.0 & 0\\ \hline
-
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:1}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:1}, \subref{DS:Churn:1}}
 \label{DS:1:3} % 
@@ -1765,9 +1848,8 @@ Total & 339.0 & 20.2 & 10.0 & 36.8 & 495.0 & 0\\ \hline
 %%%%%%%%%%%%%
 % Churn FT and Churn Bug
 \begin{table}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:1}
+  \begin{adjustwidth}{-1.5cm}{}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1785,12 +1867,14 @@ Total & 339.0 & 20.2 & 10.0 & 36.8 & 495.0 & 0\\ \hline
 Total & 150.0 & 24.5 & 10.0 & 51.6 & 495.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:1}
+\caption{DS - Churn bug}
+ \label{DS:CF:1}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
+Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 2010-3  & 1.0 & 13.0 & 13.0 & - & 13.0 & 13.0\\ \hline
 2010-4 & 2.0 & 30.0 & 30.0 & 41.0 & 59.0 & 1.0\\ \hline
 2011-2 & 20.0 & 18.9 & 13.0 & 17.0 & 74.0 & 2.0\\ \hline
@@ -1807,7 +1891,9 @@ Total & 150.0 & 24.5 & 10.0 & 51.6 & 495.0 & 0\\ \hline
 Total & 189.0 & 16.8 & 11.0 & 17.2 & 97.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn bug}
+\label{DS:CB:1}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:1}, \subref{DS:CB:1}}
 \label{DS:1:4} % 
@@ -1815,12 +1901,13 @@ Total & 189.0 & 16.8 & 11.0 & 17.2 & 97.0 & 0\\ \hline
 
 
 
+
+
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:1}
+  \begin{adjustwidth}{-1.5cm}{}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1841,9 +1928,10 @@ Total & 189.0 & 16.8 & 11.0 & 17.2 & 97.0 & 0\\ \hline
 Total&240&4.0&2.0&4.0&22&1 \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:1}
+\caption{DS - Bugs}
+ \label{DS:B:1}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1862,10 +1950,11 @@ Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
 2013-3 & 13 & 1 & 14 & 92.9& 7.1 \\ \hline
 2013-4 & 17 & 0 & 17 & 100 & 0 \\ \hline
 Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
-
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+\label{DS:FTPQ:1}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:1}, \subref{DS:FTPQ:1}}
 \label{DS:1:5} % 
@@ -1876,8 +1965,7 @@ Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
 \section{Team 2 - Descriptive Statistics}
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:2}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1897,12 +1985,12 @@ Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
 2013-3 & 92.0 & 18.7 & 19.0 & 4.5 & 28.0 & 9.0\\ \hline
 2013-4 & 87.0 & 13.3 & 14.0 & 6.6 & 29.0 & 2.0\\ \hline
 Total & 1208.0 & 23.8 & 23.0 & 9.8 & 62.0 & 2.0\\ \hline
-
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
- \label{DS:Throughput:2}
+\caption{DS - WIP}
+\label{DS:WIP:2}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1925,7 +2013,9 @@ Total&690&4.39&3.00&3.7&25&1\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Throughput}
+ \label{DS:Throughput:2}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:2}, \subref{DS:Throughput:2}}
 \label{DS:2:1} % 1 = team 2 = table nr 2
@@ -1936,9 +2026,8 @@ Total&690&4.39&3.00&3.7&25&1\\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:2}
+ \begin{adjustwidth}{-2.5cm}{}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1960,9 +2049,10 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 Total & 230.0 & 3.7 & 3.0 & 3.0 & 17.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:2}
+\caption{DS - Throughput feature}
+ \label{DS:TPFT:2}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -1984,7 +2074,9 @@ Total & 230.0 & 3.7 & 3.0 & 3.0 & 17.0 & 1.0\\ \hline
 Total & 460.0 & 4.8 & 4.0 & 3.9 & 25.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:2}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:2}, \subref{DS:TPB:2}}
 \label{DS:2:2}
@@ -1997,7 +2089,7 @@ Total & 460.0 & 4.8 & 4.0 & 3.9 & 25.0 & 1.0\\ \hline
 % Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
+\begin{subfigure}[b]{0.7\textwidth}
  \label{DS:LT:2}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2021,8 +2113,10 @@ Total & 778.0 & 13.5 & 10.0 & 12.3 & 79.0 & 1.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
+\caption{DS - Lead time}
+ \label{DS:LT:2}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \label{DS:Churn:2}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2045,7 +2139,9 @@ Total & 778.0 & 57.6 & 22.0 & 94.2 & 513.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:2}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:2}, \subref{DS:Churn:2}}
 \label{DS:2:3}
@@ -2054,7 +2150,7 @@ Total & 778.0 & 57.6 & 22.0 & 94.2 & 513.0 & 0\\ \hline
 %%%%%%%%%%%%% Churn ft and Churn bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
+\begin{subfigure}[b]{0.7\textwidth}
  \label{DS:CF:2}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2077,9 +2173,10 @@ Total & 778.0 & 57.6 & 22.0 & 94.2 & 513.0 & 0\\ \hline
 Total & 257.0 & 100.6 & 38.0 & 131.3 & 513.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:2}
+\caption{DS - Churn feature}
+ \label{DS:CF:2}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2100,7 +2197,9 @@ Total & 257.0 & 100.6 & 38.0 & 131.3 & 513.0 & 0\\ \hline
 Total & 521.0 & 36.3 & 19.0 & 58.4 & 474.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn feature}
+ \label{DS:CB:2}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug \subref{DS:CF:4}, \subref{DS:CB:4}}
 \label{DS:2:4}
@@ -2114,8 +2213,7 @@ Total & 521.0 & 36.3 & 19.0 & 58.4 & 474.0 & 0\\ \hline
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:2}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2137,9 +2235,10 @@ Total & 521.0 & 36.3 & 19.0 & 58.4 & 474.0 & 0\\ \hline
 Total&536&2.7&2.0&2.2&17&1 \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:2}
+\caption{DS - Bugs}
+ \label{DS:B:2}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2159,10 +2258,11 @@ Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
 2013-3 & 62 & 2 & 64 & 96.9 & 3.1 \\ \hline
 2013-4 & 69 & 0 & 69 & 100 & 0 \\ \hline
 Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
-
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+ \label{DS:FTPQ:2}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:2}, \subref{DS:FTPQ:2}}
 \label{DS:2:5} % 
@@ -2172,11 +2272,9 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 
 
  \section{Team 3 - Descriptive Statistics}
- 
- \begin{table}[!htbp]
+  \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:3}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2199,9 +2297,10 @@ Total & 1187.0 & 18.5 & 19.0 & 9.1 & 44.0 & 1.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
- \label{DS:Throughput:3}
+\caption{DS  - WIP}
+\label{DS:WIP:3}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2221,10 +2320,11 @@ Total & 1187.0 & 18.5 & 19.0 & 9.1 & 44.0 & 1.0\\ \hline
 2013-3 & 29.0 & 2.0 & 1.0 & 2.0 & 11.0 & 1.0\\ \hline
 2013-4 & 18.0 & 1.6 & 1.0 & 1.1 & 5.0 & 1.0\\ \hline
 Total&542&3.7&3.0&3.8&27&1\\ \hline
-
 \end{tabular}
 }
-}
+\caption{DS  - Throughput}
+ \label{DS:Throughput:3}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:3}, \subref{DS:Throughput:3}}
 \label{DS:3:1}
@@ -2235,8 +2335,7 @@ Total&542&3.7&3.0&3.8&27&1\\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:3}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2258,9 +2357,10 @@ Total&542&3.7&3.0&3.8&27&1\\ \hline
 Total & 200.0 & 3.3 & 2.0 & 3.2 & 21.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:3}
+\caption{DS - Throughput feature}
+ \label{DS:TPFT:3}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2282,7 +2382,9 @@ Total & 200.0 & 3.3 & 2.0 & 3.2 & 21.0 & 1.0\\ \hline
 Total & 342.0 & 4.0 & 3.0 & 4.1 & 27.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:3}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:3}, \subref{DS:TPB:3}}
 \label{DS:3:2}
@@ -2294,8 +2396,7 @@ Total & 342.0 & 4.0 & 3.0 & 4.1 & 27.0 & 1.0\\ \hline
  %%%%%%%%%%%%%
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:3}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2318,9 +2419,10 @@ Total & 576.0 & 14.6 & 11.0 & 12.9 & 76.0 & 1.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:3}
+\caption{DS - Lead time}
+ \label{DS:LT:3}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2343,7 +2445,9 @@ Total & 576.0 & 61.8 & 29.0 & 85.4 & 494.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:3}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:3}, \subref{DS:Churn:3}}
 \label{DS:3:3}
@@ -2353,8 +2457,7 @@ Total & 576.0 & 61.8 & 29.0 & 85.4 & 494.0 & 0\\ \hline
  %%%%%%%%%%%%% Churn ft and Churn bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:3}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2376,9 +2479,10 @@ Total & 576.0 & 61.8 & 29.0 & 85.4 & 494.0 & 0\\ \hline
 Total & 205.0 & 98.9 & 62.0 & 109.2 & 494.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:3}
+\caption{DS - Churn feature}
+ \label{DS:CF:3}
+\end{subfigure}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2399,7 +2503,9 @@ Total & 205.0 & 98.9 & 62.0 & 109.2 & 494.0 & 0\\ \hline
 2013-4 & 8.0 & 43.1 & 29.5 & 45.6 & 123.0 & 0\\ \hline
 Total & 371.0 & 41.4 & 20.0 & 59.8 & 402.0 & 0\\ \hline\end{tabular}
 }
-}
+\caption{DS - Churn bug}
+ \label{DS:CB:3}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug \subref{DS:CF:3}, \subref{DS:CB:3}}
 \label{DS:3:4}
@@ -2410,8 +2516,7 @@ Total & 371.0 & 41.4 & 20.0 & 59.8 & 402.0 & 0\\ \hline\end{tabular}
 
 \begin{table}[!htbp]
   \begin{adjustwidth}{-3.0cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:3}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2434,9 +2539,10 @@ Total&399&2.7&1.0&2.6&30&1\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Finished bugs per quarter]{
- \label{DS:FTPQ:3}
+\caption{DS - Bugs}
+ \label{DS:B:3}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | }
  \hline
@@ -2456,10 +2562,11 @@ Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
 2013-3 & 32 & 1 & 33 & 97& 3 \\ \hline
 2013-4&15.0&.0&15.0&100.0&.0 \\ \hline
 Mean&58.5&8.7&67.2&86&14\\ \hline
-
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+ \label{DS:FTPQ:3}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Finished bugs per quarter  \subref{DS:B:3}, \subref{DS:FTPQ:3}}
 \label{DS:3:5}
@@ -2480,8 +2587,7 @@ Mean&58.5&8.7&67.2&86&14\\ \hline
 \section{Team 4 - Descriptive Statistics}
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:4}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2504,8 +2610,10 @@ Total & 1196.0 & 14.0 & 14.0 & 6.2 & 37.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
+\caption{DS - WIP}
+ \label{DS:WIP:4}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \label{DS:Throughput:4}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2528,7 +2636,9 @@ Total & 1196.0 & 14.0 & 14.0 & 6.2 & 37.0 & 0\\ \hline
 Total&674&6.2&5.0&5.0&34&1\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - WIP}
+ \label{DS:WIP:4}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:4}, \subref{DS:Throughput:4}}
 \label{DS:4:1}
@@ -2538,8 +2648,7 @@ Total&674&6.2&5.0&5.0&34&1\\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:4}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2561,9 +2670,10 @@ Total&674&6.2&5.0&5.0&34&1\\ \hline
 Total & 644.0 & 6.2 & 5.0 & 5.1 & 34.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:4}
+\caption{DS - Throughput feature}
+ \label{DS:TPFT:4}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2578,7 +2688,9 @@ Total & 644.0 & 6.2 & 5.0 & 5.1 & 34.0 & 1.0\\ \hline
 Total & 30.0 & 5.6 & 5.5 & 3.7 & 15.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:4}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:4}, \subref{DS:TPB:4}}
 \label{DS:4:2}
@@ -2587,11 +2699,10 @@ Total & 30.0 & 5.6 & 5.5 & 3.7 & 15.0 & 1.0\\ \hline
 
 
 %%%%%%%%%%%%%
-% Lead time and bugs
+% Lead time and churn
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:4}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2610,9 +2721,10 @@ Total & 574.0 & 11.6 & 9.0 & 10.0 & 66.0 & 1.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:4}
+\caption{DS - Lead time}
+ \label{DS:LT:4}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2631,7 +2743,9 @@ Total & 574.0 & 7.4 & 5.0 & 9.2 & 59.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:4}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:4}, \subref{DS:Churn:4}}
 \label{DS:4:3}
@@ -2641,8 +2755,7 @@ Total & 574.0 & 7.4 & 5.0 & 9.2 & 59.0 & 0\\ \hline
 % Churn FT and Churn Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:4}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2660,10 +2773,11 @@ Total & 574.0 & 7.4 & 5.0 & 9.2 & 59.0 & 0\\ \hline
 Total & 496.0 & 8.4 & 6.0 & 9.5 & 59.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:4}
- \scalebox{0.85}{
+\caption{DS - Churn feature}
+ \label{DS:CF:4}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
+\scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
  Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
@@ -2679,7 +2793,9 @@ Total & 496.0 & 8.4 & 6.0 & 9.5 & 59.0 & 0\\ \hline
 Total & 78.0 & 1.0 & 0 & 1.8 & 9.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn feature}
+ \label{DS:CB:4}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:4}, \subref{DS:CB:4}}
 \label{DS:4:4} % 
@@ -2691,8 +2807,7 @@ Total & 78.0 & 1.0 & 0 & 1.8 & 9.0 & 0\\ \hline
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:4}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2711,9 +2826,10 @@ Total & 78.0 & 1.0 & 0 & 1.8 & 9.0 & 0\\ \hline
 Total & 88 & 1.4 & 1 & 0.8 & 4 & 1 \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:4}
+\caption{DS - Bugs}
+ \label{DS:B:4}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2734,7 +2850,9 @@ Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+ \label{DS:FTPQ:4}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:4}, \subref{DS:FTPQ:4}}
 \label{DS:2:5} % 
@@ -2746,8 +2864,7 @@ Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
 
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:5}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2770,9 +2887,10 @@ Total & 1171.0 & 48.4 & 24.0 & 70.5 & 286.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
- \label{DS:Throughput:5}
+\caption{DS - WIP}
+ \label{DS:WIP:5}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2795,7 +2913,9 @@ Total&674&6.3&5.0&6.9&59&1 \\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Throughput}
+ \label{DS:Throughput:5}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:5}, \subref{DS:Throughput:5}}
 \label{DS:5:1}
@@ -2806,8 +2926,7 @@ Total&674&6.3&5.0&6.9&59&1 \\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:5}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2828,9 +2947,10 @@ Total&674&6.3&5.0&6.9&59&1 \\ \hline
 Total & 108.0 & 5.7 & 4.0 & 5.5 & 30.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:5}
+\caption{DS - Throughput feature}
+ \label{DS:TPFT:5}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2852,7 +2972,9 @@ Total & 108.0 & 5.7 & 4.0 & 5.5 & 30.0 & 1.0\\ \hline
 Total & 566.0 & 6.4 & 5.0 & 7.0 & 59.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:5}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:5}, \subref{DS:TPB:5}}
 \label{DS:5:2}
@@ -2863,8 +2985,7 @@ Total & 566.0 & 6.4 & 5.0 & 7.0 & 59.0 & 1.0\\ \hline
 % Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:5}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2887,9 +3008,10 @@ Total & 698.0 & 25.7 & 17.0 & 27.5 & 259.0 & 1.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:5}
+\caption{DS - Lead time}
+ \label{DS:LT:5}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2911,7 +3033,9 @@ Total & 698.0 & 25.7 & 17.0 & 27.5 & 259.0 & 1.0\\ \hline
 Total & 698.0 & 33.4 & 17.0 & 43.0 & 244.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:5}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:5}, \subref{DS:Churn:5}}
 \label{DS:5:3}
@@ -2921,8 +3045,7 @@ Total & 698.0 & 33.4 & 17.0 & 43.0 & 244.0 & 0\\ \hline
 % Churn FT and Churn Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:5}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2942,9 +3065,11 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 Total & 123.0 & 52.1 & 27.0 & 61.2 & 206.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:5}
+\caption{DS - Churn feature}
+ \label{DS:CF:5}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
+
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -2966,7 +3091,9 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 Total & 575.0 & 29.4 & 17.0 & 36.8 & 244.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn bug}
+ \label{DS:CB:5}
+ \end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:5}, \subref{DS:CB:5}}
 \label{DS:5:4} % 
@@ -2978,8 +3105,7 @@ Total & 575.0 & 29.4 & 17.0 & 36.8 & 244.0 & 0\\ \hline
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:5}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3001,9 +3127,10 @@ Total & 575.0 & 29.4 & 17.0 & 36.8 & 244.0 & 0\\ \hline
 Total&604&3.8&3.0&4.1&38&1 \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:5}
+\caption{DS - Bugs}
+ \label{DS:B:5}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3026,7 +3153,9 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+ \label{DS:FTPQ:5}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:5}, \subref{DS:FTPQ:5}}
 \label{DS:2:5} % 
@@ -3036,8 +3165,7 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 \section{Team 6 - Descriptive Statistics}
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:6}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3060,9 +3188,10 @@ Total & 1205.0 & 22.1 & 18.0 & 13.4 & 125.0 & 4.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Throughput]{
- \label{DS:Throughput:6}
+\caption{DS - WIP}
+ \label{DS:WIP:6}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3084,7 +3213,9 @@ Total & 1205.0 & 22.1 & 18.0 & 13.4 & 125.0 & 4.0\\ \hline
 Total & 691 & 4.58 & 3 & 181 & 1 & 7.8\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput}
+ \label{DS:Throughput:6}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:6}, \subref{DS:Throughput:6}}
 \label{DS:6:1}
@@ -3094,8 +3225,7 @@ Total & 691 & 4.58 & 3 & 181 & 1 & 7.8\\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:6}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3117,9 +3247,10 @@ Total & 691 & 4.58 & 3 & 181 & 1 & 7.8\\ \hline
 Total & 609.0 & 4.8 & 3.0 & 8.3 & 181.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:6}
+\caption{DS - Throughput feature}
+\label{DS:TPFT:6}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3140,7 +3271,9 @@ Total & 609.0 & 4.8 & 3.0 & 8.3 & 181.0 & 1.0\\ \hline
 Total & 82.0 & 3.3 & 2.5 & 2.6 & 13.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:6}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:6}, \subref{DS:TPB:6}}
 \label{DS:6:2}
@@ -3152,8 +3285,7 @@ Total & 82.0 & 3.3 & 2.5 & 2.6 & 13.0 & 1.0\\ \hline
 % Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:6}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3175,9 +3307,10 @@ Total & 82.0 & 3.3 & 2.5 & 2.6 & 13.0 & 1.0\\ \hline
 Total & 756.0 & 14.3 & 10.0 & 14.5 & 120.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:6}
+\caption{DS - Lead time}
+ \label{DS:LT:6}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3200,7 +3333,9 @@ Total & 756.0 & 98.3 & 19.0 & 197.3 & 1207.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:6}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:6}, \subref{DS:Churn:6}}
 \label{DS:6:3}
@@ -3209,8 +3344,7 @@ Total & 756.0 & 98.3 & 19.0 & 197.3 & 1207.0 & 0\\ \hline
  %%%%%%%%%%%%% Churn ft and Churn bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:6}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3232,9 +3366,10 @@ Total & 756.0 & 98.3 & 19.0 & 197.3 & 1207.0 & 0\\ \hline
 Total & 576.0 & 105.9 & 21.0 & 204.9 & 1207.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:6}
+\caption{DS - Churn feature}
+ \label{DS:CF:6}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3253,7 +3388,9 @@ Total & 576.0 & 105.9 & 21.0 & 204.9 & 1207.0 & 0\\ \hline
 Total & 180.0 & 73.8 & 12.0 & 169.3 & 1127.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn bug}
+ \label{DS:CB:6}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug \subref{DS:CF:6}, \subref{DS:CB:6}}
 \label{DS:6:4}
@@ -3265,8 +3402,7 @@ Total & 180.0 & 73.8 & 12.0 & 169.3 & 1127.0 & 0\\ \hline
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:6}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3287,9 +3423,10 @@ Total & 180.0 & 73.8 & 12.0 & 169.3 & 1127.0 & 0\\ \hline
 Total&211&1.6&1.0&.868&7&1 \\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:6}
+\caption{DS - Bugs}
+ \label{DS:B:6}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3310,7 +3447,9 @@ Quarter & Finished  & Not finished &	Total & Finished & Not finished \\ \hline
 Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Bugs}
+ \label{DS:FTPQ:6}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:6}, \subref{DS:FTPQ:6}}
 \label{DS:6:5} % 
@@ -3323,8 +3462,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 \section{Team 7 - Descriptive Statistics}
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:7}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3342,9 +3480,10 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 Total & 359.0 & 14.8 & 8.0 & 16.6 & 124.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
- \label{DS:Throughput:7}
+\caption{DS - WIP}
+ \label{DS:WIP:7}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3362,7 +3501,9 @@ Total & 359.0 & 14.8 & 8.0 & 16.6 & 124.0 & 1.0\\ \hline
 Total & 328.0 & 2.7 & 2.0 & 2.1 & 14.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput}
+ \label{DS:Throughput:7}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:4}, \subref{DS:Throughput:7}}
 \label{DS:7:1}
@@ -3372,8 +3513,7 @@ Total & 328.0 & 2.7 & 2.0 & 2.1 & 14.0 & 1.0\\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:7}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3391,9 +3531,10 @@ Total & 328.0 & 2.7 & 2.0 & 2.1 & 14.0 & 1.0\\ \hline
 Total & 156.0 & 2.8 & 2.0 & 2.1 & 13.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:7}
+\caption{DS - Throughput feature}
+ \label{DS:TPFT:7}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3410,7 +3551,9 @@ Total & 156.0 & 2.8 & 2.0 & 2.1 & 13.0 & 1.0\\ \hline
 Total & 172.0 & 2.6 & 2.0 & 2.1 & 14.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:7}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:7}, \subref{DS:TPB:7}}
 \label{DS:7:2}
@@ -3422,8 +3565,7 @@ Total & 172.0 & 2.6 & 2.0 & 2.1 & 14.0 & 1.0\\ \hline
 % Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:7}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3442,9 +3584,10 @@ Total & 359.0 & 14.8 & 8.0 & 16.6 & 124.0 & 1.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:7}
+\caption{DS - Lead time}
+ \label{DS:LT:7}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3462,7 +3605,9 @@ Total & 359.0 & 14.8 & 8.0 & 16.6 & 124.0 & 1.0\\ \hline
 Total & 359.0 & 77.3 & 26.0 & 124.8 & 726.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:7}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:7}, \subref{DS:Churn:7}}
 \label{DS:7:3}
@@ -3472,8 +3617,7 @@ Total & 359.0 & 77.3 & 26.0 & 124.8 & 726.0 & 0\\ \hline
 % Churn FT and Churn Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:7}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3491,9 +3635,10 @@ Total & 359.0 & 77.3 & 26.0 & 124.8 & 726.0 & 0\\ \hline
 Total & 141.0 & 121.2 & 57.0 & 150.7 & 726.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:7}
+\caption{DS - Churn feature}
+ \label{DS:CF:7}
+\end{subfigure}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3510,7 +3655,9 @@ Total & 218.0 & 48.9 & 18.0 & 94.8 & 719.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn bug}
+ \label{DS:CB:7}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:7}, \subref{DS:CB:7}}
 \label{DS:7:4} % 
@@ -3522,8 +3669,7 @@ Total & 218.0 & 48.9 & 18.0 & 94.8 & 719.0 & 0\\ \hline
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:7}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3540,9 +3686,10 @@ Total & 218.0 & 48.9 & 18.0 & 94.8 & 719.0 & 0\\ \hline
 Total & 240.0 & 2.1 & 2.0 & 1.7 & 12.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:7}
+\caption{DS - Bugs}
+ \label{DS:B:7}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3556,11 +3703,12 @@ Total & 240.0 & 2.1 & 2.0 & 1.7 & 12.0 & 1.0\\ \hline
 	2012-1 & 46 & 2 & 48 & 95.8 & 4.2 \\ \hline
 	2012-2 & 36 & 12 & 48 & 75 & 25 \\ \hline
 	2012-3 & 67 & 0 & 67 & 100 & 0 \\ \hline
-	Mean & 38.3 & 4.3 & 42.7 & 65.9 & 34.1 \  \\ \hline
-
+	Mean & 38.3 & 4.3 & 42.7 & 65.9 & 34.1  \\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+ \label{DS:FTPQ:7}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:7}, \subref{DS:FTPQ:7}}
 \label{DS:7:5} % 
@@ -3569,8 +3717,7 @@ Total & 240.0 & 2.1 & 2.0 & 1.7 & 12.0 & 1.0\\ \hline
 \section{Team 8 - Descriptive Statistics}
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:8}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3591,9 +3738,10 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 Total & 1100.0 & 8.1 & 6.0 & 7.3 & 55.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
- \label{DS:Throughput:8}
+\caption{DS - WIP}
+ \label{DS:WIP:8}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3614,7 +3762,9 @@ Quarter &	N &	Mean &	Median & Std.Dev & Max	& Min \\ \hline
 Total & 191.0 & 2.3 & 1.0 & 2.4 & 14.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput}
+ \label{DS:Throughput:8}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:8}, \subref{DS:Throughput:8}}
 \label{DS:8:1}
@@ -3624,8 +3774,7 @@ Total & 191.0 & 2.3 & 1.0 & 2.4 & 14.0 & 1.0\\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:8}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3644,9 +3793,10 @@ Total & 191.0 & 2.3 & 1.0 & 2.4 & 14.0 & 1.0\\ \hline
 Total & 92.0 & 3.2 & 2.0 & 2.8 & 13.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:8}
+\caption{DS - Throughput feature}
+ \label{DS:TPFT:8}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3667,7 +3817,9 @@ Total & 92.0 & 3.2 & 2.0 & 2.8 & 13.0 & 1.0\\ \hline
 Total & 99.0 & 1.5 & 1.0 & 1.6 & 14.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:8}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:8}, \subref{DS:TPB:8}}
 \label{DS:8:2}
@@ -3679,8 +3831,7 @@ Total & 99.0 & 1.5 & 1.0 & 1.6 & 14.0 & 1.0\\ \hline
 % Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:8}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3701,9 +3852,10 @@ Total & 99.0 & 1.5 & 1.0 & 1.6 & 14.0 & 1.0\\ \hline
 Total & 137.0 & 22.6 & 11.0 & 32.2 & 190.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:8}
+\caption{DS - Lead time}
+ \label{DS:LT:8}
+\end{subfigure}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3725,7 +3877,9 @@ Total & 137.0 & 13.4 & 3.0 & 27.9 & 152.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:8}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:8}, \subref{DS:Churn:8}}
 \label{DS:8:3}
@@ -3735,8 +3889,7 @@ Total & 137.0 & 13.4 & 3.0 & 27.9 & 152.0 & 0\\ \hline
 % Churn FT and Churn Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:8}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3755,9 +3908,10 @@ Total & 137.0 & 13.4 & 3.0 & 27.9 & 152.0 & 0\\ \hline
 Total & 79.0 & 17.4 & 4.0 & 34.4 & 152.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:8}
+\caption{DS - Churn feature}
+ \label{DS:CF:8}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3778,7 +3932,9 @@ Total & 79.0 & 17.4 & 4.0 & 34.4 & 152.0 & 0\\ \hline
 Total & 58.0 & 8.0 & 1.5 & 13.6 & 73.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn bug}
+ \label{DS:CB:8}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:8}, \subref{DS:CB:8}}
 \label{DS:8:4} % 
@@ -3790,8 +3946,7 @@ Total & 58.0 & 8.0 & 1.5 & 13.6 & 73.0 & 0\\ \hline
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:8}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3813,9 +3968,10 @@ Total & 58.0 & 8.0 & 1.5 & 13.6 & 73.0 & 0\\ \hline
 Total & 100.0 & 1.5 & 1.0 & 1.3 & 10.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:8}
+\caption{DS - Bugs}
+ \label{DS:B:8}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3838,7 +3994,9 @@ Mean &6.7&2.6&9.3&59.5&40.5 \\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+ \label{DS:FTPQ:8}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:8}, \subref{DS:FTPQ:8}}
 \label{DS:8:5} % 
@@ -3847,8 +4005,7 @@ Mean &6.7&2.6&9.3&59.5&40.5 \\ \hline
 \section{Team 9 - Descriptive Statistics}
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:9}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3870,9 +4027,10 @@ Mean &6.7&2.6&9.3&59.5&40.5 \\ \hline
 Total & 2418 & 9.1 & 0 & 12.5 & 67.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
- \label{DS:Throughput:9}
+\caption{DS - WIP}
+ \label{DS:WIP:9}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3892,7 +4050,9 @@ Total & 2418 & 9.1 & 0 & 12.5 & 67.0 & 0\\ \hline
 Total & 1140.0 & 19.2 & 16.0 & 11.6 & 67.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput}
+ \label{DS:Throughput:9}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:9}, \subref{DS:Throughput:9}}
 \label{DS:9:1}
@@ -3902,7 +4062,7 @@ Total & 1140.0 & 19.2 & 16.0 & 11.6 & 67.0 & 0\\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
+\begin{subfigure}[b]{0.7\textwidth}
  \label{DS:TPFT:9}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3924,9 +4084,10 @@ Total & 1140.0 & 19.2 & 16.0 & 11.6 & 67.0 & 0\\ \hline
 Total & 214.0 & 2.4 & 2.0 & 1.8 & 12.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:9}
+\caption{DS - Throughput feature}
+ \label{DS:TPFT:9}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3947,7 +4108,9 @@ Total & 214.0 & 2.4 & 2.0 & 1.8 & 12.0 & 1.0\\ \hline
 Total & 307.0 & 2.8 & 2.0 & 1.9 & 10.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput bug}
+ \label{DS:TPB:9}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:9}, \subref{DS:TPB:9}}
 \label{DS:9:2}
@@ -3959,8 +4122,7 @@ Total & 307.0 & 2.8 & 2.0 & 1.9 & 10.0 & 1.0\\ \hline
 % Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:9}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -3982,9 +4144,10 @@ Total & 538.0 & 15.9 & 12.0 & 14.7 & 140.0 & 2.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:9}
+\caption{DS - Lead time}
+ \label{DS:LT:9}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4005,7 +4168,9 @@ Total & 538.0 & 15.9 & 12.0 & 14.7 & 140.0 & 2.0\\ \hline
 Total & 538.0 & 72.2 & 30.0 & 97.5 & 472.0 & 0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:9}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:9}, \subref{DS:Churn:9}}
 \label{DS:9:3}
@@ -4015,8 +4180,7 @@ Total & 538.0 & 72.2 & 30.0 & 97.5 & 472.0 & 0\\ \hline
 % Churn FT and Churn Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:9}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4037,9 +4201,10 @@ Total & 538.0 & 72.2 & 30.0 & 97.5 & 472.0 & 0\\ \hline
 Total & 201.0 & 115.9 & 72.0 & 118.8 & 445.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:9}
+\caption{DS - Churn feature}
+ \label{DS:CF:9}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4061,7 +4226,9 @@ Total & 337.0 & 46.1 & 23.0 & 70.4 & 472.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn bug}
+ \label{DS:CB:9}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:9}, \subref{DS:CB:9}}
 \label{DS:9:4} % 
@@ -4073,8 +4240,7 @@ Total & 337.0 & 46.1 & 23.0 & 70.4 & 472.0 & 0\\ \hline
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:9}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4096,9 +4262,10 @@ Total & 337.0 & 46.1 & 23.0 & 70.4 & 472.0 & 0\\ \hline
 Total & 403.0 & 2.1 & 1.0 & 1.5 & 12.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:9}
+\caption{DS - Bugs}
+ \label{DS:B:9}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4120,7 +4287,9 @@ Quarter & Finished & Not finished & Total & Finished & Not finished \\ \hline
 Mean & 37.9 & 8.3 & 46.17 & 58.4& 41.6 \\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+ \label{DS:FTPQ:9}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:9}, \subref{DS:FTPQ:9}}
 \label{DS:2:5} % 
@@ -4129,8 +4298,7 @@ Mean & 37.9 & 8.3 & 46.17 & 58.4& 41.6 \\ \hline
 \section{Team 10 - Descriptive Statistics}
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -WIP]{
- \label{DS:WIP:10}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4152,9 +4320,10 @@ Mean & 37.9 & 8.3 & 46.17 & 58.4& 41.6 \\ \hline
 Total & 1177.0 & 14.8 & 12.0 & 12.2 & 59.0 & 0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput]{
- \label{DS:Throughput:10}
+\caption{DS - WIP}
+ \label{DS:WIP:10}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4176,7 +4345,9 @@ Total & 1177.0 & 14.8 & 12.0 & 12.2 & 59.0 & 0\\ \hline
 Total & 404.0 & 2.2 & 2.0 & 1.7 & 16.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS - Throughput}
+ \label{DS:Throughput:10}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for WIP and Throughput  \subref{DS:WIP:10}, \subref{DS:Throughput:10}}
 \label{DS:10:1}
@@ -4186,8 +4357,7 @@ Total & 404.0 & 2.2 & 2.0 & 1.7 & 16.0 & 1.0\\ \hline
 %Throughput FT and Throughput Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic -Throughput feature]{
- \label{DS:TPFT:10}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4208,9 +4378,10 @@ Total & 404.0 & 2.2 & 2.0 & 1.7 & 16.0 & 1.0\\ \hline
 Total & 69.0 & 2.3 & 1.0 & 2.3 & 16.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic -Throughput bug]{
- \label{DS:TPB:10}
+\caption{DS Throughput feature}
+ \label{DS:TPFT:10}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4232,7 +4403,9 @@ Total & 69.0 & 2.3 & 1.0 & 2.3 & 16.0 & 1.0\\ \hline
 Total & 335.0 & 2.2 & 2.0 & 1.6 & 13.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
+\caption{DS Throughput bug}
+ \label{DS:TPB:10}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Throughput feature and Throughput bug  \subref{DS:TPFT:10}, \subref{DS:TPB:10}}
 \label{DS:10:2}
@@ -4244,8 +4417,7 @@ Total & 335.0 & 2.2 & 2.0 & 1.6 & 13.0 & 1.0\\ \hline
 % Lead time and bugs
 \begin{table}[!htbp]
   \begin{adjustwidth}{-1.5cm}{}
-\subfigure[Descriptive Statistic - Lead time]{
- \label{DS:LT:10}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4268,9 +4440,10 @@ Total & 361.0 & 22.7 & 15.0 & 24.8 & 313.0 & 2.0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn]{
- \label{DS:Churn:10}
+\caption{DS - Lead time}
+ \label{DS:LT:10}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4293,7 +4466,9 @@ Total & 361.0 & 45.4 & 14.0 & 86.2 & 469.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn}
+ \label{DS:Churn:10}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Lead time and Churn  \subref{DS:LT:10}, \subref{DS:Churn:10}}
 \label{DS:10:3}
@@ -4303,8 +4478,7 @@ Total & 361.0 & 45.4 & 14.0 & 86.2 & 469.0 & 0\\ \hline
 % Churn FT and Churn Bug
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Churn feature]{
- \label{DS:CF:10}
+\begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4326,9 +4500,10 @@ Total & 69.0 & 75.5 & 5.0 & 123.6 & 441.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Churn bug]{
- \label{DS:CB:10}
+\caption{DS - Churn feature}
+ \label{DS:CF:10}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4351,7 +4526,9 @@ Total & 292.0 & 38.3 & 15.0 & 73.2 & 469.0 & 0\\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Churn bug}
+ \label{DS:CB:10}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Churn feature and Churn bug  \subref{DS:CF:10}, \subref{DS:CB:10}}
 \label{DS:10:4} % 
@@ -4363,8 +4540,7 @@ Total & 292.0 & 38.3 & 15.0 & 73.2 & 469.0 & 0\\ \hline
 % Bugs and Bugs finished in quarter
 \begin{table}[!htbp]
   \begin{adjustwidth}{-2.5cm}{}
-\subfigure[Descriptive Statistic - Bugs]{
- \label{DS:B:10}
+\begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4386,9 +4562,10 @@ Total & 292.0 & 38.3 & 15.0 & 73.2 & 469.0 & 0\\ \hline
 Total & 370.0 & 1.9 & 1.0 & 1.6 & 13.0 & 1.0\\ \hline
 \end{tabular}
 }
-}
-\subfigure[Descriptive Statistic - Bugs finished within quarter  ]{
- \label{DS:FTPQ:10}
+\caption{DS - Bugs}
+ \label{DS:B:10}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
  \scalebox{0.85}{
  \begin{tabular}{ | l | r | r | r | r | r | r | }
  \hline
@@ -4411,12 +4588,15 @@ Mean & 30.8&9.3&40.13&67.0&33.0 \\ \hline
 
 \end{tabular}
 }
-}
+\caption{DS - Bugs per quarter}
+ \label{DS:FTPQ:10}
+\end{subfigure}
 \end{adjustwidth}
 \caption[Optional caption for list of figures]{Caption of Descriptive Statistic for Bugs and Bugs finished within quarter  \subref{DS:B:10}, \subref{DS:FTPQ:10}}
 \label{DS:10:5} % 
 \end{table}
- \end{appendices}
+
+\end{appendices}
  
 
 
