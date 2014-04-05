@@ -17,8 +17,7 @@
 \usepackage{subcaption}
 \usepackage[toc,page]{appendix}
 \usepackage{blindtext}
-
-
+\usepackage{afterpage,lscape}
 
 
 
@@ -302,13 +301,9 @@ This subsection contains excerpt from papers from various authors that have done
 \begin{enumerate}
 \item Lowering the WIP limit will help people avoid task switching. When one is task switching it's hard to be able to fully concentrate. \parencite{Ikonen}.
 \item There's stated when using short-cycle times and Kanban board to limit WIP, the software development team's learning is increased \parencite{Joyce}:
-\item WIP increases productivity \parencite{Joyce}.
-\item Limit WIP helps team to reduce overhead \parencite {CONWIP}.
-\item Limit WIP decrease lead time \parencite {CONWIP}.
-\item Limit WIP increase throughput \parencite {CONWIP}.
-\item Limit WIP reduces flow times \parencite {CONWIP}.
-\item Limit WIP reduces variation \parencite {CONWIP}.
-\item Limit WIP improves quality \parencite {CONWIP}.
+\item WIP - limit increases productivity \parencite{Joyce}.
+\item WIP - limit reduce cycle time \parencite{Ola}
+
 \end{enumerate}
 
 Both the studies on WIP limit vs. No limit, the articles and research shows the importance of WIP limit. If  \L ukasz's effectiveness metric is isregarded , there is no clear rule on how to determine WIP limit even though WIP is suppose to be a crucial principle in order to take full advantages of Kanban.
@@ -317,7 +312,7 @@ Both the studies on WIP limit vs. No limit, the articles and research shows the 
 \label{sec:in:lt}
 ''Lead time is the total elapsed time from when a customer requests software to when the finished software is released to the customer'' \parencite{Joyce}.
 
-Lead time could be an essential ingredient when you look for the optimal WIP, if there is one.  Often in a project, lead time is split into pieces, so every task has its own lead time. This gives the development teams the advantages to experiment with different WIPs in order to see the different lead times and then measure which WIP that suits this project the best. 
+Lead time is measured to track how quickly reliably software is delivered to customers \parencite{Joyce}. Lead time could be an essential ingredient when you look for the optimal WIP, if there is one.  Often in a project, lead time is split into pieces, so every task has its own lead time. This gives the development teams the advantages to experiment with different WIPs in order to see the different lead times and then measure which WIP that suits this project the best. 
 
 According to the paper "Quantifying the effect of Using Kanban versus Scrum" \parencite{Dag} the citation by Middleton and Joyce above is close to definition of what lead time is. They define lead time as the amount of time that passed from the moment that the development team receives a request to the moment that it completes the work item. The reason why the paper disapproves the definition by Middleton and Joyce is because: "The amount of time a work item remains in the backlog queue before it's put on the board is a function of priority, not whether the company uses Scrum, Kanban or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it's finished'' \parencite{Dag}.
 
@@ -364,7 +359,7 @@ Lets say Team x had a throughput of eighteen tasks after the first quarter, twen
 \label{sec:Churn}
 "Churn is defined as the sum of the number of lines added, deleted, and modified in the source code" \parencite{Dag}.
 
-Churn is a measure that's not so known as lead time, throughput or WIP. Churn is a term that's used as surrogates for effort in software engineering. Many studies in software engineering use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates \parencite{el2000methodology}."  But, the study by Sjøberg et al. showed that churn could be used as a surrogate for task sizes \parencite{yamashita2012quantifying}. 
+Churn is a measure that's not so known as lead time, throughput or WIP. Churn is a term that's used as surrogates for effort in software engineering. Many studies in software engineering use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates" \parencite{el2000methodology}.  But, the study by Sj\o berg et al. showed that churn could be used as a surrogate for tasks size \parencite{yamashita2012quantifying}. 
 
 
 \section{Software Innovation}
@@ -373,10 +368,11 @@ Software Innovation is a Scandinavian software company. SI develops and delivers
 
 SI has approximately 300 employees in Oslo, Copenhagen, Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used the Waterfall process. In 2007, SI changed to Scrum, and in 2010, SI went from Scrum to Kanban \parencite{Dag}.
 \subsection{Teams}
-Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four shown in table \ref{Team:4} is the it-support team for SI. 
-%DEL EN TEAM 1-4
+Table \ref{table:teams} shows the size of the ten teams vs. quarter.
+
 \begin{figure}
-\begin{subfigure}{1\textwidth}
+\begin{subfigure}[b]{.2\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -401,7 +397,8 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 \caption{Team size - team one}
  \label{Team:1}
 \end{subfigure}
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}[b]{.2\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -426,7 +423,8 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 \caption{Team size - team two}
  \label{Team:2}
 \end{subfigure}
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}[b]{0.2\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -451,7 +449,8 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 \caption{Team size - team three}
  \label{Team:3}
 \end{subfigure}
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}[b]{0.2\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -477,8 +476,9 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
  \label{Team:4}
 \end{subfigure}
 %%%%%%% DEL TO TEAM 5-8
-\begin{subfigure}{0.5\textwidth}
- \scalebox{0.50}{
+\begin{subfigure}[b]{0.1\textwidth}
+\center
+ \scalebox{0.5}{
 \begin{tabular}{ | l | r | r | }
 \hline
  \bf{Year} & \bf{Quarter} & \bf{Team Size} \\ \hline
@@ -499,11 +499,12 @@ Table \ref{table:teams} shows the size of the ten teams vs. quarter. Team four s
 	Total & &285  \\ \hline
 \end{tabular}
 }
-\caption{Team size - team five}
+\caption{Team size - five}
  \label{Team:5}
 \end{subfigure}
 
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}[b]{0.3\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -528,7 +529,8 @@ Total & &99  \\ \hline
 \caption{Team size - team six}
  \label{Team:6}
 \end{subfigure}
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}[b]{0.3\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -549,7 +551,8 @@ Total & &99  \\ \hline
 \caption{Team size - team seven}
  \label{Team:7}
 \end{subfigure}
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}[b]{0.3\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -578,7 +581,8 @@ Total & &99  \\ \hline
 
 
 %%%%%% DEL tree TEAM 9-10
-\begin{subfigure}{0.2\textwidth}
+\begin{subfigure}[b]{0.5\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -602,7 +606,8 @@ Total & &99  \\ \hline
 \caption{Team size - team nine}
  \label{Team:9}
 \end{subfigure}
-\begin{subfigure}{0.3\textwidth}
+\begin{subfigure}[b]{0.5\textwidth}
+\center
  \scalebox{0.50}{
 \begin{tabular}{ | l | r | r | }
 \hline
@@ -746,7 +751,7 @@ SI implemented three weeks sprint, after each sprint a fully tested shippable co
 SI decided to implement Kanban in the following manner. When a work item is pulled from the backlog, SI tries to make the item flow through all the stages until it's ready for release. This procedure happens as quickly as possible. In order for an item to be ready for release, it has to be at a satisfactory quality level, which is defined by SI. SI also implemented WIP limits. If the WIP limit is reached, no new tasks are started until another task is finished which is based on the principle of just-in-time \parencite{Dag}.
 
 \section{Correlation}
-To run correlation I have chosen Pearson correlation, since I want to find a linear relationship between variables. 
+To run correlation, I have chosen Pearson correlation, since I want to find a linear relationship between variables. 
 
 \chapter{Data collected and calculations}
 \label{ch:DCC}
@@ -1487,7 +1492,7 @@ Team size &.699**
 & 0.05& 0.52& 0.16& .687**
 & .858**
 & 0.62& .753**
-& 0.53& .\\ \hline
+& 0.53& .57*\\ \hline
 \end{tabular}
  \caption{Correlation - Throughput}
  \label{corr:TP}
@@ -1577,8 +1582,6 @@ Team size &0.42& -0.16& -0.51& -0.24& -.541*
 
 \textit{Churn feature} for team seven has the correlation value of .91 while \textit{churn bug} has the correlation value 0.13. The descriptive statistic Tables \ref{DS:Churn:7}, \ref{DS:CF:7} and \ref{DS:CB:7} shows that \textit{churn} contains 359 dates and has a total mean of 77.3.  \textit{Churn feature} represents 141 of these dates, and have a total mean of 121.2 and  \textit{churn bug} represents the 218 remaining dates and has a total mean of 48.9. These values, one could assume that both  \textit{churn feature} and  \textit{churn bug} contribute to  \textit{churn}, but the correlation disapproves that. The Figure \ref{corr:Difference:7} shows \textit{churn} in the X-axis and \textit{churn feature} and \textit{churn bug} in Y-axis. The Figure \ref{fig:a:7} shows clearly the significant positive relationship between \textit{churn} and \textit{churn feature}.
 
-
-
 \begin{figure}[h] 
   \begin{subfigure}[b]{0.5\textwidth}
 \includegraphics[scale=0.5]{Picture/Seven/ChrnvsChrnFT.png}
@@ -1590,9 +1593,12 @@ Team size &0.42& -0.16& -0.51& -0.24& -.541*
  \caption{Churn and churn bug} 
 \label{fig:b:7}
   \end{subfigure}
-\caption{Correlation graphs between the churn variables.}
+\caption{Correlation graphs between the throughput variables.}
 \label{corr:Difference:7}
 \end{figure}
+
+
+ 
 
 
 For team ten, \textit{churn bug} has the correlation value of .94 while \textit{churn feature} has the value .14. This shows that churn bug represents most of \textit{churn}.  Based on the Tables \ref{DS:Churn:10}, \ref{DS:CF:10} and \ref{DS:CB:10}, one can see that \textit{churn} contains 361 dates and has a total mean value of 45.4. \textit{Churn feature} represents 69 of these dates and has a total mean of 75.5, while \textit{churn bug} represents 292 of \textit{churn's} dates and has a total mean of 38.3. These data also shows the close relationship between \textit{churn} and \textit{churn bug}.  
@@ -1621,7 +1627,7 @@ Team size  & 10 & -0 & -0 & 0.3 & 0.4 & -0.5\\ \hline
  \end{table}
  
  
- \section{Team size}
+ \section{Correlation - Team size}
  The team size correlation tables is stated in Table \ref{corr:Teams}. Team one, three, five, six, eight and ten have a significant positive correlation between \textit{team size} and  \textit{WIP}. Team one, five, six, eight and ten has a significant positive correlation between \textit{team size} and \textit{throughput}. For team one, six and eight's case, don't \textit{throughput bug} has a significant positive correlation, the reason \textit{throughput bug} differ for team one, six and eight where stated in Section \ref{sec:corr:WIP} and \ref{sec:corr:TP} . For team five and ten differ \textit{throughput feature}. The reason for this where stated in Section \ref{sec:corr:WIP}
  
 Team one and five has a significant positive correlation between \textit{bugs} and \textit{team size} Team two has a significant positive correlation between \textit{avg days in backlog, bugs} and \textit{team size}. Team one also has a positive correlation between \textit{time size} and \textit{lead time},  as well as \textit{churn feature}. The reason \textit{churn feature} has a significant value and churn don't where stated in section \ref{sec:corr:churn}. 
@@ -1679,30 +1685,41 @@ Churn bug  & 10 & -0.1 & -0.1 & 0.4 & 0.7 & -0.6\\ \hline
   \hline
   \textbf{Team} & \textbf{Average team size} & \textbf{Average WIP}\\ \hline
 Team one & 23 & 20.5  \\ \hline
+Team five & 20 &  48.4\\ \hline
+Team ten & 12 &  14.8\\ \hline
+Team eight & 12 &  8.1\\ \hline
 Team two & 10 & 23.8 \\ \hline
 Team three & 9 &  18.5\\ \hline
-Team four & 4 &  14\\ \hline
-Team five & 20 &  48.4\\ \hline
+Team nine  & 8 &  9.1\\ \hline
 Team six & 7 &  22.1\\ \hline
 Team seven & 7 & 14.8 \\ \hline
-Team eight & 12 &  8.1\\ \hline
-Team nine  & 8 &  9.1\\ \hline
-Team ten & 12 &  14.8\\ \hline
+Team four & 4 &  14\\ \hline
  \end{tabular}
  \caption{Average of team size and WIP}
  \label{DS:corr:WIP:Team}
  \end{table}
+
+ \begin{figure}[b]
+ \center
+\includegraphics{Picture/TeamSize/TeamSizeVsWIP.png} 
+ \caption{The correlation between average team size and WIP is 0.54} 
+\label{fig:TS:WIP}
+  \end{figure}
+ 
  
  
 \chapter{Discussion}
 \label{ch:dis}
+\section{WIP and team size}
+The correlation between WIP and team size is important to state. If measuring WIP - limit's impact on software development without considering team size, the wrong result would be concluded. In example, if team hires ten new developers, often their WIP-limit would increase, and the teams throughput. This will gives a positive correlation between WIP and throughput, which could be interpreted, that the higher the WIP, the more productivity is the team, which is not right. This is proven by Table \ref{DS:corr:TS}.
 
-\section{WIP vs lead time}
-As stated in Section \ref{sec:in:lt}, lead time could be an important tool to measure productivity. Each development process would like to get their lead time as low as possible. WIP is a principle decrease lead time.  The overall result of this study shows that when WIP decreases, so does lead time. Team one, four, five, seven and ten has significant positive correlation between WIP and lead time and both team two and three has a medium correlation as shown in Table \ref{DS:corr:WIP}. 
+The Table \ref{DS:corr:TS} shows the overall correlation between \textit{team size} and \textit{WIP} is 0.6. \textit{Throughput's} correlation value is 0.5. Have to take team size into account when discussing WIP - limit's impact in software development. 
+
+ 
 
 
-
-One could argue if number of team members increase, the number of work in progress also increases. But that should not have an impact on lead timem since with more employees, there is possible to work on more tasks.  The Table \ref{DS:corr:WIP:Team:LT} shows that over a period of 14 quarters, 
+\section{WIP and lead time}
+As stated in Section \ref{sec:in:lt}, lead time could be an important to measure productivity. Each development process would like to get their lead time as low as possible. WIP is a principle decrease lead time.  The overall result of this study shows that when WIP increase, so does lead time. Team one, four, five, seven and ten has significant positive correlation between WIP and lead time and both team two and three has a medium correlation as shown in Table \ref{DS:corr:WIP}. When lead time increase, so does throughput as shown in Table \ref{DS:corr:LT}. This means, when SI increases the number of work in progress, each task will be in backlog for more days, hence the increasing of lead time, but they will produce more, hence the throughput increasing. One could argue if number of team member's increase, the number of work in progress also increases. But that should not have an impact on lead time since with more employees, there is possible to work on more tasks.  The Table \ref{DS:corr:WIP:Team:LT} shows that over a period of 14 quarters,
 
  \begin{table}[!htbp]
  \centering
@@ -1724,7 +1741,19 @@ Team ten & 12 &  14.8 &  22.7\\ \hline
  \label{DS:corr:WIP:Team:LT}
  \end{table}
 
-Team one 23, four4, five 20, seven 7 and ten 12 
+\section{WIP and bugs} 
+If WIP - limit matters in software development should it reduce bugs. Four of the teams from SI had a significant positive correlation value between \textit{bugs} and \textit{WIP}, all ten of them had a positive correlation value shown in table \ref{corr:TP}. The Table \ref{DS:corr:TP} shows that the overall correlation value for SI between  \textit{bugs} and \textit{WIP} is 0.4, which is a medium strong correlation. 
+
+
+
+\section{WIP and throughput} 
+There's stated that when lowering WIP-limit, throughput increases. The data from SI stated otherwise. All of teams in SI have a positive correlation to throughput. 
+
+\section{WIP and Churn}
+There is no correlation between WIP and churn, nor the sub variables of churn, shown in Table \ref{DS:corr:WIP}. Two teams have a significante correlation value, team two with a value of -.710 and team four with a value of .66. Based on these data, there's safe to say that the WIP-limit don't matter in case of churn. 
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%% appendices %%%%%%%%%%%%%%%%%%% 
 \begin{appendices}
