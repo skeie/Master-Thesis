@@ -705,8 +705,14 @@ The data set contains thirty columns with different data for each task, mostly o
 \end{table}
 
 \newpage
+The \textbf{Date from} column consist of dates form when tasks where created. 
+The \textbf{Date to} column consist of all of the dates when tasks where marked as finished.
+The \textbf{Lines added}, \textbf{Lines Modified} and \textbf{Lines Deleted} columns contains the amount of lines added, modified or deleted in order to finished the task.
+The \textbf{Type} column consist of a string that has the value as either "Bug" or "Feature".
+The \textbf{Lead time} column consist of the lead time value. 
 
 The data from SI was analyzed on team level. The data from SI was analyzed using the program, which will compute the variables shown in table \ref{des} for all of the teams.
+\newpage
 \begin{table}[htbp]
 \begin{center}
     \begin{tabular}{| l | p{5cm} |  p{5cm} |}
@@ -724,12 +730,7 @@ The data from SI was analyzed on team level. The data from SI was analyzed using
 \label{des} %% desription
 \end{center}
 \end{table}
-\newpage
-The \textbf{Date from} column consist of dates form when tasks where created. 
-The \textbf{Date to} column consist of all of the dates when tasks where marked as finished.
-The \textbf{Lines added}, \textbf{Lines Modified} and \textbf{Lines Deleted} columns contains the amount of lines added, modified or deleted in order to finished the task.
-The \textbf{Type} column consist of a string that has the value as either "Bug" or "Feature".
-The \textbf{Lead time} column consist of the lead time value. 
+
  
 Both the variables churn and throughput is split up in two sub variables with suffix of "Feature" and "Bug". The variable with suffix of "Feature" means tasks labeled with type "feature" are the only one who is counted. The same goes for variables with suffix "Bug". The "Bugs finished, quarter" variable represents how many tasks labeled "Bug" that are finished within the same quarter as it was created.  The "Avg days backlog, bug" variable represent the average number of days bugs are in backlog before it pulled out. These two variables are used as an indicator of the workload together with churn.   
 
@@ -912,11 +913,13 @@ Figure \ref{wip_timeline}  shows tasks id's in the y-axis and dates in the x-axi
 In this example dates from table \ref{wt:2}  will be used to illustrate how the algorithm measure WIP.  The figure \ref{wip_timeline} visualize WIP for each date.
 %skrive om tabellen
 \begin{figure}[ht!]
+ \begin{adjustwidth}{-1.5cm}{}
 \centering
 \hspace*{-1in}
 \includegraphics[width=21cm,trim=4 8 8 4,clip]{Picture/wip_example.jpg}
 \caption{Illustrating the WIP timeline for example stated in section \ref{sec:Example}}
 \label{wip_timeline}
+\end{adjustwidth}
 \end{figure}
 
 \newpage
@@ -1764,7 +1767,9 @@ In Table \ref{DS:corr:Churn}, if the sub variables of churn are left out of, the
 
 
 \section{Future work}
-The conclusion from this thesis is made on one case study.  
+The conclusion from this thesis is made on one case study. I would recommend to do the same calculation as in this thesis with another data set and compare the outcome. I would also suggest an different approach as looking more deeply into the relationship between \textit{WIP} and  \textit{team size}. In this thesis the mean number of employees per quarter's number used for measurements. I suggest one measure the number of employees working on each task and take the mean value for each quarter and measure it up agains the value in this thesis. 
+
+I will also suggest to to look at the values up against release dates. The number of WIP's, throughput, bugs et cetera usually decrease around release date,  which could cause bias in the data.
 
 %%%%%%%%%%%%%%%%%%%%%%%% appendices %%%%%%%%%%%%%%%%%%% 
 \begin{appendices}
