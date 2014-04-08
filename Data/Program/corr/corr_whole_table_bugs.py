@@ -28,8 +28,8 @@ def diagonal_data(list, index):
 	Churn.append(list[7])
 	Churn_ft.append(list[8])
 	Churn_bugs.append(list[9])
-	Team.append(list[10])
-	print list[10]
+	#Team.append(list[10])
+	Team.append(1)
 
 def makeFloat(list):
 	index = None
@@ -103,9 +103,9 @@ def writeToFile():
 	
 	print tmp
 def writeToDS():
-	tmp = 'WIP, Throughput, Throughput_ft, Throughput_bug, precent_bugs, Average_days_in_backlog_bugs, leadtime, Churn, Churn_ft, Churn_bugs, Team_size\n'
+	tmp = 'WIP, Throughput, Throughput_ft, Throughput_bug, precent_bugs, Average_days_in_backlog_bugs, leadtime, Churn, Churn_ft, Churn_bugs\n'
 	for i in xrange(len(Throughput)):
-		tmp += formatItem(WIP[i]) + ", " + formatItem(Throughput[i]) + ", "+formatItem(Throughput_ft[i])+","+formatItem(Throughput_bug[i])+","+formatItem(precent_bugs[i])+","+formatItem(Average_days_in_backlog_bugs[i])+","+formatItem(leadtime[i])+","+formatItem(Churn[i])+","+formatItem(Churn_ft[i])+","+formatItem(Churn_bugs[i])+formatItem(Team[i])+"\n"
+		tmp += formatItem(WIP[i]) + ", " + formatItem(Throughput[i]) + ", "+formatItem(Throughput_ft[i])+","+formatItem(Throughput_bug[i])+","+formatItem(precent_bugs[i])+","+formatItem(Average_days_in_backlog_bugs[i])+","+formatItem(leadtime[i])+","+formatItem(Churn[i])+","+formatItem(Churn_ft[i])+","+formatItem(Churn_bugs[i])+"\n"
 	with open('output.csv', 'w') as f:
 		f.write(tmp)
 

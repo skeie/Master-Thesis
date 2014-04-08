@@ -28,7 +28,8 @@ def diagonal_data(list, index):
 
 	Churn.append(list[8])
 	Churn_ft.append(list[9])
-	Churn_bugs.append(list[10])
+	#Churn_bugs.append(list[10])
+	Team.append(1)
 
 def makeFloat(list):
 	index = None

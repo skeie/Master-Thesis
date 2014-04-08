@@ -37,8 +37,8 @@ with open(sys.argv[1], mode="r") as f:
 				if -0.00001 < num < 0.00001:
 					output+="0 &"
 				else:
-					tempz = ("%.1f" % num)
-					if tempz.split('.')[1] == '0':
+					tempz = ("%.2f" % num)
+					if tempz.split('.')[1] == '00':
 						output+= tempz.split('.')[0]+" & "
 					else:		
 						output += str(tempz)+stars(val)+" & "

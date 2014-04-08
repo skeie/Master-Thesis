@@ -47,8 +47,8 @@ def writeOut(list):
 	list = list[6:]	
 	tmp+= "Throughput bug "+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
-	tmp+= "Bugs "+writeOutTable(list,counter)+"\n"
-	list = list[6:]	
+	#tmp+= "Bugs "+writeOutTable(list,counter)+"\n"
+	#list = list[6:]	
 	tmp+= "Bugs finished, quarter "+writeOutTable(list,counter)+"\n"
 	list = list[6:]
 	tmp+= "Avg days backlog, bugs "+writeOutTable(list,counter)+"\n"
@@ -59,10 +59,10 @@ def writeOut(list):
 	list = list[6:]
 	tmp+= "Churn ft "+writeOutTable(list,counter)+"\n"
 	list = list[6:]
-	tmp+= "Churn bug "+writeOutTable(list, counter)+"\n"
+	tmp+= "Churn bug "+writeOutTableSpecial(list)+"\n"
 	list = list[6:]
-	tmp+= "Team size "+writeOutTableSpecial(list)+"\\\\ \\hline"
-	list = list[6:]
+	#tmp+= "Team size "+writeOutTableSpecial(list)+"\\\\ \\hline"
+	#list = list[6:]
 	tmp+= "\n\\end{tabular} \n \caption{Descriptive Statistic - Correlation - Throughput} \n \label{DS:corr:TP} \n "
 	tmp+= "\\end{table}  \n\n"
 	print tmp
