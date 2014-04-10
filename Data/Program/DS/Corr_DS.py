@@ -32,7 +32,7 @@ def writeOutTableSpecial(list):
 	tmp =""
 	for i, element in enumerate(list):
 		tmp += " & "+str(element[0])
-	return tmp
+	return tmp + "\\\\ \\hline"
 
 
 def writeOut(list):
@@ -47,23 +47,23 @@ def writeOut(list):
 	list = list[6:]	
 	tmp+= "Throughput bug "+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
-	#tmp+= "Bugs "+writeOutTable(list,counter)+"\n"
-	#list = list[6:]	
+	tmp+= "Bugs "+writeOutTable(list,counter)+"\n"
+	list = list[6:]	
 	tmp+= "Bugs finished, quarter "+writeOutTable(list,counter)+"\n"
 	list = list[6:]
 	tmp+= "Avg days backlog, bugs "+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
 	tmp+="Lead time"+writeOutTable(list,counter)+"\n"
 	list = list[6:]	
-	tmp+= "Churn "+writeOutTable(list,counter)+"\n"
-	list = list[6:]
+	#tmp+= "Churn "+writeOutTable(list,counter)+"\n"
+	#list = list[6:]
 	tmp+= "Churn ft "+writeOutTable(list,counter)+"\n"
 	list = list[6:]
 	tmp+= "Churn bug "+writeOutTableSpecial(list)+"\n"
 	list = list[6:]
 	#tmp+= "Team size "+writeOutTableSpecial(list)+"\\\\ \\hline"
 	#list = list[6:]
-	tmp+= "\n\\end{tabular} \n \caption{Descriptive Statistic - Correlation - Throughput} \n \label{DS:corr:TP} \n "
+	tmp+= "\\end{tabular} \n \caption{Descriptive Statistic - Correlation - Throughput} \n \label{DS:corr:TP} \n "
 	tmp+= "\\end{table}  \n\n"
 	print tmp
 
