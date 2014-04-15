@@ -12,6 +12,7 @@ Churn_ft = []
 Churn_bugs = []
 Churn_average = []
 Bugs = []
+Team_size = []
 
 
 def diagonal_data(list, index):
@@ -31,6 +32,7 @@ def diagonal_data(list, index):
 	Churn.append(list[8])
 	Churn_ft.append(list[9])
 	Churn_bugs.append(list[10])
+	Team_size.append(list[11])
 
 def makeFloat(list):
 	index = None
@@ -64,7 +66,7 @@ def writeOutList(list):
 
 def writeToFile():
 	tmp = "\\begin{table}[!htbp] \n \centering \n \\begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|} \n\\hline \n"
-	tmp+=" &  \\bf{WIP} & \\bf{TP} & \\bf{TP_ft} & \\bf{TP_bug} & \\bf{Bugs} & \\bf{Bugs, qrt} & \\bf{Avg backlog bugs} & \\bf{Lead time} & \\bf{Churn} & \\bf{Churn ft} & \\bf{Churn bug}\\\\ \\hline\n"
+	tmp+=" &  \\bf{WIP} & \\bf{TP} & \\bf{TP_ft} & \\bf{TP_bug} & \\bf{Bugs} & \\bf{Bugs, qrt} & \\bf{Avg backlog bugs} & \\bf{Lead time} & \\bf{Churn} & \\bf{Churn ft} & \\bf{Churn bug} & \\bf{Team size}\\\\   \\hline\n"
 	tmp+= "WIP &"+writeOutList(WIP)
 	tmp+= "Throughput &"+ writeOutList(Throughput)
 	tmp+= "Throughput Feature &" + writeOutList(Throughput_ft)
@@ -76,6 +78,7 @@ def writeToFile():
 	tmp+= "Churn &"+writeOutList(Churn)
 	tmp+= "Churn feature &" + writeOutList(Churn_ft)
 	tmp+= "Churn bug &"+writeOutList(Churn_bugs)
+	tmp+= "Team Size &"+writeOutList(Team_size)
 	tmp+= "\n\\end{tabular} \n \caption{Correlation - Leadtime} \n \label{corr:WIP} \n "
 	tmp+= "\\centerline {* Correlation is significant at the 0.05 level (2-tailed).} \n"
 	tmp+= "\\centerline{** Correlation is significant at the 0.01 level (2-tailed).} \n"
