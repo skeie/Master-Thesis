@@ -15,6 +15,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.8}Pseudocode example of how throughput is measured}{34}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.9}Pseudocode example of how throughput is measured}{34}
+\contentsline {lstlisting}{\numberline {4.9}Pseudocode example of how throughput is measured}{35}
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.10}Pseudocode example of lead time is measured}{35}
