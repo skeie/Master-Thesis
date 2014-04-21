@@ -1140,7 +1140,7 @@ To get the statistics on number of bugs finished the same quarter as it was reco
 \label{sub:sec:adbb}
 To get the statistics on the average number of days bugs are in backlog per quarter, the program measures the number of days between the created date and the date from value. The number of days is saved together with the task. SPSS is used on the output of the program to measure the average days backlog for bugs variable.
 
-The sub variables, Bugs finished, quarter and Average days backlog, bug are used as a help variables. These variables will not have their own correlation table. 
+The sub variables, Bugs finished, quarter and Average days backlog, bug are used as help variables. These variables will not have their own correlation table. 
 % If bugs are longer in backlog or the average days of bugs in backlog is decreasing, depends on the bugs, throughput or the lead time variable. 
 
 
@@ -1149,13 +1149,13 @@ The sub variables, Bugs finished, quarter and Average days backlog, bug are used
 \label{ch:res}
 The first correlation result showed a medium-high correlation relationship between \textit{team size} and both \textit{WIP} and \textit{throughput}. Based on the correlation values, it was hard to find any evidence if WIP-limit matters in software development. This resulted in a new analyze where each variable for each quarter was divided by the corresponding team size. 
 
-Each section except Section \ref{sec:corr:tz} "Team size"  and Section \ref{sec:corr:alc} "All teams combined" is presented with two correlation tables and two corresponding descriptive statistics tables, one correlation table and descriptive statistic table for the first analysis and the same two tables are presented for the second analyze. {Team size} is presented with one correlation table and one descriptive statistic table, while all teams combined is represent with one correlation table for the two analyzes. The content of the sections will consist of highlighting the variables with a significant correlation.
+Each section except Section \ref{sec:corr:tz} "Team size"  and Section \ref{sec:corr:alc} "All teams combined" is presented with two correlation tables and two corresponding descriptive statistics tables, one correlation table and descriptive statistic table for the first analysis and the same two tables for the second analyze. {Team size} is presented with one correlation table and one descriptive statistic table, while all teams combined is represent with one correlation table for the two analyzes. The content of the sections will consist of highlighting the variables with a significant correlation.
 \section{Correlation - WIP}
 \label{sec:corr:WIP}
 Table \ref{corr:WIP} shows the first correlation tables for \textit{WIP}. The variables are listed vertically in the correlation table. Horizontally are the corresponding teams. The team names are shortened, team one is shortened to T1, team two is shortened to T2 and so on.
-The correlation Table \ref{corr:WIP} shows \textbf{team one} have a positive correlation to \textit{throughput}, \textit{throughput feature}, \textit{bugs}, \textit{lead time}, \textit{churn feature} and \textit{team size}. \textit{Throughput feature} and \textit{throughput bug} is subset of \textit{throughput}. It is natural that these sub variables have a significant positive correlation to \textit{WIP}, when \textit{throughput} has. That's not the case for all teams. The relationship between the sub variables are presented in Section \ref{sec:diss:sv}.
+The correlation Table \ref{corr:WIP} shows \textbf{team one} has a positive correlation to \textit{throughput}, \textit{throughput feature}, \textit{bugs}, \textit{lead time}, \textit{churn feature} and \textit{team size}.
 
-\textbf{Team two} have a significant negative correlation value to \textit{churn} and \textit{churn bug}. \textbf{Team three} have a positive correlation value to all \textit{throughput} variables and \textit{team size}. \textbf{Team four} have significant positive correlation to all variables except \textit{team size}. \textbf{Team five} have positive correlation to \textit{throughput bug}, \textit{lead time} and \textit{team size}.
+\textbf{Team two} has a significant negative correlation value to \textit{churn} and \textit{churn bug}. \textbf{Team three} has a positive correlation value to all \textit{throughput} variables and \textit{team size}. \textbf{Team four} has significant positive correlation to all variables except \textit{team size}. \textbf{Team five} has positive correlation to \textit{throughput bug}, \textit{lead time} and \textit{team size}.
 
 
 \begin{table}[H]
@@ -1183,13 +1183,14 @@ The correlation Table \ref{corr:WIP} shows \textbf{team one} have a positive cor
 \end{adjustwidth}
 \end{table}
 
-\textbf{Team six} have a positive correlation to \textit{throughput, throughput feature, churn bug} and \textit{team size}. \textbf{Team seven} have a positive correlation to \textit{throughput, throughput feature}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team eight} have positive correlation value to \textit{throughput feature} and \textit{team size}. \textbf{Team nine} have positive correlation value to the three \textit{throughput} variables and \textit{bugs}. \textbf{Team ten} have a positive correlation to \textit{throughput, throughput bug, lead time} and \textit{team size}. 
+\textbf{Team six} has a positive correlation to \textit{throughput, throughput feature, churn bug} and \textit{team size}. \textbf{Team seven} has a positive correlation to \textit{throughput, throughput feature}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team eight} has positive correlation value to \textit{throughput feature} and \textit{team size}. \textbf{Team nine} has positive correlation value to the three \textit{throughput} variables and \textit{bugs}. \textbf{Team ten} has a positive correlation to \textit{throughput, throughput bug, lead time} and \textit{team size}. 
 
-There is a gap in the relationship between the \textit{churn} variables and \textit{throughput} variables for both team \textbf{one} and \textbf{six}. The \textit{throughput} variables for team \textbf{five, seven, eight} and \textbf{ten} also have a gap, the same goes for the \textit{churn} variables for team \textbf{team two},  according to Table \ref{corr:WIP}.  The relationship between this variables are explained in Section \ref{sec:diss:sv}.
+\textit{Throughput feature} and \textit{throughput bug} is subset of \textit{throughput}. It is natural that these sub variables have a significant positive correlation to \textit{WIP}, when \textit{throughput} has. That's not the case for all teams. 
+There is a gap in the relationship between the \textit{churn} variables and \textit{throughput} variables for both team \textbf{one} and \textbf{six}. The \textit{throughput} variables for team \textbf{five, seven, eight} and \textbf{ten} also have a gap, the same goes for the \textit{churn} variables for team \textbf{team two},  showed in Table \ref{corr:WIP}.  The relationship between these variables are explained in Section \ref{sec:diss:sv}.
 
 
-The descriptive statistics tables in each section are based on summary of the correlation values. The table shows number of values measured (N), mean, median, standard deviation (Std.dev), maximum (max)  and minimum (min) values from the correlation tables.
-In Table \ref{DS:corr:WIP}, the mean correlation for \textit{throughput} and \textit{team size} is 0.6. The mean correlation value for \textit{lead time, throughput feature, throughput bug} is 0.5. The \textit{bug} variables has a mean correlation value of 0.4. The rest of the values have an mean value of 0.3 or less.
+The descriptive statistics tables in each section are based on summary of the correlation values. The table shows number of values measured (N), mean, median, standard deviation (Std.dev), maximum (Max)  and minimum (Min) values from the correlation tables.
+In Table \ref{DS:corr:WIP}, the mean correlation for \textit{throughput} and \textit{team size} is 0.6. The mean correlation value for \textit{lead time, throughput feature, throughput bug} is 0.5. The \textit{bug} variables have a mean correlation value of 0.4. The rest of the values have a mean value of 0.3 or less.
 \begin{minipage}[t]{\linewidth}
 \begin{table}[H]
  \centering
@@ -1213,7 +1214,7 @@ Team size  & 10 & 0.6 & 0.6 & 0.2 & 0.8 & 0.1\\ \hline
  \end{table}
 \end{minipage} 
 
-In Table \ref{corr:WIP:V2}, \textbf{team two} have a significant positive correlation between \textit{WIP} and \textit{throughput}, \textit{throughput bug},  \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team three} has a significant positive correlation value between \textit{WIP} and \textit{throughput, throughput feature} and a significant negative correlation for \textit{bugs finished, quarter}. \textbf{Team four} have positive correlation between all variables except \textit{bugs}, \textit{avg days in backlog, bugs} and \textit{churn bug}. 
+In Table \ref{corr:WIP:V2}, \textbf{team two} has a significant positive correlation between \textit{WIP} and \textit{throughput}, \textit{throughput bug},  \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team three} has a significant positive correlation value between \textit{WIP} and \textit{throughput, throughput feature} and a significant negative correlation for \textit{bugs finished, quarter}. \textbf{Team four} has a positive correlation between all variables except \textit{bugs}, \textit{avg days in backlog, bugs} and \textit{churn bug}. 
 
 
 
@@ -1242,9 +1243,9 @@ In Table \ref{corr:WIP:V2}, \textbf{team two} have a significant positive correl
 \end{adjustwidth}
 \end{table}
 
-\textbf{Team seven} have a significant positive correlation for the three variables \textit{bugs}, \textit{bugs, finished quarter} and \textit{lead time}. \textbf{Team eight} has a significant correlation for \textit{bugs finished, quarter} and \textit{churn bug}. \textbf{Team nine} have a significant positive correlation to all \textit{throughput} variables. \textbf{Team ten} have a significant negative correlation for \textit{avg days in backlog, bugs}.
+\textbf{Team seven} has a significant positive correlation for the three variables \textit{bugs}, \textit{bugs, finished quarter} and \textit{lead time}. \textbf{Team eight} has a significant correlation for \textit{bugs finished, quarter} and \textit{churn bug}. \textbf{Team nine} has a significant positive correlation to all \textit{throughput} variables. \textbf{Team ten} have a significant negative correlation for \textit{avg days in backlog, bugs}.
 
-In Table \ref{corr:WIP:V2}, only two out the \textit{throughput} variables for team \textbf{two} and \textbf{three} had a significant relationship. \textbf{Team four} have a positive correlation for two of the \textit{churn} variables, \textbf{team eight} has significant correlation to one \textit{churn variable}. The relationship between these sub variables are explained in Section \ref{sec:diss:sv}. In the descriptive statistic Table \ref{DS:corr:WIP:v2}, \textit{throughput} has a average correlation value of 0.4 based on all the teams throughput variable, while rest of the variables except \textit{throughputs} sub variables has an average correlation values 0.2 or less. 
+In Table \ref{corr:WIP:V2}, team \textbf{two} and \textbf{three} have a significant correlation value for two out of  three \textit{throughput} variables. \textbf{Team four} has a positive correlation for two of the \textit{churn} variables and \textbf{team eight} has significant correlation to one \textit{churn} variable. The relationships between these sub variables are explained in Section \ref{sec:diss:sv}. The descriptive statistic Table \ref{DS:corr:WIP:v2} shows that \textit{throughput} has a average correlation value of 0.4, based on all the teams throughput variable. The rest of the variables except \textit{throughputs} sub variables has an average correlation values 0.2 or less. 
 
 
 
@@ -1272,7 +1273,7 @@ Churn bug  & 10 & -0.1 & -0.1 & 0.4 & 0.7 & -0.5\\ \hline
 \section{Correlation - Lead time}
 \label{sec:corr:lt}
 
-Table \ref{corr:lt} show the first correlation table for \textit{lead time}. \textbf{Team one} have a positive correlation for all variables except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug}. \textbf{Team two} have a positive correlation value to \textit{throughput} and \textit{throughput bug}. \textbf{Team three} have a positive correlation value to \textit{bugs} and a negative correlation value to \textit{churn bug}. \textbf{Team four} have a significant positive correlation value to \textit{WIP}, the three \textit{throughput} variables, \textit{churn} and \textit{churn feature}. \textbf{Team five} has a significant correlation value to \textit{WIP}.
+Table \ref{corr:lt} show the first correlation table for \textit{lead time}. \textbf{Team one} has a positive correlation for all variables except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug}. \textbf{Team two} has a positive correlation value to \textit{throughput} and \textit{throughput bug}. \textbf{Team three} has a positive correlation value to \textit{bugs} and a negative correlation value to \textit{churn bug}. \textbf{Team four} has a significant positive correlation value to \textit{WIP}, the three \textit{throughput} variables, \textit{churn} and \textit{churn feature}. \textbf{Team five} has a significant correlation value to \textit{WIP}.
 
 \begin{minipage}[t]{\linewidth}
 \begin{table}[H]
@@ -1301,9 +1302,9 @@ Table \ref{corr:lt} show the first correlation table for \textit{lead time}. \te
 \end{table}
 \end{minipage}
 
-\textbf{Team seven} has a significant positive correlation value to \textit{WIP}, \textit{bugs} and \textit{Bugs finished, quarter}. \textbf{Team eight} have a significant correlation value to \textit{throughput feature}, \textit{churn} and \textit{churn feature}. \textbf{Team ten} has a significant correlation value with \textit{WIP}.
+\textbf{Team seven} has a significant positive correlation value to \textit{WIP}, \textit{bugs} and \textit{bugs finished, quarter}. \textbf{Team eight} has a significant correlation value to \textit{throughput feature}, \textit{churn} and \textit{churn feature}. \textbf{Team ten} has a significant correlation value with \textit{WIP}.
 
-Table \ref{corr:lt} display the variances between the \textit{throughput} variables for team \textbf{one, two} and \textit{eight}. There is also a variances for the \textit{churn} variables for team \textbf{one, three, four} and \textbf{eight}. The relationship between these variables are explained in Section \ref{sec:diss:sv}. Table \ref{DS:corr:LT} displays an average correlation value of 0.5 for \textit{WIP} and \textit{throughput}, \textit{throughput feature} has the average value of 0.4 and \textit{throughput bug, bugs, churn feature}, \textit{team size} have the average value of 0.3.
+Table \ref{corr:lt} displays the variances between the \textit{throughput} variables for team \textbf{one, two} and \textbf{eight}. There is also variance for the \textit{churn} variables for team \textbf{one, three, four} and \textbf{eight}. The relationships between these variables are explained in Section \ref{sec:diss:sv}. Table \ref{DS:corr:LT} displays the average correlation value of 0.5 for \textit{WIP} and \textit{throughput}. \textit{Throughput feature} has the average value of 0.4 and \textit{throughput bug, bugs, churn feature} and \textit{team size} have the average value of 0.3.
 
 
 
@@ -1328,7 +1329,7 @@ Team size  & 10 & 0.3 & 0.4 & 0.3 & 0.6 & -0.3\\ \hline
  \label{DS:corr:LT}
  \end{table}
 
-The Table \ref{corr:LT:V2} shows the second correlation table. \textbf{Team one} have significant positive correlation for \textit{bugs}, \textit{bugs finished, quarter}, \textit{churn} and \textit{churn bug}. \textbf{Team two} have a significant positive correlation for  \textit{WIP}, \textit{throughput} variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{churn bug}.  \textbf{Team four} has a significant positive correlation between \textit{WIP}, the \textit{throughput} variables, \textit{churn} and \textit{churn feature}. \textbf{Team five} have significant correlation value to \textit{bugs}, \textit{bugs, finished, quarter}, \textit{avg days in backlog, bugs}, \textit{churn}, \textit{churn bug}, \textit{throughput} and \textit{throughput bug}.
+Table \ref{corr:LT:V2} displays the second correlation table. \textbf{Team one} has significant positive correlation for \textit{bugs}, \textit{bugs finished, quarter}, \textit{churn} and \textit{churn bug}. \textbf{Team two} has a significant positive correlation for  \textit{WIP}, \textit{throughput} variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{churn bug}.  \textbf{Team four} has a significant positive correlation between \textit{WIP}, the \textit{throughput} variables, \textit{churn} and \textit{churn feature}. \textbf{Team five} has significant correlation value to \textit{bugs}, \textit{bugs, finished, quarter}, \textit{avg days in backlog, bugs}, \textit{churn}, \textit{churn bug}, \textit{throughput} and \textit{throughput bug}.
 
 
 \begin{table}[H]
@@ -1355,9 +1356,9 @@ The Table \ref{corr:LT:V2} shows the second correlation table. \textbf{Team one}
 \end{adjustwidth}
 \end{table}
 
-\textbf{Team six} have a significant correlation for \textit{throughput} and \textit{throughput feature}. \textbf{Team seven} have a significant correlation for \textit{WIP}, \textit{bugs} and \textit{bugs, finished, quarter}. \textbf{Team eight} has a significant correlation for \textit{throughput feature}, \textit{churn} and \textit{churn feature}. \textbf{Team ten} has a significant positive correlation for \textit{throughput}, \textit{throughput bug} and \textit{bugs}.  
+\textbf{Team six} has a significant correlation for \textit{throughput} and \textit{throughput feature}. \textbf{Team seven} has a significant correlation for \textit{WIP}, \textit{bugs} and \textit{bugs, finished, quarter}. \textbf{Team eight} has a significant correlation for \textit{throughput feature}, \textit{churn} and \textit{churn feature}. \textbf{Team ten} has a significant positive correlation for \textit{throughput}, \textit{throughput bug} and \textit{bugs}.  
 
-The \textit{throughput} relationship for team \textbf{five, six, eight} and \textbf{ten} show variances according to Table \ref{corr:LT:V2}. \textit{Churn} variables also show variances for team \textbf{one, two, four, five} and \textbf{eight}. The relationship between the variables are explained in Section \ref{sec:diss:sv}.
+The \textit{throughput} relationship for team \textbf{five, six, eight} and \textbf{ten} show variances according to Table \ref{corr:LT:V2}. \textit{Churn} variables also show variances for team \textbf{one, two, four, five} and \textbf{eight}. The relationships between the variables are  explained in Section \ref{sec:diss:sv}.
 The Table \ref{DS:corr:LT:v2} Shows a medium or strong average correlation relationship for \textit{throughput} variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{churn}. 
 
 
@@ -1386,7 +1387,7 @@ Churn bug  & 10 & 0.2 & 0.1 & 0.4 & 1 & -0.2 \\ \hline
 \section{Correlation - Bugs}
 \label{sec:corr:bug}
 This section contains information about the correlation table between the variables and \textit{bugs}. In the first correlation 
-Table \ref{corr:bug} one can see \textbf{team one} have a significant correlation value with all the variables except \textit{throughput bug} \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, and \textit{churn bug}. \textbf{Team two} have a significant correlation with \textit{throughput} and \textit{throughput bug}. \textbf{Team three} have a significant correlation with \textit{WIP}, the \textit{throughput} variables and \textit{lead time}. \textbf{Team four} have a significant correlation value with \textit{WIP} and the \textit{throughput} variables. \textbf{Team five} have a significant correlation value with the \textit{throughput} variables and \textit{team size}. 
+Table \ref{corr:bug}, one can see \textbf{team one} has a significant correlation value with all the variables except \textit{throughput bug} \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, and \textit{churn bug}. \textbf{Team two} has a significant correlation with \textit{throughput} and \textit{throughput bug}. \textbf{Team three} has a significant correlation with \textit{WIP}, the \textit{throughput} variables and \textit{lead time}. \textbf{Team four} has a significant correlation value with \textit{WIP} and the \textit{throughput} variables. \textbf{Team five} has a significant correlation value with the \textit{throughput} variables and \textit{team size}. 
 
 \begin{table}[h]
  \begin{adjustwidth}{-2.5cm}{}
@@ -1412,11 +1413,11 @@ Table \ref{corr:bug} one can see \textbf{team one} have a significant correlatio
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \end{adjustwidth}
 \end{table}
+\newpage
+\textbf{Team six} has a significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team seven} has a significant value with \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team eight} has a significant correlation relationship with \textit{throughput bug} and \textit{churn bug}. \textbf{Team nine} has a significant correlation relationship to \textit{WIP}, the \textit{throughput} variables, \textit{bugs finished, quarter} and \textit{churn feature}. \textbf{Team ten} has significant correlation with \textit{throughput} and \textit{throughput bug}.
 
-\textbf{Team six} have a significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team seven} have a significant value with \textit{bugs finished,quarter} and \textit{lead time}. \textbf{Team eight}  have a significant correlation relationship with \textit{throughput bug} and \textit{churn bug}. \textbf{Team nine} have a significant correlation relationship to \textit{WIP}, the \textit{throughput} variables, \textit{bugs finished, quarter} and \textit{churn feature}. \textbf{Team ten} have significant correlation with \textit{throughput} and \textit{throughput bug}.
-
-Team \textbf{one} and \textbf{eight} have variances in both the \textit{throughput} and \textit{churn} variables according to Table \ref{corr:bug}. \textbf{Team two} and \textbf{ten} also have variances for the \textit{throughput} variables while \textbf{team nine} has a variances between the \textit{churn} variables. The relationship between these variables are explained in Section \ref{sec:diss:sv}.
-In Table \ref{DS:corr:Bugs}, one can see that \textit{WIP} with a average mean value of 0.4 has a medium correlation with \textit{bugs} as stated in Section \ref{corr:WIP}.  \textit{Throughput} and \textit{throughput bug} has the average correlation value of 0.6 and \textit{throughput feature} has the value 0.5. \textit{Bugs finished, quarter}, \textit{avg days backlog, bugs}, \textit{lead time} and \textit{team size} has the average correlation value of 0.3. The \textit{churn} variables has a average correlation value of 0.1 and 0.
+Teams \textbf{one} and \textbf{eight} have variances in both the \textit{throughput} and \textit{churn} variables according to Table \ref{corr:bug}. Teams \textbf{two} and \textbf{ten} also have variances for the \textit{throughput} variables while \textbf{team nine} has a variances between the \textit{churn} variables. The relationship between these variables is explained in  Section \ref{sec:diss:sv}.
+In Table \ref{DS:corr:Bugs}, one can see that \textit{WIP} with a average mean value of 0.4 has a medium correlation with \textit{bugs} as stated in Section \ref{corr:WIP}.  \textit{Throughput} and \textit{throughput bug} has the average correlation value of 0.6 and \textit{throughput feature} has the value 0.5. \textit{Bugs finished, quarter}, \textit{avg days backlog, bugs}, \textit{lead time} and \textit{team size} has the average correlation value of 0.3. The \textit{churn} variables have a average correlation value of 0.1 and 0.
 
 \begin{table} [h]
  \centering
@@ -1439,7 +1440,7 @@ Team size  & 10 & 0.3 & 0.4 & 0.3 & 0.6 & -0.3\\ \hline
  \label{DS:corr:Bugs}
  \end{table}
  \newpage
-The second correlation table for bugs, showed in Table \ref{corr:Bugs:v2} shows \textbf{team one} have a significant correlation value to \textit{throughput bug}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs} and \textit{lead time}. \textbf{Team two} have a significant correlation to all the \textit{throughput} variable and \textit{lead time}. \textbf{Team three} have a significant correlation value to all the \textit{throughput} variables and all the \textit{churn variables}. \textit{Team five} have a significant correlation value to all variables except \textit{WIP}, \textit{throughput feature}, \textit{bugs finished, quarter} and \textit{churn feature}.
+The second correlation table for bugs, showed in Table \ref{corr:Bugs:v2} shows \textbf{team one} has a significant correlation value to \textit{throughput bug}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs} and \textit{lead time}. \textbf{Team two} has a significant correlation to all the \textit{throughput} variable and \textit{lead time}. \textbf{Team three} has a significant correlation value to all the \textit{throughput} variables and all the \textit{churn variables}. \textit{Team five} has a significant correlation value to all variables except \textit{WIP}, \textit{throughput feature}, \textit{bugs finished, quarter} and \textit{churn feature}.
 
 \FloatBarrier
 \begin{table}[H]
@@ -1466,9 +1467,9 @@ The second correlation table for bugs, showed in Table \ref{corr:Bugs:v2} shows 
 \end{adjustwidth}
 \end{table}
 
-\textbf{Team six} have significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team seven} have a significant relationship with \textit{WIP}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team eight} have a significant correlation value to \textit{throughput}, \textit{throughput bug}, \textit{bugs finished, quarter} and \textit{churn bug}. \textbf{Team nine} have a significant correlation value to \textit{throughput} and \textit{throughput bug}. \textbf{Team ten} have a significant correlation value to \textit{throughput, throughput bug}, \textit{bugs finished, quarter} and \textit{lead time}.
+\textbf{Team six} has significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team seven} has a significant relationship with \textit{WIP}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team eight} has a significant correlation value to \textit{throughput}, \textit{throughput bug}, \textit{bugs finished, quarter} and \textit{churn bug}. \textbf{Team nine} has a significant correlation value to \textit{throughput} and \textit{throughput bug}. \textbf{Team ten} has a significant correlation value to \textit{throughput, throughput bug}, \textit{bugs finished, quarter} and \textit{lead time}.
 
-\textit{Throughput} and \textit{Churn} for team \textbf{five} and \textbf{eight} shows variance according to Table \ref{corr:Bugs:v2}.  Team \textbf{one} and \textbf{six} shows variance between the \textit{throughput variables}. The variables relationship is explained in Section \ref{sec:diss:sv}.Table \ref{DS:corr:Bugs:v2} shows a medium or strong relationship for \textit{throughput}, \textit{throughput bug}, \textit{bugs finished, quarter}, \textit{avg days backlog, days}, \textit{lead time} and \textit{churn bug}. 
+\textit{Throughput} and \textit{churn} for team \textbf{five} and \textbf{eight} shows variance according to Table \ref{corr:Bugs:v2}.  Team \textbf{one} and \textbf{six} shows variance between the \textit{throughput variables}. The variables relationships are explained in Section \ref{sec:diss:sv}. Table \ref{DS:corr:Bugs:v2} displays a medium or strong relationship for \textit{throughput}, \textit{throughput bug}, \textit{bugs finished, quarter}, \textit{avg days backlog, days}, \textit{lead time} and \textit{churn bug}. 
 
 \FloatBarrier
 \begin{table}[H]
@@ -1494,10 +1495,10 @@ Churn bug  & 10 & 0.4 & 0.4 & 0.3 & 0.8 & -0.2\\ \hline
 
 \section {Correlation - Throughput}
 \label{sec:corr:TP}
-This section shows the correlation table between \textit{throughput} and the variables. The first correlation Table \ref{corr:TP} shows that \textit{Throughput} have a significant correlation to either \textit{throughput feature} or \textit{throughput bug} for each of the teams. The teams \textbf{three, four, five, seven} and \textbf{nine} have a positive correlation to both the \textit{throughput} sub variables. For team \textbf{one, six} and \textbf{eight} there is a variance between \textit{throughput feature} and \textit{throughput}.  For team \textbf{two} and \textbf{ten} is the a variance between \textit{throughput bug} and \textbf{throughput}, according to Table \ref{corr:TP}. The relationship between the \textit{throughput} variables that have a variance are explained in Section \ref{sec:diss:sv}.
+This section shows the correlation table between \textit{throughput} and the variables. The first correlation Table \ref{corr:TP} displays that \textit{Throughput} has a significant correlation to either \textit{throughput feature} or \textit{throughput bug} for each of the teams. The teams \textbf{three, four, five, seven} and \textbf{nine} have a positive correlation to both the \textit{throughput} sub variables. For team \textbf{one, six} and \textbf{eight} there is a variance between \textit{throughput feature} and \textit{throughput}.  For team \textbf{two} and \textbf{ten} is the variance between \textit{throughput bug} and \textbf{throughput}, according to Table \ref{corr:TP}. The relationships between the \textit{throughput} variables that have a variance are explained in Section \ref{sec:diss:sv}.
 
 
-\textbf{Team one} have significant correlation to \textit{bugs, lead time, churn feature} and \textit{team size}. Team \textbf{three} have significant correlation to \textit{WIP, bugs} and \textit{lead time}. \textbf{Team four} have a significant correlation to \textit{WIP} and \textit{bugs}.  \textbf{Team five} have a significant correlation to \textit{bugs} and \textit{team size}.
+\textbf{Team one} has significant correlation to \textit{bugs, lead time, churn feature} and \textit{team size}. Team \textbf{three} has significant correlation to \textit{WIP, bugs} and \textit{lead time}. \textbf{Team four} has a significant correlation to \textit{WIP} and \textit{bugs}.  \textbf{Team five} has a significant correlation to \textit{bugs} and \textit{team size}.
 
 \begin{table}[!htbp]
  \begin{adjustwidth}{-1.5cm}{}
@@ -1525,11 +1526,11 @@ This section shows the correlation table between \textit{throughput} and the var
 \end{table}
 \newpage
 
-\textbf{Team six} have a significant correlation to \textit{WIP} and \textit{team size}. \textbf{Team seven} has a significant correlation value to \textit{WIP}. \textbf{Team eight} have a significant correlation value to \textit{churn} and \textit{team size}. \textbf{Team nine} have significant correlation to \textit{bugs} and \textit{bugs finished, quarter}. \textbf{Team ten} have a significant correlation value to \textit{bugs}, \textit{bugs finished, quarter} and \textit{team size}. 
+\textbf{Team six} has a significant correlation to \textit{WIP} and \textit{team size}. \textbf{Team seven} has a significant correlation value to \textit{WIP}. \textbf{Team eight} has a significant correlation value to \textit{churn} and \textit{team size}. \textbf{Team nine} has significant correlation to \textit{bugs} and \textit{bugs finished, quarter}. \textbf{Team ten} has a significant correlation value to \textit{bugs}, \textit{bugs finished, quarter} and \textit{team size}. 
 
 
-For team \textbf{one, four, six} and \textbf{eight} is there a variance between the \textit{churn} variables, the relationship between these variables are explained in Section \ref{sec:diss:sv}.
-According to Table \ref{DS:corr:TP}, \textit{bugs} has a strong positive correlation with \textit{throughput} as stated Section \ref{sec:corr:bug}. \textit{WIP} has a strong positive relationship with \textit{throughput}, which were stated in Section \ref{sec:corr:WIP}. \textit{Team size} and \textit{lead time} has a medium-strong relationship to \textit{throughput}. The sub variables \textit{throughput feature} (0.8) and \textit{throughput bug} (0.7) has  a strong and \textit{throughput}. The rest of the values has the values of 0.3 or lower.
+For team \textbf{one, four, six} and \textbf{eight} is there a variance between the \textit{churn} variables, the relationships between these variables are explained in Section \ref{sec:diss:sv}.
+According to Table \ref{DS:corr:TP}, \textit{bugs} has a strong positive correlation with \textit{throughput} as stated Section \ref{sec:corr:bug}. \textit{WIP} has a strong positive relationship with \textit{throughput}, which were stated in Section \ref{sec:corr:WIP}. \textit{Team size} and \textit{lead time} has a medium-strong relationship to \textit{throughput}. The sub variables \textit{throughput feature} (0.8) and \textit{throughput bug} (0.7) has  a strong and \textit{throughput}. The rest of the values have the values of 0.3 or lower.
 
 \begin{table}[!htbp]
  \centering
@@ -1552,12 +1553,12 @@ Team size  & 10 & 0.5 & 0.6 & 0.3 & 0.9 & 0.1\\ \hline
  \label{DS:corr:TP}
  \end{table}
  \newpage
- The second correlation table, Table \ref{corr:TP:V2} shows \textit{Throughput} have a significant correlation to either \textit{throughput feature} or \textit{throughput bug} for each of the teams. The teams \textbf{two, three, four} and \textbf{nine} have a positive correlation to both the \textit{throughput} sub variables. For team \textbf{five, eight} and \textbf{ten} there is a variance between \textit{throughput feature} and \textit{throughput}.  For team \textbf{one, six} and \textbf{seven} is there a variance between \textit{throughput bug} and \textbf{throughput}, according to Table \ref{corr:TP:V2}. The relationship between the \textit{throughput} variables that have a variance are explained in Section \ref{sec:diss:sv}.
+ 
+The second correlation table, Table \ref{corr:TP:V2} shows \textit{throughput} has a significant correlation to either \textit{throughput feature} or \textit{throughput bug} for each of the teams. The teams \textbf{two, three, four} and \textbf{nine} have a positive correlation to both the \textit{throughput} sub variables. For team \textbf{five, eight} and \textbf{ten} there is a variance between \textit{throughput feature} and \textit{throughput}.  For team \textbf{one, six} and \textbf{seven} is there a variance between \textit{throughput bug} and \textit{throughput}, according to Table \ref{corr:TP:V2}. The relationships between the \textit{throughput} variables that have a variance are explained in Section \ref{sec:diss:sv}.
 
-\textbf{Team two} have significant correlation value with all variables except \textit{avg days in backlog, bugs} and the \textit{churn} variables.  \textbf{Team three} have a significant correlation value to \textit{WIP} and \textit{bugs}. \textbf{Team four} have significant correlation value to \textit{WIP}, \textit{bugs finished, quarter}, \textit{lead time}, \textit{churn} and \textit{churn feature}. \textbf{Team five} have a significant correlation value to all variables except \textit{WIP, throughput feature} and \textit{churn feature}. 
 
  \begin{table}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-2.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1581,8 +1582,11 @@ Team size  & 10 & 0.5 & 0.6 & 0.3 & 0.9 & 0.1\\ \hline
 \end{table}
 \newpage 
  
-\textbf{Team six} has positive correlation value to \textit{lead time}. \textbf{Team eight} have a correlation value with \textit{bugs}, \textit{bugs finished, quarter, churn} and \textit{churn bug}. \textbf{Team nine} has a  significant correlation value to \textit{bugs}. \textbf{Team ten} have a significant correlation to \textit{bugs}, \textit{bugs finished, quarter} and \textit{lead time}. 
-The \textit{churn} variables for team \textbf{four, five} and \textbf{eight} have variance, according to Table \ref{corr:TP:V2}. The \textit{churn} relationship is explained in Section \ref{sec:diss:sv}. Based on Table \ref{DS:corr:TP:v2}, \textit{throughput} has medium-strong relationship between \textit{WIP}, both \textit{throughput} sub variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{lead time}.
+ \textbf{Team two} has significant correlation value with all variables except \textit{avg days in backlog, bugs} and the \textit{churn} variables.  \textbf{Team three} has a significant correlation value to \textit{WIP} and \textit{bugs}. \textbf{Team four} has significant correlation value to \textit{WIP}, \textit{bugs finished, quarter}, \textit{lead time}, \textit{churn} and \textit{churn feature}. \textbf{Team five} has a significant correlation value to all variables except \textit{WIP, throughput feature} and \textit{churn feature}. 
+
+ 
+\textbf{Team six} has positive correlation value to \textit{lead time}. \textbf{Team eight} has a correlation value with \textit{bugs}, \textit{bugs finished, quarter, churn} and \textit{churn bug}. \textbf{Team nine} has a  significant correlation value to \textit{bugs}. \textbf{Team ten} has a significant correlation to \textit{bugs}, \textit{bugs finished, quarter} and \textit{lead time}. 
+The \textit{churn} variables for team \textbf{four, five} and \textbf{eight} have variance, according to Table \ref{corr:TP:V2}. The \textit{churn} relationship is explained in Section \ref{sec:diss:sv}. Based on Table \ref{DS:corr:TP:v2}, \textit{throughput} has medium-strong relationship between \textit{WIP}, \textit{throughput} sub variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{lead time}.
  
  
 \begin{table}[!htbp]
@@ -1613,7 +1617,7 @@ Churn bug  & 10 & 0.2 & 0.1 & 0.3 & 0.8 & -0.2\\ \hline
 \label{sec:corr:churn}
 This section contains information about the correlation table between the variables and churn. Table \ref{corr:churn} shows all teams have either one or both sub variables with significant positive correlation with \textit{churn}. Team \textbf{four, five, six, seven, eight, nine} and \textbf{ten} do not have a positive correlation between both the \textit{churn} sub variables according to Table \ref{corr:churn}, the reason for this is explained in Section \ref{sec:diss:sv}. 
 
-The Table \ref{corr:churn} shows \textbf{Team one} have positive correlation to \textit{bugs}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team two} has a significant correlation value to \textit{WIP}. \textbf{Team four} have a significant correlation to all variables except \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs} and \textit{team size}. \textbf{Team five} has a negative correlation value with \textit{team size}. 
+The Table \ref{corr:churn} shows \textbf{Team one} has positive correlation to \textit{bugs}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team two} has a significant correlation value to \textit{WIP}. \textbf{Team four} has a significant correlation to all variables except \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs} and \textit{team size}. \textbf{Team five} has a negative correlation value with \textit{team size}. 
 
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.5cm}{}
@@ -1642,7 +1646,7 @@ The Table \ref{corr:churn} shows \textbf{Team one} have positive correlation to 
 
 
 
-\textbf{Team six} has significant correlation value with \textit{avg days in backlog, bugs}. \textbf{Team eight} have a significant correlation with \textit{throughput, throughput feature} and \textit{lead time}, but not \textit{throughput bug}, according to Table \ref{corr:churn}. The \textit{throughput} relationship for \textbf{team eight} is explained in Section \ref{sec:diss:sv}. The Table \ref{DS:corr:Churn} shows that there is no variables with neither a medium nor strong relationship to \textit{churn} with out the \textit{churn's} sub variables 
+\textbf{Team six} has significant correlation value with \textit{avg days in backlog, bugs}. \textbf{Team eight} has a significant correlation with \textit{throughput, throughput feature} and \textit{lead time}, but not \textit{throughput bug}, according to Table \ref{corr:churn}. The \textit{throughput} relationship for \textbf{team eight} is explained in Section \ref{sec:diss:sv}. The Table \ref{DS:corr:Churn} shows that there do not exists variables with neither a medium nor strong relationship to \textit{churn} with out the \textit{churn's} sub variables 
 
 \begin{minipage}[t]{\linewidth}
 \begin{table}[H]
@@ -1669,10 +1673,10 @@ Team size  & 10 & 0 & 0 & 0.3 & 0.4 & -0.5\\ \hline
  
 The second correlation table for \textit{churn}, Table \ref{corr:churn:v2} shows all teams have either one or both sub variables with significant positive correlation with \textit{churn}. Team \textbf{one, four, five, six, seven, eight} and \textbf{ten} do not have a positive correlation between both the \textit{churn} sub variables according to Table \ref{corr:churn}, the reason for this is explained in Section \ref{sec:diss:sv}. 
 
-\textbf{Team one} have a significant positive correlation for \textit{bugs finished, quarter} and \textit{lead time}.  \textbf{Team two} have a significant correlation value with \textit{throughput feature}, \textit{bugs finished, quarter} and \textit{avg days in backlog, bugs}. \textbf{Team three} have a significant correlation value with \textit{bugs}, \textit{bugs finished, quarter}.  \textbf{Team four} has a significant correlation for \textit{WIP}, all \textit{throughput} variables, \textit{lead time}. \textbf{Team five} have a significant correlation value for \textit{throughput}, \textit{throughput bug}, \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{lead time} 
+\textbf{Team one} has a significant positive correlation for \textit{bugs finished, quarter} and \textit{lead time}.  \textbf{Team two} has a significant correlation value with \textit{throughput feature}, \textit{bugs finished, quarter} and \textit{avg days in backlog, bugs}. \textbf{Team three} has a significant correlation value with \textit{bugs}, \textit{bugs finished, quarter}.  \textbf{Team four} has a significant correlation for \textit{WIP}, all \textit{throughput} variables, \textit{lead time}. \textbf{Team five} has a significant correlation value for \textit{throughput}, \textit{throughput bug}, \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{lead time} 
 
  \begin{table}[H]
-\begin{adjustwidth}{-2.5cm}{}
+\begin{adjustwidth}{-1.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1694,7 +1698,7 @@ The second correlation table for \textit{churn}, Table \ref{corr:churn:v2} shows
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \end{adjustwidth}
 \end{table}
-\textbf{Team six} has a significant positive correlation to \textit{avg days in backlog, bugs}. \textbf{Team eight} have a significant positive correlation for \textit{throughput}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team ten} has a significant positive correlation for \textit{avg days in backlog, bugs}.  Team \textbf{two, five} and \textbf{eight} have a variance in their \textit{throughput} relationship, according to Table \ref{corr:churn:v2}. The relationship between these variables is explained in Section \ref{sec:diss:sv}.The Table \ref{DS:corr:churn:v2} shows medium or strong average linear relationship for  \textit{throughput}, \textit{throughput bug}, \textit{bugs}, \textit{bugs finished, quarter}, \textit{lead time} and both \textit{churn} variables. 
+\textbf{Team six} has a significant positive correlation to \textit{avg days in backlog, bugs}. \textbf{Team eight} has a significant positive correlation for \textit{throughput}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team ten} has a significant positive correlation for \textit{avg days in backlog, bugs}.  Team \textbf{two, five} and \textbf{eight} have a variance in their \textit{throughput} relationship, according to Table \ref{corr:churn:v2}. The relationship between these variables is explained in Section \ref{sec:diss:sv}.The Table \ref{DS:corr:churn:v2} shows medium or strong average linear relationship for  \textit{throughput}, \textit{throughput bug}, \textit{bugs}, \textit{bugs finished, quarter}, \textit{lead time} and both \textit{churn} variables. 
 
 
 
@@ -1723,7 +1727,7 @@ Churn bug  & 10 & 0.6 & 0.7 & 0.4 & 1 & -0.2\\ \hline
  
  \section{Correlation - Team size}
  \label{sec:corr:tz}
- The team size correlation Table \ref{corr:Teams} shows \textbf{team one} have a significant correlation value to \textit{WIP, throughput, throughput feature, bugs, lead time} and \textit{churn feature}. \textbf{Team two} has a correlation value with \textit{avg days in backlog, bugs}. \textbf{Team three} have a significant correlation value with \textit{WIP} and \textit{churn bug}. \textbf{Team five} have a significant correlation value to \textit{WIP, throughput, throughput bug, bugs, churn} and \textit{churn bug}.
+ The team size correlation Table \ref{corr:Teams} shows \textbf{team one} has a significant correlation value to \textit{WIP, throughput, throughput feature, bugs, lead time} and \textit{churn feature}. \textbf{Team two} has a correlation value with \textit{avg days in backlog, bugs}. \textbf{Team three} has a significant correlation value with \textit{WIP} and \textit{churn bug}. \textbf{Team five} has a significant correlation value to \textit{WIP, throughput, throughput bug, bugs, churn} and \textit{churn bug}.
 
 
  \begin{table}[!htbp]
@@ -1750,9 +1754,9 @@ Churn bug  & 10 & 0.6 & 0.7 & 0.4 & 1 & -0.2\\ \hline
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
 \end{adjustwidth}
 \end{table}
-\textbf{Team six} have significant correlation value to \textit{WIP, throughput, throughput feature} and \textit{churn bug}. \textbf{Team seven} have a significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team eight} have significant correlation value with \textit{WIP, throughput} and \textit{throughput feature}. \textbf{Team ten} a significant positive correlation with  \textit{WIP}, \textit{throughput} and \textit{throughput bug}. 
+\textbf{Team six} has significant correlation value to \textit{WIP, throughput, throughput feature} and \textit{churn bug}. \textbf{Team seven} has a significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team eight} has significant correlation value with \textit{WIP, throughput} and \textit{throughput feature}. \textbf{Team ten} has a significant positive correlation with  \textit{WIP}, \textit{throughput} and \textit{throughput bug}. 
 
-Team \textbf{one, five} and \textbf{six} have a variance for both \textit{throughput} and \textit{churn} variables, according to Table \ref{corr:Teams}. Team \textbf{seven} and \textbf{ten} have a variance in the \textit{throughput} relationship, while \textbf{team three} has it for the \textit{churn} variables. The relationship between those variables are explained in Section \ref{sec:diss:sv}. The Table \ref{DS:corr:TS} shows a strong correlation between \textit{WIP}, \textit{throughput} and \textit{team size}, as well as a medium correlation for \textit{bugs}. 
+Teams \textbf{one, five} and \textbf{six} have a variance for both \textit{throughput} and \textit{churn} variables, according to Table \ref{corr:Teams}. Teams \textbf{seven} and \textbf{ten} have a variance in the \textit{throughput} relationship, while \textbf{team three} has it for the \textit{churn} variables. The relationships between those variables are explained in Section \ref{sec:diss:sv}. The Table \ref{DS:corr:TS} shows a strong correlation between \textit{WIP}, \textit{throughput} and \textit{team size}, as well as a medium correlation for \textit{bugs}. 
 
 
 \begin{table}[!htbp]
@@ -1810,12 +1814,12 @@ The Tables \ref{corr:All} and \ref{corr:All:V2} shows the correlation values for
 \end{adjustwidth}
 \end{table}
 
-\textit{Throughput} has a significant correlation value to \textit{WIP}, both \textit{throughput} sub variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{team size}. Both \textit{throughput's} sub variables has a significant value to \textit{WIP, throughput, bugs} and \textit{team size}. \textit{Throughput feature} also has a significant value to \textit{bugs finished, quarter}.  
+\textit{Throughput} has a significant correlation value to \textit{WIP}, both \textit{throughput} sub variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{team size}. Both \textit{throughputs'} sub variables have a significant value to \textit{WIP, throughput, bugs} and \textit{team size}. \textit{Throughput feature} also has a significant value to \textit{bugs finished, quarter}.  
 
 
 \textit{Bugs} has a significant correlation to all variables except the \textit{churn} variables and \textit{lead time}. \textit{Bugs finished, quarter}  has a significant correlation with \textit{WIP, throughput, throughput feature, bugs} and \textit{churn bug}. \textit{Avg days in backlog, bugs} has a significant value with \textit{Bugs, churn bug} and \textit{team size}. \textit{Lead time} has a significant correlation to \textit{WIP} and \textit{team size}. \textit{Churn} has a significant correlation to the \textit{churn} sub variables and \textit{team size}. \textit{Churn feature} has a significant relationship with \textit{churn} and \textit{churn bug}. \textit{Churn bug} has a significant value with \textit{WIP}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{churn} and \textit{churn feature}.  \textit{Team size} has a significant value to \textit{WIP, throughput, throughput feature, throughput bug, bugs}, \textit{avg days in backlog, bugs}, \textit{lead time} and \textit{churn}.
 
-In table \ref{corr:All:V2}. \textit{WIP} has a significant correlation value to \textit{bugs finished, quarter}. \textit{Throughput} has significant correlation value to both \textit{throughput} sub variables, \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{lead time}, \textit{churn} and \textit{churn bug}. \textit{Throughput feature} has significant correlation value to \textit{throughput}, and \textit{bugs}. \textit{Throughput bug} has significant value to \textit{throughput, bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{lead time, churn} and \textit{churn bug}.
+Table \ref{corr:All:V2} displays that \textit{WIP} has a significant correlation value to \textit{bugs finished, quarter}. \textit{Throughput} has significant correlation value to \textit{throughput} sub variables, \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{lead time}, \textit{churn} and \textit{churn bug}. \textit{Throughput feature} has significant correlation value to \textit{throughput}, and \textit{bugs}. \textit{Throughput bug} has significant value to \textit{throughput, bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{lead time, churn} and \textit{churn bug}.
 \begin{table}[!htbp]
  \begin{adjustwidth}{-2.4cm}{}
  \centering
@@ -1843,7 +1847,7 @@ In table \ref{corr:All:V2}. \textit{WIP} has a significant correlation value to 
 \end{adjustwidth}
 \end{table}
 
-\textit{Bugs} has a significant value to all values except \textit{WIP} and \textit{churn feature}. \textit{Bugs finished, quarter} has a significant value to all values except \textit{throughput feature} and \textit{churn feature}. \textit{Avg days in backlog, bugs}, \textit{lead time}, \textit{churn} and \textit{churn bug} has a significant value to all values except \textit{WIP}, \textit{throughput feature} and \textit{churn feature}. \textit{churn feature} has no significant values.
+\textit{Bugs} has a significant value to all values except \textit{WIP} and \textit{churn feature}. \textit{Bugs finished, quarter} has a significant value to all values except \textit{throughput feature} and \textit{churn feature}. \textit{Avg days in backlog, bugs}, \textit{lead time}, \textit{churn} and \textit{churn bug} has a significant value to all values except \textit{WIP}, \textit{throughput feature} and \textit{churn feature}. \textit{Churn feature} has no significant values.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% DISC %%%%%%%%%%%%%
