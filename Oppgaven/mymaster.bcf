@@ -2062,9 +2062,9 @@
     <bcf:citekey order="102">Dag</bcf:citekey>
     <bcf:citekey order="103">Dag</bcf:citekey>
     <bcf:citekey order="104">corr:transitive</bcf:citekey>
-    <bcf:citekey order="105">Shinkle</bcf:citekey>
-    <bcf:citekey order="106">DavidAnderson</bcf:citekey>
-    <bcf:citekey order="107">SMR:SMR1599</bcf:citekey>
+    <bcf:citekey order="105">DavidAnderson</bcf:citekey>
+    <bcf:citekey order="106">SMR:SMR1599</bcf:citekey>
+    <bcf:citekey order="107">Shinkle</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" type="entry" label="nyt">
   <bcf:sorting>
