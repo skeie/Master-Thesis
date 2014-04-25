@@ -16,7 +16,6 @@ Team_size = []
 
 
 def diagonal_data(list, index):
-	print list
 	WIP.append(list[0])
 
 	Throughput.append(list[1])
@@ -32,7 +31,7 @@ def diagonal_data(list, index):
 	Churn.append(list[8])
 	Churn_ft.append(list[9])
 	Churn_bugs.append(list[10])
-	Team_size.append(list[11])
+	#Team_size.append(list[11])
 
 def makeFloat(list):
 	index = None
@@ -78,7 +77,7 @@ def writeToFile():
 	tmp+= "Churn &"+writeOutList(Churn)
 	tmp+= "Churn feature &" + writeOutList(Churn_ft)
 	tmp+= "Churn bug &"+writeOutList(Churn_bugs)
-	tmp+= "Team Size &"+writeOutList(Team_size)
+	#tmp+= "Team Size &"+writeOutList(Team_size)
 	tmp+= "\n\\end{tabular} \n \caption{Correlation - Leadtime} \n \label{corr:WIP} \n "
 	tmp+= "\\centerline {* Correlation is significant at the 0.05 level (2-tailed).} \n"
 	tmp+= "\\centerline{** Correlation is significant at the 0.01 level (2-tailed).} \n"
