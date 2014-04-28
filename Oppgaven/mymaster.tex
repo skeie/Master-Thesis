@@ -906,7 +906,7 @@ This section will provide a comprehensive example of how the WIP algorithm works
 Figure \ref{wip_timeline}  shows task ids on the y-axis and dates on the x-axis. The green line indicates the duration of the task. The figure helps  visualize how many WIPs there are in progress for a given date. For example on the date 2010-10-12, tasks 3, 5 and 6 are in progress, which means the WIP is 3 for 2010-10-12. The dates from Table \ref{wt:2}  will be used to illustrate how the algorithm measures WIP.
 
 \begin{figure}[ht!]
- \begin{adjustwidth}{-0.5cm}{}
+ \begin{adjustwidth}{1.cm}{}
 \centering
 \hspace*{-1in}
 \includegraphics[width=21cm,trim=4 8 8 4,clip]{Picture/wip_example.jpg}
@@ -1146,7 +1146,7 @@ This chapter presented the algorithm and an example of how WIP is computed in th
 \label{ch:res}
 The first correlation result showed an average correlation value  of 0.6 between \textit{team size} and \textit{WIP} and 0.5 between \textit{team size} and \textit{throughput}. Five of the ten teams also had a significant positive correlation between these variables. Based on the correlation values, it was hard to find any evidence if WIP-limit matters in software development. This resulted in a new analyze where each variable for each quarter was divided by the corresponding team size. 
 
-Each section except Section \ref{sec:corr:tz} "Team size"  and Section \ref{sec:corr:alc} "All teams combined" is presented with two correlation tables and two corresponding descriptive statistics tables, one correlation table and descriptive statistic table for the first analysis and the same two tables for the second analyze. {Team size} is presented with one correlation table and one descriptive statistic table, while all teams combined is presented  with one correlation table for the two analyzes. The content of the sections will consist of highlighting the variables with a significant correlation and describe the descriptive statistic tables.
+Each section except Section \ref{sec:corr:tz} \textit{Team size}  and Section \ref{sec:corr:alc} \textit{All teams combined} is presented with two correlation tables and two corresponding descriptive statistics tables, one correlation table and descriptive statistic table for the first analysis and the same two tables for the second analyze. {Team size} is presented with one correlation table and one descriptive statistic table, while all teams combined is presented  with one correlation table for the two analyzes. The content of the sections will consist of highlighting the variables with a significant correlation and describe the descriptive statistic tables.
 \section{Correlation - WIP}
 \label{sec:corr:WIP}
 Table \ref{corr:WIP} displays the first correlation tables for \textit{WIP}. The variables are listed vertically in the correlation table. Horizontally are the corresponding teams. The team names are shortened, team one is shortened to T1, team two is shortened to T2 and so on.
@@ -1202,7 +1202,7 @@ Avg days backlog, bugs  & 10 & 0.1 & 0.1 & 0.3 & 0.5 & -0.2\\ \hline
 Lead time & 10 & 0.5 & 0.5 & 0.2 & 0.7 & 0.2\\ \hline
 Churn  & 10 & 0 & 0.1 & 0.4 & 0.7 & -0.7\\ \hline
 Churn ft  & 10 & 0.1 & 0.1 & 0.4 & 0.7 & -0.4\\ \hline
-Churn bug  & 10 & -0 & -0 & 0.4 & 0.8 & -0.6\\ \hline
+Churn bug  & 10 & 0 & -0 & 0.4 & 0.8 & -0.6\\ \hline
 Team size  & 10 & 0.6 & 0.6 & 0.2 & 0.8 & 0.1\\ \hline
 \end{tabular}
  \caption{Descriptive Statistic - Correlation - WIP - When team size is \textbf{not} taken into account}
@@ -1268,7 +1268,7 @@ Churn bug  & 10 & -0.1 & -0.1 & 0.4 & 0.7 & -0.5\\ \hline
 
 \section{Correlation - Lead time}
 \label{sec:corr:lt}
-Table \ref{corr:lt} displays the first correlation table for \textit{lead time}. \textbf{Team one} has a positive correlation for all variables except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug}. \textbf{Team two} has a positive correlation value to \textit{throughput} and \textit{throughput bug}. \textbf{Team three} has a positive correlation value to \textit{bugs} and a negative correlation value to \textit{churn bug}. \textbf{Team four} has a significant positive correlation value to \textit{WIP}, \textit{throughput, throughput feature}  \textit{churn} and \textit{churn feature}. \textbf{Team five} has a significant correlation value to \textit{WIP}.
+Table \ref{corr:lt} displays the first correlation table for \textit{lead time}. \textbf{Team one} has a positive correlation for all variables except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug}. \textbf{Team two} has a positive correlation value to \textit{throughput} and \textit{throughput bug}. \textbf{Team three} has a positive correlation value to \textit{bugs} and a negative correlation value to \textit{churn bug}. \textbf{Team four} has a significant positive correlation value to \textit{WIP}, \textit{throughput, throughput feature},  \textit{churn} and \textit{churn feature}. \textbf{Team five} has a significant correlation value to \textit{WIP}.
 
 \begin{minipage}[t]{\linewidth}
 \begin{table}[H]
@@ -1324,7 +1324,7 @@ Team size  & 10 & 0.3 & 0.4 & 0.3 & 0.6 & -0.3\\ \hline
  \label{DS:corr:LT}
  \end{table}
 
-Table \ref{corr:LT:V2} displays the second correlation table. \textbf{Team one} has significant positive correlation for \textit{bugs}, \textit{bugs finished, quarter}, \textit{churn} and \textit{churn bug}. \textbf{Team two} has a significant positive correlation for  \textit{WIP}, \textit{throughput} variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{churn bug}.  \textbf{Team four} has a significant positive correlation for \textit{WIP}, \textit{throughput, throughput feature}, \textit{churn} and \textit{churn feature}. \textbf{Team five} has significant correlation value to \textit{throughput}, \textit{throughput bug}, \textit{bugs}, \textit{bugs, finished, quarter}, \textit{avg days in backlog, bugs}, \textit{churn} and \textit{churn bug}.
+Table \ref{corr:LT:V2} displays the second correlation table. \textbf{Team one} has significant positive correlation for \textit{bugs}, \textit{bugs finished, quarter}, \textit{churn} and \textit{churn bug}. \textbf{Team two} has a significant positive correlation for all values except \textit{avg days in backlog, bugs}, \textit{churn} and \textit{churn feature}.  \textbf{Team four} has a significant positive correlation for \textit{WIP}, \textit{throughput, throughput feature}, \textit{churn} and \textit{churn feature}. \textbf{Team five} has significant correlation value to all values except \textit{WIP, throughput feature} and \textit{churn feature}.
 
 
 \begin{table}[H]
@@ -1351,7 +1351,7 @@ Table \ref{corr:LT:V2} displays the second correlation table. \textbf{Team one} 
 \end{adjustwidth}
 \end{table}
 
-\textbf{Team six} has a significant correlation for \textit{throughput} and \textit{throughput feature}. \textbf{Team seven} has a significant correlation for \textit{WIP}, \textit{bugs} and \textit{bugs, finished, quarter}. \textbf{Team eight} has a significant correlation for \textit{throughput feature}, \textit{churn} and \textit{churn feature}. \textbf{Team ten} has a significant positive correlation for \textit{throughput}, \textit{throughput bug} and \textit{bugs}.  
+\textbf{Team six} has a significant correlation for \textit{throughput} and \textit{throughput feature}. \textbf{Team seven} has a significant correlation for \textit{WIP}, \textit{bugs} and \textit{bugs finished, quarter}. \textbf{Team eight} has a significant correlation for \textit{throughput feature}, \textit{churn} and \textit{churn feature}. \textbf{Team ten} has a significant positive correlation for \textit{throughput}, \textit{throughput bug}, \textit{bugs} and \textit{bugs finished, quarter}.
 
 The \textit{throughput} relationship for team \textbf{four, five, six, eight} and \textbf{ten} show variances according to Table \ref{corr:LT:V2}. \textit{Churn} variables also show variances for team \textbf{one, two, four, five} and \textbf{eight}. The relationship between the variables is  explained in Section \ref{sec:diss:sv}.
 The Table \ref{DS:corr:LT:v2} displays an average correlation value of 0.5 for  \textit{throughput}, \textit{throughput bug}, \textit{bugs} and \textit{bugs finished, quarter}. \textit{Churn} and \textit{throughput feature} has the average value of 0.4. The rest of the values have an average correlation value of $\pm$ 0.2 or less.
@@ -1411,7 +1411,7 @@ Table \ref{corr:bug}, one can see \textbf{team one} has a significant correlatio
 \newpage
 \textbf{Team six} has a significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team seven} has a significant value with \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team eight} has a significant correlation relationship with \textit{throughput bug} and \textit{churn bug}. \textbf{Team nine} has a significant correlation relationship to \textit{WIP}, the \textit{throughput} variables, \textit{bugs finished, quarter} and \textit{churn feature}. \textbf{Team ten} has significant correlation with \textit{throughput} and \textit{throughput bug}.
 
-Teams \textbf{one, four} and \textbf{eight} have variances in both the \textit{throughput} and \textit{churn} variables according to Table \ref{corr:bug}. Teams \textbf{two} and \textbf{ten} also have variances for the \textit{throughput} variables, while \textbf{team nine} has a variances between the \textit{churn} variables. The relationship between these variables is explained in  Section \ref{sec:diss:sv}.
+Teams \textbf{one, four} and \textbf{eight} have variances in both the \textit{throughput} and \textit{churn} variables according to Table \ref{corr:bug}. Teams \textbf{two, six} and \textbf{ten} also have variances for the \textit{throughput} variables, while \textbf{team nine} has a variances between the \textit{churn} variables. The relationship between these variables is explained in  Section \ref{sec:diss:sv}.
 In Table \ref{DS:corr:Bugs}, one can see that \textit{throughput} and \textit{throughput bug} has the average correlation value of 0.6, \textit{throughput feature} has the value 0.5, \textit{WIP} has an average correlation value of 0.4,  \textit{Bugs finished, quarter}, \textit{avg days backlog, bugs}, \textit{lead time} and \textit{team size} has the average correlation value of 0.3 and the \textit{churn} variables have the average  mean values of $\pm$ 0.2 or less.
 
 \begin{table} [h]
@@ -1464,7 +1464,7 @@ The second correlation table for bugs, displayed in Table \ref{corr:Bugs:v2}, on
 
 \textbf{Team six} has significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team seven} has a significant relationship with \textit{WIP}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team eight} has a significant correlation value to \textit{throughput}, \textit{throughput bug}, \textit{bugs finished, quarter} and \textit{churn bug}. \textbf{Team nine} has a significant correlation value to \textit{throughput} and \textit{throughput bug}. \textbf{Team ten} has a significant correlation value to \textit{throughput, throughput bug}, \textit{bugs finished, quarter} and \textit{lead time}.
 
-\textit{Throughput} and \textit{churn} variables for team \textbf{five} and \textbf{eight} shows variance according to Table \ref{corr:Bugs:v2}.  Team \textbf{one} and \textbf{six} shows variance between the \textit{throughput variables}. The variables relationship is explained in Section \ref{sec:diss:sv}. Table \ref{DS:corr:Bugs:v2} displays a mean correlation value of 0.8  for \textit{throughput bug}, 0.6 for \textit{throughput}, 0.5 for \textit{bugs finished, quarter} and \textit{lead time}, 0.4 for \textit{avg days backlog, days} and \textit{churn bug} and 0.3 for \textit{churn}, while the rest has an average mean value of $\pm$ 0.2 or less.
+\textit{Throughput} and \textit{churn} variables for team \textbf{five} and \textbf{eight} shows variance according to Table \ref{corr:Bugs:v2}.  Teams \textbf{one, six} and \textbf{nine} shows variance between the \textit{throughput variables}. The variables relationship is explained in Section \ref{sec:diss:sv}. Table \ref{DS:corr:Bugs:v2} displays a mean correlation value of 0.8  for \textit{throughput bug}, 0.6 for \textit{throughput}, 0.5 for \textit{bugs finished, quarter} and \textit{lead time}, 0.4 for \textit{avg days backlog, days} and \textit{churn bug} and 0.3 for \textit{churn}, while the rest has an average mean value of $\pm$ 0.2 or less.
 
 \FloatBarrier
 \begin{table}[H]
@@ -1492,7 +1492,7 @@ Churn bug  & 10 & 0.4 & 0.4 & 0.3 & 0.8 & -0.2\\ \hline
 \label{sec:corr:TP}
 This section shows the correlation table between \textit{throughput} and the variables. The first correlation Table \ref{corr:TP}, one can see that \textit{throughput} has a significant correlation to either \textit{throughput feature} or \textit{throughput bug} for each of the teams. The teams \textbf{three, four, five, seven} and \textbf{nine} have a positive correlation to both the \textit{throughput} sub variables. For teams \textbf{one, six} and \textbf{eight} are the variance between \textit{throughput feature} and \textit{throughput}.  For teams \textbf{two} and \textbf{ten} are the variance between \textit{throughput bug} and \textbf{throughput}, according to Table \ref{corr:TP}. The relationship between the \textit{throughput} variables that have a variance is explained in Section \ref{sec:diss:sv}.
 
-The sub variables of \textit{throughput} are highlighted above, so the sub variables will be left out of the highlighting in this section.
+The sub variables of \textit{throughput} are highlighted above, so the sub variables will be left out of the highlighting further  in this section.
 \textbf{Team one} has significant correlation to \textit{WIP, bugs, lead time, churn feature} and \textit{team size}. \textbf{Team two} has a significant correlation value to \textit{bugs} and \textit{lead time}. \textbf{Team three} has significant correlation to \textit{WIP} and \textit{bugs}. \textbf{Team four} has a significant correlation to \textit{WIP, bugs, lead time, churn} and \textit{churn feature}.  \textbf{Team five} has a significant correlation to \textit{bugs} and \textit{team size}.
 
 \begin{table}[!htbp]
@@ -1540,7 +1540,7 @@ Avg days backlog, bugs  & 10 & 0.1 & 0.1 & 0.3 & 0.5 & -0.4\\ \hline
 Lead time & 10 & 0.5 & 0.5 & 0.2 & 0.7 & 0.1\\ \hline
 Churn  & 10 & 0.2 & -0 & 0.4 & 0.7 & -0.4\\ \hline
 Churn ft  & 10 & 0.2 & 0.2 & 0.5 & 0.8 & -0.4\\ \hline
-Churn bug  & 10 & -0 & -0.1 & 0.3 & 0.6 & -0.4\\ \hline
+Churn bug  & 10 & 0 & -0.1 & 0.3 & 0.6 & -0.4\\ \hline
 Team size  & 10 & 0.5 & 0.6 & 0.3 & 0.9 & 0.1\\ \hline
 \end{tabular}
  \caption{Descriptive Statistic - Correlation - Throughput - Without time size is taken into account}
@@ -1580,7 +1580,7 @@ The second correlation table, Table \ref{corr:TP:V2}, one can see \textit{throug
 
  
 \textbf{Team six} has positive correlation value to \textit{lead time}. \textbf{Team eight} has a correlation value with \textit{bugs}, \textit{bugs finished, quarter, churn} and \textit{churn bug}. \textbf{Team nine} has a  significant correlation value to \textit{WIP} and \textit{bugs}. \textbf{Team ten} has a significant correlation to \textit{bugs}, \textit{bugs finished, quarter} and \textit{lead time}. 
-The \textit{churn} variables for teams \textbf{four, five} and \textbf{eight} have variance, according to Table \ref{corr:TP:V2}. The \textit{churn} relationship is explained in Section \ref{sec:diss:sv}. 
+The \textit{churn} variables for teams \textbf{four, five} and \textbf{eight} have a variance, according to Table \ref{corr:TP:V2}. The \textit{churn} relationship is explained in Section \ref{sec:diss:sv}. 
 
 Table \ref{DS:corr:TP:v2}, displays a mean correlation value of 0.8 for \textit{throughput bug}, a value of 0.6 for \textit{throughput feature} and \textit{bugs}, a value of 0.5 for \textit{lead time}, a value of 0.4 for \textit{WIP} and \textit{bugs finished, quarter} and a value of 0.3 for \textit{churn}. The rest of the values have an average correlation value of $\pm$ 0.2 or less. 
  
@@ -1643,7 +1643,7 @@ Table \ref{corr:churn} shows \textbf{Team one} has positive correlation to \text
 \end{minipage}
 
 
-\textbf{Team six} has significant correlation value with \textit{avg days in backlog, bugs}. \textbf{Team eight} has a significant correlation with \textit{throughput, throughput feature} and \textit{lead time}, but not \textit{throughput bug}, according to Table \ref{corr:churn}. The \textit{throughput} relationship for \textbf{team eight} is explained in Section \ref{sec:diss:sv}. The Table \ref{DS:corr:Churn} shows that there do not exists variables with a mean correlation value of $\pm$ 0.2 for \textit{churn} without the \textit{churn} sub variables 
+\textbf{Team six} has significant correlation value with \textit{avg days in backlog, bugs}. \textbf{Team eight} has a significant correlation with \textit{throughput, throughput feature} and \textit{lead time}, but not \textit{throughput bug}. The \textit{throughput} relationship for \textbf{team eight} is explained in Section \ref{sec:diss:sv}. The Table \ref{DS:corr:Churn} shows that there do not exists variables with a mean correlation value of $\pm$ 0.2 for \textit{churn} without the \textit{churn} sub variables 
 
 \begin{minipage}[t]{\linewidth}
 \begin{table}[H]
@@ -1670,7 +1670,7 @@ Team size  & 10 & 0 & 0 & 0.3 & 0.4 & -0.5\\ \hline
  
 The second correlation table for \textit{churn}, Table \ref{corr:churn:v2} shows all teams have either one or both sub variables with significant positive correlation with \textit{churn}. Teams \textbf{one, four, five, six, seven, eight} and \textbf{ten} do not have a positive correlation between both the \textit{churn} sub variables according to Table \ref{corr:churn}, the relationship between these variables is explained in Section \ref{sec:diss:sv}. 
 
-\textbf{Team one} has a significant positive correlation for \textit{bugs finished, quarter} and \textit{lead time}.  \textbf{Team two} has a significant correlation value with \textit{throughput feature}, \textit{bugs finished, quarter} and \textit{avg days in backlog, bugs}. \textbf{Team three} has a significant correlation value with \textit{bugs}, \textit{bugs finished, quarter}.  \textbf{Team four} has a significant correlation for \textit{WIP}, \textit{throughput, throughput feature} and \textit{lead time}. \textbf{Team five} has a significant correlation value for \textit{throughput}, \textit{throughput bug}, \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs} and \textit{lead time} 
+\textbf{Team one} has a significant positive correlation for \textit{bugs finished, quarter} and \textit{lead time}.  \textbf{Team two} has a significant correlation value with \textit{throughput feature}, \textit{bugs finished, quarter} and \textit{avg days in backlog, bugs}. \textbf{Team three} has a significant correlation value with \textit{bugs} and \textit{bugs finished, quarter}.  \textbf{Team four} has a significant correlation for \textit{WIP}, \textit{throughput, throughput feature} and \textit{lead time}. \textbf{Team five} has a significant correlation value for \textit{throughput}, \textit{throughput bug}, \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs} and \textit{lead time} 
 
  \begin{table}[H]
 \begin{adjustwidth}{-2.5cm}{}
@@ -1752,7 +1752,7 @@ Churn bug  & 10 & 0.6 & 0.7 & 0.4 & 1 & -0.2\\ \hline
 \end{table}
 \textbf{Team six} has significant correlation value to \textit{WIP, throughput, throughput feature} and \textit{churn bug}. \textbf{Team seven} has a significant correlation value with \textit{throughput bug} and \textit{bugs finished, quarter}. \textbf{Team eight} has significant correlation value with \textit{WIP, throughput} and \textit{throughput feature}. \textbf{Team ten} has a significant positive correlation with  \textit{WIP}, \textit{throughput} and \textit{throughput bug}. 
 
-Teams \textbf{one, five} and \textbf{six} have a variance for both \textit{throughput} and \textit{churn} variables, according to Table \ref{corr:Teams}. Teams \textbf{seven} and \textbf{ten} have a variance between the \textit{throughput} variables, while \textbf{team three} has it between the \textit{churn} variables. The relationship between the sub variables is explained in Section \ref{sec:diss:sv}. The Table \ref{DS:corr:TS} displays a mean correlation value of 0.6 for  \textit{WIP}, 0.5 for \textit{throughput}, 0.4 for the \textit{throughput} sub variables and \textit{bugs} and 0.3 for \textit{lead time}. Rest of the variables has a value of $\pm$ 0.2 or less.
+Teams \textbf{one, five} and \textbf{six} have a variance for both \textit{throughput} and \textit{churn} variables, according to Table \ref{corr:Teams}. Teams \textbf{seven, eight} and \textbf{ten} have a variance between the \textit{throughput} variables, while \textbf{team three} has it between the \textit{churn} variables. The relationship between the sub variables is explained in Section \ref{sec:diss:sv}. The Table \ref{DS:corr:TS} displays a mean correlation value of 0.6 for  \textit{WIP}, 0.5 for \textit{throughput}, 0.4 for the \textit{throughput} sub variables and \textit{bugs} and 0.3 for \textit{lead time}. Rest of the variables has a value of $\pm$ 0.2 or less.
 
 \begin{table}[!htbp]
  \centering
@@ -1812,9 +1812,9 @@ The Tables \ref{corr:All} and \ref{corr:All:V2} shows the correlation values for
 \textit{Throughput} has a significant correlation value to \textit{WIP}, both \textit{throughput} sub variables, \textit{bugs}, \textit{bugs finished, quarter} and \textit{team size}. Both \textit{throughputs'} sub variables have a significant value to \textit{WIP, throughput, bugs} and \textit{team size}. \textit{Throughput feature} also has a significant value to \textit{bugs finished, quarter}.  
 
 
-\textit{Bugs} has a significant correlation to all variables except the \textit{churn} variables and \textit{lead time}. \textit{Bugs finished, quarter}  has a significant correlation with \textit{WIP, throughput, throughput feature, bugs} and \textit{churn bug}. \textit{Avg days in backlog, bugs} has a significant value with \textit{Bugs, churn bug} and \textit{team size}. \textit{Lead time} has a significant correlation to \textit{WIP} and \textit{team size}. \textit{Churn} has a significant correlation to the \textit{churn} sub variables and \textit{team size}. \textit{Churn feature} has a significant relationship with \textit{churn} and \textit{churn bug}. \textit{Churn bug} has a significant value with \textit{WIP}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{churn} and \textit{churn feature}.  \textit{Team size} has a significant value to \textit{WIP, throughput, throughput feature, throughput bug, bugs}, \textit{avg days in backlog, bugs}, \textit{lead time} and \textit{churn}.
+\textit{Bugs} has a significant correlation to all variables except the \textit{churn} variables and \textit{lead time}. \textit{Bugs finished, quarter}  has a significant correlation with \textit{WIP, throughput, throughput feature, bugs} and \textit{churn bug}. \textit{Avg days in backlog, bugs} has a significant value with \textit{bugs, churn bug} and \textit{team size}. \textit{Lead time} has a significant correlation to \textit{WIP} and \textit{team size}. \textit{Churn} has a significant correlation to the \textit{churn} sub variables and \textit{team size}. \textit{Churn feature} has a significant relationship with \textit{churn} and \textit{churn bug}. \textit{Churn bug} has a significant value with \textit{WIP}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{churn} and \textit{churn feature}.  \textit{Team size} has a significant value to \textit{WIP, throughput, throughput feature, throughput bug, bugs}, \textit{avg days in backlog, bugs}, \textit{lead time} and \textit{churn}.
 
-Table \ref{corr:All:V2}, one can see \textit{WIP} has a significant correlation value to all values except \textit{throughput, bug}, \textit{avg days in backlog, bugs}, \textit{churn feature} and \textit{churn} . \textit{Throughput} has significant correlation value to all values except  \textit{churn}  and \textit{churn feature}. \textit{Throughput feature} has significant correlation value to all values except \textit{bugs, churn}, and \textit{churn feature}. \textit{Throughput bug} has significant value to \textit{throughput}, \textit{throughput feature, bugs} and \textit{bugs finished, quarter}.
+Table \ref{corr:All:V2}, one can see \textit{WIP} has a significant correlation value to all values except \textit{throughput bug}, \textit{avg days in backlog, bugs}, \textit{churn feature} and \textit{churn bug}. \textit{Throughput} has significant correlation value to all values except  \textit{churn}  and \textit{churn feature}. \textit{Throughput feature} has significant correlation value to all values except \textit{bugs, churn}, and \textit{churn feature}. \textit{Throughput bug} has significant value to \textit{throughput}, \textit{throughput feature, bugs} and \textit{bugs finished, quarter}.
 \begin{table}[!htbp]
  \begin{adjustwidth}{-1.0cm}{}
  \centering
@@ -1843,17 +1843,360 @@ Table \ref{corr:All:V2}, one can see \textit{WIP} has a significant correlation 
 \end{table}
 \newpage
 
-\textit{Bugs} has a significant value to all values except \textit{throughput feature} and \textit{churn feature}. \textit{Bugs finished, quarter} has a significant value to all values except \textit{avg days in backlog, bugs}, \textit{churn feature} and \textit{churn bug}. \textit{Avg days in backlog, bugs} has a significant correlation value to \textit{throughput, throughput feature, bugs} and \textit{churn bug}. \textit{Lead time} has a significant correlation value to all values except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug}. \textit{Churn} has a significant correlation value to \textit{WIP, bugs}, \textit{bugs finished, quarter}, \textit{lead time} and both the \textit{churn} sub variables. \textit{Churn feature} has a significant value to \textit{leadtime}, \textit{churn} and \textit{churn bug}. \textit{Churn bug} has significant value to all variables except \textit{throughput bug}, \textit{bugs finished, quarter} and \textit{lead time}.
+\textit{Bugs} has a significant value to all values except \textit{throughput feature} and \textit{churn feature}. \textit{Bugs finished, quarter} has a significant value to all values except \textit{avg days in backlog, bugs}, \textit{churn feature} and \textit{churn bug}. \textit{Avg days in backlog, bugs} has a significant correlation value to \textit{throughput, throughput feature, bugs} and \textit{churn bug}. \textit{Lead time} has a significant correlation value to all values except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug}. \textit{Churn} has a significant correlation value to \textit{WIP, bugs}, \textit{bugs finished, quarter}, \textit{lead time} and both the \textit{churn} sub variables. \textit{Churn feature} has a significant value to \textit{leadtime}, \textit{churn} and \textit{churn bug}. \textit{Churn bug} has significant value to all variables except \textit{WIP, throughput bug}, \textit{bugs finished, quarter} and \textit{lead time}. 
+\newpage
+\section{WIP-limit per team}
+To try to explain the positive correlation between \textit{WIP} and \textit{throughput} the average WIP-limit for each of the teams were measured. The computed WIP-limit for each quarter, as shown in Appendix \ref{app:DS} was divided by the number of employee as shown in Table \ref{table:teams}  \textit{Team one} has an average WIP-limit of 0.73. \textit{Team two} has an average WIP-limit of 2.31. \textit{Team three} has an average WIP-limit of 1.78. \textit{Team four} has an average WIP-limit of 3.21. \textit{Team five} has an average WIP-limit of 1.93. \textit{Team six} has an average WIP-limit of 3.02. \textit{Team seven} has an average WIP-limit of 2.03 .\textit{Team eigth} has an average WIP-limit of 0.71. \textit{Team nine} has an average WIP-limit of 2.19 and \textit{team ten} has an average WIP-limit of 1.08. This gives an average WIP-limit of 1.92. 
+\begin{figure}[H]
+\begin{subfigure}[b]{.2\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+\hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-3& 0.61\\ \hline
+2010-4& 0.23\\ \hline
+2011-1& 0.21\\ \hline
+2011-2& 0.47\\ \hline
+2011-3& 0.89\\ \hline
+2011-4& 0.38\\ \hline
+2012-1& 0.63\\ \hline
+2012-2& 0.89\\ \hline
+2012-3& 1.12\\ \hline
+2012-4& 1.2\\ \hline
+2013-1& 1.37\\ \hline
+2013-2& 1.81\\ \hline
+2013-3& 0.32\\ \hline
+2013-4& 0.22\\ \hline
+Average & 0.73\\ \hline
+\end{tabular}
+}
+\caption{Team size - team one}
+ \label{Team:WIP:1}
+\end{subfigure}
+\begin{subfigure}[b]{.2\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-3& 1.44\\ \hline
+2010-4& 1.43\\ \hline
+2011-1& 2.09\\ \hline
+2011-2& 2.48\\ \hline
+2011-3& 2.18\\ \hline
+2011-4& 2.15\\ \hline
+2012-1& 1.34\\ \hline
+2012-2& 3.62\\ \hline
+2012-3& 3.03\\ \hline
+2012-4& 2.4\\ \hline
+2013-1& 1.97\\ \hline
+2013-2& 4.0\\ \hline
+2013-3& 2.68\\ \hline
+2013-4& 1.66\\ \hline
+Average& 2.31\\ \hline
+\end{tabular}
+}
+\caption{Team size - team two}
+ \label{Team:WIP:2}
+\end{subfigure}
+\begin{subfigure}[b]{0.2\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-3& 1.55\\ \hline
+2010-4& 1.55\\ \hline
+2011-1& 2.19\\ \hline
+2011-2& 2.35\\ \hline
+2011-3& 2.3\\ \hline
+2011-4& 2.33\\ \hline
+2012-1& 2.26\\ \hline
+2012-2& 2.18\\ \hline
+2012-3& 2.16\\ \hline
+2012-4& 2.28\\ \hline
+2013-1& 1.24\\ \hline
+2013-2& 0.99\\ \hline
+2013-3& 0.88\\ \hline
+2013-4& 0.7\\ \hline
+Average& 1.78\\ \hline
+\end{tabular}
+}
+\caption{Team size - team three}
+ \label{Team:WIP:3}
+\end{subfigure}
+\begin{subfigure}[b]{0.2\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-3& 0.89\\ \hline
+2010-4& 0.56\\ \hline
+2011-1& 2.61\\ \hline
+2011-2& 3.45\\ \hline
+2011-3& 3.51\\ \hline
+2011-4& 4.11\\ \hline
+2012-1& 4.0\\ \hline
+2012-2& 5.84\\ \hline
+2012-3& 4.67\\ \hline
+2012-4& 4.12\\ \hline
+2013-1& 2.78\\ \hline
+2013-2& 3.2\\ \hline
+2013-3& 3.09\\ \hline
+2013-4& 2.11\\ \hline
+Average& 3.21\\ \hline
+\end{tabular}
+}
+\caption{Team size - team four}
+ \label{Team:WIP:4}
+\end{subfigure}
+%%%%%%% DEL TO TEAM 5-8
+\begin{subfigure}[b]{0.1\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-3& 1.68\\ \hline
+2010-4& 1.44\\ \hline
+2011-1& 0.56\\ \hline
+2011-2& 0.85\\ \hline
+2011-3& 1.28\\ \hline
+2011-4& 1.21\\ \hline
+2012-1& 1.78\\ \hline
+2012-2& 2.7\\ \hline
+2012-3& 0.82\\ \hline
+2012-4& 1.11\\ \hline
+2013-1& 4.03\\ \hline
+2013-2& 7.97\\ \hline
+2013-3& 0.78\\ \hline
+2013-4& 0.87\\ \hline
+Average & 1.93\\ \hline
+\end{tabular}
+}
+\caption{Team size - five}
+ \label{Team:WIP:5}
+\end{subfigure}
 
-%\section{Summary}
-%This section presented the result produced by the software program and SPSS. 
+\begin{subfigure}[b]{0.3\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-3& 1.9\\ \hline
+2010-4& 1.72\\ \hline
+2011-1& 1.63\\ \hline
+2011-2& 1.73\\ \hline
+2011-3& 3.9\\ \hline
+2011-4& 4.58\\ \hline
+2012-1& 3.91\\ \hline
+2012-2& 2.92\\ \hline
+2012-3& 2.54\\ \hline
+2012-4& 2.92\\ \hline
+2013-1& 3.62\\ \hline
+2013-2& 4.86\\ \hline
+2013-3& 3.4\\ \hline
+2013-4& 2.67\\ \hline
+Average & 3.02\\ \hline
+\end{tabular}
+}
+\caption{Team size - team six}
+ \label{Team:WIP:6}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-3& 1.41\\ \hline
+2010-4& 2.88\\ \hline
+2011-1& 1.85\\ \hline
+2011-2& 2.13\\ \hline
+2011-3& 2.15\\ \hline
+2011-4& 1.94\\ \hline
+2012-1& 1.44\\ \hline
+2012-2& 3.31\\ \hline
+2012-3& 2.65\\ \hline
+2012-4& 0.56\\ \hline
+Average& 2.03\\ \hline
+\end{tabular}
+
+}
+\caption{Team size - team seven}
+ \label{Team:WIP:7}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-4& 0.19\\ \hline
+2011-1& 0.46\\ \hline
+2011-2& 0.74\\ \hline
+2011-3& 0.86\\ \hline
+2011-4& 0.88\\ \hline
+2012-1& 0.97\\ \hline
+2012-2& 2.14\\ \hline
+2012-3& 0.36\\ \hline
+2012-4& 0.51\\ \hline
+2013-1& 0.38\\ \hline
+2013-2& 0.94\\ \hline
+2013-3& 0.36\\ \hline
+2013-4& 0.5\\ \hline
+Average& 0.71\\ \hline
+\end{tabular}
+}
+\caption{Team size - team eight}
+ \label{Team:WIP:8}
+\end{subfigure}
 
 
 
+
+%%%%%% DEL tree TEAM 9-10
+\begin{subfigure}[b]{0.5\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-4& 0.9\\ \hline
+2011-1& 1.48\\ \hline
+2011-2& 1.61\\ \hline
+2011-3& 1.82\\ \hline
+2011-4& 1.78\\ \hline
+2012-1& 1.62\\ \hline
+2012-2& 4.43\\ \hline
+2012-3& 3.26\\ \hline
+2012-4& 1.82\\ \hline
+2013-1& 2.68\\ \hline
+2013-2& 2.95\\ \hline
+2013-3& 1.99\\ \hline
+2013-4& 2.14\\ \hline
+Average & 2.19\\ \hline
+\end{tabular}
+}
+\caption{Team size - team nine}
+ \label{Team:WIP:9}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{WIP-limit} \\ \hline
+2010-3& 0.9\\ \hline
+2010-4& 1.19\\ \hline
+2011-1& 0.68\\ \hline
+2011-2& 0.66\\ \hline
+2011-3& 0.22\\ \hline
+2011-4& 0.98\\ \hline
+2012-1& 1.23\\ \hline
+2012-2& 2.03\\ \hline
+2012-3& 0.7\\ \hline
+2012-4& 1.84\\ \hline
+2013-1& 0.96\\ \hline
+2013-2& 0.98\\ \hline
+2013-3& 1.25\\ \hline
+2013-4& 1.54\\ \hline
+Average & 1.08\\ \hline
+\end{tabular}
+}
+\caption{Team size - team ten}
+ \label{Team:WIP:10}
+\end{subfigure}
+\caption[Optional caption for list of figures]{Caption of team size for teams in SI}
+\label{table:WIP:teams}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% DISC %%%%%%%%%%%%%
 \chapter{Discussion}
 \label{ch:dis}
-The first section, Section \ref{sec:diss:sv} will consist of an explanation of the relationship between the sub variables. To back up any assumptions about the variables, descriptive statistic tables listed in Appendix \ref{app:DS} and correlation graphs will be used. The next sections contain discussion based on the research questions, the different results from this study and what other literature has stated. 
+The first sections contain discussion based on the research questions, the different results from this study and what other literature has stated. The last Section \ref{sec:diss:sv}, will consist of an explanation of the relationship between the sub variables. To back up any assumptions about the variables, descriptive statistic tables listed in Appendix \ref{app:DS} and correlation graphs will be used. 
+
+
+
+\section{WIP and throughput} 
+\vspace{-0.5em}
+In this work, throughput is a measure to see how productive teams are. In Section \ref{WIPsec}, there was stated by various people, when lowering WIP-limit the {throughput} increases. The paper "Studying Lean-Kanban Approach Using Software Process Simulation" \parencite{DavidAnderson} simulated a  lean-kanban process, as stated in \ref{WIPsec}. The simulation showed when WIP was limit; the software process used 100 days and 120 days when WIP was not limit. The paper "Simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} showed that WIP-limit could lead to improvement in throughput. The paper also showed that when taking a process without WIP-limit, and simulate it using WIP-limit it outperformed the process without WIP-limit.
+
+
+The Tables \ref{DS:corr:TP} and \ref{DS:corr:TP:v2} from this result show no evidence towards the fact that lowering WIP-limit will increase \textit{throughput}. \textit{Throughput} has the average correlation value of 0.6 when team size is \textbf{not} taken into account and 0.4 otherwise. One can argue that the throughput correlation value is biased when team size is \textbf{not} taken into account, based on the strong team size correlation. But the Table \ref{DS:corr:TP:v2}, where team size is taken into account shows an average correlation value of 0.4 between \textit{throughput} and \textit{WIP} when team size is taken into account.
+
+When team size is \textbf{not} taken into account,  all of the teams have a positive correlation between \textit{WIP} and \textit{throughput}, and seven of the teams have a significant correlation value, shown in Table \ref{corr:WIP}.  When team size is taken into account the Table \ref{DS:corr:WIP:v2}  shows nine out of ten teams have a positive correlation between \textit{WIP} and \textit{throughput}. Team ten is the only team with a negative correlation.  Team five, six, eight and ten has a low correlation value, team one and seven has a low-medium correlation value and team two, three, four and nine has a medium-high significant correlation relationship. The median between the teams when team size is \textbf{not} taking into account is 0.7 and 0.4 otherwise. The standard deviation is 0.2 when team size is \textbf{not} taking into account and 0.3 otherwise, shown by Tables \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}. The median and standard deviation when team size is \textbf{not} taken into account shows most of the teams have at least a medium positive correlation relationship between \textit{WIP} and \textit{throughput}. 
+
+The combined Table \ref{corr:All} shows a significant correlation value of 0.41 when team size is \textbf{not} taking into account and Table \ref{corr:All:V2} shows an overall significant correlation value of 0.55 when team size is taken into account. The values presented in this section point towards the fact that when \textit{WIP} increases, so does \textit{throughput}. The WIP-limit for SI could be too low which explains why \textit{WIP} and \textit{throughput} has a positive correlation relationship.
+
+
+%The \textit{throughput} values show that when team size is \textbf{not} taking into account, seven of the ten teams have a significant linear relationship and the average \textit{throughput} value is 0.6. When team size is taken into account, four of the teams have a significant correlation and the average mean is 0.4. These values shows that \textit{throughput} has a positive correlation relationship with \textit{WIP}. The two median numbers shows at least 50\% of the correlation values have a medium-strong correlation value. The standard deviation shows a low-medium spread between the values, which indicates that the values are in the same range. The overall correlation value when team size is \textbf{not} taking into account shows a positive medium-strong linear relationship, but when team size is taken into consideration the overall linear relationship is 0.05, but the average for teams is 0.4 and four out of ten teams has a significant value.  Based on this, there is a low-medium linear relationship between \textit{WIP} and \textit{throughput}. 
+
+%The two tables also show the sub variables of \textit{throughput} with a mean of 0.5 when team size is \textbf{not} taken into account and 0.3 otherwise. This display that both the sub variables  
+
+
+
+Despite the relationship between \textit{WIP} and \textit{throughput}, the \textit{throughput} correlation Table \ref{DS:corr:TP:v2} in Section \ref{sec:corr:TP} shows that \textit{throughput bug} has a mean correlation value of 0.8, \textit{bugs}, \textit{throughput feature} has an average correlation value of 0.6,  \textit{lead time} has the average value of 0.5, \textit{bugs finished quarter, bugs} and \textit{WIP} has the average correlation of 0.4, \textit{churn} has a mean correlation of 0.3 and the rest of the variables has a mean correlation of $\pm$ 0.2.
+The combine Table \ref{corr:All:V2} shows \textit{throughput} has significant correlation values to all variables except \textit{churn} and \textit{churn feature}, when team size is taken into account.
+
+When team size is \textbf{not} taken into account the Table \ref{DS:corr:TP} shows that \textit{throughput feature} has a mean correlation value of 0.8, \textit{throughput bug} has an average value of 0.7, \textit{bugs} and \textit{WIP} has a value of 0.6 and both \textit{lead time} and \textit{team size} has an average correlation value of 0.5, \textit{bugs finished, quarter} has the mean value of 0.3 and the rest of the variables has a mean correlation of $\pm$ 0.2 . The combined Table \ref{corr:All} shows \textit{throughput} has a significant correlation relationship to \textit{WIP, throughput feature, throughput bug, bugs}, \textit{bugs finished, quarter} and \textit{team size}. 
+
+The \textit{throughput's} correlation values are isolated, along with rest of the variables presented. The variables can only be used to see what impact the variable has on a software process. One cannot say if \textit{WIP} decreases, then the variable decreases and then all the variables with a significant positive correlation to the variable decreases. The \textit{throughput} correlation values also shows the \textit{WIP} relationship decreases when \textit{team size} is taken into account, but the relationship between the other variables do not differ in the same extent.
+
+
+
+
+\section{WIP and lead time}
+\vspace{-1em}
+As stated in Section \ref{sec:in:lt}, lead time could be used to track how quickly software is delivered to customers. Each development process would like to get their lead time as low as possible. In Section \ref{WIPsec} there is stated that WIP-limits are important to reduce lead times. The result from this work when team size was \textbf{not} taken into account shows a mean correlation relationship of 0.5 between \textit{WIP} and \textit{lead time},  as shown in Table \ref{DS:corr:WIP}.  The correlation Table \ref{corr:WIP} shows teams one, four, five, seven and ten have a significant positive correlation relationship, both team two and three has a medium correlation relationship and team six, eight and nine has a low positive correlation relationship.
+
+The result from when team size was taken into account shows an average correlation relationship of 0.2, which is a weaker correlation relationship. Three of the ten teams have a significant positive correlation, while the rest of teams' correlation values vary from 0.32 to -0.18, as shown by Tables \ref{corr:WIP:V2} and \ref{DS:corr:WIP:v2}. 
+
+The standard deviation shows a variation of 0.2 and a median of 0.5 when team is \textbf{not} taken into account, as shown by Table \ref{DS:corr:WIP}. The standard deviation when team size is taken into account is 0.4 and the median is 0, as shown in Table \ref{DS:corr:WIP:v2}. The standard deviation shows a high proliferation of values when team size is taken into account. The standard deviation shows evidence of spread relationship between \textit{WIP} and \textit{lead time} across the teams  when team size is taken into account.   The standard deviation value of 0.2 shows that  each of the ten \textit{lead time} values are closer to each other when team size is \textbf{not} taken into account.  
+
+The combine correlation Table \ref{corr:All} shows that all teams combined have a significant correlation value of 0.27, when team size is \textbf{not} taken into account.  The correlation Table \ref{corr:All:V2} shows a signficant correlation value of 0.36 when team size is taken into account. The value presented in this section shows when time size is taken into account, the average correlation value is 0.2, but the combine correlation value is a significant one of 0.36. This shows a low to medium positive correlation relationship between \textit{WIP} and \textit{lead time}. When team size is \textbf{not} taken into account; there is a low significant correlation value for all the teams combined and medium-high positive correlation when each team is measured independently. Based on these results, decreasing the WIP-limit will decrease \textit{lead time}.
+
+
+The \textit{lead time}'s descriptive statistic Table \ref{DS:corr:LT:v2} shows \textit{throughput, throughput bug}, \textit{bugs} and  \textit{bugs finished, quarter}  has the average correlation value 0.5, while \textit{churn} and \textit{throughput feature} has the value of 0.4 and the rest has a mean correlation value of $\pm$ 0.2 or less, when team size is taken into account. When team size is \textbf{not} taken into account, \textit{WIP} and \textit{throughput} has an average correlation value of 0.5 and \textit{throughput feature} has the value 0.4, \textit{throughput bug, bugs, churn feature} and \textit{team size} has the mean correlation value of 0.3 and the rest variables has a value of $\pm$ 0.2 or less. The combine Table \ref{corr:All} shows an overall significant positive correlation between \textit{lead time} and both \textit{team size} and \textit{WIP}, when team size is \textbf{not} taken into account. When team size is taken into account all values except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug} has a significant positive correlation, as shown by Table \ref{corr:All:V2}. These values show the impact \textit{lead time} has on a development process.  The significant correlation value and the average correlation value between \textit{lead time} and \textit{throughput} is odd, these values should be further investigated. 
+
+\section{WIP and bugs}
+To minimize bugs should be a goal independent of software process and methods. If WIP-limit could reduce bugs without compromising, one could conclude that WIP-limit matter in software development. The paper cited by Shinkle stated; when WIP was too high, the number of bugs increased  \parencite{Shinkle}.
+
+The result from this work shows when team size is \textbf{not} taken into account, the average correlation value between \textit{WIP} and \textit{bugs} is 0.5 and four of the teams have a significant positive correlation value between \textit{bugs} and \textit{WIP}. All of the ten teams also have a positive correlation value, as shown in Table \ref{corr:WIP}. The two variable \textit{bug finished, quarter} and \textit{avg days backlog bugs} is used as a side measures. The two variables are used to see how long bugs are in backlog and the amount of bugs fixed vs. the amount of bugs recorded in system per quarter. The average correlation value between \textit{WIP} and both \textit{bug finished, quarter} is 0.3 and \textit{avg days backlog, bugs} is 0.1. The value \textit{bug finished, quarter} shows a low-medium average correlation relationship. The mean correlation value of 0.1   for  \textit{avg days backlog bugs}, the combine correlation value of 0.17 from Table \ref{corr:All} and the fact that there is one team with a significant correlation relationship between \textit{avg days backlog, bugs} and \textit{WIP} shows that  \textit{WIP} limit has no influence on the number of days bugs are in backlog, when \textit{team size} is \textbf{not} taken into account. The \textit{bugs finished, quarter} with the mean of 0.3, also has a significant positive correlation of 0.17. These values show a weak correlation relationship between \textit{bugs finished, quarter} and \textit{WIP}. 
+
+When team size is taken into account, the average correlation value is 0.2 for \textit{bugs}, as shown by Table \ref{DS:corr:WIP:v2}.  Eight out of ten teams have a positive correlation relationship, but only one team has a significant positive value. The  \textit{bug finished, quarter} and \textit{avg days backlog, bugs}  has the average correlation values 0.2 and -0.1. For \textit{bug finished, quarter} are there four teams with a positive significant correlation and one team with a negative. For \textit{avg days backlog, bugs} is there one team with a negative significant correlation. The combine Table \ref{corr:All:V2} shows \textit{bugs finished, quarter} with a significant correlation value of 0.40 and \textit{avg days in backlog, bugs} with a negative correlation value of -0.14. These values show a weak correlation relationship between \textit{bugs} and \textit{WIP} and a medium significant correlation relationship between \textit{WIP} and \textit{bugs finished, quarter}. 
+
+The standard deviation when team size is \textbf{not} taken into account is 0.2 and the median is 0.5. The median when team size is taken into account is 0.2 and the standard deviation is increased is 0.2. The median numbers show significant impact of team size between the relationship of \textit{WIP} and \textit{bug}. The standard deviation values for the two cases is equal, as shown in \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}    
+
+When team size is \textbf{not} taken into account, the overall correlation value is significant with a value of  0.41, shown in Table \ref{corr:All}.  The correlation Table \ref{corr:All:V2} shows the correlation values from when time size is taken into account. The table shows an overall significant correlation value of 0.29. The values from this section shows there is evidence that WIP-limit helps decrease bugs.
+
+The descriptive statistic table for bugs in Section  \ref{sec:corr:bug} shows \textit{bugs} variable has a average correlation of 0.6 to \textit{throughput} and \textit{throughput bug}, \textit{throughput feature} has a mean value of 0.5, \textit{WIP} has a mean correlation value of 0.4 and  \textit{bugs finished, quarter} \textit{avg days backlog, bugs}, \textit{lead time} and \textit{team size} has a mean correlation value of 0.3 and rest of the variables have a mean correlation of $\pm$ 0.2 or less, as shown in Table \ref{DS:corr:Bugs}. Table \ref{corr:All} shows \textit{bugs} has an overall significant correlation value to all values except \textit{lead time} and all the \textit{churn} variables. All of this when team size is \textbf{not} taken into account. When team size is taken into account, \textit{bugs} has a mean correlation value of 0.8 for \textit{throughput bug}, 0.6 for \textit{throughput} again, \textit{bugs finished quarter}  and \textit{lead time} has the mean correlation value 0.5, \textit{avg days in backlog, bugs} has the mean value of 0.4, \textit{churn} 0.3 and the Table \ref{corr:All:V2} shows that bugs has a significant correlation value to all variables except \textit{throughput feature} and \textit{churn feature}.  When team size is taken into account, the correlation relationship between the variables and \textit{bugs} increases for almost each variable versus when team size was \textbf{not} taken into account.
+
+
+
+\section{WIP and Churn}
+Churn is used as surrogates for effort in this work. Based on the descriptive statistics tables, independently of  team size; there is no relationship between \textit{WIP} and \textit{churn} or the sub variables of churn according to Tables \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}. The results show a mean correlation of -0.1, 0 and 0.1 for the \textit{churn} variables. When team size is \textbf{not} taken into account, two of the teams have a significant correlation, one of them has a positive correlation and the other has a negative. When team size is taken into account, there is one team with a significant positive correlation value.
+
+The standard deviation for both the results are 0.4, while the median is 0.1 when team size is \textbf{not} taken into account and -0.2 for the other case. The standard deviation empowers the assumption of a relationship between \textit{churn} and \textit{WIP}, because the values are spread and there is no pattern.  The Table \ref{corr:All} shows an overall correlation value of 0.06 when team size is taken into account. The Table \ref{corr:All:V2} shows a significant correlation value of 0.17. These values show that WIP-limit has little impact on \textit{churn}.
+
+Section \ref{sec:corr:churn} shows \textit{churn} correlation tables. The Table \ref{DS:corr:Churn} shows when team size is \textbf{not} taken into account, \textit{churn} has only low correlation relationship between any of the other variables, except the \textit{churn's} sub variables. When  team size is taken into account, \textit{bugs finished, quarter} has a mean correlation relationship of 0.5, \textit{lead time} has a value of 0.4 and \textit{throughput, throughput bug} and \textit{bugs} has a value of 0.3, as shown by Table \ref{DS:corr:churn:v2}. The combine Table \ref{corr:All} shows \textit{churn} has a significant positive correlation value to both the sub variables and a significant negative correlation to \textit{team size}. When team size is taken into account, \textit{churn} has a significant positive correlation to \textit{WIP, bugs}, \textit{bugs finished, quarter}, \textit{lead time} and  both the \textit{churn} sub variables, as shown by Table \ref{corr:All:V2}. 
+
+\section{WIP-limit}
+
+\section{Team size}
+As the different results sections in Chapter \ref{ch:res} and the sections above states, it is important to take team size into account when a case study like this is conducted. If team size were left out as a variable in this case study, \textit{WIP} would have an average correlation relationship of 0.6 with \textit{throughput} and 0.5 with \textit{bugs} and \textit{lead time}. These three correlation values decreased by 0.2  and 0.3 compared to when  team size was taken into account. The combine correlation Table  \ref{corr:All} shows that seven of the variables have a significant positive correlation with \textit{team size}.  If team size were not taken into account the result from this work would have been biased. 
+
+%The table also shows eight out of eleven variables has a significant correlation value with \textit{WIP}, while Table \ref{corr:All:V2} shows one out of ten variables has a significant relationship.
+
+
+\iffalse
+When time size was \textbf{not} taken into account for the \textit{throughput} variable, \textit{bugs} has a value of 0.6 and \textit{lead time} has a value of 0.5, which indicates a medium - strong relationship. The median in \textit{bugs} case is 0.8 and for \textit{lead time} it is 0.5 as shown in Tables \ref{DS:corr:TP} and \ref{DS:corr:TP:v2}. When team size is taken into account, the correlation values between \textit{throughput} and both \textit{bugs} and \textit{lead time} is the same, the standard deviation and median for \textit{bugs} is different.  If \textit{WIP} omitted, the correlation relationship between the other variables and \textit{throughput} does not differ to much.
+
+The \textit{bugs} correlation tables \ref{DS:corr:Bugs} and \ref{DS:corr:Bugs:v2} shows a difference in the correlation value between \textit{bugs} and \textit{WIP}. The correlation value is increased by 0.2 when team size is \textbf{not} taken into account. Both the \textit{throughput} correlation values are 0.6. The correlation value for \textit{lead time} is also increased by 0.2 when team size is \textbf{not} taken into account, while churn increased by 0.3. These values show an impact of team size on the correlation relationship for 3 of 4 variables. For \textit{lead time} increases the churn value by 0.2 when time size is \textbf{not} taken into account, otherwise are the correlation values for \textit{lead time} stated preceding paragraphs. 
+\fi
+
 
 
 
@@ -2057,81 +2400,6 @@ The \textit{churn} variable for \textbf{team four} has the correlation value of 
 
 \textbf{Team ten} has a significant correlation value of 0.94 for \textit{churn bug} and \textit{churn feature} has the correlation value 0.14, as showed in \textit{churn} correlation Table \ref{corr:churn}. This shows that churn bug represents most of \textit{churn}.  Based on the Tables \ref{DS:Churn:10}, \ref{DS:CF:10} and \ref{DS:CB:10}, one can see that \textit{churn} contains 361 dates and has a total mean value of 45.4. \textit{Churn feature} represents 69 of these dates and has a total mean of 75.5, while \textit{churn bug} represents 292 of \textit{churn's} dates and has a total mean of 38.3. These data also shows the relationship between \textit{churn} and \textit{churn bug}.  
 
-\section{WIP and throughput} 
-\vspace{-0.5em}
-In this work, throughput is a measure to see how productive teams are. In Section \ref{WIPsec}, there was stated by various people, when lowering WIP-limit the {throughput} increases. The paper "Studying Lean-Kanban Approach Using Software Process Simulation" \parencite{DavidAnderson} simulated a  lean-kanban process, as stated in \ref{WIPsec}. The simulation showed when WIP was limit; the software process used 100 days and 120 days when WIP was not limit. The paper "Simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} showed that WIP-limit could lead to improvement in throughput. The paper also showed that when taking a process without WIP-limit, and simulate it using WIP-limit it outperformed the process without WIP-limit.
-
-
-The Tables \ref{DS:corr:TP} and \ref{DS:corr:TP:v2} from this result show no evidence towards the fact that lowering WIP-limit will increase \textit{throughput}. \textit{Throughput} has the average correlation value of 0.6 when team size is \textbf{not} taken into account and 0.4 otherwise. One can argue that the throughput correlation value is biased when team size is \textbf{not} taken into account, based on the strong team size correlation. But the Table \ref{DS:corr:TP:v2}, where team size is taken into account shows an average correlation value of 0.4 between \textit{throughput} and \textit{WIP} when team size is taken into account.
-
-When team size is \textbf{not} taken into account,  all of the teams have a positive correlation between \textit{WIP} and \textit{throughput}, and seven of the teams have a significant correlation value, shown in Table \ref{corr:WIP}.  When team size is taken into account the Table \ref{DS:corr:WIP:v2}  shows nine out of ten teams have a positive correlation between \textit{WIP} and \textit{throughput}. Team ten is the only team with a negative correlation.  Team five, six, eight and ten has a low correlation value, team one and seven has a low-medium correlation value and team two, three, four and nine has a medium-high significant correlation relationship. The median between the teams when team size is \textbf{not} taking into account is 0.7 and 0.4 otherwise. The standard deviation is 0.2 when team size is \textbf{not} taking into account and 0.3 otherwise, shown by Tables \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}. The median and standard deviation when team size is \textbf{not} taken into account shows most of the teams have at least a medium positive correlation relationship between \textit{WIP} and \textit{throughput}. 
-
-The combined Table \ref{corr:All} shows a significant correlation value of 0.41 when team size is \textbf{not} taking into account and Table \ref{corr:All:V2} shows an overall significant correlation value of 0.55 when team size is taken into account. The values presented in this section point towards the fact that when \textit{WIP} increases, so does \textit{throughput}. The WIP-limit for SI could be too low which explains why \textit{WIP} and \textit{throughput} has a positive correlation relationship.
-
-
-%The \textit{throughput} values show that when team size is \textbf{not} taking into account, seven of the ten teams have a significant linear relationship and the average \textit{throughput} value is 0.6. When team size is taken into account, four of the teams have a significant correlation and the average mean is 0.4. These values shows that \textit{throughput} has a positive correlation relationship with \textit{WIP}. The two median numbers shows at least 50\% of the correlation values have a medium-strong correlation value. The standard deviation shows a low-medium spread between the values, which indicates that the values are in the same range. The overall correlation value when team size is \textbf{not} taking into account shows a positive medium-strong linear relationship, but when team size is taken into consideration the overall linear relationship is 0.05, but the average for teams is 0.4 and four out of ten teams has a significant value.  Based on this, there is a low-medium linear relationship between \textit{WIP} and \textit{throughput}. 
-
-%The two tables also show the sub variables of \textit{throughput} with a mean of 0.5 when team size is \textbf{not} taken into account and 0.3 otherwise. This display that both the sub variables  
-
-
-
-Despite the relationship between \textit{WIP} and \textit{throughput}, the \textit{throughput} correlation Table \ref{DS:corr:TP:v2} in Section \ref{sec:corr:TP} shows that \textit{throughput bug} has a mean correlation value of 0.8, \textit{bugs}, \textit{throughput feature} has an average correlation value of 0.6 and  \textit{lead time} has the average value of 0.5, \textit{bugs finished quarter, bugs} and \textit{WIP} has the average correlation of 0.4, \textit{churn} has a mean correlation of 0.3 and the rest of the variables has a mean correlation of $\pm$ 0.2.
-The combine Table \ref{corr:All:V2} shows \textit{throughput} has significant correlation values to all variables except \textit{churn} and \textit{churn feature}, when team size is taken into account.
-
-When team size is \textbf{not} taken into account the Table \ref{DS:corr:TP} shows that \textit{throughput feature} has a mean correlation value of 0.8, \textit{throughput bug} has an average value of 0.7, \textit{bugs} and \textit{WIP} has a value of 0.6 and both \textit{lead time} and \textit{team size} has an average correlation value of 0.5, \textit{bugs finished, quarter} has the mean value of 0.3 and the rest of the variables has a mean correlation of $\pm$ 0.2 . The combined Table \ref{corr:All} shows \textit{throughput} has a significant correlation relationship to \textit{WIP, throughput feature, throughput bug, bugs}, \textit{bugs finished, quarter} and \textit{team size}. 
-
-The \textit{throughput's} correlation values are isolated, along with rest of the variables presented. The variables can only be used to see what impact the variable has on a software process. One cannot say if \textit{WIP} decreases, then the variable decreases and then all the variables with a significant positive correlation to the variable decreases. The \textit{throughput} correlation values also shows the \textit{WIP} relationship decreases when \textit{team size} is taken into account, but the relationship between the other variables do not differ in the same extent.
-
-
-
-
-\section{WIP and lead time}
-\vspace{-1em}
-As stated in Section \ref{sec:in:lt}, lead time could be used to track how quickly software is delivered to customers. Each development process would like to get their lead time as low as possible. In Section \ref{WIPsec} there is stated that WIP-limits are important to reduce lead times. The result from this work when team size was \textbf{not} taken into account shows a mean correlation relationship of 0.5 between \textit{WIP} and \textit{lead time},  as shown in Table \ref{DS:corr:WIP}.  The correlation Table \ref{corr:WIP} shows teams one, four, five, seven and ten have a significant positive correlation relationship, both team two and three has a medium correlation relationship and team six, eight and nine has a low positive correlation relationship.
-
-The result from when team size was taken into account shows an average correlation relationship of 0.2, which is a weaker correlation relationship than when team size was \textbf{not} taken into account. Three of the ten teams have a significant positive correlation, while the rest of teams' correlation values vary from 0.32 to -0.18, as shown by Tables \ref{corr:WIP:V2} and \ref{DS:corr:WIP:v2}. 
-
-The standard deviation shows a variation of 0.2 and a median of 0.5 when team is \textbf{not} taken into account, as shown by Table \ref{DS:corr:WIP}. The standard deviation when team size is taken into account is 0.4 and the median is 0, as shown in Table ¶\ref{DS:corr:WIP:v2}. The standard deviation shows a high proliferation of values when team size is taken into account. The standard deviation shows evidence of spread relationship between \textit{WIP} and \textit{lead time} across the teams  when team size is taken into account.   The standard deviation value of 0.2 shows that  each of the ten \textit{lead time} values are closer to each other when team size is \textbf{not} taken into account.  
-
-The combine correlation Table \ref{corr:All} shows that all teams combined have a significant correlation value of 0.27, when team size is \textbf{not} taken into account.  The correlation Table \ref{corr:All:V2} shows a signficant correlation value of 0.36 when team size is taken into account. The value presented in this section shows when time size is taken into account, the average correlation value is 0.2, but the combine correlation value is a significant one of 0.36. This shows a low to medium positive correlation relationship between \textit{WIP} and \textit{lead time}. When team size is \textbf{not} taken into account; there is a low significant correlation value for all the teams combined and medium-high positive correlation when each team is measured independently. Based on these results, decreasing the WIP-limit will decrease \textit{lead time}.
-
-
-The \textit{lead time}'s descriptive statistic Table \ref{DS:corr:LT:v2} shows \textit{throughput, throughput bug}, \textit{bugs} and  \textit{bugs finished, quarter}  has the average correlation value 0.5, while \textit{churn} has the value of 0.4 and the rest has a mean correlation value of $\pm$ 0.2 or less, when team size is taken into account. When team size is \textbf{not} taken into account, \textit{WIP} and \textit{throughput} has an average correlation value of 0.5 and \textit{throughput feature} has the value 0.4, \textit{throughput bug, bugs, churn feature} and \textit{team size} has the mean correlation value of 0.3 and the rest variables has a value of $\pm$ 0.2 or less. The combine Table \ref{corr:All} shows an overall significant positive correlation between \textit{lead time} and both \textit{team size} and \textit{WIP}, when team size is \textbf{not} taken into account. When team size is taken into account all values except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug} has a significant positive correlation, as shown by Table \ref{corr:All:V2}. These values show the impact \textit{lead time} has on a development process.  The significant correlation value and the average correlation value between \textit{lead time} and \textit{throughput} is odd, these values should be further investigated. 
-
-\section{WIP and bugs}
-To minimize bugs should be a goal independent of software process and methods. If WIP-limit could reduce bugs without compromising, one could conclude that WIP-limit matter in software development. The paper cited by Shinkle stated; when WIP was too high, the number of bugs increased  \parencite{Shinkle}.
-
-The result from this work shows when team size is \textbf{not} taken into account, the average correlation value between \textit{WIP} and \textit{bugs} is 0.4 and four of the teams have a significant positive correlation value between \textit{bugs} and \textit{WIP}. All of the ten teams also have a positive correlation value, as shown in Table \ref{corr:WIP}. The two variable \textit{bug finished, quarter} and \textit{avg days backlog bugs} is used as a side measures. The two variables are used to see how long bugs are in backlog and the amount of bugs fixed vs. the amount of bugs recorded in system per quarter. The average correlation value between \textit{WIP} and both \textit{bug finished, quarter} is 0.3 and \textit{avg days backlog, bugs} is 0.1. The value \textit{bug finished, quarter} shows a low-medium average correlation relationship. The mean correlation value of 0.1   for  \textit{avg days backlog bugs}, the combine correlation value of 0.17 from Table \ref{corr:All} and the fact that there is one team with a significant correlation relationship between \textit{avg days backlog, bugs} and \textit{WIP} shows that  \textit{WIP} limit has no influence on the number of days bugs are in backlog, when \textit{team size} is \textbf{not} taken into account. The \textit{bugs finished, quarter} with the mean of 0.3, also has a significant positive correlation of 0.17. These values show a weak correlation relationship between \textit{bugs finished, quarter} and \textit{WIP}. 
-
-When team size is taken into account, the average correlation value is 0.2 for \textit{bugs}, as shown by Table \ref{DS:corr:WIP:v2}.  Eight out of ten teams have a positive correlation relationship, but only one team has a significant positive value. The  \textit{bug finished, quarter} and \textit{avg days backlog, bugs}  has the average correlation values 0.2 and -0.1. For \textit{bug finished, quarter} are there four teams with a positive significant correlation and one team with a negative. For \textit{avg days backlog, bugs} is there one team with a negative significant correlation. The combine Table \ref{corr:All:V2} shows \textit{bugs finished, quarter} with a significant correlation value of 0.40 and \textit{avg days in backlog, bugs} with a negative correlation value of -0.14. These values show a weak correlation relationship between \textit{bugs} and \textit{WIP} and a medium significant correlation relationship between \textit{WIP} and \textit{bugs finished, quarter}. 
-
-The standard deviation when team size is \textbf{not} taken into account is 0.2 and the median is 0.5. The median when team size is taken into account is 0.2 and the standard deviation is increased is 0.3. The median numbers show significant impact of team size between the relationship of \textit{WIP} and \textit{bug}. The standard deviation values for the two cases show a minor variation between the two results variables, shown in \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}    
-
-When team size is \textbf{not} taken into account, the overall correlation value is significant with a value of  0.41, shown in Table \ref{corr:All}.  The correlation Table \ref{corr:All:V2} shows the correlation values from when time size is taken into account. The table shows an overall significant correlation value of 0.29. The values from this section shows there is evidence that WIP-limit helps decrease bugs.
-
-The bugs correlation tables in Section  \ref{sec:corr:bug} shows \textit{bugs} variable has a average correlation of 0.6 to \textit{throughput} and a correlation value of 0.3 to \textit{bugs finished, quarter} \textit{avg days backlog, bugs}, \textit{lead time} and \textit{team size} and rest of the variables have a mean correlation of $\pm$ 0.2 or less. Table \ref{corr:All} shows \textit{bugs} has an overall significant correlation value to all values except \textit{lead time} and all the \textit{churn} variables. All of this when team size is \textbf{not} taken into account. When team size is taken into account, \textit{bugs} has a average correlation value of 0.6 for \textit{throughput} again, \textit{bugs finished quarter} has the average correlation value 0.5, \textit{avg days in backlog, bugs} has the average value of 0.4, \textit{lead time} 0.5 and \textit{churn} 0.3 and The table \ref{corr:All:V2} shows that bugs has a significant correlation value to all variables except \textit{throughput feature} and \textit{churn feature}.  When team size is taken into account, the correlation relationship between the variables and \textit{bugs} increases for almost each variable.
-
-
-
-\section{WIP and Churn}
-Churn is used as surrogates for effort in this work. Based on the descriptive statistics tables, independently of  team size; there is no relationship between \textit{WIP} and \textit{churn} or the sub variables of churn according to Tables \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}. The results show a mean correlation of -0.1, 0 and 0.1 for the \textit{churn} variables.. When team size is \textbf{not} taken into account, two of the teams have a significant correlation, one of them has a positive correlation and the other has a negative. When team size is taken into account, there is one team with a significant positive correlation value.
-
-The standard deviation for both the results are 0.4, while the median is 0.1 when team size is \textbf{not} taken into account and -0.1 for the other case. The standard deviation empowers the assumption of a relationship between \textit{churn} and \textit{WIP}, because the values are spread and there is no pattern.  The Table \ref{corr:All} shows an overall correlation value of 0.06 when team size is taken into account. The Table \ref{corr:All:V2} shows a significant correlation value of 0.17. These values show that WIP-limit has little impact on \textit{churn}.
-
-Section \ref{sec:corr:churn} shows \textit{churn} correlation tables. The Table \ref{DS:corr:Churn} shows when team size is \textbf{not} taken into account, \textit{churn} has no correlation relationship between any of the other variables, except the \textit{churn's} sub variables. When  team size is taken into account, \textit{bugs finished, quarter} has a strong average relationship with a value of 0.6, while \textit{lead time} has a value of 0.4, as shown by Table \ref{DS:corr:churn:v2}. The combine Table \ref{corr:All} shows \textit{churn} has a significant positive correlation value to both the sub variables and a significant negative correlation to \textit{team size}. When team size is taken into account, \textit{churn} has a significant positive correlation to \textit{WIP, bugs}, \textit{bugs finished, quarter}, \textit{lead time} and  both the \textit{churn} sub variables, as shown by \ref{corr:All:V2}. 
-
-
-\section{Team size}
-As the different results sections in Chapter \ref{ch:res} and the sections above states, it is important to take team size into account when a case study like this is conducted. If team size were left out as a variable in this case study, \textit{WIP} would have an average correlation relationship of 0.6 with \textit{throughput} and 0.5 with \textit{bugs} and \textit{lead time}. These three correlation values decreased by 0.2  and 0.3 compared to when  team size was taken into account. The combine correlation Table  \ref{corr:All} shows that seven of the variables have a significant positive correlation with \textit{team size}.  If team size were not taken into account the result from this work would have been biased. 
-
-%The table also shows eight out of eleven variables has a significant correlation value with \textit{WIP}, while Table \ref{corr:All:V2} shows one out of ten variables has a significant relationship.
-
-
-\iffalse
-When time size was \textbf{not} taken into account for the \textit{throughput} variable, \textit{bugs} has a value of 0.6 and \textit{lead time} has a value of 0.5, which indicates a medium - strong relationship. The median in \textit{bugs} case is 0.8 and for \textit{lead time} it is 0.5 as shown in Tables \ref{DS:corr:TP} and \ref{DS:corr:TP:v2}. When team size is taken into account, the correlation values between \textit{throughput} and both \textit{bugs} and \textit{lead time} is the same, the standard deviation and median for \textit{bugs} is different.  If \textit{WIP} omitted, the correlation relationship between the other variables and \textit{throughput} does not differ to much.
-
-The \textit{bugs} correlation tables \ref{DS:corr:Bugs} and \ref{DS:corr:Bugs:v2} shows a difference in the correlation value between \textit{bugs} and \textit{WIP}. The correlation value is increased by 0.2 when team size is \textbf{not} taken into account. Both the \textit{throughput} correlation values are 0.6. The correlation value for \textit{lead time} is also increased by 0.2 when team size is \textbf{not} taken into account, while churn increased by 0.3. These values show an impact of team size on the correlation relationship for 3 of 4 variables. For \textit{lead time} increases the churn value by 0.2 when time size is \textbf{not} taken into account, otherwise are the correlation values for \textit{lead time} stated preceding paragraphs. 
-\fi
 
 
 
@@ -2142,7 +2410,7 @@ In this work the main goal was to investigate the research question "Does WIP-li
 In light of the previous findings, the results from when team size was \textbf{not} taken into account are discarded. Because the data showed team size had a great impact on the correlation tables.
 
 
-If WIP-limit matters in software development some of its benefits should be to reduce bugs, increase throughput, decrease lead time without compromising. Based on the results from this work, \textit{WIP} has a positive medium mean relationship with \textit{throughput} on team level and a significant positive correlation when all teams are combined. The previous research has stated to lower WIP to decrease throughput, which this case study disapproves. There is also stated that WIP-limit decrease \textit{lead time}, the mean correlation value between these two variables is 0.2 and the overall correlation value between these two is a significant correlation value of 0.36. This shows evidence towards the fact that WIP-limit decrease \textit{lead time} in a weak manner. There is also stated that WIP-limit decreases number of \textit{bugs}. The mean correlation value between \textit{bugs} and \textit{WIP} is 0.2 and the overall correlation value is a significant value of 0.29, which shows that WIP-limit does decrease \textit{bugs} in a weak manner.  According to Table \ref{corr:All:V2}, \textit{WIP} had seven significant positive correlation values. Based on these values \textit{throughput, bugs} and \textit{lead time} decreases when \textit{WIP} does. It is positive that both \textit{bugs} and \textit{lead time} decreases, but \textit{throughput} should increase. It is hard to conclude if WIP-limits matter or not, the result of this work shows that one need to comprise \textit{throughput} to decrease \textit{bugs} and \textit{lead time}. The result show also that \textit{throughput} positive correlation is a moderate, while the two others is a weak correlation relationship. The conclusion of this work is that \textit{WIP}-limit matters and one needs to take \textit{lead time, throughput} and \textit{bugs} into account when one would like to find the optimal WIP-limit and if one would like to optimize they WIP-limits.
+If WIP-limit matters in software development some of its benefits should be to reduce bugs, increase throughput, decrease lead time without compromising. Based on the results from this work, \textit{WIP} has a mean correlation value of 0.4 with \textit{throughput} on team level and a significant positive correlation value of 0.55 when all teams are combined. The previous research has stated to lower WIP to decrease throughput, which this case study disapproves. There is also stated that WIP-limit decrease \textit{lead time}, the mean correlation value between these two variables is 0.2 and the overall correlation value between these two is a significant correlation value of 0.36. This shows evidence towards the fact that WIP-limit decrease \textit{lead time} in a weak manner. There is also stated that WIP-limit decreases number of \textit{bugs}. The mean correlation value between \textit{bugs} and \textit{WIP} is 0.2 and the overall correlation value is a significant value of 0.29, which shows that WIP-limit does decrease \textit{bugs} in a weak manner.  According to Table \ref{corr:All:V2}, \textit{WIP} had seven significant positive correlation values. Based on these values \textit{throughput, bugs} and \textit{lead time} decreases when \textit{WIP} does. It is positive that both \textit{bugs} and \textit{lead time} decreases, but \textit{throughput} should increase. It is hard to conclude if WIP-limits matter or not, the result of this work shows that one need to comprise \textit{throughput} to decrease \textit{bugs} and \textit{lead time}. The result show also that \textit{throughput} positive correlation is a moderate, while the two others is a weak correlation relationship. The conclusion of this work is that \textit{WIP}-limit matters and one needs to take \textit{lead time, throughput} and \textit{bugs} into account when one would like to find the optimal WIP-limit and if one would like to optimize they WIP-limits.
 
 %, but one needs to take into account \textit{lead time, bugs} and \textit{throughput} and decide if one wants to produce but with more \textit{bugs} and a longer \textit{lead time}. 
 
