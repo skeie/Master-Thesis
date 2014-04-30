@@ -95,12 +95,12 @@
 
 \chapter*{Summary}                   %% ... or Sammendrag or Samandrag
 \textbf{Background}: 
-In software engineering there are several principles with impact on a software project. If these principles are applied the wrong way, or not considered, it can starve a software project. WIP-limit is of one those principles.  WIP-limit is used to limit number of tasks people can work with. There is little evidence proving the impact of WIP-limit for software development.\\
+In software engineering there are several principles and tools with impact on a software project. If these principles and tools are applied the wrong way, or not considered, it can starve a software project. WIP-limit is of one those tools.  WIP-limit is used to limit number of tasks people can work with. There is little evidence proving the impact of WIP-limit for software development.\\
 \textbf{Aim}: 
 The aim for this work is to investigate the impact of WIP-limits in software development. \\
 \textbf{Methods}:
-The methods used to investigate the research question were a case study of an in house software development company. The case study was based on a data set with meta data about each tasks the software company as worked on from 2008 to 2013. The data set was analyzed using an application developed for this work, described later on. From the data set, the application measured variables such as \textit{WIP, throughput, bugs, lead time} and \textit{churn} for each team. The data produced by the application was interpreted with correlation and case summaries in SPSS.\\
-\textbf{Results}: The results showed a mean correlation value of 0.4 between \textit{WIP} and \textit{throughput}, 0.2 for \textit{bugs} and \textit{lead time} and -0.1 for \textit{churn} across the teams.  The correlation table when all the teams data have been combined showed a significant positive correlation value between \textit{WIP} and the variables; \textit{throughput, bugs, lead time} and \textit{churn}.  The result also showed that team size has an impact on both WIP and throughput, the result also showed the impact both lead time and throughput has on a development process.\\ 
+The methods used to investigate the research question were a case study of an in house software development company. The case study was based on a data set with meta data about each tasks the software company as worked on from 2008 to 2013. The data set was analyzed using an application developed for this work, described later on. From the data set, the application measured variables such as \textit{WIP, throughput, bugs, lead time} and \textit{churn} for each team. The data produced by the application was interpreted with correlations and case summaries in SPSS. Correlation and case summaries are described later in this work.\\
+\textbf{Results}: The results showed a mean correlation  of 0.4 between \textit{WIP} and \textit{throughput}, 0.2 for \textit{bugs} and \textit{lead time} and -0.1 for \textit{churn} across the teams.  The correlation table when all teams data have been combined showed a significant positive correlation  between \textit{WIP} and the variables; \textit{throughput, bugs, lead time} and \textit{churn}.  The result also showed that team size has an impact on both WIP and throughput. The result also showed the impact of both lead time and throughput has on a development process.\\ 
 \textbf{Conclusion}:\\
 Based on the data from this work, the conclusion is that WIP-limits matter in software development. 
 
@@ -110,20 +110,20 @@ Based on the data from this work, the conclusion is that WIP-limits matter in so
 \lstlistoflistings{}
 
 \chapter*{Preface}                    %% ... or Forord
-First of all I would like to thank my advisor, \textit{Dag Sj\o berg}, for valuable discussions and great guidance throughout this work as well as Software Innovation for providing the data set. I would also like to thank my dad, \textit{Nils-Olav Skeie} and my good friend \textit{Michael Gunnulfsen} for helping me correct countless spelling errors and for giving me useful tips. I would also like to thank \textit{Henrik Skifjeld} for helping me with Python. Most of all I would like to thank my girlfriend \textit{Vilde Fjeldstad}, my mom, \textit{Eva Solesvik}, my sister \textit{Hilde} and all my friends for your love, support and friendship.   
+First of all I would like to thank my supervisor, \textit{Dag Sj\o berg}, for valuable discussions and great guidance throughout this work as well as Software Innovation for providing the data set. I would also like to thank my dad, \textit{Nils-Olav Skeie} and my good friend \textit{Michael Gunnulfsen} for helping me correct countless spelling errors and for giving me useful tips. I would also like to thank \textit{Henrik Skifjeld} for helping me with Python. Most of all I would like to thank my girlfriend \textit{Vilde Fjeldstad}, my mom, \textit{Eva Solesvik}, my sister \textit{Hilde} and all my friends for your love, support and friendship.   
 \mainmatter{}
 \chapter{Introduction}
 \label{chap:intro}
 This work focuses on Work In Progress (WIP)-limit, which is one of the principles in Kanban. Kanban is a software development method defined as a WIP-limited pull system visualized by a Kanban board \parencite{DavidAnderson}. The Kanban method is further explained in Chapter \ref{chap:Background}. The focus of this work will be to evaluate what kind of impact WIP-limit has in a development process. In order to do so, a data set gathered by an in house software company in Norway called Software Innovation (SI) was used. SI is a Scandinavian software company that delivers Enterprise Content Management applications.
 
-The data set had already been interpreted by another study. That study investigated Scrum vs. Kanban for SI. For interested readers the case study can be found in the paper "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. 
+%The data set had already been interpreted by another study. That study investigated Scrum vs. Kanban for SI. For interested readers the case study can be found in the paper "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. 
 
 \section{Motivation}
 In software development, processes and methods are important in order to deliver the right product on time and one rarely solves two identical problems for different stakeholders. The problems in software development are getting bigger and more complex, which means that new processes and methods are introduced and the already existing processes and methods need to be adapted to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years, proves this assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
 
-This is the reason why this work will focus on software development methods, the methods in each development project is such a key element to make a project successful. The main focus of this work will be the Kanban method and the principle WIP-limit. In Kanban is the WIP-limit used to  limit the number of tasks each developer can work on at each workflow state, to prevent bottlenecks and to ensure flow of tasks through the development cycle \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
+This is the reason why this work will focus on software development methods. The methods in each development project is such a key element to make a project successful. The main focus of this work will be the Kanban method and the principle WIP-limit. In Kanban is the WIP-limit used to  limit the number of tasks each developer can work on at each workflow state, to prevent bottlenecks and to ensure flow of tasks through the development cycle \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
 
-There are published various literature on Kanban in software development such as "Kanban: Successful Evolutionary Change for Your Technology Business" \parencite{0984521402}, "Kanban and Scrum - making the most of both"  \parencite{Kniberg} and "Lean Software Management: BBC Worldwide Case Study" \parencite{Joyce}. Although there is various literatures, there is no information on how to apply WIP-limit, even though most of the experienced Kanban enthusiasts agree that WIP-limit is an important principle.  There is no research backing this statement.  The literature states that one should experiment with WIP-limits in order to find the best WIP-limit for one's case \parencite{Ikonen} \parencite{Kniberg}.
+There are published various literature on Kanban in software development. \parencite{0984521402},   \parencite{Kniberg}, \parencite{Joyce}. Although there is various literatures, there is no information on how to apply WIP-limit, even though most of the experienced Kanban enthusiasts agree that limiting WIP is an important principle.  There is no research backing up this statement.  The literature states that one should experiment with WIP-limits in order to find the best WIP-limit for one's case \parencite{Ikonen} \parencite{Kniberg}.
 
 Because there is lack of available research on WIP-limit, the motivation of this work will be to investigate WIP-limit in software development.
 
@@ -141,12 +141,12 @@ In this work the overall research question will be to study the effects of WIP-l
 \section{Approach}
 This work will a use case study as an approach  to answer the research questions.  A data set from an in house software company will be used to conduct the case study.  The data set will be evaluated at team level. The software company consists of ten teams, all of them will be investigated.
 
-The data set will be evaluated by a software program that was developed for this work. The software program will convert the data set into more suited data. The new data is interpreted by SPSS. SPSS is a statistic analyze program that was used in this work to compute correlation and descriptive statistic. 
+A software program that was developed for this work will evaluate the data set. The software program will convert the data set into more suited data. The new data is interpreted by SPSS. SPSS is a statistic analysis program that was used in this work to compute correlation and descriptive statistics.
 
 \section{Chapter overview}
 \begin{description}
 \item[Chapter \ref{chap:Background}: \nameref{chap:Background}:] \hfill \\  
-Chapter \ref{chap:Background} introduces background information and relevant concepts and methods in software development as well as information about the in house software company, Software Innovation. 
+Chapter \ref{chap:Background} introduces background information and relevant concepts and methods in software development.
 \item[Chapter \ref{chap:RM}: \nameref{chap:RM}:] \hfill \\  
 Chapter \ref{chap:RM} introduces and explains the research methods used in this work as well as complementary information about Software Innovation and why the data set from Software Innovation is used in this work.  
 \item[Chapter \ref{ch:DCC}: \nameref{ch:DCC}:] \hfill \\
@@ -157,14 +157,13 @@ Chapter \ref{ch:res} presents the result produced by the developed software prog
 \item[Chapter \ref{ch:dis}: \nameref{ch:dis}:] \hfill \\
 Chapter \ref{ch:dis} presents a discussion on the results from the case study and a discussion of the results from this work against the finding from prior research. 
 \item[Chapter \ref{ch:conc}: \nameref{ch:conc}:] \hfill \\
-Chapter \ref{ch:conc} provides the conclusion to the research questions as well as recommending future work.
+Chapter \ref{ch:conc} provides the conclusion to the research questions as well as recommendations for future work.
 \end{description}
 
 
 \chapter{Background}  
 \label{chap:Background}                %% ... or Bakgrunn
-In this chapter there will be a brief introduction to Waterfall (Section \ref{sec:WP}), Scrum (Section \ref{sec:Scrum}), Lean (Section \ref{sec:Lean}), Kanban (Section \ref{sec:Kan}) with affiliated tools and the software development company Software Innovation (Section \ref{sec:SI}).
-
+In this chapter there will be a brief introduction to Waterfall (Section \ref{sec:WP}), Scrum (Section \ref{sec:Scrum}), Lean (Section \ref{sec:Lean}), Kanban (Section \ref{sec:Kan}) with affiliated tools.
 \section {Waterfall}
 \label{sec:WP}
 "The waterfall model is the classical model of software engineering. This model is one of the oldest models and is widely used in government projects and in many major companies" \parencite{munassar2010comparison}. The main goal of the waterfall model is to plan in early stages to ensure design flaws before coding is started. Since planning is so critical in the waterfall method it fits projects where quality control is a major concern  \parencite{munassar2010comparison}.
@@ -181,7 +180,7 @@ The waterfall method consists of several non-overlapping stages as shown in Figu
 
 \section {Scrum}
 \label{sec:Scrum}
-"Scrum is the best-known of the Agile frameworks. It is the source of much of the thinking behind the values and principles of the Agile Manifesto". These values are \parencite{Scrum}:
+"Scrum is the best-known of the Agile frameworks. It is the source of much of the thinking behind the values and principles of the Agile Manifesto"\parencite{Scrum}. These values are \parencite{Scrum}:
 
 \begin{center}
 \textbf{Individuals and interactions}  \textit{over processes and tools} \\
@@ -191,9 +190,9 @@ The waterfall method consists of several non-overlapping stages as shown in Figu
 \end{center}
 %"Individuals and interactions over processes and tools", "Working software over comprehensive documentation", "Customer collaboration over contract negotiation" and "Responding to change over following a plan" from the Agile Manifesto\parencite{Scrum}. 
 
-These principles of Scrum and Agile manifesto are not so rigid as the principles of the Waterfall method. Some may say that Scrum is the opposite of the Waterfall method \parencite{cocco2011simulating}. 
+These principles of Scrum and Agile manifesto are not so rigid as the principles of the Waterfall method. Some says that Scrum is the opposite of the Waterfall method considering the rigidness.  \parencite{cocco2011simulating}. 
 
-Scrum have three main roles, the Product Owner, the Scrum Master and the members of the development team. The Product Owner in collaboration with the Scrum Master decides which work to be prioritized in the backlog. The backlog represents the tasks to be done in order to complete the project. The Scrum Master acts like a team leader and helps the development team and the organization to take best advantages of Scrum. The development team works on tasks specific for current sprint \parencite{Scrum}.
+Scrum have three main roles; the Product Owner, the Scrum Master and the members of the development team. The Product Owner in collaboration with the Scrum Master decides which work to be prioritized in the backlog. The backlog represents the tasks to be done in order to complete the project. The Scrum Master acts like a team leader and helps the development team and the organization to take best advantages of Scrum. The development team works on tasks specific for current sprint \parencite{Scrum}.
 
 Sprint is a time-boxed interval over a given time. The Scrum framework suggests duration of sprints to be from one to four weeks. Before each sprint, a sprint planning meeting is conducted with all the team members attending.  A Sprint planning meeting is held so the team can discuss tasks from the backlog and come to an agreement of which tasks to be put in the minimal backlog \parencite{Scrum}.
 
@@ -205,7 +204,7 @@ One of the main principles in Scrum is that it requires that at least one new fe
 \section {Lean}
 \label{sec:Lean}
 "Lean is all about getting the right things to the right place at the right time the first time while minimizing waste and being open to change" \parencite{741480}.
-The Lean approach was introduced around 1948 in manufacturing for Toyota.  In 1975 was Toyota able to create almost 50 more production units per employee than in 1948 due to the Lean approach \parencite{manning}. Lean strives to maximize the value produced by an organization and delivered to costumer. This is done by finding and eliminating waste, controlling variability and maximizing the flow of delivered software all within the culture of continuous improvements \parencite{DavidAnderson}. In 2003, Mary and Tom Poppendieck first introduced Lean thinking to software development with a book called "Lean Software Development: An Agile Toolkit" \parencite{Lean:2003}. In the book, Poppendieck stated that an important tool to manage workflow is the concept of pull-systems, which means that tasks are put in production only when a costumer asks for it \parencite{Lean:2009}.
+The Lean approach was introduced around 1948 in manufacturing for Toyota.  In 1975 was Toyota able to create almost 50 more production units per employee than in 1948 due to the Lean approach \parencite{manning}. Lean strives to maximize the value produced by an organization and delivered to costumer. This is done by finding and eliminating waste, controlling variability and maximizing the flow of delivered software all within the culture of continuous improvements \parencite{DavidAnderson}. In 2003, Mary and Tom Poppendieck first introduced Lean thinking  by publishing a book \parencite{Lean:2003}. In the book, Poppendieck stated that an important concept is to manage workflow with the concept of pull-systems, which means that tasks are put in production only when a costumer asks for it \parencite{Lean:2009}.
 The pull based method Kanban has in recent years been introduced more and more to software development, and is becoming one of the keys to Lean practice in software development \parencite{DavidAnderson}. In Lean there are eight fundamental principles \parencite{poppendieck2003lean};
 \begin{enumerate}
 \item \textbf{Start Early:}  Do not wait for details. As soon as enough information is gathered start the development activity. Get everyone involved in figuring out the details. Do not build any walls between people, make people collaborate and start a two-way communication as soon possible. This will start the learning cycle as well.
@@ -253,12 +252,12 @@ In software development, Kanban splits the major problem into many small pieces 
 \end{itemize}
 
 
-Contrary to Scrum, Kanban do not use the principles of sprints or estimations. In Kanban the tasks do not need to be estimated or finished within a certain time. In the paper "Simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} the authors found out that if they let the developers work with small tasks and not be interrupted, they will be more effective. They also found out that Scrum was too rigid for the development team because when the team had to estimate tasks, they felt interrupted.  The estimation and sprint meetings worked counterproductive in their case. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
+Contrary to Scrum, Kanban does not use the principles of sprints or estimations. In Kanban the tasks do not need to be estimated or finished within a certain time. In one of the papers the authors that if they let the developers work with small tasks without being interrupted, they will be more effective. They also found out that Scrum was too rigid for the development team because when the team had to estimate tasks, they felt interrupted.  The estimation and sprint meetings worked counterproductive in their case. The authors made the developers change to Lean-Kanban.  The change implied the removal of sprints and estimation. After removing sprints and estimation the teams increased the ability to perform work, lower the lead time and meet the production dates \parencite{SMR:SMR1599}.
 
 In the papers "Quantifying the Effect of Using Kanban versus Scrum" the company also felt that the Scrum approach was too rigid. The paper reported positive results when the team changed to Kanban.  The company almost halved its lead time, reduced the number of weighted bugs by 10 percent, and improved productivity \parencite{Dag}. Other papers also state that Scrum maybe too rigid and that's Kanbans advantages over Scrum \parencite{beedle1999scrum}, \parencite{brekkanintroducing}.  
 
-\subsection {Kanban Board}
-''The Kanban board makes it clear to all the team members the exact status of progress, blockages, bottlenecks and they also signal possible future issues to prepare for''\parencite{Joyce}.  The Kanban board is one of many tools in Kanban, it is used to control WIP, increase the information flow with visualization \parencite{SMR:SMR1599}. A Kanban board is illustrated in Figure \ref{kanban_board}. Each column in Figure has \ref{kanban_board} an intuitive name in order to describe itself so the developers easily can track where each task is. 
+\subsection {Board}
+''The Kanban board makes it clear to all the team members the exact status of progress, blockages, bottlenecks and they also signal possible future issues to prepare for''\parencite{Joyce}.  The Kanban board is one of many tools in Kanban, it is used to control WIP, increase the information flow with visualization \parencite{SMR:SMR1599}. A Kanban board is illustrated in Figure \ref{kanban_board}. Each column in the figure has a intuitive name in order to describe itself so the developers easily can track where each task is. 
 
 The columns are named \textit{Backlog}, \textit{In progress} and \textit{Done}.  The columns can have a WIP-limit to specify how many items in progress there are allowed in the column \parencite{Joyce}. In Figure \ref{kanban_board}, the WIP-limit is stated under the column name. The \textit{Backlog} column has a WIP-limit of 4, \textit{In progress} has 5 and \textit{Done} does not need a WIP-limit. 
 
@@ -270,48 +269,48 @@ The yellow stickers represent the tasks. Some development teams follow the path 
 \label{kanban_board}
 \end{figure}
 
-\subsection{WIP-limit}
+\section{WIP-limit}
 \label{WIPsec}
 ''WIP-limits seem to be the worst understood part of the Kanban system. When used properly, it exposes bottlenecks and reduces lead time for individual work items. Used improperly, it can starve developers for work or result in too many people working on the same work items.'' \parencite{Shinkle}
 
 WIP-limit is one of the core principles in Kanban \parencite{6068363}. WIP-limit helps to reduce overhead by limit task switching for each developer and make constant flow of tasks throughout the development \parencite{DavidAnderson}. One way to explain WIP and the asserted impact of WIP-limit is to use cars and roads as analogy. All roads have a maximum capacity of cars. When this limit is reached, traffic jam occurs and the throughput of cars decreases and lead time increases. The same can be said about software development teams. A software team has a maximum number of tasks they can perform, if the team is pushed over the maximum limit, the throughput of tasks may decreases and lead time may increases.
 
-When first implementing Kanban, Shinkle explained that the users often do not care about WIP or setting a WIP-limit, but rather the visibility of Kanban through the Kanban board. When users gain more experience with Kanban, they start to attempt the principles of WIP-limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP-limit is not easy. They suggest that the WIP-limit is set, and then observe throughput, and adjust after that \parencite{Mandyam}. In the book "Kanban and Scrum - making the most of both" suggests Kniberg that you start by limiting WIP, then experiment with it \parencite{Kniberg}. Both the papers "Lean Software Management" \parencite{Kniberg} and the "Impact of Kanban on Software Project Work" \parencite{Ikonen} suggest that WIP should be minimized as well. The conclusion of the studies are to keep the WIP-limit low and experiment by slowly increase the WIP-limit until the throughput decreased and lead time increased, then you know that the previous WIP-limit was a good one.
+When first implementing Kanban, Shinkle explained that the users often do not care about WIP or setting a WIP-limit, but rather the visibility of Kanban through the Kanban board. When users gain more experience with Kanban, they start to attempt the principles of WIP-limit \parencite{Shinkle}. Srinivasan, Ebbing and Swearing said that setting the WIP-limit is not easy. They suggest that the WIP-limit is set, and then observe throughput, and adjust after that . The papers \parencite{Kniberg} and \parencite{Ikonen} suggests that one start by limiting WIP, then experiment with it. David Anderson says that the WIP-limit is a policy choice. A WIP-limit of one per developer should be the starting point and it can be modified later. Anderson also said that it is a mistake not to set a WIP-limit and that WIP-limit should be from one to three per developer \parencite{0984521402}. The conclusion of the studies are to keep the WIP-limit low, one per developer for instance and experiment by slowly increase the WIP-limit until the throughput decreased and lead time increased, then you know that the previous WIP-limit was a good one.
 
-On "how to determine WIP-limit", one paper was found. If one implements Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine the WIP-limit. The effectiveness metric shown in formula \ref{WIPEQ}, should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness metric and the result could be used as a guideline for WIP-limit for the next sprint. The effectiveness metric takes the number of bugs found \textit{(ai)} and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) \textit{(ei)}, and minus \textit{ai} and \textit{ei}, then divide the result by \textit{ai} and multiply it by 100\%  as shown in formula \ref{WIPEQ} \parencite{Sienkiewicz}
+On "how to determine WIP-limit", one paper was found \parencite{Sienkiewicz}. If one implements Kanban with sprints or uses Scrum, \L ukasz proposes to use the effectiveness metric to help determine the WIP-limit. The effectiveness metric shown in formula \ref{WIPEQ}, should be applied after end sprint according to \L ukasz. After each sprint, one can apply the effectiveness metric and the result could be used as a guideline for WIP-limit for the next sprint. The effectiveness metric takes the number of bugs found \textit{(ai)} and the number of bugs found by external people (e.g. lawyers, accountants, coaches, consultants, translators, internal and external service providers etc.) \textit{(ei)}, and minus \textit{ai} and \textit{ei}, then divide the result by \textit{ai} and multiply it by 100\%  as shown in formula \ref{WIPEQ}. 
 
 \begin{equation} \label{WIPEQ}
 Ei=\frac{(ai-ei)}{ai}*100\%
 \end{equation}
 
-The Section \ref{sub:wip:vs:wip} shows a summary of the the papers by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson}. The papers researched the difference between WIP-limit and unlimited WIP. Section \ref{sub:sub:benefits} shows the importance of WIP-limit, stated by various researches. 
+Section \ref{sub:wip:vs:wip} shows a summary of the the papers by Giulio Concas, Hongyu Zhang \parencite{SMR:SMR1599}  and David Anderson, Giulio Concas, Maria Ilaria Lunesu, and Michele Marchesi \parencite{DavidAnderson}. The papers researched the difference between WIP-limit and unlimited WIP. Section \ref{sub:sub:benefits} shows the importance of WIP-limit, stated by various researches. 
 
-\subsubsection {WIP-limit vs. Unlimited WIP}
+\subsection {WIP-limit vs. Unlimited WIP}
 \label{sub:wip:vs:wip}
-In the paper cite by Giulio Concas and Hongyu Zhang \parencite{SMR:SMR1599}, they simulated two different software maintenance processes. The first process was based on 4 years of experience with Microsoft maintenance team. The second process was from a Chinese software firm.  The simulation executed 10 runs and one of the results were the mean of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes findings as; developers are more focused on fixing few issues, because the number of issues they can work on is limited. The developers are more likely to continue on the issue from the day before, rather than starting on another issue. This reduces overhead, because when developers start on a new issue, they need time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on another issue. 
+Giulio Concas and Hongyu Zhang \parencite{SMR:SMR1599} simulated two different software maintenance processes. The first process was based on 4 years of experience with a Microsoft maintenance team. The second process was from a Chinese software firm.  The simulation executed 10 runs and one of the results was the mean of closed tasks was 4145 when the WIP was limited and 3853 when the limit was not limited (about 7\% less). The paper concludes findings as; developers are more focused on fixing few issues rather than multi-task between tasks. The developers are more likely to continue on the issue from the day before, rather than starting on another issue. This reduces overhead, because when developers start on a new issue, they need time to familiarize themselves with the code and the issue. That could create unnecessary overhead if some developer already has done it, but that developer is now working on another issue. 
 
-The study also showed that WIP-limit could improve throughput and work efficiency, because WIP-limits prevented task switching. The paper  did a simulation of a process that was originally without WIP-limits, with WIP-limits. The study showed the simulated process with WIP-limits out performed the original process. \parencite{SMR:SMR1599}.
+The study also showed that WIP-limit could improve throughput and work efficiency, because WIP-limits prevented task switching. The authors did a simulation of a process that was originally without WIP-limits, with WIP-limits. The study showed the simulated process with WIP-limits out performed the original process. \parencite{SMR:SMR1599}.
 
-The paper by David Anderson et al. \parencite{DavidAnderson} did a simulation of a lean-kanban approach with the impact of WIP-limit vs. no WIP-limit on developers with skills in different activities. The four skill activities from the paper were design, development, testing and deployment. 
+David Anderson et al. \parencite{DavidAnderson} did a simulation of a lean-kanban approach with the impact of WIP-limit vs. no WIP-limit on developers with skills in different activities. The four skill activities from the paper were design, development, testing and deployment. 
 
-The paper did four different simulations.  A simulation with WIP-limits and seven developers with skill in two of the four activities. A simulation with no WIP-limit and seven developers with skilled in two of the four activities. A simulation with WIP-limits and seven developers with skill in all of the activities. A simulation with no WIP-limits and seven developers with skill in two of the four activities.
+David Anderson et al. did four different simulations.  A simulation with WIP-limits and seven developers with skill in two of the four activities. A simulation with no WIP-limit and seven developers with skilled in two of the four activities. A simulation with WIP-limits and seven developers with skill in all of the activities. A simulation with no WIP-limits and seven developers with skill in two of the four activities.
 
 The paper concluded that the last two is unlikely in the real world, because there is rarely a whole team with developers skilled in all activities. 
 When the developers had skill in two out of four activities, the WIP-limit simulation used 100 days, but the non WIP-limit simulation used 120 days. The simulation with WIP-limit showed an almost constant flow of features that completed, while in the same simulation with no WIP-limit, the flow of features was much more irregular \parencite{DavidAnderson}.
 
-\subsubsection{Benefits with setting WIP-limit}
+\subsection{Benefits with setting WIP-limit}
 \label{sub:sub:benefits}
 This subsection contains excerpt from papers from various authors that have done study on WIP-limit. 
 
-\begin{enumerate}
+\begin{itemize}
 \item Lowering the WIP-limit will help people avoid task switching. When switching tasks, it is more difficult to be able to fully concentrate. \parencite{Ikonen}.
 \item There's stated when using short-cycle times and Kanban board to WIP-limit, the software development team's learning is increased \parencite{Joyce}:
 \item WIP-limit increases productivity \parencite{Joyce}.
 \item WIP-limit reduce cycle time \parencite{Ola}
 \item When WIP was too high, lead times grew and as a result so did the bugs and rework \parencite{Shinkle}.
 \vspace{-0.3em}
-\item  WIP-limits are important to reduce lead times \parencite{KanbanWay} 
-\end{enumerate}
+\item  WIP-limits are important to reduce lead times \parencite{KanbanWay}.
+\end{itemize}
 
 Both the studies on WIP-limit vs. no limit and the papers shows the importance of WIP-limit. If  \L ukasz's effectiveness equation \ref{WIPEQ} is regarded , there is no clear rule on how to determine WIP-limit even though WIP is supposed to be a crucial principle in order to take full advantage of Kanban.
 
@@ -319,7 +318,7 @@ Both the studies on WIP-limit vs. no limit and the papers shows the importance o
 \label{sec:in:lt}
 ''Lead time is the total elapsed time from when a customer requests software to when the finished software is released to the customer'' \parencite{Joyce}. Lead time is measured to track how quickly software is delivered to customers \parencite{Joyce}. Lead time could be an essential ingredient when you look for the optimal WIP, if there is one.  Often in a project, lead time is split into pieces, so every task has its own lead time. This gives the development teams the advantages to experiment with different WIP-limits in order to see the different lead times, then measure which WIP that suits this project the best. 
 
-According to the paper "Quantifying the effect of Using Kanban versus Scrum" \parencite{Dag} the citation by Middleton and Joyce above is close to definition of what lead time is. They define lead time as the amount of time that passed from the moment that the development team receives a request to the moment that it completes the work item. The reason why the paper disapproves the definition by Middleton and Joyce is because: "The amount of time a work item remains in the backlog queue before it is put on the board is a function of priority, not whether the company uses Scrum, Kanban or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it is finished'' \parencite{Dag}.
+According to the paper by Dag Sj\o berg et al. \parencite{Dag} the citation by Middleton and Joyce above is best suited for consultancy companies with costumers who requests tailored software solutions. Dag Sj\o berg  et al. define lead time as the amount of time that passed from the moment that the development team receives a request to the moment that it completes the work item. The reason why the paper disapproves the definition by Middleton and Joyce is because: "The amount of time a work item remains in the backlog queue before it is put on the board is a function of priority, not whether the company uses Scrum, Kanban or other development methods. Furthermore, companies that develop and sell products to many customers might propose new features themselves and put them on the backlog before any customers request them. Second, given a policy of two or three releases a year, the result of a work item isn't delivered to the customer immediately after it is finished'' \parencite{Dag}.
 
 
 
@@ -363,12 +362,27 @@ Team x had a throughput of eighteen tasks after the first quarter, twenty after 
 Churn is a measure that is not as familiar as lead time, throughput or WIP in the software development. Churn is a term used as surrogates for effort in software engineering. Many studies in software development use code churn or revisions as surrogate measure of effort \parencite{yamashita2012quantifying}. Emam stated that "analysts should be discouraged from using surrogate measures, such as code churn, unless there is evidence that they are indeed good surrogates" \parencite{el2000methodology}. The study by Sj\o berg et al. showed that churn could be used as a surrogate for tasks size \parencite{yamashita2012quantifying}. 
 
 
+
+
+
+\chapter{Research Methods}
+\label{chap:RM}
+In this chapter the research methods used in this work will be introduced and the reason why the data set from Software Innovation was chosen is explained. Section \ref{sec:CS} gives a brief introduction to the research method "Case Study".  Section \ref{sec:SI} is about SI and \ref{sec:coc} is about the choice of case. 
+
+
+\section{Case study}
+\label{sec:CS}
+To answer the research questions, a case study was conducted.  A case study is used to explore causation in order to find underlying principles \parencite{0078285763}\parencite{9781412960991}.  But which methods one can use in a case study or how the case study is conducted is ambiguous. Case study may be qualitative or quantitate.  A case study might utilize a particular type of evidence (for example ethnographic, participant observation or field research).  Jennifer Platt stated: "Much case study theorizing has been conceptually confused because too many different themes have been packed into the idea "case study" " \parencite{0521676568}.  John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is -- at least in part to shed light on a larger class of cases  \parencite{0521676568}. As one can see, there is no clear rule for how to conduct a case study or what it is. 
+
+
+%John also stated: "Case connotes a spatially delimited phenomenon (a unit) observed at a single point in time or over a period of time"\parencite{0521676568}. 
+In this work, the case study is used to explore WIP-limits effect in software development. The purpose is to shed light on WIP-limit in software development and if it matters.
+
 \section{Software Innovation}
 \label{sec:SI}
-Software Innovation\footnote{http://www.software-innovation.com/} is a Scandinavian software company. SI develops and delivers Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around the Microsoft Sharepoint platform. \parencite{Dag}, \parencite{SI}.
+Software Innovation\footnote{http://www.software-innovation.com/} is a Scandinavian software company. SI develops and delivers Enterprise Content Management applications that helps organizations improve and increase efficiency in document management, case handling and technical document control. SI builds products around the Microsoft Sharepoint platform. \parencite{Dag}, \parencite{SI}.SI has approximately 300 employees in Oslo, Copenhagen, Stockholm and Bangalore \parencite{SI}.
 
-SI has approximately 300 employees in Oslo, Copenhagen, Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used the Waterfall process. In 2007, SI changed to Scrum, and in 2010, SI went from Scrum to Kanban \parencite{Dag}.
-\newpage
+%SI has approximately 300 employees in Oslo, Copenhagen, Stockholm and Bangalore \parencite{SI}. From 2001 to 2006, SI used the Waterfall process. In 2007, SI changed to Scrum, and in 2010, SI went from Scrum to Kanban \parencite{Dag}.
 Table \ref{table:teams} shows the size of the ten teams vs. quarter. The team size is used as a variable to compute the result presented in Chapter \ref{ch:res}. Team seven, shown in Table \ref{Team:7} contribute data from 2010 to 2012. After 2012, team seven was shut down.
 
 \begin{figure}[h]
@@ -637,105 +651,6 @@ Total & &99  \\ \hline
 \label{table:teams}
 \end{figure}
 
-
-
-
-\chapter{Research Methods}
-\label{chap:RM}
-In this chapter the research methods used in this work will be introduced and the reason why the data set from Software Innovation was chosen is explained. Section \ref{sec:CS} gives a brief introduction to the research method "Case Study".  Section \ref{sec:coc} is about the choice of case and complementary information about Software Innovation. 
-
-
-\section{Case study}
-\label{sec:CS}
-To answer the research questions, a case study was conducted.  A case study is used to explore causation in order to find underlying principles \parencite{0078285763}\parencite{9781412960991}.  But which methods one can use in a case study or how the case study is conducted is ambiguous.  It might be that the case study is qualitative or quantitate.  A case study might utilize a particular type of evidence (for example ethnographic, participant observation or field research).  Jennifer Platt stated: "Much case study theorizing has been conceptually confused because too many different themes have been packed into the idea "case study" " \parencite{0521676568}.  John Gerring stated: "A case study may be understood as the intensive study of a single case where the purpose of that study is -- at least in part to shed light on a larger class of cases  \parencite{0521676568}. As one can see, there is no clear rule of how to conduct a case study or what it is. 
-
-
-%John also stated: "Case connotes a spatially delimited phenomenon (a unit) observed at a single point in time or over a period of time"\parencite{0521676568}. 
-In this work, the case study is used to explore WIP-limits effect in software development. The purpose is to shed light on WIP-limit in software development and if it matters.
-
-\section{Choice of case}
-\label{sec:coc}
-The data set from SI contains information about each task SI has worked on from 2008 to 2013. The data set is represented in an excel document. An excerpt of some of the columns from the document is shown in Table \ref{dataset}. Although the data set contains items from 2008-2013, data from year 2008, 2009 and the two first quarters of 2010 will be excluded. The dates will be excluded partially because the transition between processes and it was inaccurate measurements when SI first started with TFS.
-
-The reason SI and the data set from SI is analyzed in this work is because the paper "Quantifying the Effect of Using Kanban versus Scrum" \parencite{Dag} used the same data set and Dag Sj\o berg is the supervisor of this work and he had access to the data set, so it was convenient to use the data set.
-
-\begin{table}[!ht]
-\begin{center}
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline
-ID	& Type &  Created Date & From Day & Date To & Lead Time & Team \\ \hline
-    3027 & Bug & 2008-10-07 &  2008-10-09 & 2008-10-16 & 20 & Team one\\ \hline
-   3028 & Bug  & 2008-10-07 & 2008-10-07 & 2008-10-08 & 10 & Team six\\ \hline
-   3029 & Feature & 2008-10-07 &  2008-12-30	 & 2008-12-30 & 105 & Team two\\ \hline
-    3030 & Feature & 2008-10-07 & 2008-10-07	& 2008-10-07 & 1& Team three\\ \hline
-   3035 & Bug & 2008-10-08 & 2008-11-20 & 2008-11-28 & 17 & Team five\\ \hline
-   3037 & Feature & 2008-10-08 &  2008-10-19	 & 2008-10-19 & 7 & Team three\\ \hline
-   3040 & Bug & 2008-10-10 &  2008-11-19 & 2008-11-19 & 48 & Team one\\ \hline
-   \end{tabular}
-\caption{Excerpt from the data set}
-\label{dataset}
-\end{center}
-\end{table}
-
-The data set contains thirty columns with different data for each task, most of these columns are irrelevant for this study, but the important columns are stated in table \ref{IC}.
-
-\begin{table}[!ht]
-\begin{center}
-    \begin{tabular}{| l | p{5cm} |}
-    \hline
-     \bf{Variable} & \bf{Description}\\ \hline
-     Created Date & When a task is put in backlog \\ \hline
-     Date From & When a given task is pulled out from the backlog\\ \hline
-     Date to & When a task is finished and ready for release. \\ \hline
-    Lead Time & The amount of days elapsed from the date the task was created until the tasks has finished  \\ \hline
-   Type & The type column is labeled as either bug. \\ \hline
-   Lines added & Number of lines added to a task \\ \hline
-   Lines modified & Number of lines modified when working on a task \\ \hline
-   Lines deleted & Number of lines deleted from a task \\
-    \hline
-    Team &States the team who has been working on the task.\\ \hline
-    \end{tabular}
-\caption{Variables from the SI dataset}
-\label{IC} %% information columns
-\end{center}
-\end{table}
-
-\newpage
-The \textbf{Created date} column consist of dates for when tasks were created. 
-The \textbf{Date from} column contains date from the tasks was pulled from the backlog. 
-The \textbf{Date to} column consists of all of the dates when tasks were marked as finished.
-The \textbf{Lines added}, \textbf{Lines Modified} and \textbf{Lines Deleted} column contains the amount of lines added, modified or deleted in order to finish the task.
-The \textbf{Type} column consists of a string that has the value as either \textit{bug} or \textit{feature}.
-The \textbf{Lead time} column consists of the lead time value. 
-The \textbf{Team} column consists of which team the task belongs to. 
-
-
-The data from SI was analyzed on team level. The data was analyzed using the software program and SPSS. The software program computed the variables shown in Table \ref{des} for all of the teams.
-\newpage
-\begin{table}[htbp]
-\begin{center}
-    \begin{tabular}{| l | p{5cm} |  p{5cm} |}
-    \hline
-    \bf{Computed variable} &	\bf{Description}	 & \bf{Columns from SI}\\ \hline 
-     WIP & \parbox[t]{5cm}{Items in progress on the given day} & Date From and Date To. \\ \hline
-     Throughput	& Number of tasks finished on a given day & Date To \\ \hline
-     Churn & Lines added, lines modified and lines deleted added together & Lines Added, Lines Modified, Lines Deleted and Date To \\ \hline
-    Bugs & The number of tasks created labeled as bug & Type and Created Date \\ \hline
-    Lead time & The time used on a task, measured in days & Lead time and Date To \\ \hline
-    Bugs finished, quarter & Number of bugs finished, per quarter &Created date, Date to and Type \\ \hline
-    Avg days backlog, bug & Mean days in backlog for bugs, per quarter & Created date, Date from and Type \\ \hline
-  \end{tabular}
-\caption{Relationship between variable and columns from SI}
-\label{des} %% desription
-\end{center}
-\end{table}
-
- 
-Both the variables churn and throughput are split up in two sub variables with suffix of \textit{feature} and \textit{bug}. The variable with suffix of \textit{feature} means tasks labeled with type \textit{feature} are the only one that counted. The same goes for variables with suffix \textit{bug}. These variables are referred to as sub variables in this work.  The \textit{Bugs finished, quarter} variable represents how many tasks labeled bug that are finished within the same quarter as it was created.  The \textit{Avg days backlog, bug} variable represent the mean number of days bugs were in backlog before it was pulled out. %These two variables are used as an indicator of the workload together with churn.   
-
-
-
-
 \subsection{Software Innovation's development process}
 From 2001 to 2006 SI used the Waterfall process with a life cycle of:
 \begin{enumerate}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
@@ -760,10 +675,94 @@ SI implemented three weeks sprint and after each sprint a fully tested shippable
 
 SI decided to implement Kanban in the following manner. When a work item is pulled from the backlog, SI tries to make the item flow through all the stages until it is ready for release. This procedure happens as quickly as possible. In order for an item to be ready for release, it has to be at a satisfactory quality level, which is defined by SI. SI also implemented WIP-limits. If the WIP-limit is reached, no new tasks are started until another task is finished, which is based on the principle of just-in-time \parencite{Dag}.
 
-\section{Correlation}
-The correlation coefficient between two variables is used to reflect the linear relationship between these variables. The most common used is Pearson correlation.  The range of the correlation is [-1, +1], where +1 represents a perfect positive relationship and -1 represents a perfect negative relationship \parencite{6683402}. In this work I want to look at the linear relationship between two variables, therefore I have choose to use Pearson correlation.
+\section{Choice of case}
+\label{sec:coc}
+The data set from SI contains information about each task that SI has worked on from 2008 to 2013. The data set is represented with help of Microsoft Team Foundation Server \parencite{Microsoft}. An excerpt of some of the columns is shown in Table \ref{dataset}. Although the data set contains items from 2008-2013, data from year 2008, 2009 and the two first quarters of 2010 will be excluded. The dates will be excluded partially because the transition between processes and it was inaccurate measurements when SI first started with TFS.
 
-\chapter{Data collected and calculations}
+The reason SI and the data set from SI is analyzed in this work is because the paper \parencite{Dag} used the same data set and Dag Sj\o berg is the supervisor of this work and he had access to the data set, so it was convenient to use the data set.
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+ID	& Type &  Created Date & From Day & Date To & Lead Time & Team \\ \hline
+    3027 & Bug & 2008-10-07 &  2008-10-09 & 2008-10-16 & 20 & Team one\\ \hline
+   3028 & Bug  & 2008-10-07 & 2008-10-07 & 2008-10-08 & 10 & Team six\\ \hline
+   3029 & Feature & 2008-10-07 &  2008-12-30	 & 2008-12-30 & 105 & Team two\\ \hline
+    3030 & Feature & 2008-10-07 & 2008-10-07	& 2008-10-07 & 1& Team three\\ \hline
+   3035 & Bug & 2008-10-08 & 2008-11-20 & 2008-11-28 & 17 & Team five\\ \hline
+   3037 & Feature & 2008-10-08 &  2008-10-19	 & 2008-10-19 & 7 & Team three\\ \hline
+   3040 & Bug & 2008-10-10 &  2008-11-19 & 2008-11-19 & 48 & Team one\\ \hline
+   \end{tabular}
+\caption{Excerpt from the data set}
+\label{dataset}
+\end{center}
+\end{table}
+
+The data set contains thirty columns with different data for each task, most of these columns are irrelevant for this study, but the important columns are stated in Table \ref{IC}.
+
+\begin{table}[!ht]
+\begin{center}
+    \begin{tabular}{| l | p{5cm} |}
+    \hline
+     \bf{Variable} & \bf{Description}\\ \hline
+     Created Date & When a task is put in backlog \\ \hline
+     Date From & When a given task is pulled out from the backlog\\ \hline
+     Date to & When a task is finished and ready for release. \\ \hline
+    Lead Time & The amount of days elapsed from the date the task was created until the tasks has finished  \\ \hline
+   Type & The type column is labeled as either bug. \\ \hline
+   Lines added & Number of lines added to a task \\ \hline
+   Lines modified & Number of lines modified when working on a task \\ \hline
+   Lines deleted & Number of lines deleted from a task \\
+    \hline
+    Team &States the team who has been working on the task.\\ \hline
+    \end{tabular}
+\caption{Variables from the SI dataset}
+\label{IC} %% information columns
+\end{center}
+\end{table}
+
+\newpage
+The \textbf{Created date} column consists of dates for when tasks were created. 
+The \textbf{Date from} column contains date from the tasks was pulled from the backlog. 
+The \textbf{Date to} column consists of all of the dates when tasks were marked as finished.
+The \textbf{Lines added}, \textbf{Lines Modified} and \textbf{Lines Deleted} column contains the amount of lines added, modified or deleted in order to finish the task.
+The \textbf{Type} column consists of a string that has the value as either \textit{bug} or \textit{feature}.
+The \textbf{Lead time} column consists of the lead time value. 
+The \textbf{Team} column consists of which team the task belongs to. 
+
+
+The data from SI was analyzed on team level using a software program and SPSS. The software program computed the variables shown in Table \ref{des} for all of the teams.
+\newpage
+\begin{table}[htbp]
+\begin{center}
+    \begin{tabular}{| l | p{5cm} |  p{5cm} |}
+    \hline
+    \bf{Computed variable} &	\bf{Description}	 & \bf{Columns from SI}\\ \hline 
+     WIP & \parbox[t]{5cm}{Items in progress on the given day} & Date From and Date To. \\ \hline
+     Throughput	& Number of tasks finished on a given day & Date To \\ \hline
+     Churn & Lines added, lines modified and lines deleted added together & Lines Added, Lines Modified, Lines Deleted and Date To \\ \hline
+    Bugs & The number of tasks created labeled as bug & Type and Created Date \\ \hline
+    Lead time & The time used on a task, measured in days & Lead time and Date To \\ \hline
+    Bugs finished, quarter & Number of bugs finished, per quarter &Created date, Date to and Type \\ \hline
+    Avg days backlog, bug & Mean days in backlog for bugs, per quarter & Created date, Date from and Type \\ \hline
+  \end{tabular}
+\caption{Relationship between variable and columns from SI}
+\label{des} %% desription
+\end{center}
+\end{table}
+
+ 
+Both the variables churn and throughput were split to two sub variables with suffix of \textit{feature} and \textit{bug}. The variable with suffix of \textit{feature} means tasks labeled with type \textit{feature} are the only one that counted. The applies for variables with suffix \textit{bug}. These variables are referred to as sub variables in this work.  The \textit{Bugs finished, quarter} variable represents how many tasks labeled bug that are finished within the same quarter as it was created.  The \textit{Avg days backlog, bug} variable represent the mean number of days bugs were in backlog before it was pulled out. %These two variables are used as an indicator of the workload together with churn.   
+
+
+
+
+
+\section{Correlation}
+The correlation coefficient between two variables is used to reflect the linear relationship between these variables. The most common are is Pearson correlation.  The range of the correlation is [-1, +1], where +1 represents a perfect positive relationship and -1 represents a perfect negative relationship \parencite{6683402}. In this work I want to look at the linear relationship between two variables, therefore I have choose to use Pearson correlation.
+
+\chapter{The calculation of WIP and the remaining  of the variables}
 \label{ch:DCC}
 This chapter introduces how the software program's algorithm works as well as a brief introduction to SPSS.  The first section gives a short introduction to the statistical analyzes program SPSS  (Section \ref{sec:SPSS}). The next section, Section \ref{WPD} introduces the algorithm of how the program measures WIP for each day. The subsection \ref{sec:Example} provides a comprehensive example of how the program measures WIP per day. The consecutively sections reveal the algorithms of how the program measures  throughput (Section \ref{sec:TP}),  churn (Section \ref{sec:churn}),  lead time (Section \ref{sec:LT}), the sub variables (Section \ref{sec:bug}), number of bugs finished per quarter (Section  \ref{sub:sec:bfq}) and mean days for bugs in the backlog (Section \ref{sub:sec:adbb}). 
 
@@ -905,7 +904,7 @@ This section will provide a comprehensive example of how the WIP algorithm works
 Figure \ref{wip_timeline}  shows task ids on the y-axis and dates on the x-axis. The green line indicates the duration of the task. The figure helps  visualize how many WIPs there are in progress for a given date. For example on the date 2010-10-12, tasks 3, 5 and 6 are in progress, which means the WIP is 3 for 2010-10-12. The dates from Table \ref{wt:2}  will be used to illustrate how the algorithm measures WIP.
 
 \begin{figure}[ht!]
- \begin{adjustwidth}{1.cm}{}
+ \begin{adjustwidth}{-0.5cm}{}
 \centering
 \hspace*{-1in}
 \includegraphics[width=21cm,trim=4 8 8 4,clip]{Picture/wip_example.jpg}
@@ -988,7 +987,7 @@ Next the program will look at the period between 2008-10-10 and 2008-10-13, and 
 As illustrated by the example, WIPs are not decrement until the finished date is passed, even though the task is done on the date, it is also worked on the same date, therefore the WIP is decrement after each date is passed.
 \fi
 
- \section{Rest of the variables}
+ \section{Remaining  of the variables}
  \label{sec:rotv}
 To compute the remaining variables a new algorithm is required.  The first part of the algorithm for the remaining variables is identical. First the program reads in the data set from SI. For each of the lines in the data set, the program creates an object and saves the valuable information from the data set in the object. Then each object is saved in a data structure based on team association as showed in Listing \ref{addObj}.  After all the lines has been read and all objects has been put in the right data structure the algorithms differ in respect of what is going to be measured.
  \begin{lstlisting}[caption=Pseudocode example of how throughput objects are added, label=addObj]
@@ -1044,7 +1043,7 @@ void dateExists(Throughput tp, Arraylist list)
 
 \subsection{Churn}
 \label{sec:churn}
-As stated in Section \ref{sec:Churn}, in order to take churn into account one has to know its good surrogates. SI has gathered churn with help of Microsoft's Team Foundation Server (TFS) \parencite{Dag}. The TFS system automatically records data such as churn and lead time. Based on TFS one can know that churn for SI is a good surrogate.
+As stated in Section \ref{sec:Churn}, in order to take churn into account one has to know its good surrogates. SI has gathered churn with help of Microsoft's TFS \parencite{Dag}. The TFS system automatically records data such as churn and lead time. Based on TFS one can know that churn for SI is a good surrogate.
 
 To measure churn the data set from SI contains three columns (\textit{Lines added, Lines modified} and \textit{Lines deleted}) shown in Table \ref{table:churn}. These three variables are summed together and saved in a  variable called \textit{churn}.  For example; for task id 1 the churn is 2028 ($352+307+1369 = 2028$). Some tasks has zero churn, for example task with id 6, these tasks do not need code in order to be finished such tasks need technical support to be finished. The churn algorithm is shown in Listing \ref{churnCode}
 
@@ -1060,7 +1059,7 @@ To measure churn the data set from SI contains three columns (\textit{Lines adde
 5&21&3&0 \\ \hline
 6&0&0&0 \\ \hline
 \end{tabular}
-\caption{How churn is presented in the excel document}
+\caption{How churn is presented in the TFS document}
 \label{table:churn} %%  bugs table
 \end{center}
 \end{table}
@@ -1091,7 +1090,7 @@ The program does not need to compute  the lead time for each task. The lead time
 	84096 &  Feature  & 7 \\ \hline
 	84118 &  Bug  & 13 \\ \hline
 \end{tabular}
-\caption{How lead time is recorded in the excel document}
+\caption{How lead time is recorded in the TFS document}
 \label{table:LT} %%  bugs table
 \end{center}
 \end{table}
@@ -1143,7 +1142,7 @@ This chapter presented the algorithm and an example of how WIP is computed in th
 
 \chapter{Results}                     
 \label{ch:res}
-The first result from when team size was \textbf{not} taken into account showed a mean correlation value  of 0.6 between \textit{team size} and \textit{WIP} and 0.5 between \textit{team size} and \textit{throughput}. Five of the ten teams also had a significant positive correlation between these variables. Based on the correlation values, it was hard to find any evidence that WIP-limit matters in software development. This resulted in a new analyze where each variable for each quarter was divided by the corresponding team size.
+The first result from when team size was \textbf{not} taken into account showed a mean correlation  of 0.6 between \textit{team size} and \textit{WIP} and 0.5 between \textit{team size} and \textit{throughput}. Five of the ten teams also had a significant positive correlation between these variables. Based on the correlation , it was hard to find any evidence that WIP-limit matters in software development. This resulted in a new analyze where each variable for each quarter was divided by the corresponding team size.
 
 The result from when team size was taken into account showed nine out of ten teams have a positive correlation between \textit{throughput} and \textit{WIP}. The correlation tables for \textit{throughput, churn, lead time} and \textit{bugs} are listed to figure out why the correlation between \textit{WIP} and \textit{throughput} is positive. The WIP-limit Section \ref{sec:WIP:limit} is also stated to explain the positive relationship between \textit{WIP} and \textit{throughput}.  
 
@@ -1615,7 +1614,7 @@ Churn bug  & 10 & 0.2 & 0.1 & 0.3 & 0.8 & -0.2\\ \hline
  
 \section{Correlation result for churn}
 \label{sec:corr:churn}
-This section contains information about the correlation table between the variables and churn. Table \ref{corr:churn} shows the correlation values when team size was \textbf{not} taken into account. The table shows all teams have either one or both sub variables with significant positive correlation with \textit{churn}. Teams \textbf{four, five, six, seven, eight, nine} and \textbf{ten} do not have a positive correlation between both the \textit{churn} sub variables according to Table \ref{corr:churn}. The relationship between the \textit{churn} variables is explained in Section \ref{sec:diss:sv}. 
+This section contains information about the correlation table between the variables and churn. Table \ref{corr:churn} shows the correlation  when team size was \textbf{not} taken into account. The table shows all teams have either one or both sub variables with significant positive correlation with \textit{churn}. Teams \textbf{four, five, six, seven, eight, nine} and \textbf{ten} do not have a positive correlation between both the \textit{churn} sub variables according to Table \ref{corr:churn}. The relationship between the \textit{churn} variables is explained in Section \ref{sec:diss:sv}. 
 
 In this section will \textit{churn} variables be left out of the highlighting for the same reason as in Section \ref{sec:corr:TP}.
 Table \ref{corr:churn} shows \textbf{Team one} has positive correlation between \textit{churn} and \textit{bugs}, \textit{bugs finished, quarter} and \textit{lead time}. \textbf{Team two} has a significant correlation between \textit{churn} and  \textit{WIP}. \textbf{Team four} has a significant correlation between \textit{churn} and  all variables except \textit{bugs}, \textit{bugs finished, quarter}, \textit{avg days in backlog, bugs}, \textit{team size} and \textit{throughput bugs}, but not \textit{throughput}. The \textit{throughput} relationship is explained in Section \ref{sec:diss:sv}. {Team five} has a negative correlation between \textit{churn} and  \textit{team size}. 
@@ -1879,7 +1878,7 @@ To try to explain the positive correlation between \textit{WIP} and \textit{thro
 Mean & 0.73\\ \hline
 \end{tabular}
 }
-\caption{Team size - team one}
+\caption{Size of T1}
  \label{Team:WIP:1}
 \end{subfigure}
 \begin{subfigure}[b]{.2\textwidth}
@@ -1905,7 +1904,7 @@ Mean & 0.73\\ \hline
 Mean& 2.31\\ \hline
 \end{tabular}
 }
-\caption{Team size - team two}
+\caption{Size of T2}
  \label{Team:WIP:2}
 \end{subfigure}
 \begin{subfigure}[b]{0.2\textwidth}
@@ -1931,7 +1930,7 @@ Mean& 2.31\\ \hline
 Mean& 1.78\\ \hline
 \end{tabular}
 }
-\caption{Team size - team three}
+\caption{Size of T3}
  \label{Team:WIP:3}
 \end{subfigure}
 \begin{subfigure}[b]{0.2\textwidth}
@@ -1957,7 +1956,7 @@ Mean& 1.78\\ \hline
 Mean& 3.21\\ \hline
 \end{tabular}
 }
-\caption{Team size - team four}
+\caption{Size of T4}
  \label{Team:WIP:4}
 \end{subfigure}
 %%%%%%% DEL TO TEAM 5-8
@@ -1984,7 +1983,7 @@ Mean& 3.21\\ \hline
 Mean & 1.93\\ \hline
 \end{tabular}
 }
-\caption{Team size - five}
+\caption{Size of T5}
  \label{Team:WIP:5}
 \end{subfigure}
 
@@ -2011,7 +2010,7 @@ Mean & 1.93\\ \hline
 Mean & 3.02\\ \hline
 \end{tabular}
 }
-\caption{Team size - team six}
+\caption{Size of T6}
  \label{Team:WIP:6}
 \end{subfigure}
 \begin{subfigure}[b]{0.3\textwidth}
@@ -2034,7 +2033,7 @@ Mean& 2.03\\ \hline
 \end{tabular}
 
 }
-\caption{Team size - team seven}
+\caption{Size of T7}
  \label{Team:WIP:7}
 \end{subfigure}
 \begin{subfigure}[b]{0.3\textwidth}
@@ -2059,7 +2058,7 @@ Mean& 2.03\\ \hline
 Mean& 0.71\\ \hline
 \end{tabular}
 }
-\caption{Team size - team eight}
+\caption{Size of T8}
  \label{Team:WIP:8}
 \end{subfigure}
 
@@ -2089,7 +2088,7 @@ Mean& 0.71\\ \hline
 Mean & 2.19\\ \hline
 \end{tabular}
 }
-\caption{Team size - team nine}
+\caption{Size of T9}
  \label{Team:WIP:9}
 \end{subfigure}
 \begin{subfigure}[b]{0.5\textwidth}
@@ -2115,31 +2114,324 @@ Mean & 2.19\\ \hline
 Mean & 1.08\\ \hline
 \end{tabular}
 }
-\caption{Team size - team ten}
+\caption{Size of T10}
  \label{Team:WIP:10}
 \end{subfigure}
 \caption[Optional caption for list of figures]{Caption of team size for teams in SI}
 \label{table:WIP:teams}
 \end{figure}
+
+\section{Throughput per team}
+To try to explain why the relationship between \textit{throughput} and \textit{WIP} are positive, the mean throughput per team is stated. \textbf{Team one} has a mean \textit{throughput} of 0.42. \textbf{Team two} has a mean\textit{throughput} of 0.44. \textbf{Team three} has a mean \textit{throughput} of 0.35. \textbf{Team four} has a mean\textit{throughput}of 1.4. \textbf{Team five} has a mean\textit{throughput} of 0.30. \textbf{Team six} has a mean\textit{throughput} of 0.63. \textbf{Team seven} has a mean\textit{throughput} of 0.21. \textbf{Team eight} has a mean \textit{throughput} of 0.22. \textbf{Team nine} has a mean \textit{throughput} of 0.30 and \textbf{Team ten} has a mean \textit{throughput} of 0.20.        
+\begin{figure}[H]
+\begin{subfigure}[b]{.2\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+\hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.5\\ \hline
+2010-4& 0.33\\ \hline
+2011-1& 0.65\\ \hline
+2011-2& 0.34\\ \hline
+2011-3& 0.5\\ \hline
+2011-4& 0.39\\ \hline
+2012-1& 0.24\\ \hline
+2012-2& 0.33\\ \hline
+2012-3& 0.17\\ \hline
+2012-4& 0.49\\ \hline
+2013-1& 0.81\\ \hline
+2013-2& 0.58\\ \hline
+2013-3& 0.39\\ \hline
+2013-4& 0.27\\ \hline
+Mean& 0.42\\ \hline
+\end{tabular}
+}
+\caption{Throughput for T1}
+ \label{Team:TP:1}
+\end{subfigure}
+\begin{subfigure}[b]{.2\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.43\\ \hline
+2010-4& 0.27\\ \hline
+2011-1& 0.35\\ \hline
+2011-2& 0.58\\ \hline
+2011-3& 0.25\\ \hline
+2011-4& 0.26\\ \hline
+2012-1& 0.29\\ \hline
+2012-2& 0.58\\ \hline
+2012-3& 0.73\\ \hline
+2012-4& 0.58\\ \hline
+2013-1& 0.46\\ \hline
+2013-2& 0.47\\ \hline
+2013-3& 0.55\\ \hline
+2013-4& 0.4\\ \hline
+Mean& 0.44\\ \hline
+
+\end{tabular}
+}
+\caption{Throughput for T2}
+ \label{Team:TP:2}
+\end{subfigure}
+\begin{subfigure}[b]{0.2\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.55\\ \hline
+2010-4& 0.39\\ \hline
+2011-1& 0.32\\ \hline
+2011-2& 0.43\\ \hline
+2011-3& 0.44\\ \hline
+2011-4& 0.47\\ \hline
+2012-1& 0.59\\ \hline
+2012-2& 0.26\\ \hline
+2012-3& 0.26\\ \hline
+2012-4& 0.39\\ \hline
+2013-1& 0.25\\ \hline
+2013-2& 0.23\\ \hline
+2013-3& 0.25\\ \hline
+2013-4& 0.2\\ \hline
+Mean& 0.35\\ \hline
+\end{tabular}
+}
+\caption{Throughput for T3}
+ \label{Team:TP:3}
+\end{subfigure}
+\begin{subfigure}[b]{0.2\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 1.0\\ \hline
+2010-4& 0.36\\ \hline
+2011-1& 0.94\\ \hline
+2011-2& 1.58\\ \hline
+2011-3& 1.58\\ \hline
+2011-4& 1.87\\ \hline
+2012-1& 1.69\\ \hline
+2012-2& 1.97\\ \hline
+2012-3& 2.0\\ \hline
+2012-4& 1.15\\ \hline
+2013-1& 1.23\\ \hline
+2013-2& 1.65\\ \hline
+2013-3& 1.6\\ \hline
+2013-4& 0.99\\ \hline
+Mean& 1.40\\ \hline
+\end{tabular}
+}
+\caption{Throughput for T4}
+ \label{Team:TP:4}
+\end{subfigure}
+%%%%%%% DEL TO TEAM 5-8
+\begin{subfigure}[b]{0.1\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.72\\ \hline
+2010-4& 0.33\\ \hline
+2011-1& 0.26\\ \hline
+2011-2& 0.29\\ \hline
+2011-3& 0.27\\ \hline
+2011-4& 0.22\\ \hline
+2012-1& 0.25\\ \hline
+2012-2& 0.28\\ \hline
+2012-3& 0.27\\ \hline
+2012-4& 0.26\\ \hline
+2013-1& 0.51\\ \hline
+2013-2& 0.23\\ \hline
+2013-3& 0.17\\ \hline
+2013-4& 0.18\\ \hline
+Mean& 0.30\\ \hline
+\end{tabular}
+}
+\caption{Throughput for T5}
+ \label{Team:TP:5}
+\end{subfigure}
+
+\begin{subfigure}[b]{0.3\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.89\\ \hline
+2010-4& 0.55\\ \hline
+2011-1& 0.39\\ \hline
+2011-2& 0.46\\ \hline
+2011-3& 0.53\\ \hline
+2011-4& 0.65\\ \hline
+2012-1& 0.83\\ \hline
+2012-2& 0.87\\ \hline
+2012-3& 0.67\\ \hline
+2012-4& 0.67\\ \hline
+2013-1& 0.7\\ \hline
+2013-2& 0.49\\ \hline
+2013-3& 0.52\\ \hline
+2013-4& 0.65\\ \hline
+Mean& 0.63\\ \hline
+\end{tabular}
+}
+\caption{Throughput for T6}
+ \label{Team:TP:6}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.5\\ \hline
+2010-4& 0.19\\ \hline
+2011-1& 0.16\\ \hline
+2011-2& 0.13\\ \hline
+2011-3& 0.14\\ \hline
+2011-4& 0.14\\ \hline
+2012-1& 0.5\\ \hline
+2012-2& 0.1\\ \hline
+2012-3& 0.15\\ \hline
+2012-4& 0.17\\ \hline
+Mean& 0.21\\ \hline
+\end{tabular}
+
+}
+\caption{Throughput for T7}
+ \label{Team:TP:7}
+\end{subfigure}
+\begin{subfigure}[b]{0.3\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+ \bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.5\\ \hline
+2010-4& 0.19\\ \hline
+2011-1& 0.16\\ \hline
+2011-2& 0.13\\ \hline
+2011-3& 0.14\\ \hline
+2011-4& 0.14\\ \hline
+2012-1& 0.5\\ \hline
+2012-2& 0.1\\ \hline
+2012-3& 0.15\\ \hline
+2012-4& 0.17\\ \hline
+2013-1& 0.17\\ \hline
+2013-2& 0.15\\ \hline
+2013-3& 0.44\\ \hline
+Mean& 0.22\\ \hline
+\end{tabular}
+}
+\caption{Throughput for T8}
+ \label{Team:TP:8}
+\end{subfigure}
+
+
+
+
+%%%%%% DEL tree TEAM 9-10
+\begin{subfigure}[b]{0.5\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.35\\ \hline
+2010-4& 0.22\\ \hline
+2011-1& 0.32\\ \hline
+2011-2& 0.22\\ \hline
+2011-3& 0.22\\ \hline
+2011-4& 0.24\\ \hline
+2012-1& 0.42\\ \hline
+2012-2& 0.33\\ \hline
+2012-3& 0.24\\ \hline
+2012-4& 0.36\\ \hline
+2013-1& 0.39\\ \hline
+2013-2& 0.32\\ \hline
+2013-3& 0.3\\ \hline
+Mean& 0.30\\ \hline
+\end{tabular}
+}
+\caption{Throughput for T9}
+ \label{Team:TP:9}
+\end{subfigure}
+\begin{subfigure}[b]{0.5\textwidth}
+\center
+ \scalebox{0.40}{
+\begin{tabular}{ | r | r |}
+ \hline
+\bf{Year - Quarter} & \bf{TP} \\ \hline
+2010-3& 0.53\\ \hline
+2010-4& 0.2\\ \hline
+2011-1& 0.21\\ \hline
+2011-2& 0.21\\ \hline
+2011-3& 0.25\\ \hline
+2011-4& 0.15\\ \hline
+2012-1& 0.09\\ \hline
+2012-2& 0.16\\ \hline
+2012-3& 0.09\\ \hline
+2012-4& 0.19\\ \hline
+2013-1& 0.17\\ \hline
+2013-2& 0.21\\ \hline
+2013-3& 0.18\\ \hline
+2013-4& 0.18\\ \hline
+Mean& 0.20\\ \hline
+\end{tabular}
+}
+\caption{Throughput for T10}
+ \label{Team:TP:10}
+\end{subfigure}
+\caption[Optional caption for list of figures]{Caption of team size for teams in SI}
+\label{table:TP:teams}
+\end{figure}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% DISC %%%%%%%%%%%%%
 \chapter{Discussion}
 \label{ch:dis}
 The first sections present discussions about  the research questions, the different results from this study and what other literature has stated. The last Section \ref{sec:diss:sv}, will consist of an explanation of the relationship between the sub variables. To back up any assumptions about the relationship, descriptive statistic tables listed in Appendix \ref{app:DS} and correlation graphs will be used. 
 
 
+\section{WIP and Team size}
+If team size were left out as a variable in this case study, \textit{WIP} would have a mean correlation relationship of 0.6 with \textit{throughput} and 0.5 with \textit{bugs} and \textit{lead time}. These three correlations are decreased by 0.2  and 0.3 compared to when team size was taken into account. So in light of the result from Chapter \ref{ch:res}, the results from when team size was \textbf{not} taken into account are discarded. Because the data showed team size had a great impact on the correlation tables and possible gave bias results.
+
+
+
 
 \section{WIP and throughput} 
 \vspace{-0.5em}
-In this work, throughput is a measure to see how productive teams are. In Section \ref{WIPsec}, there was stated by various people, when lowering WIP-limit the {throughput} increases. The paper "Studying Lean-Kanban Approach Using Software Process Simulation" \parencite{DavidAnderson} simulated a  lean-kanban process, as stated in \ref{WIPsec}. The simulation showed a higher throughput when they used WIP-limit. The paper "Simulation of software maintenance process, with and without a work-in-process limit" \parencite{SMR:SMR1599} showed that WIP-limit could lead to improvement in throughput as well. The paper also showed that when taking a process without WIP-limit, and simulate it using WIP-limit it outperformed the process without WIP-limit.
+In this work, throughput is a measure to see how productive teams are. In Section \ref{WIPsec}, there was stated by various people, when lowering WIP-limit the {throughput} increases. The paper \parencite{DavidAnderson} simulated a  lean-kanban process, as stated in \ref{WIPsec}. The simulation showed a higher throughput when they used WIP-limit. The paper \parencite{SMR:SMR1599} showed that WIP-limit could lead to improvement in throughput as well. The paper also showed that when taking a process without WIP-limit, and simulate it using WIP-limit it outperformed the process without WIP-limit.
+
+The literature says that there should exist a negative correlation between \textit{WIP} and \textit{throughput}. The correlation from this work shows that almost each team has a positive correlation between \textit{WIP} and \textit{throughput}. The reason \textit{WIP} and \textit{throughput} have a positive correlation could be because the WIP-limits is too low. The previous research states that WIP-limit should be from one to three tasks per developers. The mean WIP-limit for SI is 1.9 per developer. In this case the WIP-limit could be too low and that's the reason \textit{throughput} and \textit{WIP} have a positive correlation relationship. Because if the WIP-limit is to low, the bottlenecks will not occur and the teams are able to produce more, but they are not allowed by the WIP-limit. One should try to increase the WIP-limit for SI and see if the \textit{throughput} continues to increase. If the WIP-limit continues to increase then the WIP-limits are probably too low.
 
 
-The Tables \ref{DS:corr:TP} and \ref{DS:corr:TP:v2} show no evidence towards the fact that lowering WIP-limit will increase \textit{throughput}. \textit{Throughput} has the mean correlation of 0.6 when team size is \textbf{not} taken into account and 0.4 otherwise. One can argue that the throughput correlation is biased when team size is \textbf{not} taken into account, based on the strong team size correlation. But the Table \ref{DS:corr:TP:v2}, where team size is taken into account shows a mean correlation  of 0.4 between \textit{throughput} and \textit{WIP} when team size is taken into account.
+There exist two teams with a mean WIP-limit of 3 items per developer. The teams are  \textbf{team four} and \textbf{team six}, shown in Tables \ref{Team:WIP:4} and \ref{Team:WIP:6}. These two teams had total number of 53 and 99 employees from 2010-4 to 2013-3. Which gives a mean of 4 (53/14) and 7(99/14) persons per quarter. There is no other teams with fewer employees per quarter than these two teams, although these two teams have a mean throughput of 6.2 for \textbf{team four} and 4.6 for \textbf{team six}. There is two teams with a higher mean throughout than these two teams, teams \textbf{one} and \textbf{five}. In comparison \textbf{team one} had in average 24 (330/14) employees per quarter and \textbf{team five} had in average 20 (285/14) employees per quarter. Team four has a mean throughput of 1.4 and team six has a mean throughput of 0.63 per employee, as shown by Tables \ref{Team:TP:4} and \ref{Team:TP:6}, while the closet team, \textbf{team two} has a mean of 0.44 . This shows that team \textbf{four} outperform the other teams on throughput per developer and \textbf{team six} is second by a wide margin. The \textit{WIP} correlation Table \ref{corr:WIP:V2} shows \textbf{team four} with a significant correlation of 0.86 and \textbf{team six} with a correlation of 0.08 between \textit{WIP} and \textit{throughput}.  These correlation shows that it may not be too low WIP-limit. The team with a negative correlation between \textit{throughput} and \textit{WIP}, \textbf{team ten} with a correlation of -0.21 has a WIP-limit of 1.08 only beaten by team \textbf{one} with a correlation of 0.37 and \textbf{eight} with a correlation of 0.28. The four teams with the highest correlation between \textit{WIP} and \textit{throughput} have the mean WIP-limit values; 2.31, 1.78, 3.21 and 2.19.   This points towards the fact that the WIP-limit may be too high. 
 
-When team size is \textbf{not} taken into account,  all of the teams have a positive correlation between \textit{WIP} and \textit{throughput}, and seven of the teams have a significant correlation, shown in Table \ref{corr:WIP}.  When team size is taken into account the Table \ref{DS:corr:WIP:v2}  shows nine out of ten teams have a positive correlation between \textit{WIP} and \textit{throughput}. %team was here
-The median between the teams when team size is \textbf{not} taking into account is 0.7 and 0.4 otherwise. The standard deviation is 0.2 when team size is \textbf{not} taking into account and 0.3 otherwise, shown by Tables \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}. The median and standard deviation when team size is \textbf{not} taken into account shows most of the teams have a correlation of 0.7 or higher between \textit{WIP} and \textit{throughput}. When team size was taken into account the median and standard deviation showed that most of the teams have a correlation of 0.4 or higher, while the standard deviation shows that the values are more spread when team size is taken into account.
+The mean correlation between \textit{lead time} and \textit{throughput} are 0.5. There are five teams with a positive significant correlation. The positive correlation between these variables state that \textit{throughput} increases, the time from when a task is taken from the backlog until it is finished also increases. This correlation relationship odd, one could assume if \textit{throughput} increases, the \textit{lead time} should decrease. The mean WIP-limit for the five teams with a significant correlation are 2.31, 3.21, 1.93, 3.02 and 1.08. 0.06 and 0.24 are the two lowest correlation between \textit{lead time} and \textit{WIP}, these two teams also have the lowest mean WIP-limit. 3.21, 3.01 and 2.31 are the three highest mean WIP-limits. This data shows that the highest mean WIP-limits have a significant correlation and the lowest mean WIP-limit have the lowest correlation between \textit{throughput} and \textit{lead time}. These data points to wards the fact that WIP-limits may be too high. 
+
+The mean correlation between \textit{bugs} and \textit{throughput} are 0.6. Six of the teams have a significant positive correlation. The positive correlation between \textit{bugs} and \textit{throughput} states that if one produces more, more bugs are produced. This correlation relationship is normal. When more features are produced, there are more features the user can complain about and more features containing bugs.  The same goes for the mean correlation between \textit{bugs finished, quarter} and \textit{throughput} which are 0.4. When one produces more, one can also fix more bugs. The mean correlation between \textit{throughput} and \textit{throughput bug} are 0.8 and the mean correlation between \textit{throughput} and \textit{throughput feature} are 0.7, which proves that SI fix more bugs than they produce feature.  %hva had dette med WIP-limit å gjøre?
+
+There are six teams with a significant positive correlation between \textit{throughput} and \textit{bugs}
+
+The mean correlation between \textit{throughput} and \textit{churn} are 0.3
+
+
+2,3,5,8,9,10
+
+%The Tables \ref{DS:corr:TP} and \ref{DS:corr:TP:v2} show no evidence towards the fact that lowering WIP-limit will increase \textit{throughput}. \textit{Throughput} has the mean correlation of 0.6 when team size is \textbf{not} taken into account and 0.4 otherwise. One can argue that the throughput correlation is biased when team size is \textbf{not} taken into account, based on the strong team size correlation. But the Table \ref{DS:corr:TP:v2}, where team size is taken into account shows a mean correlation  of 0.4 between \textit{throughput} and \textit{WIP} when team size is taken into account.
+
+%When team size is \textbf{not} taken into account,  all of the teams have a positive correlation between \textit{WIP} and \textit{throughput}, and seven of the teams have a significant correlation, shown in Table \ref{corr:WIP}.  When team size is taken into account the Table \ref{DS:corr:WIP:v2}  shows nine out of ten teams have a positive correlation between \textit{WIP} and \textit{throughput}. %team was here
+%The median between the teams when team size is \textbf{not} taking into account is 0.7 and 0.4 otherwise. The standard deviation is 0.2 when team size is \textbf{not} taking into account and 0.3 otherwise, shown by Tables \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}. The median and standard deviation when team size is \textbf{not} taken into account shows most of the teams have a correlation of 0.7 or higher between \textit{WIP} and \textit{throughput}. When team size was taken into account the median and standard deviation showed that most of the teams have a correlation of 0.4 or higher, while the standard deviation shows that the values are more spread when team size is taken into account.
 %Team ten is the only team with a negative correlation.  Team five, six, eight and ten has a low correlation, team one and seven has a low-medium correlation and team two, three, four and nine has a medium-high significant correlation relationship.
 
-The combined Table \ref{corr:All} shows a significant correlation of 0.41 when team size is \textbf{not} taking into account and Table \ref{corr:All:V2} shows an overall significant correlation  of 0.55 when team size is taken into account. The values presented in this section point towards the fact that when \textit{WIP} increases, so does \textit{throughput}. The WIP-limit for SI could be too low which explains why \textit{WIP} and \textit{throughput} have a positive correlation relationship.
+%The combined Table \ref{corr:All} shows a significant correlation of 0.41 when team size is \textbf{not} taking into account and Table \ref{corr:All:V2} shows an overall significant correlation  of 0.55 when team size is taken into account. The values presented in this section point towards the fact that when \textit{WIP} increases, so does \textit{throughput}. The WIP-limit for SI could be too low which explains why \textit{WIP} and \textit{throughput} have a positive correlation relationship.
 
 
 %The \textit{throughput} values show that when team size is \textbf{not} taking into account, seven of the ten teams have a significant linear relationship and the mean \textit{throughput} value is 0.6. When team size is taken into account, four of the teams have a significant correlation and the mea mean is 0.4. These values shows that \textit{throughput} has a positive correlation relationship with \textit{WIP}. The two median numbers shows at least 50\% of the correlation values have a medium-strong correlation value. The standard deviation shows a low-medium spread between the values, which indicates that the values are in the same range. The overall correlation value when team size is \textbf{not} taking into account shows a positive medium-strong linear relationship, but when team size is taken into consideration the overall linear relationship is 0.05, but the mean for teams is 0.4 and four out of ten teams has a significant value.  Based on this, there is a low-medium linear relationship between \textit{WIP} and \textit{throughput}. 
@@ -2148,57 +2440,64 @@ The combined Table \ref{corr:All} shows a significant correlation of 0.41 when t
 
 
 
-Despite the relationship between \textit{WIP} and \textit{throughput}, the \textit{throughput} correlation Table \ref{DS:corr:TP:v2} in Section \ref{sec:corr:TP} shows that \textit{throughput bug} has a mean correlation of 0.8, \textit{bugs}, \textit{throughput feature} have a mean correlation of 0.6,  \textit{lead time} has the mean correlation of 0.5, \textit{bugs finished quarter, bugs} and \textit{WIP} have the mean correlation of 0.4, \textit{churn} has a mean correlation of 0.3 and the rest of the variables have a mean correlation of $\pm$ 0.2.
-The combine Table \ref{corr:All:V2} shows \textit{throughput} has a significant correlation to all variables except \textit{churn} and \textit{churn feature}, when team size is taken into account. The mean correlation of 0.5 between \textit{throughput} and \textit{lead time} also point towards the fact that the WIP-limit may be too low. If SI produces more, it will take longer for each task to finished, which do not make sense. So it can look like SI does not produce enough, since \textit{lead time} decreases when \textit{throughput} does.
+%Despite the relationship between \textit{WIP} and \textit{throughput}, the \textit{throughput} correlation Table \ref{DS:corr:TP:v2} in Section \ref{sec:corr:TP} shows that \textit{throughput bug} has a mean correlation of 0.8, \textit{bugs}, \textit{throughput feature} have a mean correlation of 0.6,  \textit{lead time} has the mean correlation of 0.5, \textit{bugs finished quarter, bugs} and \textit{WIP} have the mean correlation of 0.4, \textit{churn} has a mean correlation of 0.3 and the rest of the variables have a mean correlation of $\pm$ 0.2.
+%The combine Table \ref{corr:All:V2} shows \textit{throughput} has a significant correlation to all variables except \textit{churn} and \textit{churn feature}, when team size is taken into account. The mean correlation of 0.5 between \textit{throughput} and \textit{lead time} also point towards the fact that the WIP-limit may be too low. If SI produces more, it will take longer for each task to finished, which do not make sense. So it can look like SI does not produce enough, since \textit{lead time} decreases when \textit{throughput} does.
 
-When team size is \textbf{not} taken into account the Table \ref{DS:corr:TP} shows that \textit{throughput feature} has a mean correlation of 0.8, \textit{throughput bug} has a mean correlation of 0.7, \textit{bugs} and \textit{WIP} have a correlation of 0.6 and both \textit{lead time} and \textit{team size} have a mean correlation of 0.5, \textit{bugs finished, quarter} has the mean correlation of 0.3 and the rest of the variables have a mean correlation of $\pm$ 0.2 . The combined Table \ref{corr:All} shows \textit{throughput} has a significant correlation relationship to \textit{WIP, throughput feature, throughput bug, bugs}, \textit{bugs finished, quarter} and \textit{team size}. The mean correlation between \textit{lead time} and \textit{throughput} are the same here.
+%When team size is \textbf{not} taken into account the Table \ref{DS:corr:TP} shows that \textit{throughput feature} has a mean correlation of 0.8, \textit{throughput bug} has a mean correlation of 0.7, \textit{bugs} and \textit{WIP} have a correlation of 0.6 and both \textit{lead time} and \textit{team size} have a mean correlation of 0.5, \textit{bugs finished, quarter} has the mean correlation of 0.3 and the rest of the variables have a mean correlation of $\pm$ 0.2 . The combined Table \ref{corr:All} shows \textit{throughput} has a significant correlation relationship to \textit{WIP, throughput feature, throughput bug, bugs}, \textit{bugs finished, quarter} and \textit{team size}. The mean correlation between \textit{lead time} and \textit{throughput} are the same here.
 
-The \textit{throughput's} correlation are isolated, along with rest of the variables presented. The variables can only be used to see what impact the variable have on a software process. One cannot say if \textit{WIP} decreases, then the variable decreases and then all the variables with a significant positive correlation to the variable decreases. The \textit{throughput} correlation also shows the \textit{WIP} relationship decreases when \textit{team size} is taken into account, but the relationship between the other variables do not differ in the same extent.
+%The \textit{throughput's} correlation are isolated, along with rest of the variables presented. The variables can only be used to see what impact the variable have on a software process. One cannot say if \textit{WIP} decreases, then the variable decreases and then all the variables with a significant positive correlation to the variable decreases. The \textit{throughput} correlation also shows the \textit{WIP} relationship decreases when \textit{team size} is taken into account, but the relationship between the other variables do not differ in the same extent.
 
 \section{WIP and lead time}
 \vspace{-1em}
-As stated in Section \ref{sec:in:lt}, lead time could be used to track how quickly software is delivered to customers. Each development process would like to get their lead time as low as possible. In Section \ref{WIPsec} there is stated that WIP-limits are important to reduce lead times. The result from this work when team size was \textbf{not} taken into account shows a mean correlation relationship of 0.5 between \textit{WIP} and \textit{lead time},  as shown in Table \ref{DS:corr:WIP}.  The correlation Table \ref{corr:WIP} shows teams one, four, five, seven and ten have a significant positive correlation relationship, both team two and three have a medium correlation relationship and team six, eight and nine have a low positive correlation relationship.
+As stated in Section \ref{sec:in:lt}, lead time could be used to track how quickly software is delivered to customers. Each development process would like to get their lead time as low as possible. In Section \ref{WIPsec} there is stated that WIP-limits are important to reduce lead times. The correlation between \textit{lead time} and \textit{WIP} shows a mean correlation of 0.2, shown by Table \ref{DS:corr:WIP:v2}. This means that in average \textit{throughput} increases when \textit{WIP} increases. The teams \textbf{two, four} and \textbf{seven} have a significant correlation of 0.67, 0.87 and 0.77. These three teams have a mean WIP-limit of 2.31, 3.21 and 2. Teams \textbf{one, eight} and \textbf{nine} have negative correlation of -0.09, -0.09 and -0.18. These teams have a mean WIP-limit of 0.73, 1.09 and 2.19.
 
-The result from when team size was taken into account shows a mean correlation relationship of 0.2, which is a weaker correlation relationship. Three of the ten teams have a significant positive correlation, while the rest of teams' correlation vary from 0.32 to -0.18, as shown by Tables \ref{corr:WIP:V2} and \ref{DS:corr:WIP:v2}. 
+The mean lead time for teams \textbf{one, eight} and \textbf{nine} are 0.93, 1.9 and 2.06. The teams \textbf{two, four} and \textbf{seven} have mean lead time of 1.3, 2.25 and 1.87
 
-The standard deviation shows a variation of 0.2 and a median of 0.5 when team is \textbf{not} taken into account, as shown by Table \ref{DS:corr:WIP}. The standard deviation when team size is taken into account is 0.4 and the median is 0, as shown in Table \ref{DS:corr:WIP:v2}. The standard deviation shows a high proliferation of values when team size is taken into account. The standard deviation shows evidence of spread relationship between \textit{WIP} and \textit{lead time} across the teams  when team size is taken into account.   The standard deviation value of 0.2 shows that  each of the ten \textit{lead time} values are closer to each other when team size is \textbf{not} taken into account.  
+%The result from when team size was taken into account shows a mean correlation relationship of 0.2, which is a weaker correlation relationship. Three of the ten teams have a significant positive correlation, while the rest of teams' correlation vary from 0.32 to -0.18, as shown by Tables \ref{corr:WIP:V2} and \ref{DS:corr:WIP:v2}. 
 
-The combine correlation Table \ref{corr:All} shows that all teams combined have a significant correlation of 0.27, when team size is \textbf{not} taken into account.  The correlation Table \ref{corr:All:V2} shows a significant correlation of 0.36 when team size is taken into account. The value presented in this section shows when time size is taken into account, the mean correlation is 0.2, but the combine correlation is a significant one of 0.36. This shows a low to medium positive correlation relationship between \textit{WIP} and \textit{lead time}. When team size is \textbf{not} taken into account; there is a low significant correlation for all the teams combined and medium-high positive correlation when each team is measured independently. Based on these results, decreasing the WIP-limit will decrease \textit{lead time}.
+%The standard deviation shows a variation of 0.2 and a median of 0.5 when team is \textbf{not} taken into account, as shown by Table \ref{DS:corr:WIP}. The standard deviation when team size is taken into account is 0.4 and the median is 0, as shown in Table \ref{DS:corr:WIP:v2}. The standard deviation shows a high proliferation of values when team size is taken into account. The standard deviation shows evidence of spread relationship between \textit{WIP} and \textit{lead time} across the teams  when team size is taken into account.   The standard deviation value of 0.2 shows that  each of the ten \textit{lead time} values are closer to each other when team size is \textbf{not} taken into account.  
+
+%The combine correlation Table \ref{corr:All} shows that all teams combined have a significant correlation of 0.27, when team size is \textbf{not} taken into account.  The correlation Table \ref{corr:All:V2} shows a significant correlation of 0.36 when team size is taken into account. The value presented in this section shows when time size is taken into account, the mean correlation is 0.2, but the combine correlation is a significant one of 0.36. This shows a low to medium positive correlation relationship between \textit{WIP} and \textit{lead time}. When team size is \textbf{not} taken into account; there is a low significant correlation for all the teams combined and medium-high positive correlation when each team is measured independently. Based on these results, decreasing the WIP-limit will decrease \textit{lead time}.
 
 
 The \textit{lead time}'s descriptive statistic Table \ref{DS:corr:LT:v2} shows \textit{throughput, throughput bug}, \textit{bugs} and  \textit{bugs finished, quarter}  have the mean correlation of 0.5 between \textit{lead time}, while \textit{churn} and \textit{throughput feature} have the correlation of 0.4 between \textit{lead time} and the rest has a mean correlation of $\pm$ 0.2 or less between \textit{lead time}, when team size is taken into account. When team size is \textbf{not} taken into account, \textit{WIP} and \textit{throughput} have a mean correlation of 0.5 and \textit{throughput feature} have the value 0.4, \textit{throughput bug, bugs, churn feature} and \textit{team size} have the mean correlation of 0.3 and the rest variables have a correlation of $\pm$ 0.2 or less. The combine Table \ref{corr:All} shows an overall significant positive correlation between \textit{lead time} and both \textit{team size} and \textit{WIP}, when team size is \textbf{not} taken into account. When team size is taken into account all variables except \textit{throughput bug}, \textit{avg days in backlog, bugs} and \textit{churn bug} have a significant positive correlation, as shown by Table \ref{corr:All:V2}. These values show the impact \textit{lead time} has on a development process.  The significant correlation  and the mean correlation between \textit{lead time} and \textit{throughput} is odd, these values should be further investigated. 
 
 \section{WIP and bugs}
-To minimize bugs should be a goal independent of software process and methods. If WIP-limit could reduce bugs without compromising, one could conclude that WIP-limit matter in software development. The paper cited by Shinkle stated; when WIP was too high, the number of bugs increased  \parencite{Shinkle}.
+To minimize bugs should be a goal independent of software process and methods. If WIP-limit could reduce bugs without compromising, one could conclude that WIP-limit matter in software development. The paper cited by Shinkle stated; when WIP was too high, the number of bugs increased  \parencite{Shinkle}. The mean correlation between \textit{WIP} and \textit{bugs} are 0.2. There is one team with a significant correlation and that is \textbf{team seven}  with a correlation of 0.75 as showed in Table \ref{corr:WIP:V2}. \textbf{Team ten} has a mean WIP-limit of  2.03. There is two teams with a negative correlation, these two teams are \textbf{team nine} and \textbf{team ten}. \textbf{Team nine} has the correlation of -0.05  and a mean WIP-limit of 2.19 and \textbf{team ten} has the correlation of -0.28 and a mean WIP-limit of 1.08. 
 
-The result from this work shows when team size is \textbf{not} taken into account, the mean correlation between \textit{WIP} and \textit{bugs} are 0.5 and four of the teams have a significant positive correlation between \textit{bugs} and \textit{WIP}. All of the ten teams also have a positive correlation, as shown in Table \ref{corr:WIP}. The two variable \textit{bug finished, quarter} and \textit{avg days backlog bugs} is used as a side measures. The two variables are used to see how long bugs are in backlog and the amount of bugs fixed vs. the amount of bugs recorded in system per quarter. The mean correlation between \textit{WIP} and both \textit{bug finished, quarter} is 0.3 and \textit{avg days backlog, bugs} is 0.1. The value \textit{bug finished, quarter} shows a low-moderate mean correlation relationship. The mean correlation of 0.1, the combine correlation of 0.17 from Table \ref{corr:All} and the fact that there is one team with a significant correlation relationship between \textit{avg days backlog, bugs} and \textit{WIP} shows that  \textit{WIP}-limit has no influence on the number of days bugs are in backlog, when \textit{team size} is \textbf{not} taken into account. The \textit{bugs finished, quarter} with the mean of 0.3, the significant positive correlation of 0.17 between \textit{WIP} and \textit{bugs finished, quarter} from Table \ref{corr:All} and \textit{bugs}, shows a weak correlation relationship between  and \textit{WIP}. 
+The \textit{bugs finished, quarter} and  \textit{avg days in backlog, bugs} is used as a side measure. The mean correlation between \textit{WIP} and \textit{bugs finished, quarter} are 0.2 and there are four teams with a significant positive correlation. This means that for four of the teams, if the WIP-limit is increased, the teams manages to handle more bugs per quarter. The WIP-limit for these teams is  2.31, 3.21, 2.03 and 0.71. There is one team with a significant negative correlation of -0.62. This means that if WIP-limit is decreased, the \textit{bugs finished, quarter} increases.  The WIP-limit for this team is 1.78. There is three other teams with a negative correlation, the correlation for these teams are -0.28 and -0.24. The WIP-limit for these teams are 0.73, 1.93 and 1.08. Three out of the four positive significant correlations have a WIP limit of 2 or higher. The four teams with a negative correlation, all have a WIP-limit less than 2.  This shows evidence that the WIP-limit may be too high. The teams should focus on a negative correlation between \textit{WIP} and  \textit{bugs finished, quarter} because then the teams are able to produce more bugs within the same quarter. 
 
-When team size is taken into account, the mean correlation is 0.2 for \textit{bugs}, as shown by Table \ref{DS:corr:WIP:v2}.  Eight out of ten teams have a positive correlation relationship, but only one team has a significant positive correlation. The  \textit{bug finished, quarter} and \textit{avg days backlog, bugs}  have the mean correlation  0.2 and -0.1. For \textit{bug finished, quarter} is there four teams with a positive significant correlation and one team with a negative  significant correlation. For \textit{avg days backlog, bugs} is there one team with a negative significant correlation. The combine Table \ref{corr:All:V2} shows \textit{bugs finished, quarter} with a significant correlation of 0.40 and \textit{avg days in backlog, bugs} with a negative correlation of -0.14. These values show a weak correlation relationship between \textit{bugs} and \textit{WIP}, a moderate significant correlation relationship between \textit{WIP} and \textit{bugs finished, quarter} and a weak correlation between \textit{WIP} and \textit{avg days backlog, bugs}.
+The \textit{avg days in backlog, bugs} has a mean correlation of -0.1 between \textit{WIP}. There is one team with a significant correlation. That team has a negative correlation of -0.61 and has a WIP-limit of 1.08. The negative correlation between \textit{WIP} and \textit{avg days in backlog, bugs} says that if WIP-limit is decreased, the number of days bugs are in backlog increases. The team with the highest positive correlation, has a correlation of 0.51 and a WIP-limit of 1.78. The two teams with the highest WIP-limit mean have the correlation of 0.10 and 0 between \textit{avg days in backlog, bugs}  and \textit{WIP}. The two teams with the lowest WIP-limit have the correlation of 0.03 and -0.17 between \textit{avg days in backlog, bugs}  and \textit{WIP}. Based on these values, WIP-limit has no impact on the variable \textit{avg days in backlog, bugs}. 
 
-The standard deviation when team size is \textbf{not} taken into account is 0.2 and the median is 0.5. The median when team size is taken into account is 0.2 and the standard deviation 0.4. The median numbers show significant impact of team size between the relationship of \textit{WIP} and \textit{bug}, as shown in \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}    
 
-When team size is \textbf{not} taken into account, the overall correlation is significant with a value of  0.41, shown in Table \ref{corr:All}.  The correlation Table \ref{corr:All:V2} shows the correlation from when time size is taken into account. The table shows an overall significant correlation  of 0.29. The values from this section shows there is evidence that WIP-limit helps decrease bugs.
+
+%The result from this work shows when team size is \textbf{not} taken into account, the mean correlation between \textit{WIP} and \textit{bugs} are 0.5 and four of the teams have a significant positive correlation between \textit{bugs} and \textit{WIP}. All of the ten teams also have a positive correlation, as shown in Table \ref{corr:WIP}. The two variable \textit{bug finished, quarter} and \textit{avg days backlog bugs} is used as a side measures. The two variables are used to see how long bugs are in backlog and the amount of bugs fixed vs. the amount of bugs recorded in system per quarter. The mean correlation between \textit{WIP} and both \textit{bug finished, quarter} is 0.3 and \textit{avg days backlog, bugs} is 0.1. The value \textit{bug finished, quarter} shows a low-moderate mean correlation relationship. The mean correlation of 0.1, the combine correlation of 0.17 from Table \ref{corr:All} and the fact that there is one team with a significant correlation relationship between \textit{avg days backlog, bugs} and \textit{WIP} shows that  \textit{WIP}-limit has no influence on the number of days bugs are in backlog, when \textit{team size} is \textbf{not} taken into account. The \textit{bugs finished, quarter} with the mean of 0.3, the significant positive correlation of 0.17 between \textit{WIP} and \textit{bugs finished, quarter} from Table \ref{corr:All} and \textit{bugs}, shows a weak correlation relationship between  and \textit{WIP}. 
+
+%When team size is taken into account, the mean correlation is 0.2 for \textit{bugs}, as shown by Table \ref{DS:corr:WIP:v2}.  Eight out of ten teams have a positive correlation relationship, but only one team has a significant positive correlation. The  \textit{bug finished, quarter} and \textit{avg days backlog, bugs}  have the mean correlation  0.2 and -0.1. For \textit{bug finished, quarter} is there four teams with a positive significant correlation and one team with a negative  significant correlation. For \textit{avg days backlog, bugs} is there one team with a negative significant correlation. The combine Table \ref{corr:All:V2} shows \textit{bugs finished, quarter} with a significant correlation of 0.40 and \textit{avg days in backlog, bugs} with a negative correlation of -0.14. These values show a weak correlation relationship between \textit{bugs} and \textit{WIP}, a moderate significant correlation relationship between \textit{WIP} and \textit{bugs finished, quarter} and a weak correlation between \textit{WIP} and \textit{avg days backlog, bugs}.
+
+%The standard deviation when team size is \textbf{not} taken into account is 0.2 and the median is 0.5. The median when team size is taken into account is 0.2 and the standard deviation 0.4. The median numbers show significant impact of team size between the relationship of \textit{WIP} and \textit{bug}, as shown in \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}    
+
+%When team size is \textbf{not} taken into account, the overall correlation is significant with a value of  0.41, shown in Table \ref{corr:All}.  The correlation Table \ref{corr:All:V2} shows the correlation from when time size is taken into account. The table shows an overall significant correlation  of 0.29. The values from this section shows there is evidence that WIP-limit helps decrease bugs.
 
 The descriptive statistic table for bugs in Section  \ref{sec:corr:bug} shows \textit{bugs} variable has a mean correlation of 0.6 to \textit{throughput} and \textit{throughput bug}, \textit{throughput feature} have a mean correlation of 0.5, \textit{WIP} has a mean correlation of 0.4 and  \textit{bugs finished, quarter} \textit{avg days backlog, bugs}, \textit{lead time} and \textit{team size} have a mean correlation  of 0.3 and rest of the variables have a mean correlation of $\pm$ 0.2 or less, as shown in Table \ref{DS:corr:Bugs}. Table \ref{corr:All} shows \textit{bugs} has an overall significant correlation  to all variables except \textit{lead time} and all the \textit{churn} variables. All of this when team size is \textbf{not} taken into account. When team size is taken into account, \textit{bugs} has a mean correlation of 0.8 for \textit{throughput bug}, 0.6 for \textit{throughput}, \textit{bugs finished quarter}  and \textit{lead time} has the mean correlation 0.5, \textit{avg days in backlog, bugs} has the mean correlation of 0.4, \textit{churn} 0.3 and the rest of the variables have a mean correlation of $\pm$ 0.2. The Table \ref{corr:All:V2} shows that \textit{bugs} has a significant correlation to all variables except \textit{throughput feature} and \textit{churn feature}.  When team size is taken into account, the correlation relationship between the variables and \textit{bugs} increases for almost each variable versus when team size was \textbf{not} taken into account. The relationship between \textit{throughput} and \textit{bugs} are a moderate to high because when one produces more, more bugs is also produced. 
 
 
 
 \section{WIP and Churn}
-Churn is used as surrogates for effort in this work. Based on the descriptive statistics tables, independently of  team size; there is no relationship between \textit{WIP} and \textit{churn} or the sub variables of churn according to Tables \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}. The results show a mean correlation of -0.1, 0 and 0.1 for the \textit{churn} variables. When team size is \textbf{not} taken into account, two of the teams have a significant correlation, one of them has a positive correlation and the other has a negative. When team size is taken into account, there is one team with a significant positive correlation.
+Churn is used as surrogates for effort in this work. No literate was found where the relationship between \textit{churn} and \textit{WIP} were investigated. Small tasks with frequently releases are suggested  \parencite{0984521402}. The mean correlation between \textit{churn} and \textit{WIP} are -0.1. There is one team with a positive significant correlation. That team has the correlation of 0.77 and a WIP-limit of 3.21. This correlation shows that if WIP-limit is increased, the effort to complete the tasks is also increased. The three teams with the lowest WIP-limit have the correlation values of -0.27, 0.39 and -0.37. The three teams with the highest WIP-limit have the correlation values of 0.16, 0.77 and -0.35.  Based on the excerpt there is no pattern between WIP-limit and \textit{churn}.
 
-The standard deviation for both the results are 0.4, while the median is 0.1 when team size is \textbf{not} taken into account and -0.2 for the other case. The standard deviation empowers the assumption of a relationship between \textit{churn} and \textit{WIP}, because the values are spread and there is no pattern.  The Table \ref{corr:All} shows an overall correlation of 0.06 when team size is taken into account. The Table \ref{corr:All:V2} shows a significant correlation of 0.17. These values show that WIP-limit has little impact on \textit{churn}.
+2,4,6
+1,8,10 
+
+
+
+%Based on the descriptive statistics tables, independently of  team size; there is no relationship between \textit{WIP} and \textit{churn} or the sub variables of churn according to Tables \ref{DS:corr:WIP} and \ref{DS:corr:WIP:v2}. The results show a mean correlation of -0.1, 0 and 0.1 for the \textit{churn} variables. When team size is \textbf{not} taken into account, two of the teams have a significant correlation, one of them has a positive correlation and the other has a negative. When team size is taken into account, there is one team with a significant positive correlation.
+
+%The standard deviation for both the results are 0.4, while the median is 0.1 when team size is \textbf{not} taken into account and -0.2 for the other case. The standard deviation empowers the assumption of a relationship between \textit{churn} and \textit{WIP}, because the values are spread and there is no pattern.  The Table \ref{corr:All} shows an overall correlation of 0.06 when team size is taken into account. The Table \ref{corr:All:V2} shows a significant correlation of 0.17. These values show that WIP-limit has little impact on \textit{churn}.
 
 Section \ref{sec:corr:churn} shows \textit{churn} correlation tables. The Table \ref{DS:corr:Churn} shows when team size is \textbf{not} taken into account, \textit{churn} has only low correlation relationship between any of the other variables, except the \textit{churn's} sub variables. When  team size is taken into account, \textit{bugs finished, quarter} has a mean correlation relationship of 0.5, \textit{lead time} has a correlation of 0.4 and \textit{throughput, throughput bug} and \textit{bugs} have a correlation of 0.3, as shown by Table \ref{DS:corr:churn:v2}. The combine Table \ref{corr:All} shows \textit{churn} has a significant positive correlation  to both the sub variables and a significant negative correlation to \textit{team size}. When team size is taken into account, \textit{churn} has a significant positive correlation to \textit{WIP, bugs}, \textit{bugs finished, quarter}, \textit{lead time} and  both the \textit{churn} sub variables, as shown by Table \ref{corr:All:V2}. 
 
-\section{WIP-limit}
-The previous research states that WIP-limit should be low, but not if one should start by  limit one tasks per developer, or two or so on. The mean WIP-limit for SI is 1.9 per developer. In this case the WIP-limit could be too low and that's the reason \textit{throughput} and \textit{WIP} have a positive correlation relationship. Because if the WIP-limit is to low, the bottlenecks will not occur and the teams are able to produce more, but they are not allowed by the WIP-limit. One should try to increase the WIP-limit for SI and see if the \textit{throughput} continues to increase. If the WIP-limit continues to increase then the WIP-limits are probably too low.
 
-The mean correlation values between \textit{WIP} and both \textit{lead time} and \textit{bugs} are 0.5 when team size is \textbf{not} taken into account and the correlation is 0.2 when team size is taken into account. The correlation between \textit{WIP} and both \textit{lead time} and \textit{bugs} when team size is taken into account is low. Based on previous research, \textit{WIP}-limit should have a greater impact on \textit{lead time} and \textit{bugs}, this also point towards the fact that \textit{WIP}-limi could be too low for SI.  
-
-\section{Team size}
-As the different results sections in Chapter \ref{ch:res} and the sections above states, it is important to take team size into account when a case study like this is conducted. If team size were left out as a variable in this case study, \textit{WIP} would have a mean correlation relationship of 0.6 with \textit{throughput} and 0.5 with \textit{bugs} and \textit{lead time}. These three correlation are decreased by 0.2  and 0.3 compared to when  team size was taken into account. The combine correlation Table  \ref{corr:All} shows that seven of the variables have a significant positive correlation with \textit{team size}.  If team size were not taken into account the result from this work would have been biased. 
-
-%The table also shows eight out of eleven variables has a significant correlation value with \textit{WIP}, while Table \ref{corr:All:V2} shows one out of ten variables has a significant relationship.
 
 
 
@@ -2341,7 +2640,7 @@ The three \textit{churn} variables for \textbf{team three} have the correlation 
 \textit{Churn bug} for \textbf{team five} has a significant positive correlation of .94, while \textit{churn feature} has the correlation of 0.22, as shown in \textit{churn} correlation Table \ref{corr:churn}. This proves that \textit{churn bug} represents most of \textit{churn}. The Tables \ref{DS:Churn:5}, \ref{DS:CF:5} and \ref{DS:CB:5} show the same result. \textit{Churn} consists of 698 dates and has a total mean of 33.4, while \textit{churn feature} and \textit{churn bug} represents has 123 dates and 575 dates. The total mean of \textit{churn feature} is 52.1 and for \textit{churn bug} it is 29.4. 
 
 
-\textbf{Team six} has a significant correlation of 0.77 for \textit{churn bug}, while both \textit{churn} and \textit{churn feature} has the correlation of -0.30 and -0.36, showed in WIP correlation Table \ref{corr:WIP}. Based on these values, one can assume \textit{churn feature} represents most of \textit{churn}. The Tables \ref{DS:Churn:6}, \ref{DS:CF:6} and \ref{DS:CB:6} back this theory. The tables show \textit{churn feature} contribute 576 dates to \textit{churn} and has a total mean of 105.9. \textit{Churn bug} contains of 180 dates and has a total mean value of 73.8. \textit{Churn} has 756 dates and a total mean value of 98.3.  The churn correlation table in Section \ref{sec:corr:churn} proves the assumption of \textit{churn feature} represent most of \textit{churn}, with the correlation values 0.98 for  \textit{churn feature} and -0.02 for \textit{churn bug}.
+\textbf{Team six} has a significant correlation of 0.77 for \textit{churn bug}, while both \textit{churn} and \textit{churn feature} has the correlation of -0.30 and -0.36, showed in WIP correlation Table \ref{corr:WIP}. Based on these values, one can assume \textit{churn feature} represents most of \textit{churn}. The Tables \ref{DS:Churn:6}, \ref{DS:CF:6} and \ref{DS:CB:6} back this theory. The tables show \textit{churn feature} contribute 576 dates to \textit{churn} and has a total mean of 105.9. \textit{Churn bug} contains of 180 dates and has a total mean value of 73.8. \textit{Churn} has 756 dates and a total mean value of 98.3.  The churn correlation table in Section \ref{sec:corr:churn} proves the assumption of \textit{churn feature} represent most of \textit{churn}, with the correlation 0.98 for  \textit{churn feature} and -0.02 for \textit{churn bug}.
 
 \textit{Churn feature} for \textbf{team seven} has the correlation of 0.91 while \textit{churn bug} has the correlation of 0.13, as showed in {churn} correlation Table \ref{corr:churn}. The descriptive statistic Tables \ref{DS:Churn:7}, \ref{DS:CF:7} and \ref{DS:CB:7} shows that \textit{churn} contains 359 dates and has a total mean of 77.3.  \textit{Churn feature} represents 141 of these dates, and has a total mean of 121.2. \textit{Churn bug} represents the 218 remaining dates and has a total mean of 48.9. Based on these values, one could assume that both  \textit{churn feature} and  \textit{churn bug} contribute to  \textit{churn}, but the churn correlation table  and  the graphs in Figure \ref{corr:Difference:7} disapproves that.
 
@@ -2414,7 +2713,6 @@ The three \textit{churn} variables for \textbf{team three} have the correlation 
 \label{ch:conc}
 In this work the main goal was to investigate the research question "Does WIP-limit in software development matter?" If so, "How can one find the optimal WIP-limit" and "Which parameters should be considered in order to optimize WIP-limits".  To answer the research questions a data set from a company called Software Innovation was interpreted. The data set is based on metadata about tasks from 2010 to 2013.
 
-In light of the result from Chapter \ref{ch:res}, the results from when team size was \textbf{not} taken into account are discarded. Because the data showed team size had a great impact on the correlation tables and possible gave bias results.
 
 
 If WIP-limit matters in software development some of its benefits should be to reduce bugs, increase throughput, decrease lead time. Based on the results from this work, \textit{WIP} has a mean correlation of 0.4 with \textit{throughput} on team level and a significant positive correlation of 0.55 when all teams are combined. Previous research has stated to lower WIP to decrease throughput, which this case study disapproves. The possible reason \textit{WIP} and \textit{throughout} have a positive correlation, could be because the  WIP-limit is too low. There is also stated that WIP-limit decrease \textit{lead time}, the mean correlation between these two variables is 0.2 and the overall correlation between these two is a significant correlation of 0.36. This shows evidence towards the fact that WIP-limit decrease \textit{lead time} in a weak manner. There is also stated that WIP-limit decreases number of \textit{bugs}. The mean correlation between \textit{bugs} and \textit{WIP} is 0.2 and the overall correlation is a significant value of 0.29, which shows that WIP-limit does decrease \textit{bugs} in a weak manner.  Based on these values \textit{throughput, bugs} and \textit{lead time} decreases when \textit{WIP} does. It is positive that both \textit{bugs} and \textit{lead time} decreases, but \textit{throughput} should increase.  The conclusion is that WIP-limits matter, but the result of this work shows that one need to comprise. The result show also that \textit{throughput} positive correlation is a moderate, while the two others is a weak correlation relationship. The conclusion of this work is that \textit{WIP}-limit matters and one needs to take \textit{lead time, throughput} and \textit{bugs} into account when one would like to find the optimal WIP-limit and if one would like to optimize they WIP-limits.
