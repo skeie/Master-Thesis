@@ -2062,8 +2062,7 @@
     <bcf:citekey order="102">DavidAnderson</bcf:citekey>
     <bcf:citekey order="103">SMR:SMR1599</bcf:citekey>
     <bcf:citekey order="104">Shinkle</bcf:citekey>
-    <bcf:citekey order="105">0984521402</bcf:citekey>
-    <bcf:citekey order="106">corr:transitive</bcf:citekey>
+    <bcf:citekey order="105">corr:transitive</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" type="entry" label="nyt">
   <bcf:sorting>
