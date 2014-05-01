@@ -9,7 +9,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.5}Creating WIP-object}{32}
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {4.6}Pseudocode example of how throughput objects are added}{33}
+\contentsline {lstlisting}{\numberline {4.6}Pseudocode example of how objects are added}{33}
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {4.7}Pseudocode example of how throughput is measured}{34}
 \defcounter {refsection}{0}\relax 
