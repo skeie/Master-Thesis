@@ -95,12 +95,12 @@
 
 \chapter*{Summary}                   %% ... or Sammendrag or Samandrag
 \textbf{Background}: 
-In software engineering there are several principles and tools with impact on a software project. If these principles and tools are applied the wrong way, or not considered, it can starve a software project. WIP-limit is of one those tools.  WIP-limit is used to limit number of tasks people can work with. There is little evidence proving the impact of WIP-limit for software development.\\
+In software engineering there are several principles with impact on a software project. If these principles are applied the wrong way, or not considered, it can starve a software project. WIP-limit is of one those principles.  WIP-limit is used to limit number of tasks people can work with. As of today, there is little evidence proving the impact of WIP-limit for software development.\\
 \textbf{Aim}: 
 The aim for this work is to investigate the impact of WIP-limits in software development. \\
 \textbf{Methods}:
-The methods used to investigate the research question were a case study of an in-house software development company. The case study was based on a data set with meta data about each tasks the software company as worked on from 2008 to 2013. The data set was analyzed using an application developed for this work, described later on. From the data set, the application measured variables such as \textit{WIP, throughput, bugs, lead time} and \textit{churn} for each team. The data produced by the application was interpreted with correlations and case summaries in statistical application. Correlation and case summaries are described later in this work.\\
-\textbf{Results}: The results showed a mean correlation  of 0.4 between \textit{WIP} and \textit{throughput}, 0.2 for \textit{bugs} and \textit{lead time} and -0.1 for \textit{churn} across the teams.  The correlation table when all teams data have been combined showed a significant positive correlation  between \textit{WIP} and the variables; \textit{throughput, bugs, lead time} and \textit{churn}.  The result also showed that team size has an impact on both WIP and throughput. The result also showed the impact of both lead time and throughput has on a development process.\\ 
+The methods used to investigate the research question were a case study of an in-house software development company. The case study was based on a data set with meta data about each tasks the software company as worked on from 2008 to 2013. The data set was analyzed using an application developed for this work, described later in this work. From the data set, the application measured variables such as \textit{WIP, throughput, bugs, lead time} and \textit{churn} for each team. The data produced by the application was interpreted with correlations and case summaries in statistical application. Correlation is a statical method that measure how two variables move in relation to each other.  Case summaries is a statistical method for grouping variables and calculate descriptive statistics. The correlation between variables are used to investigate the impact of WIP-limits.\\
+\textbf{Results}: Some of the result from this work showed a mean correlation  of 0.4 between \textit{WIP} and \textit{throughput}, 0.2 between \textit{WIP} and \textit{bugs} and \textit{lead time} and -0.1 between \textit{WIP} and  \textit{churn} across the teams.\\ 
 \textbf{Conclusion}:\\
 Based on the data from this work, the conclusion is that WIP-limits matter in software development. 
 
@@ -110,7 +110,7 @@ Based on the data from this work, the conclusion is that WIP-limits matter in so
 \lstlistoflistings{}
 
 \chapter*{Preface}                    %% ... or Forord
-First of all I would like to thank my supervisor, \textit{Dag Sj\o berg}, for valuable discussions and great guidance throughout this work as well as Software Innovation for providing the unique data set. I would also like to thank my dad, \textit{Nils-Olav Skeie} and my friends \textit{Michael Gunnulfsen} and \textit{Brynjar Rongved} for helping me correct countless spelling errors and for giving me useful tips. I would also like to thank \textit{Henrik Skifjeld} for helping me with Python. Last but not least, I would like to thank my girlfriend \textit{Vilde Fjeldstad}, my mom, \textit{Eva Solesvik}, my sister \textit{Hilde} and all my friends for your love, support and friendship.   
+First of all I would like to thank my supervisor, \textit{Dag Sj\o berg}, for valuable discussions and great guidance throughout this work as well as Software Innovation for providing the unique data set. I would also like to thank my dad, \textit{Nils-Olav Skeie} for great guidance and for helping me correct spelling errors and for giving me useful tips.  I would also like to thank my friends \textit{Michael Gunnulfsen} and \textit{Brynjar Rongved} for helping me correct countless spelling errors and for giving me useful tips. I would also like to thank \textit{Henrik Skifjeld} for helping me with Python. Last but not least, I would like to thank my girlfriend \textit{Vilde Fjeldstad}, my mom, \textit{Eva Solesvik}, my sister \textit{Hilde} and all my friends for your love, support and friendship.   
 \mainmatter{}
 \chapter{Introduction}
 \label{chap:intro}
@@ -119,7 +119,7 @@ This work focuses on Work In Progress (WIP)-limit, which is one of the principle
 %The data set had already been interpreted by another study. That study investigated Scrum vs. Kanban for SI. For interested readers the case study can be found in the paper "Quantifying the Effect of Using Kanban versus Scrum: A Case Study" \parencite{Dag}. 
 
 \section{Motivation}
-In software development, processes and methods are important in order to deliver the right product on time and one rarely solves two identical problems for different stakeholders. The problems in software development are becoming larger and more complex, which means that new processes and methods are introduced.  The already existing processes and methods need to be adapted to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years, proves this assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
+In software development, processes and methods are important in order to deliver the right product on time and one rarely solves two identical problems for different stakeholders. The problems in software development are becoming larger and more complex, which means that new processes and methods are introduced.  And the already existing processes and methods need to be adapted to solve the complex problems in the most efficient ways.  The number of popular software development methods  (e.g. Extreme programming, Spiral, Scrum and Kanban) emerged in the recent years, proves this assumption \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
 
 This is the reason why this work will focus on software development methods. The methods in each development project is such a key element to make a project successful. The main focus of this work will be the Kanban method and the principle WIP-limit. In Kanban is the WIP-limit used to  limit the number of tasks each developer can work on at each workflow state, to prevent bottlenecks and to ensure flow of tasks through the development cycle \parencite{gandomani2013important} \parencite{ikonen2010exploring}.
 
@@ -140,7 +140,7 @@ In this work the overall research question will be to study the effects of WIP-l
 \section{Approach}
 This work will a use case study as an approach  to answer the research questions.  A data set from an in-house software company will be used to conduct the case study.  The data set will be evaluated at team level. The software company consists of ten teams, all of them will be investigated.
 
-A software program that was developed for this work will evaluate the data set. The software program will convert the data set into more deliberate data. The new data is interpreted by SPSS. SPSS is a statistic analysis program that was used in this work to compute correlation and descriptive statistics.
+A software program that was developed for this work will evaluate the data set. The software program will convert the data set into more deliberate data. The new data is interpreted by SPSS. SPSS is a statistic analysis program that was used in this work to compute correlation and descriptive statistics. A figure representing the work flow is presented in Section \ref{sec:workflow}.
 
 \section{Chapter overview}
 \begin{description}
@@ -154,7 +154,7 @@ Chapter \ref{ch:DCC} gives information about the data set and the calculations. 
 \item[Chapter \ref{ch:res}: \nameref{ch:res}:] \hfill \\
 Chapter \ref{ch:res} presents the result produced by the developed software program and SPSS, with descriptive statistics and correlation tables. 
 \item[Chapter \ref{ch:dis}: \nameref{ch:dis}:] \hfill \\
-Chapter \ref{ch:dis} presents a discussion on the results from the case study and a discussion of the results from this work against the finding from prior research. 
+Chapter \ref{ch:dis} presents a discussion on the results from the case study against the finding from prior research and the research questions from this work. 
 \item[Chapter \ref{ch:conc}: \nameref{ch:conc}:] \hfill \\
 Chapter \ref{ch:conc} provides the conclusion to the research questions as well as recommendations for future work.
 \end{description}
@@ -162,7 +162,7 @@ Chapter \ref{ch:conc} provides the conclusion to the research questions as well 
 
 \chapter{Background}  
 \label{chap:Background}                %% ... or Bakgrunn
-In this chapter there will be a brief introduction to software development process / methods as Waterfall (Section \ref{sec:WP}), Scrum (Section \ref{sec:Scrum}), Lean (Section \ref{sec:Lean}), Kanban (Section \ref{sec:Kan}) with affiliated tools.
+In this chapter there will be a brief introduction to software development process/methods as Waterfall (Section \ref{sec:WP}), Scrum (Section \ref{sec:Scrum}), Lean (Section \ref{sec:Lean}), Kanban (Section \ref{sec:Kan}) with affiliated tools.
 \section {Waterfall}
 \label{sec:WP}
 "The waterfall model is the classical model of software engineering. This model is one of the oldest models and is widely used in government projects and in many major companies" \parencite{munassar2010comparison}. The main goal of the waterfall model is to plan in early stages to ensure design flaws before coding is started. Since planning is so critical in the waterfall method it fits projects where quality control is a major concern  \parencite{munassar2010comparison}.
@@ -792,6 +792,7 @@ Table \ref{tab:measurementDone} shows how quarters, dates and days are represent
 
 
 \section{The workflow}
+\label{sec:workflow}
 The workflow of creating the result showed in Chapter \ref{ch:res} is showed in Figure \ref{dataflow}. First is the data converted from Microsoft TFS server to an excel document. The excel document is converted to a .csv file which the software program measure and produce documents containing WIP, throughput, lead time etc. The documents are used by SPSS to compute correlation tables and descriptive statistics.  
 \begin{figure}[h] 
   \center
