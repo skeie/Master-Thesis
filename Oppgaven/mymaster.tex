@@ -908,7 +908,7 @@ Figure \ref{wip_timeline}  shows task ids on the y-axis and dates on the x-axis.
 
 
 \begin{figure}[ht!]
- \begin{adjustwidth}{1cm}{}
+ \begin{adjustwidth}{1.4cm}{}
 \centering
 \hspace*{-1in}
 \includegraphics[width=21cm,trim=4 8 8 4,clip]{Picture/wip_example.jpg}
@@ -1283,7 +1283,7 @@ Table \ref{corr:lt} displays the first correlation table for \textit{lead time},
  \caption{Correlation for lead time.  Team size is \textbf{not} considered}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
- \begin{adjustwidth}{-1cm}{}
+ \begin{adjustwidth}{-0.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1453,7 +1453,7 @@ The second correlation table for bugs, displayed in Table \ref{corr:Bugs:v2} sho
  \caption{Correlation with Bugs - Team size is considered}
  \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
-  \begin{adjustwidth}{-1cm}{}
+  \begin{adjustwidth}{-0.5cm}{}
  \centering
  \begin{tabular}{|l|r|r|r|r|r|r|r|r|r|r|}
 \hline
@@ -1739,7 +1739,7 @@ Churn bug  & 10 & 0.6 & 0.7 & 0.4 & 1 & -0.2\\ \hline
 
 
  \begin{table}[!htbp]
-  \begin{adjustwidth}{-1.0cm}{}
+  \begin{adjustwidth}{-0.5cm}{}
    \caption{Correlation for Team size}
     \centerline {* Correlation is significant at the 0.05 level (2-tailed).}
 \centerline{** Correlation is significant at the 0.01 level (2-tailed).}
@@ -2359,36 +2359,37 @@ In this work, throughput is a measure to see how productive teams are. Section \
 
 The literature says that there should exist a negative correlation between \textit{WIP} and \textit{throughput}. The correlation from this work shows that almost each team has a positive correlation between \textit{WIP} and \textit{throughput}. Which is reflected in the mean correlation of 0.4 between \textit{WIP} and \textit{throughput}, as shown by Tables \ref{corr:WIP:V2} and \ref{DS:corr:WIP:v2}. The reason \textit{WIP} and \textit{throughput} have a positive correlation could be because the WIP-limits is set too low or too high. If the WIP-limits are too low, bottlenecks will not occur and the teams are able to produce more, but they will not be allowed to by the WIP-limit. If WIP-limits are too high, it can make people work on too many tasks at a time, which increase lead time for each task.
 
-Section \ref{WIPsec} states that WIP-limits should be in the range from 1 to 3 tasks per developer. The mean WIP-limit for SI is 1.9 per developer, as stated by Section \ref{sec:WIP:limit}. This shows that the WIP-limit  could be either too low or too high. The rest of the discussion in this section and Sections \ref{sec:dis:lt}, \ref{sec:dis:churn} and \ref{sec:dis:bugs} will explore the option that the WIP-limits may have been set too low or too high, and discuss if WIP-limits matter at all.  The correlation between WIP and the variables will be discussed as well as the correlation of $\pm$ 0.2 between variables. Based on the data from this data set, there is hard to find any pattern between the variables with mean correlation from 0.2 to -0.2, because these relationship have few significant correlations were the WIP-limit can be investigated in.
+Section \ref{WIPsec} states that WIP-limits should be in the range from 1 to 3 tasks per developer. The mean WIP-limit for SI is 1.9 per developer, as stated by Section \ref{sec:WIP:limit}. This shows that the WIP-limit  could be either too low or too high. The rest of the discussion in this section and Sections \ref{sec:dis:lt}, \ref{sec:dis:churn} and \ref{sec:dis:bugs} will explore the option that the WIP-limits may have been set too low or too high, and discuss if WIP-limits matter at all.  The correlation between \textit{WIP} and \textit{throughput, lead time, churn} and \textit{bugs} will be discussed as well as the correlation between the variables with a mean correlation higher than 
+$\pm$ 0.2. Based on correlation tables  and descriptive statistic tables, there is hard to find any pattern between the variables with mean correlation from [0.2, -0.2], because these relationship have few significant correlations were the WIP-limit can be investigated in.
 
 
 
 There are two teams with a mean WIP-limit of 3 tasks per developer. These teams are respectively \textbf{team four} and \textbf{team six}, shown by Figures \ref{Team:WIP:4} and \ref{Team:WIP:6}. These two teams had the total number of 53 and 99 employees from 2010-4 to 2013-4, which gives a mean of 4 (53/14) and 7 (99/14) persons per quarter, showed by Tables \ref{Team:4} and \ref{Team:6}. There are no other teams with fewer employees per quarter than \textbf{team four} and \textbf{team six}, although these two teams have a mean throughput of 6.2 and 4.6, as showed by the total mean row in the descriptive statistic Figures \ref{DS:TP:4} and \ref{DS:Throughput:6}. There are only two teams with a higher mean throughout than these two teams. The teams with a higher mean throughput are \textbf{teams one} and \textbf{five}, as shown by the total mean row in Figures \ref{DS:Throughput:1} and \ref{DS:Throughput:5}. In comparison to \textbf{team four} and \textbf{six},  \textbf{team one} had in average 24 (330/14) employees per quarter and \textbf{team five} had in average 20 (285/14) employees per quarter. 
 
-\textbf{Team four} has a mean throughput of 1.4 per employee and \textbf{team six} has a mean throughput of 0.63 per employee, as shown by Tables \ref{Team:TP:4} and \ref{Team:TP:6}. The  team with the third highest  throughput mean per employee is \textbf{team two} with a mean of 0.44 and a mean WIP-limit of 2.31, showed by Figures \ref{Team:TP:2} and \ref{Team:WIP:2}. \textbf{Team one} and \textbf{five} have a mean throughput of 0.42 and 0.30 which can be seen in Figures \ref{Team:TP:1} and \ref{Team:TP:5}. This shows that \textbf{team four} outperform the other teams on throughput per developer and \textbf{team six} is second by a wide margin. These data shows that WIP-limit may have been too low, because the three teams with the highest throughput per employee also have the highest WIP-limits. 
+\textbf{Team four} has a mean throughput of 1.4 per employee and \textbf{team six} has a mean throughput of 0.63 per employee, as shown by Tables \ref{Team:TP:4} and \ref{Team:TP:6}. The  team with the third highest  throughput mean per employee is \textbf{team two} with a mean of 0.44 and a mean WIP-limit of 2.31, showed by Figures \ref{Team:TP:2} and \ref{Team:WIP:2}. \textbf{Team one} and \textbf{five} have a mean throughput of 0.42 and 0.30 which can be seen in Figures \ref{Team:TP:1} and \ref{Team:TP:5}. This shows that \textbf{team four} outperform the other teams on throughput per developer and \textbf{team six} is second by a wide margin. These data shows that WIP-limit may have been too low, because the three teams with the highest throughput per employee also have the highest mean WIP-limits. 
 
-But, the \textit{WIP} correlation table, Table \ref{corr:WIP:V2} shows \textbf{team two} with a correlation of 0.59 between \textit{throughput} and \textit{WIP}, \textbf{team four} with a significant correlation of 0.86 between \textit{throughput} and \textit{WIP} and \textbf{team six} with a correlation of 0.08 between \textit{WIP} and \textit{throughput}.  These correlations show that the WIP-limit may not be too low, because \textbf{team two} and \textbf{team four} have a positive significant correlation, and the correlation of interest in this work is a negative correlation. The teams with the lowest correlation between \textit{throughput} and \textit{WIP} are; \textbf{team ten} with a correlation of -0.21 and a WIP-limit of 1.08, \textbf{team five} with a correlation of 0.11 and a WIP-limit of 1.93 and \textbf{team six} with a correlation of 0.08 and a WIP-limit of 3.02, as showed in Table  \ref{corr:WIP:V2} and Figures \ref{Team:WIP:10}, \ref{Team:WIP:5} and \ref{Team:WIP:6}. Based on these values it will look like WIP-limits do not have an impact on the correlation between \textit{throughput} and  \textit{WIP}, because teams with both high and low WIP-limit have both high and low correlation between \textit{WIP} and \textit{throughput}.
+But, the \textit{WIP} correlation table, Table \ref{corr:WIP:V2} shows \textbf{team two} with a correlation of 0.59 between \textit{throughput} and \textit{WIP}, \textbf{team four} with a significant correlation of 0.86 between \textit{throughput} and \textit{WIP} and \textbf{team six} with a correlation of 0.08 between \textit{WIP} and \textit{throughput}.  These correlations show that the WIP-limit may not be too low, because \textbf{team two} and \textbf{team four} have a positive significant correlation. And in this discussion one is looking for a negative correlation. The teams with the lowest correlation between \textit{throughput} and \textit{WIP} are; \textbf{team ten} with a correlation of -0.21 and a WIP-limit of 1.08, \textbf{team five} with a correlation of 0.11 and a WIP-limit of 1.93 and \textbf{team six} with a correlation of 0.08 and a WIP-limit of 3.02, as showed in Table  \ref{corr:WIP:V2} and Figures \ref{Team:WIP:10}, \ref{Team:WIP:5} and \ref{Team:WIP:6}. Based on these values it will look like WIP-limits do not have an impact on the correlation between \textit{throughput} and  \textit{WIP}, because teams with both high and low WIP-limit have both high and low correlation between \textit{WIP} and \textit{throughput}.
 
 %These three teams are the teams with the lowest WIP-limit. The four teams with the highest correlation between \textit{WIP} and \textit{throughput} have the mean WIP-limit values; 2.31, 1.78, 3.21 and 2.19.   This points towards the fact that the WIP-limit may be too high. This shows that low 
 
-The mean correlation between \textit{lead time} and \textit{throughput} are 0.5, as showed by Table \ref{DS:corr:WIP:v2}. The positive correlation between these variables states that when \textit{throughput} increases, the time from when a task is taken from the backlog until it is finished also increases. The relationship also states that if \textit{throughput} decreases, then the \textit{lead time} also decreases.
+The mean correlation between \textit{lead time} and \textit{throughput} are 0.5, as showed by Table \ref{DS:corr:TP:v2}. A positive correlation between these variables states that when \textit{throughput} increases, the time from when a task is taken from the backlog until it is finished also increases and vice versa.
 This correlation relationship should be negative. Because if there are produced more tasks, the total time to produce tasks should be minimized.
 
-There are five teams with a positive significant correlation, as showed by \ref{corr:WIP:V2}. The mean WIP-limits for these five teams are 2.31, 3.21, 1.93, 3.02 and 1.08, as showed by Figure \ref{table:WIP:teams}. These WIP-limits and correlations show no pattern that point towards the fact that WIP-limits matter or that they are too high or low. Because the teams with a significant correlation have both high and low WIP-limits.
+There are five teams with a positive significant correlation, as showed by \ref{corr:TP:V2}. The mean WIP-limits for these five teams are 2.31, 3.21, 1.93, 3.02 and 1.08, as showed by Figure \ref{table:WIP:teams}. These WIP-limits and correlations show no pattern that point towards the fact that WIP-limits matter or that they are too high or low. Because the teams with a significant correlation have both high and low WIP-limits.
 
-The four teams with the lowest WIP-limits have the correlation of 0.06, 0.26, 0.24 and 0.90, showed by \ref{corr:WIP:V2} and Figure \ref{table:WIP:teams}. Three of the five teams with the significant correlations are also the three teams with the highest mean WIP-limits. Three of the four with the lowest WIP-limits also have the lowest correlation between \textit{lead time} and \textit{throughput}. This data shows that most of the teams with highest mean WIP-limits have a significant correlation and most of the lowest mean WIP-limits are the one closes to have a negative correlation between \textit{throughput} and \textit{lead time}. Although the data show evidence that WIP-limits reduce the correlation between \textit{lead time} and \textit{throughput}, there is no evidence that lowering WIP-limits even more will result in a negative correlation between \textit{lead time} and \textit{throughput}.  But, based on these data, it looks like WIP-limits matter, because it can decrease the correlation between \textit{lead time} and \textit{throughput}. Based on this as well, it looks like the WIP-limits may have been set too high. 
+The four teams with the lowest WIP-limits have the correlation of 0.06, 0.26, 0.24 and 0.90, showed by \ref{corr:WIP:V2} and Figure \ref{table:WIP:teams}. Three of the five teams with the significant correlations are also the three teams with the highest mean WIP-limits. Three of the four with the lowest WIP-limits also have the lowest correlation between \textit{lead time} and \textit{throughput}. This data shows that most of the teams with highest mean WIP-limits have a significant correlation. And the teams with the lowest mean WIP-limits are the one closes to have a negative correlation between \textit{throughput} and \textit{lead time}. Although the data show evidence that WIP-limits reduce the correlation between \textit{lead time} and \textit{throughput}, there is no evidence that lowering WIP-limits even more will result in a negative correlation between \textit{lead time} and \textit{throughput}.  But, based on these data, it looks like WIP-limits matter, because it decrease the correlation between \textit{lead time} and \textit{throughput}. Based on this as well, it looks like the WIP-limits may have been set too high. 
 
-The mean correlation between \textit{bugs} and \textit{throughput} are 0.6, seen in Table \ref{DS:corr:WIP:v2}. The positive correlation between \textit{bugs} and \textit{throughput} states that if SI produces more, then they produce more bugs and vice versa. This correlation relationship is standard. When one produces more tasks, there are likely to produce more bugs. If one produces zero tasks, one also produce zero bugs. In an optimal process, the correlation between \textit{bugs} and \textit{throughput} should be a negative correlation, so teams can produce more without producing bugs. This is the principle of \textit{JIT}, explained in Section \ref{sec:JIT}.
-
-
-There are six teams with a significant positive correlation between \textit{throughput} and \textit{bugs} as showed by Table \ref{corr:WIP:V2}. These six teams have a mean WIP-limit of 2.31, 1.78, 1.93, 0.71, 2.19 and 1.08, as showed by Figure \ref{table:WIP:teams}. This indicates no pattern between WIP-limits  and the correlations between \textit{bugs} and \textit{throughput}. \textbf{Team one} and \textbf{six} are the only teams with a correlation lower than 0.45. \textbf{Team one} has a correlation of 0.05 and a WIP-limit of 0.73. \textbf{Team six} has a correlation of -0.02 and a mean WIP-limit of 3.02, as showed by Table \ref{corr:WIP:V2} and Figure \ref{table:WIP:teams}.  These data strengthens the assumption that there is no pattern between WIP-limits  and the correlation between \textit{throughput} and \textit{bugs}, because teams with both high and low mean WIP-limits have significant correlation between \textit{throughput} and \textit{bugs}.  
-
-The mean correlation between \textit{throughput} and \textit{bugs finished, quarter} are 0.4. The mean correlation between \textit{throughput} and \textit{throughput bug} are 0.8 and the mean correlation between \textit{throughput} and \textit{throughput feature} are 0.7, as showed by Table \ref{DS:corr:TP:v2}. The positive correlation between  \textit{throughput} and \textit{bugs finished, quarter} states that when SI produces more, they are able to fix more bugs within the same quarter, which shows the same as the correlation between \textit{bugs} and \textit{throughput}. The positive correlation between \textit{throughput} and both the moderating variables  state that SI produces more bugs than feature. These correlations also show the same as the correlation between \textit{throughput} and \textit{bugs}. 
+The mean correlation between \textit{bugs} and \textit{throughput} are 0.6, seen in Table \ref{DS:corr:WIP:v2}. A positive correlation between \textit{bugs} and \textit{throughput} states that if SI produces more, then they produce more bugs and vice versa. This correlation relationship is standard. When one produces more tasks, there are likely to produce more bugs. If one produces zero tasks, one also produce zero bugs. In an optimal process, the correlation between \textit{bugs} and \textit{throughput} should be a negative correlation, so teams can produce more without producing bugs. This is the principle of \textit{JIT}, explained in Section \ref{sec:JIT}.
 
 
-The mean correlation between \textit{throughput} and \textit{churn} are 0.3, as showed by Table \ref{DS:corr:WIP:v2}. The positive correlation states that if the tasks require more effort, they are able to produce more and vice versa. Based on Kanban, one should have small tasks, as stated in Section \ref{sec:Kan}. So the correlation between \textit{throughput} and \textit{churn} should be negative based on the principle in Kanban.  There are three teams with a significant correlation, as showed by Table \ref{corr:WIP:V2}. These three teams have the mean WIP-limit of 3.21, 1.93 and 0.71, showed by Figure \ref{table:WIP:teams}. There are three teams with a negative correlation between \textit{throughput} and \textit{churn}. These negative correlations are -0.14, -0.14 and -0.28, as showed by Table \ref{corr:WIP:V2}. The teams with these negative correlations have the mean WIP-limits of 0.73, 3.02 and 2.19, as showed by Figure \ref{table:WIP:teams}. Both teams with a high mean WIP-limit and low WIP-limit have both a significant positive correlation and negative correlation.  This states that there is no pattern between WIP-limits and the correlation relationship between \textit{throughput} and \textit{churn}. 
+There are six teams with a significant positive correlation between \textit{throughput} and \textit{bugs} as showed by Table \ref{corr:WIP:V2}. These six teams have a mean WIP-limit of 2.31, 1.78, 1.93, 0.71, 2.19 and 1.08, as showed by Figure \ref{table:WIP:teams}. These values indicates no pattern between WIP-limits  and the correlations between \textit{bugs} and \textit{throughput}. \textbf{Team one} and \textbf{six} are the only teams with a correlation lower than 0.45. \textbf{Team one} has a correlation of 0.05 and a WIP-limit of 0.73. \textbf{Team six} has a correlation of -0.02 and a mean WIP-limit of 3.02, as showed by Table \ref{corr:WIP:V2} and Figure \ref{table:WIP:teams}.  These data strengthens the assumption that there is no pattern between WIP-limits  and the correlation between \textit{throughput} and \textit{bugs}, because teams with both high and low mean WIP-limits have significant correlation between \textit{throughput} and \textit{bugs}.  
 
-The data in this section showed that WIP-limits had an impact on the correlation between \textit{throughput} and \textit{lead time}. The correlation between \textit{throughput} and \textit{lead time} also showed evidence that the WIP-limits could be too high, but the other correlations presented showed no evidence of WIP-limits impact. Based on this should SI possibly lower their WIP-limits.
+The mean correlation between \textit{throughput} and \textit{bugs finished, quarter} are 0.4. The mean correlation between \textit{throughput} and \textit{throughput bug} are 0.8 and the mean correlation between \textit{throughput} and \textit{throughput feature} are 0.6, as showed by Table \ref{DS:corr:TP:v2}. The positive correlation between  \textit{throughput} and \textit{bugs finished, quarter} states that when SI produces more, they are able to fix more bugs within the same quarter, which shows the same as the correlation between \textit{bugs} and \textit{throughput}. The positive correlation between \textit{throughput} and both the moderating variables  state that SI produces more bugs than feature. These correlations also show the same as the correlation between \textit{throughput} and \textit{bugs}. 
+
+
+The mean correlation between \textit{throughput} and \textit{churn} are 0.3, as showed by Table \ref{DS:corr:WIP:v2}. A positive correlation states that if the tasks require more effort, they are able to produce more and vice versa. Based on Kanban, one should have small tasks, as stated in Section \ref{sec:Kan}. So the correlation between \textit{throughput} and \textit{churn} should be negative based on the principle in Kanban.  There are three teams with a significant correlation, as showed by Table \ref{corr:WIP:V2}. These three teams have the mean WIP-limit of 3.21, 1.93 and 0.71, showed by Figure \ref{table:WIP:teams}. There are three teams with a negative correlation between \textit{throughput} and \textit{churn}. These negative correlations are -0.14, -0.14 and -0.28, as showed by Table \ref{corr:WIP:V2}. The teams with these negative correlations have the mean WIP-limits of 0.73, 3.02 and 2.19, as showed by Figure \ref{table:WIP:teams}. Both teams with a high mean WIP-limit and low WIP-limit have both a significant positive correlation and negative correlation.  This states that there is no pattern between WIP-limits and the correlation relationship between \textit{throughput} and \textit{churn}. 
+
+The data in this section showed that WIP-limits had an impact on the correlation between \textit{throughput} and \textit{lead time}. The correlation between \textit{throughput} and \textit{lead time} also showed evidence that the WIP-limits could be too high. The other correlations presented showed no evidence of WIP-limits impact. Based on this should SI possibly lower their WIP-limits.
 
 \section{WIP and lead time}
  \label{sec:dis:lt}
@@ -2397,17 +2398,17 @@ As stated in Section \ref{sec:in:lt}, lead time could be used to track how quick
 
 %The rest of this section will contain a discussion about whether there is any evidence showing the impact of WIP-limits on the \textit{lead time} correlation. The correlation of $\pm$ 0.2, showed by Table \ref{DS:corr:LT:v2} will be discussed. The mean correlations from 0.2 to -0.2 are discarded, because they are too low.
 
-The four teams with the highest correlation are \textbf{team two, four, six} and \textbf{seven}. They have the correlations of 0.67, 0.87, 0.32 and 0.77 between \textit{WIP} and \textit{lead time}. The correlations 0.67, 0.87 and 0.77 are significant correlations. \textbf{Team two, four, six} and \textbf{seven} have the mean WIP-limits of 2.31, 3.21, 3.02 and 2.  The four teams with the lowest correlation are \textbf{teams one, three, eight, nine} and \textbf{ten}. They have the correlations of -0.09, -0.03, -0.09, -0.18, -0.05 and  the mean WIP-limits of 0.73, 1.78, 0.71, 1.09 and 2.19, showed by Table \ref{corr:WIP:V2} and Figure \ref{table:WIP:teams}.  As  stated, the correlation between \textit{WIP} and \textit{lead time} should be positive, so when WIP is decreased, the \textit{lead time} decrease as well. These data points towards the fact that WIP-limit may be too low, because four of the five teams with a WIP-limits of 2 or higher have a positive correlation of 0.32 or higher. The team with the highest WIP-limit also has the highest WIP. , but the team with the second highest WIP-limit has the correlation of 0.32. The two other teams with the significant correlation have the third and five highest WIP-limits. This shows that a WIP-limit of 2 or higher for four of the five teams gives at least a moderate correlation. This shows that WIP-limits matters based on the correlation between \textit{WIP} and \textit{lead time}.
+The four teams with the highest correlation are \textbf{team two, four, six} and \textbf{seven}. They have the correlations of 0.67, 0.87, 0.32 and 0.77 between \textit{WIP} and \textit{lead time}. The correlations 0.67, 0.87 and 0.77 are significant correlations. \textbf{Team two, four, six} and \textbf{seven} have the mean WIP-limits of 2.31, 3.21, 3.02 and 2.03  The four teams with the lowest correlation are \textbf{teams one, three, eight, nine} and \textbf{ten}. They have the correlations of -0.09, -0.03, -0.09, -0.18, -0.05 and  the mean WIP-limits of 0.73, 1.78, 0.71, 1.08 and 2.19, showed by Table \ref{corr:WIP:V2} and Figure \ref{table:WIP:teams}.  As  stated, the correlation between \textit{WIP} and \textit{lead time} should be positive, so when WIP is decreased, the \textit{lead time} decrease as well. These data points towards the fact that WIP-limit may be too low, because four of the five teams with a WIP-limits of 2 or higher have a positive correlation of 0.32 or higher. The team with the highest WIP-limit also has the highest WIP, but the team with the second highest WIP-limit has the correlation of 0.32. The two other teams with the significant correlation between \textit{WIP} and \textit{lead time} have the third and five highest WIP-limits. This shows that a WIP-limit of 2 or higher for four of the five teams gives at least a moderate correlation. This shows that WIP-limits matters based on the correlation between \textit{WIP} and \textit{lead time} and that the WIP-limits may have been set too low.
 
-The mean correlation between \textit{lead time} and \textit{bugs} are 0.5, as showed by Table \ref{DS:corr:LT:v2}.  The correlation means that if SI produces fewer \textit{bugs}, the \textit{lead time} for each task will decrease and vice versa. One should try to have a positive correlation.   Five teams have a positive significant correlation and these teams have a WIP-limit of 0.73, 2.31, 1.91, 2.03 and 1.08, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. There is no pattern between these variables, because the teams {WIP-limit} are both high and low. The two teams with a correlation lower than 0.44 between \textit{bugs} and \textit{lead time} have the WIP-limits of 3.02 and 0.71, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. The WIP-limits 3.02 and 0.71 are almost the highest and the lowest WIP-limits for SI. This data shows that teams with high and low WIP-limits have both high and low correlation between \textit{lead time} and \textit{bugs}. Based on these data the WIP-limits do not make an impact on the correlation between \textit{bugs} and \textit{lead time}, because there  is no pattern between the teams with high WIP-limit or low WIP-limit and the correlation between \textit{lead time} and \textit{bugs}.
+The mean correlation between \textit{lead time} and \textit{bugs} are 0.5, as showed by Table \ref{DS:corr:LT:v2}.  The correlation means that if SI produces fewer \textit{bugs}, the \textit{lead time} for each task will decrease and vice versa. One should try to have a positive correlation.   Five teams have a positive significant correlation and these teams have a WIP-limit of 0.73, 2.31, 1.93, 2.03 and 1.08, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. There is no pattern between these variables, because the teams {WIP-limit} are both high and low. The two teams with a correlation lower than 0.44 between \textit{bugs} and \textit{lead time} have the WIP-limits of 3.02 and 0.71, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. The WIP-limits 3.02 and 0.71 are almost the highest and the lowest WIP-limits for SI. This data shows that teams with high and low WIP-limits have both high and low correlation between \textit{lead time} and \textit{bugs}. Based on these data the WIP-limits do not make an impact on the correlation between \textit{bugs} and \textit{lead time}, because there  is no pattern between the teams with high WIP-limit or low WIP-limit and the correlation between \textit{lead time} and \textit{bugs}.
 
 %The \textbf{teams three, four} and \textbf{nine} have a correlation value of 0.44, 0.48, 0.54 and mean WIP-limits of 1.78, 3.21 and 2.19.
 
 The mean correlation between \textit{lead time} and \textit{churn} are 0.4, showed by Table \ref{DS:corr:LT:v2}. The teams should have a positive correlation between  \textit{lead time} and \textit{churn}, so the developers can work on small tasks and delivery quickly, which is stated in Section \ref{sec:Kan}.  \textbf{Teams one, four, five} and \textbf{eight} have a significant positive correlations and these teams have mean WIP-limits of 0.73, 3.21, 1.93 and 0.71, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. These values show no pattern, there are both teams with high and low WIP-limits with significant correlation. The three teams with the lowest correlations are the \textbf{teams six, nine} and \textbf{ten}. These teams have the WIP-limits of 3.02, 2.19 and 1.08, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. Based on the WIP-limits and the correlation, WIP-limits cannot be used to regulate the relationship between  \textit{lead time} and \textit{churn}, because there is no pattern between WIP-limits and the correlation.
 
-The mean correlation between \textit{lead time} and  \textit{bugs finished quarter} and are 0.4, as showed by Table \ref{DS:corr:LT:v2}. This relationship means that if \textit{lead time} decreases, the number of bugs closed in each quarter decreases and vice versa. The relationship between these variables should be negative, so one can close more bugs and minimize \textit{lead time}. \textbf{Teams one, two, five, seven} and \textbf{ten} have a significant positive correlation and these teams have the mean WIP-limits of 0.73, 2.31, 1.93, 2.03 and 1.08, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. There is one team with a negative correlation, which is \textbf{team eight}. \textbf{Team eight} has the correlation of -0.04 and the mean WIP-limit of 0.71. However, the two other teams with the lowest correlations have the correlations of 0.32 and 0.36. These two teams have the WIP-limits of 1.78 and 3.02, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. These data points towards the fact that WIP-limits have no impact on the correlation between \textit{lead time} and \textit{bugs finished quarter}, because there is no pattern between high or low WIP-limits and the correlations.
+The mean correlation between \textit{lead time} and  \textit{bugs finished quarter} and are 0.5, as showed by Table \ref{DS:corr:LT:v2}. This relationship means that if \textit{lead time} decreases, the number of bugs closed in each quarter decreases and vice versa. The relationship between these variables should be negative, so one can close more bugs and minimize \textit{lead time}. \textbf{Teams one, two, five, seven} and \textbf{ten} have a significant positive correlation and these teams have the mean WIP-limits of 0.73, 2.31, 1.93, 2.03 and 1.08, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. There is one team with a negative correlation, which is \textbf{team eight}. \textbf{Team eight} has the correlation of -0.04 and the mean WIP-limit of 0.71. However, the two other teams with the lowest correlations have the correlations of 0.32 and 0.36. These two teams have the WIP-limits of 1.78 and 3.02, showed by Table \ref{corr:LT:V2} and Figure \ref{table:WIP:teams}. These data points towards the fact that WIP-limits have no impact on the correlation between \textit{lead time} and \textit{bugs finished quarter}, because there is no pattern between high or low WIP-limits and the correlations.
 
-The former research states that WIP-limits have an impact on \textit{lead time}, the data from SI shows the same. The correlation between \textit{lead time} and \textit{WIP} showed evidence that WIP-limit matter. These data also showed evidence that the WIP-limit may have been set too low. The other correlations with a mean of $\pm$ 0.2 were investigated and no one of them showed a pattern towards the fact that WIP-limit helps \textit{lead time}.
+The former research states that WIP-limits have an impact on \textit{lead time}, the result from this work shows the same. The correlation between \textit{lead time} and \textit{WIP} showed evidence that WIP-limit matter. These data also showed evidence that the WIP-limit may have been set too low. The other correlations with a mean higher than $\pm$ 0.2 were investigated and no one of them showed a pattern towards the fact that WIP-limit helps \textit{lead time}.
 
 
 
@@ -2423,14 +2424,14 @@ The former research states that WIP-limits have an impact on \textit{lead time},
 
 \section{WIP and bugs}
 \label{sec:dis:bugs}
-The paper cited by Shinkle stated  \parencite{Shinkle}; when WIP-limits were too high, the number of bugs increased. The mean correlation between \textit{WIP} and \textit{bugs} are 0.2, showed by Table \ref{DS:corr:Bugs:v2}. This states that if WIP decreases, so does bugs and vice versa. A positive correlation close to 1 between \textit{WIP} and \textit{bugs} should be the optimal goal.  There is one team with a significant correlation and that is \textbf{team seven}  with a correlation of 0.75 as showed in Table \ref{corr:WIP:V2}. \textbf{Team seven} has  a mean WIP-limit of  2.03 shown by Figure \ref{Team:WIP:7}. The second highest correlation is 0.49 and belongs to \textbf{team two}. \textbf{Team two} has the WIP-limit of 3.21, showed by Table \ref{corr:WIP:V2} and Figure \ref{Team:WIP:2}.  The teams with the lowest correlation between \textit{WIP} and \textit{bugs} are \textbf{team nine} and \textbf{team ten}. \textbf{Team nine} has the correlation of -0.05  and a mean WIP-limit of 2.19 and \textbf{team ten} has the correlation of -0.28 and a mean WIP-limit of 1.08, showed by Table \ref{corr:WIP:V2} and Figures \ref{Team:WIP:9} and \ref{Team:WIP:10}. The team with the highest WIP-limit, \textbf{team four} has the correlation of 0.27 between \textit{WIP} and \textit{bugs}.  The team with the lowest  WIP-limit, \textbf{team eight} has a correlation of 0.32, showed by Table \ref{corr:Bugs:v2} and Figure \ref{table:WIP:teams}.
+The paper cited by Shinkle stated  \parencite{Shinkle}; when WIP-limits were too high, the number of bugs increased. The mean correlation between \textit{WIP} and \textit{bugs} are 0.2, showed by Table \ref{DS:corr:Bugs:v2}. A significant positive correlation states that if WIP decreases, so does bugs and vice versa. A positive correlation close to 1 between \textit{WIP} and \textit{bugs} should be the optimal goal.  There is one team with a significant correlation and that is \textbf{team seven}  with a correlation of 0.75 as showed in Table \ref{corr:WIP:V2}. \textbf{Team seven} has  a mean WIP-limit of  2.03 shown by Figure \ref{Team:WIP:7}. The second highest correlation is 0.49 and belongs to \textbf{team two}. \textbf{Team two} has the WIP-limit of 2.31, showed by Table \ref{corr:WIP:V2} and Figure \ref{Team:WIP:2}.  The teams with the lowest correlation between \textit{WIP} and \textit{bugs} are \textbf{team nine} and \textbf{team ten}. \textbf{Team nine} has the correlation of -0.05  and a mean WIP-limit of 2.19 and \textbf{team ten} has the correlation of -0.28 and a mean WIP-limit of 1.08, showed by Table \ref{corr:WIP:V2} and Figures \ref{Team:WIP:9} and \ref{Team:WIP:10}. The team with the highest WIP-limit, \textbf{team four} has the correlation of 0.27 between \textit{WIP} and \textit{bugs}.  The team with the lowest  WIP-limit, \textbf{team eight} has a correlation of 0.32, showed by Table \ref{corr:Bugs:v2} and Figure \ref{table:WIP:teams}.
 
 These values show that the two teams with the highest correlations have the WIP-limits of 2.03 and 0.49.  The teams with the lowest correlation have the WIP-limits of 2.19 and 1.08. The team with the highest WIP-limit has the correlation of 0.27. The team with the lowest WIP-limit has the correlation of 0.32. Based on these values, there is no pattern between WIP-limits  and the correlation between \textit{WIP} and  \textit{bugs}.
 
 The mean correlation between \textit{bugs} and \textit{bugs finished, quarter} are 0.5, showed by Table \ref{DS:corr:Bugs:v2}. This correlation states if SI produce more bugs, they are also able to close more bugs within each quarter and vice versa.
-The correlation between \textit{bugs} and \textit{bugs finished, quarter} should be positive. \textbf{Team one, six, seven, eight} and \textbf{ten} have a significant positive correlation between \textit{bugs} and \textit{bugs finished, quarter}. These teams have a mean WIP-limit of 0.73, 3.02, 2.03, 0.71 and 1.08, as shown by Table \ref{corr:Bugs:v2} and Figure \ref{table:WIP:teams}. These values show no pattern between WIP-limit  and the correlation between \textit{bugs} and \textit{bugs finished, quarter}. There are two teams with a correlation lower than 0.20 and these teams have the WIP-limit of 3.21 and 2.19. The three remaining teams have the correlation of 0.44, 0.50 and 0.52, showed by Table \ref{corr:Bugs:v2} and have the WIP-limits of 2.31, 1.78 and 1.93, as showed by Figures \ref{Team:WIP:2}, \ref{Team:WIP:3} and \ref{Team:WIP:5}.  The WIP-limit for the teams with the correlation of 0.44, 0.50 and 0.52 shows some sort of a pattern, these WIP-limits are close.
-The scattered WIP-limits for the significant correlation between \textit{bugs} and \textit{bugs finished, quarter} shows evidence towards the fact that WIP-limits do not matter for the correlation relationship between \textit{bugs} and \textit{bugs finished, quarter}. It is not much to state with the two teams with the lowest correlation, since there are only two.
-But, the conclusion is that it looks like WIP-limits do not matter in the correlation relationship between  \textit{bugs} and \textit{bugs finished, quarter}, because the teams with significant correlations have a high scattering between the mean WIP-limits.
+The correlation between \textit{bugs} and \textit{bugs finished, quarter} should be positive. \textbf{Team one, six, seven, eight} and \textbf{ten} have a significant positive correlation between \textit{bugs} and \textit{bugs finished, quarter}. These teams have a mean WIP-limit of 0.73, 3.02, 2.03, 0.71 and 1.08, as shown by Table \ref{corr:Bugs:v2} and Figure \ref{table:WIP:teams}. These values show no pattern between WIP-limit  and the correlation between \textit{bugs} and \textit{bugs finished, quarter}. There are two teams with a correlation lower than 0.20 and these teams have the WIP-limit of 3.21 and 2.19. The three remaining teams have the correlation of 0.44, 0.50 and 0.52 and  the WIP-limits of 2.31, 1.78 and 1.93, as showed by Table \ref{corr:Bugs:v2} and Figures \ref{Team:WIP:2}, \ref{Team:WIP:3} and \ref{Team:WIP:5}.  The WIP-limit for the teams with the correlation of 0.44, 0.50 and 0.52 shows some sort of a pattern, these WIP-limits are close.
+The scattered WIP-limits for the significant correlation between \textit{bugs} and \textit{bugs finished, quarter} shows evidence towards the fact that the WIP-limits do not matter for the correlation relationship between \textit{bugs} and \textit{bugs finished, quarter}. It is not much to state with the two teams with the lowest correlation, since there are only two.
+But, the conclusion is that it looks like the WIP-limits do not matter in the correlation relationship between  \textit{bugs} and \textit{bugs finished, quarter}, because the teams with significant correlations have a high scattering between the mean WIP-limits.
 
 The \textit{avg days in backlog, bugs} has a mean correlation of 0.4 between \textit{bugs}, showed by Table \ref{DS:corr:Bugs:v2}. This means that the more bugs produced, the longer the bugs stays in the backlog and vice versa. The optimal correlation should be a positive one, so they can produce fewer bugs, and the average days bugs are in backlog decreases. There is one team with a negative correlation. That team is \textbf{team two} with a correlation of -0.07 between \textit{avg days in backlog, bugs} and \textit{bugs} and a WIP-limit of 2.31, showed by Table \ref{corr:Bugs:v2} and Figure \ref{Team:WIP:2}. There are two teams with a significant correlation, these teams are \textbf{team one} and \textbf{team five}. These two teams have the correlation of 0.76 and 0.75 and WIP-limits of 0.73 and 1.93, showed by Table \ref{corr:Bugs:v2} and Figures \ref{Team:WIP:1} and \ref{Team:WIP:5}. One cannot conclude anything with these three values, one need to take more values into account. There are six teams with close correlations. These correlations are 0.38, 0.30, 0.37, 0.38, 0.37 and 0.39. These teams have the WIP-limits of 1.78, 3.02, 2.03, 0.71, 2.19 and 1.08. These values show no pattern between WIP-limit  and the correlation between \textit{avg days in backlog, bugs} and \textit{bugs}, because there are both high and low WIP-limits when the correlations is almost the same. 
 
@@ -2451,10 +2452,10 @@ The literature states that when WIP-limit was too high, the number of bugs produ
 \section{WIP and Churn}
 \label{sec:dis:churn}
 Churn is used as surrogate for effort in this work. No literature was found where the relationship between \textit{churn} and \textit{WIP} are investigated. Kanban, as stated in Section \ref{sec:Kan}, suggests small tasks and constant flow of released features throughout the development.  In order to have frequent releases, the correlation between \textit{churn} and \textit{WIP} should be a positive one. The mean correlation between \textit{churn} and \textit{WIP} are -0.1, as showed by Table \ref{DS:corr:WIP:v2}.
-There is one team with a positive significant correlation. That team has correlation of 0.77 and a WIP-limit of 3.21 as shown by Table \ref{corr:WIP:V2} and Figure \ref{Team:WIP:4}. The two other teams with the second and third highest correlations have the values of 0.39 and 0.16. These two teams have the WIP-limits of 2.31 and 0.71, showed by Table \ref{corr:WIP:V2} and Figures \ref{Team:WIP:2} and \ref{Team:WIP:8}. The correlations between these three teams are scattered and so are the WIP-limits. The three teams with the lowest WIP-limits have the correlation of -0.27, 0.39 and -0.37. The three teams with the highest WIP-limit have the correlation of 0.16, 0.77 and -0.35, showed by Table  \ref{corr:WIP:V2} and Figure \ref{table:WIP:teams}.  Based on these values, there is no pattern between WIP-limit and \textit{churn}, because both high and low WIP-limits have high and low correlations between \textit{WIP} and \textit{churn}.
+There is one team with a positive significant correlation. That team has correlation of 0.77 and a WIP-limit of 3.21 as shown by Table \ref{corr:WIP:V2} and Figure \ref{Team:WIP:4}. The two other teams with the second and third highest correlations have the values of 0.39 and 0.16. These two teams have the WIP-limits of 2.31 and 0.71, showed by Table \ref{corr:WIP:V2} and Figures \ref{Team:WIP:2} and \ref{Team:WIP:8}. The correlations between these three teams are scattered and so are the WIP-limits. The three teams with the lowest WIP-limits have the correlation of -0.27, 0.39 and -0.37. The three teams with the highest WIP-limit have the correlation of 0.16, 0.77 and -0.35, showed by Table  \ref{corr:WIP:V2} and Figure \ref{table:WIP:teams}.  Based on these values, there is no pattern in the correlation between \textit{WIP} and \textit{churn}, because both high and low WIP-limits have high and low correlations between \textit{WIP} and \textit{churn}.
 
 The mean correlation between \textit{bugs finished, quarter} and \textit{churn} are 0.5, which means that if the task effort increases, the number of bugs closed whiten the same quarter increases and vice versa. Based on the principle of Kanban, the task size should be minimized in order to deliver continuously. So the correlation between \textit{bugs finished, quarter} and \textit{churn} should be a negative one. The two \textbf{teams seven} and \textbf{nine} have a negative correlation of -0.16 and -0.12. These two teams have a mean WIP-limit of 2.03 and 2.19, as showed by Table \ref{corr:churn:v2} and Figure \ref{table:WIP:teams}. The two teams with the closest correlation to \textbf{team seven} and \textbf{team nine} have correlation of 0.34, 0.33 and WIP-limits of 3.21 and 3.02, showed by Table \ref{corr:churn:v2} and Figure \ref{table:WIP:teams}. The five teams with a positive significant correlations have WIP-limits of 0.73, 2.31, 1.78, 1.93 and 0.71, showed by Table \ref{corr:churn:v2} and Figure \ref{table:WIP:teams}. 
-Both the low and high WIP-limits have a pattern in their correlations, but the significant correlations have a scattered WIP-limits, this points towards the fact that the WIP-limits does not matter for the correlation between \textit{bugs finished, quarter} and \textit{churn}.
+The teams with low WIP-limits and teams with high WIP-limits showed a pattern in their correlations, but the significant correlations have a scattered WIP-limits, this points towards the fact that the WIP-limits does not matter for the correlation between \textit{bugs finished, quarter} and \textit{churn}.
 
 The correlations between \textit{WIP} and both \textit{churn} and \textit{bugs finished, quarter} showed that WIP-limits had no impact on the correlation.
 
@@ -2672,11 +2673,11 @@ The three \textit{churn} variables for \textbf{team three} have the correlation 
 
 \chapter{Conclusion}
 \label{ch:conc}
-In this work the main goal was to investigate the research question \textit{Does WIP-limit in software development matter?} If so, \textit{How can one find the optimal WIP-limit?}. To answer the research questions, a data set from a company called Software Innovation was interpreted. The data set is based on metadata about tasks from 2010 to 2013. More than ten mean correlations were presented, where the WIP-limits were investigated. The correlation between \textit{throughput} and \textit{lead time} and \textit{WIP} and \textit{lead time} showed evidence that WIP-limits have an impact, but the rest of the correlations showed no impact by WIP-limits. 
+In this work the main goal was to investigate the research question: \textit{Does WIP-limit in software development matter?} If so: \textit{How can one find the optimal WIP-limit?} To answer the research questions, a data set from a software company called Software Innovation was interpreted. The data set is based on metadata about tasks from 2010 to 2013. More than ten mean correlations were investigated based on the WIP-limits. The correlation between \textit{throughput} and \textit{lead time} and \textit{WIP} and \textit{lead time} showed evidence that WIP-limits have an impact, but the rest of the correlations showed no impact of WIP-limits. 
 
-One can see a pattern in the correlation between \textit{throughput} and \textit{lead time} and \textit{WIP} and \textit{lead time}. In the correlation between \textit{throughput} and \textit{lead time} one can see most of the teams with low mean WIP-limits have also low correlation, and most of the teams with high mean WIP-limit have high correlations. Although, there is no evidence showing that lowering WIP-limits even more will produce a negative correlation between \textit{throughput} and \textit{lead time}, but investigating this is suggested as further work. In the correlation between \textit{WIP} and \textit{lead time} all of the positive significant correlations belonged to four of the five teams with a WIP-limit higher than 2. The correlation between \textit{WIP} and \textit{lead time} do show that most of the teams with a mean WIP-limit of 2 or higher have at least a moderate correlation.
+One can see a pattern in the correlation between \textit{throughput} and \textit{lead time} and \textit{WIP} and \textit{lead time}. In the correlation between \textit{throughput} and \textit{lead time} one can see most of the teams with low mean WIP-limits have also low correlation, and most of the teams with high mean WIP-limit have high correlations. Although, there is no evidence showing that lowering WIP-limits even more will produce a negative correlation between \textit{throughput} and \textit{lead time}, but investigating this is suggested as further work. In the correlation between \textit{WIP} and \textit{lead time} the four highest correlations belonged to four of the five teams with a WIP-limit higher than 2, and three of these correlation were significant. The correlation between \textit{WIP} and \textit{lead time} do show that most of the teams with a mean WIP-limit of 2 or higher have at least a moderate correlation.
 
-Based on these data, there is no optimal WIP for any given context. It depends if one wants to optimize the correlation between \textit{lead time} and \textit{throughput} or the correlation between \textit{lead time} and \textit{WIP}. To answer \textit{How can one find the optimal WIP-limit?}: the  correlations of \textit{lead time} and \textit{throughput} and \textit{lead time} and \textit{WIP} should be considered when looking for the optimal WIP-limit based on these data.
+Based on these data, there is no optimal WIP for any given context. It depends if one wants to optimize the correlation between \textit{lead time} and \textit{throughput} or the correlation between \textit{lead time} and \textit{WIP}. So to answer: \textit{How can one find the optimal WIP-limit?} one should take the  correlations of \textit{lead time} and \textit{throughput} and \textit{lead time} and \textit{WIP} into  consideration when looking for the optimal WIP-limit based on these data.
 
  
 
@@ -2697,7 +2698,7 @@ There is also done another research on the data from SI, it is recommended compa
 The following tables show the descriptive statistics for the ten teams before team size was considered.
 \section{Team 1 - Descriptive Statistics}
 \begin{figure}[!htbp]
-\begin{adjustwidth}{-1.5cm}{}
+\begin{adjustwidth}{-1cm}{}
  \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2872,7 +2873,7 @@ The following tables show the descriptive statistics for the ten teams before te
 %%%%%%%%%%%%%
 % Churn FT and Churn Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2929,7 +2930,7 @@ The following tables show the descriptive statistics for the ten teams before te
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1.2cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -2988,7 +2989,7 @@ Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
  
 \section{Team 2 - Descriptive Statistics}
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3048,7 +3049,7 @@ Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
- \begin{adjustwidth}{-2.5cm}{}
+ \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3108,7 +3109,7 @@ Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
 %%%%%%%%%%%%%
 % Lead time and bugs
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3166,7 +3167,7 @@ Mean & 63.9&3.3&67.3&83.3&16.7\\ \hline
 
 %%%%%%%%%%%%% Churn ft and Churn bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3288,7 +3289,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 
  \section{Team 3 - Descriptive Statistics}
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3349,7 +3350,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3410,7 +3411,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 
  %%%%%%%%%%%%%
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3471,7 +3472,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 
  %%%%%%%%%%%%% Churn ft and Churn bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3531,7 +3532,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 
 
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-3.0cm}{}
+  \begin{adjustwidth}{-2.4cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3602,7 +3603,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 
 \section{Team 4 - Descriptive Statistics}
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3663,7 +3664,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3717,7 +3718,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 %%%%%%%%%%%%%
 % Lead time and churn
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3770,7 +3771,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 %%%%%%%%%%%%%
 % Churn FT and Churn Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3822,7 +3823,7 @@ Mean & 66.4&12.3&78.8&74.4&25.6 \\ \hline
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.4cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3879,7 +3880,7 @@ Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
 \section{Team 5 - Descriptive Statistics}
 
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -3941,7 +3942,7 @@ Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4000,7 +4001,7 @@ Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
 %%%%%%%%%%%%%
 % Lead time and bugs
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4059,7 +4060,7 @@ Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
 %%%%%%%%%%%%%
 % Churn FT and Churn Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4119,7 +4120,7 @@ Mean & 11.3&.4&11.6&98.9&1.1 \\ \hline
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1.2cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4179,7 +4180,7 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 
 \section{Team 6 - Descriptive Statistics}
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4239,7 +4240,7 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4299,7 +4300,7 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 %%%%%%%%%%%%%
 % Lead time and bugs
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4358,7 +4359,7 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 
  %%%%%%%%%%%%% Churn ft and Churn bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4416,7 +4417,7 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2cm}{}
+  \begin{adjustwidth}{-1.2cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4462,7 +4463,7 @@ Mean & 109.9&	18.6&128.5&74.3&25.7 \\ \hline
 Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 \end{tabular}
 }
-\caption{DS - Bugs}
+\caption{DS - Bugs finished quarter}
  \label{DS:FTPQ:6}
 \end{subfigure}
 \end{adjustwidth}
@@ -4476,7 +4477,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
  
 \section{Team 7 - Descriptive Statistics}
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4527,7 +4528,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4579,7 +4580,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 %%%%%%%%%%%%%
 % Lead time and bugs
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4630,7 +4631,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 %%%%%%%%%%%%%
 % Churn FT and Churn Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4682,7 +4683,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1.2cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4730,7 +4731,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 
 \section{Team 8 - Descriptive Statistics}
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4787,7 +4788,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4844,7 +4845,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 %%%%%%%%%%%%%
 % Lead time and bugs
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4901,7 +4902,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 %%%%%%%%%%%%%
 % Churn FT and Churn Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-0.8cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -4957,7 +4958,7 @@ Mean & 23.9&2.2&26.1&87.0&13.0 \\ \hline
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-3cm}{}
+  \begin{adjustwidth}{-2.5cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5015,7 +5016,7 @@ Mean &6.7&2.6&9.3&59.5&40.5 \\ \hline
 
 \section{Team 9 - Descriptive Statistics}
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-3cm}{}
+  \begin{adjustwidth}{-2.5cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5072,7 +5073,7 @@ Total & 521.0 & 2.6 & 2.0 & 1.9 & 12.0 & 1.0\\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5131,7 +5132,7 @@ Total & 521.0 & 2.6 & 2.0 & 1.9 & 12.0 & 1.0\\ \hline
 %%%%%%%%%%%%%
 % Lead time and bugs
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5189,7 +5190,7 @@ Total & 521.0 & 2.6 & 2.0 & 1.9 & 12.0 & 1.0\\ \hline
 %%%%%%%%%%%%%
 % Churn FT and Churn Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5249,7 +5250,7 @@ Total & 521.0 & 2.6 & 2.0 & 1.9 & 12.0 & 1.0\\ \hline
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-3cm}{}
+  \begin{adjustwidth}{-2.5cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5307,7 +5308,7 @@ Mean & 37.9 & 8.3 & 46.17 & 58.4& 41.6 \\ \hline
 
 \section{Team 10 - Descriptive Statistics}
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5366,7 +5367,7 @@ Mean & 37.9 & 8.3 & 46.17 & 58.4& 41.6 \\ \hline
 %%%%%%%%%%%%%
 %Throughput FT and Throughput Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-1.5cm}{}
+  \begin{adjustwidth}{-1cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5426,7 +5427,7 @@ Mean & 37.9 & 8.3 & 46.17 & 58.4& 41.6 \\ \hline
 %%%%%%%%%%%%%
 % Lead time and bugs
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5487,7 +5488,7 @@ Mean & 37.9 & 8.3 & 46.17 & 58.4& 41.6 \\ \hline
 %%%%%%%%%%%%%
 % Churn FT and Churn Bug
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2.5cm}{}
+  \begin{adjustwidth}{-2.2cm}{}
 \begin{subfigure}[b]{0.7\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
@@ -5548,7 +5549,7 @@ Mean & 37.9 & 8.3 & 46.17 & 58.4& 41.6 \\ \hline
 %%%%%%%%%%%%%
 % Bugs and Bugs finished in quarter
 \begin{figure}[!htbp]
-  \begin{adjustwidth}{-2cm}{}
+  \begin{adjustwidth}{-1.2cm}{}
 \begin{subfigure}[b]{0.6\textwidth}
  \scalebox{0.85}{
   \begin{tabular}{ | l | r | r | r | r | r | r | }
